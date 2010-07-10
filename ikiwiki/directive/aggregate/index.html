@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="must-revalidate" />
+<title>aggregate</title>
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css" type="text/css" />
+
+
+
+
+<meta name="robots" content="noindex, follow" />
+</head>
+<body>
+
+<article class="page">
+
+<section class="pageheader">
+<header class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../../../">weakish</a>/ 
+
+<a href="../../">ikiwiki</a>/ 
+
+<a href="../">directive</a>/ 
+
+</span>
+<span class="title">
+aggregate
+
+</span>
+</span>
+
+
+<form method="get" action="http://www.google.com/search" id="searchform">
+ <div>
+  <input name="sitesearch" value="http://weakish.github.com/" type="hidden" />
+  <input name="q" value="" id="searchbox" size="16" maxlength="255" type="text"
+  placeholder="search" />
+ </div>
+</form>
+
+
+</header>
+
+
+<nav class="actions">
+<ul>
+
+
+<li><a href="../../../recentchanges/">RecentChanges</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+
+
+
+
+</section>
+
+
+
+<div id="pagebody">
+
+<section id="content">
+<p>The <code>aggregate</code> directive is supplied by the <a href="http://ikiwiki.info/plugins/aggregate/">aggregate</a> plugin.
+This plugin requires extra setup, specifically, a cron job. See the
+plugin&#39;s documentation for details.</p>
+
+<p>This directive allows content from other feeds to be aggregated into the wiki.
+Aggregate a feed as follows:</p>
+
+<pre><code>[[!aggregate  name=&#34;example blog&#34; dir=&#34;example&#34;
+feedurl=&#34;http://example.com/index.rss&#34;
+url=&#34;http://example.com/&#34; updateinterval=&#34;15&#34;]]
+</code></pre>
+
+<p>That example aggregates posts from the specified RSS feed, updating no
+more frequently than once every 15 minutes (though possibly less
+frequently, if the cron job runs less frequently than that), and puts a
+page per post under the example/ directory in the wiki.</p>
+
+<p>You can then use ikiwiki&#39;s <a href="../inline/">inline</a> directive to create a blog of one or
+more aggregated feeds. For example:</p>
+
+<pre><code>[[!inline  pages=&#34;internal(example/*)&#34;]]
+</code></pre>
+
+<p>Note the use of <code>internal()</code> in the <a href="../../pagespec/">PageSpec</a> to match
+aggregated pages. By default, aggregated pages are internal pages,
+which prevents them from showing up directly in the wiki, and so this
+special <a href="../../pagespec/">PageSpec</a> is needed to match them.</p>
+
+<h2>usage</h2>
+
+<p>Here are descriptions of all the supported parameters to the <code>aggregate</code>
+directive:</p>
+
+<ul>
+<li><code>name</code> - A name for the feed. Each feed must have a unique name.
+Required.</li>
+<li><code>url</code> - The url to the web page for the feed that&#39;s being aggregated.
+Required.</li>
+<li><code>dir</code> - The directory in the wiki where pages should be saved. Optional,
+if not specified, the directory is based on the name of the feed.</li>
+<li><code>feedurl</code> - The url to the feed. Optional, if it&#39;s not specified ikiwiki
+will look for feeds on the <code>url</code>. RSS and atom feeds are supported.</li>
+<li><code>updateinterval</code> - How often to check for new posts, in minutes. Default
+is 15 minutes.</li>
+<li><code>expireage</code> - Expire old items from this feed if they are older than
+a specified number of days. Default is to never expire on age.</li>
+<li><code>expirecount</code> - Expire old items from this feed if there are more than
+the specified number total. Oldest items will be expired first. Default
+is to never expire on count.</li>
+<li><code>tag</code> - A tag to tag each post from the feed with. A good tag to use is
+the name of the feed. Can be repeated multiple times. The <a href="../tag/">tag</a> plugin
+must be enabled for this to work.</li>
+<li><code>template</code> - Template to use for creating the aggregated pages. Defaults to
+aggregatepost.</li>
+</ul>
+
+<p>Note that even if you are using subversion or another revision control
+system, pages created by aggregation will <em>not</em> be checked into revision
+control.</p>
+
+</section>
+
+
+
+</div>
+
+<footer id="footer" class="pagefooter">
+
+<nav id="pageinfo">
+
+
+
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <time datetime="2010-06-10T20:08:49Z">Fri 11 Jun 2010 04:08:49 AM CST</time>
+<!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
+</div>
+
+</nav>
+
+
+<!-- from weakish -->
+</footer>
+
+</article>
+
+</body>
+</html>

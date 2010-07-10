@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="must-revalidate" />
+<title>img</title>
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css" type="text/css" />
+
+
+
+
+<meta name="robots" content="noindex, follow" />
+</head>
+<body>
+
+<article class="page">
+
+<section class="pageheader">
+<header class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../../../">weakish</a>/ 
+
+<a href="../../">ikiwiki</a>/ 
+
+<a href="../">directive</a>/ 
+
+</span>
+<span class="title">
+img
+
+</span>
+</span>
+
+
+<form method="get" action="http://www.google.com/search" id="searchform">
+ <div>
+  <input name="sitesearch" value="http://weakish.github.com/" type="hidden" />
+  <input name="q" value="" id="searchbox" size="16" maxlength="255" type="text"
+  placeholder="search" />
+ </div>
+</form>
+
+
+</header>
+
+
+<nav class="actions">
+<ul>
+
+
+<li><a href="../../../recentchanges/">RecentChanges</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+
+
+
+
+</section>
+
+
+
+<div id="pagebody">
+
+<section id="content">
+<p>The <code>img</code> directive is supplied by the <a href="http://ikiwiki.info/plugins/img/">img</a> plugin.</p>
+
+<p>This is an image handling directive.  While ikiwiki supports inlining full-size
+images by making a <a href="../../wikilink/">WikiLink</a> that points to the image, using
+this directive you can easily scale down an image for inclusion onto a page,
+providing a link to a full-size version.</p>
+
+<h2>usage</h2>
+
+<pre><code>[[!img  image1.jpg size=&#34;200x200&#34; alt=&#34;clouds&#34;]]
+</code></pre>
+
+<p>The image file will be searched for using the same rules as used to find
+the file pointed to by a <a href="../../wikilink/">WikiLink</a>.</p>
+
+<p>The <code>size</code> parameter is optional, defaulting to full size. Note that the
+original image&#39;s aspect ratio is always preserved, even if this means
+making the image smaller than the specified size. You can also specify only
+the width or the height, and the other value will be calculated based on
+it: &#34;200x&#34;, &#34;x200&#34;</p>
+
+<p>You can also pass <code>alt</code>, <code>title</code>, <code>class</code>, <code>align</code> and <code>id</code> parameters.
+These are passed through unchanged to the html img tag. If you include a
+<code>caption</code> parameter, the caption will be displayed centered beneath the image.</p>
+
+<p>The <code>link</code> parameter is used to control whether the scaled image links
+to the full size version. By default it does; set &#34;link=somepage&#34; to link
+to another page instead, or &#34;link=no&#34; to disable the link, or
+&#34;link=http://url&#34; to link to a given url.</p>
+
+<p>You can also set default values that will be applied to all later images on
+the page, unless overridden. Useful when including many images on a page.</p>
+
+<pre><code>[[!img  defaults size=200x200 alt=&#34;wedding photo&#34;]]
+[[!img  photo1.jpg]]
+[[!img  photo2.jpg]]
+[[!img  photo3.jpg size=200x600]]
+</code></pre>
+
+</section>
+
+
+
+</div>
+
+<footer id="footer" class="pagefooter">
+
+<nav id="pageinfo">
+
+
+
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <time datetime="2010-06-10T20:08:49Z">Fri 11 Jun 2010 04:08:49 AM CST</time>
+<!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
+</div>
+
+</nav>
+
+
+<!-- from weakish -->
+</footer>
+
+</article>
+
+</body>
+</html>

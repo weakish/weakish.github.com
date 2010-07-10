@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="must-revalidate" />
+<title>shortcuts</title>
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css" type="text/css" />
+
+
+
+
+
+</head>
+<body>
+
+<article class="page">
+
+<section class="pageheader">
+<header class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../">weakish</a>/ 
+
+</span>
+<span class="title">
+shortcuts
+
+</span>
+</span>
+
+
+<form method="get" action="http://www.google.com/search" id="searchform">
+ <div>
+  <input name="sitesearch" value="http://weakish.github.com/" type="hidden" />
+  <input name="q" value="" id="searchbox" size="16" maxlength="255" type="text"
+  placeholder="search" />
+ </div>
+</form>
+
+
+</header>
+
+
+<nav class="actions">
+<ul>
+
+
+<li><a href="../recentchanges/">RecentChanges</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+
+
+
+
+</section>
+
+
+
+<div id="pagebody">
+
+<section id="content">
+<p>This wiki has shortcuts <strong>enabled</strong>.</p>
+
+<p>Some examples of using shortcuts include:</p>
+
+<pre><code>[[!google  foo]]
+[[!wikipedia  War_of_1812]]
+[[!debbug  12345]]
+Check the [[!cia  ikiwiki desc=&#34;CIA page for %s&#34;]].
+</code></pre>
+
+<p>This page controls what shortcut links the wiki supports.</p>
+
+<ul>
+<li>shortcut google points to <i>http://www.google.com/search?q=%s</i></li>
+<li>shortcut archive points to <i>http://web.archive.org/*/%S</i></li>
+<li>shortcut gmap points to <i>http://maps.google.com/maps?q=%s</i></li>
+<li>shortcut gmsg points to <i>http://groups.google.com/groups?selm=%s</i></li>
+<li>shortcut wikipedia points to <i>http://en.wikipedia.org/wiki/%s</i></li>
+<li>shortcut wikitravel points to <i>http://wikitravel.org/en/%s</i></li>
+<li>shortcut wiktionary points to <i>http://en.wiktionary.org/wiki/%s</i></li>
+<li>shortcut debbug points to <i>http://bugs.debian.org/%S</i></li>
+<li>shortcut deblist points to <i>http://lists.debian.org/debian-%s</i></li>
+<li>shortcut debpkg points to <i>http://packages.debian.org/%s</i></li>
+<li>shortcut debpkgsid points to <i>http://packages.debian.org/sid/%s</i></li>
+<li>shortcut debpts points to <i>http://packages.qa.debian.org/%s</i></li>
+<li>shortcut debmsg points to <i>http://lists.debian.org/msgid-search/%s</i></li>
+<li>shortcut debrt points to <i>https://rt.debian.org/Ticket/Display.html?id=%s</i></li>
+<li>shortcut debss points to <i>http://snapshot.debian.net/package/%s</i>
+<ul>
+<li>Usage: <code>[[!debss  package]]</code>, <code>[[!debss  package#version]]</code>, or <code>[[!debss  package/version]]</code>.  See http://snapshot.debian.net for details.</li>
+</ul></li>
+<li>shortcut debwiki points to <i>http://wiki.debian.org/%s</i></li>
+<li>shortcut fdobug points to <i>https://bugs.freedesktop.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut fdolist points to <i>http://lists.freedesktop.org/mailman/listinfo/%s</i></li>
+<li>shortcut gnomebug points to <i>http://bugzilla.gnome.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut linuxbug points to <i>http://bugzilla.kernel.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut mozbug points to <i>https://bugzilla.mozilla.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut gnulist points to <i>http://lists.gnu.org/mailman/listinfo/%s</i></li>
+<li>shortcut marcmsg points to <i>http://marc.info/?i=%s</i></li>
+<li>shortcut marclist points to <i>http://marc.info/?l=%s</i></li>
+<li>shortcut gmane points to <i>http://dir.gmane.org/gmane.%s</i></li>
+<li>shortcut gmanemsg points to <i>http://mid.gmane.org/%s</i></li>
+<li>shortcut cpan points to <i>http://search.cpan.org/search?mode=dist&#38;query=%s</i></li>
+<li>shortcut ctan points to <i>http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=%s</i></li>
+<li>shortcut hoogle points to <i>http://haskell.org/hoogle/?q=%s</i></li>
+<li>shortcut iki points to <i>http://ikiwiki.info/%S/</i></li>
+<li>shortcut ljuser points to <i>http://%s.livejournal.com/</i></li>
+<li>shortcut rfc points to <i>http://www.ietf.org/rfc/rfc%s.txt</i></li>
+<li>shortcut c2 points to <i>http://c2.com/cgi/wiki?%s</i></li>
+<li>shortcut meatballwiki points to <i>http://www.usemod.com/cgi-bin/mb.pl?%s</i></li>
+<li>shortcut emacswiki points to <i>http://www.emacswiki.org/cgi-bin/wiki/%s</i></li>
+<li>shortcut haskellwiki points to <i>http://haskell.org/haskellwiki/%s</i></li>
+<li>shortcut dict points to <i>http://www.dict.org/bin/Dict?Form=Dict1&#38;Strategy=<em>&#38;Database=</em>&#38;Query=%s</i></li>
+<li>shortcut imdb points to <i>http://imdb.com/find?q=%s</i></li>
+<li>shortcut gpg points to <i>http://pgpkeys.mit.edu:11371/pks/lookup?op=vindex&#38;exact=on&#38;search=0x%s</i></li>
+<li>shortcut perldoc points to <i>http://perldoc.perl.org/search.html?q=%s</i></li>
+<li>shortcut whois points to <i>http://reports.internic.net/cgi/whois?whois_nic=%s&#38;type=domain</i></li>
+<li>shortcut cve points to <i>http://cve.mitre.org/cgi-bin/cvename.cgi?name=%s</i></li>
+<li>shortcut cia points to <i>http://cia.vc/stats/project/%s</i></li>
+<li>shortcut ciauser points to <i>http://cia.vc/stats/user/%s</i></li>
+<li>shortcut flickr points to <i>http://www.flickr.com/photos/%s</i></li>
+<li>shortcut man points to <i>http://linux.die.net/man/%s</i></li>
+<li>shortcut ohloh points to <i>http://www.ohloh.net/projects/%s</i></li>
+<li>shortcut cpanrt points to <i>https://rt.cpan.org/Ticket/Display.html?id=%s</i></li>
+<li>shortcut novellbug points to <i>https://bugzilla.novell.com/show_bug.cgi?id=%s</i></li>
+</ul>
+
+<p>To add a new shortcut, use the <code>shortcut</code>
+<a href="../ikiwiki/directive/">directive</a>. In the url, &#34;%s&#34; is replaced with the
+text passed to the named shortcut, after <a href="http://en.wikipedia.org/wiki/url%5Fencoding">url encoding</a>
+it, and &#39;%S&#39; is replaced with the raw, non-encoded text. The optional
+<code>desc</code> parameter controls the description of the link.</p>
+
+<p>Remember that the <code>name</code> you give the shortcut will become a new
+<a href="../ikiwiki/directive/">directive</a>.  Avoid using a <code>name</code> that conflicts
+with an existing directive.  These directives also accept a <code>desc</code>
+parameter that will override the one provided at definition time.</p>
+
+<p>If you come up with a shortcut that you think others might find useful,
+consider contributing it to the <a href="http://ikiwiki.info/shortcuts/">shortcuts page on the ikiwiki
+wiki</a>, so that future versions of
+ikiwiki will include your shortcut in the standard underlay.</p>
+
+</section>
+
+
+
+</div>
+
+<footer id="footer" class="pagefooter">
+
+<nav id="pageinfo">
+
+
+
+
+<nav id="backlinks">
+Links:
+
+<a href="../ikiwiki/directive/listdirectives/">ikiwiki/directive/listdirectives</a>
+
+<a href="../ikiwiki/directive/shortcut/">ikiwiki/directive/shortcut</a>
+
+<a href="../ikiwiki/formatting/">ikiwiki/formatting</a>
+
+
+</nav>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <time datetime="2010-04-02T20:05:14Z">Sat 03 Apr 2010 04:05:14 AM CST</time>
+<!-- Created <time datetime="2009-12-24T05:37:17Z" pubdate="pubdate">Thu 24 Dec 2009 01:37:17 PM CST</time> -->
+</div>
+
+</nav>
+
+
+<!-- from weakish -->
+</footer>
+
+</article>
+
+</body>
+</html>

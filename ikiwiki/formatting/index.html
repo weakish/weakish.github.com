@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="must-revalidate" />
+<title>Formatting wiki pages</title>
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css" type="text/css" />
+
+
+
+
+<meta name="robots" content="noindex, follow" />
+</head>
+<body>
+
+<article class="page">
+
+<section class="pageheader">
+<header class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../../">weakish</a>/ 
+
+<a href="../">ikiwiki</a>/ 
+
+</span>
+<span class="title">
+Formatting wiki pages
+
+</span>
+</span>
+
+
+<form method="get" action="http://www.google.com/search" id="searchform">
+ <div>
+  <input name="sitesearch" value="http://weakish.github.com/" type="hidden" />
+  <input name="q" value="" id="searchbox" size="16" maxlength="255" type="text"
+  placeholder="search" />
+ </div>
+</form>
+
+
+</header>
+
+
+<nav class="actions">
+<ul>
+
+
+<li><a href="../../recentchanges/">RecentChanges</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+
+
+
+
+</section>
+
+
+
+<div id="pagebody">
+
+<section id="content">
+<p>Text on this wiki is, by default, written in a form very close to how you
+might write text for an email message. This style of text formatting is
+called <a href="../markdown/">MarkDown</a>, and it works like this:</p>
+
+<p>Leave blank lines between paragraphs.</p>
+
+<p>You can <em>*emphasise*</em> or <strong>**strongly emphasise**</strong> text by placing it
+in single or double asterisks.</p>
+
+<p>To create a list, start each line with an asterisk:</p>
+
+<ul>
+<li>&#34;* this is my list&#34;</li>
+<li>&#34;* another item&#34;</li>
+</ul>
+
+<p>To make a numbered list, start each line with a number (any number will
+do) followed by a period:</p>
+
+<ol>
+<li>&#34;1. first line&#34;</li>
+<li>&#34;2. second line&#34;</li>
+<li>&#34;2. third line&#34;</li>
+</ol>
+
+<p>To create a header, start a line with one or more <code>#</code> characters followed
+by a space and the header text. The number of <code>#</code> characters controls the
+size of the header:</p>
+
+<h1># h1</h1>
+
+<h2>## h2</h2>
+
+<h3>### h3</h3>
+
+<h4>#### h4</h4>
+
+<h5>##### h5</h5>
+
+<h6>###### h6</h6>
+
+<p>To create a horizontal rule, just write three or more dashes or stars on
+their own line:</p>
+
+<hr />
+
+<p>To quote someone, prefix the quote with &#34;&#62;&#34;:</p>
+
+<blockquote>
+  <p>To be or not to be,
+that is the question.</p>
+</blockquote>
+
+<p>To write a code block, indent each line with a tab or 4 spaces:</p>
+
+<pre><code>10 PRINT &#34;Hello, world!&#34;
+20 GOTO 10
+</code></pre>
+
+<p>To link to an url or email address, you can just put the
+url in angle brackets: &#60;<a href="http://ikiwiki.info">http://ikiwiki.info</a>&#62;, or you can use the
+form [link text](url)</p>
+
+<hr />
+
+<p>In addition to basic html formatting using <a href="../markdown/">MarkDown</a>, this wiki lets
+you use the following additional features:</p>
+
+<ul>
+<li><p>To link to another page on the wiki, place the page&#39;s name inside double
+square brackets. So you would use <code>[[WikiLink]]</code> to link to <a href="../wikilink/">WikiLink</a>.</p></li>
+<li><p>Use <a href="../../shortcuts/">shortcuts</a> to link to common resources.</p>
+
+<p>[[!wikipedia  War_of_1812]]</p></li>
+<li><p>Create and fill out <a href="../../templates/">templates</a> for repeated chunks of
+parameterized wiki text.</p></li>
+<li><p>Insert various <a href="../directive/">directives</a> onto a page to perform useful
+actions.
+For example, you can:</p>
+
+<ul>
+<li>Add a table of contents to a page:</li>
+</ul>
+
+<p>[[!toc ]]</p>
+
+<ul>
+<li>Change the title of a page:</li>
+</ul>
+
+<p>[[!meta  title=&#34;full page title&#34;]]</p>
+
+<ul>
+<li>Create a blog by inlining a set of pages:</li>
+</ul>
+
+<p>[[!inline  pages=&#34;blog/*&#34;]]</p>
+
+<p>Full list of <a href="../directive/">directives</a> enabled for this wiki:</p>
+
+<ul class="listdirectives"><li class="listdirectives"><a href="../directive/aggregate/">aggregate</a></li><li class="listdirectives"><a href="../directive/brokenlinks/">brokenlinks</a></li><li class="listdirectives"><a href="../directive/format/">format</a></li><li class="listdirectives"><a href="../directive/graph/">graph</a></li><li class="listdirectives"><a href="../directive/if/">if</a></li><li class="listdirectives"><a href="../directive/inline/">inline</a></li><li class="listdirectives"><a href="../directive/linkmap/">linkmap</a></li><li class="listdirectives"><a href="../directive/listdirectives/">listdirectives</a></li><li class="listdirectives"><a href="../directive/map/">map</a></li><li class="listdirectives"><a href="../directive/meta/">meta</a></li><li class="listdirectives"><a href="../directive/orphans/">orphans</a></li><li class="listdirectives"><a href="../directive/pagestats/">pagestats</a></li><li class="listdirectives"><a href="../directive/pagetemplate/">pagetemplate</a></li><li class="listdirectives"><a href="../directive/shortcut/">shortcut</a></li><li class="listdirectives"><a href="../directive/table/">table</a></li><li class="listdirectives"><a href="../directive/tag/">tag</a></li><li class="listdirectives"><a href="../directive/taglink/">taglink</a></li><li class="listdirectives"><a href="../directive/template/">template</a></li><li class="listdirectives"><a href="../directive/teximg/">teximg</a></li><li class="listdirectives"><a href="../directive/toc/">toc</a></li><li class="listdirectives"><a href="../directive/version/">version</a></li></ul></li>
+</ul>
+
+</section>
+
+
+
+</div>
+
+<footer id="footer" class="pagefooter">
+
+<nav id="pageinfo">
+
+
+
+
+<nav id="backlinks">
+Links:
+
+<a href="../">ikiwiki</a>
+
+<a href="../markdown/">markdown</a>
+
+
+</nav>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <time datetime="2009-08-26T17:05:29Z">Thu 27 Aug 2009 01:05:29 AM CST</time>
+<!-- Created <time datetime="2009-12-24T05:37:17Z" pubdate="pubdate">Thu 24 Dec 2009 01:37:17 PM CST</time> -->
+</div>
+
+</nav>
+
+
+<!-- from weakish -->
+</footer>
+
+</article>
+
+</body>
+</html>

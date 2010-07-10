@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="must-revalidate" />
+<title>linkmap</title>
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css" type="text/css" />
+
+
+
+
+<meta name="robots" content="noindex, follow" />
+</head>
+<body>
+
+<article class="page">
+
+<section class="pageheader">
+<header class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../../../">weakish</a>/ 
+
+<a href="../../">ikiwiki</a>/ 
+
+<a href="../">directive</a>/ 
+
+</span>
+<span class="title">
+linkmap
+
+</span>
+</span>
+
+
+<form method="get" action="http://www.google.com/search" id="searchform">
+ <div>
+  <input name="sitesearch" value="http://weakish.github.com/" type="hidden" />
+  <input name="q" value="" id="searchbox" size="16" maxlength="255" type="text"
+  placeholder="search" />
+ </div>
+</form>
+
+
+</header>
+
+
+<nav class="actions">
+<ul>
+
+
+<li><a href="../../../recentchanges/">RecentChanges</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+
+
+
+
+</section>
+
+
+
+<div id="pagebody">
+
+<section id="content">
+<p>The <code>linkmap</code> directive is supplied by the <a href="http://ikiwiki.info/plugins/linkmap/">linkmap</a> plugin.</p>
+
+<p>This directive uses <a href="http://www.graphviz.org/">graphviz</a> to generate a
+graph showing the links between a set of pages in the wiki. Example usage:</p>
+
+<pre><code>[[!linkmap  pages=&#34;* and !blog/* and !*/Discussion&#34;]]
+</code></pre>
+
+<p>Only links between mapped pages will be shown; links pointing to or from
+unmapped pages will be omitted. If the pages to include are not specified,
+the links between all pages (and other files) in the wiki are mapped. </p>
+
+<p>Here are descriptions of all the supported parameters to the <code>linkmap</code>
+directive:</p>
+
+<ul>
+<li><code>pages</code> - A <a href="../../pagespec/">PageSpec</a> of the pages to map.</li>
+<li><code>height</code>, <code>width</code> - Limit the size of the map to a given height and width,
+in inches. Both must be specified for the limiting to take effect, otherwise
+the map&#39;s size is not limited.</li>
+<li><code>connected</code> - Controls whether to include pages on the map that link to
+no other pages (connected=no, the default), or to only show pages that
+link to others (connected=yes).</li>
+</ul>
+
+<p>For best results, only a small set of pages should be mapped, since
+otherwise the map can become very large, unwieldy, and complicated.
+If too many pages are included, the map may get so large that graphviz
+cannot render it. Using the <code>connected</code> parameter is a good way to prune
+out pages that clutter the map.</p>
+
+</section>
+
+
+
+</div>
+
+<footer id="footer" class="pagefooter">
+
+<nav id="pageinfo">
+
+
+
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <time datetime="2010-06-10T20:08:49Z">Fri 11 Jun 2010 04:08:49 AM CST</time>
+<!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
+</div>
+
+</nav>
+
+
+<!-- from weakish -->
+</footer>
+
+</article>
+
+</body>
+</html>

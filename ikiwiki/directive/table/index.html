@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="must-revalidate" />
+<title>table</title>
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css" type="text/css" />
+
+
+
+
+<meta name="robots" content="noindex, follow" />
+</head>
+<body>
+
+<article class="page">
+
+<section class="pageheader">
+<header class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../../../">weakish</a>/ 
+
+<a href="../../">ikiwiki</a>/ 
+
+<a href="../">directive</a>/ 
+
+</span>
+<span class="title">
+table
+
+</span>
+</span>
+
+
+<form method="get" action="http://www.google.com/search" id="searchform">
+ <div>
+  <input name="sitesearch" value="http://weakish.github.com/" type="hidden" />
+  <input name="q" value="" id="searchbox" size="16" maxlength="255" type="text"
+  placeholder="search" />
+ </div>
+</form>
+
+
+</header>
+
+
+<nav class="actions">
+<ul>
+
+
+<li><a href="../../../recentchanges/">RecentChanges</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+
+
+
+
+</section>
+
+
+
+<div id="pagebody">
+
+<section id="content">
+<p>The <code>table</code> directive is supplied by the <a href="http://ikiwiki.info/plugins/table/">table</a> plugin.</p>
+
+<p>This directive can build HTML tables from data in CSV (comma-separated values)
+or DSV (delimiter-separated values) format.</p>
+
+<h2>examples</h2>
+
+<pre><code>[[!table  data=&#34;&#34;&#34;
+Customer |Amount
+Fulanito |134,34
+Menganito|234,56
+Menganito|234,56
+&#34;&#34;&#34;]]
+
+[[!table  class=&#34;book_record&#34; format=csv file=&#34;data/books/record1&#34;]]
+</code></pre>
+
+<p>In this second example the <code>record1</code> page should be similar to:</p>
+
+<pre><code>&#34;Title&#34;,&#34;Perl Best Practices&#34;
+&#34;Author&#34;,&#34;Damian Conway&#34;
+&#34;Publisher&#34;,&#34;O’Reilly&#34;
+</code></pre>
+
+<p>To make a cell span multiple columns, follow it with one or more empty
+cells. For example:</p>
+
+<pre><code>[[!table  data=&#34;&#34;&#34;
+left||right|
+a|b|c|d
+this cell spans 4 columns|||
+&#34;&#34;&#34;]]
+</code></pre>
+
+<h2>usage</h2>
+
+<ul>
+<li><code>data</code> - Values for the table.</li>
+<li><code>file</code> - A file in the wiki containing the data.</li>
+<li><code>format</code> - The format of the data, either &#34;csv&#34;, &#34;dsv&#34;, or &#34;auto&#34;
+(the default).</li>
+<li><code>delimiter</code> - The character used to separate fields. By default,
+DSV format uses a pipe (<code>|</code>), and CSV uses a comma (<code>,</code>).</li>
+<li><code>class</code> - A CSS class for the table html element.</li>
+<li><code>header</code> - By default, or if set to &#34;row&#34;, the first data line is used
+as the table header. Set it to &#34;no&#34; to make a table without a header, or
+&#34;column&#34; to make the first column be the header.</li>
+</ul>
+
+<p>For tab-delimited tables (often obtained by copying and pasting from HTML
+or a spreadsheet), <code>delimiter</code> must be set to a literal tab character. These
+are difficult to type in most web browsers - copying and pasting one from
+the table data is likely to be the easiest way.</p>
+
+</section>
+
+
+
+</div>
+
+<footer id="footer" class="pagefooter">
+
+<nav id="pageinfo">
+
+
+
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <time datetime="2010-06-10T20:08:49Z">Fri 11 Jun 2010 04:08:49 AM CST</time>
+<!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
+</div>
+
+</nav>
+
+
+<!-- from weakish -->
+</footer>
+
+</article>
+
+</body>
+</html>

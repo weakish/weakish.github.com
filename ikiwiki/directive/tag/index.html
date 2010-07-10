@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="must-revalidate" />
+<title>tag</title>
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css" type="text/css" />
+
+
+
+
+<meta name="robots" content="noindex, follow" />
+</head>
+<body>
+
+<article class="page">
+
+<section class="pageheader">
+<header class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../../../">weakish</a>/ 
+
+<a href="../../">ikiwiki</a>/ 
+
+<a href="../">directive</a>/ 
+
+</span>
+<span class="title">
+tag
+
+</span>
+</span>
+
+
+<form method="get" action="http://www.google.com/search" id="searchform">
+ <div>
+  <input name="sitesearch" value="http://weakish.github.com/" type="hidden" />
+  <input name="q" value="" id="searchbox" size="16" maxlength="255" type="text"
+  placeholder="search" />
+ </div>
+</form>
+
+
+</header>
+
+
+<nav class="actions">
+<ul>
+
+
+<li><a href="../../../recentchanges/">RecentChanges</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+
+
+
+
+</section>
+
+
+
+<div id="pagebody">
+
+<section id="content">
+<p>The <code>tag</code> and <code>taglink</code> directives are supplied by the <a href="http://ikiwiki.info/plugins/tag/">tag</a> plugin.</p>
+
+<p>These directives allow tagging pages. List tags as follows:</p>
+
+<pre><code>[[!tag  tech life linux]]
+</code></pre>
+
+<p>The tags work the same as if you had put a (hidden) <a href="../../wikilink/">WikiLink</a> on
+the page for each tag, so you can use a <a href="../../pagespec/">PageSpec</a> match all
+pages that are tagged with a given tag, for example. The tags will also
+show up on blog entries and at the bottom of the tagged pages, as well as
+in RSS and Atom feeds.</p>
+
+<p>If you want a visible <a href="../../wikilink/">WikiLink</a> along with the tag, use taglink
+instead:</p>
+
+<pre><code>[[!taglink  foo]]
+[[!taglink  tagged_as_foo|foo]]
+</code></pre>
+
+<p>Note that if the wiki is configured to use a tagbase, then the tags will be
+located under a base directory, such as &#34;tags/&#34;. This is a useful way to
+avoid having to write the full path to tags, if you want to keep them
+grouped together out of the way. Also, since ikiwiki then knows where to put
+tags, it will automatically create tag pages when new tags are used.</p>
+
+<p>Bear in mind that specifying a tagbase means you will need to incorporate it
+into the <code>link()</code> <a href="../../pagespec/">PageSpec</a> you use: e.g., if your tagbase is
+<code>tag</code>, you would match pages tagged &#34;foo&#34; with <code>link(tag/foo)</code>.</p>
+
+<p>If you want to override the tagbase for a particular tag, you can use
+something like this:</p>
+
+<pre><code>[[!tag  /foo]]
+[[!taglink  /foo]]
+</code></pre>
+
+</section>
+
+
+
+</div>
+
+<footer id="footer" class="pagefooter">
+
+<nav id="pageinfo">
+
+
+
+
+<nav id="backlinks">
+Links:
+
+<a href="../aggregate/">aggregate</a>
+
+<a href="../pagestats/">pagestats</a>
+
+
+</nav>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <time datetime="2010-06-10T20:08:49Z">Fri 11 Jun 2010 04:08:49 AM CST</time>
+<!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
+</div>
+
+</nav>
+
+
+<!-- from weakish -->
+</footer>
+
+</article>
+
+</body>
+</html>

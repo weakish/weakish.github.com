@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="must-revalidate" />
+<title>pagestats</title>
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css" type="text/css" />
+
+
+
+
+<meta name="robots" content="noindex, follow" />
+</head>
+<body>
+
+<article class="page">
+
+<section class="pageheader">
+<header class="header">
+<span>
+<span class="parentlinks">
+
+<a href="../../../">weakish</a>/ 
+
+<a href="../../">ikiwiki</a>/ 
+
+<a href="../">directive</a>/ 
+
+</span>
+<span class="title">
+pagestats
+
+</span>
+</span>
+
+
+<form method="get" action="http://www.google.com/search" id="searchform">
+ <div>
+  <input name="sitesearch" value="http://weakish.github.com/" type="hidden" />
+  <input name="q" value="" id="searchbox" size="16" maxlength="255" type="text"
+  placeholder="search" />
+ </div>
+</form>
+
+
+</header>
+
+
+<nav class="actions">
+<ul>
+
+
+<li><a href="../../../recentchanges/">RecentChanges</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</nav>
+
+
+
+
+</section>
+
+
+
+<div id="pagebody">
+
+<section id="content">
+<p>The <code>pagestats</code> directive is supplied by the <a href="http://ikiwiki.info/plugins/pagestats/">pagestats</a> plugin.</p>
+
+<p>This directive can generate stats about how pages link to each other. It can
+produce either a tag cloud, or a table counting the number of links to each
+page.</p>
+
+<p>Here&#39;s how to use it to create a <a href="../tag/">tag</a> cloud, with tags sized based
+on frequency of use:</p>
+
+<pre><code>[[!pagestats  pages=&#34;tags/*&#34;]]
+</code></pre>
+
+<p>Here&#39;s how to create a list of tags, sized by use as they would be in a
+cloud.</p>
+
+<pre><code>[[!pagestats  style=&#34;list&#34; pages=&#34;tags/*&#34;]]
+</code></pre>
+
+<p>And here&#39;s how to create a table of all the pages on the wiki:</p>
+
+<pre><code>[[!pagestats  style=&#34;table&#34;]]
+</code></pre>
+
+<p>The optional <code>among</code> parameter limits the pages whose outgoing links are
+considered. For instance, to display a cloud of tags used on blog
+entries, while ignoring other pages that use those tags, you could use:</p>
+
+<pre><code>[[!pagestats  pages=&#34;tags/*&#34; among=&#34;blog/posts/*&#34;]]
+</code></pre>
+
+<p>Or to display a cloud of tags related to Linux, you could use:</p>
+
+<pre><code>[[!pagestats  pages=&#34;tags/* and not tags/linux&#34; among=&#34;tagged(linux)&#34;]]
+</code></pre>
+
+<p>The optional <code>show</code> parameter limits display to the specified number of
+pages. For instance, to show a table of the top ten pages with the most
+links:</p>
+
+<pre><code>[[!pagestats  style=&#34;table&#34; show=&#34;10&#34;]]
+</code></pre>
+
+<p>The optional <code>class</code> parameter can be used to control the class
+of the generated tag cloud <code>div</code> or page stats <code>table</code>.</p>
+
+</section>
+
+
+
+</div>
+
+<footer id="footer" class="pagefooter">
+
+<nav id="pageinfo">
+
+
+
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <time datetime="2010-06-10T20:08:49Z">Fri 11 Jun 2010 04:08:49 AM CST</time>
+<!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
+</div>
+
+</nav>
+
+
+<!-- from weakish -->
+</footer>
+
+</article>
+
+</body>
+</html>
