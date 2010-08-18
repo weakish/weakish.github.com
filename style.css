@@ -62,10 +62,9 @@ nav {
 	margin-top: .4em;
 }
 
-.pagefooter {
-	clear: both;
-}
-.inlinefooter {
+.pagefooter,
+.inlinefooter,
+.comments {
 	clear: both;
 }
 
@@ -90,6 +89,10 @@ nav {
 	font-size: 80%;
 	caption-side: bottom;
 	text-align: center;
+}
+
+img.img {
+	margin: 0.5ex;
 }
 
 .align-left {
@@ -337,13 +340,6 @@ label.block {
 }
 label.inline {    
 	display: inline;
-}
-ol.form {
-	list-style: none;
-	padding: 0;
-}
-li.form {
-	padding-bottom: 1em;
 }
 input#openid_identifier {
 	background: url(wikiicons/openidlogin-bg.gif) no-repeat;

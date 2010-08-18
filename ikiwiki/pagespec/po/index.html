@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Cache-Control" content="must-revalidate" />
 <title>po</title>
 
 <link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
@@ -75,12 +74,19 @@ wiki:</p>
 specified as a ISO639-1 (two-letter) language code.</li>
 <li>&#34;<code>currentlang()</code>&#34; - tests whether a page is written in the same
 language as the current page.</li>
+<li>&#34;<code>needstranslation()</code>&#34; - tests whether a page needs translation
+work. Only slave pages match this PageSpec. A minimum target
+translation percentage can optionally be passed as an integer
+parameter: &#34;<code>needstranslation(50)</code>&#34; matches only pages less than 50%
+translated.</li>
 </ul>
 
 <p>Note that every non-po page is considered to be written in
 <code>po_master_language</code>, as specified in <code>ikiwiki.setup</code>.</p>
 
 </section>
+
+
 
 
 
@@ -99,7 +105,7 @@ language as the current page.</li>
 
 
 <div class="pagedate">
-Last edited <time datetime="2010-02-06T21:29:04Z">Sun 07 Feb 2010 05:29:04 AM CST</time>
+Last edited <time datetime="2010-07-12T19:42:30Z">Tue 13 Jul 2010 03:42:30 AM CST</time>
 <!-- Created <time datetime="2009-12-24T05:37:17Z" pubdate="pubdate">Thu 24 Dec 2009 01:37:17 PM CST</time> -->
 </div>
 
