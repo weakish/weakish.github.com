@@ -21,7 +21,7 @@ var providers_large = {
 	icon: 'wikiicons/openidlogin-bg.gif',
         label: 'Enter your OpenID:',
         url: null
-    },
+    }
 };
 var providers_small = {
     livejournal: {
@@ -65,7 +65,7 @@ var providers_small = {
 	icon: 'http://verisign.com/favicon.ico',
         label: 'Enter your Verisign username:',
         url: 'http://{username}.pip.verisignlabs.com/'
-    },
+    }
 };
 var providers = $.extend({}, providers_large, providers_small);
 
