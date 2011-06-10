@@ -21,7 +21,7 @@ Upgrade system: (equivalent to `apt-get update && apt-get upgrade` on debian)
 
 Add more packages:
 
-http://wiki.centos.org/AdditionalResources/Repositories/RPMForge?action=show&redirect=Repositories%2FRPMForge
+http://wiki.centos.org/AdditionalResources/Repositories/RPMForge
 
 Unlike Debian, Centos's official package repo is very limited.
 
