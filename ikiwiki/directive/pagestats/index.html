@@ -71,37 +71,37 @@ page.</p>
 <p>Here&#39;s how to use it to create a <a href="../tag/">tag</a> cloud, with tags sized based
 on frequency of use:</p>
 
-<pre><code>[[!pagestats  pages=&#34;tags/*&#34;]]
+<pre><code>[[!pagestats  pages=&quot;tags/*&quot;]]
 </code></pre>
 
 <p>Here&#39;s how to create a list of tags, sized by use as they would be in a
 cloud.</p>
 
-<pre><code>[[!pagestats  style=&#34;list&#34; pages=&#34;tags/*&#34;]]
+<pre><code>[[!pagestats  style=&quot;list&quot; pages=&quot;tags/*&quot;]]
 </code></pre>
 
 <p>And here&#39;s how to create a table of all the pages on the wiki:</p>
 
-<pre><code>[[!pagestats  style=&#34;table&#34;]]
+<pre><code>[[!pagestats  style=&quot;table&quot;]]
 </code></pre>
 
 <p>The optional <code>among</code> parameter limits the pages whose outgoing links are
 considered. For instance, to display a cloud of tags used on blog
 entries, while ignoring other pages that use those tags, you could use:</p>
 
-<pre><code>[[!pagestats  pages=&#34;tags/*&#34; among=&#34;blog/posts/*&#34;]]
+<pre><code>[[!pagestats  pages=&quot;tags/*&quot; among=&quot;blog/posts/*&quot;]]
 </code></pre>
 
 <p>Or to display a cloud of tags related to Linux, you could use:</p>
 
-<pre><code>[[!pagestats  pages=&#34;tags/* and not tags/linux&#34; among=&#34;tagged(linux)&#34;]]
+<pre><code>[[!pagestats  pages=&quot;tags/* and !tags/linux&quot; among=&quot;tagged(linux)&quot;]]
 </code></pre>
 
 <p>The optional <code>show</code> parameter limits display to the specified number of
 pages. For instance, to show a table of the top ten pages with the most
 links:</p>
 
-<pre><code>[[!pagestats  style=&#34;table&#34; show=&#34;10&#34;]]
+<pre><code>[[!pagestats  style=&quot;table&quot; show=&quot;10&quot;]]
 </code></pre>
 
 <p>The optional <code>class</code> parameter can be used to control the class
@@ -128,7 +128,7 @@ of the generated tag cloud <code>div</code> or page stats <code>table</code>.</p
 
 
 <div class="pagedate">
-Last edited <time datetime="2010-04-15T18:29:14Z">Fri 16 Apr 2010 02:29:14 AM CST</time>
+Last edited <time datetime="2011-04-17T21:57:23Z">Mon 18 Apr 2011 05:57:23 AM CST</time>
 <!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
 </div>
 

@@ -75,7 +75,7 @@ fill out the template.</p>
 
 <h2>Example</h2>
 
-<pre><code>[[!template  id=note text=&#34;&#34;&#34;Here is the text to insert into my note.&#34;&#34;&#34;]]
+<pre><code>[[!template  id=note text=&quot;&quot;&quot;Here is the text to insert into my note.&quot;&quot;&quot;]]
 </code></pre>
 
 <p>This fills out the <code>note</code> template, filling in the <code>text</code> field with
@@ -88,11 +88,11 @@ page outside the template. Triple-quoting the value even allows quotes to
 be included in it. Combined with multi-line quoted values, this allows for
 large chunks of marked up text to be embedded into a template:</p>
 
-<pre><code>    [[!template  id=foo name=&#34;Sally&#34; color=&#34;green&#34; age=8 notes=&#34;&#34;&#34;
+<pre><code>    [[!template  id=foo name=&quot;Sally&quot; color=&quot;green&quot; age=8 notes=&quot;&quot;&quot;
     * [[Charley]]&#39;s sister.
-    * &#34;I want to be an astronaut when I grow up.&#34;
+    * &quot;I want to be an astronaut when I grow up.&quot;
     * Really 8 and a half.
-    &#34;&#34;&#34;]]
+    &quot;&quot;&quot;]]
 </code></pre>
 
 <h2>Creating a template</h2>
@@ -100,13 +100,18 @@ large chunks of marked up text to be embedded into a template:</p>
 <p>The template is a regular wiki page, located in the <code>templates/</code>
 subdirectory inside the source directory of the wiki.</p>
 
-<p>(Alternatively, templates can be stored in a directory outside the wiki,
-as files with the extension &#34;.tmpl&#34;.
-By default, these are searched for in <code>/usr/share/ikiwiki/templates</code>;
+<p>Alternatively, templates can be stored in a directory outside the wiki,
+as files with the extension &quot;.tmpl&quot;.
+By default, these are searched for in <code>/usr/share/ikiwiki/templates</code>,
 the <code>templatedir</code> setting can be used to make another directory be searched
-first.)</p>
+first.  When referring to templates outside the wiki source directory, the &quot;id&quot;
+parameter is not interpreted as a pagespec, and you must include the full filename
+of the template page, including the &quot;.tmpl&quot; extension. E.g.:</p>
 
-<p>The template uses the syntax used by the <a href="http://search.cpan.org/search?mode=dist&#38;query=HTML%3A%3ATemplate">HTML::Template</a> perl
+<pre><code>[[!template  id=blogpost.tmpl]]
+</code></pre>
+
+<p>The template uses the syntax used by the <a href="http://search.cpan.org/search?mode=dist&amp;query=HTML%3A%3ATemplate">HTML::Template</a> perl
 module, which allows for some fairly complex things to be done. Consult its
 documentation for the full syntax, but all you really need to know are a
 few things:</p>
@@ -115,31 +120,31 @@ few things:</p>
 <li>Each parameter you pass to the template directive will generate a 
 template variable. There are also some pre-defined variables like PAGE
 and BASENAME.</li>
-<li>To insert the value of a variable, use <code>&#60;TMPL_VAR variable&#62;</code>. Wiki markup
+<li>To insert the value of a variable, use <code>&lt;TMPL_VAR variable&gt;</code>. Wiki markup
 in the value will first be converted to html.</li>
 <li>To insert the raw value of a variable, with wiki markup not yet converted
-to html, use <code>&#60;TMPL_VAR raw_variable&#62;</code>.</li>
+to html, use <code>&lt;TMPL_VAR raw_variable&gt;</code>.</li>
 <li>To make a block of text conditional on a variable being set use
-<code>&#60;TMPL_IF variable&#62;text&#60;/TMPL_IF&#62;</code>.</li>
+<code>&lt;TMPL_IF variable&gt;text&lt;/TMPL_IF&gt;</code>.</li>
 <li>To use one block of text if a variable is set and a second if it&#39;s not,
-use <code>&#60;TMPL_IF variable&#62;text&#60;TMPL_ELSE&#62;other text&#60;/TMPL_IF&#62;</code></li>
+use <code>&lt;TMPL_IF variable&gt;text&lt;TMPL_ELSE&gt;other text&lt;/TMPL_IF&gt;</code></li>
 </ul>
 
 <p>Here&#39;s a sample template:</p>
 
-<pre><code>    &#60;span class=&#34;infobox&#34;&#62;
-    Name: [[&#60;TMPL_VAR raw_name&#62;]]&#60;br /&#62;
-    Age: &#60;TMPL_VAR age&#62;&#60;br /&#62;
-    &#60;TMPL_IF color&#62;
-    Favorite color: &#60;TMPL_VAR color&#62;&#60;br /&#62;
-    &#60;TMPL_ELSE&#62;
-    No favorite color.&#60;br /&#62;
-    &#60;/TMPL_IF&#62;
-    &#60;TMPL_IF notes&#62;
-    &#60;hr /&#62;
-    &#60;TMPL_VAR notes&#62;
-    &#60;/TMPL_IF&#62;
-    &#60;/span&#62;
+<pre><code>    &lt;span class=&quot;infobox&quot;&gt;
+    Name: [[&lt;TMPL_VAR raw_name&gt;]]&lt;br /&gt;
+    Age: &lt;TMPL_VAR age&gt;&lt;br /&gt;
+    &lt;TMPL_IF color&gt;
+    Favorite color: &lt;TMPL_VAR color&gt;&lt;br /&gt;
+    &lt;TMPL_ELSE&gt;
+    No favorite color.&lt;br /&gt;
+    &lt;/TMPL_IF&gt;
+    &lt;TMPL_IF notes&gt;
+    &lt;hr /&gt;
+    &lt;TMPL_VAR notes&gt;
+    &lt;/TMPL_IF&gt;
+    &lt;/span&gt;
 </code></pre>
 
 <p>The filled out template will be formatted the same as the rest of the page
@@ -147,7 +152,7 @@ that contains it, so you can include WikiLinks and all other forms of wiki
 markup in the template. Note though that such WikiLinks will not show up as
 backlinks to the page that uses the template.</p>
 
-<p>Note the use of &#34;raw_name&#34; inside the <a href="../../wikilink/">WikiLink</a> generator in the
+<p>Note the use of &quot;raw_name&quot; inside the <a href="../../wikilink/">WikiLink</a> generator in the
 example above. This ensures that if the name contains something that might
 be mistaken for wiki markup, it&#39;s not converted to html before being
 processed as a <a href="../../wikilink/">WikiLink</a>.</p>
@@ -172,6 +177,8 @@ Links:
 
 <a href="../edittemplate/">edittemplate</a>
 
+<a href="../if/">if</a>
+
 <a href="../pagetemplate/">pagetemplate</a>
 
 
@@ -183,7 +190,7 @@ Links:
 
 
 <div class="pagedate">
-Last edited <time datetime="2010-05-06T02:47:37Z">Thu 06 May 2010 10:47:37 AM CST</time>
+Last edited <time datetime="2010-11-15T14:41:40Z">Mon 15 Nov 2010 10:41:40 PM CST</time>
 <!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
 </div>
 

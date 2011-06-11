@@ -59,30 +59,29 @@ templates
 
 <section id="content">
 <p><a href="../ikiwiki/">Ikiwiki</a> uses many templates for many purposes. By editing its templates,
-you can fully customise this site.</p>
-
-<p>Templates are located in <code>/usr/share/ikiwiki/templates</code> by default;
-the <code>templatedir</code> setting can be used to make another directory be
-searched first. Customised templates can also be placed inside the
-&#34;templates/&#34; directory in your wiki&#39;s source.</p>
+you can fully customise its appearance, and avoid duplicate content.</p>
 
 <p>Ikiwiki uses the HTML::Template module as its template engine. This
 supports things like conditionals and loops in templates and is pretty
 easy to learn. All you really need to know to modify templates is this:</p>
 
 <ul>
-<li>To insert the value of a template variable, use <code>&#60;TMPL_VAR variable&#62;</code>.</li>
+<li>To insert the value of a template variable, use <code>&lt;TMPL_VAR variable&gt;</code>.</li>
 <li>To make a block of text conditional on a variable being set use
-<code>&#60;TMPL_IF variable&#62;text&#60;/TMPL_IF&#62;</code>.</li>
+<code>&lt;TMPL_IF variable&gt;text&lt;/TMPL_IF&gt;</code>.</li>
 <li>To use one block of text if a variable is set and a second if it&#39;s not,
-use <code>&#60;TMPL_IF variable&#62;text&#60;TMPL_ELSE&#62;other text&#60;/TMPL_IF&#62;</code></li>
+use <code>&lt;TMPL_IF variable&gt;text&lt;TMPL_ELSE&gt;other text&lt;/TMPL_IF&gt;</code></li>
 </ul>
 
 <h2>template pages</h2>
 
+<p>Template pages are regular wiki pages that are used as templates for other
+pages.</p>
+
 <p>The <a href="http://ikiwiki.info/ikiwiki/directive/template/">template directive</a> allows
-wiki pages to be used as templates, filled out and inserted into other
-pages in the wiki.</p>
+template pages to be filled out and inserted into other pages in the wiki.</p>
+
+<p>These template pages are currently available:</p>
 
 <p>
 
@@ -96,14 +95,24 @@ pages in the wiki.</p>
 </p>
 
 
-<h2>wiki templates</h2>
+<h2>template files</h2>
 
-<p>These templates are used to build the wiki. The aim is to keep almost all
-html out of ikiwiki and in the templates.</p>
+<p>Template files are unlike template pages in that they have the extension
+<code>.tmpl</code>. Template files are used extensively by Ikiwiki to generate html.
+They can contain html that would not normally be allowed on a wiki page.</p>
+
+<p>Template files are located in <code>/usr/share/ikiwiki/templates</code> by default;
+the <code>templatedir</code> setting can be used to make another directory be
+searched first. Customised template files can also be placed inside the
+&quot;templates/&quot; directory in your wiki&#39;s source -- files placed there override
+ones in the <code>templatedir</code>.</p>
+
+<p>Here is a full list of the template files used:</p>
 
 <ul>
 <li><code>page.tmpl</code> - Used for displaying all regular wiki pages. This is the
-key template to customise.   (The <a href="http://ikiwiki.info/ikiwiki/directive/pagetemplate/">pagetemplate directive</a>
+key template to customise to change the look and feel of Ikiwiki.
+(The <a href="http://ikiwiki.info/ikiwiki/directive/pagetemplate/">pagetemplate directive</a>
 can be used to make a page use a different template than <code>page.tmpl</code>.)</li>
 <li><code>rsspage.tmpl</code> - Used for generating rss feeds for blogs.</li>
 <li><code>rssitem.tmpl</code> - Used for generating individual items on rss feeds.</li>
@@ -131,7 +140,7 @@ make calendar archive pages.</li>
 <li><code>editpage.tmpl</code>, <code>editconflict.tmpl</code>, <code>editcreationconflict.tmpl</code>,
 <code>editfailedsave.tmpl</code>, <code>editpagegone.tmpl</code>, <code>pocreatepage.tmpl</code>,
 <code>editcomment.tmpl</code> <code>commentmoderation.tmpl</code>, <code>renamesummary.tmpl</code>,
-<code>passwordmail.tmpl</code>, <code>openid-selector.tmpl</code> - Parts of ikiwiki&#39;s user
+<code>passwordmail.tmpl</code>, <code>openid-selector.tmpl</code>, <code>revert.tmpl</code> - Parts of ikiwiki&#39;s user
 interface; do not normally need to be customised.</li>
 </ul>
 
@@ -172,7 +181,7 @@ Links:
 
 
 <div class="pagedate">
-Last edited <time datetime="2010-07-16T17:52:06Z">Sat 17 Jul 2010 01:52:06 AM CST</time>
+Last edited <time datetime="2011-02-25T18:56:16Z">Sat 26 Feb 2011 02:56:16 AM CST</time>
 <!-- Created <time datetime="2009-12-24T05:37:17Z" pubdate="pubdate">Thu 24 Dec 2009 01:37:17 PM CST</time> -->
 </div>
 

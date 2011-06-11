@@ -14,7 +14,7 @@ nav {
 
 .header {
 	margin: 0;
-	font-size: 22px;
+	font-size: 140%;
 	font-weight: bold;
 	line-height: 1em;
 	display: block;
@@ -22,7 +22,7 @@ nav {
 
 .inlineheader .author {
 	margin: 0;
-	font-size: 18px;
+	font-size: 112%;
 	font-weight: bold;
 	display: block;
 }
@@ -172,13 +172,14 @@ div.recentchanges {
 	width: 35%;
 	font-size: small;
 }
-.recentchanges .pagelinks {
+.recentchanges .pagelinks,
+.recentchanges .revert {
 	float: right;
 	margin: 0;
 	width: 60%;
 }
 
-#blogform {
+.blogform, #blogform {
 	padding: 10px 10px;
 	border: 1px solid #aaa;
 	background: #eee;
@@ -246,6 +247,9 @@ span.color {
 .comment-subject {
 	font-weight: bold;
 }
+.comment-avatar {
+	float: right;
+}
 .comment {
 	border: 1px solid #aaa;
 	padding: 3px;
@@ -273,7 +277,7 @@ div.progress-done {
 	.tags { display: none; }
 	.feedbutton { display: none; }
 	#searchform { display: none; }
-	#blogform { display: none; }
+	.blogform, #blogform { display: none; }
 	#backlinks { display: none; }
 }
 
@@ -449,6 +453,10 @@ li.L8 { list-style: upper-alpha; }
 	background: #ff9900;
 }
 
+.FlattrButton {
+	display: none;
+}
+
 /* openid selector */
 #openid_choice {
 	display: none;
@@ -480,7 +488,7 @@ a.openid_large_btn:focus {
 	outline: none;
 }
 a.openid_large_btn:focus {
-	-moz-outline-style: none;
+	outline-style: none;
 }
 .openid_selected {
 	border: 4px solid #DDD;

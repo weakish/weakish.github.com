@@ -67,9 +67,9 @@ if
 <p>With this directive, you can make text be conditionally displayed on a page.
 For example:</p>
 
-<pre><code>[[!if  test=&#34;enabled(smiley)&#34;
-      then=&#34;The smiley plugin is enabled :-)&#34;
-      else=&#34;No smiley plugin here..&#34;]]
+<pre><code>[[!if  test=&quot;enabled(smiley)&quot;
+      then=&quot;The smiley plugin is enabled :-)&quot;
+      else=&quot;No smiley plugin here..&quot;]]
 </code></pre>
 
 <p>If the specified <code>test</code> succeeds, the <code>then</code> text will be displayed,
@@ -86,7 +86,7 @@ and so on.</p>
 
 <p>If you want the <a href="../../pagespec/">PageSpec</a> to only match against the page that
 contains the conditional, rather than matching against all pages in the
-wiki, set the &#34;all&#34; parameter to &#34;no&#34;.</p>
+wiki, set the &quot;all&quot; parameter to &quot;no&quot;.</p>
 
 <p>In an <code>if</code> directive, the regular <a href="../../pagespec/">PageSpec</a> syntax is expanded
 with the following additional tests:</p>
@@ -106,7 +106,9 @@ That might be different than the name of the page that contains the
 conditional, if it&#39;s being inlined into another page.</p></li>
 <li><p>included()</p>
 
-<p>Tests whether the page is being included onto another page.</p></li>
+<p>Tests whether the page is being included onto another page, for example
+via <a href="../inline/">inline</a> or <a href="../map/">map</a>.  Note that pages inserted into other pages
+via <a href="../template/">template</a> are not matched here.</p></li>
 </ul>
 
 </section>
@@ -130,7 +132,7 @@ conditional, if it&#39;s being inlined into another page.</p></li>
 
 
 <div class="pagedate">
-Last edited <time datetime="2008-09-12T19:00:16Z">Sat 13 Sep 2008 03:00:16 AM CST</time>
+Last edited <time datetime="2010-11-15T14:46:13Z">Mon 15 Nov 2010 10:46:13 PM CST</time>
 <!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
 </div>
 

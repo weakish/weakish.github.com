@@ -64,17 +64,22 @@ more
 <section id="content">
 <p>The <code>more</code> directive is supplied by the <a href="http://ikiwiki.info/plugins/more/">more</a> plugin.</p>
 
-<p>This directive provides a way to have a &#34;more&#34; link on a post in a blog, that
+<p>This directive provides a way to have a &quot;more&quot; link on a post in a blog, that
 leads to the full version of the page. Use it like this:</p>
 
-<pre><code>[[!more  linktext=&#34;click for more&#34; text=&#34;&#34;&#34;
+<pre><code>[[!more  linktext=&quot;click for more&quot; text=&quot;&quot;&quot;
 This is the rest of my post. Not intended for people catching up on
 their blogs at 30,000 feet. Because I like to make things
 difficult.
-&#34;&#34;&#34;]]
+&quot;&quot;&quot;]]
 </code></pre>
 
-<p>If the <code>linktext</code> parameter is omitted it defaults to just &#34;more&#34;.</p>
+<p>If the <code>linktext</code> parameter is omitted it defaults to just &quot;more&quot;.</p>
+
+<p>An optional <code>pages</code> parameter can be used to specify a
+<a href="../../pagespec/">PageSpec</a>, and then the &quot;more&quot; link will only be displayed
+when the page is inlined into a page matching that PageSpec, and otherwise
+the full content shown.</p>
 
 <p>Note that you can accomplish something similar using a <a href="../toggle/">toggle</a> instead.</p>
 
@@ -99,7 +104,7 @@ difficult.
 
 
 <div class="pagedate">
-Last edited <time datetime="2008-09-11T23:17:31Z">Fri 12 Sep 2008 07:17:31 AM CST</time>
+Last edited <time datetime="2010-11-16T19:00:04Z">Wed 17 Nov 2010 03:00:04 AM CST</time>
 <!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
 </div>
 

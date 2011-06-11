@@ -71,9 +71,9 @@ some blogs.</p>
 
 <pre><code>[[!calendar  ]]
 
-[[!calendar  type=&#34;month&#34; pages=&#34;blog/* and !*/Discussion&#34;]]
+[[!calendar  type=&quot;month&quot; pages=&quot;blog/* and !*/Discussion&quot;]]
 
-[[!calendar  type=&#34;year&#34; year=&#34;2005&#34; pages=&#34;blog/* and !*/Discussion&#34;]]
+[[!calendar  type=&quot;year&quot; year=&quot;2005&quot; pages=&quot;blog/* and !*/Discussion&quot;]]
 </code></pre>
 
 <h2>setup</h2>
@@ -97,21 +97,21 @@ cron.</p>
 
 <p>An example crontab:</p>
 
-<pre><code>0 0 * * * ikiwiki-calendar ~/ikiwiki.setup &#34;posts/* and !*/Discussion&#34;
+<pre><code>0 0 * * * ikiwiki-calendar ~/ikiwiki.setup &quot;posts/* and !*/Discussion&quot;
 </code></pre>
 
 <h2>usage</h2>
 
 <ul>
 <li><code>type</code> - Used to specify the type of calendar wanted. Can be one of
-&#34;month&#34; or &#34;year&#34;. The default is a month view calendar.</li>
+&quot;month&quot; or &quot;year&quot;. The default is a month view calendar.</li>
 <li><code>pages</code> - Specifies the <a href="../../pagespec/">PageSpec</a> of pages to link to from the
-month calendar. Defaults to &#34;*&#34;.</li>
+month calendar. Defaults to &quot;*&quot;.</li>
 <li><code>archivebase</code> - Configures the base of the archives hierarchy. 
-The default is &#34;archives&#34;. Note that this default can also be overridden
+The default is &quot;archives&quot;. Note that this default can also be overridden
 for the whole wiki by setting <code>archivebase</code> in ikiwiki&#39;s setup file.
-Calendars link to pages under here, with names like &#34;2010/04&#34; and
-&#34;2010&#34;. These pages can be automatically created using the
+Calendars link to pages under here, with names like &quot;2010/04&quot; and
+&quot;2010&quot;. These pages can be automatically created using the
 <code>ikiwiki-calendar</code> program. </li>
 <li><code>year</code> - The year for which the calendar is requested. Defaults to the
 current year. Can also use -1 to refer to last year, and so on.</li>

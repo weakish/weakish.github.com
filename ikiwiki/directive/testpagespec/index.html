@@ -69,23 +69,23 @@ page, and to see the part that matches, or causes the match to fail.</p>
 
 <p>Example uses:</p>
 
-<pre><code>[[!testpagespec  pagespec=&#34;foopage and barpage&#34; match=&#34;foopage&#34;]]
+<pre><code>[[!testpagespec  pagespec=&quot;foopage and barpage&quot; match=&quot;foopage&quot;]]
 </code></pre>
 
-<p>This will print out something like &#34;no match: barpage does not match
-foopage&#34;, highlighting which part of the <a href="../../pagespec/">PageSpec</a> is causing
+<p>This will print out something like &quot;no match: barpage does not match
+foopage&quot;, highlighting which part of the <a href="../../pagespec/">PageSpec</a> is causing
 the match to fail.</p>
 
-<pre><code>[[!testpagespec  pagespec=&#34;foopage or !bar*&#34; match=&#34;barpage&#34;]]
+<pre><code>[[!testpagespec  pagespec=&quot;foopage or !bar*&quot; match=&quot;barpage&quot;]]
 </code></pre>
 
-<p>This will print out something like &#34;no match: bar* matches barpage&#34;, since
+<p>This will print out something like &quot;no match: bar* matches barpage&quot;, since
 the part of the <a href="../../pagespec/">PageSpec</a> that fails is this negated match.</p>
 
-<pre><code>[[!testpagespec  pagespec=&#34;foopage or barpage&#34; match=&#34;barpage&#34;]]
+<pre><code>[[!testpagespec  pagespec=&quot;foopage or barpage&quot; match=&quot;barpage&quot;]]
 </code></pre>
 
-<p>This will print out something like &#34;match: barpage matches barpage&#34;,
+<p>This will print out something like &quot;match: barpage matches barpage&quot;,
 indicating the part of the <a href="../../pagespec/">PageSpec</a> that caused it to match.</p>
 
 </section>

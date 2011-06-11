@@ -69,29 +69,29 @@ The most common use of inlining is generating blogs and RSS or Atom feeds.</p>
 
 <p>Example:</p>
 
-<pre><code>[[!inline  pages=&#34;blog/* and !*/Discussion&#34; show=&#34;10&#34; rootpage=&#34;blog&#34;]]
+<pre><code>[[!inline  pages=&quot;blog/* and !*/Discussion&quot; show=&quot;10&quot; rootpage=&quot;blog&quot;]]
 </code></pre>
 
 <p>Any pages that match the specified <a href="../../pagespec/">PageSpec</a> (in the example, any
-<a href="../../subpage/">SubPage</a> of &#34;blog&#34;) will be part of the blog, and the newest 10
+<a href="../../subpage/">SubPage</a> of &quot;blog&quot;) will be part of the blog, and the newest 10
 of them will appear in the page. Note that if files that are not pages
 match the <a href="../../pagespec/">PageSpec</a>, they will be included in the feed using RSS
 enclosures, which is useful for podcasting.</p>
 
 <p>The optional <code>rootpage</code> parameter tells the wiki that new posts to this
-blog should default to being <a href="../../subpage/">SubPages</a> of &#34;blog&#34;, and enables a
+blog should default to being <a href="../../subpage/">SubPages</a> of &quot;blog&quot;, and enables a
 form at the top of the blog that can be used to add new items.</p>
 
 <p>If you want your blog to have an archive page listing every post ever made
 to it, you can accomplish that like this:</p>
 
-<pre><code>[[!inline  pages=&#34;blog/* and !*/Discussion&#34; archive=&#34;yes&#34;]]
+<pre><code>[[!inline  pages=&quot;blog/* and !*/Discussion&quot; archive=&quot;yes&quot;]]
 </code></pre>
 
 <p>You can even create an automatically generated list of all the pages on the
 wiki, with the most recently added at the top, like this:</p>
 
-<pre><code>[[!inline  pages=&#34;* and !*/Discussion&#34; archive=&#34;yes&#34;]]
+<pre><code>[[!inline  pages=&quot;* and !*/Discussion&quot; archive=&quot;yes&quot;]]
 </code></pre>
 
 <p>If you want to be able to add pages to a given blog feed by tagging them,
@@ -99,12 +99,12 @@ you can do that too. To tag a page, just make it link to a page or pages
 that represent its tags. Then use the special <code>link()</code> <a href="../../pagespec/">PageSpec</a> to match
 all pages that have a given tag:</p>
 
-<pre><code>[[!inline  pages=&#34;link(life)&#34;]]
+<pre><code>[[!inline  pages=&quot;link(life)&quot;]]
 </code></pre>
 
 <p>Or include some tags and exclude others:</p>
 
-<pre><code>[[!inline  pages=&#34;link(debian) and !link(social)&#34;]]
+<pre><code>[[!inline  pages=&quot;link(debian) and !link(social)&quot;]]
 </code></pre>
 
 <h2>usage</h2>
@@ -117,13 +117,13 @@ directive. These are the commonly used ones:</p>
 <li><code>show</code> - Specify the maximum number of matching pages to inline.
 Default is 10, unless archiving, when the default is to show all.
 Set to 0 to show all matching pages.</li>
-<li><code>archive</code> - If set to &#34;yes&#34;, only list page titles and some metadata, not
+<li><code>archive</code> - If set to &quot;yes&quot;, only list page titles and some metadata, not
 full contents.</li>
 <li><code>description</code> - Sets the description of the rss feed if one is generated.
 Defaults to the name of the wiki.</li>
 <li><code>skip</code> - Specify a number of pages to skip displaying. Can be useful
 to produce a feed that only shows archived pages.</li>
-<li><code>postform</code> - Set to &#34;yes&#34; to enable a form to post new pages to a
+<li><code>postform</code> - Set to &quot;yes&quot; to enable a form to post new pages to a
 blog.</li>
 <li><code>postformtext</code> - Set to specify text that is displayed in a postform.</li>
 <li><code>rootpage</code> - Enables the postform, and allows controling where
@@ -134,19 +134,22 @@ they should be a <a href="../../subpage/">SubPage</a> of.</li>
 <p>Here are some less often needed parameters:</p>
 
 <ul>
-<li><code>actions</code> - If set to &#34;yes&#34; add links to the bottom of the inlined pages 
+<li><code>actions</code> - If set to &quot;yes&quot; add links to the bottom of the inlined pages 
 for editing and discussion (if they would be shown at the top of the page
 itself).</li>
 <li><code>rss</code> - controls generation of an rss feed. If the wiki is configured to
-generate rss feeds by default, set to &#34;no&#34; to disable. If the wiki is
-configured to <code>allowrss</code>, set to &#34;yes&#34; to enable.</li>
+generate rss feeds by default, set to &quot;no&quot; to disable. If the wiki is
+configured to <code>allowrss</code>, set to &quot;yes&quot; to enable.</li>
 <li><code>atom</code> - controls generation of an atom feed. If the wiki is configured to
-generate atom feeds by default, set to &#34;no&#34; to disable. If the wiki is
-configured to <code>allowatom</code>, set to &#34;yes&#34; to enable.</li>
-<li><code>feeds</code> - controls generation of all types of feeds. Set to &#34;no&#34; to
+generate atom feeds by default, set to &quot;no&quot; to disable. If the wiki is
+configured to <code>allowatom</code>, set to &quot;yes&quot; to enable.</li>
+<li><code>feeds</code> - controls generation of all types of feeds. Set to &quot;no&quot; to
 disable generating any feeds.</li>
-<li><code>emptyfeeds</code> - Set to &#34;no&#34; to disable generation of empty feeds.
+<li><code>emptyfeeds</code> - Set to &quot;no&quot; to disable generation of empty feeds.
 Has no effect if <code>rootpage</code> or <code>postform</code> is set.</li>
+<li><code>id</code> - Set to specify the value of the HTML <code>id</code> attribute for the
+feed links or the post form. Useful if you have multiple forms in the
+same page.</li>
 <li><code>template</code> - Specifies the template to fill out to display each inlined
 page. By default the <code>inlinepage</code> template is used, while
 the <code>archivepage</code> template is used for archives. Set this parameter to
@@ -155,12 +158,12 @@ only shows post titles or the <code>microblog</code> template, optimised for
 microblogging. Note that you should still set <code>archive=yes</code> if
 your custom template does not include the page content.</li>
 <li><code>raw</code> - Rather than the default behavior of creating a blog,
-if raw is set to &#34;yes&#34;, the page will be included raw, without additional
+if raw is set to &quot;yes&quot;, the page will be included raw, without additional
 markup around it, as if it were a literal part of the source of the 
 inlining page.</li>
 <li><code>sort</code> - Controls how inlined pages are <a href="../../pagespec/sorting/">sorted</a>.
 The default is to sort the newest created pages first.</li>
-<li><code>reverse</code> - If set to &#34;yes&#34;, causes the sort order to be reversed.</li>
+<li><code>reverse</code> - If set to &quot;yes&quot;, causes the sort order to be reversed.</li>
 <li><code>feedshow</code> - Specify the maximum number of matching pages to include in
 the rss/atom feeds. The default is the same as the <code>show</code> value above.</li>
 <li><code>feedonly</code> - Only generate the feed, do not display the pages inline on
@@ -174,11 +177,11 @@ feeds. The default is the same as the <code>pages</code> value above, and only p
 matched by that value are included, but some of those can be excluded by
 specifying a tighter <a href="../../pagespec/">PageSpec</a> here.</li>
 <li><code>guid</code> - If a URI is given here (perhaps a UUID prefixed with <code>urn:uuid:</code>),
-the Atom feed will have this as its <code>&#60;id&#62;</code>. The default is to use the URL
+the Atom feed will have this as its <code>&lt;id&gt;</code>. The default is to use the URL
 of the page containing the <code>inline</code> directive.</li>
 <li><code>feedfile</code> - Can be used to change the name of the file generated for the
 feed. This is particularly useful if a page contains multiple feeds.
-For example, set &#34;feedfile=feed&#34; to cause it to generate <code>page/feed.atom</code>
+For example, set &quot;feedfile=feed&quot; to cause it to generate <code>page/feed.atom</code>
 and/or <code>page/feed.rss</code>. This option is not supported if the wiki is
 configured not to use <code>usedirs</code>.</li>
 <li><code>pagenames</code> - If given instead of <code>pages</code>, this is interpreted as a
@@ -187,9 +190,6 @@ space-separated list of links to pages (with the same
 in exactly the order given: the <code>sort</code> and <code>pages</code> parameters cannot be used
 in conjunction with this one.</li>
 </ul>
-
-<p>A related directive is the <a href="../edittemplate/">edittemplate</a> directive, which allows
-default text for a new page to be specified.</p>
 
 </section>
 
@@ -213,6 +213,8 @@ Links:
 
 <a href="../calendar/">calendar</a>
 
+<a href="../if/">if</a>
+
 
 </nav>
 
@@ -222,7 +224,7 @@ Links:
 
 
 <div class="pagedate">
-Last edited <time datetime="2009-10-08T22:18:34Z">Fri 09 Oct 2009 06:18:34 AM CST</time>
+Last edited <time datetime="2011-01-07T08:29:13Z">Fri 07 Jan 2011 04:29:13 PM CST</time>
 <!-- Created <time datetime="2010-06-10T20:08:49Z" pubdate="pubdate">Fri 11 Jun 2010 04:08:49 AM CST</time> -->
 </div>
 

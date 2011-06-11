@@ -68,9 +68,9 @@ cutpaste
 <p>With these directives you can store and recall pieces of text in a page:</p>
 
 <ul>
-<li><code>[[!cut  id=name text=&#34;text&#34;]]</code> memorizes the text allowing to recall it
+<li><code>[[!cut  id=name text=&quot;text&quot;]]</code> memorizes the text allowing to recall it
 using the given ID.  The text being cut is not included in the output.</li>
-<li><code>[[!copy  id=name text=&#34;text&#34;]]</code> memorizes the text allowing to recall it
+<li><code>[[!copy  id=name text=&quot;text&quot;]]</code> memorizes the text allowing to recall it
 using the given ID.  The text being cut <em>is</em> included in the output.</li>
 <li><code>[[!paste  id=name]]</code> is replaced by the previously memorized text.</li>
 </ul>
@@ -83,21 +83,21 @@ follow the paste directive that uses its text.  In fact, this is quite useful
 to postpone big blocks of text like long annotations and have a more natural
 flow.  For example:</p>
 
-<pre><code>[[!toggleable  id=&#34;cut&#34; text=&#34;[[!paste id=cutlongdesc]]&#34;]]
-[[!toggleable  id=&#34;copy&#34; text=&#34;[[!paste id=copylongdesc]]&#34;]]
-[[!toggleable  id=&#34;paste&#34; text=&#34;[[!paste id=pastelongdesc]]&#34;]]
+<pre><code>[[!toggleable  id=&quot;cut&quot; text=&quot;[[!paste id=cutlongdesc]]&quot;]]
+[[!toggleable  id=&quot;copy&quot; text=&quot;[[!paste id=copylongdesc]]&quot;]]
+[[!toggleable  id=&quot;paste&quot; text=&quot;[[!paste id=pastelongdesc]]&quot;]]
 
 [...some time later...]
 
-[[!cut  id=cutlongdesc text=&#34;&#34;&#34;
+[[!cut  id=cutlongdesc text=&quot;&quot;&quot;
    blah blah blah
-&#34;&#34;&#34;]]
-[[!cut  id=copylongdesc text=&#34;&#34;&#34;
+&quot;&quot;&quot;]]
+[[!cut  id=copylongdesc text=&quot;&quot;&quot;
    blah blah blah
-&#34;&#34;&#34;]]
-[[!cut  id=pastelongdesc text=&#34;&#34;&#34;
+&quot;&quot;&quot;]]
+[[!cut  id=pastelongdesc text=&quot;&quot;&quot;
    blah blah blah
-&#34;&#34;&#34;]]
+&quot;&quot;&quot;]]
 </code></pre>
 
 <p>This can potentially be used to create loops, but ikiwiki is clever and breaks
@@ -106,13 +106,13 @@ them.</p>
 <p>Since you can paste without using double quotes, copy and paste can be used to
 nest directives that require multiline parameters inside each other:</p>
 
-<pre><code>[[!toggleable  id=foo text=&#34;&#34;&#34;
-  [[!toggleable id=bar text=&#34;[[!paste id=baz]]&#34;]]
-&#34;&#34;&#34;]]
+<pre><code>[[!toggleable  id=foo text=&quot;&quot;&quot;
+  [[!toggleable id=bar text=&quot;[[!paste id=baz]]&quot;]]
+&quot;&quot;&quot;]]
 
-[[!cut  id=baz text=&#34;&#34;&#34;
+[[!cut  id=baz text=&quot;&quot;&quot;
 multiline parameter!
-&#34;&#34;&#34;]]
+&quot;&quot;&quot;]]
 </code></pre>
 
 </section>

@@ -65,19 +65,19 @@ shortcuts
 <pre><code>[[!google  foo]]
 [[!wikipedia  War_of_1812]]
 [[!debbug  12345]]
-Check the [[!cia  ikiwiki desc=&#34;CIA page for %s&#34;]].
+Check the [[!cia  ikiwiki desc=&quot;CIA page for %s&quot;]].
 </code></pre>
 
 <p>This page controls what shortcut links the wiki supports.</p>
 
 <ul>
-<li>shortcut google points to <i>http://www.google.com/search?q=%s</i></li>
+<li>shortcut google points to <i>https://encrypted.google.com/search?q=%s</i></li>
 <li>shortcut archive points to <i>http://web.archive.org/*/%S</i></li>
 <li>shortcut gmap points to <i>http://maps.google.com/maps?q=%s</i></li>
 <li>shortcut gmsg points to <i>http://groups.google.com/groups?selm=%s</i></li>
-<li>shortcut wikipedia points to <i>http://en.wikipedia.org/wiki/%s</i></li>
-<li>shortcut wikitravel points to <i>http://wikitravel.org/en/%s</i></li>
-<li>shortcut wiktionary points to <i>http://en.wiktionary.org/wiki/%s</i></li>
+<li>shortcut wikipedia points to <i>https://secure.wikimedia.org/wikipedia/en/wiki/%s</i></li>
+<li>shortcut wikitravel points to <i>https://wikitravel.org/en/%s</i></li>
+<li>shortcut wiktionary points to <i>https://secure.wikimedia.org/wiktionary/en/wiki/%s</i></li>
 <li>shortcut debbug points to <i>http://bugs.debian.org/%S</i></li>
 <li>shortcut deblist points to <i>http://lists.debian.org/debian-%s</i></li>
 <li>shortcut debpkg points to <i>http://packages.debian.org/%s</i></li>
@@ -100,7 +100,7 @@ Check the [[!cia  ikiwiki desc=&#34;CIA page for %s&#34;]].
 <li>shortcut marclist points to <i>http://marc.info/?l=%s</i></li>
 <li>shortcut gmane points to <i>http://dir.gmane.org/gmane.%s</i></li>
 <li>shortcut gmanemsg points to <i>http://mid.gmane.org/%s</i></li>
-<li>shortcut cpan points to <i>http://search.cpan.org/search?mode=dist&#38;query=%s</i></li>
+<li>shortcut cpan points to <i>http://search.cpan.org/search?mode=dist&amp;query=%s</i></li>
 <li>shortcut ctan points to <i>http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=%s</i></li>
 <li>shortcut hoogle points to <i>http://haskell.org/hoogle/?q=%s</i></li>
 <li>shortcut iki points to <i>http://ikiwiki.info/%S/</i></li>
@@ -110,11 +110,11 @@ Check the [[!cia  ikiwiki desc=&#34;CIA page for %s&#34;]].
 <li>shortcut meatballwiki points to <i>http://www.usemod.com/cgi-bin/mb.pl?%s</i></li>
 <li>shortcut emacswiki points to <i>http://www.emacswiki.org/cgi-bin/wiki/%s</i></li>
 <li>shortcut haskellwiki points to <i>http://haskell.org/haskellwiki/%s</i></li>
-<li>shortcut dict points to <i>http://www.dict.org/bin/Dict?Form=Dict1&#38;Strategy=<em>&#38;Database=</em>&#38;Query=%s</i></li>
+<li>shortcut dict points to <i>http://www.dict.org/bin/Dict?Form=Dict1&amp;Strategy=<em>&amp;Database=</em>&amp;Query=%s</i></li>
 <li>shortcut imdb points to <i>http://imdb.com/find?q=%s</i></li>
-<li>shortcut gpg points to <i>http://pgpkeys.mit.edu:11371/pks/lookup?op=vindex&#38;exact=on&#38;search=0x%s</i></li>
+<li>shortcut gpg points to <i>http://pgpkeys.mit.edu:11371/pks/lookup?op=vindex&amp;exact=on&amp;search=0x%s</i></li>
 <li>shortcut perldoc points to <i>http://perldoc.perl.org/search.html?q=%s</i></li>
-<li>shortcut whois points to <i>http://reports.internic.net/cgi/whois?whois_nic=%s&#38;type=domain</i></li>
+<li>shortcut whois points to <i>http://reports.internic.net/cgi/whois?whois_nic=%s&amp;type=domain</i></li>
 <li>shortcut cve points to <i>http://cve.mitre.org/cgi-bin/cvename.cgi?name=%s</i></li>
 <li>shortcut cia points to <i>http://cia.vc/stats/project/%s</i></li>
 <li>shortcut ciauser points to <i>http://cia.vc/stats/user/%s</i></li>
@@ -126,8 +126,8 @@ Check the [[!cia  ikiwiki desc=&#34;CIA page for %s&#34;]].
 </ul>
 
 <p>To add a new shortcut, use the <code>shortcut</code>
-<a href="../ikiwiki/directive/">directive</a>. In the url, &#34;%s&#34; is replaced with the
-text passed to the named shortcut, after <a href="http://en.wikipedia.org/wiki/url%5Fencoding">url encoding</a>
+<a href="../ikiwiki/directive/">directive</a>. In the url, &quot;%s&quot; is replaced with the
+text passed to the named shortcut, after <a href="https://secure.wikimedia.org/wikipedia/en/wiki/url%5Fencoding">url encoding</a>
 it, and &#39;%S&#39; is replaced with the raw, non-encoded text. The optional
 <code>desc</code> parameter controls the description of the link.</p>
 
@@ -174,7 +174,7 @@ Links:
 
 
 <div class="pagedate">
-Last edited <time datetime="2010-04-02T20:05:14Z">Sat 03 Apr 2010 04:05:14 AM CST</time>
+Last edited <time datetime="2010-09-02T14:09:55Z">Thu 02 Sep 2010 10:09:55 PM CST</time>
 <!-- Created <time datetime="2009-12-24T05:37:17Z" pubdate="pubdate">Thu 24 Dec 2009 01:37:17 PM CST</time> -->
 </div>
 

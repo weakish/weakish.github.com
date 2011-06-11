@@ -69,31 +69,31 @@ or DSV (delimiter-separated values) format.</p>
 
 <h2>examples</h2>
 
-<pre><code>[[!table  data=&#34;&#34;&#34;
+<pre><code>[[!table  data=&quot;&quot;&quot;
 Customer |Amount
 Fulanito |134,34
 Menganito|234,56
 Menganito|234,56
-&#34;&#34;&#34;]]
+&quot;&quot;&quot;]]
 
-[[!table  class=&#34;book_record&#34; format=csv file=&#34;data/books/record1&#34;]]
+[[!table  class=&quot;book_record&quot; format=csv file=&quot;data/books/record1&quot;]]
 </code></pre>
 
 <p>In this second example the <code>record1</code> page should be similar to:</p>
 
-<pre><code>&#34;Title&#34;,&#34;Perl Best Practices&#34;
-&#34;Author&#34;,&#34;Damian Conway&#34;
-&#34;Publisher&#34;,&#34;O’Reilly&#34;
+<pre><code>&quot;Title&quot;,&quot;Perl Best Practices&quot;
+&quot;Author&quot;,&quot;Damian Conway&quot;
+&quot;Publisher&quot;,&quot;O&rsquo;Reilly&quot;
 </code></pre>
 
 <p>To make a cell span multiple columns, follow it with one or more empty
 cells. For example:</p>
 
-<pre><code>[[!table  data=&#34;&#34;&#34;
+<pre><code>[[!table  data=&quot;&quot;&quot;
 left||right|
 a|b|c|d
 this cell spans 4 columns|||
-&#34;&#34;&#34;]]
+&quot;&quot;&quot;]]
 </code></pre>
 
 <h2>usage</h2>
@@ -101,14 +101,14 @@ this cell spans 4 columns|||
 <ul>
 <li><code>data</code> - Values for the table.</li>
 <li><code>file</code> - A file in the wiki containing the data.</li>
-<li><code>format</code> - The format of the data, either &#34;csv&#34;, &#34;dsv&#34;, or &#34;auto&#34;
+<li><code>format</code> - The format of the data, either &quot;csv&quot;, &quot;dsv&quot;, or &quot;auto&quot;
 (the default).</li>
 <li><code>delimiter</code> - The character used to separate fields. By default,
 DSV format uses a pipe (<code>|</code>), and CSV uses a comma (<code>,</code>).</li>
 <li><code>class</code> - A CSS class for the table html element.</li>
-<li><code>header</code> - By default, or if set to &#34;row&#34;, the first data line is used
-as the table header. Set it to &#34;no&#34; to make a table without a header, or
-&#34;column&#34; to make the first column be the header.</li>
+<li><code>header</code> - By default, or if set to &quot;row&quot;, the first data line is used
+as the table header. Set it to &quot;no&quot; to make a table without a header, or
+&quot;column&quot; to make the first column be the header.</li>
 </ul>
 
 <p>For tab-delimited tables (often obtained by copying and pasting from HTML

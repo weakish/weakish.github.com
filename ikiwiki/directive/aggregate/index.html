@@ -69,9 +69,9 @@ plugin&#39;s documentation for details.</p>
 <p>This directive allows content from other feeds to be aggregated into the wiki.
 Aggregate a feed as follows:</p>
 
-<pre><code>[[!aggregate  name=&#34;example blog&#34; dir=&#34;example&#34;
-feedurl=&#34;http://example.com/index.rss&#34;
-url=&#34;http://example.com/&#34; updateinterval=&#34;15&#34;]]
+<pre><code>[[!aggregate  name=&quot;example blog&quot; dir=&quot;example&quot;
+feedurl=&quot;http://example.com/index.rss&quot;
+url=&quot;http://example.com/&quot; updateinterval=&quot;15&quot;]]
 </code></pre>
 
 <p>That example aggregates posts from the specified RSS feed, updating no
@@ -82,7 +82,7 @@ page per post under the example/ directory in the wiki.</p>
 <p>You can then use ikiwiki&#39;s <a href="../inline/">inline</a> directive to create a blog of one or
 more aggregated feeds. For example:</p>
 
-<pre><code>[[!inline  pages=&#34;internal(example/*)&#34;]]
+<pre><code>[[!inline  pages=&quot;internal(example/*)&quot;]]
 </code></pre>
 
 <p>Note the use of <code>internal()</code> in the <a href="../../pagespec/">PageSpec</a> to match
