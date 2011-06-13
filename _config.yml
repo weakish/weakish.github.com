@@ -1,0 +1,5 @@
+permalink: /:title
+markdown: rdiscount
+safe: true
+lsi: false
+pygments: true
