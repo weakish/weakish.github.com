@@ -16,7 +16,7 @@ personal
 * [openid][]
 
 [profile]: http://www.google.com/profiles/weakish (google profile)
-[microblog]: https://twitter.com/weakish (@weakish)
+[twitter]: https://twitter.com/weakish (@weakish)
 [openid]: http://weakish.myopenid.com/ (myopenid)
 
 things
