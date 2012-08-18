@@ -21,21 +21,23 @@ things
 ------
 
 * [gists][]([feed][gist-feed]) - my notes, scripts, configs, poems, comics, etc
-* [google+][] - my google plus posts
+* [posts][]([feed][gplus-feed]) - my Google+ posts ()
 * [erratawiki][] - collects (non-official) errata for books
 * [greylist][] - litter effort to make corporations accountable
 
 [gists]: http://gist.github.com/weakish
 [gist-feed]: http://gist.github.com/weakish.atom
-[google+]: https://plus.google.com/107331692444266690632/posts
 [erratawiki]: http://bitbucket.org/weakish/errata/wiki/Home
 [greylist]: http://bitbucket.org/weakish/greylist/wiki/Home
+[posts]: https://plus.google.com/107331692444266690632/posts
+[gplus-feed]: http://gplusrss.com/rss/feed/ea57ff853aa87c2f3078f17958b0fc3c4fa6748a9eeaf (powered by gplusrss)
 
 contact
 -------
 
 * email: <weakish@gmail.com>
 * twitter: @weakish
+* g+: Jakukyo Friel
 
 gpg fingerprint: [2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87][fingerprint]
 
