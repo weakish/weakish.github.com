@@ -11,23 +11,23 @@ Welcome to my shred of the Web. :-)
 personal
 --------
 
-* [profile][]
-* [twitter][]
+* [about me][]
 * [openid][]
 
-[profile]: http://www.google.com/profiles/weakish (google profile)
-[microblog]: https://twitter.com/weakish (@weakish)
+[about me]: http://about.me/weakish (about me)
 [openid]: http://weakish.myopenid.com/ (myopenid)
 
 things
 ------
 
 * [gists][]([feed][gist-feed]) - my notes, scripts, configs, poems, comics, etc
+* [google+][] - my google plus posts
 * [erratawiki][] - collects (non-official) errata for books
 * [greylist][] - litter effort to make corporations accountable
 
 [gists]: http://gist.github.com/weakish
 [gist-feed]: http://gist.github.com/weakish.atom
+[google+]: https://plus.google.com/107331692444266690632/posts
 [erratawiki]: http://bitbucket.org/weakish/errata/wiki/Home
 [greylist]: http://bitbucket.org/weakish/greylist/wiki/Home
 
