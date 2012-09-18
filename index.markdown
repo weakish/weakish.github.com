@@ -24,6 +24,7 @@ things
 * [posts][]([feed][gplus-feed]) - my Google+ posts ()
 * [erratawiki][] - collects (non-official) errata for books
 * [greylist][] - litter effort to make corporations accountable
+* other projects hosted at [github][] and [gitcafe][]
 
 [gists]: http://gist.github.com/weakish
 [gist-feed]: http://gist.github.com/weakish.atom
@@ -31,6 +32,8 @@ things
 [greylist]: http://bitbucket.org/weakish/greylist/wiki/Home
 [posts]: https://plus.google.com/107331692444266690632/posts
 [gplus-feed]: http://gplusrss.com/rss/feed/ea57ff853aa87c2f3078f17958b0fc3c4fa6748a9eeaf (powered by gplusrss)
+[github]: https://github.com/weakish/
+[gitcafe]: http://gitcafe.com/weakish/
 
 contact
 -------
