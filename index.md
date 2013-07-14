@@ -55,4 +55,4 @@ Powered by [github][] [pages][].
 [github]: https://github.com/weakish/weakish.github.com
 [pages]: http://pages.github.com
 
-![QR-code of this page](http://lilqr.com/qr)
+![QR-code of this page](qr.png)
