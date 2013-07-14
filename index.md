@@ -22,6 +22,7 @@ things
 
 * [gists][]([feed][gist-feed]) - my notes, scripts, configs, poems, comics, etc
 * [posts][]([feed][gplus-feed]) - my Google+ posts ()
+* [photos][] - my photos
 * [erratawiki][] - collects (non-official) errata for books
 * [greylist][] - litter effort to make corporations accountable
 * other projects hosted at [github][] and [gitcafe][]
@@ -34,6 +35,7 @@ things
 [gplus-feed]: http://gplusrss.com/rss/feed/ea57ff853aa87c2f3078f17958b0fc3c4fa6748a9eeaf (powered by gplusrss)
 [github]: https://github.com/weakish/
 [gitcafe]: http://gitcafe.com/weakish/
+[photos]: http://www.23hq.com/weakish/
 
 contact
 -------
