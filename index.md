@@ -21,7 +21,7 @@ things
 ------
 
 * [gists][]([feed][gist-feed]) - my notes, scripts, configs, poems, comics, etc
-* posts on [Google+][gplus-posts]([feed][gplus-feed]) and [identi.ca][]
+* posts on [Google+][gplus-posts]([feed][gplus-feed]) and [identi.ca][]([rss][pump2rss]).
 * my photos hosted at [23][] and [flickr][]
 * [erratawiki][] - collects (non-official) errata for books
 * [greylist][] - litter effort to make corporations accountable
@@ -38,6 +38,7 @@ things
 [23]: http://www.23hq.com/weakish/album/list/
 [flickr]: http://www.flickr.com/photos/weakish/sets/
 [identi.ca]: https://identi.ca/weakish/
+[pump2rss]: https://pump2rss.com/feed/weakish@identi.ca.atom
 
 contact
 -------
