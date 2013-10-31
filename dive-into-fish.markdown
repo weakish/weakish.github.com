@@ -11,6 +11,11 @@ Fish's tab completion is powerful.
 Though plan9 fans may say that we should implement tab completion in 
 terminal emulator.)
 
+Help
+------
+
+`help command` or `command --help`.
+
 Syntax overview
 ----------------
 
@@ -41,11 +46,11 @@ IO redirection and piping
 -------------------------------
 
 
-- standard input: <SOURCE_FILE
-- standard output: >DESTINATION
-- standard error:  ^DESTINATION
-- standard output, appended:  >>DESTINATION_FILE
-- standard error, appended:  ^^DESTINATION_FILE
+- standard input: `<SOURCE_FILE`
+- standard output: `>DESTINATION`
+- standard error:  `^DESTINATION`
+- standard output, appended:  `>>DESTINATION_FILE`
+- standard error, appended:  `^^DESTINATION_FILE`
 
 DESTINATION can be one of the following:
 
@@ -55,21 +60,21 @@ DESTINATION can be one of the following:
 will be closed.
 
 For example, redirect both standard output and standard error 
-to the file all_output.txt:
+to the file `all_output.txt`:
 
     echo Hello >all_output.txt ^&1
 
 Any FD can be redirected in an arbitrary way by prefixing the redirection with the number of the FD:
 
-- N<DESTINATION
-- N>DESTINATION
-- N>>DESTINATION_FILE
+- `N<DESTINATION`
+- `N>DESTINATION`
+- `N>>DESTINATION_FILE`
 
 
 Prepend the desired FD number and then output
 redirect symbol to the pipe.  For example:
 
-    make fish 2>|less
+    make fish 2>| less
 
 
 Jobs
@@ -83,7 +88,7 @@ Jobs
 Functions and conditional structure
 ---------------------------------------
 
-See help page for function`, `if`, `switch`, `and`, `or`, `for`, `while`, etc.
+See help page for `function`, `if`, `switch`, `and`, `or`, `for`, `while`, `begin`, `end`, etc.
 
 Notes on wrapper functions:
 
@@ -91,10 +96,6 @@ Notes on wrapper functions:
 - Prefix the call to the command with the word 'command' unless
   the first to call command.
 
-Help
-------
-
-`help command` or `command --help`.
 
 
 Tab completion
@@ -120,6 +121,10 @@ fish provides a large number of program specific completions.
 You can write your own builtin.
 See `help complete` and /usr/share/fish/completions.
 
+Set variable
+------------
+
+    set name value1 value2 ...
 
 Command line expansions
 -------------------------
@@ -180,7 +185,7 @@ Config files
 
 Variables definitions: ~/.config/fish/config.fish
 
-Function definitions: ~/.config/fishlfunctions/
+Function definitions: ~/.config/fish/functions/
 
 Completion definitions: ~/.config/fish/completions/
 
