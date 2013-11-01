@@ -93,9 +93,15 @@ See help page for `function`, `if`, `switch`, `and`, `or`, `for`, `while`, `begi
 Notes on wrapper functions:
 
 - Don't forget $argv.
-- Prefix the call to the command with the word 'command' unless
-  the first to call command.
+- Prefix the call to the command with the word 'command'. Failing to do so will cause infinite recursion bugs.
 
+
+Autosuggestions
+------------------
+
+fish suggests commands as you type, based on command history, completions, and valid file paths. As you type commands, you will see a completion offered after the cursor, in a muted gray color.
+
+To accept the autosuggestion (replacing the command line contents), hit right arrow or Control-E.
 
 
 Tab completion
@@ -121,10 +127,40 @@ fish provides a large number of program specific completions.
 You can write your own builtin.
 See `help complete` and /usr/share/fish/completions.
 
-Set variable
-------------
+
+Set variables
+-------------
 
     set name value1 value2 ...
+
+Options:
+
+- `--local`
+- `--global`
+- `--export`
+- `--universal`
+
+When calling a function, all current local variables temporarily disappear. 
+
+
+Special variables
+-------------------
+
+- `BROWSER`
+- `CDPATH`
+- `fish_greeting`
+- `LANG`, `LC_ALL`, `LC_COLLATE`, `LC_CTYPE`, `LC_MESSAGES`, `LC_MONETARY`, `LC_NUMERIC` and `LC_TIME`.
+- `fish_user_paths` (An array of directories that are prepended to PATH. This can be a universal variable.)
+- `PATH`
+- `umask`
+- `_`, the name of the currently running comman.
+- `argv`
+- `history`
+- `HOME`
+- `PWD`
+- `status`
+- `USER`
+
 
 Command line expansions
 -------------------------
@@ -145,7 +181,6 @@ Variable expansion:
     $variable
     $array  # --> multiple arguments
     "$array" # --> one argument
-
 
 Brace expansion:
 
@@ -169,6 +204,9 @@ Process expansion:
 Arrays:
 
     $PATH[3] # indices start at 1
+    (seq 10)[2..5]
+    (seq 10)[2..5 1..3]
+    (seq 10)[-1..1]  # Reverse output
     $$foo[1] # the same as ${$foo[1]}
 
 
@@ -183,13 +221,13 @@ Press escape to abort.
 Config files
 ----------------
 
-Variables definitions: ~/.config/fish/config.fish
+Variables definitions: `~/.config/fish/config.fish`
 
-Function definitions: ~/.config/fish/functions/
+Function definitions: `~/.config/fish/functions/`
 
-Completion definitions: ~/.config/fish/completions/
+Completion definitions: `~/.config/fish/completions/`
 
-History file: ~/.config/fish/fish_history.
+History file: `~/.config/fish/fish_history`.
 
 
 Feedback
