@@ -15,7 +15,6 @@ personal
 * [openid][]
 
 [about me]: http://about.me/weakish (about me)
-[openid]: http://weakish.myopenid.com/ (myopenid)
 
 things
 ------
