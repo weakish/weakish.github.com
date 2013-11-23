@@ -12,7 +12,6 @@ personal
 --------
 
 * [about me][]
-* [openid][]
 
 [about me]: http://about.me/weakish (about me)
 
