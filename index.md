@@ -46,11 +46,10 @@ contact
 * twitter: @weakish
 * g+: Jakukyo Friel
 
-gpg fingerprint: [2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87][fingerprint]
+gpg fingerprint: 2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87
 
 Please email to request additional contact information.
 
-[fingerprint]: https://launchpad.net/%7Eweakish/+sshkeys
 
 ----
 
