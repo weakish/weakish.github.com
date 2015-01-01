@@ -23,7 +23,6 @@ things
 * my photos hosted at [23][] and [flickr][]
 * [erratawiki][] - collects (non-official) errata for books
 * [greylist][] - little effort to make corporations accountable
-
 * other projects hosted at [github][] and [gitcafe][]
 
 [gists]: http://gist.github.com/weakish
@@ -43,8 +42,7 @@ contact
 -------
 
 * email: <weakish@gmail.com>
-* identi.ca: @weakish
-* twitter: @weakish
+* identi.ca/twitter: @weakish
 * g+: Jakukyo Friel
 
 gpg fingerprint: 2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87
