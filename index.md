@@ -22,7 +22,8 @@ things
 * posts on [Google+][gplus-posts]([feed][gplus-feed]) and [identi.ca][]([rss][pump2rss]).
 * my photos hosted at [23][] and [flickr][]
 * [erratawiki][] - collects (non-official) errata for books
-* [greylist][] - litter effort to make corporations accountable
+* [greylist][] - little effort to make corporations accountable
+
 * other projects hosted at [github][] and [gitcafe][]
 
 [gists]: http://gist.github.com/weakish
