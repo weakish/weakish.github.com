@@ -27,8 +27,8 @@ things
 
 [gists]: http://gist.github.com/weakish
 [gist-feed]: http://gist.github.com/weakish.atom
-[erratawiki]: http://bitbucket.org/weakish/errata/wiki/Home
-[greylist]: http://bitbucket.org/weakish/greylist/wiki/Home
+[erratawiki]: https://github.com/weakish/errata/wiki
+[greylist]: https://github.com/weakish/greylist/wiki
 [gplus-posts]: https://plus.google.com/107331692444266690632/posts
 [gplus-feed]: http://gplusrss.com/rss/feed/ea57ff853aa87c2f3078f17958b0fc3c4fa6748a9eeaf (powered by gplusrss)
 [github]: https://github.com/weakish/
