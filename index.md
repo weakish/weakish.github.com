@@ -23,7 +23,7 @@ things
 * my photos hosted at [23][] and [flickr][]
 * [erratawiki][] - collects (non-official) errata for books
 * [greylist][] - little effort to make corporations accountable
-* other projects hosted at [github][] and [gitcafe][]
+* other projects hosted at [github][].
 
 [gists]: http://gist.github.com/weakish
 [gist-feed]: http://gist.github.com/weakish.atom
@@ -32,7 +32,6 @@ things
 [gplus-posts]: https://plus.google.com/107331692444266690632/posts
 [gplus-feed]: http://gplusrss.com/rss/feed/ea57ff853aa87c2f3078f17958b0fc3c4fa6748a9eeaf (powered by gplusrss)
 [github]: https://github.com/weakish/
-[gitcafe]: http://gitcafe.com/weakish/
 [23]: http://www.23hq.com/weakish/album/list/
 [flickr]: http://www.flickr.com/photos/weakish/sets/
 [identi.ca]: https://identi.ca/weakish/
