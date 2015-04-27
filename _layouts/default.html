@@ -9,7 +9,18 @@
     {{ content }}
     <hr/>
     <div id="footer">
-      <small>Powered by <a href="https://github.com/weakish/weakish.github.com">GitHub</a> <a href="http://pages.github.com">Pages</a>.</small>
+      <small>
+        Powered by<a href="https://github.com/weakish/weakish.github.com">
+        GitHub</a> <a href="http://pages.github.com">Pages</a>.
+        {% comment %}
+          Hard-coded since there are only one page. If we have more pages, we
+          may set `url` in `_config.yaml` and use
+              {{ site.url | url_encode }}
+          We will not use `/check?uri=referer` since browsers may strip
+          information in `referer` header.
+        {% endcomment %}
+        <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fweakish.github.io">Valid HTML5</a>
+      </small>
       {% comment %}
         Currently we have only one page, so we use `style` instead of a
         separate CSS file.
