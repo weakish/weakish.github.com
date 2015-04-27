@@ -7,8 +7,11 @@
   </head>
   <body>
     {{ content }}
-    <hr/>
-    <div id="footer">
+    {% comment %}
+      Currently we have only one page, so we use `style` instead of a
+      separate CSS file.
+    {% endcomment %}
+    <div id="footer" style="background-color: #f0f2f4; color: #333">
       <small>
         Powered by<a href="https://github.com/weakish/weakish.github.com">
         GitHub</a> <a href="http://pages.github.com">Pages</a>.
@@ -21,10 +24,6 @@
         {% endcomment %}
         <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fweakish.github.io">Valid HTML5</a>
       </small>
-      {% comment %}
-        Currently we have only one page, so we use `style` instead of a
-        separate CSS file.
-      {% endcomment %}
       <div id="qr-url" style="position: absolute; top: 0px; right: 0px;">
         {% comment %}
           We use hard-coded qr.png since we have only one page now. If we
