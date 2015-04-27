@@ -10,6 +10,18 @@
     <hr/>
     <div id="footer">
       Powered by <a href="https://github.com/weakish/weakish.github.com">GitHub</a> <a href="http://pages.github.com">Pages</a>.
+      {% comment %}
+        Currently we have only one page, so we use `style` instead of a
+        separate CSS file.
+      {% endcomment %}
+      <div id="qr-url" style="position: absolute; top: 0px; right: 0px;">
+        {% comment %}
+          We use hard-coded qr.png since we have only one page now. If we
+          have more pages, we may use http://goqr.me/api/doc/ to generate
+          qr code instead.
+        {% endcomment %}
+        <img src="qr.png" alt="QR code of url" title="QR code of url"/>
+      </div>
     </div>
   </body>
 </html>
