@@ -50,12 +50,7 @@ gpg fingerprint: [2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87][gpg]
 
 Please email to request additional contact information.
 
-
 ----
 
-Powered by [github][] [pages][].
-
-[github]: https://github.com/weakish/weakish.github.com
-[pages]: http://pages.github.com
 
 ![QR-code of this page](qr.png)

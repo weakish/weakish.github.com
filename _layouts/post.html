@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{% if lang %}lang{% else %}en{% endif %}">
   <head>
     <meta charset="utf-8"/>
     <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
@@ -7,5 +7,9 @@
   </head>
   <body>
     {{ content }}
+    <hr/>
+    <div id="footer">
+      Powered by <a href="https://github.com/weakish/weakish.github.com">GitHub</a> <a href="http://pages.github.com">Pages</a>.
+    </div>
   </body>
 </html>
