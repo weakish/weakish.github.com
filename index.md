@@ -16,7 +16,7 @@ things
 * my photos hosted at [23][] and [flickr][]
 * [erratawiki][] - collects (non-official) errata for books
 * [greylist][] - little effort to make corporations accountable
-* other projects hosted at [github][].
+* other repositories hosted at [github][].
 
 [gists]: http://gist.github.com/weakish
 [gist-feed]: http://gist.github.com/weakish.atom
