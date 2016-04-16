@@ -12,7 +12,7 @@ things
 ------
 
 * [gists][]([feed][gist-feed]) - my notes, scripts, configs, poems, comics, etc
-* posts on [Google+][gplus-posts]([feed][gplus-feed]) and [identi.ca][]([rss][pump2rss]).
+* posts on [identi.ca][]([rss][pump2rss]) and [Google+][gplus-posts]([feed][gplus-feed]).
 * my photos hosted at [23][] and [flickr][]
 * [erratawiki][] - collects (non-official) errata for books
 * [greylist][] - little effort to make corporations accountable
