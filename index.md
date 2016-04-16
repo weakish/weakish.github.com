@@ -18,8 +18,8 @@ things
 * [greylist][] - little effort to make corporations accountable
 * other repositories hosted at [github][].
 
-[gists]: http://gist.github.com/weakish
-[gist-feed]: http://gist.github.com/weakish.atom
+[gists]: https://gist.github.com/weakish
+[gist-feed]: https://gist.github.com/weakish.atom
 [erratawiki]: https://github.com/weakish/errata/wiki
 [greylist]: https://github.com/weakish/greylist/wiki
 [gplus-posts]: https://plus.google.com/107331692444266690632/posts
