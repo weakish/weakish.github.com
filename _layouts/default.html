@@ -29,8 +29,13 @@
           We use hard-coded qr.png since we have only one page now. If we
           have more pages, we may use http://goqr.me/api/doc/ to generate
           qr code instead.
+
+          Wrapping `img` into `p` for `w3m`.
+          `display: inline` for other browsers understanding CSS.
         {% endcomment %}
-        <img src="qr.png" alt="QR code of url" title="QR code of url"/>
+        <p style="display: inline;">
+          <img src="qr.png" alt="QR code of url" title="QR code of url"/>
+        </p>
       </div>
     </div>
   </body>
