@@ -8,13 +8,6 @@ Jakukyo Friel (weakish)
 
 Welcome to my shred of the Web. :-)
 
-personal
---------
-
-* [about me][]
-
-[about me]: http://about.me/weakish (about me)
-
 things
 ------
 
@@ -49,3 +42,7 @@ gpg fingerprint: [2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87][gpg]
 [gpg]: https://savannah.nongnu.org/people/viewgpg.php?user_id=65699
 
 Please email to request additional contact information.
+
+----
+
+[about.me/weakish](https://about.me/weakish)
