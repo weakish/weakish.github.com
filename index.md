@@ -47,7 +47,7 @@ things
 [douban-cite]: https://weakish.github.io/douban-cite
 [jump-or-exec]: https://weakish.github.io/jump-or-exec
 [pm_25]: https://weakish.github.io/pm_25
-[viconf]: https://github.com/weakish/viconf
+[viconf]: https://weakish.github.io/viconf
 
 contact
 -------
