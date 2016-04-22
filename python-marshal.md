@@ -30,9 +30,8 @@ ij = 'import json'
 cd = "bm_capnp.AddressBook.new_message(people=[{'name': 'Alice'}])"
 ic = 'import capnp; import bm_capnp'
 
-def benchmark(d, i)
+def benchmark(d, i):
     return timeit.timeit(d, i, number=10000)
-end
 
 # Benchmarking
 m = benchmark(md, im)
