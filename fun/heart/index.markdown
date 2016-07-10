@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Moved to http://gist.github.com/494919
 ---
 
