@@ -1,0 +1,50 @@
+New generation of attic.
+
+## Free space
+
+Before you start creating backups,
+please make sure that there is always a good amount of free space
+on the filesystem that has your backup repository (and also on ~/.cache).
+
+## Compression
+
+Default is no compression.
+
+- fast repo storage and some compression: `--compression lz4`
+- less fast repo storage and a bit more compression: `--compression zlib`
+- very slow repo storage and high compression: `--compression lzma`
+
+## Encryption
+
+Default enabled with `repokey` method.
+
+    borg init --encryption=none|repokey|keyfile PATH
+
+When repository encryption is enabled,
+all data is encrypted using 256-bit AES encryption
+and the integrity and authenticity is verified using HMAC-SHA256.
+
+- `repokey`: key is stored inside the repository (`config`);
+- `keyfile`: key is stored under `~/.config/borg/keys/`;
+
+In both modes, the key is stored in encrypted form
+and can be only decrypted by providing the correct passphrase.
+
+For automated backups the passphrase can be specified
+using the BORG_PASSPHRASE environment variable.
+
+Be careful how you set the environment;
+using the env command, a `system()` call or using inline shell scripts
+might expose the credentials in the process list directly
+and they will be readable to all users on a system.
+Using `export` in a shell script file should be safe, however,
+as the environment of a process is accessible only to that user.
+Also, using a shell command may leak the passphrase in shell history file.
+
+## Upgrade from attic
+
+    borg upgrade --inplace REPOSITORY
+
+If a backup copy is required, omit the `--inplace` option.
+
+#attic #borg #backup #deduplication #rollingChecksum
