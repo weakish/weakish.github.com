@@ -8,11 +8,15 @@ on the filesystem that has your backup repository (and also on ~/.cache).
 
 ## Compression
 
+    borg create --compression TYPE
+
 Default is no compression.
 
-- fast repo storage and some compression: `--compression lz4`
-- less fast repo storage and a bit more compression: `--compression zlib`
-- very slow repo storage and high compression: `--compression lzma`
+- fast repo storage and some compression: `lz4`
+- less fast repo storage and a bit more compression: `zlib`
+- very slow repo storage and high compression: `lzma`
+
+
 
 ## Encryption
 
