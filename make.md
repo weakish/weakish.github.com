@@ -19,10 +19,27 @@
 
 -- [George Koehler](https://stackoverflow.com/questions/2131219/merits-of-bmake/25152244)
 
-## plan9 mk
+## Plan9 mk
 
-`mk` in plan9 is similar to BSD make, with few rules.
-The main difference is `mk` does not support template.
+`mk` in Plan9 is similar to BSD make, with few rules.
+The main difference is templating:
+BSD Makefile supports standard templates `.include <bsd.prog.mk>`
+and nonstandard templates `.include "/path/to/included.mk"`,
+and Plan9 Makefile supports `</path/to/included.mk`
+but not standard templates.
+Plan9 Makefile supports including command line output (`<|cat /path/to/included.mk>`) though.
+
+Plan9 also supports using different shells within a single mkfile:
+
+```sh
+MKSHELL=/bin/rc
+use-rc:V:
+    for(i in a b c) echo $i
+
+MKSHELL=sh
+use-sh:V:
+    for i in a b c; do echo $i; done
+```
 
 ## Examples
 
