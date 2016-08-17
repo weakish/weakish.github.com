@@ -19,6 +19,20 @@
 
 -- [George Koehler](https://stackoverflow.com/questions/2131219/merits-of-bmake/25152244)
 
+> Most of openbsds simple Makefiles are compatible with bmake
+> but if it gets a little bit more complicated
+> there are small differences that break the build.
+>
+> ... the openbsd Makefiles `/usr/share/mk` ... are  not really portable
+> and use openbsd specific binaries like `lorder` and `tsort` with the openbsd specific `-q` flag.
+>
+> And most software is using GNU Make,
+> I think it would be way more work to use bsd makefiles on linux targets,
+> they are not really written to be portable.
+
+-- [Duncaen](https://forum.voidlinux.eu/t/pitfalls-on-bmake-bsd-make/956/2)
+
+
 ## Plan9 mk
 
 `mk` in Plan9 is similar to BSD make, with few rules.
