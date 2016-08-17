@@ -32,6 +32,7 @@
 
 -- [Duncaen](https://forum.voidlinux.eu/t/pitfalls-on-bmake-bsd-make/956/2)
 
+Comments: not sure if FreeBSD's `/usr/share/mk` is portable.
 
 ## Plan9 mk
 
@@ -54,6 +55,10 @@ MKSHELL=sh
 use-sh:V:
     for i in a b c; do echo $i; done
 ```
+
+## Ninja
+
+For a large project, ninja builds fast.
 
 ## Examples
 
