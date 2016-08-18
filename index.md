@@ -52,8 +52,7 @@ contact
 -------
 
 * email: <weakish@gmail.com>
-* identi.ca/twitter: @weakish
-* g+: Jakukyo Friel
+* BitMessage: `BM-2cW1iaJdXA6P7KwooD2i2KTpwKKJYcPzvT`
 
 gpg fingerprint: [2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87][gpg]
 
