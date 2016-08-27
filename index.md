@@ -24,6 +24,7 @@ things
 * [shattr][] - A [shatag][] clone in Ceylon.
 * [viconf][] - visudo for all commands
 * [xkcd936][] - xkcd936 style passphrase generator
+* [ZeroMeHubs][] -List of ZeroMe hubs.
 * other repositories hosted at [github][].
 
 [gists]: https://gist.github.com/weakish
@@ -49,6 +50,7 @@ things
 [jump-or-exec]: https://weakish.github.io/jump-or-exec
 [pm_25]: https://weakish.github.io/pm_25
 [viconf]: https://weakish.github.io/viconf
+[ZeroMeHubs]: https://weakish.github.io/ZeroMeHubList/
 
 contact
 -------
