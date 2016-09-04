@@ -15,6 +15,7 @@ things
 * my photos hosted at [23][] and [flickr][]
 * [douban-cite][] - Generate book reference based on douban.
 * [erratawiki][] - collects (non-official) errata for books
+* [git-ci-mtime][] - a git plugin to commit a `file` using its `mtime` as auth date.
 * [gister][] - command line tool for github gists
 * [greylist][] - little effort to make corporations accountable
 * [jump-or-exec][] - shell script to jump or exec an application under X window manager
@@ -27,6 +28,7 @@ things
 * [ZeroMeHubs][] -List of ZeroMe hubs.
 * other repositories hosted at [github][].
 
+[git-ci-mtime]: https://weakish.github.io/git-ci-mtime/
 [gists]: https://gist.github.com/weakish
 [gist-feed]: https://gist.github.com/weakish.atom
 [erratawiki]: https://github.com/weakish/errata/wiki
