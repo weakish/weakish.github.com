@@ -1,9 +1,9 @@
 Ceylon coding style
 ===================
 
-## Prefer `if . then . else .` to `. then . else .`
+## Prefer `if ... then ... else ...` to `... then ... else ...`
 
-We feel `A then B else C` is confusing.
+I feel `A then B else C` confusing.
 
 Readers may think `A then B else C` is `A ? B : C` in other languages, but they are **not the same**:
 
@@ -22,7 +22,7 @@ I think `if (A) then B else C` is much cleaner.
 
 So I prefer to only uses `i++` to increase `i`, i.e. just the statement `i++;`.
 I think a meaningful evaluated value of `i++` should be `void`
-if the a programming language allows `++`.
+if a programming language allows `++`.
 
 Same applies to `i--` and `--i`.
 
@@ -32,27 +32,31 @@ Small commits make review, cherry-pick, and rebase easier. Bonus: measure how ma
 
 ## Prefer functions to classes
 
-We prefer to declare classes for new types (or type aliases).
+We prefer to declare classes for new types.
 
-## Avoid long function definition
+## Prefer small functions
 
 - Extract small functions from a complex function.
 - One function should only do one thing.
 
-## Avoid top level variable.
+## Avoid top level variables
 
-- Prefer local variable.
 - Prefer passing parameter to function.
-- Top level immutable value is not bad.
+- Local variable is fine.
+- Top level immutable value is fine.
 
 ## Reduce commenting.
 
-Programming lanuage should be more clear than natuarl language in most cases.
+Programming languages are clearer than natural languages.
+So in most cases try to express as much as possible in programming language itself.
 
 - Use meaningful function and variable/value name.
 - Declare local variable near its usage.
 - Avoid deep nested function call expression. Extract meaningful immediate value declaration.
 
+Here 'commenting' mainly refers to inline comments,
+i.e. comments explaing implementation details.
+Doc annotation of public modules and functions on their usage is fine. 
 
 ## Break long line of parameters logically.
   
@@ -104,7 +108,7 @@ Boolean if_else(Integer x) {
 }
 ```
 
-Also, avoid use `variable` to save else branch.
+Also, avoid using `variable` to save else branch.
 
 For example:
 
@@ -126,11 +130,9 @@ if (condition) {
 }
 ```
 
-we writes `if (x > 0, x < 10)`.
-
 ## Prefer readability over testability
 
-The main audience of code are human beings, not tests.
+The main audience of code is human beings, not tests.
 
 Improving testability should not harm readability.
 
@@ -156,7 +158,7 @@ shared void run() {
 
 ## Prefer `under_line`
 
-`camelCaseAreHardTooReadIfThereAreMoreThanThreeWords`
+`camelCaseAreHardToReadIfThereAreMoreThanThreeWords`
 
 `under_line_is_much_easier_to_read`
 
