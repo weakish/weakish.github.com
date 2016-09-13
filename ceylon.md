@@ -55,20 +55,47 @@ So in most cases try to express as much as possible in programming language itse
 - Avoid deep nested function call expression. Extract meaningful immediate value declaration.
 
 Here 'commenting' mainly refers to inline comments,
-i.e. comments explaing implementation details.
-Doc annotation of public modules and functions on their usage is fine. 
-
+i.e. comments explaining implementation details.
+Doc annotation of public modules and functions on their usage is fine.
 ## Break long line of parameters logically.
   
 A simple approach is break for one, break for all.
-To save lines, related parameters may be groupped in one line.
+To save lines, related parameters may be grouped in one line.
 
 ## Prefer switch case over if else.
 
 Cases in `switch` need to be both disjoint and exhausted.
 Using a strict form helps to reduce chances to miss corner cases.
 
-If `if else` is necessary, try to avoid fall through flow.
+For example, suppose we have the following code:
+
+```ceylon
+Path path = current;
+if (is Directory path) { // typo, should be `path.resource`.
+    // ...
+} else { // dead code
+    // ...
+}
+```
+
+There is a typo in the above code, `path` should be `path.resource`.
+So the above code will never go into the else branch,
+since a Path is always not a Directory.
+
+However, if we use switch with explicit cases:
+
+```ceylon
+switch (path)
+case (is Directory) {
+    // ...
+}
+case (is File|Link|Nil) {
+    // ...
+}
+```
+The compiler will refuse to compile, saying cases are not exhausted.
+
+Similarly, if `if else` is necessary, prefer explicit else branch over fall through flow.
 
 For example:
 
