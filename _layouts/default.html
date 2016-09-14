@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{% if lang %}lang{% else %}en{% endif %}">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+    <link href="/footer.css" rel="stylesheet" type="text/css"/>
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    <nav>
+      <a {% if page.title == 'Ceylon' %} class="current" {% endif %}
+        href="/ceylon/">Ceylon</a>
+      <a {% if page.title == 'Javascript' %} class="current" {% endif %}
+        href="/javascript/">JavaScript</a>
+      <a {% if page.title == 'Python' %} class="current" {% endif %}
+        href="/python/">Python</a>
+      <a {% if page.title == 'Formatting' %} class="current" {% endif %}
+        href="/formatting/">formatting</a>
+    </nav>
+    {{ content }}
+    <footer>
+      <small>
+        <a href="http://validator.w3.org/check?uri=https%3A%2F%2Fweakish.github.io%2Fcoding-style%2F{{page.title}}%2F">Valid HTML5</a>.
+        <a href="http://www.anybrowser.org/campaign/">Viewable with any browser,</a>
+        including <a href="https://www.mozilla.org/firefox/">Firefox</a>,
+        <a href="https://www.chromium.org/">Chromium</a>,
+        and <a href="http://w3m.sourceforge.net/">w3m</a>.
+      </small>
+      </div>
+    </footer>
+  </body>
+</html>

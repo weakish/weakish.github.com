@@ -1,0 +1,14 @@
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+
+permalink: /:title/
+
+defaults:
+    -
+        scope:
+            path: ""
+        values:
+            layout: default
