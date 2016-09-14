@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8"/>
     <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
-    <link href="/footer.css" rel="stylesheet" type="text/css"/>
+    <link href="/coding-style/footer.css" rel="stylesheet" type="text/css"/>
     <title>{{ page.title }}</title>
   </head>
   <body>
     <nav>
       <a {% if page.title == 'Ceylon' %} class="current" {% endif %}
-        href="/ceylon/">Ceylon</a>
+        href="/coding-style/ceylon/">Ceylon</a>
       <a {% if page.title == 'Javascript' %} class="current" {% endif %}
-        href="/javascript/">JavaScript</a>
+        href="/coding-style/javascript/">JavaScript</a>
       <a {% if page.title == 'Python' %} class="current" {% endif %}
-        href="/python/">Python</a>
+        href="/coding-style/python/">Python</a>
       <a {% if page.title == 'Formatting' %} class="current" {% endif %}
-        href="/formatting/">formatting</a>
+        href="/coding-style/formatting/">formatting</a>
     </nav>
     {{ content }}
     <footer>
