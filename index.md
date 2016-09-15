@@ -24,11 +24,13 @@ things
 * [rcshell.vim][] - syntax highlight file for the rc shell scripting language
 * [shattr][] - A [shatag][] clone in Ceylon.
 * [viconf][] - visudo for all commands
+* [vscode-complete-statement] - mimic IntelliJ's complete statement
 * [xkcd936][] - xkcd936 style passphrase generator
 * [ZeroMeHubs][] - List of ZeroMe hubs.
 * ceylon modules: [Unit] and [sysexits].
 * other repositories hosted at [github][].
 
+[vscode-complete-statement]: https://marketplace.visualstudio.com/items?itemName=weakish.complete-statement
 [Unit]: https://weakish.github.io/ceylon-unit-function/
 [sysexits]: https://weakish.github.io/ceylon-sysexits/
 [git-ci-mtime]: https://weakish.github.io/git-ci-mtime/
