@@ -26,10 +26,11 @@ things
 * [viconf][] - visudo for all commands
 * [xkcd936][] - xkcd936 style passphrase generator
 * [ZeroMeHubs][] - List of ZeroMe hubs.
-* [ceylon-sysexits][] - Exceptions mapping `sysexits.h`.
+* ceylon modules: [Unit] and [sysexits].
 * other repositories hosted at [github][].
 
-[ceylon-sysexits]: https://weakish.github.io/ceylon-sysexits/
+[Unit]: https://weakish.github.io/ceylon-unit-function/
+[sysexits]: https://weakish.github.io/ceylon-sysexits/
 [git-ci-mtime]: https://weakish.github.io/git-ci-mtime/
 [gists]: https://gist.github.com/weakish
 [gist-feed]: https://gist.github.com/weakish.atom
