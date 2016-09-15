@@ -39,8 +39,8 @@ things
 [gplus-posts]: https://plus.google.com/107331692444266690632/posts
 [gplus-feed]: http://gplusrss.com/rss/feed/ea57ff853aa87c2f3078f17958b0fc3c4fa6748a9eeaf "gplusrss"
 [github]: https://github.com/weakish/
-[23]: http://www.23hq.com/weakish/album/list/
-[flickr]: http://www.flickr.com/photos/weakish/sets/
+[23]: http://www.23hq.com/weakish/album/list
+[flickr]: https://www.flickr.com/photos/weakish/sets/
 [ZeroMe]: http://127.0.0.1:43110/Me.ZeroNetwork.bit/?Profile/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/weakish@zeroid.bit
 [0meproxy]: https://bit.no.com:43110/Me.ZeroNetwork.bit/?Profile/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/weakish@zeroid.bit
 [identi.ca]: https://identi.ca/weakish/
@@ -53,7 +53,7 @@ things
 [rcshell.vim]: http://www.vim.org/scripts/script.php?script_id=2880
 [douban-cite]: https://weakish.github.io/douban-cite
 [jump-or-exec]: https://weakish.github.io/jump-or-exec
-[pm_25]: https://weakish.github.io/pm_25
+[pm 25]: https://weakish.github.io/pm_25
 [viconf]: https://weakish.github.io/viconf
 [ZeroMeHubs]: https://weakish.github.io/ZeroMeHubList/
 
