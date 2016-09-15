@@ -1,5 +1,4 @@
 lsi: false
-permalink: /:title
 safe: true
 
 defaults:
