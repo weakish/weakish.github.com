@@ -19,7 +19,7 @@ things
 * [gister][] - command line tool for github gists
 * [greylist][] - little effort to make corporations accountable
 * [jump-or-exec][] - shell script to jump or exec an application under X window manager
-* [pm_25][] - fetch PM 2.5 data in China via pm25.in and bing.com
+* [pm 25][] - fetch PM 2.5 data in China via pm25.in and bing.com
 * [pomodoro-timer][] - a simple command line pomodoro timer
 * [rcshell.vim][] - syntax highlight file for the rc shell scripting language
 * [shattr][] - A [shatag][] clone in Ceylon.
