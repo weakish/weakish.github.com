@@ -37,7 +37,7 @@ things
 [erratawiki]: https://github.com/weakish/errata/wiki
 [greylist]: https://github.com/weakish/greylist/wiki
 [gplus-posts]: https://plus.google.com/107331692444266690632/posts
-[gplus-feed]: http://gplusrss.com/rss/feed/ea57ff853aa87c2f3078f17958b0fc3c4fa6748a9eeaf (powered by gplusrss)
+[gplus-feed]: http://gplusrss.com/rss/feed/ea57ff853aa87c2f3078f17958b0fc3c4fa6748a9eeaf "gplusrss"
 [github]: https://github.com/weakish/
 [23]: http://www.23hq.com/weakish/album/list/
 [flickr]: http://www.flickr.com/photos/weakish/sets/
