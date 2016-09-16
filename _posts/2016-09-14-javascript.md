@@ -1,3 +1,6 @@
+JavaScript Coding Style
+=======================
+
 semicolon
 ---------
 
