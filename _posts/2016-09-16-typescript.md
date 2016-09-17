@@ -51,6 +51,41 @@ function sub(x: number, kind: K1P): string {
 }
 ```
 
+If this feels too verbose,
+only specify `kind` when declaring a variable/function takes a function.
+This requries wrapping, though.
+
+```typescript
+type Kind1P = "1p";
+type Kind2P = "2p";
+type KindHUStrNum = "string | number";
+
+function f(x: number) {
+    return x;
+}
+function g(x: number, y: number) {
+    return x + y;
+}
+
+let no_f: (x: number, y: number, kind: Kind2P) => number;
+function wrap_g(x: number, y: number, kind: KInd2P = "2p") {
+    return g(x, y);
+}
+no_f = wrap_g;
+
+function higher(
+        f: (x: string | number, kind: K1P, kindH: KUStrNum) => string,
+        y: string | number
+        ) {
+	console.log(`calling ${f}`);
+	return f(y);
+}
+
+function sub(x: number): string {
+	return `${x * x}`;
+}
+```
+
 Reduce using `void` functions
 -----------------------------
 
