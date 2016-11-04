@@ -71,4 +71,24 @@ SRCS=   sed0.c sed1.c
 .include <bsd.prog.mk>
 ```
 
+## Syntax
+
+- Variable:
+
+        PREFIX = /usr/local
+
+- shell command:
+
+        `command`
+
+	Be careful that comands are isolated in its own subshell. To use a command next the other, use `foo && bar`.
+
+- not echo anything to the screen:
+
+        @command
+
+- keep going even if command returns a nonzero status:
+
+        -command
+
 #make #build #gnu #bsd
