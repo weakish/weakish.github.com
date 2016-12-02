@@ -6,7 +6,7 @@ semicolon
 
 JavaScript's ASI (auto semicolon insertion) is confusing.
 
-If I prefer to not omit semicolon, I need to take care of semicolon auto inserted with:
+If I prefer to not omit semicolons, I need to take care of semicolon auto inserted with:
 
 1. `return`
 2. `break`
@@ -41,7 +41,7 @@ However, if I prefer to omit semicolons, I need to remember additional rules bes
 A lot of other languages allows you to omit semicolons.
 And I know none has such a complex rule as JavaScript's ASI.
 To work around JavaScript's poorly designed ASI,
-not omitting semicolon requires you to remember one rule
+not omitting semicolons requires you to remember one rule
 (do not break after `throw`).
 Omitting them forces you to remember more rules.
 BTW, omitting semicolon also requires minifiers to deal with the complex ASI rules.
