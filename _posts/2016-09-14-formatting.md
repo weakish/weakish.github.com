@@ -11,7 +11,7 @@ I prefer 4 spaces
 Condense braces
 ---------------
 
-I prefer
+I used to prefer
 
 ```c
 void function() {
@@ -28,10 +28,12 @@ over
 ```c
 void function()
 {
-    if (condiciton) {
+    if (condition)
+    {
         print("braces on its own line");
     }
-    else {
+    else
+    {
         print("shines if there are a lot of complex statements within branch");
     }
 }
@@ -39,6 +41,47 @@ void function()
 
 Because I use large fonts on a small screen.
 I also avoid to put too many statements in if else branch.
+
+Later I switched the later style (Allman) style.
+
+The first (Java) style is clean for simple code, like Python.
+But it becomes less clear when the parameter/conditional list goes long:
+
+```c
+if (starts_with(path, home, path_size, home_path_size) ||
+    check_with(path, home, path_size, home_path_size) {
+    recreate(path, home);
+    return home_path_size;
+} else {
+    return 0;
+}
+```
+
+`return 0` is clear.
+But I cannot see whether `recreate(path, home)` belongs to the conditional list at a glance.
+
+On the other side, I can get the whole structure at a glance with Allman style:
+
+```c
+if (starts_with(path, home, path_size, home_path_size) ||
+    check_with(path, home, path_size, home_path_size)
+{
+    recreate(path, home);
+    return home_path_size;
+}
+else
+{
+    return 0;
+}
+```
+
+Yes, I said I use large fonts on small screen.
+Allman style wastes lines.
+But because I use large fonts on small screen,
+I can not read `if (long || next_line ) {` at once.
+The Java style requires me to move my eyes to right, then move my eyes back to next line, which is slow.
+With Allman style, to get an overview of structure,
+I only need to focus on the left half of the code block, and no eye movements are needed.
 
 Line length
 -----------
