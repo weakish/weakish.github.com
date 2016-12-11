@@ -27,9 +27,12 @@ things
 * [vscode-complete-statement] - mimic IntelliJ's complete statement
 * [xkcd936][] - xkcd936 style passphrase generator
 * [ZeroMeHubs][] - List of ZeroMe hubs.
-* ceylon modules: [Unit] and [sysexits].
+* ceylon modules: [Unit][], [sysexits][], [XDG][], [cacography][], and [zhihu][].
 * other repositories hosted at [github][].
 
+[XDG]: https://weakish.github.io/ceylon-xdg/
+[cacography]: https://weakish.github.io/cacography/
+[zhihu]: https://weakish.github.io/ceylon-zhihu/
 [vscode-complete-statement]: https://marketplace.visualstudio.com/items?itemName=weakish.complete-statement
 [Unit]: https://weakish.github.io/ceylon-unit-function/
 [sysexits]: https://weakish.github.io/ceylon-sysexits/
