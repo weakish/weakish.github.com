@@ -16,17 +16,5 @@
       <a href="https://www.chromium.org/">Chromium</a>,
       and <a href="https://sourceforge.net/projects/w3m/">w3m</a>.
   </small>
-  <div id="qr-url" style="position: absolute; top: 0px; right: 0px;">
-    {% comment %}
-      We use hard-coded qr.png since we have only one page now. If we
-      have more pages, we may use http://goqr.me/api/doc/ to generate
-      qr code instead.
-
-      Wrapping `img` into `p` for `w3m`.
-      `display: inline` for other browsers understanding CSS.
-    {% endcomment %}
-    <p style="display: inline;">
-      <img src="/qr.png" alt="QR code of url" title="QR code of url"/>
-    </p>
   </div>
 </footer>
