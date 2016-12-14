@@ -11,7 +11,7 @@ things
 ------
 
 * [gists][]([feed][gist-feed]) - my notes, scripts, configs, poems, comics, etc
-* posts on [ZeroMe][]([proxy][0meproxy]), [identi.ca][]([rss][pump2rss]) and [Google+][gplus-posts]([feed][gplus-feed]).
+* posts on [ZeroMe][], [identi.ca][]([rss][pump2rss]) and [Google+][gplus-posts]([feed][gplus-feed]).
 * my photos hosted at [23][] and [flickr][]
 * [douban-cite][] - Generate book reference based on douban.
 * [erratawiki][] - collects (non-official) errata for books
@@ -47,7 +47,6 @@ things
 [23]: http://www.23hq.com/weakish/album/list
 [flickr]: https://www.flickr.com/photos/weakish/sets/
 [ZeroMe]: http://127.0.0.1:43110/Me.ZeroNetwork.bit/?Profile/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/weakish@zeroid.bit
-[0meproxy]: https://bit.no.com:43110/Me.ZeroNetwork.bit/?Profile/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/weakish@zeroid.bit
 [identi.ca]: https://identi.ca/weakish/
 [pump2rss]: https://pump2rss.com/feed/weakish@identi.ca.atom
 [shattr]: https://weakish.github.io/shattr
