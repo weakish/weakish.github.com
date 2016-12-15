@@ -22,6 +22,7 @@ things
 * [pm 25][] - fetch PM 2.5 data in China via pm25.in and bing.com
 * [pomodoro-timer][] - a simple command line pomodoro timer
 * [rcshell.vim][] - syntax highlight file for the rc shell scripting language
+* [SetupList][]([proxy][setuplistproxy]) - a ZeroNet powered forum to share hardware/software you are using.
 * [shattr][] - A [shatag][] clone in Ceylon.
 * [viconf][] - visudo for all commands
 * [vscode-complete-statement] - mimic IntelliJ's complete statement
@@ -61,6 +62,8 @@ things
 [pm 25]: https://weakish.github.io/pm_25
 [viconf]: https://weakish.github.io/viconf
 [ZeroMeHubs]: https://weakish.github.io/ZeroMeHubList/
+[SetupList]: http://127.0.0.1:43110/setuplist.0web.bit
+[setuplistproxy]: https://bit.no.com:43110/setuplist.0web.bit
 
 contact
 -------
