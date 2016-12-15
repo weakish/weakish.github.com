@@ -47,7 +47,7 @@ things
 [github]: https://github.com/weakish/
 [23]: http://www.23hq.com/weakish/album/list
 [flickr]: https://www.flickr.com/photos/weakish/sets/
-[ZeroMe]: http://127.0.0.1:43110/Me.ZeroNetwork.bit/?Profile/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/weakish@zeroid.bit
+[ZeroMe]: /Me.ZeroNetwork.bit/?Profile/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/weakish@zeroid.bit
 [identi.ca]: https://identi.ca/weakish/
 [pump2rss]: https://pump2rss.com/feed/weakish@identi.ca.atom
 [shattr]: https://weakish.github.io/shattr
