@@ -57,8 +57,8 @@ if (starts_with(path, home, path_size, home_path_size) ||
 }
 ```
 
-`return 0` is clear.
-But I cannot see whether `recreate(path, home)` belongs to the conditional list at a glance.
+The simple statement `return 0` in else branch is clear.
+But I cannot tell whether `recreate(path, home)` belongs to the conditional list or the function body at a glance.
 
 On the other side, I can get the whole structure at a glance with Allman style:
 
