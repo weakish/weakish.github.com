@@ -75,13 +75,16 @@ else
 }
 ```
 
-Yes, I said I use large fonts on small screen.
-Allman style wastes lines.
-But because I use large fonts on small screen,
+Also, since I use large fonts on small screen,
 I can not read `if (long || next_line ) {` at once.
-The Java style requires me to move my eyes to right, then move my eyes back to next line, which is slow.
+So the Java style requires me to move my eyes to right, then move my eyes back to next line, which is slow.
 With Allman style, to get an overview of structure,
 I only need to focus on the left half of the code block, and no eye movements are needed.
+This makes up the wasted lines.
+
+I guess for large screens a few wasted lines is affordable for clarity.
+
+Maybe the Java style is suitable for a setup with small fonts on a small screen, provided the syntax highlight scheme distinguishes braces clearly?
 
 Line length
 -----------
