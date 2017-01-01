@@ -16,16 +16,16 @@ Default `kind` parameter to represent parameter number
 Due to structural typing,
 functions with fewer parameters are assignable to functions that take more parameters.
 
-A workaround is to add an additional default `kind` parameter.
+A workaround is to add an additional default `_kind` parameter.
 
 ```typescript
 type Kind1P = "1p";
 type Kind2P = "2p";
 
-function f(x: number, kind: Kind1P = "1p") {
+function f(x: number, _kind: Kind1P = "1p") {
     return x;
 }
-function g(x: number, y: number, kind: Kind2P = "2p") {
+function g(x: number, y: number, _kind: Kind2P = "2p") {
     return x + y;
 }
 ```
@@ -36,17 +36,17 @@ A similar workaround for bivariant function parameter:
 type KindHUStrNum = "string | number";
 
 function higher(
-        f: (x: string | number, kind: K1P, kindH: KUStrNum) => string,
+        f: (x: string | number, _kind: K1P, _kindH: KUStrNum) => string,
         y: string | number,
         kind: K2P = "2p",
-        kindH: KUStrNum = "string | number";
+        _kindH: KUStrNum = "string | number";
         ) {
 	console.log(`calling ${f}`);
 	return f(y);
 }
 
 // No need to specify `kindH` since `number` is primitive.
-function sub(x: number, kind: K1P): string {
+function sub(x: number, _kind: K1P): string {
 	return `${x * x}`;
 }
 ```
@@ -67,14 +67,14 @@ function g(x: number, y: number) {
     return x + y;
 }
 
-let no_f: (x: number, y: number, kind: Kind2P) => number;
-function wrap_g(x: number, y: number, kind: KInd2P = "2p") {
+let no_f: (x: number, y: number, _kind: Kind2P) => number;
+function wrap_g(x: number, y: number, _kind: KInd2P = "2p") {
     return g(x, y);
 }
 no_f = wrap_g;
 
 function higher(
-        f: (x: string | number, kind: K1P, kindH: KUStrNum) => string,
+        f: (x: string | number, kind: K1P, _kindH: KUStrNum) => string,
         y: string | number
         ) {
 	console.log(`calling ${f}`);
