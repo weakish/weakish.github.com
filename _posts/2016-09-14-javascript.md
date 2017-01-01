@@ -73,3 +73,8 @@ Reference
 
 [inimino]: http://inimino.org/~inimino/blog/javascript_semicolons
 [brendaneich]: https://brendaneich.com/2012/04/the-infernal-semicolon/
+
+Other
+-----
+
+[General code style for programming](/coding-style/general/).
