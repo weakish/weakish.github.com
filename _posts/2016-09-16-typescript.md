@@ -119,3 +119,8 @@ Semicolons
 ----------
 
 See [JavaScript](/coding-style/javascript/).
+
+Other
+-----
+
+[General code style for programming](general/).

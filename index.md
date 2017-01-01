@@ -4,9 +4,13 @@ title: coding style
 
 This is for personal reference only.
 
+- [General](/coding-style/general/)
+- [C](/coding-style/c/)
 - [Ceylon](/coding-style/ceylon/)
+- [Kotlin](/coding-style/kotlin/)
 - [JavaScript](/coding-style/javascript/)
 - [Python](/coding-style/python/)
+- [TypeScript](/coding-style/typescript/)
 
 Coding style v.s. formatting style
 ----------------------------------
