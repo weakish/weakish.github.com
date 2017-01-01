@@ -9,12 +9,20 @@
   </head>
   <body>
     <nav>
+      <a {% if page.title == 'General' %} class="current" {% endif %}
+        href="/coding-style/general/">General</a>
+      <a {% if page.title == 'C' %} class="current" {% endif %}
+        href="/coding-style/c/">C</a>
       <a {% if page.title == 'Ceylon' %} class="current" {% endif %}
         href="/coding-style/ceylon/">Ceylon</a>
+      <a {% if page.title == 'Kotlin' %} class="current" {% endif %}
+        href="/coding-style/kotlin/">Kotlin</a>
       <a {% if page.title == 'Javascript' %} class="current" {% endif %}
         href="/coding-style/javascript/">JavaScript</a>
       <a {% if page.title == 'Python' %} class="current" {% endif %}
         href="/coding-style/python/">Python</a>
+      <a {% if page.title == 'Typescript' %} class="current" {% endif %}
+        href="/coding-style/typescript/">TypeScript</a>
       <a {% if page.title == 'Formatting' %} class="current" {% endif %}
         href="/coding-style/formatting/">formatting</a>
     </nav>
