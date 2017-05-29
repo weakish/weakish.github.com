@@ -1,22 +1,15 @@
 New generation of attic.
 
+```sh
+borg init /path/to/repo
+borg create -C lz4 /path/to/repo::Saturday1 ~/Documents
+```
+
 ## Free space
 
 Before you start creating backups,
 please make sure that there is always a good amount of free space
 on the filesystem that has your backup repository (and also on ~/.cache).
-
-## Compression
-
-    borg create --compression TYPE
-
-Default is no compression.
-
-- fast repo storage and some compression: `lz4`
-- less fast repo storage and a bit more compression: `zlib`
-- very slow repo storage and high compression: `lzma`
-
-
 
 ## Encryption
 
@@ -44,6 +37,19 @@ and they will be readable to all users on a system.
 Using `export` in a shell script file should be safe, however,
 as the environment of a process is accessible only to that user.
 Also, using a shell command may leak the passphrase in shell history file.
+
+## Compression
+
+    borg create --compression TYPE
+
+Default is no compression.
+
+- fast repo storage and some compression: `lz4`
+- less fast repo storage and a bit more compression: `zlib`
+- very slow repo storage and high compression: `lzma`
+
+`lz4` is very fast thus preferred.
+`lzma` is preferred when the repository is on a remote host with slow (dial-up) connection.
 
 ## Upgrade from attic
 
