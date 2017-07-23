@@ -10,6 +10,7 @@ This is for personal reference only.
 - [Kotlin](/coding-style/kotlin/)
 - [JavaScript](/coding-style/javascript/)
 - [Python](/coding-style/python/)
+- [Ruby](/coding-style/ruby/)
 - [TypeScript](/coding-style/typescript/)
 
 Coding style v.s. formatting style
