@@ -11,6 +11,7 @@ This is for personal reference only.
 - [JavaScript](/coding-style/javascript/)
 - [Python](/coding-style/python/)
 - [Ruby](/coding-style/ruby/)
+- [Sh](/conding-style/sh/)
 - [TypeScript](/coding-style/typescript/)
 
 Coding style v.s. formatting style
