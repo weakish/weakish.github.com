@@ -1,4 +1,4 @@
-Python persistence choices
+Python 2 persistence choices
 ===========================
 
 tl;tr
