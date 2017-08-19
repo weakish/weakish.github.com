@@ -3,6 +3,8 @@ plugins:
   - jekyll-mentions
   - jekyll-sitemap
 
+permalink: /:title/
+
 defaults:
     -
         scope:
