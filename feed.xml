@@ -4,7 +4,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
 		<title>行路頭低低</title>
-		<description></description>
+		<description>一些用漢語寫的筆記</description>
 		<link>{{ site.url }}</link>
 		<atom:link href="{{ site.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
 		{% for page in site.pages %}
