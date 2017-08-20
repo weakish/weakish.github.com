@@ -12,8 +12,8 @@
 				<title>{{ page.title | xml_escape }}</title>
                 <description>{{ page.content | xml_escape }}</description>
 				<pubDate>{{ page.date | date_to_rfc822 }}</pubDate>
-				<link>{{ site.url }}{{ post.url }}</link>
-				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+				<link>{{ site.url }}{{ page.url }}</link>
+				<guid isPermaLink="true">{{ site.url }}{{ page.url }}</guid>
 			</item>
 		{% endfor %}
 	</channel>
