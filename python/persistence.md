@@ -1,18 +1,15 @@
-Python 2 persistence choices
-===========================
+# Python Persistence
 
-tl;tr
-------
+## tl;tr
 
 If we care about compatibility with different Python versions,
 use `cPickle` with binary protocol and `fast` option.
 
 Otherwise just use marshal.
 
-Performance
--------------
+## Performance
 
-A benchmark of marshal, pickle, json, capnp on my machine.
+A benchmark of marshal, pickle, json, capnp for python 2.7 on my machine.
 
 ```python
 import timeit
@@ -87,8 +84,7 @@ However, with binary protocol and `fast` option,
 0.017292022705078125
 ```
 
-Compatibility
---------------
+## Compatibility
 
 ### Compatibility with different Python versions
 
@@ -105,7 +101,7 @@ Implemented in other languages:
 - Go: [gopymarshal](https://github.com/hambster/gopymarshal)
 - Perl: (read-only) https://github.com/gitpan/Python-Serialise-Marshal
 
-### Export to JSON
+## Export to JSON
 
 To communicate with other programs,
 we can export to JSON.
