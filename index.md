@@ -10,7 +10,9 @@ Welcome to my shred of the Web. :-)
 things
 ------
 
-* [gists][]([feed][gist-feed]) - my notes, scripts, configs, poems, comics, etc
+* [StutteringTalkaholic](/StutteringTalkaholic/) - notes on programming and software.
+* [Notes](/dapi/), [poems](/poems/), [microblog][] written in Chinese.
+* [gists][]([feed][gist-feed]) - notes, scripts, configs etc.
 * posts on [ZeroMe][]([proxy][0meproxy]), [identi.ca][]([rss][pump2rss]) and [Google+][gplus-posts]([feed][gplus-feed]).
 * my photos hosted at [23][] and [flickr][]
 * [douban-cite][] - Generate book reference based on douban.
@@ -32,6 +34,7 @@ things
 * ceylon modules: [Unit][], [sexp][], [sysexits][], [XDG][], [cacography][], and [zhihu][].
 * other repositories hosted at [github][].
 
+[microblog]: https://fanfou.com/weakish
 [XDG]: https://weakish.github.io/ceylon-xdg/
 [cacography]: https://weakish.github.io/cacography/
 [zhihu]: https://weakish.github.io/ceylon-zhihu/
