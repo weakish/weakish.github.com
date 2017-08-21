@@ -18,3 +18,7 @@ Notes on programming and software.
 ## Vim
 
 - [completion](vim/completion/)
+
+---
+
+| [about](/) | [log](log/)
