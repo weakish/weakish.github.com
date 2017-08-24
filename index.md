@@ -8,7 +8,7 @@
 
 - [如何考察成书先后](chengshuxianhou/)
 
-    古书成书先后的判断方法
+    古书成书先后的判断方法
 
 - [左傳春秋經國加爵加名之用例](zuozhuan_guo-jue-ming/)
 
