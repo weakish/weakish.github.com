@@ -9,11 +9,11 @@ Notes on programming and software.
 ## Dive into
 
 - [base64](dive-into/base64/)
-- [centos](dive-into/centos/)
+- [Centos](dive-into/centos/)
 - [fish](dive-into/fish/)
-- [flow](dive-into/flow/)
+- [Flow](dive-into/flow/)
 - [GitHub Pages](dive-into/gh-pages/)
-- [pry](dive-into/pry/)
+- [Pry](dive-into/pry/)
 - [ruby](dive-into/ruby/)
 
 ## Hardening
@@ -22,18 +22,18 @@ Notes on programming and software.
 
 ## Python
 
-- [persistence](python/persistence/)
+- [Persistence](python/persistence/)
 
 ## Ruby
 
 - [API Doc](ruby/api-doc/)
-- [Command line UI](ruby/cli/)
+- [Command Line UI](ruby/cli/)
 - [Doctest](ruby/doctest/)
 
 ## Vim
 
-- [completion](vim/completion/)
+- [Completion](vim/completion/)
 
 ---
 
-[about](/) | [log](log/)
+[about](/) \| [log](log/)
