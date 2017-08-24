@@ -10,6 +10,7 @@ Notes on programming and software.
 - [flow](dive-into/flow/)
 - [GitHub Pages](dive-into/gh-pages/)
 - [pry](dive-into/pry/)
+- [ruby](dive-into/ruby/)
 
 ## Hardening
 
@@ -18,6 +19,12 @@ Notes on programming and software.
 ## Python
 
 - [persistence](python/persistence/)
+
+## Ruby
+
+- [API Doc](ruby/api-doc/)
+- [Command line UI](ruby/cli/)
+- [Doctest](ruby/doctest/)
 
 ## Vim
 
