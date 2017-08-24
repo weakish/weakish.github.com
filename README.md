@@ -10,7 +10,7 @@ Notes on programming and software.
 
 - [Base64](dive-into/base64/)
 - [Centos](dive-into/centos/)
-- [fish](dive-into/fish/)
+- [Fish](dive-into/fish/)
 - [Flow](dive-into/flow/)
 - [GitHub Pages](dive-into/gh-pages/)
 - [Pry](dive-into/pry/)
@@ -18,7 +18,7 @@ Notes on programming and software.
 
 ## Hardening
 
-- [debian](hardening/debian/)
+- [Debian](hardening/debian/)
 
 ## Python
 
