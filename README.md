@@ -2,6 +2,10 @@
 
 Notes on programming and software.
 
+## Command Line
+
+- [Command Line Interface Testing](cli/test/)
+
 ## Dive into
 
 - [base64](dive-into/base64/)
