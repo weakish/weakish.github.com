@@ -223,3 +223,52 @@ Cons:
 - No setup/teardown.
 - Syntax: `env[]=~//`, `env[]?=`, `env[][]=`, etc.
 
+## [Bricolage](http://bitbucket.org/zserge/bricolage)
+
+Example:
+
+```sh
+# A test is a function. $T is a variable where test keeps its internal files
+mytest() {
+    # ok is the only assertion helper
+    # It uses `test` to check the condition, so syntax is common
+    ok 1 -eq 1
+    ok foo = foo
+    foo="Foo bar"
+    ok "$foo" = "Foo bar"
+
+    # You can use `spy` to make a wrapper over a command.
+    spy date
+
+    date
+
+    # Command output will be written into <spy>.stdout file:
+    ok "$(cat $T/spy.date.stdout)" = "foo"
+
+    # Fake spy output can be specified in the <spy> file:
+    echo foo > $T/spy.date
+    date
+
+    # You can assert it using tail, sed, awk and other common unix tools
+    ok "$(tail -n 1 $T/spy.date.stdout)" = "foo"
+}
+
+# You may override test reports as you need
+pass() { echo PASS $* }
+fail() { echo FAIL $* }
+
+# You have to run your tests manually
+bricolage mytest
+
+# Clean test data
+rm -rf $T
+```
+
+Pros:
+
+- Extremely small (50 LOC).
+- Ultimately minimal.
+
+Cons:
+
+- Ultimately minimal.
