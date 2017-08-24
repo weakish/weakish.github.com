@@ -4,6 +4,7 @@ Notes on programming and software.
 
 ## Dive into
 
+- [base64](dive-into/base64/)
 - [centos](dive-into/centos/)
 - [fish](dive-into/fish/)
 
