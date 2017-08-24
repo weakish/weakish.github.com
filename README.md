@@ -21,4 +21,4 @@ Notes on programming and software.
 
 ---
 
-| [about](/) | [log](log/)
+[about](/) | [log](log/)
