@@ -8,6 +8,7 @@ Notes on programming and software.
 - [centos](dive-into/centos/)
 - [fish](dive-into/fish/)
 - [flow](dive-into/flow/)
+- [GitHub Pages](dive-into/gh-pages/)
 
 ## Hardening
 
