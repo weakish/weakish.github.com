@@ -8,13 +8,13 @@ Notes on programming and software.
 
 ## Dive into
 
-- [base64](dive-into/base64/)
+- [Base64](dive-into/base64/)
 - [Centos](dive-into/centos/)
 - [fish](dive-into/fish/)
 - [Flow](dive-into/flow/)
 - [GitHub Pages](dive-into/gh-pages/)
 - [Pry](dive-into/pry/)
-- [ruby](dive-into/ruby/)
+- [Ruby](dive-into/ruby/)
 
 ## Hardening
 
