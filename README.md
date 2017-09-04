@@ -36,4 +36,4 @@ Notes on programming and software.
 
 ---
 
-[about](/) \| [log](log/)
+[about](/) \| [log](log/) \| [dev-story](https://stackoverflow.com/story/weakish)
