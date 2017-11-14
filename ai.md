@@ -284,7 +284,7 @@
 (`pSucc f S`和`pSucc f N`)，
 据此推断新数据属于 S 还是 N.
 同时，我们根据新数据的分类，
-推断分类为 S 和 N 的邮件具有特征 f 的概率(`pSucc S f`和`pSucc N f`),
+推断分类为 S 和 N 的数据具有特征 f 的概率(`pSucc S f`和`pSucc N f`),
 并进而调整 `pSucc f S` 和 `pSucc f N` 的值。
 
 那么这个学习过程其实是辗转计算`pSucc f S`和`pSucc S f`这一组概率
