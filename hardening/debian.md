@@ -148,24 +148,8 @@ We need to enter a passphrase to protect your SSH key.
 On our local machine:
 
 ```sh
-scp ~/.ssh/id_rsa.pub ada@your-droplet-ip:
+ssh-copy-id ada@your-droplet-ip:
 ```
-Note: if your public key is `id_dsa.pub`, subtitute `id_rsa.pub` with `id_dsa.pub`.
-
-Then ssh into our VPS:
-
-```sh
-ssh ada@your-droplet-ip
-```
-
-After that, on our VPS, run:
-
-```sh
-mkdir ~/.ssh
-cat id_rsa.pub >> ~/.ssh/authorized_keys2
-```
-
-Again, if your public key is `id_dsa.pub`, substitute `id_rsa.pub` with `id_dsa.pub`.
 
 ### Configure SSH service
 
