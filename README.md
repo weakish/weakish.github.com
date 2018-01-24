@@ -13,6 +13,7 @@ Notes on programming and software.
 - [Fish](dive-into/fish/)
 - [Flow](dive-into/flow/)
 - [GitHub Pages](dive-into/gh-pages/)
+- [Jetbrains IDEs](dive-into/jetbrains/)
 - [Pry](dive-into/pry/)
 - [Ruby](dive-into/ruby/)
 
