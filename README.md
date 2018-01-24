@@ -14,6 +14,7 @@ Notes on programming and software.
 - [Flow](dive-into/flow/)
 - [GitHub Pages](dive-into/gh-pages/)
 - [Jetbrains IDEs](dive-into/jetbrains/)
+- [OSX](dive-into/osx/)
 - [Pry](dive-into/pry/)
 - [Ruby](dive-into/ruby/)
 
