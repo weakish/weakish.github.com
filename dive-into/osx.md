@@ -51,6 +51,10 @@ Press `Ctrl-Left/Right` to switch among virtual desktops.
 
 Press `Ctrl-Up/Down` to show an overview of desktops or go back to normal mode.
 
+## Screen Recording
+
+QuickTime > File > New Screen Recording
+
 ## Finder
 
 By default, `~/Library` is hidden.
