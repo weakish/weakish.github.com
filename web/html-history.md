@@ -81,22 +81,49 @@ Debian is famous for its strictness on software licences.
 I do not think these two factors are related. ;-)
 
 ```html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-	"http://www.w3.org/TR/html4/loose.dtd">
 
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <!-- Copyright (c) 1994-2018
-	 The NetBSD Foundation, Inc.  ALL RIGHTS RESERVED. -->
-    <link rev="made" href="mailto:www@NetBSD.org">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="global.css" type="text/css">
-    <link rel="alternate" type="application/rss+xml" title="NetBSD news"
-	  href="//www.NetBSD.org/changes/rss-netbsd.xml">
-    <title>The NetBSD Project</title>
-    <meta name="DESCRIPTION" content="PowerPC, Alpha, SPARC, MIPS, SH3, ARM, amd64, i386, m68k, VAX: Of course it runs NetBSD.">
-    <meta name="KEYWORDS" content="NetBSD, BSD, 4.4BSD, UNIX, acorn26, acorn32, algor, algorithmics, alpha, amiga, amigappc, arc, arm26, arm32, atari, bebox, cats, cesfic, cobalt, emips, epoc32, evbarm, evbmips, evbppc, evbsh3, ews4800, hp300, hppa, hpcarm, hpcmips, hpcsh, hppa, i386, ibmnws, iyonix, luna68k, m68k, mac68k, macppc, mips, mmeye, mvme68k, mvmeppc, netwinder, news68k, newsmips, next68k, mipsco, ofppc, pica, pmax, pmppc, prep, powerpc, sandpoint, sbmips, sgimips, sh3, shark, sparc, sparc64, sun2, sun3, sun3x, ultrasparc, vax, walnut, x68k, x86-64, amd64, xen, linux, freebsd, hp-ux, sunos, osf/1, ultrix, svr4, solaris, sco, iBCS2, IPv6, embedded, real-time, open source, opteron, open source">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Debian -- The Universal Operating System </title>
+  <link rel="author" href="mailto:webmaster@debian.org">
+  <meta name="Description" content="Debian is an operating system and a distribution of Free Software. It is maintained and updated through the work of many users who volunteer their time and effort.">
+  <meta name="Generator" content="WML 2.0.12 (16-Apr-2008)">
+  <meta name="Modified" content="2018-02-20 03:50:42">
+  <meta name="viewport" content="width=device-width">
+  <meta name="mobileoptimized" content="300">
+  <meta name="HandheldFriendly" content="true">
+<link rel="alternate" type="application/rss+xml"
+ title="Debian News" href="News/news">
+<link rel="alternate" type="application/rss+xml"
+ title="Debian Project News" href="News/weekly/dwn">
+<link rel="alternate" type="application/rss+xml"
+ title="Debian Security Advisories (titles only)" href="security/dsa">
+<link rel="alternate" type="application/rss+xml"
+ title="Debian Security Advisories (summaries)" href="security/dsa-long">
+<link href="./debhome.css" rel="stylesheet" type="text/css">
+  <link href="./debian-en.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="Keywords" content="debian, GNU, linux, unix, open source, free, DFSG">
+<link rel="search" type="application/opensearchdescription+xml" title="Debian website search" href="./search.en.xml">
+</head>
+<body>
+<div id="header">
+   <div id="upperheader">
+   <div id="logo">
+  <a href="./" title="Debian Home"><img src="./Pics/openlogo-50.png" alt="Debian" width="50" height="61"></a>
+  </div> <!-- end logo -->
+	<div id="searchbox">
+		<form name="p" method="get" action="https://search.debian.org/cgi-bin/omega">
+		<p>
+<input type="hidden" name="DB" value="en">
+			<input name="P" value="" size="27">
+			<input type="submit" value="Search">
+		</p>
+		</form>
+	</div>   <!-- end sitetools -->
+ </div> <!-- end upperheader -->
 ```
 
 ## FreeBSD
