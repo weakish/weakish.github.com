@@ -36,6 +36,10 @@ Notes on programming and software.
 
 - [Completion](vim/completion/)
 
+## Web
+
+- [History of HTML through Linux/BSD Websites](web/html-history/)
+
 ---
 
 [about](/) \| [log](log/) \| [dev-story](https://stackoverflow.com/story/weakish)
