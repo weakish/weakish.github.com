@@ -142,7 +142,7 @@ But outside the BSD family...
 
 ## Gentoo
 
-![gentoo](gentoo.org)
+![gentoo](gentoo.png)
 
 The cutting edge Gentoo website uses HTML5.
 By the way, another cutting edge Linux distribution Arch also uses HTML5 on its web site.
