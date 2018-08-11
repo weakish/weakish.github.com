@@ -14,6 +14,7 @@ Notes on programming and software.
 - [Flow](dive-into/flow/)
 - [GitHub Pages](dive-into/gh-pages/)
 - [Jetbrains IDEs](dive-into/jetbrains/)
+- [JupyterLab](dive-into/jupyter-lab/) ([ipynb](https://github.com/weakish/StutteringTalkaholic/blob/master/dive-into/jupyter-lab.ipynb))
 - [OSX](dive-into/osx/)
 - [Pry](dive-into/pry/)
 - [Ruby](dive-into/ruby/)
