@@ -45,6 +45,7 @@ Notes on programming and software.
 
 Notes written in Chinese:
 
+- [AI](zh/ai/)
 - [少写些 HTML](zh/avoid-html/)
 - [Flutter试玩](zh/flutter/)
 - [编程入门路线](zh/learn-programming/)
