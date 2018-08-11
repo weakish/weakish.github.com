@@ -45,7 +45,10 @@ Notes on programming and software.
 
 Notes written in Chinese:
 
+- [少写些 HTML](zh/avoid-html/)
 - [Flutter试玩](zh/flutter/)
+- [编程入门路线](zh/learn-programming/)
+- [这里并不是 blog](zh/not-a-blog/)
 
 ---
 
