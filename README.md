@@ -41,6 +41,12 @@ Notes on programming and software.
 
 - [History of HTML through Linux/BSD Websites](web/html-history/)
 
+## zh
+
+Notes written in Chinese:
+
+- [Flutter试玩](zh/flutter/)
+
 ---
 
 [about](/) \| [log](log/) \| [dev-story](https://stackoverflow.com/story/weakish)
