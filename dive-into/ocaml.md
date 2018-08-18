@@ -352,10 +352,3 @@ Supported editors:
 
 `ocp-indent` can indent opam code automatically
 (available via `opam`).
-
-References
-----------
-
-1. Xavier Leroy. [Polymorphism by name for references and continuations][call-by-name]. In _20th symposium Principles of Programming Languages_, pages 220-231. ACM Press, 1993.
-
-[call-by-name]: http://gallium.inria.fr/~xleroy/publi/polymorphism-by-name.pdf
