@@ -13,6 +13,7 @@ Notes on programming and software.
 - [Fish](dive-into/fish/)
 - [Flow](dive-into/flow/)
 - [GitHub Pages](dive-into/gh-pages/)
+- [Haskell](dive-into/haskell/)
 - [Jetbrains IDEs](dive-into/jetbrains/)
 - [JupyterLab](dive-into/jupyter-lab/) ([ipynb](https://github.com/weakish/StutteringTalkaholic/blob/master/dive-into/jupyter-lab.ipynb))
 - [OSX](dive-into/osx/)
