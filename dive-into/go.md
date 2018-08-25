@@ -1413,6 +1413,32 @@ func TestMain(m *testing.M) {
 }
 ```
 
+### Helper functions
+
+When testing, to print location of a call to the helper function,
+instead of a line in the definition of the helper function,
+invoke `Helper` method in the definition of the helper function.
+
+For example:
+
+```go
+func assertTrue(t *testing.T condition bool) {
+    // This marks assertTrue is a helper function.
+    // Without it, if something is wrong,
+    // `go test` will always print the line number of `t.Fail()` below.
+    t.Helper()
+    if !condition {
+        t.Fail()
+    }
+}
+
+func TestFoo(t *testing.T) {
+    // Since assertTrue is marked as a helper function,
+    // `go test` will print the line number of the following line.
+    assertTrue(t, 1 + 1 == 1)
+}
+```
+
 ### iotest
 
 `testing/iotest` implements Readers and Writers useful mainly for testing.
