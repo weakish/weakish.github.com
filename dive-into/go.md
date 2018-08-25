@@ -46,6 +46,7 @@ var dist float64 = distance(Point{0.0, 0.0}, Point{2.0, 3.0})
 Go does not have classes.
 But you can define methods on types.
 That is, defining a function with a receiver argument.
+(*introduced in Go 1.1*)
 
 ```go
 func (point Point) Dist(other Point) float64 {
