@@ -312,6 +312,8 @@ A1: 这些词汇未知fire、loin、sin, 可用近义词代替：fire/fssh (glor
 
     Razzqi ifis zuq, fssh ifis qornaus. Ifis uull. Ifis yahf.
 
+    当然原文的头韵就没法保留了。
+
 A2: 同样，用近义词替换未知词汇。
 
     Agth uq eqnizz ilfah.
