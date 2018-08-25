@@ -320,6 +320,16 @@ An untyped constant takes the type needed by its context.
 const Pi = 3.14
 ```
 
+Type aliases
+------------
+
+```go
+type Boolean = bool
+```
+
+Now `Boolean` is an alternative spelling of `bool`.
+They both denote the same type.
+
 Named return values
 -------------------
 
