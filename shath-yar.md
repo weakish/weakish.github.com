@@ -312,10 +312,11 @@ A1: 这些词汇未知fire、loin、sin, 可用近义词代替：fire/fssh (glor
 
     Razzqi ifis zuq, fssh ifis qornaus. Ifis uull. Ifis yahf.
 
-
 A2: 同样，用近义词替换未知词汇。
 
     Agth uq eqnizz ilfah.
+
+    也就是Shall (the) power drive you. 这个语义和原文其实有一段距离，不过我想不到更好的翻译了。
 
 A3: soon 未知，翻译同义句 see you again.
 
