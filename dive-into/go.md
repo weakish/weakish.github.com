@@ -1,7 +1,7 @@
 Quick Introduction to Go
 ========================
 
-We're going to try to quickly show you enough of Go 1.10 to actually try it out.
+We're going to try to quickly show you enough of Go 1.11 to actually try it out.
 
 Hello World
 -----------
