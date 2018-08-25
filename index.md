@@ -104,3 +104,9 @@
 - [金庸群侠传 2 加强版作弊教程](jyqxz2-cheat/)
 - [金庸群侠传 3 作弊教程](jyqxz3-cheat/)
 - [金庸群侠 3 古墓版攻略](jyqxz3-gumu/)
+
+## 語言
+
+- [Shath'Yar 语](shath-yar/)
+
+    探索WOW中的古神语
