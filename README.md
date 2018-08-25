@@ -26,6 +26,10 @@ Notes on programming and software.
 
 - [Debian](hardening/debian/)
 
+## Java
+
+- [Notes on A Little Java, a Few Patterns](java/a-little/)
+
 ## Python
 
 - [Persistence](python/persistence/)
