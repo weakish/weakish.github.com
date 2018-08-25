@@ -46,7 +46,6 @@ var dist float64 = distance(Point{0.0, 0.0}, Point{2.0, 3.0})
 Go does not have classes.
 But you can define methods on types.
 That is, defining a function with a receiver argument.
-(*introduced in Go 1.1*)
 
 ```go
 func (point Point) Dist(other Point) float64 {
@@ -72,6 +71,8 @@ names := []string{"Tom", "Dick", "Harry"}
 // Go reuses `:=` instead of a dedicated keyword `in`.
 // `_` is called blank identifier,
 // meaning we are not interested in indecies of the slice.
+// BTW, if we are not interested in the loop values,
+// only the iteration itself, we can just write `for range names`.
 for _, name := range names {
     // Go does not have access modifiers.
     // Exported (public) names begin with a capital letter.
@@ -129,8 +130,9 @@ func append(slice []T, elements ...T) []T {
 To create a new slice:
 
 1. Use the slice expressions on an existing array: `a[n:m]`, `a[:m]`, `a[n:]`, and `a[:]`.
-2. The `make` allocates a zeroed array and returns a slice that refers to that array, e.g. `s := make([]int, 2, 5)`.
-3. `var s []T` returns `nil`, the zero value of a slice. It has a length and capacity of 0 and has no underlying array.
+2. Slice expressions can also specify capacity, `a[n:m:k]` or `a[:m:k]`. `k` must be less than or equal to the capacity of the source slice or array.
+3. The `make` allocates a zeroed array and returns a slice that refers to that array, e.g. `s := make([]int, 2, 5)`.
+4. `var s []T` returns `nil`, the zero value of a slice. It has a length and capacity of 0 and has no underlying array.
 
 Similarly, the zero value of a map is also `nil` (`var m map[K]T`).
 And `make(map[K]T)` returns a map initialized and ready for use.
