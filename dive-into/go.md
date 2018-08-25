@@ -464,6 +464,9 @@ In other words, functions with a pointer argument must take a pointer,
 and functions with a value argument must take a value.
 However, methods with pointer receivers take either a value or a pointer as the receiver when they are called,
 and methods with value receivers take either a value or a pointer as the receiver when they are called.
+But Go only automatically insert a single dereference,
+thus given a method defined on `T`,
+calling it on a receiver `**T` is disallowed.
 
 ```go
 func (point *Point) Scale(f float64) {
