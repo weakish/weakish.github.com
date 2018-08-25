@@ -7,6 +7,7 @@ This is for personal reference only.
 - [General](/coding-style/general/)
 - [C](/coding-style/c/)
 - [Ceylon](/coding-style/ceylon/)
+- [Go](/coding-style/go/)
 - [Kotlin](/coding-style/kotlin/)
 - [JavaScript](/coding-style/javascript/)
 - [Python](/coding-style/python/)
