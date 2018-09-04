@@ -269,11 +269,12 @@ Similarly, `switch` can start with a short statement:
 ```go
 switch os := runtime.GOOS; os {
     case "darwin":
-		fmt.Println("macOS.")
-	case "linux":
-		fmt.Println("Linux.")
-	default:
-    	fmt.Printf("%s.", os)
+        fmt.Println("macOS.")
+    case "linux":
+        fmt.Println("Linux.")
+    default:
+        fmt.Printf("%s.", os)
+}
 ```
 
 ### `defer`
