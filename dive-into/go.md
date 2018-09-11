@@ -632,7 +632,7 @@ var _ json.Marshaler = (*RawMessage)(nil)
 First we convert nil to a pointer to `*RawMessage`,
 (nil can always be converted to a pointer,
 since the pointer uses nil as its zero value).
-Then we convert a pointer the interface `json.Marshaler`,
+Then we convert the pointer to the interface `json.Marshaler`,
 i.e. checking if `*RawMessage` implements all required methods of `json.Marshaler`.
 
 ### Struct
