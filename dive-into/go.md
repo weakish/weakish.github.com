@@ -452,6 +452,12 @@ func sortStringsByLength(s []string) {
 }
 ```
 
+However, it only matches exact function signature.
+It does not support subtyping of functions,
+since Go does not support covariance and contravariance.
+Even covariant return type is not supported,
+which is supported by Java.
+
 Pointers
 --------
 
