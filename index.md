@@ -118,3 +118,7 @@
 - [Shath'Yar 语](shath-yar/)
 
     探索WOW中的古神语
+
+---
+
+[詩存](/poems/) \| [碎碎念](log/)
