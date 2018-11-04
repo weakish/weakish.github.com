@@ -1,11 +1,10 @@
----
-title: Jakukyo Friel (weakish)
----
+# mmap.page
 
-Jakukyo Friel (weakish)
-=======================
+map notes to web pages
 
-Welcome to my shred of the Web. :-)
+```c
+mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
+```
 
 things
 ------
