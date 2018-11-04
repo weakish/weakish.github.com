@@ -89,6 +89,14 @@
 
 - [楚风儿](chufenger/)
 
+## 算器
+
+- [AI](ai/)
+- [少写些 HTML](avoid-html/)
+- [Flutter试玩](flutter/)
+- [编程入门路线](learn-programming/)
+- [这里并不是 blog](not-a-blog/)
+
 ## 文藝
 
 - [《铃丰的恋物语与剑道社》「用感觉来写」的文学追求：以语法特征分析为中心](lingfeng/)
