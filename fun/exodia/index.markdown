@@ -1,5 +1,5 @@
 ---
-title: Moved to http://gist.github.com/weakish/1020444
+redirect_to:
+    - http://gist.github.com/weakish/1020444
 ---
 
-Moved to <http://gist.github.com/weakish/1020444>.

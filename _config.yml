@@ -3,7 +3,10 @@ safe: true
 
 # Turn off smart quotes.
 kramdown:
-        smart_quotes: ["apos", "apos", "quot", "quot"]
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+plugins:
+  - jekyll-redirect-from
 
 defaults:
  -
