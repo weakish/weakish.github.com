@@ -56,11 +56,14 @@ I did wrote three lines of configuration, though.
 # _config.yml
 
 plugins:
-  # So I can wrote `@username` in markdown files.
-  - jekyll-mentions
+  # 301 redirects
+  - jekyll-redirect-from
   # Sitemap for search engines.
   - jekyll-sitemap
 
 # Turn `/contact.html` to `/contact/`.
 permalink: /:title/
 ```
+
+Besides, I also put favicon.ico and 404.html in the repository,
+to customize favicon and 404 page.
