@@ -1,5 +1,3 @@
-# mmap.page
-
 map memories to web pages
 
 ```c
