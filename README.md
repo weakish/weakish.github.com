@@ -38,11 +38,11 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 * other repositories hosted at [github][].
 
 [erratawiki]: https://github.com/weakish/errata/wiki
-[gister]: https://weakish.github.io/gister
+[gister]: https://mmap.page/gister
 [rcshell.vim]: http://www.vim.org/scripts/script.php?script_id=2880
-[viconf]: https://weakish.github.io/viconf
+[viconf]: https://mmap.page/viconf
 [vscode-complete-statement]: https://marketplace.visualstudio.com/items?itemName=weakish.complete-statement
-[xkcd936]: https://weakish.github.io/xkcd936
+[xkcd936]: https://mmap.page/xkcd936
 [goaround]: https://github.com/weakish/goaround
 [gosugar]: https://github.com/weakish/gosugar
 [github]: https://github.com/weakish/
