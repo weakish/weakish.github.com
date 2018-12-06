@@ -16,6 +16,12 @@ And since Swift only distinguish functions may throw and may not throw,
 it is straightforward to map a function's throwability to optional type
 (via `try?`).
 
+## Optional Type and Union Type
+
+`T?` can be considered as a union of `T|Null`.
+
+`(J|K) -> T` can be expressed as overloads.
+
 ## More on Exception and Union Type
 
 > Checked exception is an imperfect, ugly implementation of union type.
@@ -90,7 +96,7 @@ public class HelloWorld
 This also applies Kotlin.
 Using exceptions as return values can spare return value for exception.
 The Kotlin compiler will warn us unused declared variable,
-so this in effect mimics checked exception in an exotic and ugly way.
+so this in effect mimics checked exception for a language without checked exception in an exotic and ugly way.
 
 ```kotlin
 object DividedByZero {}
