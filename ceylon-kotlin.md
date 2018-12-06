@@ -90,7 +90,7 @@ It also provides an IntelliJ plugin.
 
 Kotlin, also developed by JetBrains, is shipped with recent versions of IntelliJ.
 Recent versions of Kotlin has better IntelliJ support, like postfix code completion.
-Now Kotlin is also available on Eclipse.
+Kotlin is also available on Eclipse.
 
 Mutability
 ----------

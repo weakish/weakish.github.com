@@ -1,21 +1,20 @@
-Code tends to be clearer and more precise,
-thus expressing ideas in code is preferred.
+# Express more in code
+
+Code tends to be clearer and more precise.
 
 ## Math formula
 
-Prefer code to Math formula.
-
-Math language is a poor form of language:
+The traditional math language has a lot of issues:
 
 - Variables may be used before or without declaration.
 - Variables do not have scoping.
 - Prone to typos and untestable.
 
-Instead of writing $$E = mc^2$$, just write `e = m * c ** 2`.
+Instead of writing $$E = mc^2$$, I'd rather just write `e = m * (c ** 2)`.
 
 ## Tables
 
-Most tables can be converted to code in a clear way.
+Most tables can be converted to code in a clear way. For example:
 
 | Strength | Dexterity | Constitution |
 | -------- | --------- | ------------ |
@@ -44,7 +43,9 @@ value dexterity = AbilityScore(11);
 value constitution = AbilityScore(10);
 ```
 
-## Succinctness
+In fact, the later form reveals the relationship between ability and modifier.
+
+## Choices of language
 
 - Avoid layout sensitive languages such as Haskell, Python, and CoffeeScript, because copying from web page may break layouts.
 - Avoid low level, machine oriented languages such as C.
@@ -74,5 +75,3 @@ If a language with C like syntax is chosen,
 then it is recommended to use the Java style (opening braces on same line)
 and a indent level of 2 spaces.
 This saves space and does not harm readability for brief code samples.
- 
-#programming #code #writing #languages

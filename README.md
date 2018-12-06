@@ -10,7 +10,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 - Survey of tools for [cli ui testing](cli/test/), [python persistence](python/persistence/), [vim completion](vim/completion/).
 - [Notes on A Little Java, a Few Patterns](java/a-little/)
 - [History of HTML through Linux/BSD Websites](web/html-history/)
-- other [(micro)notes](log/)
+- other [thoughts](thoughts/) and [(micro)notes](log/).
 
 ## More
 
