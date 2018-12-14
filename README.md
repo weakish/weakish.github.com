@@ -6,16 +6,16 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 
 ## notes
 
-- Dive into [Base64](dive-into/base64/), [Flow](dive-into/flow/), [GitHub Pages](dive-into/gh-pages/), [Go](dive-into/go/), [Haskell](dive-into/haskell/), [Jetbrains IDEs](dive-into/jetbrains/), [JupyterLab](dive-into/jupyter-lab/) ([ipynb](https://github.com/weakish/weakish.github.com/blob/master/dive-into/jupyter-lab.ipynb)), [OCaml](dive-into/ocaml/), [OSX](dive-into/osx/), [Ruby](dive-into/ruby/) and [more](dive-into/more/).
-- Survey of tools for [cli ui testing](cli/test/), [python persistence](python/persistence/), [vim completion](vim/completion/).
-- [Notes on A Little Java, a Few Patterns](java/a-little/)
-- [History of HTML through Linux/BSD Websites](web/html-history/)
+- dive into [Base64](dive-into/base64/), [Flow](dive-into/flow/), [GitHub Pages](dive-into/gh-pages/), [Go](dive-into/go/), [Haskell](dive-into/haskell/), [Jetbrains IDEs](dive-into/jetbrains/), [JupyterLab](dive-into/jupyter-lab/) ([ipynb](https://github.com/weakish/weakish.github.com/blob/master/dive-into/jupyter-lab.ipynb)), [OCaml](dive-into/ocaml/), [OSX](dive-into/osx/), [Ruby](dive-into/ruby/) and [more](dive-into/more/)
+- survey of tools for [cli ui testing](cli/test/), [python persistence](python/persistence/), [vim completion](vim/completion/)
+- [notes on A Little Java, A Few Patterns](java/a-little/)
+- [history of HTML through Linux/BSD websites](web/html-history/)
 - other [(micro)notes](log/)
 
-## More
+## more
 
-- [notes](/dapi/) and [poems](/poems/) written in Chinese.
-- [gists][]([feed][gist-feed]) - notes, scripts, configs etc.
+- [notes](/dapi/) and [poems](/poems/) written in Chinese
+- [gists][]([feed][gist-feed]) - notes, scripts, configs etc
 - photos hosted at [23][] and [flickr][]
 
 [gists]: https://gist.github.com/weakish
@@ -24,7 +24,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 [23]: http://www.23hq.com/weakish/album/list
 [flickr]: https://www.flickr.com/photos/weakish/sets/
 
-## Projects
+## projects
 
 * [erratawiki][] - collects (non-official) errata for books
 * [gister][] - command line tool for github gists
@@ -32,8 +32,8 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 * [viconf][] - visudo for all commands
 * [vscode-complete-statement] - mimic IntelliJ's complete statement
 * [xkcd936][] - xkcd936 style passphrase generator
-* go modules: [goaround][] and [gosugar][].
-* other repositories hosted at [github][].
+* go modules: [goaround][] and [gosugar][]
+* other repositories hosted at [github][]
 
 [erratawiki]: https://github.com/weakish/errata/wiki
 [gister]: https://mmap.page/gister
