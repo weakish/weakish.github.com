@@ -1,18 +1,9 @@
-On design of Kotlin
+On Design of Kotlin
 
 Good parts
 -------------
 
-### Type declaration cannot be combined
-
-```kotlin
-fun plus(a, b: int) = a + b
-error: function declaration must have a name
-fun plus(a, b: int) = a + b
-^
-```
-
-## Assignments are not expressions
+### Assignments are not expressions
 
 ```kotlin
 if (a = 1) { println(2) }
@@ -22,7 +13,6 @@ error: assignments are not expressions, and only expressions are allowed in this
 ### Not nullable by default
 
 By default values are not nullable. Nullable values are declared as `T?`.
-
 
 Bad parts
 -----------
@@ -64,101 +54,11 @@ But
 
 -- [UnFroMage commented on HackerNews](https://news.ycombinator.com/item?id=10466643)
 
-However, Kotlin is more integrated with Java than Ceylon.
-
 ### No union types
 
-[No union types yet.][547] There is sealed classes.
+No union types yet. ([547])
 
-I feel uncomfortable with static typed language without union types.
-Consider the following functions in dynamic typed languages (e.g. Python):
-
-```python
-def baz(x):
-    if (x > 1):
-        return 2
-    else
-        return "bad"
-```
-
-What does the above function returns?
-It's `Integer` or `String`, a union type.
-As in typed racket:
-
-```typedracket
-(: baz (Integer -> (U Integer String)))
-(define (baz x) (if (> x 1) 2 "bad"))
-```
-
-Trying to port it to Kotlin, we have to use `Any`:
-
-```kotlin
-fun baz(x: Int): Any {
-    if (x > 1) {
-        return 2
-    } else {
-        return "bad"
-    }
-}
-```
-
-And the type system does not provide much help.
-
-
-Wrapping `2` and `"bad"` into subclasses of a sealed class feels ugly to me:
-
-```kotlin
-sealed class Alphanum {
-  class Alphabet(val x: String) : Alphanum()
-  class Number(val x: Int) : Alphanum()
-}
-
-fun bar(x: Int): Alphanum {
-  if (x > 1) {
-    val two = Alphanum.Number(2)
-    return two
-  } else {
-    val bad = Alphanum.Alphabet("bad")
-    return bad
-  }
-}
-
-fun baz(x: Int): Any {
-  val res = bar(x)
-  // We cannot just return `res.x`,
-  // because Kotlin only knows `res` is `AlphaNum`,
-  // and is not smart enough to know all subclasses of `AlphaNum`
-  // has property `x`.
-  when (res) {
-    is Alphanum.Alphabet -> return res.x
-    is Alphanum.Number -> return res.x
-  }
-}
-
-fun main(args: Array<String>) {
-  println(baz(3))
-  println(baz(0))
-}
-```
-
-Note this example is for demonstration only.
-In practice, returning `null` is much better:
-
-```kotlin
-fun baz(x: Int): Int? {
-    if (x > 1) {
-        return 2
-    } else {
-        return null
-    }
-}
-```
-
-I think a  poor static type system prevents me from coding straightforwardly.
-
-Regarding to mainstream languages,
-currently only TypedRacket, Ceylon,
-and TypeScript (also flow for JavaScript) supports union types.
+[547]: https://discuss.kotlinlang.org/t/any-thoughts-on-ceylon-style-union-and-intersection-types/547
 
 ### No checked exceptions
 
@@ -174,13 +74,10 @@ In fact, Java's checked exception mimics union types.
 
 Kotlin supports neither checked exception, nor union types.
 Thus its type system cannot check whether a function may raise an exception
-(unless the exception is being represented as null)
+(unless the exception is representable as null)
 and what exceptions it may raise.
 
-[547]: https://discuss.kotlinlang.org/t/any-thoughts-on-ceylon-style-union-and-intersection-types/547
-
-However, often we can use null to represent exception.
-This is because throwing one exception is a good practice in common situations.
+However, throwing one exception is a good practice in common situations.
 
 > The reason that you would, ideally, want to only throw one type of exception
 > is because doing otherwise likely violates the Single Responsibility and
@@ -215,7 +112,7 @@ This is because throwing one exception is a good practice in common situations.
 -- [cbojar, 2014-11-29](http://programmers.stackexchange.com/a/264068/65620)
 
 For a similar reason, Swift just uses `throws` in function signature,
-to declare a function may throw exceptions,
+to declare a function which may throw exceptions,
 without specifying types of exception.
 
 Another reason to throw only one exception is Single Responsibility:
@@ -263,7 +160,7 @@ but also from the method enclosing it.
 To be fair, Kotlin is more reasonable than Ruby.
 In Kotlin, lambda does not allow explicit return result expression.
 
-### Use `when` for base `case` and `cond` in Scheme
+### Use `when` for both `case` and `cond` in Scheme
 
 Kotlin uses `when` for both `case` (pattern matching)
 and `cond` (conditional expression) in Scheme.
@@ -304,7 +201,7 @@ when {
     else -> true
 }
 when (i) {
-    matchZero(i) -> false  // matchZero = { if (it == 0) 0 else 1 }
+    matchesZero(i) -> false  // matchesZero = { if (it == 0) 0 else 1 }
     else -> true
 }
 ```
@@ -325,8 +222,7 @@ when we match `i` against `Boolean` value returned by other functions.
 
 ### Boxed types in Java
 
-Some types are boxed in Java, which does not preserve identity, and often pres
-erve equality.
+Some types are boxed in Java, which does not preserve identity, and often preserve equality.
 
 ```kotlin
 val a: Int = 10000
@@ -352,7 +248,7 @@ ${'$'}9.99
 
 `${'$'}` looks ugly to me.
 And dollar signs are common in text for prices.
-And I wonder whether raw strings with templates are not truly raw.
+And I wonder whether raw strings with templates are truly raw.
 Even if we did need templates in raw string,
 I think restricting it to `${var}` is better.
 Put this under "mixed feeling" rather than "bad parts",
@@ -365,5 +261,4 @@ Conclusion
 Kotlin is an improved Java, featuring interoperability.
 Most features are already in Java as "best practices".
 
-On other side, It does not support union types yet.
-I also think it unnecessarily distinguishes lambda and anonymous function.
+On other side, it lost checked exception.
