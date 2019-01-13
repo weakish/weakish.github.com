@@ -263,4 +263,4 @@ Most features are already in Java as "best practices".
 
 On other side, it lost checked exception.
 
-Read more on my opinions on the design of Kotlin in [Ceylon v.s. Kotlin](ceylon-kotlin/)
+Read more on my opinions on the design of Kotlin in [Ceylon v.s. Kotlin](../ceylon-kotlin/)
