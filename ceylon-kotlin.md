@@ -664,22 +664,6 @@ like function parameters are always implicitly `let` in Swift.
 Ceylon disallows this unless the function parameter is annotated as `variable`.
 This is consistent with variable declaration.
 
-avian
------
-
-[avian] jvm runtime is small (6.8M on my machine).
-However, avian only provides a subset of Java APIs.
-Both Kotlin and Ceylon requires Java APIs not implemented in avian.
-Kotlin requires `java.nio.charset`,
-and Ceylon requires `java.lang.invoke`, `java.nio.charset`,
-`java.nio.file`, `java.nio.file.attribute`, `java.security.spec`,
-none of which is implemented in avian.
-So avian will not run Ceylon compiled file except for trivial programs.
-Kotlin uses `java.nio.charset` in `FileReadWrite`, `IOStream`,
-and conversion between `String` and `ByteArray`.
-If your Kotlin programs does not use these, avian may be able to run them.
-
-[avian]: https://readytalk.github.io/avian/
 
 Conclusion
 ----------
