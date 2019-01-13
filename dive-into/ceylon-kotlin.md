@@ -1,3 +1,5 @@
+Ceylon v.s. Kotlin
+
 void function
 -------------
 
@@ -42,9 +44,6 @@ underhood but special array types for basic types, e.g. `IntArray` for `vararg
 p: Int`. However, `p: Array<T>` and `vararg p: T` behaves differently. In other
 words, given a function `Array<T> -> Unit`, we do not know how to invoke it
 just from its signature.
-
-
-
 
 
 Function reference
@@ -247,9 +246,6 @@ not actually modifying the extended class.
 
 Similarly to functions, Kotlin supports extension properties. Again, Ceylon
 does not support this.
-
-
-
 
 Final class
 -----------
@@ -578,7 +574,7 @@ case (larger) {
 
 Cases must be exhausted in Kotlin only in `when` expression.
 
-In Ceylon, `switch` can declare a local variable whose scope is cases:
+In Ceylon, `switch` can declare a scoped local variable:
 
 ```ceylon
 switch (name = process.arguments.first)
@@ -594,40 +590,6 @@ This is frequently used in Ceylon,
 because Ceylon's case condition does not allow arbitrary expressions.
 Only conditions like `exists`, `is Type`, `nonempty`
 and literal values of basic types are allowed.
-
-
-Call Kotlin/Ceylon toplevel functions from Java
------------------------------------------------
-
-Kotlin wraps top level functions in `FilenameExtension` class:
-
-```kotlin
-// example.kt
-package demo
-
-fun bar() {
-}
-```
-
-```java
-demo.ExampleKt.bar();
-```
-
-You can change the name of the wrapper class with `@file:JvmName("DemoUtils")`.
-This is necessary if you want to move top level functions between source files
-without breaking Java code calling them.
-
-
-Ceylon automatically converts toplevel function `f` to `f_.f` (one class per function).
-
-```ceylon
-shared Boolean foo(Boolean b) => !b;
-```
-
-```java
-boolean value = foo_.foo(false);
-```
-
 
 Catch checked exceptions from Java
 ----------------------------------
@@ -653,32 +615,12 @@ exception that is thrown by that Java code, including checked exceptions. If a
 Ceylon function may throw checked exceptions, you need to call it in a try
 catch clause in Java.
 
-
 Reassignment of function parameters
 -----------------------------------
 
-Kotlin does not allows reassignment of function parameters,
+Kotlin does not allow reassignment of function parameters,
 i.e. function parameters are always implicitly `val`,
 like function parameters are always implicitly `let` in Swift.
 
 Ceylon disallows this unless the function parameter is annotated as `variable`.
 This is consistent with variable declaration.
-
-
-Conclusion
-----------
-
-I prefer Kotlin if:
-
-- targeted Android (plenty Android frameworks available in Kotlin)
-- uses tail recursions heavily
-  (I can call Kotlin from Ceylon, though)
-- targeted Avian (I may use Java directly though.)
-
-and Ceylon if:
-
-- need a more powerful type system
-- do not want to mess up with maven or gradle for modules and fat jar
-
-Ceylon was quirky to interoperate with Java,
-but Ceylon 1.2.1 improved interoperability greatly.
