@@ -40,9 +40,11 @@ declare module arithmetics {
 }
 ```
 
-You can use [typings] (a npm module) to search and install declaration files.
+Since TypeScript 2.0, we can use npm to install typings for packages:
 
-[typings]: https://github.com/typings/typings
+```sh
+npm install @types/<package>
+```
 
 Compile
 -------
@@ -585,7 +587,22 @@ type Invalid = Array<Invalid>;
 type StringLiteralType = "left" | "right";
 // It can be used to mimic enum.
 type StringLiteralCanBeUseAsALiteralType = "one" | number;
-// There is no number literal and boolean literal.
+
+// TypeScript 2.0 added boolean literal, number literal, and enum literal.
+type Result<T> =
+  | { success: true; value: T }
+  | { success: false; error: string };
+
+let httpdPort: 80 | 443;
+
+const enum HttpStatus {
+    Ok = 200,
+    NotFound = 404
+}
+
+let httpStatus: HttpStatus = 200;
+
+
 
 
 // TypeScipt supports `symbol` if the compilation target is ECMAScript 2015.
