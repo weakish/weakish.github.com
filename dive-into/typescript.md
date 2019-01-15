@@ -895,3 +895,46 @@ and all types are assignable to empty interfaces),
 type erasure,
 no explicit covariant/contravariant annotations
 (thus bivariant function parameters).
+
+
+Since 2.1
+---------
+
+### `keyof`, Lookup Types, and Mapped Types
+
+These are useful in type transformation:
+
+```typescript
+type Readonly<T> = {
+    readonly [P in keyof T]: T[P];
+}
+```
+
+Short explanation:
+
+- `[... in ...]: ...`, **mapped types**
+- `keyof T`, indexed type query, which yields the type of permitted property names for `T`, considered a subtype of `string`.
+- `T[P]`, **lookup types**, also called **indexed access types**.
+
+### New targets
+
+- `--target ES2016`
+- `--target ES2017`
+- `--target ESNext`
+
+### `--noImplicitAny`
+
+Infer types based on later assignment.
+
+### `--alwaysStrict`
+
+- Parses all the code in strict mode.
+- Writes `"use strict";` directive atop every generated file.
+
+Modules are parsed automatically in strict mode.
+
+### Conclusion
+
+```sh
+tsc --strictNullChecks --noImplicitThis --noUnusedParameters --noUnusedLocals --skipLibCheck --target ES2017 --noImplicitAny --alwaysStrict
+```
