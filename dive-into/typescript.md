@@ -230,6 +230,12 @@ enum NonConstEnumLikesObject {
     // All other enum members are computed.
     L = "abc".length
 }
+// TypeScript 2.4 added string enums.
+enum Colors {
+    Red = "RED",
+    Green = "GREEN",
+    Blue = "BLUE",
+}
 
 function side_effect(): void {
     console.log("just side effect");
@@ -540,6 +546,8 @@ const discarding_parameter = (x: number, y: string) => 0;
 // (a rest parameter is treated as if it were an infinite series of optional parameters.)
 // Similarly, to work with common JavaScript patterns,
 // function parameter is "bivariant" when assigning them.
+// (The only exception, introduced in TypeScript 2.4, is callback parameters of `map`,
+// which is checked in a contravariant manner.)
 // And type parameters in generics only affect the resulting type
 // when consumed as part of the type of a member.
 //
