@@ -957,3 +957,46 @@ Modules are parsed automatically in strict mode.
 ```sh
 tsc --strictNullChecks --noImplicitThis --noUnusedParameters --noUnusedLocals --skipLibCheck --target ES2017 --noImplicitAny --alwaysStrict
 ```
+
+Since 2.3
+---------
+
+### Generic Parameter Defaults
+
+An example from the [release note][2.3 release note]:
+
+before (with overloading)
+
+```typescrit
+declare function create(): Container<HTMLDivElement, HTMLDivElement[]>;
+declare function create<T extends HTMLElement>(element: T): Container<T, T[]>;
+declare function create<T extends HTMLElement, U extends HTMLElement>(element: T, children: U[]): Container<T, U[]>;
+```
+
+after (with generic parameter defaults):
+
+```typescript
+declare function create<T extends HTMLElement = HTMLDivElement, U = T[]>(element?: T, children?: U): Container<T, U>;
+```
+
+[2.3 release note]: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html
+
+### `--strict` master option
+
+With `--strict` master option, the command line of `tsc` can be shortened to:
+
+```sh
+tsc --strict --noUnusedParameters --noUnusedLocals --skipLibCheck --target ES2017 --allowJs --checkJs
+```
+
+Actually I've added two options here,
+`--allowJs` and `--checkJs`.
+
+`--allowJs` is introduced in TypeScript 1.8, which tells `tsc` to also compile JavaScript files.
+Here "compile" means running a quick sanity check on JavaScript files for syntax errors but otherwise passing them directly to the output directory.
+
+`--checkJs` is introduced in TypeScript, which enables type-checking for JavaScript files.
+
+You can comment `// @ts-nochcek` atop JavaScript files you want to skipped, or `// @ts-ignore` on certain lines to ignore type errors.
+
+Alteranatively, you can comment `// @ts-check` atop JavaScript files you want to check, and run `tsc` without `--checkJs`.
