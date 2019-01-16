@@ -211,6 +211,7 @@ let a_tuple: [string, number];
 a_tuple = ["key", 0];
 a_tuple[2] = "outside tuple"; // Error!
 a_tuple = [0, "value"]; // Error!
+// Since TypeScript 2.7, tuples of different arities are no longer assignable to each other.
 
 const enum Color {Red, Green, Blue}; // completely removed during compilation
 enum NonConstEnumLikesObject {
@@ -505,6 +506,10 @@ function plus(x, y): number | string | boolean { // union type
 // proceeding with the first overload attempts to call the function with the provided parameters.
 // If it finds a match, it picks this overload as the correct overload.
 
+// In the above code, the return type of `plus` is `number | string | boolean`,
+// which is a union type.
+// Since TypeScript 2.7, union types can properly distinguish between structurally identical classes.
+
 
 
 // Generic classes are similar to generic interfaces.
@@ -544,16 +549,22 @@ const discarding_parameter = (x: number, y: string) => 0;
 // that ignoring extra function parameters is actually very common in JavaScript.
 // This rules also applies to optional parameters and rest parameters
 // (a rest parameter is treated as if it were an infinite series of optional parameters.)
+
+
 // Similarly, to work with common JavaScript patterns,
 // function parameter is "bivariant" when assigning them.
 // (The only exception, introduced in TypeScript 2.4, is callback parameters of `map`,
 // which is checked in a contravariant manner.)
+// Thankfully, JavaScript 2.6 introduces `--strictFunctionTypes`, which is part of the `--strict` family of switches.
+// With `--strictFunctionTypes`, parameters in function are checked contravariantly instead of bivariantly,
+// except those originating in method or constructor declarations
+// Methods are excluded for TypeScript's crippled variance handling of generic classes and interfaces such as `Array<T>`.
+
 // And type parameters in generics only affect the resulting type
 // when consumed as part of the type of a member.
 //
 // A overload function `s` is a subtype of another overload function `u`
 // if each overload of `s` is a subtype of corresponding overload of `u`.
-
 
 // Narrow down types.
 //
@@ -573,9 +584,9 @@ function isFish(p: Fish | Bird): p is Fish {
 //
 // `instanceof` type guard uses constructor function to narrow down types.
 // The right side of the `instanceof` needs to be a constructor function, i.e. class,
-// and TypeScript will narrow down to:
-// - the type of the function’s prototype property if its type is not any
-// - the union of types returned by that type’s construct signatures
+// and since TypeScript 2.7 `instanceof` can properly distinguish betwen structurally identical classes.
+//
+// A `string_literal in union_type` expression can also be inferred as type guards.
 
 // Intersection type
 function swim_then_fly(p: Fish & Bird) {
@@ -616,8 +627,11 @@ const enum HttpStatus {
 
 let httpStatus: HttpStatus = 200;
 
-
-
+// TypeScript 2.7 added the `unique symbol` type,
+// which is a subtype of `symbol`,
+// and are produced only from calling `Symbol()` or `Symbol.for()`,
+// or from explicit type annotations.
+// `unique symbol` is only allowed on `const` declarations and `readonly` properties.
 
 // TypeScipt supports `symbol` if the compilation target is ECMAScript 2015.
 const a_symbol: symbol = Symbol("symbols are immutable");
@@ -1007,4 +1021,20 @@ Here "compile" means running a quick sanity check on JavaScript files for syntax
 
 You can comment `// @ts-nochcek` atop JavaScript files you want to skipped, or `// @ts-ignore` on certain lines to ignore type errors.
 
+Since TypeScritp 2.6, you can place `// @ts-ignore` comments above the offending lines.
+
+```typescript
+if (false) {
+    // @ts-ignore: Unreachable code error
+    console.log("hello");
+}
+```
+
 Alteranatively, you can comment `// @ts-check` atop JavaScript files you want to check, and run `tsc` without `--checkJs`.
+
+Since 2.7
+---------
+
+### `--pretty`
+
+`--pretty` uses colors to make error messages easier to read.
