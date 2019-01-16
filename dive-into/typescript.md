@@ -7,7 +7,14 @@ which is a superset of ECMAScript 5, commonly referred to as JavaScript.
 Primitive types
 ---------------
 
-`number` (float point), `boolean`, `string`, and `any` (dynamically-typed).
+- `number` (float point)
+- `boolean`
+- `string`
+- `symbol`
+- `null`
+- `undefined`
+
+All other types are non-primitive, a.k.a. `object` (added since TypeScript 2.2).
 
 ```typescript
 function add(left: number, right: number): number {
@@ -23,7 +30,6 @@ Unlike `Anything` or `Any` in most static typed languages,
 `any` supports the same operations as a value in JavaScript
 and minimal static type checking is performed.
 TypeScript's `Object` is more similar to `Any` in other languages.
-
 
 Declaration files
 -----------------
@@ -792,6 +798,19 @@ In regular type checking mode:
 Also, TypeScript 2.0 implements a control flow-based type analysis
 for local variables and parameters,
 which is particuarly relevant in `--strictNullChecks`.
+
+TypeScript 2.2 flags nullable experssion operands as compile-time errors in:
+
+- `-`, `*`, `**`, `/`
+- `%`, `<<`, `>>`, `>>>`, `&`, `|`, `^`
+- `<`, `>`, `<=`, `>=`, `in`
+- `+`, `-`, `~`, `++`, `--` (unary)
+
+And,
+
+- the right operand of `instanceof`
+- either operand of `+` is nullable, and neither operand is of type `any` or `string` (to work with existing common JavaScript patterns)
+
 
 ### Tagged/Discriminated Union Types
 
