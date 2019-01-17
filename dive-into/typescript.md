@@ -34,7 +34,7 @@ If no type can be inferred, then it defaults to `any`.
 Unlike `Anything` or `Any` in most static typed languages,
 `any` supports the same operations as a value in JavaScript
 and minimal static type checking is performed.
-TypeScript's `Object` is more similar to `Any` in other languages.
+TypeScript's `unknown` (top type added in TypeScrit 3.0) is more similar to `Any` in other languages.
 
 Declaration files
 -----------------
@@ -217,6 +217,9 @@ a_tuple = ["key", 0];
 a_tuple[2] = "outside tuple"; // Error!
 a_tuple = [0, "value"]; // Error!
 // Since TypeScript 2.7, tuples of different arities are no longer assignable to each other.
+// Since TypeScript 3.0, tuple types support the `?` postfix for optional element.
+// The `length` property of a tuple type with optional elements is a union of numeric literal types, e.g. the type of the `length` property of tuple type `[number, string?, boolean?]` is `1 | 2 | 3`.
+// Since TypeScrit 3.0, the last element of a tuple can be a rest element of `...ArrayType`, i.e. an open-ended tuple containing zero or more addtional elements of the array element type.
 
 const enum Color {Red, Green, Blue}; // completely removed during compilation
 enum NonConstEnumLikesObject {
