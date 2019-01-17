@@ -13,6 +13,7 @@ Primitive types
 ---------------
 
 - `number` (float point)
+- `bigint` (added in TypeScript 3.2, target `esnext` only)
 - `boolean`
 - `string`
 - `symbol`
@@ -1128,3 +1129,18 @@ settings.dry === 2;  // Error: Operator '===' cannot be applied boolean and numb
 ```
 
 [2.9 release note]: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html
+
+Since 3.2
+---------
+
+### `--strictBindCallApply`
+
+TypeScript 3.2 adds the `--strictBindCallApply` (in the `--strict` family),
+enabling strong and strict type checking with `bind`, `call`, `apply` methods on function objects.
+But `bind`, `call`, and `apply` cannot yet fully model generic functions or overloaded functions. Used on a generic function, type parameters will be erased to empty object type (`{}`). Used on an overloaded function, TypeScript will use the last overload.
+
+### Conclusion
+
+```sh
+tsc --strict --noUnusedParameters --noUnusedLocals --skipLibCheck --target ES2017 --allowJs --checkJs --resolveJsonModule
+```
