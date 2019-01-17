@@ -1,3 +1,8 @@
+On TypeScript
+=============
+
+*work in progress*
+
 Backward compatibility
 ----------------------
 
@@ -954,8 +959,29 @@ type Readonly<T> = {
 Short explanation:
 
 - `[... in ...]: ...`, **mapped types**
-- `keyof T`, indexed type query, which yields the type of permitted property names for `T`, considered a subtype of `string`.
-- `T[P]`, **lookup types**, also called **indexed access types**.
+- `keyof T`, indexed type query, which yields the type of permitted property names for `T`. `keyof T` is considered a subtype of `string | number | symbol` (since 2.9).
+- `T[P]`, **lookkeyofup types**, also called **indexed access types**.
+
+Note that `keyof (A & B)` and `keyof A | keyof B` should be equvilent.
+And TypeScript has recongnized this equvilence since 2.8.
+
+Also, TypeScript 2.8 added the ability for a mapped type to either add or remove a particular modifier.
+
+After 2.8, the above transformation is equvilent to:
+
+```typescript
+type Readonly<T> = {
+    +readonly [P in keyof T]: T[P];
+}
+```
+
+And its reversed form (removing `readonly` modifier) is:
+
+```typescript
+type Variable<T> = {
+    -readonly [P in keyof T]: T[P];
+}
+```
 
 ### New targets
 
@@ -1038,3 +1064,64 @@ Since 2.7
 ### `--pretty`
 
 `--pretty` uses colors to make error messages easier to read.
+Since 2.9, `--pretty` will be enabled by default if the output device supporting colors.
+
+Since 2.8
+---------
+
+### Conditional Types
+
+TypeScript 2.8 introduces **conditional types**:
+
+```typescript
+T extends U ? X : Y
+```
+
+Examples (predifined conditional types):
+
+```typescript
+type Exclude<T, U> = T extends U ? never : T;
+type Extract<T, U> = T extends U ? T : never;
+type NonNullable<T> = T extends null | undefined ? never : T;
+
+type ReturnType<T extends (...args: any[])> =
+    T extends (...args: any[]) => infer R
+        ? R
+        : any;
+type InstanceType<T extends new (...args: any[]) => any> =
+    T extends new (...args: any[]) => infer R
+        ? R
+        : any;
+```
+
+`infer` declartions in the above code introdue a type variable to be inferred.
+The inferred type can only be referenced in the true branch of the conditional type,
+since in the false branch the condition test failed and the type probably cannot be inferred.
+
+Since 2.9
+---------
+
+### `--resolveJsonModule`
+
+This compiler option allows for importing types from `.json` files.
+
+An example from the [release note][2.9 release note]:
+
+```json
+// settings.json
+
+{
+    "repo": "TypeScript",
+    "dry": false,
+    "debug": false
+}
+```
+
+```typescript
+import settings from "./settings.json";
+
+settings.debug === true;  // OK
+settings.dry === 2;  // Error: Operator '===' cannot be applied boolean and number
+```
+
+[2.9 release note]: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html
