@@ -1,17 +1,17 @@
 ## Intersection between gitmoji and Atom style guide
 
-* :art: `:art:` when improving the format/structure of the code
-* :memo: `:memo:` when writing docs
-* :penguin: `:penguin:` when fixing something on Linux
-* :apple: `:apple:` when fixing something on macOS
-* :checkered_flag: `:checkered_flag:` when fixing something on Windows
-* :bug: `:bug:` when fixing a bug
-* :fire: `:fire:` when removing code or files
-* :green_heart: `:green_heart:` when fixing the CI build
-* :white_check_mark: `:white_check_mark:` when adding tests
-* :lock: `:lock:` when dealing with security
-* :arrow_up: `:arrow_up:` when upgrading dependencies
-* :arrow_down: `:arrow_down:` when downgrading dependencies
+* 🎨 `:art:` when improving the format/structure of the code
+* 📝 `:memo:` when writing docs
+* 🐧 `:penguin:` when fixing something on Linux
+* 🍎 `:apple:` when fixing something on macOS
+* 🏁 `:checkered_flag:` when fixing something on Windows
+* 🐛 `:bug:` when fixing a bug
+* 🔥 `:fire:` when removing code or files
+* 💚 `:green_heart:` when fixing the CI build
+* ✅ `:white_check_mark:` when adding tests
+* 🔒 `:lock:` when dealing with security
+* ⬆️ `:arrow_up:` when upgrading dependencies
+* ⬇️ `:arrow_down:` when downgrading dependencies
 
 ## Conflicts between gitmoji and Atom style guide
 
@@ -57,14 +57,14 @@ From the intersection, remove the following emojis:
 
 And add the following:
 
-- :zap: `:zap:` for performance from gitmoji.
-- :new: `:new:` for new features (I saw someone used this).
+- ⚡️ `:zap:` for performance from gitmoji.
+- 🆕 `:new:` for new features (I saw someone used this).
 
 Thus the final list is:
 
-* :art: `:art:` when improving the format/structure of the code
-* :bug: `:bug:` when fixing a bug
-* :memo: `:memo:` when writing docs
-- :new: `:new:` when adding a new feature
-* :lock: `:lock:` when dealing with security
-- :zap: `:zap:` when improving performance
+* 🎨 `:art:` when improving the format/structure of the code
+* 🐛 `:bug:` when fixing a bug
+* 📝 `:memo:` when writing docs
+* 🆕 `:new:` when adding a new feature
+* 🔒 `:lock:` when dealing with security
+* ⚡️ `:zap:` when improving performance
