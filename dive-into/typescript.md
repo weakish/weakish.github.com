@@ -1141,6 +1141,18 @@ But `bind`, `call`, and `apply` cannot yet fully model generic functions or over
 
 ### Conclusion
 
-```sh
-tsc --strict --noUnusedParameters --noUnusedLocals --skipLibCheck --target ES2017 --allowJs --checkJs --resolveJsonModule
+`tsconfig.json`:
+
+```json
+{
+    "compilerOptions": {
+        "strict": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "skipLibCheck": true,
+        "allowJs": true,
+        "checkJs": true,
+        "target": "es2017"
+    }
+}
 ```
