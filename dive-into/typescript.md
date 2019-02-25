@@ -1149,6 +1149,8 @@ But `bind`, `call`, and `apply` cannot yet fully model generic functions or over
         "strict": true,
         "noUnusedParameters": true,
         "noUnusedLocals": true,
+	"noImplicitReturns": true,
+	"noFallthroughCasesInSwitch": true,
         "skipLibCheck": true,
         "allowJs": true,
         "checkJs": true,
