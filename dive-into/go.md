@@ -1,7 +1,7 @@
 Quick Introduction to Go
 ========================
 
-We're going to try to quickly show you enough of Go 1.11 to actually try it out.
+We're going to try to quickly show you enough of Go 1.12 to actually try it out.
 
 Hello World
 -----------
@@ -1493,7 +1493,7 @@ This is because `godoc` is stupid.
 It does not offer a `search` function.
 To search for a function, we have to use `grep`:
 
-    godoc regexp | grep parse
+    go doc regexp | grep parse
 
 *Effective Go* pointed out:
 
@@ -1508,9 +1508,9 @@ Second, although this approach does support a hacky way to search for function n
 
 Third, in fact neither `godoc` nor `grep` has a concept of sentence.
 Thus the "first sentence" is actually the "first line".
-The `godoc regexp | grep parse` example given in the *Effective Go*
+The `go doc regexp | grep parse` example given in the *Effective Go*
 demonstrates how ineffective this approach.
-`godoc regexp | grep parse` finds `Compile`,
+`go doc regexp | grep parse` finds `Compile`,
 but fails to find `MustCompile` and `MustCompilePOSIX`:
 
     MustCompile is like Compile but panics if the expression cannot be
@@ -1520,7 +1520,7 @@ but fails to find `MustCompile` and `MustCompilePOSIX`:
     cannot be parsed.
 
 Because "parsed" does not fit into the first line,
-`godoc regexp | grep parse` fails to find these two related functions.
+`go doc regexp | grep parse` fails to find these two related functions.
 
 This is a typical example of a poor design that roots in the unix philosophy
 "pass everything as text".
