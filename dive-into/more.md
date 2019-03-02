@@ -3,3 +3,4 @@
 - [Centos](centos/)
 - [Fish](fish/)
 - [Pry](pry/)
+- [Tinygo](tinygo/)
