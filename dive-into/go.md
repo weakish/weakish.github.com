@@ -1535,7 +1535,8 @@ Unsupported
 
 Go does not has generics.
 
-Go does not distinguish reassignable and irreassignable variables.
+Go does not distinguish reassignable and irreassignable variables,
+even function parameters and method receiver are reassignable (just like a local variable).
 
 Go does not have immutable collection types in its standard library.
 
