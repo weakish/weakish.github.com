@@ -321,8 +321,8 @@ An untyped constant takes the type needed by its context.
 const Pi = 3.14
 ```
 
-Type aliases
-------------
+Type aliases and defined type
+-----------------------------
 
 ```go
 type Boolean = bool
@@ -330,6 +330,53 @@ type Boolean = bool
 
 Now `Boolean` is an alternative spelling of `bool`.
 They both denote the same type.
+
+Be aware the difference between type aliasing and type declaration.
+For example, these are type declarations:
+
+```go
+type IsPositive bool
+type IsNegative bool
+```
+
+`IsPositive` and `IsNegative` are *named types* or *defined types*, with `bool` as their *underlying type*.
+`IsPositive` and `IsNegative` are new types, different from any other type, including their underlying type `bool`.
+Also, `IsPositive` and `IsNegative` are not assignable to each other,
+because both of them are defined types.
+
+> A value x is assignable to a variable of type T ("x is assignable to T") if one of the following conditions applies:
+> ...
+> x's type V and T have identical underlying types and at least one of V or T is not a defined type.
+
+This is a great feature.
+In many programming languages, it is best practice to name a boolean type with its "direction":
+
+```go
+var sex bool // bad
+var isMale bool // good
+```
+
+In Go, I can go further:
+
+```go
+type IsMale bool
+var isMale IsMale
+```
+
+And if I accidentally assign an unrelated boolean value or opposite directed boolean value to IsMale,
+the compiler will refuse to compile it.
+
+> I use a lot of little types just to prevent mixing different things together accidentally, or to prevent function signatures like
+>
+>     func Operate(int, int, int, int)
+>
+> when I really ought to be able to say what's an ID, a width, a height, etc., right there in the the type, which is the most important part of the function's documentation:
+>
+>     func Set(ID, Width, Height, Color)
+>
+> In fact, at least in the code I write, string specifically means "I know nothing more about this than that it is a series of bytes", and only shows up when interacting with things that require exactly that semantic.
+
+-- [Jeremy Bowers](http://www.jerf.org/iri/post/2945)
 
 Named return values
 -------------------
@@ -346,6 +393,7 @@ func sum(x int, y int) (total int) {
 }
 ```
 
+However, mostly I prefer to use a defined type to document return values instead.
 
 Multiple return values
 ----------------------
