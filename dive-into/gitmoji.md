@@ -4,6 +4,7 @@ emoji | code | usage
 - | - | -
 🎨 | `:art:` | refactor
 🐛 | `:bug:` | bug fix
+🔥 | `:fire:` | remove feature
 📝 | `:memo:` | doc
 🆕 | `:new:` | new feature
 🔒 | `:lock:` | security
@@ -58,7 +59,6 @@ From the intersection, remove the following emojis:
 
 - Ambiguous:
 
-    * :fire:, this could mean hotfix.
     * :green_heart:, I don't know why this is related to CI.
     * :arrow_up:, this could mean "bump version".
     * :arrow_down:, this could mean "regression".
@@ -76,6 +76,7 @@ Thus the final list is:
 
 * 🎨 `:art:` when improving the format/structure of the code
 * 🐛 `:bug:` when fixing a bug
+* 🔥 `:fire:` when removing code or files
 * 📝 `:memo:` when writing docs
 * 🆕 `:new:` when adding a new feature
 * 🔒 `:lock:` when dealing with security
