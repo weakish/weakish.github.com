@@ -1,3 +1,15 @@
+## tl;tr
+
+emoji | code | usage
+- | - | -
+🎨 | `:art:` | refactor
+🐛 | `:bug:` | bug fix
+📝 | `:memo:` | doc
+🆕 | `:new:` | new feature
+🔒 | `:lock:` | security
+⚡️ | `:zap:` | performance
+
+
 ## Intersection between gitmoji and Atom style guide
 
 * 🎨 `:art:` when improving the format/structure of the code
