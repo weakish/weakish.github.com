@@ -564,7 +564,7 @@ const discarding_parameter = (x: number, y: string) => 0;
 // function parameter is "bivariant" when assigning them.
 // (The only exception, introduced in TypeScript 2.4, is callback parameters of `map`,
 // which is checked in a contravariant manner.)
-// Thankfully, JavaScript 2.6 introduces `--strictFunctionTypes`, which is part of the `--strict` family of switches.
+// Thankfully, TypeScript 2.6 introduces `--strictFunctionTypes`, which is part of the `--strict` family of switches.
 // With `--strictFunctionTypes`, parameters in function are checked contravariantly instead of bivariantly,
 // except those originating in method or constructor declarations
 // Methods are excluded for TypeScript's crippled variance handling of generic classes and interfaces such as `Array<T>`.
