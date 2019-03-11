@@ -625,6 +625,19 @@ func describe(i I) {
 }
 ```
 
+An interface can be considered as a pair of `(ConcreteType, Value)`,
+thus while an interface can be nil (for example, zero value),
+an interface holding a nil concrete value is itself non-nil.
+
+```go
+var i interface{} = nil
+i == nil // true
+var j []string = nil
+i = j
+i == nil // false
+
+```
+
 ### Empty Interface
 
 Because Go does not have generics,
