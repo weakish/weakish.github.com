@@ -37,17 +37,16 @@ emoji | code | usage
 
 | [Angular] | gitmoji |
 | - | - |
-| build | 🚀 (deploy)　|
-| ci | 💚 (CI) |
-| docs | 📝 |
 | feat | ✨ |
 | fix | 🐛 |
-| perf | ⚡️ |
-| refactor | ♻️ |
+| docs | 📝 |
 | style | 🎨 |
+| refactor | ♻️ |
+| perf | ⚡️ |
 | test | ✅ |
+| chore | 🚀 (deploy)　or 💚 (CI) |
 
-[Angular]: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
+[Angular]: https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type
 
 ## A reduced list of gitmoji
 
