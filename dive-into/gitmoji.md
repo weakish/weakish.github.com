@@ -1,14 +1,14 @@
 ## tl;tr
 
-emoji | code | usage
-- | - | -
-🎨 | `:art:` | refactor
-🐛 | `:bug:` | bug fix
-🔥 | `:fire:` | remove feature
-📝 | `:memo:` | doc
-🆕 | `:new:` | new feature
-🔒 | `:lock:` | security
-⚡️ | `:zap:` | performance
+emoji | code | usage | Angular Convention
+- | - | - | -
+🎨 | `:art:` | refactor | refactor
+🐛 | `:bug:` | bug fix | fix
+🔥 | `:fire:` | remove feature | n/a
+📝 | `:memo:` | doc | docs
+🆕 | `:new:` | new feature | feat
+🔒 | `:lock:` | security fix | n/a
+⚡️ | `:zap:` | performance | perf
 
 
 ## Intersection between gitmoji and Atom style guide
@@ -78,5 +78,15 @@ Thus the final list is:
 * 🔥 `:fire:` when removing code or files
 * 📝 `:memo:` when writing docs
 * 🆕 `:new:` when adding a new feature
-* 🔒 `:lock:` when dealing with security
+* 🔒 `:lock:` when fixing security problems
 * ⚡️ `:zap:` when improving performance
+
+Compared to Angular Convention, I removed the following types:
+
+- `test` and `chore`: tests and build process are part of code logic.
+- `style`: White-space, formatting etc. are unimportant. And most of the time, they do not deserve a separate commit.
+
+I added the following types:
+
+- A security issue (`:lock:`) is a special kind of bug (`:bug:`). It is so important that I use a different emoji.
+- Removing a feature (`:fire:`) belongs to `refactor` by Angular Convention's definition: "A code change that neither fixes a bug nor adds a feature". However, it makes sense to assume a refactor dose not introduce a breaking change of API, while removing a feature always break the API.
