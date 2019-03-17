@@ -35,7 +35,7 @@ If no type can be inferred, then it defaults to `any`.
 Unlike `Anything` or `Any` in most static typed languages,
 `any` supports the same operations as a value in JavaScript
 and minimal static type checking is performed.
-TypeScript's `unknown` (top type added in TypeScrit 3.0) is more similar to `Any` in other languages.
+TypeScript's `unknown` (top type added in TypeScript 3.0) is more similar to `Any` in other languages.
 
 Declaration files
 -----------------
@@ -83,7 +83,7 @@ Pitfalls
 const {a: new_name_for_a, b: new_name_for_b}: {a: number, b: number} = o;
 ```
 
-Here `: {a: number, b: number}` is a type declaration, and it can be ommitted (inferred).
+Here `: {a: number, b: number}` is a type declaration, and it can be omitted (inferred).
 But `: new_name_for_a` is not a type declaration.
 This confuses me.
 JavaScript uses `:` in object notation to represent mapping.
@@ -154,7 +154,7 @@ g(multiply); // No error!
 
 ### `this` type
 
-Below is a simplification of the `BasicCaculator` and `ScientificCaculator` example in Handbook.
+Below is a simplification of the `BasicCalculator` and `ScientificCalculator` example in Handbook.
 
 ```typescript
 class Add {
@@ -185,7 +185,7 @@ Thus `Minus` need to refine `add` if there was no `this` type.
 
 However, I think `Add` and `Minus` should be two interface.
 It is clearer that `Add` and `Minus` declares operations to implement.
-Use `this` type will produce a long chain of inherience.
+Use `this` type will produce a long chain of inherence.
 For example, if we want to add `Multiple`,
 returning `this` type requires `Multiple` extends `Minus`.
 Then what if we have a type `SomeGroup` can do `add` and `multiple`, but not `minus`?
@@ -193,7 +193,7 @@ Refine `minus` to throw an exception?
 It is only a workaround on runtime and does not help compile time type check.
 If `Add`, `Minus`, and `Multiple` are all interfaces,
 then `SomeGroup` can simply implements `Add` and `Multiple`, but not `Minus`.
-Same applies `BasicCaculator` and `ScinetificCalulator` in the Handbook example.
+Same applies `BasicCalculator` and `ScientificCalculator` in the Handbook example.
 
 Overview
 --------
@@ -220,7 +220,7 @@ a_tuple = [0, "value"]; // Error!
 // Since TypeScript 2.7, tuples of different arities are no longer assignable to each other.
 // Since TypeScript 3.0, tuple types support the `?` postfix for optional element.
 // The `length` property of a tuple type with optional elements is a union of numeric literal types, e.g. the type of the `length` property of tuple type `[number, string?, boolean?]` is `1 | 2 | 3`.
-// Since TypeScrit 3.0, the last element of a tuple can be a rest element of `...ArrayType`, i.e. an open-ended tuple containing zero or more addtional elements of the array element type.
+// Since TypeScript 3.0, the last element of a tuple can be a rest element of `...ArrayType`, i.e. an open-ended tuple containing zero or more additional elements of the array element type.
 
 const enum Color {Red, Green, Blue}; // completely removed during compilation
 enum NonConstEnumLikesObject {
@@ -234,7 +234,7 @@ enum NonConstEnumLikesObject {
     //   (it can be defined in different enum).
     // - parenthesized constant enum expression
     // - `+`, `-`, `~` unary operators applied to constant enum expression
-    // - arithemetic and binary operators applied to constant enum expressions
+    // - arithmetic and binary operators applied to constant enum expressions
     //   (it is a compiler error if it is evaluated to `NaN` or `Infinity`).
     //
     // All other enum members are computed.
@@ -296,7 +296,7 @@ class man implements TraditionalInterface {
 // constructor is static (not belong to instance).
 // So constructor functions declared in interface
 // cannot be implemented in classes implements the interface.
-// We need an addtional constructor function.
+// We need an additional constructor function.
 interface PointConstructor {
     new (x: number, y: number): PointInterface;
 }
@@ -323,7 +323,7 @@ let a_point = new_point(Point, 1, 2);
 //
 // In TypeScript, the type of the class itself is the type of its constructor.
 // The constructor type contains
-// the constructor function and all static memebrs of the class.
+// the constructor function and all static members of the class.
 //
 // In the above code, `new_point()` accepts a `PointConstructor` type,
 // and we pass a `Point` value to it.
@@ -335,8 +335,8 @@ const point_creator: typeof Point = Point;
 const another_point: Point = new point_creator(1, 2);
 //
 // If this feels confusing,
-// consider a class declaration as an invokation of a class constructor,
-// and "object is poorman's closure".
+// consider a class declaration as an invocation of a class constructor,
+// and "object is a poor man's  closure".
 
 
 // interface extension
@@ -350,17 +350,17 @@ interface Dog extends Pet, Carnivore {
     bark(): void;
 }
 
-// hybird interface
+// hybrid interface
 interface BothFunctionAndObject {
     (x: number): number;
     name: String;
     print(): void;
 }
 function mainly_for_interop_with_javascript(): BothFunctionAndObject {
-    const hybird = <BothFunctionAndObject>function (x: number) {}
-    hybird.name = "hybird";
-    hybird.print = () => { console.log("name"); } // fat arrow
-    return hybird;
+    const hybrid = <BothFunctionAndObject>function (x: number) {}
+    hybrid.name = "hybrid";
+    hybrid.print = () => { console.log("name"); } // fat arrow
+    return hybrid;
 }
 
 // We have seen fat arrows in the above code.
@@ -368,7 +368,7 @@ function mainly_for_interop_with_javascript(): BothFunctionAndObject {
 const identity = (x: number): number => { return x };
 const shortcut_of_identity = (x: number) => x; // return type inferred
 // Fat arrow is not just a syntax sugar for one liners,
-// it fix JavaScipt's dynamic scoping `this`.
+// it fix JavaScript's dynamic scoping `this`.
 const higher_order = {
     count: 1,
     return_a_function: function() {
@@ -460,14 +460,14 @@ const inferred_function_type = function(x: number): number { return x; }
 const contextual_typed_function: (x: number) => number = function(x) { return x; }
 // `x` in `function(x)` is typed `number`.
 
-// TypeScript requires invokation arguments matching declaration arguments.
+// TypeScript requires invocation arguments matching declaration arguments.
 function two_arguments(x: number, y: number): number {
     return x + y;
 }
 const call_two_arguments = two_arguments(1); // Error: too few parameters
 const call_two_arguments_again = tow_arguments(1, 2, 3); // Error: too many parameters
 
-// In JavaScript, every parameter is optional (`undefined` if not givent).
+// In JavaScript, every parameter is optional (`undefined` if not given).
 // TypeScript requires explicitly declare them as optional:
 function one_optional_argument(x: number, y?: number): number {
     // required parameters comes before optional ones
@@ -486,12 +486,12 @@ function default_parameter(x: number, y: number = 0): number {
     return x + y;
 }
 // The type is the same as `one_optional_argument`:
-// `(x: number, y?: numebr) => number`.
+// `(x: number, y?: number) => number`.
 
 function default_before_required(default_parameter: number = 1, required: number): number {
     return default_parameter + required;
 }
-// Avoid the above since invokation is confusing:
+// Avoid the above since invocation is confusing:
 const pass_undefined = default_before_required(undefined, 2);
 
 function variadic_parameter(first: number, ...rest: number[]) {
@@ -593,7 +593,7 @@ function isFish(p: Fish | Bird): p is Fish {
 //
 // `instanceof` type guard uses constructor function to narrow down types.
 // The right side of the `instanceof` needs to be a constructor function, i.e. class,
-// and since TypeScript 2.7 `instanceof` can properly distinguish betwen structurally identical classes.
+// and since TypeScript 2.7 `instanceof` can properly distinguish between structurally identical classes.
 //
 // A `string_literal in union_type` expression can also be inferred as type guards.
 
@@ -642,11 +642,11 @@ let httpStatus: HttpStatus = 200;
 // or from explicit type annotations.
 // `unique symbol` is only allowed on `const` declarations and `readonly` properties.
 
-// TypeScipt supports `symbol` if the compilation target is ECMAScript 2015.
+// TypeScript supports `symbol` if the compilation target is ECMAScript 2015.
 const a_symbol: symbol = Symbol("symbols are immutable");
 const an_empty_symbol = Symbol();
-const another_empty_symobol = Symbol();
-console.log(`symbols are unique? ${an_empty_symbol !== another_empty_symobol}`);
+const another_empty_symbol = Symbol();
+console.log(`symbols are unique? ${an_empty_symbol !== another_empty_symbol}`);
 
 
 // In TypeScript, just as in ECMAScript 2015,
@@ -655,7 +655,7 @@ export const month_regex = /([0][0-9])|([1][0-2])/;
 // If a file has a single `export function` or `export class`,
 // consider using `export default`.
 export default function main_function() {
-    console.log('client uses `import anyname_they_like from "./main_function"');
+    console.log('client uses `import any_name_they_like from "./main_function"');
     console.log('An import starts with `(/)|(\./)|(../)` is a relative import.');
 }
 // import entire module as a variable
@@ -671,7 +671,7 @@ import * as URL from "url";
 // trying to locate a matching definition file.
 // `--moduleResolution {Node, Classic}` can also be used with relative import.
 //
-// For simplicity, allways use `--moduleResolution Node`.
+// For simplicity, always use `--moduleResolution Node`.
 
 function compatible_with_common_js() {}
 // Cannot be used in module with other export elements.
@@ -688,7 +688,7 @@ namespace NamespaceAreLikePackage {
     const non_export = "not visible outside namespace and other merging namespace";
 }
 // namespace can be declared in different files (declaration merging).
-// By default, `tsc` will compiles seperate typescript files to individual javascript files.
+// By default, `tsc` will compiles separate typescript files to individual javascript files.
 // So if we are using namespace, be careful the load order of `<script>` tags.
 // Alternatively,  `tsc --outFile file.js file.ts` will output a concatenated file.
 //
@@ -700,10 +700,10 @@ namespace NamespaceAreLikePackage {
 // except those passed on the command line.
 //
 // Without specifying `exclude` or `files` in `tsconfig.json`,
-// `tsc` will compile all files in the directory containning `tsconfig.json`
+// `tsc` will compile all files in the directory containing `tsconfig.json`
 // and all files in its sub-directories.
 // `exclude` and `files` will not prevent the compiler compile a file
-// (not specfied in `files` or specified in `exclude`) when it is imported as a module.
+// (not specified in `files` or specified in `exclude`) when it is imported as a module.
 
 interface MergingInterface {
     height: number;
@@ -769,15 +769,15 @@ declare var MyPoint: { x: number; y: number; };
 // Interfaced-typed
 interface Point { x: number; y: number; }
 declare var AnotherPoint: Point;
-// From thes consumer side these declarations are identical,
+// From the consumer side these declarations are identical,
 // but the type `Point` can be extended through interface merging.
 
 // Classes have two types: the instance type, and the constructor function type.
-// We can declare them seperately in one class, or seperately.
+// We can declare them separately in one class, or separately.
 //
 // An example from Handbook
 //
-// Standrad
+// Standard
 declare class A {
     static st: string;
     inst: number;
@@ -828,9 +828,9 @@ In regular type checking mode:
 
 Also, TypeScript 2.0 implements a control flow-based type analysis
 for local variables and parameters,
-which is particuarly relevant in `--strictNullChecks`.
+which is particularly relevant in `--strictNullChecks`.
 
-TypeScript 2.2 flags nullable experssion operands as compile-time errors in:
+TypeScript 2.2 flags nullable expression operands as compile-time errors in:
 
 - `-`, `*`, `**`, `/`
 - `%`, `<<`, `>>`, `>>>`, `&`, `|`, `^`
@@ -964,14 +964,14 @@ Short explanation:
 
 - `[... in ...]: ...`, **mapped types**
 - `keyof T`, indexed type query, which yields the type of permitted property names for `T`. `keyof T` is considered a subtype of `string | number | symbol` (since 2.9).
-- `T[P]`, **lookkeyofup types**, also called **indexed access types**.
+- `T[P]`, **indexed access types**.
 
-Note that `keyof (A & B)` and `keyof A | keyof B` should be equvilent.
-And TypeScript has recongnized this equvilence since 2.8.
+Note that `keyof (A & B)` and `keyof A | keyof B` should be equivalent.
+And TypeScript has recognized this equivalence since 2.8.
 
 Also, TypeScript 2.8 added the ability for a mapped type to either add or remove a particular modifier.
 
-After 2.8, the above transformation is equvilent to:
+After 2.8, the above transformation is equivalent to:
 
 ```typescript
 type Readonly<T> = {
@@ -1019,7 +1019,7 @@ An example from the [release note][2.3 release note]:
 
 before (with overloading)
 
-```typescrit
+```typescript
 declare function create(): Container<HTMLDivElement, HTMLDivElement[]>;
 declare function create<T extends HTMLElement>(element: T): Container<T, T[]>;
 declare function create<T extends HTMLElement, U extends HTMLElement>(element: T, children: U[]): Container<T, U[]>;
@@ -1051,7 +1051,7 @@ Here "compile" means running a quick sanity check on JavaScript files for syntax
 
 You can comment `// @ts-nochcek` atop JavaScript files you want to skipped, or `// @ts-ignore` on certain lines to ignore type errors.
 
-Since TypeScritp 2.6, you can place `// @ts-ignore` comments above the offending lines.
+Since TypeScript 2.6, you can place `// @ts-ignore` comments above the offending lines.
 
 ```typescript
 if (false) {
@@ -1060,7 +1060,7 @@ if (false) {
 }
 ```
 
-Alteranatively, you can comment `// @ts-check` atop JavaScript files you want to check, and run `tsc` without `--checkJs`.
+Alternatively, you can comment `// @ts-check` atop JavaScript files you want to check, and run `tsc` without `--checkJs`.
 
 Since 2.7
 ---------
@@ -1081,7 +1081,7 @@ TypeScript 2.8 introduces **conditional types**:
 T extends U ? X : Y
 ```
 
-Examples (predifined conditional types):
+Examples (predefined conditional types):
 
 ```typescript
 type Exclude<T, U> = T extends U ? never : T;
@@ -1098,7 +1098,7 @@ type InstanceType<T extends new (...args: any[]) => any> =
         : any;
 ```
 
-`infer` declartions in the above code introdue a type variable to be inferred.
+`infer` declarations in the above code introduce a type variable to be inferred.
 The inferred type can only be referenced in the true branch of the conditional type,
 since in the false branch the condition test failed and the type probably cannot be inferred.
 
