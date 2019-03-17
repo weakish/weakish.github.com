@@ -41,7 +41,7 @@ emoji | code | usage
 | ci | 💚 (CI) |
 | docs | 📝 |
 | feat | ✨ |
-| fit | 🐛 |
+| fix | 🐛 |
 | perf | ⚡️ |
 | refactor | ♻️ |
 | style | 🎨 |
