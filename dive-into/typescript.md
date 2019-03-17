@@ -251,9 +251,6 @@ function side_effect(): void {
     console.log("just side effect");
 }
 
-const a_string_typed_any: any = "a string";
-const string_length: number = (a_string_typed_any as string).length;
-
 interface InterfaceAreLikeTypeAlias {
     age: number;
 }
@@ -587,6 +584,21 @@ interface Bird {
 function isFish(p: Fish | Bird): p is Fish {
     return (p as Fish).swim !== undefined;
 }
+//
+// Here `p as Fish` is a type assertion.
+// Using type assertions outside the context of type guard definition can be dangerous.
+// For example, how a type assertion breaks an innocent pure function:
+function multiplyTen(x: number): number {
+    return x * 10
+}
+
+let a = {}
+a.valueOf = Math.random
+
+// Outputs different results.
+console.log(multiplyTen(a as number))
+console.log(multiplyTen(a as number))
+//
 // For primitive types, we can just use something like `typeof t === "number"`.
 // These type guards are recognized in `typeof t (=|!)== type_name`
 // where `type_name` is one of `"number"`, `"string"`, `"boolean"`, and `"symbol"`.
