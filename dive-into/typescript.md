@@ -1149,8 +1149,8 @@ But `bind`, `call`, and `apply` cannot yet fully model generic functions or over
         "strict": true,
         "noUnusedParameters": true,
         "noUnusedLocals": true,
-	"noImplicitReturns": true,
-	"noFallthroughCasesInSwitch": true,
+	    "noImplicitReturns": true,
+	    "noFallthroughCasesInSwitch": true,
         "skipLibCheck": true,
         "allowJs": true,
         "checkJs": true,
@@ -1158,3 +1158,10 @@ But `bind`, `call`, and `apply` cannot yet fully model generic functions or over
     }
 }
 ```
+
+Target:
+
+0. ES3 is the default target of TypeScript.
+1. ES5 for Opera 12.10 (Opera with Presto engine).
+2. ES2017 for FireFox 52 ESR (legacy add-ons) and iOS 10.3 (iPhone 5, iPhone 5C, iPad 4).
+3. ES2018 for recent browsers.
