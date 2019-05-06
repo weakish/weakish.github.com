@@ -1611,3 +1611,607 @@ The image support of ZeroMe feels quite hacky to me:
 -- 2018-12-04
 
 
+Wrote a simple script ([zerome2md]) to dump ZeroMe posts to a markdown file (for backup or publish eleswhere).
+
+Images are supported. Comments are not supported yet (patch welcome).
+
+[zerome2md]: https://github.com/weakish/zerome2md
+
+The "exported" markdown file can be consumed by static site builders like Jekyll, e.g. a static mirror of my ZeroMe posts on clearnet: [mmap.page/log/](https://mmap.page/log/)
+
+
+
+
+-- 2018-12-06
+
+
+I use [the fish port of z] (alternative to autojump) and remap the command name to `h` (`set -U Z_CMD "h"`). `h` is easier to type (on dvorak keyboard layout) and remember ("head to").
+
+ [the fish port of z]: https://github.com/jethrokuan/z
+
+-- 2019-01-12
+
+
+Recently the term "headless CMS" and "decoupled CMS" gain a lot of popularity. But these two terms are rather confusing to me.
+
+To me, "headless CMS" sounds like some system mainly intended to be used with `curl` etc. on command line, like [ix.io](http://ix.io/) the headless pastebin. However, obviously most people use the term "headless CMS" in a different way.
+
+| What people say | What I would call it |
+| - | - |
+| headless CMS | decoupled CMS |
+| decoupled CMS | decoupled CMS with default UI and templates |
+
+BTW, I wish the next generation of website will be both frontend agnostic and gateway agnostic. That is, a user of a website can directly access those micro-services. And optionally they may provide some default gateways and/or frontends. Just like a user of a programming library/framework can directly access those low-level functions/classes. And optionally the library/framework may provide some high level APIs and/or examples.
+
+-- 2019-01-24
+
+
+RubyGems has a so-called  *twiddle-wakka* shortcut `~>`. Therefore, assuming in a semver setup, you can write `~> 2.2` instead of the verbose `['>= 2.2.0', '< 3.0']`. Seems neat, isn't it?
+
+However, later Alice reported a bug about the software, and Bob found out that the bug is caused by a bug from the library it depends, which has already be fixed in `2.2.2`. So Bob changed the dependency to `~> 2.2.2`. The bug was gone, all tests passed, and everything looked great.
+
+However, `~> 2.2.2` is not equivalent to  `['>= 2.2.2', '< 3.0']` (Bob thought so), but `['>= 2.2.2', '< 2.3.0']`!
+
+
+
+-- 2019-02-12
+
+
+The abandonware nuclide has a distinct feature "[Remote Development]" (use a remote machine as the workspace for compiling/building and language services via ssh).
+
+Unfortunately none of Atom, VS Code and JetBrains IDEs has support for this feature yet.
+
+[Remote Development]: https://nuclide.io/docs/features/remote/
+
+-- 2019-02-15
+
+
+Google Play Store lacks the "ignore this update/version of app" function.
+
+-- 2019-02-23
+
+
+小学时候写篇 300 字作文，常常绞尽脑汁，觉得怎么字数还不够啊，现在却为了把豆瓣短评控制在 350 字内大费周章（考虑空格和标点，大概等价于小学时代的 300 字）。
+
+Alita: Battle Angel (2019) 短评（恰好 350 字）：
+
+尽管神还原了原作中的许多经典画面，但恰如并不 Scrap 的 Iron City 一般，整部电影明快的调子，完全不同于 Gun Dream 的阴郁风味。强行分明善恶，操作粗暴，改编也有太多草率之处，甚至留下不少漏洞，比如原作中心脏仅为大脑提供养分，所以 Alita 用自己的心连接 Hugo 的头颅情理之中，而电影中将心脏改为发动机，实在让人很难假设它还有一个没交代的提供大脑养分的辅助功能；原作 Grewishka 有赏格，一众猎人只是畏其实力不敢出手，电影改成受上层庇护，那么 Hugo 被工厂通缉时，Alita 本应先质疑工厂是否弄虚作假；最后 Hugo 向上攀爬，电影中 Alita 劝解的话分明是对原作中执念破灭、一心求死的 Hugo 而说，对电影中逃避通缉求生的 Hugo，只需简单交代有防御轮即可。幸赖 CG 视效硬拉上五星，避免本片沦为 Ghost in the Shell 2017 一样的平庸之作。
+
+-- 2019-02-24
+
+
+Looks like there will be no more compact mobile phones. :-(
+
+Well, at least there are compact pad (Huawei Mate X) and compact camera/audio player (Sony Xperia 1) in 2019.
+
+-- 2019-02-26
+
+
+Currently I'm using a tree based todo manager, roughly something like:
+
+```lisp
+[task1
+  [subtask1
+   subtask2
+     subsubtask1
+  ...]]]
+ task 2
+ ...]  
+```
+
+I'm quite satisfied with it for a few months, and found that it is much more expressive than former flat todo managers I've used.
+
+But today I find out that I need to express something like this:
+
+```lisp
+[task1
+  (cond1
+      [subtask1
+       subtask2
+          (cond1.1
+             [subsubtask1
+              subsubtask2]
+             [othersubtask1
+              othersubtask2])
+       subtask3]
+      [othersubtask1
+       othersubtask2
+...
+```
+
+Hmm, tree based todos are cool. But eventually I will need an AST (abstract syntax tree) to manage todos?
+
+
+-- 2019-02-28
+
+
+Go advertises itself as having first class functions:
+
+```go
+return alternativeImpl(
+    x, y,
+    func (a int, b int) int { return a + b },
+    func (a int64, b int64) int64 { return a + b },
+    big.NewInt(0).Add)
+```
+
+With operator function and overloading/generics, this could have been shortened to:
+
+```go
+return alternativeImpl(x, y, +, big.NewInt(0).Add)
+```
+
+BTW:
+
+- `big.NewInt(0).Add` looks wired to me. It is not something like `curriedAdd = add 0`, but means initialize a big.Int (here `0` is the empty value on initialization, and Go forces to assign an empty value on initialization) which receives the result of Add.
+- GoLand is not very good at analyzing these higher order functions. Sometimes GoLand reported "No problems found" but actually the code does not compile.
+
+
+
+-- 2019-03-03
+
+
+I read the first 4 items of Effective Java 2nd. edition several years ago, and had an impression that the book better renamed to Ineffective Java. There are 78 items total in the Effective Java 2nd. editon. Today I just learned that Effective Java updated to 3rd. edition on the end of 2017, targeting Java 9 (2nd. edition is target at Java 6). Now there are 90 items in the book. I am wondering does this imply that Java is more ineffective now? Or maybe People have finally discovered far more pitfalls of Java, thus although recent versions of Java fixed some issues, the net known ineffectiveness increases?   
+
+-- 2019-03-08
+
+
+GraalVM's native image feature is impressive to me:
+
+```sh
+; du -sh default*
+11M     default  # stand alone
+2.8M    default.jar # not counting the size of JVM
+; bench '/usr/bin/java -jar default.jar' './default' 
+benchmarking bench//usr/bin/java -jar default.jar
+time                 118.3 ms   (115.1 ms .. 120.1 ms)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 120.4 ms   (119.3 ms .. 122.7 ms)
+std dev              2.331 ms   (1.086 ms .. 3.812 ms)
+variance introduced by outliers: 11% (moderately inflated)
+
+benchmarking bench/./default
+time                 1.512 ms   (1.493 ms .. 1.531 ms)
+                     0.999 R²   (0.999 R² .. 1.000 R²)
+mean                 1.502 ms   (1.495 ms .. 1.511 ms)
+std dev              26.17 μs   (20.76 μs .. 34.28 μs)
+```
+
+The startup time of a Java program is faster than a Python script, at the same level of Lua and Go.
+
+Currently GraalVM only supports amd64 linux/osx (there is preview distribution for Windows). No FreeBSD, no arm, etc.
+
+Also, native image for JVM languages other than Java are primitive. In fact the `default.jar` above is a Ceylon hello world program (generated via `ceylon fat-jar`). And the native image is generated from the following command:
+
+```sh
+native-image --report-unsupported-elements-at-runtime --static -jar default.jar
+```
+
+(This is undocumented at GraalVM's official documentation. Thanks to [Lucas Werkmeister] to supply the command.)
+
+[Lucas Werkmeister]: https://stackoverflow.com/a/55068578/
+
+However, currently this only works for simple Ceylon programs.
+
+But graal does looks promising to me.
+
+-- 2019-03-09
+
+
+Saw this piece of Go code when watching [Advanced Testing With Go][youtube] by Mitchell Hashimoto:
+
+[youtube]: https://www.youtube.com/watch?v=yszygk1cpEc
+
+```go
+func testChdir(t *testing.T, dir string) func() {
+  old, err := os.Getwd()
+  // change directory and handle potential errors
+  return func() { os.Chdir(old) }
+}
+
+func TestThing(t *testing.T) {
+  defer testChdir(t, "/other")()
+  // ...
+}
+```
+
+`defer testChdir(t, "/other")()` is a clever trick:
+
+1. `defer` got `testChdir(t, "/other")()`, and to figure out what to register, `testChdir(t, "/other")` got evaluated. This let side effects contained in `testChdir` executed now.
+2. After the evaluation, `defer` registered the anonymous function `testChdir` returns, whose execution will be deferred.
+
+Just one line, brief and clever. But I think this is too brief and too clever.
+
+A quick google revealed that someone else already pointed out this pattern (`defer db.connect()()`) as [bad practice]. Besides, they also listed [other] 14 [gotchas] of `defer`.
+
+[bad practice]: https://blog.learngoprogramming.com/gotchas-of-defer-in-go-1-8d070894cb01
+[other]: https://blog.learngoprogramming.com/5-gotchas-of-defer-in-go-golang-part-ii-cc550f6ad9aa
+[gotchas]: https://blog.learngoprogramming.com/5-gotchas-of-defer-in-go-golang-part-iii-36a1ab3d6ef1
+
+This makes me wondering whether the benefit of introducing `defer` justify its confusion and complexity.
+
+BTW, another reason that `defer testChdir(t, "/other")()` smells to me is it is error-prone. What if forget to type `()`? After all, `defer f()` looks quite innocent during a code review.
+
+The 15 gotchas author suggested an alternative style, which is clearer and less error-prone:
+
+```go
+close := db.connect()
+defer close()
+```
+
+But I do not feel nature that `connect()` should return a function on how to closing it. Thus I prefer the dumb way:
+
+```go
+db.connect()
+defer db.close()
+```
+
+-- 2019-03-10
+
+
+Hmm, just noticed that [w3.org] still uses "old-fashioned" XHTML 1.0 Strict.
+
+[w3.org]: https://www.w3.org/
+
+-- 2019-03-16
+
+
+In golden old days, a simple web page has an index.html, linking to an index.js. I can just open the index.html in a web browser to see the effect. And after some edits of index.html or index.js, I just refresh the page to see the effect. Once I am satisfied, I can copy the directory to any static hosting space.
+
+Nowadays, a simple web application has an index.html, liking to an index.js, which may import a lot of npm packages. Assuming these npm dependencies are already fulfilled (via `npm install --save`), [parcel] bring me back to the golden old time:
+
+```sh
+parcel index.html
+```
+
+[parcel]: https://parceljs.org/
+
+Then I can just check the effect at http://localhost:1234/. And once I made an edit to index.html or index.js, it will get rebuilt and refresh automatically.
+
+Once the development is done, I just run `parcel build index.html`, then deploy/copy the `dist/` directory to any static hosting space.
+
+And if I get bored, I can replace index.js with index.ts, and start coding in TypeScript. This works out of box with parcel. This also applies to CoffeeScript, or Elm, or even Rust (via WebAssembly).
+
+None of webpack, browserify, and rollup is as zero configuration as parcel.
+
+-- 2019-03-16
+
+
+Just read an insightful blog post by [André Staltz] talking about [the dying web] replaced by the GOOG-FB-AMZN Trinet.
+
+Actually the web is dying faster in China, where FB = Tencent, AMZN = Ali. Baidu tries to follow Google's strategy, shifting from a search oriented company to an AI oriented one. But apparently it is a failure.
+
+Reasons why web is dying faster in China:
+
+1. As a developing country, mobile phones are the only devices to connect to Internet for a lot of people. And a lot of people first go online through mobile applications. And most likely these mobile applications are directly owned by Tencent or Ali, or by companies controlled by Tencent or Ali.
+2. Mobile payment is far more ubiquitous in China. (Unsurprisingly, the two most popular mobile payment methods are Ali's Alipay and Tencent's WeChat Pay.)
+3. Both Tencent and Ali make their products very inconvenient to use on the web, lacking a lot of important features. They force user to use the mobile application instead. And there is no  regulation preventing them to do so.
+4. On the other side, regulation requires every user to bind a mobile phone number to use every web service.
+5. And obviously the authority dislike the open and free web. It is inconvenient and somehow dangerous to host an ordinary website. Want to host a forum? Even harder. Want to host a video site? No way! (Well, technically it is possible if you are a giant company or have strong connections with government.)
+
+[André Staltz]: https://staltz.com
+[the dying web]: https://staltz.com/the-web-began-dying-in-2014-heres-how.html
+
+-- 2019-03-17
+
+
+Finally gandi.net added support for `ALIAS`.
+
+-- 2019-03-24
+
+
+With the [pyright] extension, vscode can check type annotations of Python code.
+
+[pyright]: https://github.com/Microsoft/pyright
+
+-- 2019-03-24
+
+
+Although Flask is widely used to build REST API servers, [its official documentation][doc] still cannot afford a dedicated page for REST APIs.
+
+[doc]: http://flask.pocoo.org/docs/1.0/
+
+I recommend go direct to check [the full example of the  quick start guide][example] of Flask-RESTful extension. Take a look at the code example and start coding within 15 minutes.
+
+[example]: https://flask-restful.readthedocs.io/en/latest/quickstart.html#full-example
+
+Life is short. Pick up tools and libraries fast.
+
+-- 2019-03-27
+
+
+manjaro's advertise for developers features Godot, KDevelop, Geany.
+
+solus's advertise for developers features Atom, Idea, GNOME Builder, Qt Creator, Visual Studio Code.
+
+Seems there are two different groups of developers under Linux desktop.
+
+-- 2019-03-28
+
+
+The download page of Manjaro offers 11 favors, xfce, kde, cinnamon, openbox, awesome, budgie, mate, I3, Architect (text), Deepin, Gnome. And there are tabs (it turns out these are actually pretended checkboxes) like "beginner-friendly", "resource-efficient", "traditionally-workflow".
+
+I clicked the "resource-efficient" tab, and there are 10 favors. In other words, only Gnome is considered as resource inefficient!
+
+So, according to Manjaro, all Linux Graphical Desktop Environments are efficient (and none Graphical Desktop Environment is also efficient, of course), except for Gnome.
+
+This must be joking.
+
+ (I used KDE for two or three years and haven't used recent versions of Gnome, so I am unsure if Gnome is resource inefficient nowadays. If it is, then the resource inefficient Gnome is joking; if it is not, then Manjaro is making a joke about Gnome. That's why this must be joking. ;-) 
+
+-- 2019-03-29
+
+
+Recently I learned a new notion (or buzzword, if you prefer), [edge computing]:
+
+[edge computing]: https://en.wikipedia.org/wiki/Edge_computing
+
+> Edge computing brings memory and computing power closer to the location where it is needed.
+
+Hmm, this let me rethink the statement that ZeroNet is uncensored.
+
+Maybe ZeroNet is not uncensored, instead, it is *edge censored*.
+
+Let me cite the definition of censorship from Wikipedia:
+
+> Censorship is the suppression of speech, public communication, or other information, on the basis that such material is considered objectionable, harmful, sensitive, or "inconvenient".
+
+Such material is objectionable, harmful, sensitive, or "inconvenient" to who? To me, the content consumer. So, inspired by the idea of edge computing, the censorship system should bring memory and computing power closer to me, the location where censorship is needed.
+
+That is what ZeroNet does, **edge censorship**. Let the user/client/node/hub decide to mute and ban what content and which content producer.
+
+-- 2019-03-29
+
+
+Briefly tried Manjaro:
+
+The installation is smooth and it works out of the box.
+
+But it is problematic with package dependencies:
+
+1. The dependencies declaration of Arch package is less rigid, compared to Debian/Fedora/Opensuse, etc.
+2. New arch packages are postponed to enter Manjaro's repository, which causes missing dependencies.
+
+-- 2019-03-30
+
+
+https://defend.wikileaks.org/2019/04/11/emergency-julian-assange-has-been-arrested/
+
+-- 2019-04-12
+
+
+Most web video player lacks the feature of full browser window. Fortunately, with xrandr under Linux, we can split the physical monitor into multiple virtual monitors.
+
+For example, given a monitor 1920x1080 (476mm x 268mm) connected as `HDMI-1`, the following commands will split into two virtual monitors:
+
+```sh
+xrandr --setmonitor left 960/254x1080/286+0+0 HDMI-1
+xrandr --setmonitor right 960/254x1080/286+960+0 none
+```
+
+Note that not all window managers respect this setting though. For example, I have no luck with KWin (KDE) and Mutter (Gnome). On the other hand, xfce and openbox do respect this.
+
+-- 2019-04-14
+
+
+I [complained about](/?Post/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/1553695047) Flask's official documentation lacks a dedicated page for REST APIs and suggested to use Flask-RESTful extension instead.
+
+But without using the extension, it is still possible to learn enough Flask to write your first REST API service in Flask within 30 minutes.
+
+1. [The sample code][sample] showing how to do REST API and test it.
+2. [path variable](http://flask.pocoo.org/docs/1.0/quickstart/#variable-rules)
+3. [request method and parameters](http://flask.pocoo.org/docs/1.0/quickstart/#the-request-object)
+4. [implement API exceptions](http://flask.pocoo.org/docs/1.0/patterns/apierrors/)
+5. [launch the application](http://flask.pocoo.org/docs/1.0/quickstart/#a-minimal-application)
+
+[sample]: http://flask.pocoo.org/docs/1.0/testing/#testing-json-apis
+
+Unfortunately, figuring out these five sections in three chapters ("quickstart", "testing", "pattern") are the relative pieces for a quick start of REST API service already costs me more than 30 minutes. :-(
+
+-- 2019-04-20
+
+
+Android's Messages app does not provide a "delete all" function. Fortunately, most popular third-party sms apps all support "delete all" or "select all then delete", e.g. chompSMS, Handcent Next SMS, Textra. 
+
+Considering the fact that in early versions of Android, the messaging app does have this feature, my conspiracy theory is Google do not like us to delete our SMS, which could be analyzed by Google to build smarter AI and sell more ads.  
+
+-- 2019-04-20
+
+
+Just came across a video titled [Learn Python Programming Language in 2 Hours][video].
+
+The speaker argues that the first reason to use Python is:
+
+> Solve complex problems in **less time** and **fewer lines of code** 
+
+[video]: https://youtu.be/yE9v9rt6ziw
+
+with the following example:
+
+```
+C# str.Substring(0, 3)
+JavaScript str.substr(0, 3)
+Python str[0:3]
+```
+
+I do not want to talk about technical details like C# 8.0 supports slicing notation (`str[0..3]`) and `substr` is a legacy function in JavaScript (use `slice` instead). What I want to say is that all of the three languages take one line of code to solve the problem, and with a decent editor/IDE, all three lines take equal time to type. Even assuming we all do programming with a basic text editor like Notepad on Windows or Leafpad in Linux, this example still has nothing to do with solving complex problems in less time. This problem is not complex at all. And most time of programming is not spent on typing.
+
+Currently this video has 411k views, 8.1k upvotes (less than 200 downvotes) on YouTube. I think this is a good example of why learning to code is hard: so many poor and popular teaching materials on Internet.
+
+
+![attached image](1555771818.jpg)
+
+-- 2019-04-20
+
+
+Just tried the first three quizs of [Python introduction course on stepik][stepik], which is included in JetBrains' PyCharm Educational (I tried it with the EduTools plugin on IntelliJ). 
+
+[stepik]: https://stepik.org/course/238
+
+The first quiz is:
+
+```python
+print("Hello, world! My name is type your name")
+```
+
+So easy.
+
+```python
+print("Hello, world! My name is weakish.")
+```
+
+Failed! It turns out that the auto answer detection system thinks it is wired that my name is `weakish.`! Obviously the first quiz is to teach you just follow the instruction brainlessly. "My name ..." starts with a capital character, so it is a sentence. It is reasonable to end a sentence with a period (`.`), although this will fail the quiz.
+
+The second quiz introduces comments, without telling the learner comment is used for what. 
+
+And the third quiz introduces variable, but its first line is:
+
+```python
+a = b = 2
+```
+
+What? Introducing chained assignment before normal variable assignment (`a = 2`)? 
+
+Chained assignment is not often used in practice. And I do not think it is necessary to introducing it to beginners.
+
+In fact it is not only unnecessary, but confusing.
+
+A beginner may guess that `a = b = 2` is equivalent to:
+
+```python
+a = 2
+b = 2
+```
+
+For a value `2`, they are indeed equivalent, but:
+
+```python
+import random
+a = b = random.random()
+```
+
+is not equivalent to:
+
+```python
+a = random.random()
+b = random.random()
+```
+
+And programmers from other languages such as C and JavaScript, may think `a = b = 2` is equivalent to `a = (b = 2)` where `b = 2` evaluates to `2`. But this is not true in Python.
+
+And the course mentioned nothing about these quirks.
+
+I guess the author may think `a = 2` is too boringly obvious to introduce, thus turns to introducing chain assignment directly. No! In fact, considering that in Python variables are reassignable, they are not boring for beginners at all.
+
+Considering the following lines:
+
+```python
+a = 2
+a = 3
+```
+
+This is not boring for a beginner. How can `a` be equal to both `2` and `3`? Seems mathematically impossible!
+
+This is what the author really have to talk about, not chain assignment.
+
+I myself learned Python via reading the A Byte of Python book years ago. I am not sure if I should recommend it to beginners. Compared to [HtDP] for the exotic Scheme language and the outdated [Why's Guide to Ruby][why], it is somehow a boring book. And Python's official tutorial is well written. But at least it does not have such flaws.
+
+[HtDP]: https://htdp.org/
+[why]: https://poignant.guide/
+
+-- 2019-04-20
+
+
+And the first koan of "Kotlin Koans" from stepik and JetBrains annoyed me again.
+
+It requires to write a function returning `"OK"`, given the following hint:
+
+```kotlin
+fun start(): String = TODO()
+```
+
+So easy (sounds familiar?)
+
+```kotlin
+fun start(): String {
+  return "OK"
+}
+```
+
+No, the EduTools plugin does not allow me to delete `=`!
+
+So I have to write the expected answer to pass the koan.
+
+```kotlin
+fun start(): String = "OK"
+```
+
+Hmm, stupid auto answer detection system. And I wonder why introduce learners the special single expression function in the very beginning, before the normal and more common used function with block body? A lot of functions are hard, if not impossible, to declare as a single expression function. Besides, learners familiar with other programming languages will pick up the normal function with block body syntax almost immediately. Why burden their progress insanely?
+
+-- 2019-04-20
+
+
+React has so many opt-in, legacy, experimental features. Thus I suggest taking a look at ReasonReact first, which has a much smaller API surface. After a glance of ReasonReact, you can probably pick up React quickly by skipping a lot of concepts. I guess this will be faster than learning React directly, particularly when you are already familiar with some static typed functional languages such as OCaml, F#, and Haskell.
+
+Though I do not suggest diving deep into ReasonReact and actually write code in it, since TypeScript has a far more better ecosystem.
+
+-- 2019-04-25
+
+
+Just came across a [Q&A][qa] on zhihu (a quora clone in CN):
+
+> Q: What to do when I encountered a man better than my boyfriend?
+> A: Three men living together is pretty good, isn't it?
+
+Brilliant! Never forget to check the presumption under the question first.
+
+[qa]: https://www.zhihu.com/question/320757143/answer/663749715
+
+-- 2019-04-26
+
+
+It seems the Japanese new era is not very welcome yet:
+
+- glibc has a [commit] about 30 days ago, but there is no release yet. RHEL 7 and Fedora Stable has backported this about ten days ago. Debian Unstable has backported this about one week ago.
+- Firefox Nightly still considers today is in 平成31年.
+- Google Chrome Dev welcomes the new era (But only the dev channel, beta and stable still consider today is in 平成31年).
+
+[commit]: https://github.com/bminor/glibc/commit/466afec30896585b60c2106df7a722a86247c9f3#diff-33e83cd438ad668f1ff09e8680f6bf11
+
+![attached image](1556715169.jpg)
+
+-- 2019-05-01
+
+
+Just watched the [The Tragedy of systemd][video], which I thought is very misleading.
+
+[video]: https://www.youtube.com/watch?v=o_AIw9bGogo
+
+Particularly, the video tries to justify systemd via connecting it with launchd. But although systemd is inspired by launchd,  launchd is not that bloated as systemd.  Also, besides macOS, iOS also uses launchd. However the video does not explain why Android (nowadays the majority of linux users are Android users) does not use systemd if systemd is as elegant as the video claims.
+
+And the video also talks about docker and containers, without realizing that containers make systemd irrelevant. On the server side, services are packaged as containers, which are managed by docker, k8s, etc. Technically there is still an init daemon starting the service program inside the container and communicating with `docker`, but this is somehow implementation detail not interested by developers. And to reduce resource overhaul, a lot of containers use alpine linux as base image, and alpine linux does not use systemd at all. Even if you intend to use Ubuntu or CentOS as base image for your container, Docker recommend you to use [pre-built images with the tini init][tini].
+
+[tini]: https://github.com/krallin/tini-images
+
+To be honest, I like neither android, docker, nor systemd. I am not sure the fact that both android and docker are not in favor of systemd makes me more depressive or less depressive.
+
+ 
+
+-- 2019-05-03
+
+
+To those who dislikes systemd:
+
+1. Debian/Ubuntu/Fedora/OpenSUSE: try devuan
+2. Arch: try Void Linux
+3. Gentoo: Gentoo uses OpenRC by default
+4. Slackware:  Slackware is still systemd free
+
+-- 2019-05-04
+
+
+Just realized that I can look at the bright side of JavaScript's switch structure. JavaScript's switch **statement** is **fall-through**, which sounds like a scream: "Don't break! Return! Wrap me into a function!"
+
+-- 2019-05-06
+
+
