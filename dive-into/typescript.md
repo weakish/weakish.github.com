@@ -246,6 +246,18 @@ enum Colors {
     Green = "GREEN",
     Blue = "BLUE",
 }
+// TypeScript introduces `as const` assertion:
+//
+// - no literal types in that expression should be widened
+// - object literals get readonly properties
+// - array literals become readonly tuples
+//
+// This can be used to mimic enums:
+const ColorsAsConsts = {
+    red: "RED",
+    blue: "BLUE",
+    green: "GREEN",
+} as const;
 
 function side_effect(): void {
     console.log("just side effect");
@@ -871,9 +883,9 @@ Alternatively, use a private or protected property.
 TypeScript 2.0 adds a `never` type for functions never returns (always throws).
 `never` is called `Nothing` in other languages.
 
-### `readonly` Properties
+### `readonly` Modifier
 
-TypeScript 2.0 adds a `readonly` keyword for properties.
+TypeScript 2.0 adds a `readonly` modifier for properties.
 Read-only properties may have initializers and may be assigned to in
 constructors within the same class declaration, but otherwise assignments to
 read-only properties are disallowed.
@@ -891,6 +903,9 @@ In addition, entities are implicitly read-only in several situations:
 except that `readonly` is checked at compile time only,
 and `const` is also checked at runtime
 (provided that typescript source code is compiled to a recent versions of JavaScript).
+
+In TypeScript 3.4, the `readonly` modifier can be used on arrays and tuples,
+e.g. `readonly string[]` (equvilent to `ReadonlyArray<string>`, although `readonly Array<string>` is invalid) and `readonly [string, string]`.
 
 ### Optional Class Properties
 
@@ -1151,6 +1166,14 @@ TypeScript 3.2 adds the `--strictBindCallApply` (in the `--strict` family),
 enabling strong and strict type checking with `bind`, `call`, `apply` methods on function objects.
 But `bind`, `call`, and `apply` cannot yet fully model generic functions or overloaded functions. Used on a generic function, type parameters will be erased to empty object type (`{}`). Used on an overloaded function, TypeScript will use the last overload.
 
+Since 3.4
+---------
+
+### `--incremental`
+
+This compiler option tells `tsc` to use `.tsbuildinfo` for incremental type-check.
+`.tsbuildinfo` can be safely deleted (no impact on runtime).
+
 ### Conclusion
 
 `tsconfig.json`:
@@ -1166,14 +1189,15 @@ But `bind`, `call`, and `apply` cannot yet fully model generic functions or over
         "skipLibCheck": true,
         "allowJs": true,
         "checkJs": true,
-        "target": "es2017"
+        "target": "es2017",
+        "incremental": true,
     }
 }
 ```
 
 Target:
 
-0. ES3 is the default target of TypeScript.
-1. ES5 for Opera 12.10 (Opera with Presto engine).
-2. ES2017 for FireFox 52 ESR (legacy add-ons) and iOS 10.3 (iPhone 5, iPhone 5C, iPad 4).
-3. ES2018 for recent browsers.
+1. ES3 is the default target of TypeScript.
+2. ES5 for Opera 12.10 (Opera with Presto engine).
+3. ES2017 for FireFox 52 ESR (legacy add-ons) and iOS 10.3 (iPhone 5, iPhone 5C, iPad 4).
+4. ES2018 for recent browsers.
