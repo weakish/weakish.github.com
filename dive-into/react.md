@@ -83,3 +83,27 @@ React.createElement(Hello, { name: "World" });
 ```
 
 So JSX is optional, you can use React without JSX.
+
+## Styling
+
+React does not have an opinion about how styles are defined.
+You can define styles in separate `*.css` files.
+However, I prefer to define styles in TypeScript than CSS.
+You can check [this comparison of CSS-in-JS][css-in-js].
+Again, there are a lot of choices.
+
+Among those projects, I pick the five projects written in TypeScript:
+
+- [jsxstyle] and [react-free-style] are inline style systems. I do not like inline style systems.
+- [freestyler]'s APIs are complex. There are too many choices.
+- Both [stylable] and [typestyle] provide a type safe styling language.
+
+[css-in-js]: https://michelebertoli.github.io/css-in-js/
+[jsxstyle]: https://github.com/jsxstyle/jsxstyle
+[react-free-style]: https://github.com/blakeembrey/react-free-style
+[freestyler]: https://github.com/streamich/freestyler
+[styleable]: https://stylable.io/
+[typestyle]: https://typestyle.github.io/
+
+stylable has a syntax similar to CSS, while typestyle just uses object literals (no custom AST transform).
+As I said before, I want to define styles *in TypeScript*, thus I pick typestyle.
