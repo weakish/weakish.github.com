@@ -11,7 +11,6 @@ import ReactDOM from "react-dom"
 type HelloProps = { readonly name: string }
 
 function Hello({ name }: HelloProps): ReactElement<HelloProps> {
-  // This is JSX, an XML like syntax to express DOM elements.
   return <button>Hello {name}!</button>
 }
 
@@ -50,7 +49,7 @@ Sometimes returning an div element is not possible.
 For example, nesting multiple `<td>` elements in `div` results in invalid HTML.
 And sometimes, you just do not want to wrap them inside a `div` element.
 Under such conditions, you can wrap them inside a `<React.Fragment>`,
-which can be considered as seamless div elements.
+which can be considered as a seamless div element.
 
 `<React.Fragment>` accepts an optional `key` attribute,
 which is its only acceptable attribute.
