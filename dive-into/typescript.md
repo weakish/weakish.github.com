@@ -110,6 +110,56 @@ Thus if we inline the `somebody` declaration above, TypeScript raises an error:
 print_height({ height: 150, weight: 150 }); // Error!
 ```
 
+However, partial overlap is still permitted:
+
+```typescript
+type Point = {
+    x: number;
+    y: number;
+}
+type Label = {
+    name: string;
+}
+const partialOverlap: Point | Label = {
+    x: 0,
+    y: 0,
+    name: "origin"
+}
+function print_pl(pl: Point | Label) {
+    console.log(pl)
+}
+print_pl({ x: 0, y: 0, name: "origin"})
+```
+
+But overlap with conflicting properties is not permitted:
+
+```typescript
+type Point = {
+    x: number;
+    y: number;
+}
+type SPoint = {
+    x: string;
+    y: string;
+}
+const conflictingProperties: Point | SPoint = {x: 0, y: "0"}
+```
+
+TypeScript 3.4 and prior did not further decompose types with discriminant properties,
+and TypeScript 3.5 fixed this issue.
+
+```typescript
+type M = { absoluteValue: number, isPositive: boolean }
+type N =
+    | { absoluteValue: number, isPositive: true }
+    | { absoluteValue: number, isPositive: false }
+```
+
+TypeScript 3.4 and prior considered that,
+since M is assignable to neither `{ absoluteValue: number, isPositive: true }` nor `{ absoluteValue: number, isPositive: false }`,
+M is not assignable to N.
+But TypeScript 3.5 is smart enough to conclude that M is equivalent to N since `boolean` is a union of `true` and `false`.
+
 ### Loose Function Typing
 
 ```typescript
@@ -641,6 +691,14 @@ type Invalid = Array<Invalid>;
 //
 // - Type alias cannot be implemented or extended.
 // - Interface cannot extends a union or intersection of interfaces.
+
+// TypeScript 3.5 introduces a new `Omit` helper type.
+type Person = {
+    name: string;
+    isMale: boolean;
+}
+
+type Queer = Omit<Person, "isMale">  // { name: string; }
 
 type StringLiteralType = "left" | "right";
 // It can be used to mimic enum.
