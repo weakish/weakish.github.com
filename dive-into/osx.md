@@ -6,6 +6,7 @@
 2. In `Security & Privacy` > `General`, check `Require password after sleep or screen saver begins`
 
 Now hit `Control+Shift+Power` to turn off and lock screen.
+Alternatively, you can put the `Screen Lock` icon on touch bar (System Preference > Keyboard > Touch Bar).
 
 ## Turn off Internal Display
 
@@ -13,7 +14,6 @@ Now hit `Control+Shift+Power` to turn off and lock screen.
 
 1. Close the lid to put laptop to sleep.
 2. Reactivate laptop via external input devices, e.g. keyboard.
-3. I think example
 
 ## Keyboard
 
@@ -35,6 +35,10 @@ And import certain complex rules like `Alt-Tab` from it individually.
 
 Unselect "Scroll direction: Natural" in System Preferences > Mouse.
 (The direction may be natural to touch screen, but it is not natural for mouse at all.)
+
+## Trackpad
+
+Select "Tap to click" in System Preferences > Trackpad.
 
 ## Tiling
 
@@ -73,6 +77,7 @@ BTW, most applications' user configuration files are in `~/Library/Application S
 ## Safari
 
 To enable developer tools, select "Show Develop menu in menu bar" in Safari > Preferences > Advanced.
+You can also change the default encoding to UTF-8.
 
 There are several vi shortcuts extensions for safari, for example, [sVim].
 
@@ -102,6 +107,7 @@ Except for the gmail, other osx applications can also sync with Google account:
 
 Faults of [boxen]:
 
+0. Its GitHub repository has already been archived.
 1. It depends on Xcode or Xcode Command Line Tools but cannot install them automatically.
 2. Mainly for Ruby and Node.js developers.
 
