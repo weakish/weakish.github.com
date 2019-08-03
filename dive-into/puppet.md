@@ -106,7 +106,7 @@ can be rewritten as:
 ```puppet
 $service_name = $operatingsystem ? {
   centos, redhat => 'ntpd',
-  debian, ubuntu => 'ntp,
+  debian, ubuntu => 'ntp',
 }
 ```
 
