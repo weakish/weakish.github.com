@@ -41,6 +41,45 @@ file { 'ntp.conf':
 }
 ```
 
+This guide applies to Puppet 6.7
+
+## Quick Start
+
+Install the `puppet-agent` package (which provides `puppet apply`),
+following the [instructions at official document][install].
+
+[install]: https://puppet.com/docs/puppet/6.7/install_agents.html
+
+As an oversimplified example, I wrote a script to ensure git is installed:
+
+```puppet
+# filename: git.pp
+package {'git':
+  ensure => installed
+}
+```
+
+Validate its syntax:
+
+```sh
+puppet parser validate test.pp
+```
+
+In practice, this is mainly for CI systems,
+since a decent editor should have warned you if you made some syntax mistakes.
+
+Rehearse the play (dry run):
+
+```sh
+puppet apply --noop test.pp
+```
+
+It's show time:
+
+```sh
+puppet apply test.pp
+```
+
 ## Glossary
 
 This guide uses different terms to the official Puppet documentation.
@@ -62,6 +101,6 @@ In fact, [chef] refers to the similar notation as [recipe].
 - **filebucket** A repository for file backups.
 - **Hiera** A built-in key-value database for puppet.
 - **lambda** In Puppet, a lambda can only be used in function calls. That is, it can only be passed to functions, but cannot be assigned to variables. To some extent, it is more like Ruby's block.
-- **manifest** The *script* used by a marionettist. Puppet refers to the *opening scene* (entry point in other programming languages) as **main manifest** or **site manifest**.
+- **manifest** The *script* used by a marionettist. Puppet refers to the entry point as **main manifest** or **site manifest**. `puppet apply` only cares about the *script* passed to it on the command line.
 - **node** The *stage* for the show. In `puppet apply` mode, the local machine is the only *stage*.
 - **resource** A *puppet* controlled by the marionettist.
