@@ -10,8 +10,6 @@ because the [master-slave mode] is [unethical] and [bolt] sounds violent. On the
 [unethical]: https://bugs.python.org/issue34605
 [bolt]: https://puppet.com/products/bolt
 
-Disclaimer: puppet actually uses the term agent instead of slave, but this is just a euphemism.
-
 Puppet uses a declarative DSL, i.e. describing the state of puppets. Below is an example from [the official document][doc]:
 
 [doc]: https://puppet.com/docs/puppet/6.7/intro_puppet_language_and_code.html
@@ -41,7 +39,7 @@ file { 'ntp.conf':
 }
 ```
 
-This guide applies to Puppet 6.7
+This guide applies to Puppet 6.7.
 
 ## Quick Start
 
@@ -65,7 +63,7 @@ Validate its syntax:
 puppet parser validate laptop.pp
 ```
 
-In practice, this is mainly for CI systems,
+In practice, this is mainly for CI,
 since a decent editor should have warned you if you made some syntax mistakes.
 
 Rehearse the play (dry run):
@@ -93,7 +91,7 @@ The Puppet community prefers `snake_case` and two spaces soft tab.
 
 ### Selector Expression
 
-Puppet DSL has selector expression, which returns a value
+Selector expression returns a value.
 For example, the case "statement" in the beginning code sample:
 
 ```puppet
@@ -156,7 +154,7 @@ file {
 
 [per-expression defaults]: https://puppet.com/docs/puppet/6.7/lang_resources.html#resource-declaration-default-attributes
 
-### Puppet Collect
+### Puppet Collector
 
 This is sometimes called the "spaceship operator",
 which selects a group of puppets via attribute searching:
