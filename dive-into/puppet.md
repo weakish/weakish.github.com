@@ -53,7 +53,7 @@ following the [instructions at official document][install].
 As an oversimplified example, I wrote a script to ensure git is installed:
 
 ```puppet
-# filename: git.pp
+# filename: laptop.pp
 package {'git':
   ensure => installed
 }
@@ -62,7 +62,7 @@ package {'git':
 Validate its syntax:
 
 ```sh
-puppet parser validate test.pp
+puppet parser validate laptop.pp
 ```
 
 In practice, this is mainly for CI systems,
@@ -71,14 +71,18 @@ since a decent editor should have warned you if you made some syntax mistakes.
 Rehearse the play (dry run):
 
 ```sh
-puppet apply --noop test.pp
+puppet apply --noop laptop.pp
 ```
 
-It's show time:
+It's show time: (run as root since installing package usually requires root permission)
 
 ```sh
-puppet apply test.pp
+puppet apply laptop.pp
 ```
+
+## Puppet DSL
+
+
 
 ## Glossary
 
