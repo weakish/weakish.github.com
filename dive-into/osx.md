@@ -1,19 +1,50 @@
 # OSX Survival Guide
 
-## Lock Screen
+## Bootstrap
 
-1. Launch System Preferences.
-2. In `Security & Privacy` > `General`, check `Require password after sleep or screen saver begins`
+[strap] is the [successor of boxen] created by the current homebrew maintainer [Mike McQuaid].
 
-Now hit `Control+Shift+Power` to turn off and lock screen.
-Alternatively, you can put the `Screen Lock` icon on touch bar (System Preference > Keyboard > Touch Bar).
+[strap]: https://github.com/MikeMcQuaid/strap
+[successor of boxen]: https://mikemcquaid.com/2016/06/15/replacing-boxen/
+[Mike McQuaid]: https://mikemcquaid.com
 
-## Turn off Internal Display
+### Download the Script
 
-**When the power adapter is connected:**
+```sh
+curl https://raw.githubusercontent.com/MikeMcQuaid/strap/master/bin/strap.sh > strap.sh
+```
 
-1. Close the lid to put laptop to sleep.
-2. Reactivate laptop via external input devices, e.g. keyboard.
+### Configuration
+
+Edit the `strap.sh` script, e.g. using vim, and uncomment and fill up the following environment variables:
+
+```sh
+# STRAP_GIT_NAME=
+# STRAP_GIT_EMAIL=
+# STRAP_GITHUB_USER=
+# STRAP_GITHUB_TOKEN=
+# CUSTOM_HOMEBREW_TAP=
+# CUSTOM_BREW_COMMAND=
+```
+
+- `STRAP_GIT_NAME` and `STRAP_GIT_EMAIL` is to setup git `user.name` and `user.email`, and contact info on login screen.
+- `STRAP_GITHUB_USER` is to setup git `github.user` and to access your dotfiles and homebrew-brewfile repositories.
+- `STRAP_GITHUB_TOKEN` is needed to allow homebrew to reduce the rate limit of `brew search` command and to tap your private repositories (the token can be generated at GitHub > Settings > Developer settings > Personal access tokens, with scope `repo, user`).
+- `CUSTOM_HOMEBREW_TAP` and `CUSTOM_BREW_COMMAND` are optional, to add your personal homebrew tap and custom brew command which will be run at the end of the bootstrap.
+
+The customized `strap.sh` can be automatically generated at https://macos-strap.herokuapp.com/,
+which asks for your authorization on GitHub.
+But I prefer to edit the script manually.
+
+strap is idempotent, so you can run it first,
+adding custom dotfiles and brewfile repositories later,
+then run it again.
+
+### Run
+
+```
+/bin/bash strap.sh
+```
 
 ## Keyboard
 
@@ -25,7 +56,7 @@ and `Caps` can be used as an additional `Escape` key.
 For example, it supports [PC-style keyboard shortcuts][pc-style].
 However, some of them do not work, and results in inconsistent keyboard shortcuts.
 It is recommend to swap `Control` and `Command` through Karabiner-Elements' simple modification instead.
-And import certain complex rules like `Alt-Tab` from it individually.
+And import certain complex rules like `Alt-Tab` from it individuallhttps://www.iqiyi.com/v_19rr7q2rjo.htmly.
 
 [karabiner]: https://pqrs.org/osx/karabiner/document.html#configuration-simple-modifications
 
@@ -39,6 +70,18 @@ Unselect "Scroll direction: Natural" in System Preferences > Mouse.
 ## Trackpad
 
 Select "Tap to click" in System Preferences > Trackpad.
+
+## Lock Screen
+
+Press `Control+Shift+Power` to turn off and lock screen.
+Alternatively, you can put the `Screen Lock` icon on touch bar (System Preference > Keyboard > Touch Bar).
+
+## Turn off Internal Display
+
+**When the power adapter is connected:**
+
+1. Close the lid to put laptop to sleep.
+2. Reactivate laptop via external input devices, e.g. keyboard.
 
 ## Tiling
 
@@ -54,10 +97,6 @@ Drag the edge between two tiling windows to adjust the size of the two windows a
 Press `Ctrl-Left/Right` to switch among virtual desktops.
 
 Press `Ctrl-Up/Down` to show an overview of desktops or go back to normal mode.
-
-## Screen Recording
-
-QuickTime > File > New Screen Recording
 
 ## Finder
 
@@ -99,18 +138,6 @@ Google accounts can be added to the Mail.app.
 Except for the gmail, other osx applications can also sync with Google account:
 
 - Contacts
-- Calanders
+- Calenders
 - Messages (with Google Talk)
 - Notes (via gmail, tagged as notes)
-
-## (No) Devops
-
-Faults of [boxen]:
-
-0. Its GitHub repository has already been archived.
-1. It depends on Xcode or Xcode Command Line Tools but cannot install them automatically.
-2. Mainly for Ruby and Node.js developers.
-
-[boxen]: https://github.com/boxen/our-boxen/
-
-So I just setup osx manually.
