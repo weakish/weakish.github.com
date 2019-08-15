@@ -56,7 +56,7 @@ and `Caps` can be used as an additional `Escape` key.
 For example, it supports [PC-style keyboard shortcuts][pc-style].
 However, some of them do not work, and results in inconsistent keyboard shortcuts.
 It is recommend to swap `Control` and `Command` through Karabiner-Elements' simple modification instead.
-And import certain complex rules like `Alt-Tab` from it individuallhttps://www.iqiyi.com/v_19rr7q2rjo.htmly.
+And import certain complex rules like `Alt-Tab` from it individually.
 
 [karabiner]: https://pqrs.org/osx/karabiner/document.html#configuration-simple-modifications
 
