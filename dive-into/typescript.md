@@ -1232,7 +1232,7 @@ Since 3.4
 This compiler option tells `tsc` to use `.tsbuildinfo` for incremental type-check.
 `.tsbuildinfo` can be safely deleted (no impact on runtime).
 
-### Conclusion
+## Conclusion
 
 `tsconfig.json`:
 
