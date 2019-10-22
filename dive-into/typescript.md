@@ -1248,6 +1248,7 @@ This compiler option tells `tsc` to use `.tsbuildinfo` for incremental type-chec
         "allowJs": true,
         "checkJs": true,
         "target": "es2017",
+        "moduleResolution": "node",
         "incremental": true,
     }
 }
