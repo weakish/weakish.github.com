@@ -773,12 +773,12 @@ The other ubiquitous interface is the built-in `error` interface:
 
 ```go
 type NullPointerException struct {
-    message string
+    Message string
 }
 
 // satisfies `error` interface
 func (e *NullPointerException) Error() string {
-    return e.message
+    return e.Message
 }
 ```
 
@@ -793,6 +793,62 @@ one return value for one error.
 If we do not want to declare our own error type,
 we just use a general error with a string
 via `errors.New("message")` or `fmt.Errorf("Printf formatted message")`.
+
+#### error.Is and error.As
+
+Besides `New`, `errors` also provides two functions: `Is` and `As`.
+
+`errors.Is` compares an error to a value.
+There are two differences between using `errors.Is(err, value)` and comparing via `err == value` directly:
+
+1. `errors.Is` will invoke the `Is` method of the error if available.
+2. `errors.Is` will examine all the wrapped errors on the chain.
+
+For example:
+
+```go
+type NonExistError struct {
+    Code int
+    Err error
+}
+
+func (e *NonExistError) Error() string { return strconv.Itoa(e.Code) }
+
+// If e1.Unwrap() returns e2, then e1 wraps e2, and we can unwrap e1 to get e2.
+// e2 itself may implement an Unwrap method returning its underlying error (error chain).
+func (e *NonExistError) Unwrap() error { return e.Err }
+
+func (e *NonExistError) Is(target error) bool {
+    t, ok := target.(*NonExistError)
+    if ok {
+        return e.Code == t.Code
+    } else {
+        return false
+    }
+}
+```
+
+Similarly, there is an `errors.As` method, examining all the wrapped errors on the chain, using `As` method defined on errors when available.
+
+```go
+var err *NonExistError
+var ok bool = errors.As(e, &err)
+```
+
+#### %w
+
+Besides defining the `Unwrap` method explicitly,
+`fmt.Errorf` with `%w` verb present returns an error with an `Unwrap` method returning the argument of `%w`.
+Thus the argument of `%w` must be an error.
+In other aspects, `%w` is identical to `%v`.
+
+```go
+e2 := errors.New("wrap me")
+e1 := fmt.Errorf("wraps %w", e2)
+```
+
+Wrapping an error will expose the underlying error, thus making the wrapped error part of the API.
+Therefore abusing wrapping will break abstraction and expose implementation details unnecessarily.
 
 #### panic and recover
 
