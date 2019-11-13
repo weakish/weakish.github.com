@@ -694,9 +694,13 @@ type Tree<T> = {
     left: Tree<T>;
     right: Tree<T>;
 }
-// It’s not possible for a type alias to appear anywhere else
-// on the right side of the declaration:
-type Invalid = Array<Invalid>;
+type Json =
+    | string
+    | number
+    | boolean
+    | null
+    | { [property: string]: Json }
+    | Json[]
 // Difference between type alias and interface:
 //
 // - Type alias cannot be implemented or extended.
