@@ -1,47 +1,62 @@
-Build a Site With GitHub Pages in a Simple Way
-==============================================
+Build a Micro Static Site With GitHub Pages
+===========================================
 
-Focus on content, not the site design and configuration.
-
-## README as Index Page
-
-No need to write `index.html` or `index.md`.
-GitHub Pages will just use `README.md` as index page.
-
-## Use `master` Branch
+## tl;tr
 
 In repository settings, enable GitHub Pages for the `master` branch.
 
-For a project site, a `README.md` is sufficient.
-This also makes updating project site easier.
+Now you can access your site at `https://your-username.github.io/your-repo-name`
+
+Done. Period.
+
+## How
+
+GitHub Pages will use `README.md` as index page.
+And your project probably already have one.
+There is no need to write `index.html` or `index.md`.
+
+Also, GitHub Pages will automatically add an "edit on GitHub" link to page footer.
+Nice.
+
+## Why
+
+Focus on content, not the site design and configuration.
+
+We use `README.md` and `master` branch.
+This makes updating project site easier.
 Just update `README.md` without the hassles of sync documentation between `master` and `gh-pages` branches.
 
-For a personal site of articles and notes,
-just directly write the markdown files.
+## Bonus
+
+Your project may have some additional documentary pages.
+They are welcome by GitHub Pages.
+
 For example:
 
 ```
 README.md
-contact.md
-python/
-    persistence.md
-vim/
-    completion.md
+...
+docs/
+    README.md
+    quick-start.md
+    install/
+    linux.md
+    osx.md
+    bsd.md
+    win.md
 ```
 
-URLs will be:
+URL paths will be:
 
 ```
 /index.html
-/contact.html
-/python/persistence.html
-/vim/completion.html
+/docs
+/docs/quick-start.html
+/docs/install/linux.html
+/docs/install/osx.html
+/docs/install/bsd.html
+/docs/install/win.html
 ```
-
-And GitHub Pages will automatically add a link to `index.html` at the header
-of every page (except for `index.html` itself),
-and an edit link (fork and request pull within browser)
-to the source markdown file in the repository.
 
 ## Conclusion
 
