@@ -1420,7 +1420,7 @@ such benchmarks are intended to be used with the go test `-cpu` flag:
 
 ```go
 func BenchmarkTemplateParallel(b *testing.B) {
-    templ := template.Must(template.New("test").Parse("Hello, {{.}}!"))
+    templ := template.Must(template.New("test").Parse("Hello, {.}!"))
     b.RunParallel(func(pb *testing.PB) {
         var buf bytes.Buffer
         for pb.Next() {
