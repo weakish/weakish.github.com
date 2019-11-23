@@ -8,16 +8,20 @@ Hello ZeroMe! (Hmm, I can follow myself!)
 -- 2016-08-18
 
 
-If 15441 is closed on your machine, you can use an ssh tunnel to accelerate publishing your zites:
+20191123: instructions updated for recent zeronet versions
+
+If zeronet's file server port is closed on your machine, you can use an ssh tunnel to accelerate publishing your zites:
 
 ```sh
-ssh -2 -N -R 15441:127.0.0.1:15441 -A -D 1080  root@REMOTE_IP
-tsocks python zeronet.py
+ssh -n -N -R 15441:127.0.0.1:15441 root@REMOTE_IP
 ```
 
-Note you need to enable `GatewayPorts` of sshd service on the remote machine beforehand.
+Replace `15441` with the real file server port and fill the `REMOTE_IP` in the file server external ip of [ZeroNet Config](/Config).
+
+Note you need to enable `AllowTcpForwarding` and `GatewayPorts` of sshd service on the remote machine beforehand.
 
 ```sh
+sudo sh -c 'echo AllowTcpForwarding yes' >> /etc/ssh/sshd_config
 sudo sh -c 'echo GatewayPorts yes' >> /etc/ssh/sshd_config
 sudo service sshd restart  # On some OSes, replace `sshd` with `ssh`.
 ```
@@ -2213,5 +2217,166 @@ To those who dislikes systemd:
 Just realized that I can look at the bright side of JavaScript's switch structure. JavaScript's switch **statement** is **fall-through**, which sounds like a scream: "Don't break! Return! Wrap me into a function!"
 
 -- 2019-05-06
+
+
+egghand's subtitles are auto generated (at least on some videos I watched), but they are not marked as such confusingly (unlike YouTube).
+
+-- 2019-05-08
+
+
+```python
+first, *rest = [1, 2, 3]  # first -> 1, rest -> [2, 3]  (1)
+lambda (x, y): (y, x)  # (2)
+```
+
+Python 3 supports `(1)` but not `(2)`, and Python 2 supports `(2)` but not `(1)`.
+
+What a pity! If there is a python version supports both (Python 6?), I can write something like:
+
+```python
+lambda (first, *rest): ...
+```
+
+-- 2019-05-10
+
+
+Do not under stand why Beta users need to accept [Confidentiality agreement][terms] of keeping special information secret. Isn't beta means public? It seems GitHub redefines Beta.
+
+I sign up for a Beta program because I am an impatient person, not want to wait for the official release. As such an impatient person, I do not bother reading these lengthy and senseless legal terms. I will check it again after it is officially released.
+
+[terms]: https://help.github.com/en/articles/github-pre-release-program
+
+-- 2019-05-11
+
+
+This patch to the legacy marriage framework just got approved today and will be merged into the `release` branch very soon! Congratulations! First patch of this kind in Asia!
+
+```diff
+     func isMarriable(x Taiwanese, y Taiwanese) bool {
+-      if x.sex == y.sex {
+-        return false
+-      }
+```
+
+-- 2019-05-17
+
+
+Just find out that web developer tools of modern browsers (Firefox & Chrome)  can recognize webpack and typescript. Debugging on the original typescript source is much easier than on the generated JavaScript code.
+
+-- 2019-06-29
+
+
+Future programmers may use different abstractions. Today we can write bytes to a file, and tomorrow we may write to a [blob]. Whether the blob is ultimately a file or some cloud storage service is just implementation details.
+
+On writing this, it occurred to me that maybe these abstractions are not very different. Afterall, a *file* itself is quite abstract (e.g. `/dev/stderr` under Linux).
+
+[blob]: https://godoc.org/gocloud.dev/blob
+
+-- 2019-07-02
+
+
+How I stop using proxy extension in Firefox?
+
+1. Use clash. Usually I'd rather add a rule in clash config, instead of switch proxy.
+2. Occasionally, when I need to switch proxy, I just press alt+home to open the proxy settings, because I have set homepage to `chrome://browser/content/preferences/connection.xul`.
+
+-- 2019-07-25
+
+
+The current version of IntelliJ (2019.2) has a built-in sublime keymap. And I once heard a JetBrainer referred to `ctrl+shift+a` as "command palette" (although actually IntelliJ introduced the "find any action" feature prior to Sublime). FYI, Micosoft released an extension "Sublime Text Keymap and Settings Importer" for vscode on 2016.
+
+Such an influential editor, Sublime Text.
+
+-- 2019-07-27
+
+
+Looks like the development of Ceylon has ceased. The latest commit is on [May 22, 2019][7e653a1], removing words like "crap", "shit", "fucked up" from code comment. And the penultimate commit is on [Feb 11, 2019][d3994d6], fixing the CI build.
+
+[7e653a1]: https://github.com/eclipse/ceylon/commit/7e653a1cd0ff54e7b773f92e26af8ba56b85f308
+[d3994d6]: https://github.com/eclipse/ceylon/commit/d3994d6cd120c4df85952cd9432123b413cfd65a
+
+-- 2019-07-29
+
+
+After recent update of KDE Neon, the bluetooth adapter will power off after each hibernation. Unfortunately I need a mouse to turn on the bluetooth in KDE UI, but I use a bluetooth mouse.
+
+Finally, I found a way to turn on bluetooth via command line (I use a wired keyboard), entering `power on` in the bluetoothctl shell.
+
+```sh
+; bluetoothctl
+[bluetooth]# power on
+[bluetooth]# exit
+```
+
+-- 2019-08-01
+
+
+The dark theme of Spark (a mail client on osx) is a disaster. I've to change the setting to "always use light theme". The reason is few mail clients (including those Web Clients) have considered dark background in designing default HTML email templates. And it seems that Spark has not implement some smart algorithm to swap colors.
+
+The old fashioned plain text emails play nicely with dark theme. Another example of simple design is more future proof.
+
+-- 2019-08-04
+
+
+Touch bar does have some advantages:
+
+1. providing context aware UI controls, like buttons, slides, etc
+2. showing explicitly the state of the button, e.g. the mute/unmute button
+
+But there is a long way to go:
+
+1. The touch bar need to provide more physical like feedback.
+2. The application need to allow user to configure controls, to keep some common operations in a fixed position, e.g. F5 (refresh) for browsers.
+3. The application need to pay great attention to design the touch bar controls, to offer a consistent and convenient  UI. For example, in Spark (an email client on Mac OS X), if I click the move button in the toolbar, the popup menu will list suggested folders first. However, if I press the move button on the touch bar, the touch bar just shows the full list (I have to slide for more folders), and the suggested list is missing.
+
+-- 2019-08-07
+
+
+The IRL podcast by mozilla is not only boring but also burning (it burns RAM very quickly under Firefox).
+
+-- 2019-08-07
+
+
+Just learned a new word "Xi-ple" today. To my surprise, this word is ungoogleable.
+
+-- 2019-08-14
+
+
+BitBucket is [dropping hg support][blog]. This reminds me the time when Macintosh computers dropped PowerPC CPUs.
+
+[blog]:  https://bitbucket.org/blog/sunsetting-mercurial-support-in-bitbucket
+
+-- 2019-08-21
+
+
+Sam Hartman sent the [Bits from the DPL (August 2019)][letter] letter yesterday (Sep 19, 2019). In the letter, Sam talked a lot about the complexity and anxiety on init system diversity within the  Debian project.
+
+[letter]: https://lists.debian.org/debian-devel-announce/2019/09/msg00001.html
+
+-- 2019-09-20
+
+
+Just discovered the Files app (an android app by Google) is translated to Files Geek (文件极客) in Chinese UI.
+
+-- 2019-09-21
+
+
+Just upgrade to 0net-py3:
+
+1. Install from source.
+2. Copy the data directory from my old 0net-py2 directory.
+
+Seemingly it works fine.
+
+-- 2019-10-16
+
+
+For parsing simplicity, the existential operator from CoffeeScript turns into something like `foo ?? bar()`, `a?.[1]`, and `f.(x)` in JavaScript (stage 3), to avoid confusion with ternary expression (`a ? [b] :c`).
+
+IMO `??` is acceptable, but `a?.[1]` is really very ugly. And in fact this reveals a fundamental problem of JavaScript:
+
+JavaScript sucks. Thus people add more features as workarounds. But people cannot remove features from it (otherwise it may become a bigger tragedy than Python 2/3). So JavaScript still sucks, and becomes more bloated and uglier at the same time.
+
+-- 2019-11-13
 
 
