@@ -1201,6 +1201,24 @@ type InstanceType<T extends new (...args: any[]) => any> =
 The inferred type can only be referenced in the true branch of the conditional type,
 since in the false branch the condition test failed and the type probably cannot be inferred.
 
+Conditional types can be used to test equality of types:
+
+```typescript
+type Equals<T, S> = [T] extends [S] ? ([S] extends [T] ? true : false) : false
+```
+
+This implementation is intuitive, and it considers `any` to equal to any type except `never`.
+To check equivalence strictly (not consider `any` to be identical to other type),
+use this cleaver implementation by [Matt McCutchen]:
+
+```typescript
+export type Equals<X, Y> =
+    (<T>() => T extends X ? 1 : 2) extends
+    (<T>() => T extends Y ? 1 : 2) ? true : false;
+```
+
+[Matt McCutchen]: https://github.com/Microsoft/TypeScript/issues/27024#issuecomment-421529650
+
 Since 2.9
 ---------
 
