@@ -13,7 +13,7 @@
   <div class="container-lg px-3 my-5 markdown-body">
 
     <h1><a href="https://mmap.page/">mmap.page</a></h1>
-    {{ content }}
+    {% include anchor_headings.html html=content %}
     <div class="footer border-top border-gray-light mt-5 pt-3 text-gray">
         <p>
         Permission to use, copy, modify, and/or distribute this site for any purpose with or without fee is hereby granted.
@@ -28,9 +28,12 @@
         Site source is <a href="https://github.com/weakish/weakish.github.com/">available</a>
         and feedback is <a href="https://github.com/weakish/weakish.github.com/issues">welcome</a>.
         </p>
+        <noscript>
+        <p>
+        This site does not use JavaScript.
+        </p>
+        </noscript>
     </div>
   </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
 </body>
 </html>
