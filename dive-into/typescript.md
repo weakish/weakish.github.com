@@ -647,8 +647,18 @@ function isFish(p: Fish | Bird): p is Fish {
     return (p as Fish).swim !== undefined;
 }
 //
-// Here `p as Fish` is a type assertion.
-// Using type assertions outside the context of type guard definition can be dangerous.
+// Here `p as Fish` is a type predicate.
+//
+// TypeScript 3.7 introduces a similar feature called assertion signature,
+// which models assertion functions in existing JavaScript (e.g. Node.js).
+function assertIsFish(v: any): asserts v is String {
+    if (typeof v !== "string") {
+        throw new AssertionError("not a string");
+    }
+}
+
+
+// Using type predicates outside the context of type guard definition can be dangerous.
 // For example, how a type assertion breaks an innocent pure function:
 function multiplyTen(x: number): number {
     return x * 10
@@ -684,9 +694,13 @@ type Tree<T> = {
     left: Tree<T>;
     right: Tree<T>;
 }
-// It’s not possible for a type alias to appear anywhere else
-// on the right side of the declaration:
-type Invalid = Array<Invalid>;
+type Json =
+    | string
+    | number
+    | boolean
+    | null
+    | { [property: string]: Json }
+    | Json[]
 // Difference between type alias and interface:
 //
 // - Type alias cannot be implemented or extended.
