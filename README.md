@@ -14,10 +14,12 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 
 ## more
 
-- [notes](/dapi/) and [poems](/poems/) written in Chinese
+- [notes] and [poems] written in Chinese
 - [gists][]([feed][gist-feed]) - notes, scripts, configs etc
 - photos hosted at [23][] and [flickr][]
 
+[notes]: https://mmap.page/dapi/
+[poems]: https://mmap.page/poems/
 [gists]: https://gist.github.com/weakish
 [gist-feed]: https://gist.github.com/weakish.atom
 
