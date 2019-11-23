@@ -48,22 +48,3 @@ to the source markdown file in the repository.
 Yes. You can have a site powered by GitHub Page up and running
 without writing a single line of
 yaml configuration, html template, css, javascript, etc.
-
-In fact, this site is built in a similarly approach.
-I did wrote three lines of configuration, though.
-
-```yaml
-# _config.yml
-
-plugins:
-  # 301 redirects
-  - jekyll-redirect-from
-  # Sitemap for search engines.
-  - jekyll-sitemap
-
-# Turn `/contact.html` to `/contact/`.
-permalink: /:title/
-```
-
-Besides, I also put favicon.ico and 404.html in the repository,
-to customize favicon and 404 page.
