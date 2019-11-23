@@ -10,3 +10,7 @@ defaults:
             path: ""
         values:
             layout: default
+
+url: https://mmap.page
+title: mmap.page
+repo: weakish/weakish.github.com
