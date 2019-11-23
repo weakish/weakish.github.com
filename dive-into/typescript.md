@@ -334,7 +334,7 @@ interface InterfaceForFunction {
     // Function implementation is not required to use matching parameter.
 }
 interface IndexableType {
-    [index: number]: string
+    [index: number]: string // only `string` and `number` is valid in this index signature
 }
 
 interface TraditionalInterface {
@@ -1061,7 +1061,7 @@ type Readonly<T> = {
 
 Short explanation:
 
-- `[... in ...]: ...`, **mapped types**
+- `[P in K]: ...`, **mapped types**, where K is typically a union of literal types, thus the keyword `in`. Although technically speaking, `[P in string]` is also valid syntax, which is identical to `[P : string]`.
 - `keyof T`, indexed type query, which yields the type of permitted property names for `T`. `keyof T` is considered a subtype of `string | number | symbol` (since 2.9).
 - `T[P]`, **indexed access types**.
 
