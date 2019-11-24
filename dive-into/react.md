@@ -1,5 +1,5 @@
-A Quick Introduction to React in TypeScript
-===========================================
+A Quick Introduction to React
+=============================
 
 ## Hello World
 
@@ -31,6 +31,59 @@ But these properties can be mutable.
 ReactElements can be considered as extensible html elements,
 or some content to be rendered.
 A react component may return null for conditional rendering.
+
+## Hooks
+
+Hooks decouple state related logic from components.
+Like components, hooks are just functions, nothing magical:
+
+```javascript
+const SimpleReact = (function() {
+    let state
+    return {
+      render(Component) {
+        const C = Component()
+        C.render()
+        return C
+      },
+      useState(initialValue) {
+        state = state || initialValue
+        function setState(newValue) {
+          state = newValue
+        }
+        return [state, setState]
+      }
+    }
+})()
+
+const useState = SimpleReact.useState
+const render = SimpleReact.render
+
+function useCountCharacters(str) {
+    const [text, setText] = useState(str)
+    const len = text.length
+    return [len, setText]
+}
+
+function Component() {
+    const [len, setLen] = useCountCharacters("")
+    return {
+      type: txt => setLen(txt),
+      render: () => console.log({ len })
+    }
+}
+
+let App = render(Component) // { len: 0 }
+App.type('hello')
+App = render(Component) // { len: 5 }
+```
+
+The real React will re-render components on state changes automatically.
+And there are other kind of hooks, e.g. `useEffect` for side-effects, triggered on state changes.
+Also, the real React can handle multiple hooks, which can be considered as [an array of hooks][hook-array].
+Whatever, the above naive implementation captures the essence of React Hooks.
+
+[hook-array]: https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e
 
 ## JSX
 
@@ -106,3 +159,8 @@ Among those projects, I pick the five projects written in TypeScript:
 
 stylable has a syntax similar to CSS, while typestyle just uses object literals (no custom AST transform).
 As I said before, I want to define styles *in TypeScript*, thus I pick typestyle.
+
+## References
+
+1. [Learn React in 10 tweets](https://twitter.com/chrisachard/status/1175022111758442497)
+2. [Deep dive: How do React hooks really work?](https://www.netlify.com/blog/2019/03/11/deep-dive-how-do-react-hooks-really-work/)
