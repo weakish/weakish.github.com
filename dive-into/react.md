@@ -160,6 +160,27 @@ Among those projects, I checked the five projects written in TypeScript:
 stylable has a syntax similar to CSS, while typestyle just uses object literals (no custom AST transform).
 As I said before, I want to define styles *in TypeScript*, thus I pick typestyle.
 
+## Alternative Implementations
+
+1. [Preact] is the most popular alternative implementation.
+   It is small (3KB gzipped) and fast.
+   However, to leverage many React libraries, `preact/compat` is required.
+   This compatibility layer is slow.
+
+2. [Inferno] is a faster alternative implementation.
+   Unlike Preact, it is not that obsessed about the size (but still small).
+   Like Preact, its compatibility layer `inferno-compat` has extra overhead.
+   Also, hooks is [not supported yet].
+
+3. [Nerv] is yet another small alternative implementation.
+   It features compatibility with IE 8 and a more identical React API.
+   Thus there is no `nerv-compat`.
+
+[Preact]: https://preactjs.com/
+[Inferno]: https://infernojs.org/
+[Nerv]: https://github.com/NervJS/nerv
+[not supported yet]: https://github.com/infernojs/inferno/issues/1453
+
 ## References
 
 1. [Learn React in 10 tweets](https://twitter.com/chrisachard/status/1175022111758442497)
