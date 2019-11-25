@@ -144,7 +144,7 @@ However, I prefer to define styles in TypeScript than CSS.
 You can check [this comparison of CSS-in-JS][css-in-js].
 Again, there are a lot of choices.
 
-Among those projects, I pick the five projects written in TypeScript:
+Among those projects, I checked the five projects written in TypeScript:
 
 - [jsxstyle] and [react-free-style] are inline style systems. I do not like inline style systems.
 - [freestyler]'s APIs are complex. There are too many choices.
