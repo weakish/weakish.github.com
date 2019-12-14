@@ -154,7 +154,7 @@ Among those projects, I checked the five projects written in TypeScript:
 [jsxstyle]: https://github.com/jsxstyle/jsxstyle
 [react-free-style]: https://github.com/blakeembrey/react-free-style
 [freestyler]: https://github.com/streamich/freestyler
-[styleable]: https://stylable.io/
+[stylable]: https://stylable.io/
 [typestyle]: https://typestyle.github.io/
 
 stylable has a syntax similar to CSS, while typestyle just uses object literals (no custom AST transform).
