@@ -46,7 +46,8 @@ npm i -D @types/express
 Use [ncc] to package runtime dependencies into a single JavaScript file:
 
 ```sh
-npm ci # install dependencies according to package-lock.json, consistent and fast
+# install dependencies according to resolved urls to tarballs in package-lock.json
+@cat package-lock.json | jq '.dependencies[].resolved' | xargs npm i --no-package-lock
 ncc build index.js --minify # output file: dist/index.js
 ```
 
@@ -61,6 +62,6 @@ Just use plain old Makefile, e.g.
 
 ```makefile
 dist/index.js: index.js
-	@npm ci
+	@cat package-lock.json | jq '.dependencies[].resolved' | xargs npm i --no-package-lock
 	ncc build index.js --minify
 ```
