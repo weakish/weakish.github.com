@@ -46,8 +46,7 @@ which are merely personal choice of programming style.
 So here is the seven ESLint rules I use:
 
 ```js
-{
-  "rules": {
+"rules": {
     "eqeqeq": "error", // prefer `===` instead of `==`
     "prefer-arrow-callback": "error", // avoid the evil `this`
     "curly": "error", // not omit braces for statements in control flow
@@ -55,6 +54,9 @@ So here is the seven ESLint rules I use:
     "no-var": "error", // use `const` and `let` instead of `var`
     "prefer-const": "error", // use `const` when there is no reassignment
     "no-param-reassign": "error", // use nonreassignable function parameters
-  }
 }
 ```
+
+See [an example of a full eslint configuration file][eslintrc].
+
+[eslintrc]: https://github.com/weakish/js/blob/master/.eslintrc
