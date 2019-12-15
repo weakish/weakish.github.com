@@ -49,6 +49,9 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 [gosugar]: https://github.com/weakish/gosugar
 [github]: https://github.com/weakish/
 
+[GitHub Pages]: https://pages.github.com/
+[docsify]: https://docsify.js.org/
+
 ## contact
 
 email Jang Rush at <weakish@gmail.com>
