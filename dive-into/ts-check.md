@@ -28,7 +28,7 @@ const functionType = (x, y) => x + y
 const genericFunction = x => x
 
 /**
- * @type {{k: string}}
+ * @type { {k: string} }
  */
 const objectType = { k: "structural" }
 
@@ -76,7 +76,7 @@ But let's just ignore these details for now.
 Type aliases can be defined with the keyword `@typedef`:
 
 ```js
-/** @typedef {{x: number, y: number}} Pointer */
+/** @typedef { {x: number, y: number} } Pointer */
 /** @type {Pointer} */
 const typeAlias = { x: 0, y: 0 }
 ```
