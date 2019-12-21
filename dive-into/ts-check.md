@@ -7,6 +7,22 @@ Therefore, to some extent, TypeScript can check against [ES4 type language][es4-
 
 [es4-draft]: https://github.com/bkero/es4/blob/master/spec/working-drafts/type-system.pdf
 
+```js
+/**
+ * @template T, U
+ * @typedef {U & { readonly __TYPE__: T}} Opaque */
+
+/** @typedef {Opaque<'age', number>} Age */
+/** @type {function(number): Age} */
+const newAge = (n) => {
+  if (n < 0) {
+    throw new Error("age must be positive")
+  } else {
+    return /** @type {Age} */(n)
+  }
+}
+```
+
 ## ES4 Type Language Overview
 
 Take a glance at ES4 type language:
@@ -92,10 +108,10 @@ Generic type parameters can be defined with the keyword `template`:
 /** @type {function(number): Age} */
 const newAge = (n) => {
   if (n < 0) {
-    throw new Error("age number must be positive")
+    throw new Error("age must be positive")
   } else {
     // Type cast requires parenthesized expression.
-    return /** @type {Age} */(n);
+    return /** @type {Age} */(n)
   }
 }
 ```
