@@ -81,16 +81,24 @@ Type aliases can be defined with the keyword `@typedef`:
 const typeAlias = { x: 0, y: 0 }
 ```
 
-### Type Cast
-
-In the following example, the variable `one` would have an inferred literal type `1`
-if there was no type cast.
+Generic type parameters can be defined with the keyword `template`:
 
 ```js
-const one = genericFunction(/** @type {number} */ (1))
-```
+/**
+ * @template T, U
+ * @typedef {U & { readonly __TYPE__: T}} Opaque */
 
-Type cast requires parenthesized expression.
+/** @typedef {Opaque<'age', number>} Age */
+/** @type {function(number): Age} */
+const newAge = (n) => {
+  if (n < 0) {
+    throw new Error("age number must be positive")
+  } else {
+    // Type cast requires parenthesized expression.
+    return /** @type {Age} */(n);
+  }
+}
+```
 
 ### Enum
 
