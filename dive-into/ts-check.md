@@ -136,6 +136,42 @@ const immutableObjectLiteral = {
 }
 ```
 
+### Function Overloads
+
+JSDoc's overloaded function comment syntax is not supported:
+
+```js
+/**
+ * @param {string} input
+ * @returns {string} result
+ *//**
+ * @param {number} input
+ * @returns {string} result
+ */
+function notSupported(input) { /* omit */ }
+```
+
+However, we can express [function overloading type in TypeScript's from][spec] in a tricky way:
+
+```js
+/** @type {{
+            (): void;
+            (code: 0): void;
+            (code: 1, msg: string): void
+          }} */
+const f = (
+  /** @type {0 | 1} */ code = 0,
+  /** @type {string | undefined} */ msg = code === 0 ? undefined : ""
+) => { /* omit */ }
+```
+
+[spec]: https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md#62-function-overloads
+
+By default TypeScript will infer parameters' type of overloaded function implementation as `any`,
+thus we need to specify specific types compatible with all overloads in parameter list of the function implementation.
+
+Also, because here different overloads have different arity, we use default parameters to ensure the function implementation compatible with all overloads.
+
 ### Import Types
 
 Use `import("module").Type` to import types:
