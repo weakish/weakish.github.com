@@ -136,6 +136,24 @@ const immutableObjectLiteral = {
 }
 ```
 
+### Import Types
+
+Use `import("module").Type` to import types:
+
+```js
+/** @type { import("m").T } */
+```
+
+This is often used in type aliases for brevity:
+
+```js
+/** @typedef { import("module-name").LongTypeName } ShortName */
+```
+
+But if you have difficulties in expressing certain types in JSDoc comments,
+you can also declare the type in a separate TypeScript file,
+then import it in JSDoc comments.
+
 ## Type Checking
 
 Just enable `allowJs`, `checkJs`, `noEmit` in tsconfig.json,
