@@ -222,10 +222,12 @@ Actually ES4 type system is quite different from TypeScript.
 For example, they have different subtype rules.
 Also, the JSDoc way of TypeScript type checking lacks some features,
 for example, there is no way to pass type parameter when invoking generic functions via JSDoc.
+Another example is TypeScript cannot parse conditional types in JSDoc comments correctly. ([#27424])
 The only thing we can do is let TypeScript infer the type parameter.
 If it fails to infer the type, we have to accept `any` as the type parameter.
 Also, there is no equivalent form of `as const` assertion yet ([#30445]).
 
+[#27424]: https://github.com/microsoft/TypeScript/issues/27424
 [#30445]: https://github.com/Microsoft/TypeScript/issues/30445
 
 So why not code in TypeScript instead?

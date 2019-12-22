@@ -573,6 +573,9 @@ function plus(x, y): number | string | boolean { // union type
 // Because TypeScripts looks at the overload list,
 // proceeding with the first overload attempts to call the function with the provided parameters.
 // If it finds a match, it picks this overload as the correct overload.
+// And since intersection type of functions are defined as function overloads in TypeScript,
+// this breaks the commutative rule of intersection function.
+// Given two function types `F` and `G`, `F & G` and `G & F` are not equivalent.
 
 // In the above code, the return type of `plus` is `number | string | boolean`,
 // which is a union type.
@@ -1204,20 +1207,46 @@ since in the false branch the condition test failed and the type probably cannot
 Conditional types can be used to test equality of types:
 
 ```typescript
-type Equals<T, S> = [T] extends [S] ? ([S] extends [T] ? true : false) : false
+type EqEq<T, S> = [T] extends [S] ? ([S] extends [T] ? true : false) : false
 ```
 
 This implementation is intuitive, and it considers `any` to equal to any type except `never`.
+Also, it cannot handle function overloads and function intersection (defined as overloads in TypeScript):
+
+```typescript
+type FunctionOverloadsEquality = EqEq<
+    { (x: 0, y: null): void; (x: number, y: null): void },
+    { (x: number, y: null): void; (x: 0, y: null): void }> // true
+
+type F = (x: 0, y: null) => void
+type G = (x: number, y: string) => void
+type FunctionIntersectionEquality = EqEq<F & G, G & F> // true
+```
+
 To check equivalence strictly (not consider `any` to be identical to other type),
 use this cleaver implementation by [Matt McCutchen]:
 
 ```typescript
-export type Equals<X, Y> =
+type EqEqEq<X, Y> =
     (<T>() => T extends X ? 1 : 2) extends
     (<T>() => T extends Y ? 1 : 2) ? true : false;
 ```
 
 [Matt McCutchen]: https://github.com/Microsoft/TypeScript/issues/27024#issuecomment-421529650
+
+It can handle function overloads:
+
+```typescript
+type FunctionOverloads = EqEqEq<
+    { (x: 0, y: null): void; (x: number, y: null): void },
+    { (x: number, y: null): void; (x: 0, y: null): void }> // false
+```
+
+but not function intersection:
+
+```typescript
+type FunctionIntersection = EqEqEq<F & G, G & F> // true
+```
 
 Since 2.9
 ---------
