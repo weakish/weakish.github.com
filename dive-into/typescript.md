@@ -27,7 +27,9 @@ If no type can be inferred, then it defaults to `any`.
 Unlike `Anything` or `Any` in most static typed languages,
 `any` supports the same operations as a value in JavaScript
 and minimal static type checking is performed.
-TypeScript's `unknown` (top type added in TypeScript 3.0) is more similar to `Any` in other languages.
+TypeScript's `unknown` is more similar to `Any` (top type) in other languages.
+
+TypeScript's bottom type is `never`.
 
 Declaration files
 -----------------
