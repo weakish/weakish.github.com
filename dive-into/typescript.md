@@ -5,14 +5,14 @@ Primitive types
 ---------------
 
 - `number` (float point)
-- `bigint` (added in TypeScript 3.2, target `esnext` only)
+- `bigint` (target `esnext` only)
 - `boolean`
 - `string`
 - `symbol`
 - `null`
 - `undefined`
 
-All other types are non-primitive, a.k.a. `object` (added since TypeScript 2.2).
+All other types are non-primitive, a.k.a. `object`.
 
 ```typescript
 function add(left: number, right: number): number {
@@ -44,7 +44,7 @@ declare module arithmetics {
 }
 ```
 
-Since TypeScript 2.0, we can use npm to install typings for packages:
+We can use npm to install typings for packages:
 
 ```sh
 npm install @types/<package>
