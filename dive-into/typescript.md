@@ -1,14 +1,6 @@
 On TypeScript
 =============
 
-*work in progress*
-
-Backward compatibility
-----------------------
-
-TypeScript is a strict superset of ECMAScript 2015,
-which is a superset of ECMAScript 5, commonly referred to as JavaScript.
-
 Primitive types
 ---------------
 
