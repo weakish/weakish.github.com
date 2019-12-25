@@ -78,8 +78,24 @@ Note that TypeScript syntax differs from ES4 for the following types:
 
 Since Closure Compiler also uses `*` and `function(P): R`,
 and TypeScript tries to be compatible with Closure type syntax,
-TypeScript also accepts `*` and `function(P): R` in JSDoc type annotation,
-except for the syntax of generic functions.
+TypeScript also accepts `*` and `function(P): R` in JSDoc type annotation.
+However, some function type cannot be expressed in `function(P): R` form,
+e.g. type guard and assertion signature:
+
+```js
+/** @typedef {{swim(): void;}} Fish */
+/** @typedef {{fly(): void;}} Bird */
+
+/** @type {(p: Fish | Bird) => p is Fish} */
+const isFish =  (p) => /** @type {Fish} */(p).swim !== undefined
+
+/** @type {(p: Fish | Bird) => asserts p is Fish} */
+const assertIsFish = (p) => {
+    if (/** @type {Fish} */(p).swim === undefined) {
+        throw new AssertionError("not a string");
+    }
+}
+```
 
 And there are other subtle differences,
 e.g. ES4 tuples should have at least two elements.
