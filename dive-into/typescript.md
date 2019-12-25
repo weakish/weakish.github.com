@@ -71,19 +71,6 @@ REPL
 Pitfalls
 --------
 
-### Property Renaming
-
-```typescript
-const {a: new_name_for_a, b: new_name_for_b}: {a: number, b: number} = o;
-```
-
-Here `: {a: number, b: number}` is a type declaration, and it can be omitted (inferred).
-But `: new_name_for_a` is not a type declaration.
-This confuses me.
-JavaScript uses `:` in object notation to represent mapping.
-TypeScript uses `:` in declaration to represent mapping to types.
-But here `:` is used in declaration to represent mapping to property names.
-
 ### Excess Property Checking for Object Literal
 
 TypeScript uses structural typing (to work with typical JavaScript code).
