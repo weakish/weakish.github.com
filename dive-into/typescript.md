@@ -1,77 +1,6 @@
-On TypeScript
-=============
+# Pitfalls of TypeScript
 
-Primitive Types
----------------
-
-- `number` (float point)
-- `bigint` (target `esnext` only)
-- `boolean`
-- `string`
-- `symbol` and `unique symbol`
-- `null`
-- `undefined`
-
-All other types are non-primitive, a.k.a. `object`.
-
-```typescript
-function add(left: number, right: number): number {
-	return left + right;
-}
-```
-
-Here return type `number` can be inferred,
-but explicit declaration helps compiler to find bugs in function body.
-
-If no type can be inferred, then it defaults to `any`.
-Unlike `Anything` or `Any` in most static typed languages,
-`any` supports the same operations as a value in JavaScript
-and minimal static type checking is performed.
-TypeScript's `unknown` is more similar to `Any` (top type) in other languages.
-
-TypeScript's bottom type is `never`, which is called `Nothing` in some languages.
-
-Declaration Files
------------------
-
-Type annotations can be exported to a separate declarations file (like header files)
-to describe types of objects in existing JavaScript code.
-
-```typescript
-declare module arithmetics {
-    add(left: number, right: number): number;
-    subtract(left: number, right: number): number;
-    multiply(left: number, right: number): number;
-    divide(left: number, right: number): number;
-}
-```
-
-We can use npm to install typings for packages:
-
-```sh
-npm install @types/<package>
-```
-
-Compile
--------
-
-```sh
-npm install -g typescript
-tsc file.ts # output: file.js
-```
-
-TypeScript will warn type errors.
-But the JavaScript file is still generated (and can still be used as a JavaScript file).
-
-REPL
-----
-
-[ts-node](https://github.com/TypeStrong/ts-node)
-
-Pitfalls
---------
-
-### Excess Property Checking for Object Literal
+## Excess Property Checking for Object Literal
 
 TypeScript uses structural typing (to work with typical JavaScript code).
 
@@ -126,7 +55,7 @@ type SPoint = {
 const conflictingProperties: Point | SPoint = {x: 0, y: "0"}
 ```
 
-### Function Overloads
+## Function Overloads
 
 Function type declaration supports overloading.
 
@@ -192,9 +121,11 @@ type FunctionIntersection = EqEqEq<F & G, G & F> // true
 ```
 
 Besides, `EqEq` considers `any` to equal to any type except `never`.
-`EqEqEq` does not consider `any` to be identical to other type.
+This makes sense, since unlike `Any` or `Anything` in other languages, TypeScript's `any` is not a top type.
+`any` is assignable to any type except `never`.
+`EqEqEq` is more strict and does not consider `any` to be identical to other type.
 
-### Literal String, Literal Number, But Unique Symbol
+## Literal String, Literal Number, But Unique Symbol
 
 TypeScript has literal strings and literal numbers, but there is no literal symbols.
 Instead, there is unique symbols (only allowed in const declarations).
@@ -205,7 +136,3 @@ In other words:
 let no_unique_string_type: 'non sense but valid' = 'non sense but valid'
 let no_literal_symbol: symbol = Symbol("cannot express Symbol(0) | Symbol(1)")
 ```
-
-## tsconfig.json Example
-
-See [weakish/js/tsconfig.json](https://github.com/weakish/js/blob/master/tsconfig.json)

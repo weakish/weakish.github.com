@@ -21,11 +21,11 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 
 ### JavaScript
 
-- [On TypeScript](dive-into/typescript/)
+- [Pitfalls of TypeScript](dive-into/typescript/)
 - [Fight for Type Safety Stand with JavaScript](dive-into/ts-check/) (ts-check with JSDoc comments)
 - [An Optioned Guide to ESLint](dive-into/eslint/)
 - [Use npm without package.json](dive-into/npm/)
-- [A Quick Introduction to React](dive-into/react)
+- [A Quick Introduction to React](dive-into/react/)
 
 ### Tools
 
