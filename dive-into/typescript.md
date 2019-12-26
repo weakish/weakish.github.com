@@ -1,7 +1,7 @@
 On TypeScript
 =============
 
-Primitive types
+Primitive Types
 ---------------
 
 - `number` (float point)
@@ -31,7 +31,7 @@ TypeScript's `unknown` is more similar to `Any` (top type) in other languages.
 
 TypeScript's bottom type is `never`, which is called `Nothing` in some languages.
 
-Declaration files
+Declaration Files
 -----------------
 
 Type annotations can be exported to a separate declarations file (like header files)
