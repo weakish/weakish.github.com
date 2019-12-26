@@ -83,8 +83,8 @@ However, some function type cannot be expressed in `function(P): R` form,
 e.g. type guard and assertion signature:
 
 ```js
-/** @typedef {{swim(): void;}} Fish */
-/** @typedef {{fly(): void;}} Bird */
+/** @typedef { {swim(): void;} } Fish */
+/** @typedef { {fly(): void;} } Bird */
 
 /** @type {(p: Fish | Bird) => p is Fish} */
 const isFish =  (p) => /** @type {Fish} */(p).swim !== undefined
@@ -170,11 +170,11 @@ function notSupported(input) { /* omit */ }
 However, we can express [function overloading type in TypeScript's from][spec] in a tricky way:
 
 ```js
-/** @type {{
+/** @type { {
             (): void;
             (code: 0): void;
             (code: 1, msg: string): void
-          }} */
+          } } */
 const f = (
   /** @type {0 | 1} */ code = 0,
   /** @type {string | undefined} */ msg = code === 0 ? undefined : ""
