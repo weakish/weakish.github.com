@@ -1,3 +1,5 @@
+# Selected Gitmojis
+
 ## tl;tr
 
 emoji | code | usage | Angular Convention

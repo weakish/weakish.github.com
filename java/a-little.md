@@ -1,4 +1,4 @@
-Notes on A little Java, a few patterns
+Notes on A little Java, a Few Patterns
 ======================================
 
 Advantages of Java

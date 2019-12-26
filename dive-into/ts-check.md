@@ -1,4 +1,4 @@
-# Fight for Type Safety. Stand with JavaScript.
+# Fight for Type Safety Stand with JavaScript
 
 TypeScript 2.3 and later support type-checking JavaScript files with JSDoc types.
 And JSDoc's uses the Closure Compiler's type language,

@@ -1,4 +1,4 @@
-# Exceptions and Union Type
+# Exception and Union Type
 
 Java has checked exception, which is essentially union type.
 

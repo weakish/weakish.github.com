@@ -1,4 +1,4 @@
-Basic OCaml
+OCaml Basic
 ===========
 
 ## Types
@@ -676,7 +676,6 @@ optional arguments must be followed by at least one non optional argument.
 let dummy_argument ?(x=1) () = x
 
 
-
 let () = (* To ensure the body is side-effect only, i.e. returning unit. *)
   let a_point = new point_1d 42 in
   print_int a_point#get_x; print_newline ();
@@ -697,5 +696,4 @@ let () = (* To ensure the body is side-effect only, i.e. returning unit. *)
   let three = dummy_argument ~x:3 ();
 
   exit 0
-
 ```

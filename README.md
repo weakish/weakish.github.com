@@ -4,19 +4,46 @@ map memories to web pages
 mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 ```
 
-## notes
+## Notes
 
-- dive into [Base64](dive-into/base64/), [exceptions](dive-into/exceptions), [eslint](dive-into/eslint/), [Flow](dive-into/flow/), [GitHub Pages](dive-into/gh-pages/), [gitmoji](dive-into/gitmoji), [Go](dive-into/go/), [Haskell](dive-into/haskell/), [Jetbrains IDEs](dive-into/jetbrains/), [JupyterLab](dive-into/jupyter-lab/) ([ipynb](https://github.com/weakish/weakish.github.com/blob/master/dive-into/jupyter-lab.ipynb)), [Kotlin](dive-into/kotlin/), [npm](dive-into/npm/), [OCaml](dive-into/ocaml/), [OSX](dive-into/osx/), [Puppet](dive-into/puppet/), [React](dive-into/react), [Ruby](dive-into/ruby/), [TypeScript](dive-into/typescript/) (with [JSDoc](dive-into/ts-check/)) and [more](dive-into/more/).
-- survey of tools for [cli ui testing](cli/test/), [python persistence](python/persistence/), [vim completion](vim/completion/)
-- [notes on A Little Java, A Few Patterns](java/a-little/)
-- [history of HTML through Linux/BSD websites](web/html-history/)
-- other [thoughts](thoughts/) and [(micro)notes](log/)
+### Programming Language Features
 
-## more
+- [Exception and Union Type](dive-into/exceptions/)
 
-- [notes](dapi/) and [poems](poems/) written in Chinese
-- [gists][]([feed][gist-feed]) - notes, scripts, configs etc
-- photos hosted at [23][] and [flickr][]
+### Programming Languages
+
+- [Quick Introduction to Go](dive-into/go/)
+- [Haskell: Laziness, Type Class, and Monad](dive-into/haskell/)
+- [Notes on A little Java, a Few Patterns](java/a-little/)
+- [On Design of Kotlin](dive-into/kotlin/)
+- [OCaml Basic](dive-into/ocaml/)
+- [Dive into Ruby](dive-into/ruby/)
+
+### JavaScript
+
+- [On TypeScript](dive-into/typescript/)
+- [Fight for Type Safety Stand with JavaScript](dive-into/ts-check/) (ts-check with JSDoc comments)
+- [An Optioned Guide to ESLint](dive-into/eslint/)
+- [Use npm without package.json](dive-into/npm/)
+- [A Quick Introduction to React](dive-into/react)
+
+### Tools
+
+- [Build a Micro Static Site With GitHub Pages](dive-into/gh-pages/)
+- [Selected Gitmojis](dive-into/gitmoji)
+- [OSX Survival Guide](dive-into/osx/)
+- [JupyterLab Guide](dive-into/jupyter-lab/) ([ipynb](https://github.com/weakish/weakish.github.com/blob/master/dive-into/jupyter-lab.ipynb))
+- [A Basic Guide for New Marionettists](dive-into/puppet/) (puppet tutorial)
+
+### Other
+
+- [History of HTML through Linux/BSD Websites](web/html-history/)
+- Dive into [Base64](dive-into/base64/), [Flow](dive-into/flow/), [Jetbrains IDEs](dive-into/jetbrains/), and [more](dive-into/more/).
+- Survey of tools for [cli ui testing](cli/test/), [python persistence](python/persistence/), [vim completion](vim/completion/).
+- Other [thoughts](thoughts/) and [(micro)notes](log/).
+- [Notes](dapi/) and [poems](poems/) written in Chinese.
+- [Gists][]([feed][gist-feed]) - notes, scripts, configs etc.
+- Photos hosted at [23][] and [flickr][].
 
 [gists]: https://gist.github.com/weakish
 [gist-feed]: https://gist.github.com/weakish.atom
@@ -24,7 +51,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 [23]: http://www.23hq.com/weakish/album/list
 [flickr]: https://www.flickr.com/photos/weakish/sets/
 
-## projects
+## Projects
 
 * [erratawiki][] - collects (non-official) errata for books
 * [gister][] - command line tool for github gists
@@ -39,7 +66,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 
 [erratawiki]: https://github.com/weakish/errata/wiki
 [gister]: https://mmap.page/gister
-[Markdowntation]: https://github.com/weakish/js/blob/master/markdowntation/
+[Markdowntation]: https://github.com/weakish/js#markdowntation
 [micro-gh-page]: https://mmap.page/micro-gh-page
 [rcshell.vim]: http://www.vim.org/scripts/script.php?script_id=2880
 [viconf]: https://mmap.page/viconf
@@ -52,9 +79,9 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 [GitHub Pages]: https://pages.github.com/
 [docsify]: https://docsify.js.org/
 
-## contact
+## Contact
 
-email Jang Rush at <weakish@gmail.com>
+Email address: <weakish@gmail.com>
 
 GPG fingerprint: [2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87][gpg]
 

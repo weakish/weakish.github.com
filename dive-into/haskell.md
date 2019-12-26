@@ -1,7 +1,4 @@
-Dive into Haskell
-=================
-
-Introduces three distinct features of Haskell: laziness, type class, and monad.
+# Haskell: Laziness, Type Class, and Monad
 
 ## Laziness
 
