@@ -167,7 +167,7 @@ JSDoc's overloaded function comment syntax is not supported:
 function notSupported(input) { /* omit */ }
 ```
 
-However, we can express [function overloading type in TypeScript's from][spec] in a tricky way:
+However, we can express [function overloading type in TypeScript's form][spec] in a tricky way:
 
 ```js
 /** @type { {
