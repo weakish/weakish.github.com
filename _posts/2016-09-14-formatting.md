@@ -8,5 +8,6 @@ Line length
 
 No hard limit.
 
-Again, since I use large fonts on a small screen, 80 is a soft limit for me.
+If tools (diff etc.) cannot handle long lines correctly,
+configure or switch the tool.
 
