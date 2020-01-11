@@ -1,12 +1,7 @@
 Tabs v.s. spaces
 ----------------
 
-Tabs are more accurate than spaces to represent indentation,
-but I prefer spaces because tabs are invisible in most editors and IDEs.
-
-I prefer 4 spaces
-(clearer than 2 spaces to indicate indentation level and do not occupy too much space).
-8 spaces are fine on large screen.
+Tabs are more accurate than spaces to represent indentation.
 
 Condense braces
 ---------------
