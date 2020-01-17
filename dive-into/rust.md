@@ -1,4 +1,4 @@
-# Learn Rust
+# Dive into Rust
 
 wip
 
@@ -39,10 +39,63 @@ let immutable_variable: u32 = 1;
 
 ### Compound Types
 
-- Tuple
+- Tuple: tuple index must be written as a decimal literal, e.g. `(0, 1, 2).1`.
 - Array: can be considered as a tuple whose elements all have the same type. Index out of bounds is a *runtime* error though.
 
 ## Control Flow
 
 Condition *must* be a `bool`.
 Nice!
+
+## Memory Management
+
+Rust does not use GC or RC.
+For values on the heap, it only allow one variable "own" a value at a time.
+Assignment, passing a value to function and returning a value move the "ownership".
+Also, Rust allows multiple immutable pointers (`&`) but only one mutable pointer (`&mut`),
+and restricts mixing immutable and mutable pointers to the same target.
+The basic idea is to keep the number of reference to a value to one,
+replacing reference counting with reference moving.
+
+```rust
+let s1 = String::from("A long long string");
+let s2 = s1 + ".";
+```
+
+Since the ownership moves from s1 to s2, .
+Conceptually s2 can be considered as a newly constructed immutable variable,
+but since the ownership moves from s1 to s2, and s1 becomes invalid afterwards,
+Rust just need to appends `"."` to the end of the value, which is efficient.
+
+In Rust, functions and struts working with references need lifetime annotation.
+However, Rust can infer function lifetime in simplest cases:
+
+- There is only one reference input parameter, then its lifetime will be the lifetime of output values.
+- If there are multiple reference input parameters, but one of them is `&self` or `&mut self`, then its lifetime will be the lifetime of output values.
+
+String literals have a `'static` lifetime, which lives for the entire duration of the program.
+
+```rust
+let b;
+{
+    let a = "hi";
+    b = a;
+}
+println!("{}", b); // prints "hi"
+```
+
+Lifetime annotation tells Rust compiler the lifetime of variables,
+but it cannot alter the lifetime.
+
+## Enum
+
+Rust's enum is similar to ADT in other languages.
+
+## Generics
+
+Rust monomorphizes code that is using generics at compile time.
+
+## Traits
+
+Rust's traits is similar to interface in other languages.
+
