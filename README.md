@@ -19,6 +19,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 - [On Design of Kotlin](dive-into/kotlin/)
 - [OCaml Basic](dive-into/ocaml/)
 - [Dive into Ruby](dive-into/ruby/)
+- [Dive into Rust](dive-into/rust/)
 
 ### JavaScript
 
