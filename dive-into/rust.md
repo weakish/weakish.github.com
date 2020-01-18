@@ -105,3 +105,16 @@ While Go use special function name `TestXxx`, Rust uses `#[test]` attribute anno
 
 Unit tests are written in `mod tests`, and integration tests are put in the `test` directory.
 
+## Documentation Comments
+
+Three leading slashes `///` with Markdown.
+
+Similar to Python, Rust also supports doctest:
+
+```rust
+/// # Example
+///
+/// ```
+/// ...
+/// ```
+```
