@@ -47,6 +47,18 @@ let immutable_variable: u32 = 1;
 Condition *must* be a `bool`.
 Nice!
 
+## Enum
+
+Rust's enum is similar to ADT in other languages.
+
+## Generics
+
+Rust monomorphizes code that is using generics at compile time.
+
+## Traits
+
+Rust's traits is similar to interface in other languages.
+
 ## Memory Management
 
 Rust does not use GC or RC.
@@ -66,6 +78,37 @@ Since the ownership moves from s1 to s2, .
 Conceptually s2 can be considered as a newly constructed immutable variable,
 but since the ownership moves from s1 to s2, and s1 becomes invalid afterwards,
 Rust just need to appends `"."` to the end of the value, which is efficient.
+
+Smart pointers can be used for reference counting.
+Smart pointers are structs satisfying `Deref` and `Drop` traits.
+
+```rust
+enum List {
+    Cons(i32, Box<List>),
+    Nil,
+}
+```
+
+In the above example, `Box<List>` is a smart pointer.
+We use `Box<List>` to store the `Box<List>` data on the heap,
+otherwise `Cons(i32, List)` will result in infinite size on the stack,
+which causes Rust failed to construct the `List` enum.
+
+To allow `cons` more than one list from a same base list:
+
+```rust
+enum List {
+    Cons(i32, Rc<List>),
+    Nil,
+}
+```
+
+`Rc` is another smart pointer for reference counting.
+It increases the reference counter on `RC::clone(&l)`,
+and reduce the reference counter automatically when the related variable goes out of scope.
+When there are zero references, the value will be cleaned up.
+
+Be aware that `Rc` only works in single-thread context.
 
 In Rust, functions and struts working with references need lifetime annotation.
 However, Rust can infer function lifetime in simplest cases:
@@ -87,17 +130,6 @@ println!("{}", b); // prints "hi"
 Lifetime annotation tells Rust compiler the lifetime of variables,
 but it cannot alter the lifetime.
 
-## Enum
-
-Rust's enum is similar to ADT in other languages.
-
-## Generics
-
-Rust monomorphizes code that is using generics at compile time.
-
-## Traits
-
-Rust's traits is similar to interface in other languages.
 
 ## Testing
 
