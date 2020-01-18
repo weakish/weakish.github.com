@@ -99,3 +99,9 @@ Rust monomorphizes code that is using generics at compile time.
 
 Rust's traits is similar to interface in other languages.
 
+## Testing
+
+While Go use special function name `TestXxx`, Rust uses `#[test]` attribute annotation.
+
+Unit tests are written in `mod tests`, and integration tests are put in the `test` directory.
+
