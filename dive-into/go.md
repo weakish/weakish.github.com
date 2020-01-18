@@ -319,6 +319,10 @@ Similar to the issue with errors, the zero value `element` may be a valid value,
 Also note that the evaluation order of multiple return values is uncertain.
 Never assume the evaluation order of multiple return values is from left to right.
 
+Another issue is Go functions can only consume multiple values returned by another function in a whole.
+For example, given three functions `f() (int, int)`, `g(int, int)`, `h(int, int, int)`,
+`g(f())` compiles while `h(f(), 1)` and `h(1, f())` do not.
+
 Zero Values
 -----------
 
