@@ -1,17 +1,8 @@
 # Dive into Rust
 
-wip
-
-## Syntax
+## Variable Shadowing
 
 ```rust
-// macro
-my_macro!("para");
-
-my_function("para);
-
-// shadow
-
 let mut guess = String::new();
 
 io::stdin().read_line(&mut guess)
@@ -20,7 +11,6 @@ io::stdin().read_line(&mut guess)
 let guess: u32 = guess.trim().parse()
     .expect("Please type a number!");
 
-// variables
 const CONSTANT: &str = "a constant expression, not the result of a function call computed at runtime";
 let immutable_variable: &str = "variables are immutable by default";
 let mut mutable_variable: u32 = 0;
@@ -35,7 +25,7 @@ let immutable_variable: u32 = 1;
 - Integer: `i8`, `i16`, `i32`, `i64`, `i128`, `isize` and their unsigned counterpart `u8`, ..., `usize`. `isize` is `i32` on 32 bit systems and `i64` on 64 bit systems. Integer types default to `i32`. Compiling in debug mode will check for integer overflows. Relying on integer overflow’s wrapping behavior is considered an error, use the `Wrapping` type instead.
 - Floats: `f32` and `f64`.
 - Boolean: `bool` (values: `true` and `false`).
-- Character: `char` (Unicode Scalar Value). `char` can represents a lot more Unicode characters than the `char` type in a lot of programming languages (just ASCII), but it is not the true Unicode character (Unicode Extended Grapheme Cluster, the `Character` type in Swift).
+- Character: `char` (Unicode Scalar Value).
 
 ### Compound Types
 
@@ -49,7 +39,7 @@ Nice!
 
 ## Enum
 
-Rust's enum is similar to ADT in other languages.
+Rust's enum is actually a tagged union.
 
 ## Generics
 
@@ -67,17 +57,16 @@ Assignment, passing a value to function and returning a value move the "ownershi
 Also, Rust allows multiple immutable pointers (`&`) but only one mutable pointer (`&mut`),
 and restricts mixing immutable and mutable pointers to the same target.
 The basic idea is to keep the number of reference to a value to one,
-replacing reference counting with reference moving.
+to make memory management easier for the compiler.
 
 ```rust
 let s1 = String::from("A long long string");
 let s2 = s1 + ".";
 ```
 
-Since the ownership moves from s1 to s2, .
 Conceptually s2 can be considered as a newly constructed immutable variable,
 but since the ownership moves from s1 to s2, and s1 becomes invalid afterwards,
-Rust just need to appends `"."` to the end of the value, which is efficient.
+the compiler just need to appends `"."` to the end of the value, which is efficient.
 
 Smart pointers can be used for reference counting.
 Smart pointers are structs satisfying `Deref` and `Drop` traits.
@@ -94,7 +83,7 @@ We use `Box<List>` to store the `Box<List>` data on the heap,
 otherwise `Cons(i32, List)` will result in infinite size on the stack,
 which causes Rust failed to construct the `List` enum.
 
-To allow `cons` more than one list from a same base list:
+To allow `cons` more than one lists from a same base list:
 
 ```rust
 enum List {
@@ -109,11 +98,12 @@ and reduce the reference counter automatically when the related variable goes ou
 When there are zero references, the value will be cleaned up.
 
 Be aware that `Rc` only works in single-thread context.
+In multiple-threads context, use `Arc` instead.
 
 In Rust, functions and struts working with references need lifetime annotation.
 However, Rust can infer function lifetime in simplest cases:
 
-- There is only one reference input parameter, then its lifetime will be the lifetime of output values.
+- If there is only one reference input parameter, then its lifetime will be the lifetime of output values.
 - If there are multiple reference input parameters, but one of them is `&self` or `&mut self`, then its lifetime will be the lifetime of output values.
 
 String literals have a `'static` lifetime, which lives for the entire duration of the program.
@@ -129,7 +119,6 @@ println!("{}", b); // prints "hi"
 
 Lifetime annotation tells Rust compiler the lifetime of variables,
 but it cannot alter the lifetime.
-
 
 ## Testing
 
@@ -150,3 +139,22 @@ Similar to Python, Rust also supports doctest:
 /// ...
 /// ```
 ```
+
+## unsafe
+
+In the unsafe block (`unsafe {}`), you can:
+
+- Dereference a raw pointer which
+
+    * can have both immutable and mutable pointers or multiple mutable pointers to the same location;
+    * is not guaranteed to point to valid memory;
+    * can be null;
+    * does not implement any automatic cleanup.
+
+- Call an unsafe function or method (`unsafe fn dangerous() {}`, including foreign functions such as C functions).
+
+- Access or modify a mutable static variable (Rust call global variables as static variables).
+
+- Implement an unsafe trait.
+
+- Access fields of an union (the unsafe counterpart of Rust's `enum`, mainly used for FFI).
