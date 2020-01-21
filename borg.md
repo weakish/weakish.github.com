@@ -45,6 +45,10 @@ Using `export` in a shell script file should be safe, however,
 as the environment of a process is accessible only to that user.
 Also, using a shell command may leak the passphrase in shell history file.
 
+For server backup, have a look at [borgmatic].
+
+[borgmatic]: https://torsion.org/borgmatic/
+
 ## Compression
 
     borg create --compression TYPE
