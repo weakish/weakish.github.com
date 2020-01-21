@@ -67,3 +67,11 @@ Default is no compression.
     borg upgrade --inplace REPOSITORY
 
 If a backup copy is required, omit the `--inplace` option.
+
+## Hosted Services
+
+- [rsync.net] also works with scp, rsync, git, etc. Nodes available globally.
+- [BorgBase] dedicated borg repository hosting with specific APIs. It also offers a free plan (5 GB and 2 repos), and paid plans are cheaper than rsync.net. Nodes available in US and EU.
+
+[rsync.net]: https://www.rsync.net/products/borg.html
+[BorgBase]: https://www.borgbase.com/

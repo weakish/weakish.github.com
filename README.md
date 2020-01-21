@@ -41,7 +41,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 ### Other
 
 - [History of HTML through Linux/BSD Websites](web/html-history/)
-- Dive into [Base64](dive-into/base64/), [Flow](dive-into/flow/), [Jetbrains IDEs](dive-into/jetbrains/), and [more](dive-into/more/).
+- Dive into [Base64](dive-into/base64/), [Borg](dive-into/borg), [Flow](dive-into/flow/), [Jetbrains IDEs](dive-into/jetbrains/), and [more](dive-into/more/).
 - Survey of tools for [cli ui testing](cli/test/), [python persistence](python/persistence/), [vim completion](vim/completion/).
 - Other [thoughts](thoughts/) and [(micro)notes](log/).
 - [Notes](dapi/) and [poems](poems/) written in Chinese.
