@@ -37,13 +37,13 @@ And FreeBSD makefile templates for bmake are available as the `freebsd-mk` packa
 
 ## Plan9 mk
 
-`mk` in Plan9 is similar to BSD make, with few rules.
+`mk` in Plan9 is similar to BSD make, with fewer rules.
+
 The main difference is templating:
-BSD Makefile supports standard templates `.include <bsd.prog.mk>`
-and nonstandard templates `.include "/path/to/included.mk"`,
-and Plan9 Makefile supports `</path/to/included.mk`
-but not standard templates.
-Plan9 Makefile supports including command line output (`<|cat /path/to/included.mk>`) though.
+
+- BSD Makefile supports standard templates `.include <bsd.prog.mk>` and nonstandard templates `.include "/path/to/included.mk"`,
+- Plan9 Makefile does not support standard templates, and it uses different syntax for nonstandard templates `</path/to/included.mk`.
+- Plan9 Makefile also supports including command line output (`<|cat /path/to/included.mk>`).
 
 Plan9 also supports using different shells within a single mkfile:
 
