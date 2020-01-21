@@ -57,21 +57,6 @@ use-sh:V:
     for i in a b c; do echo $i; done
 ```
 
-## Ninja
-
-For a large project, ninja builds fast.
-
-## Examples
-
-BSD Makefile:
-
-```make
-PROG=   sed
-SRCS=   sed0.c sed1.c
-
-.include <bsd.prog.mk>
-```
-
 ## Syntax
 
 - Variable:
