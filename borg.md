@@ -1,8 +1,13 @@
-New generation of attic.
+# A Short Borg Tutorial
+
+[Borg] is the new generation of [attic].
+
+[Borg]: https://www.borgbackup.org/
+[attic]: https://attic-backup.org/
 
 ```sh
-borg init /path/to/repo
-borg create -C lz4 /path/to/repo::Saturday1 ~/Documents
+borg init --encryption=keyfile /path/to/repo
+borg create -C lz4 /path/to/repo::NAME-YOUR-BACKUP ~/Documents
 ```
 
 ## Free space
@@ -26,6 +31,8 @@ and the integrity and authenticity is verified using HMAC-SHA256.
 
 In both modes, the key is stored in encrypted form
 and can be only decrypted by providing the correct passphrase.
+
+Do not forget to backup the key (e.g. via `borg key export`).
 
 For automated backups the passphrase can be specified
 using the BORG_PASSPHRASE environment variable.
@@ -56,5 +63,3 @@ Default is no compression.
     borg upgrade --inplace REPOSITORY
 
 If a backup copy is required, omit the `--inplace` option.
-
-#attic #borg #backup #deduplication #rollingChecksum
