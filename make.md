@@ -32,7 +32,8 @@
 
 -- [Duncaen](https://forum.voidlinux.eu/t/pitfalls-on-bmake-bsd-make/956/2)
 
-Comments: not sure if FreeBSD's `/usr/share/mk` is portable.
+Under debian, BSD make is available as the `bmake` package.
+And FreeBSD makefile templates for bmake are available as the `freebsd-mk` package.
 
 ## Plan9 mk
 
