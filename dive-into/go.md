@@ -1,7 +1,7 @@
 Quick Introduction to Go
 ========================
 
-We're going to try to quickly show you enough of Go 1.12 to actually try it out.
+We're going to try to quickly show you enough of Go 1.13 to actually try it out.
 
 A Syntax Derived from C
 -----------------------
