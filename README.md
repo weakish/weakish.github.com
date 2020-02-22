@@ -37,6 +37,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 - [Write Makefile Compatible with Both GNU `make` and BSD `make`](dive-into/make)
 - [JupyterLab Guide](dive-into/jupyter-lab/) ([ipynb](https://github.com/weakish/weakish.github.com/blob/master/dive-into/jupyter-lab.ipynb))
 - [A Basic Guide for New Marionettists](dive-into/puppet/) (puppet tutorial)
+- [WireGuard Quick Start](dive-into/wireguard/)
 
 ### Other
 
