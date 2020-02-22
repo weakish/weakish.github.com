@@ -90,6 +90,7 @@ AllowedIPs = <private ip of virtual network>/32
 `/24` is a subnet mask, which means the virtual network allows for up to 254 clients.
 `PostUp` forwards Internet requests from clients, and `eth0` is the network interface to access Internet on the server.
 `PostDown` deletes the iptable rules when the VPN is off.
+Actually these are WireGuard hooks, you can fill any shell command here.
 
 On Linux, WireGuard utilizes Linux kernel to forward packets from one network interface to another, e.g. `wg0` to `eth0`,
 since `wg0` itself does not have Internet access.
