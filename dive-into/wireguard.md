@@ -93,10 +93,11 @@ AllowedIPs = <private ip of virtual network>/32
 
 On Linux, WireGuard utilizes Linux kernel to forward packets from one network interface to another, e.g. `wg0` to `eth0`,
 since `wg0` itself does not have Internet access.
-Thus we need to run:
+Thus we need to configure kernel parameters:
 
 ```sh
-sudo sysctl -w net.ipv4.ip_forward=1
+echo "net.ipv4.ip_forward=1" | sudo tee -a  /etc/sysctl.conf
+sudo sysctl -p
 ```
 
 `sysctl` modifies kernel parameters at runtime.
