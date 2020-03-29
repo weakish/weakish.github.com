@@ -92,6 +92,8 @@ AllowedIPs = <private ip of virtual network>/32
 `PostDown` deletes the iptable rules when the VPN is off.
 Actually these are WireGuard hooks, you can fill any shell command here.
 
+You can add more clients (multiple `[Peer]` sections).
+
 On Linux, WireGuard utilizes Linux kernel to forward packets from one network interface to another, e.g. `wg0` to `eth0`,
 since `wg0` itself does not have Internet access.
 Thus we need to configure kernel parameters:
