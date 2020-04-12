@@ -16,6 +16,12 @@
     {% include anchor_headings.html html=content anchorBody="#" anchorClass="anchor-hash" anchorTitle="link to this heading" h_min=2 %}
     <div class="footer border-top border-gray-light mt-5 pt-3 text-gray">
         <p>
+        <form id="site-search" action="https://duckduckgo.com/html/" method="get">
+          <input name="q" type="search" value="site:mmap.page " required pattern="site:mmap\.page\s.+">
+          <input type="submit" value="&#x1F50D;" title="search through site content via DuckDuckGo">
+        </form>
+        </p>
+        <p>
         Permission to use, copy, modify, and/or distribute this site for any purpose with or without fee is hereby granted.
         This site is provided "as is" without express or implied warranty.
         </p>
