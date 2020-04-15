@@ -54,7 +54,7 @@ and `Caps` can be used as an additional `Escape` key.
 
 [Karabiner-Elements][karabiner] is a powerful keyboard modifier for osx.
 For example, it supports [PC-style keyboard shortcuts][pc-style].
-However, some of them do not work, and results in inconsistent keyboard shortcuts.
+However, some of them do not work, and result in inconsistent keyboard shortcuts.
 It is recommend to swap `Control` and `Command` through Karabiner-Elements' simple modification instead.
 And import certain complex rules like `Alt-Tab` from it individually.
 
@@ -85,7 +85,7 @@ Alternatively, you can put the `Screen Lock` icon on touch bar (System Preferenc
 
 ## Tiling
 
-Long press the restore button, then drag the window to the left or right part of the screen.
+Long press the restore button, then select tiling in drop-down menu.
 
 Another way is activating mission control.
 Then move one window to another full screen window in another virtual desktop.
