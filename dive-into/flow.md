@@ -165,27 +165,6 @@ So flow's structural typed interface is not as hopeless bad as Go.
 
 [go-faq]: https://golang.org/doc/faq#guarantee_satisfies_interface
 
-### Tuples/Arrays and objects are structural typed.
-
-Objects has alternative nominal form called exact object type `{|k: T|}`.
-Prefer it.
-
-Also prefer exact object type to tuple,
-i.e. `{|0: J, 1: K|}` instead of `[J, K]`.
-
-Parameters of functions may be viewed as tuples,
-they are structural too.
-[Flow doc][functions] mentioned a workaround to prevent call a function with more parameters than defined:
-
-```js
-function takesOnlyOneNumber(x: number, ...rest: Array<void>) {}
-```
-
-[functions]: https://flowtype.org/docs/functions.html#_
-
-However, flow still does not check array bound
-(you have to check index against array length yourself).
-
 ### Implicitly type casting `number` to `string` with `+`.
 
 The `number + string` idiom is fairly common, so flow accepts it, like TypeScript.
