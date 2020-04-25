@@ -180,3 +180,22 @@ Error: main.js:3
 ```
 
 [4610]: https://github.com/facebook/flow/pull/4610
+
+Hegel
+-----
+
+[Hegel] has a more sound type system than Flow,
+and it does not have the two problems mentioned above:
+
+1. It dose not support interface.
+2. No type coercion for `number + string`.
+
+[Hegel]: https://hegel.js.org/
+
+It borrows Flow's syntax for type annotation, thus JavaScript can be generated via Flow tools (`@babel/preset-flow` or `flow-remove-types`).
+However, it uses TypeScript `d.ts` files for library definition, because TypeScript has a much larger ecosystem than Flow.
+Note some types are not supported, for example, Flow's interface and TypeScript's conditional typing.
+
+Its vscode extension is [still in development][hegel].
+
+[hegel]: https://github.com/JSMonk/hegel/issues/81
