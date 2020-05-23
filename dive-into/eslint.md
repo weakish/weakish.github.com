@@ -56,7 +56,3 @@ So here is the seven ESLint rules I use:
     "no-param-reassign": "error", // use nonreassignable function parameters
 }
 ```
-
-See [an example of a full eslint configuration file][eslintrc].
-
-[eslintrc]: https://github.com/weakish/js/blob/master/.eslintrc
