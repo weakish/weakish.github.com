@@ -136,7 +136,8 @@ Similar to Python, Rust also supports doctest:
 /// # Example
 ///
 /// ```
-/// ...
+/// let foo = "foo";
+/// assert_eq!(foo, "foo");
 /// ```
 ```
 
