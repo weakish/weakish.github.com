@@ -4,9 +4,7 @@ map memories to web pages
 mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 ```
 
-## Notes
-
-### Programming Languages
+## Programming Languages
 
 - [Exception and Union Type](dive-into/exceptions/)
 - [Personal Coding Style](coding-style/)
@@ -16,7 +14,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 - [On Design of Kotlin](dive-into/kotlin/)
 - Dive into [OCaml](dive-into/ocaml/), [Ruby](dive-into/ruby/), and [Rust](dive-into/rust/)
 
-### JavaScript
+## JavaScript
 
 - [Pitfalls of TypeScript](dive-into/typescript/)
 - [Fight for Type Safety Stand with JavaScript](dive-into/ts-check/) (ts-check with JSDoc comments)
@@ -24,7 +22,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 - [Use npm without package.json](dive-into/npm/)
 - [A Quick Introduction to React](dive-into/react/)
 
-### Tools
+## Tools
 
 - [Build a Micro Static Site With GitHub Pages](dive-into/gh-pages/)
 - [Selected Gitmojis](dive-into/gitmoji)
@@ -34,7 +32,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 - [A Basic Guide for New Marionettists](dive-into/puppet/) (puppet tutorial)
 - [WireGuard Quick Start](dive-into/wireguard/)
 
-### Other
+## Other
 
 - [History of HTML through Linux/BSD Websites](web/html-history/)
 - Dive into [Base64](dive-into/base64/), [Borg](dive-into/borg), [Flow](dive-into/flow/), [Jetbrains IDEs](dive-into/jetbrains/), and [more](dive-into/more/).
@@ -45,23 +43,6 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 
 [gists]: https://gist.github.com/weakish
 [gist-feed]: https://gist.github.com/weakish.atom
-
-## Projects
-
-* [erratawiki][] - collects (non-official) errata for books
-* [gister][] - command line tool for github gists
-* [micro-gh-page][] - the repository template this site uses
-* [viconf][] - visudo for all commands
-* [xkcd936][] - xkcd936 style passphrase generator
-* go modules: [goaround][] and [gosugar][]
-
-[erratawiki]: https://github.com/weakish/errata/wiki
-[gister]: https://mmap.page/gister
-[micro-gh-page]: https://mmap.page/micro-gh-page
-[viconf]: https://mmap.page/viconf
-[xkcd936]: https://mmap.page/xkcd936
-[goaround]: https://github.com/weakish/goaround
-[gosugar]: https://github.com/weakish/gosugar
 
 [![Feather Icon Mail](https://icongr.am/feather/mail.svg)][email]
 [![Feather Icon Key](https://icongr.am/feather/key.svg)][gpg]
