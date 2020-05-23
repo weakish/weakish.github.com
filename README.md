@@ -51,22 +51,17 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 * [erratawiki][] - collects (non-official) errata for books
 * [gister][] - command line tool for github gists
 * [micro-gh-page][] - the repository template this site uses
-* [rcshell.vim][] - syntax highlight file for the rc shell scripting language
 * [viconf][] - visudo for all commands
-* [vscode-complete-statement] - mimic IntelliJ's complete statement
 * [xkcd936][] - xkcd936 style passphrase generator
 * go modules: [goaround][] and [gosugar][]
 
 [erratawiki]: https://github.com/weakish/errata/wiki
 [gister]: https://mmap.page/gister
 [micro-gh-page]: https://mmap.page/micro-gh-page
-[rcshell.vim]: http://www.vim.org/scripts/script.php?script_id=2880
 [viconf]: https://mmap.page/viconf
-[vscode-complete-statement]: https://mmap.page/vscode-complete-statement/
 [xkcd936]: https://mmap.page/xkcd936
 [goaround]: https://github.com/weakish/goaround
 [gosugar]: https://github.com/weakish/gosugar
-[github]: https://github.com/weakish/
 
 [![Feather Icon Mail](https://icongr.am/feather/mail.svg)][email]
 [![Feather Icon Key](https://icongr.am/feather/key.svg)][gpg]
