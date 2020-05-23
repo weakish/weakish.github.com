@@ -1,7 +1,7 @@
 Quick Introduction to Go
 ========================
 
-We're going to try to quickly show you enough of Go 1.13 to actually try it out.
+We're going to try to quickly show you enough of Go 1.14 to actually try it out.
 
 A Syntax Derived from C
 -----------------------
@@ -467,6 +467,21 @@ var _ json.Marshaler = (*RawMessage)(nil)
 ```
 
 Here we use a pointer instead of `new(RawMessage)` because if RawMessage is a big array or struct, calling `new` may allocate unnecessary memory.
+
+### Embedded Interfaces
+
+Interface type name can be used in place of a method specification.
+
+```go
+type ComplexInterface interface {
+    EmbeddedInterface
+    AnotherEmbeddedInterface
+    AMethod() int
+}
+```
+
+The method set of `ComplexInterface` is the union of its embedded interfaces and its explicitly declared methods.
+If there are interface methods have identical names, they must have identical signatures.
 
 ### Struct
 
