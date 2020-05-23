@@ -58,6 +58,7 @@ Examples of suitable languages:
 - Scheme
 - TypedRacket
 - Lua
+- Go
 - Groovy
 - Swift
 - Kotlin
