@@ -6,20 +6,15 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 
 ## Notes
 
-### Programming Language Features
+### Programming Languages
 
 - [Exception and Union Type](dive-into/exceptions/)
 - [Personal Coding Style](coding-style/)
-
-### Programming Languages
-
 - [Quick Introduction to Go](dive-into/go/)
 - [Haskell: Laziness, Type Class, and Monad](dive-into/haskell/)
 - [Notes on A little Java, a Few Patterns](java/a-little/)
 - [On Design of Kotlin](dive-into/kotlin/)
-- [OCaml Basic](dive-into/ocaml/)
-- [Dive into Ruby](dive-into/ruby/)
-- [Dive into Rust](dive-into/rust/)
+- Dive into [OCaml](dive-into/ocaml/), [Ruby](dive-into/ruby/), and [Rust](dive-into/rust/)
 
 ### JavaScript
 
@@ -45,32 +40,25 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 - Dive into [Base64](dive-into/base64/), [Borg](dive-into/borg), [Flow](dive-into/flow/), [Jetbrains IDEs](dive-into/jetbrains/), and [more](dive-into/more/).
 - Survey of tools for [cli ui testing](cli/test/), [python persistence](python/persistence/), [vim completion](vim/completion/).
 - Other [thoughts](thoughts/) and [(micro)notes](log/).
-- [Notes](dapi/) and [poems](poems/) written in Chinese.
 - [Gists][]([feed][gist-feed]) - notes, scripts, configs etc.
-- Photos hosted at [23][] and [flickr][].
+- [Notes](dapi/) and [poems](poems/) written in Chinese.
 
 [gists]: https://gist.github.com/weakish
 [gist-feed]: https://gist.github.com/weakish.atom
-
-[23]: http://www.23hq.com/weakish/album/list
-[flickr]: https://www.flickr.com/photos/weakish/sets/
 
 ## Projects
 
 * [erratawiki][] - collects (non-official) errata for books
 * [gister][] - command line tool for github gists
-* [markdowntation][] - Serve your documentation with zero-configuration and without client side JavaScript. Inspired by [GitHub Pages] and [docsify].
 * [micro-gh-page][] - the repository template this site uses
 * [rcshell.vim][] - syntax highlight file for the rc shell scripting language
 * [viconf][] - visudo for all commands
 * [vscode-complete-statement] - mimic IntelliJ's complete statement
 * [xkcd936][] - xkcd936 style passphrase generator
 * go modules: [goaround][] and [gosugar][]
-* other repositories hosted at [github][]
 
 [erratawiki]: https://github.com/weakish/errata/wiki
 [gister]: https://mmap.page/gister
-[Markdowntation]: https://github.com/weakish/js#markdowntation
 [micro-gh-page]: https://mmap.page/micro-gh-page
 [rcshell.vim]: http://www.vim.org/scripts/script.php?script_id=2880
 [viconf]: https://mmap.page/viconf
@@ -80,15 +68,14 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 [gosugar]: https://github.com/weakish/gosugar
 [github]: https://github.com/weakish/
 
-[GitHub Pages]: https://pages.github.com/
-[docsify]: https://docsify.js.org/
+[![Feather Icon Mail](https://icongr.am/feather/mail.svg)][email]
+[![Feather Icon Key](https://icongr.am/feather/key.svg)][gpg]
+[![Feather Icon Github](https://icongr.am/feather/github.svg)][github]
+[![Feather Icon Instagram](https://icongr.am/feather/instagram.svg)][instagram]
+[![Feather Icon Twitter](https://icongr.am/feather/twitter.svg)][twitter]
 
-## Contact
-
-Email address: <weakish@gmail.com>
-
-GPG fingerprint: [2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87][gpg]
-
-(Be aware that GPG will not encrypt email headers, including subject.)
-
-[gpg]: https://savannah.nongnu.org/people/viewgpg.php?user_id=65699
+[email]: mailto:weakish@gmail.com "weakish@gmail.com"
+[gpg]: https://savannah.nongnu.org/people/viewgpg.php?user_id=65699 "2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87"
+[github]: https://github.com/weakish/ "GitHub"
+[instagram]: https://www.instagram.com/jakukyo/ "Instagram"
+[twitter]: https://twitter.com/weakish "Twitter"
