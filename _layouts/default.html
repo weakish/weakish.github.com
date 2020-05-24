@@ -15,12 +15,19 @@
     <h1><a href="{{site.url}}/">{{site.title}}</a></h1>
     {% include anchor_headings.html html=content anchorBody="#" anchorClass="anchor-hash" anchorTitle="link to this heading" h_min=2 %}
     <div class="footer border-top border-gray-light mt-5 pt-3 text-gray">
-        <p>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start">
         <form id="site-search" action="https://duckduckgo.com/html/" method="get">
           <input name="q" type="search" value="site:mmap.page " required pattern="site:mmap\.page\s.+">
           <input type="submit" value="&#x1F50D;" title="search through site content via DuckDuckGo">
         </form>
+        <p>
+          <a href="mailto:weakish@gmail.com" title="weakish@gmail.com"><img src="https://icongr.am/feather/mail.svg" alt="Feather Icon Mail"></a>
+          <a href="https://savannah.nongnu.org/people/viewgpg.php?user_id=65699" title="2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87"><img src="https://icongr.am/feather/key.svg" alt="Feather Icon Key"></a>
+          <a href="https://github.com/weakish/" title="GitHub"><img src="https://icongr.am/feather/github.svg" alt="Feather Icon Github"></a>
+          <a href="https://www.instagram.com/jakukyo/" title="Instagram"><img src="https://icongr.am/feather/instagram.svg" alt="Feather Icon Instagram"></a>
+          <a href="https://twitter.com/weakish" title="Twitter"><img src="https://icongr.am/feather/twitter.svg" alt="Feather Icon Twitter"></a>
         </p>
+      </div>
         <p>
         Permission to use, copy, modify, and/or distribute this site for any purpose with or without fee is hereby granted.
         This site is provided "as is" without express or implied warranty.

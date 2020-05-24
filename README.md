@@ -43,15 +43,3 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 
 [gists]: https://gist.github.com/weakish
 [gist-feed]: https://gist.github.com/weakish.atom
-
-[![Feather Icon Mail](https://icongr.am/feather/mail.svg)][email]
-[![Feather Icon Key](https://icongr.am/feather/key.svg)][gpg]
-[![Feather Icon Github](https://icongr.am/feather/github.svg)][github]
-[![Feather Icon Instagram](https://icongr.am/feather/instagram.svg)][instagram]
-[![Feather Icon Twitter](https://icongr.am/feather/twitter.svg)][twitter]
-
-[email]: mailto:weakish@gmail.com "weakish@gmail.com"
-[gpg]: https://savannah.nongnu.org/people/viewgpg.php?user_id=65699 "2414 AEA0 EA48 5263 9697  F1BA 55F6 EEC2 EA3F 0A87"
-[github]: https://github.com/weakish/ "GitHub"
-[instagram]: https://www.instagram.com/jakukyo/ "Instagram"
-[twitter]: https://twitter.com/weakish "Twitter"
