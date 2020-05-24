@@ -1,5 +1,4 @@
-A Quick Introduction to React
-=============================
+# A Quick Introduction to React
 
 ## Hello World
 
