@@ -10,7 +10,7 @@ The traditional math language has a lot of issues:
 - Variables do not have scoping.
 - Prone to typos and untestable.
 
-Instead of writing $$E = mc^2$$, I'd rather just write `e = m * (c ** 2)`.
+Instead of writing `E = mc^2`, I'd rather just write `e = m * (c ** 2)`.
 
 ## Tables
 

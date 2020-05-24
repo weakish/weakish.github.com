@@ -26,13 +26,13 @@ And the creator of Ruby said not use it.
 > Don't use it please.  I'm regretting this feature, and I'd like to remove it in the future if it's possible.
 
 > Because it's hard for users to tell
->     begin <code> end while <cond>
+>     begin [code] end while [cond]
 > works differently from
-      <code> while <cond>
+      [code] while [cond]
 
 >     loop do
 >  		...
->  		break if <cond>
+>  		break if [cond]
 > 		end
 
 -- [matz.](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/6745)

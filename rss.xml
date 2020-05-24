@@ -2,15 +2,16 @@
 layout: none
 ---
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
+ <atom:link href="{{ site.url }}/rss.xml" rel="self" type="application/rss+xml" />
  <title>{{ site.title }}</title>
  <link>{{ site.url }}</link>
  <description>map memories to web pages</description>
  <language>en</language>
  <copyright>Permission to use, copy, modify, and/or distribute this site for any purpose with or without fee is hereby granted.</copyright>
- <managingEditor>weakish@gmail.com</managingEditor>
- <webMaster>weakish@gmail.com</webMaster>
+ <managingEditor>weakish@gmail.com (Jang Rush)</managingEditor>
+ <webMaster>weakish@gmail.com (Jang Rush)</webMaster>
  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
  <generator>Jekyll</generator>
  <docs>http://blogs.law.harvard.edu/tech/rss</docs>
