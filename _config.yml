@@ -41,6 +41,7 @@ articles:
     - dive-into/flow.md
     - dive-into/exceptions.md
     - dive-into/kotlin.md
+    - dive-into/ceylon-kotlin.md
     - java/a-little.md
     - web/html-history.md
     - vim/completion.md
