@@ -1,5 +1,4 @@
-OCaml Basic
-===========
+# OCaml Basic
 
 ## Types
 

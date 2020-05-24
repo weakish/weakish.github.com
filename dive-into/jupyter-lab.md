@@ -1,5 +1,4 @@
-JupyterLab Guide
-================
+# JupyterLab Guide
 
 JupyterLab is the next generation UI of Jupyter Notebook (formly known as IPython Notebook).
 

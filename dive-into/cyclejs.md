@@ -1,5 +1,4 @@
-Dive into Cycle.js
-==================
+# Dive into Cycle.js
 
 ## Core Abstraction
 

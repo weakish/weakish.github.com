@@ -1,5 +1,4 @@
-Dive into Flow
-==============
+# Dive into Flow
 
 Peek at the type system
 -----------------------

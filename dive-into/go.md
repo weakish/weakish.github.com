@@ -1,5 +1,4 @@
-Quick Introduction to Go
-========================
+# Quick Introduction to Go
 
 We're going to try to quickly show you enough of Go 1.14 to actually try it out.
 

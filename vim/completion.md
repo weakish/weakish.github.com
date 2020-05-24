@@ -1,5 +1,4 @@
-VIM Completion Configuration
-============================
+# VIM Completion Configuration
 
 ## Built-in
 

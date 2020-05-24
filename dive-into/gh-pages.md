@@ -1,5 +1,4 @@
-Build a Micro Static Site With GitHub Pages
-===========================================
+# Build a Micro Static Site With GitHub Pages
 
 ## tl;tr
 

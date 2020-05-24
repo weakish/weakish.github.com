@@ -1,5 +1,4 @@
-CentOS server setup guide for people from debian
-================================================
+# CentOS server setup guide for people from debian
 
 A basic server setup guide for people from debian to CentOS.
 

@@ -1,5 +1,4 @@
-Dive into Ruby
-==============
+# Dive into Ruby
 
 Features
 --------

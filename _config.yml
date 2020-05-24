@@ -14,3 +14,40 @@ defaults:
 url: https://mmap.page
 title: mmap.page
 repo: weakish/weakish.github.com
+
+articles:
+    - dive-into/wireguard.md
+    - dive-into/borg.md
+    - dive-into/osx.md
+    - dive-into/make.md
+    - dive-into/eslint.md
+    - dive-into/npm.md
+    - dive-into/ts-check.md
+    - dive-into/typescript.md
+    - dive-into/react.md
+    - dive-into/rarcrack.md
+    - dive-into/puppet.md
+    - dive-into/tinygo.md
+    - dive-into/cyclejs.md
+    - dive-into/gitmoji.md
+    - dive-into/gh-pages.md
+    - dive-into/jetbrains.md
+    - dive-into/go.md
+    - dive-into/rust.md
+    - dive-into/jupyter-lab.md
+    - thoughts/express-more-in-code.md
+    - dive-into/haskell.md
+    - dive-into/ocaml.md
+    - dive-into/flow.md
+    - dive-into/exceptions.md
+    - dive-into/kotlin.md
+    - java/a-little.md
+    - web/html-history.md
+    - vim/completion.md
+    - dive-into/base64.md
+    - dive-into/centos.md
+    - dive-into/fish.md
+    - python/persistence.md
+    - cli/test.md
+    - dive-into/pry.md
+    - dive-into/ruby.md

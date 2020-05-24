@@ -1,5 +1,4 @@
-Dive into Base64
-================
+# Dive into Base64
 
 Base64 index table
 ------------------

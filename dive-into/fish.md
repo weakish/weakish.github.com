@@ -1,5 +1,4 @@
-Dive into Fish
-=================
+# Dive into Fish
 
 Introduction
 -----------------

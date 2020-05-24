@@ -1,0 +1,41 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+ <title>{{ site.title }}</title>
+ <link>{{ site.url }}</link>
+ <description>map memories to web pages</description>
+ <language>en</language>
+ <copyright>Permission to use, copy, modify, and/or distribute this site for any purpose with or without fee is hereby granted.</copyright>
+ <managingEditor>weakish@gmail.com</managingEditor>
+ <webMaster>weakish@gmail.com</webMaster>
+ <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+ <generator>Jekyll</generator>
+ <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+ <image>
+    <url>{{site.url}}/assets/images/weakish_icon_128.jpg</url>
+    <title>{{ site.title }}</title>
+    <link>{{ site.url }}</link>
+    <description>map memories to web pages</description>
+    <width>128</width>
+    <height>128</height>
+ </image>
+ {% for path in site.articles %}
+ {% assign page = site.pages | where: "path", path | first %}
+ <item>
+  {% comment %}liquid does not know "\n"{% endcomment %}
+  <title>{{page.content | newline_to_br | split: '<br />' | first | remove_first: '# '}}</title>
+  {% assign page_content_lines = page.content | newline_to_br | split: '<br />' %}
+  {% assign page_content = '' %}
+  {% for line in page_content_lines offset:1 %}
+    {% assign page_content = page_content | append: line %}
+  {% endfor %}
+  <description>{{ page_content | markdownify | xml_escape}}</description>
+  <link>{{ site.url }}{{ page.url }}</link>
+  <guid isPermaLink="false">{{ page.url }}</guid>
+ </item>
+{% endfor %}
+</channel>
+</rss>
