@@ -6,7 +6,7 @@ All the screen shots are captured on 2018-02-20.
 
 ## Slackware
 
-![slackware](slackware.png)
+![slackware](/web/slackware.png)
 
 Slackware still uses tarballs for packaging,
 and its website is also old-fashioned,
@@ -69,7 +69,7 @@ The Slackware Linux Project</TITLE>
 
 ## Debian
 
-![debian](debian.png)
+![debian](/web/debian.png)
 
 As one of two oldest Linux distributions still alive today,
 (the other is Slackware),
@@ -128,7 +128,7 @@ I do not think these two factors are related. ;-)
 
 ## FreeBSD
 
-![freebsd](freebsd.png)
+![freebsd](/web/freebsd.png)
 
 FreeBSD website uses XHTML 1.0 Transitional with CSS.
 However, it does not work well with small screens as shown above.
@@ -169,7 +169,7 @@ But outside the BSD family...
 
 ## Gentoo
 
-![gentoo](gentoo.png)
+![gentoo](/web/gentoo.png)
 
 The cutting edge Gentoo website uses HTML5.
 By the way, another cutting edge Linux distribution Arch also uses HTML5 on its web site.

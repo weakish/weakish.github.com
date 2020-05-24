@@ -33,7 +33,7 @@ layout: none
   {% for line in page_content_lines offset:1 %}
     {% assign page_content = page_content | append: line %}
   {% endfor %}
-  <description>{{ page_content | markdownify | replace: '<a href="/', '<a href="https://mmap.page/' | xml_escape}}</description>
+  <description>{{ page_content | markdownify | replace: '<a href="/', '<a href="https://mmap.page/' | replace: '<img src="/', '<img src="https://mmap.page/' | xml_escape}}</description>
   <link>{{ site.url }}{{ page.url }}</link>
   <guid isPermaLink="false">{{ page.url }}</guid>
  </item>
