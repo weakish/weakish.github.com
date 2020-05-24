@@ -17,7 +17,7 @@ without any configuration.
 
 ## TypeScript Can Detect Lots of Errors
 
-[ts-check](ts-check/) can detect a lot of problems, and it is usually faster.
+[ts-check](/dive-into/ts-check/) can detect a lot of problems, and it is usually faster.
 
 For example, the `array-callback-return` rule is unnecessary,
 because if I accidentally forget to write `return` statement in array mapping function,
