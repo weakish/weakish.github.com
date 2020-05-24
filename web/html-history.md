@@ -10,7 +10,7 @@ All the screen shots are captured on 2018-02-20.
 
 Slackware still uses tarballs for packaging,
 and its website is also old-fashioned,
-with html tags captalized,
+with html tags capitalized,
 using tables for layout.
 
 ```html
