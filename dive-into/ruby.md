@@ -145,7 +145,7 @@ a poignant introduction to a shiny language.
 REPL
 ----
 
-Use [pry](pry/).
+Use [pry](/dive-into/pry/).
 
 Make
 ----
