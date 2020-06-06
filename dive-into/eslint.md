@@ -15,6 +15,21 @@ without any configuration.
 
 [prettier]: https://prettier.io/
 
+Also, prettier can also avoid some lint rules, for example, eslint's `curly` rule helps to avoid misleading code:
+
+```js
+if (condition)
+    DoSomething();
+    DoSomethingElse();
+```
+
+However, prettier will format the above code as below to avoid the above issue:
+
+```js
+if (condition) DoSomething();
+DoSomethingElse();
+```
+
 ## TypeScript Can Detect Lots of Errors
 
 [ts-check](/dive-into/ts-check/) can detect a lot of problems, and it is usually faster.
@@ -22,6 +37,8 @@ without any configuration.
 For example, the `array-callback-return` rule is unnecessary,
 because if I accidentally forget to write `return` statement in array mapping function,
 it tends to trigger a type error.
+`eqeqeq` is another example of an unnecessary rule,
+since TypeScript complains when you are comparing two values of different types.
 
 TypeScript also has other helpful checks like `noFallthroughCasesInSwitch`.
 
@@ -43,13 +60,11 @@ TypeScript also has other helpful checks like `noFallthroughCasesInSwitch`.
 Do not include rules such as `no-new-object` and `no-nested-ternary`,
 which are merely personal choice of programming style.
 
-So here is the seven ESLint rules I use:
+So here is the five ESLint rules I use:
 
 ```js
 "rules": {
-    "eqeqeq": "error", // prefer `===` instead of `==`
     "prefer-arrow-callback": "error", // avoid the evil `this`
-    "curly": "error", // not omit braces for statements in control flow
     "no-multi-assign": "error", // no `a = b = c = 1`
     "no-var": "error", // use `const` and `let` instead of `var`
     "prefer-const": "error", // use `const` when there is no reassignment
