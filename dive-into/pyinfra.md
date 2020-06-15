@@ -53,7 +53,7 @@ pip.packages(['pyinfra'])
 Execute it:
 
 ```sh
-; pyinfra
+; pyinfra deploy.py
 --> Loading config...
 --> Loading inventory...
 
