@@ -103,7 +103,7 @@ Press `Ctrl-Up/Down` to show an overview of desktops or go back to normal mode.
 By default, `~/Library` is hidden.
 To reveal it in Finder temporarily,
 hold the Option key, then click the `Go` menu,
-and the Library fodler is revealed in the dropdown menu.
+and the Library folder is revealed in the dropdown menu.
 
 To permanently reveal the Library folder in Finder, run the following command:
 
