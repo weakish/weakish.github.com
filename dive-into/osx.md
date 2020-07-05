@@ -141,3 +141,14 @@ Except for the gmail, other osx applications can also sync with Google account:
 - Calenders
 - Messages (with Google Talk)
 - Notes (via gmail, tagged as notes)
+
+## Chinese Input Method
+
+I use [the built-in Double Pinyin Input Method][double-pinyin].
+The built-in input method uses Caps to switch between English and Chinese mode,
+which makes sense to me.
+I also [use Caps to switch between English and Chinese mode under Linux][caps]
+(the trick is to `clear lock` and bind Caps to another unused key, e.g. `Multi_key`, then configure it as the switch key in fcitx).
+
+[double-pinyin]: https://scomper.me/gtd/xi-tong-shuang-pin-shu-ru-fa-@vgow
+[caps]: https://www.wancat.cc/post/capslock/
