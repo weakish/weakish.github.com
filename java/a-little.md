@@ -188,7 +188,7 @@ class Tomato extends Shishᴰ
            {
                if (s instanceof Sewer)
                {
-                   return false;
+                   return true;
                }
                else if (s instanceof Onion)
                {
