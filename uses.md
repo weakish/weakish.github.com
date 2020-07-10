@@ -52,3 +52,18 @@ No JavaScript.
 - [Razer DeathAdder Left-handed Edition](https://www.razer.com/eu-en/gaming-mice/razer-deathadder-left-handed-edition)
 
     One of the few left-handed mouses available in my region.
+
+## Software
+
+- [KDE Neon](https://neon.kde.org/)
+
+    I want a full functional desktop environment.
+    So I have to choose between Gnome and KDE.
+    I do not choose Gnome because I do not like systemd, and KDE is much less dependent on systemd.
+    KDE Neon is the distribution provided by the KDE community, using Ubuntu LTS (a popular distribution) under the hood.
+    I may try [Pop!_OS] (Ubuntu with the tech-savvy professional in mind), [Devuan] (I really dislike systemd!), [Fedora] (a bit more cutting edge than Ubuntu and still popular), or [Arch] (AUR and Arch wiki) in future.
+
+[Pop!_OS]: https://support.system76.com/articles/difference-between-pop-ubuntu/
+[Devuan]: https://devuan.org/
+[Fedora]: https://getfedora.org/
+[Arch]: https://www.archlinux.org/
