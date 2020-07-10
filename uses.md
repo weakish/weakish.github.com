@@ -63,7 +63,42 @@ No JavaScript.
     KDE Neon is the distribution provided by the KDE community, using Ubuntu LTS (a popular distribution) under the hood.
     I may try [Pop!_OS] (Ubuntu with the tech-savvy professional in mind), [Devuan] (I really dislike systemd!), [Fedora] (a bit more cutting edge than Ubuntu and still popular), or [Arch] (AUR and Arch wiki) in future.
 
+- [Firefox](https://www.mozilla.org/)
+
+    Firefox also has a lot of issues.
+    But other browsers suck more.
+
+- [vscode](https://github.com/microsoft/vscode)
+
+    I use it for typescript and python (with the excellent [Pyright] extension).
+    Visual Studio Code is non free.
+    I use [VSCodium], a community-driven, freely-licensed binary distribution.
+
+- [IntelliJ Idea](https://www.jetbrains.com/idea/)
+
+    One of the only two software subscriptions I have.
+    I use it for Go, Java, and PHP.
+
+- [Abricotine](https://abricotine.brrd.fr/)
+
+    Markdown editor with **inline preview**.
+
+- [Leafpad](https://en.wikipedia.org/wiki/Leafpad)
+
+    Simple.
+
+- [Konsole](https://konsole.kde.org/)
+
+    The default terminal emulator in KDE.
+    Quite feature-rich.
+
+- [Dolphin](https://kde.org/applications/en/system/org.kde.dolphin)
+
+    Probably the most functional GUI file manager in Linux.
+
 [Pop!_OS]: https://support.system76.com/articles/difference-between-pop-ubuntu/
 [Devuan]: https://devuan.org/
 [Fedora]: https://getfedora.org/
 [Arch]: https://www.archlinux.org/
+[Pyright]: https://github.com/microsoft/pyright
+[VSCodium]: https://vscodium.com/
