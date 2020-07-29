@@ -102,3 +102,13 @@ No JavaScript.
 [Arch]: https://www.archlinux.org/
 [Pyright]: https://github.com/microsoft/pyright
 [VSCodium]: https://vscodium.com/
+
+## Wear
+
+I wear [vintage style running shoes][thedeffest], those revised models originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
+
+[thedeffest]: https://www.thedeffest.com/
+[60s]: /uses/mexico-66.jpg "https://www.onitsukatiger.com/system/static/39dbf4ad139bf877663cb601ad40e373.jpg"
+[70s]: /uses/comp-100.jpg "https://www.thedeffest.com/vintage-ads/new-balance-100-w100-vintage-sneaker-ad-from-1979"
+[80s]: /uses/nb-420.jpg "https://i.ebayimg.com/images/g/ApEAAOSwd7Fb-MP7/s-l1600.jpg"
+[ad]: /uses/nb-ads.jpg "https://images.squarespace-cdn.com/content/v1/5ab94f5e3c3a536987d16ce5/1586282359719-W9JJP53TVVP0EAJVXOLJ/ke17ZwdGBToddI8pDm48kGNEFA4rC7c0McDIySn7RjkUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcPlG31PR0Q5DeNaNXE1QnS_LzyNcqI129vtg_t5azkwh6fx-4rvXr20Sq8_feGDMO/New+Balance+1982+vintage+sneaker+ad+%40+The+Deffest?format=1500w"
