@@ -49,8 +49,7 @@ then run it again.
 ## Keyboard
 
 In System Preference > Keyboard > Modifier Keys,
-`Control` and `Command` keys can be swapped,
-and `Caps` can be used as an additional `Escape` key.
+`Control` and `Command` keys can be swapped.
 
 I also installed [AltTab] to switch applications with `alt-tab`.
 
