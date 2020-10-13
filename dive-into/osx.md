@@ -68,7 +68,7 @@ Select "Tap to click" in System Preferences > Trackpad.
 ## Lock Screen
 
 Press `Control+Shift+Power` to turn off and lock screen.
-Alternatively, you can put the `Screen Lock` icon on touch bar (System Preference > Keyboard > Touch Bar).
+Alternatively, you can put the `Screen Lock` icon on touch bar (System Preference > Keyboard > Touch Bar) or configures hot corners.
 
 ## Turn off Internal Display
 
