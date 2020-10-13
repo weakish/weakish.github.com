@@ -16,7 +16,7 @@ curl https://raw.githubusercontent.com/MikeMcQuaid/strap/master/bin/strap.sh > s
 
 ### Configuration
 
-Edit the `strap.sh` script, e.g. using vim, and uncomment and fill up the following environment variables:
+Edit the `strap.sh` script, e.g. using vim, uncomment and fill up the following environment variables:
 
 ```sh
 # STRAP_GIT_NAME=
@@ -27,8 +27,8 @@ Edit the `strap.sh` script, e.g. using vim, and uncomment and fill up the follow
 # CUSTOM_BREW_COMMAND=
 ```
 
-- `STRAP_GIT_NAME` and `STRAP_GIT_EMAIL` is to setup git `user.name` and `user.email`, and contact info on login screen.
-- `STRAP_GITHUB_USER` is to setup git `github.user` and to access your dotfiles and homebrew-brewfile repositories.
+- `STRAP_GIT_NAME` and `STRAP_GIT_EMAIL` is for git `user.name` and `user.email`, and contact info on login screen.
+- `STRAP_GITHUB_USER` is to for git `github.user` and accessing your `dotfiles` and `homebrew-brewfile` repositories.
 - `STRAP_GITHUB_TOKEN` is needed to allow homebrew to reduce the rate limit of `brew search` command and to tap your private repositories (the token can be generated at GitHub > Settings > Developer settings > Personal access tokens, with scope `repo, user`).
 - `CUSTOM_HOMEBREW_TAP` and `CUSTOM_BREW_COMMAND` are optional, to add your personal homebrew tap and custom brew command which will be run at the end of the bootstrap.
 
