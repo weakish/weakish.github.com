@@ -50,6 +50,10 @@ then run it again.
 
 In System Preference > Keyboard > Modifier Keys,
 `Control` and `Command` keys can be swapped.
+However, under the terminal I'd like to use the classical ctrl prefixed shortcuts, thus I swapped them back again.
+[iTerm2] is a terminal emulator with this option.
+
+[iTerm2]: https://www.iterm2.com/
 
 I also installed [AltTab] to switch applications with `alt-tab`.
 
