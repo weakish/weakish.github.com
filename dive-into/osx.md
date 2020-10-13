@@ -52,15 +52,9 @@ In System Preference > Keyboard > Modifier Keys,
 `Control` and `Command` keys can be swapped,
 and `Caps` can be used as an additional `Escape` key.
 
-[Karabiner-Elements][karabiner] is a powerful keyboard modifier for osx.
-For example, it supports [PC-style keyboard shortcuts][pc-style].
-However, some of them do not work, and result in inconsistent keyboard shortcuts.
-It is recommend to swap `Control` and `Command` through Karabiner-Elements' simple modification instead.
-And import certain complex rules like `Alt-Tab` from it individually.
+I also installed [AltTab] to switch applications with `alt-tab`.
 
-[karabiner]: https://pqrs.org/osx/karabiner/document.html#configuration-simple-modifications
-
-[pc-style]: https://pqrs.org/osx/karabiner/complex_modifications/#pc_shortcut
+[AltTab]: https://alt-tab-macos.netlify.app/
 
 ## Mouse
 
