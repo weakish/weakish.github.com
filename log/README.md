@@ -25,7 +25,7 @@ sudo sh -c 'echo AllowTcpForwarding yes' >> /etc/ssh/sshd_config
 sudo sh -c 'echo GatewayPorts yes' >> /etc/ssh/sshd_config
 sudo service sshd restart  # On some OSes, replace `sshd` with `ssh`.
 ```
-
+ 
 
 -- 2016-08-18
 
@@ -85,7 +85,7 @@ It sounds like a hot fix to me:
 - **A:** No, programming time is more valuable than processing time. If more human beings view the raw, let's just convince VCs to invest more money for more machines since we are so successful that we have some many views.
 - **B:** But there are sites use GitHub to host scripts.
 - **A:** No, they should not do this because Rails view is heavy. Let's block them by adding an HTTP header. It's simple.
-
+ 
 
 Workaround:
 
@@ -105,7 +105,7 @@ Duokan (ebook app) exports highlights and notes to Evernote **without page numbe
 -- 2016-08-29
 
 
-I think hg may fit ipfs more well than git. Like git's dumb http, hg supports [static http](https://www.mercurial-scm.org/wiki/StaticHTTP). Unlike git's changing-all-the-time packfile, hg's revlog is predictable. So hosting hg repos on ipfs is simpler (no need to unpack objects manually), and saves bandwidth (git repos with unpacked objects is usually larger than hg).
+I think hg may fit ipfs more well than git. Like git's dumb http, hg supports [static http](https://www.mercurial-scm.org/wiki/StaticHTTP). Unlike git's changing-all-the-time packfile, hg's revlog is predictable. So hosting hg repos on ipfs is simpler (no need to unpack objects manually), and saves bandwidth (git repos with unpacked objects is usually larger than hg). 
 
 -- 2016-08-29
 
@@ -150,7 +150,7 @@ class Actions(object):
           logging.info(CryptBitcoin.hdPrivatekey("YOUR_master_seed", YOUR_address_index))
           logging.info("------------------- DEBUG: Recovery End--------------------")
           # Added code ended here.
-
+          
           logging.info("Starting servers....")
           # code omitted
 ```
@@ -168,7 +168,7 @@ Just add a 0BSD style license on my profile page: Permission to use, copy, modif
 -- 2016-08-31
 
 
-Wish every programming language website has [a gentle introduction like  Ceylon](http://ceylon-lang.org/documentation/1.2/introduction/), demostrating both basic usage and advanced features, but not lengthy.
+Wish every programming language website has [a gentle introduction like  Ceylon](http://ceylon-lang.org/documentation/1.2/introduction/), demostrating both basic usage and advanced features, but not lengthy. 
 
 -- 2016-09-01
 
@@ -279,7 +279,7 @@ All my todos are on wunderlist, which is down now. And I can hardly remember wha
 -- 2016-09-21
 
 
-[Snapshots of all current, non empty, functional ZeroMe hubs](https://github.com/weakish/0me-hubs-snapshots),
+[Snapshots of all current, non empty, functional ZeroMe hubs](https://github.com/weakish/0me-hubs-snapshots), 
 powered by [0net-snapshot](https://github.com/weakish/0net-snapshot).
 
 -- 2016-09-22
@@ -467,14 +467,14 @@ The main audience of code is human beings, not tests. Improving testability shou
 
 WTF! New generation of MacBook Pro!
 
-It's Pro so it does not need to be so thin that it uses  a painful to type keyboard as on MacBook. Unified type-C is too cool to connect other devices. Even Apple self's devices are not unified, so you cannot charge iPhones without an adapter. Also replacing MagSafe with type-C is obivously a regression. And the 13" version only has two slots! Also the price is much expensive than older genrations.
+It's Pro so it does not need to be so thin that it uses  a painful to type keyboard as on MacBook. Unified type-C is too cool to connect other devices. Even Apple self's devices are not unified, so you cannot charge iPhones without an adapter. Also replacing MagSafe with type-C is obivously a regression. And the 13" version only has two slots! Also the price is much expensive than older genrations. 
 
 In fact, Apple now effectly does not sell laptops. MacBook and MacBook Air only has 4 or 8GB unupgradable RAM. Now they ruied MacBook Pro, the only series of sufficient RAM.
 
 -- 2016-10-28
 
 
-mp3.163.com (a music distribution site in China) does not have any API. In fact it even encryptes post params with some home made algorithm (the algorithm is different on different clients and is evolving, the current API in web UI is based on AES, RSA and MD5) on HTTP (it does not support HTTPS). That's why I have never registered an account on it.
+mp3.163.com (a music distribution site in China) does not have any API. In fact it even encryptes post params with some home made algorithm (the algorithm is different on different clients and is evolving, the current API in web UI is based on AES, RSA and MD5) on HTTP (it does not support HTTPS). That's why I have never registered an account on it. 
 
 -- 2016-10-29
 
@@ -494,9 +494,9 @@ All Linux distributions where UEFI Secure Boot works out of the box (e.g. Fedora
 -- 2016-11-03
 
 
-For any one want to pick up programming language , I recommend [The Little Schemer](https://www.amazon.com/Little-Schemer-Daniel-P-Friedman/dp/0262560992)，less than 200 pages and can be finished in a weekend. It starts from zero and gradually introduces concepts like recursion, higher-order functions, curry, Church encoding, halting problem, lambda calculus,  fixed point, Y combinator, continuation, CPS, Godel Incompleteness Theorem, and a basic interperator for a simplified progarmming language.
+For any one want to pick up programming language , I recommend [The Little Schemer](https://www.amazon.com/Little-Schemer-Daniel-P-Friedman/dp/0262560992)，less than 200 pages and can be finished in a weekend. It starts from zero and gradually introduces concepts like recursion, higher-order functions, curry, Church encoding, halting problem, lambda calculus,  fixed point, Y combinator, continuation, CPS, Godel Incompleteness Theorem, and a basic interperator for a simplified progarmming language. 
 
-If you think The Little Schemer is expensive, you can try [CoffeeScript Ristretto](https://leanpub.com/coffeescript-ristretto), somehow a translation of The Little Schemer to CoffeeScript, which can be read on line for free.
+If you think The Little Schemer is expensive, you can try [CoffeeScript Ristretto](https://leanpub.com/coffeescript-ristretto), somehow a translation of The Little Schemer to CoffeeScript, which can be read on line for free. 
 
 Do not worry the above books do not use a language you are going to use in your work. After all, the right approach to pick the certain programming language you are going to use is to focus on  semantics, instead of syntax; focus on concepts, instead of concrete details; focus on good parts, instead of all parts; also learning the implemantation of the language is a good way, since modeling is an effective way of learning (no need a full implement, also not worry about performance, just implement basic and import concepts).  The Littele Schemer fully conforms to this approach. Once you learned the scheme language with it, you know how to learn a new languge, and you know essential concepts of programing language. Then you can just pick up any language you are going to use in the same way. And because you only need to understand new semantics and concepts of the new language, it will be fast. For syntax, just use a good IDE or setup your editor properly.
 
@@ -642,7 +642,7 @@ An conterexample is Scryptmail, which supports import and export of GPG keys.
 -- 2016-11-27
 
 
-[$20 credit for new users of Vultr](http://www.vultr.com/?ref=7046521-3B) (KVM VPS with SSD, billed hourly/monthly, located in US, EU, Austrilia, Singapore, and Japan).
+[$20 credit for new users of Vultr](http://www.vultr.com/?ref=7046521-3B) (KVM VPS with SSD, billed hourly/monthly, located in US, EU, Austrilia, Singapore, and Japan). 
 
 Vultr v.s. DigitalOcean: They are quite similar except that Vultr has slightly more RAM for $5/m plan, and Vultr's snapshots are still free right now.
 
@@ -762,7 +762,7 @@ Go, advertised as modern C, inherits C's hacky mindset:
 - Error handling. Go uses multiple return values to represent union type `Result | SomeError` or optional type `Result | Null`: returning either `{result, nil}` or `{nil, error}`. The ordering of `result` and `error`, and one and only one of them must be `nil` is just a convention followed by programmers, not enforced by type system.
 
 - For variable declaration without initialization, instead of checking it is correctly initialized later, Go just implicitly initialize it with a zero value. Even worse, Go uses `nil` as zero value for pointers, slices, interfaces, maps, channels, and functions.
-
+ 
 
 -- 2016-12-08
 
@@ -806,7 +806,7 @@ Currently FaceBook Message and Google Allo has optional end to end encryption. A
 
 Just launched [0git.bit](/0git.bit), a list of git repositories on ZeroNet.
 
-I wrote it based on [the ZeroChat tutorial on ZeroBlog](/Blog.ZeroNetwork.bit/).
+I wrote it based on [the ZeroChat tutorial on ZeroBlog](/Blog.ZeroNetwork.bit/). 
 
 Features:
 
@@ -871,7 +871,7 @@ Opened software manager in OpenSUSE and found in "rpm groups" there are `applica
 -- 2016-12-23
 
 
-Just fried some peanuts, which increased the PM 2.5 by 8 ug/m^3 in kitchen. So frying will not be a source of local air pollution  if you have extractor hood opened and keep the oil temperature low.
+Just fried some peanuts, which increased the PM 2.5 by 8 ug/m^3 in kitchen. So frying will not be a source of local air pollution  if you have extractor hood opened and keep the oil temperature low. 
 
 -- 2016-12-24
 
@@ -937,7 +937,7 @@ Then you can just access `http://127.0.0.1:43110/` on your local machine, secure
 
 new History().repeat
 
-There is no first class functions in Java, so to pass functions, we wrap functions in classes. Now there is no first class function types in TypedRacket, so [to predicate function types, we wrap functions in structs](https://stackoverflow.com/a/27866496).
+There is no first class functions in Java, so to pass functions, we wrap functions in classes. Now there is no first class function types in TypedRacket, so [to predicate function types, we wrap functions in structs](https://stackoverflow.com/a/27866496).  
 
 P.S. Same applies to TypeScript, Flow, Kotlin, and Swift. Ceylon's function type is first class, though.
 
@@ -982,10 +982,10 @@ su -m nobody zeronet siteCreate
 -- 2017-01-08
 
 
-> the ideas enshrined in the Ubuntu Manifesto:
+> the ideas enshrined in the Ubuntu Manifesto: 
 > that software should be available free of charge,
 > that software tools should be usable by people in their local language
-> and despite any disabilities,
+> and despite any disabilities, 
 > and that people should have the freedom to customize and alter their software
 > in whatever way they see fit.
 
@@ -1074,12 +1074,12 @@ Lantern only provides binary package in deb format for Linux. To install lantern
 -- 2017-01-27
 
 
-A recent Windows update forced me to re-select options like no personalized ad, ruined my registry key for a customized keyboard layout (dvorak and swap esc & caps), and pined the Mail app on my taskbar. This is more like a regression than an update to me. (To be fair, it does allow me to launch some Windows applications under WSL.)
+A recent Windows update forced me to re-select options like no personalized ad, ruined my registry key for a customized keyboard layout (dvorak and swap esc & caps), and pined the Mail app on my taskbar. This is more like a regression than an update to me. (To be fair, it does allow me to launch some Windows applications under WSL.) 
 
 -- 2017-08-21
 
 
-`sh` is the only language I am using that has dynamic scoping for variables. (Privacy leaked: I do not use Emacs.)
+`sh` is the only language I am using that has dynamic scoping for variables. (Privacy leaked: I do not use Emacs.) 
 
 -- 2017-08-25
 
@@ -1156,7 +1156,7 @@ To stop EME (Encrypted Media Extension) from entering W3C Standard, FSF asked pe
 -- 2017-09-03
 
 
-Now mail.google.com redirects to www.google.com/gmail/about/, which has a fancy design. I miss the simple UI with a login form and storage space counter.
+Now mail.google.com redirects to www.google.com/gmail/about/, which has a fancy design. I miss the simple UI with a login form and storage space counter. 
 
 -- 2017-09-04
 
@@ -1166,7 +1166,7 @@ Baidu Map iOS keeps requesting location on background when location info is not 
 -- 2017-09-05
 
 
-The intuition behind Curry-Howard correspondence:
+The intuition behind Curry-Howard correspondence: 
 
 1. Staring from propositions (types of parameters),  we construct proof (function) to get other proposition (type of return value).
 2. The rule to construct proof (function) is called logic (type system).
@@ -1176,7 +1176,7 @@ Notes:
 
 1. In practice, the verification of proof is not always easy, because real word proof tends to omit a lot of implicit knowledge and intermediate steps.
 2. The verification of returned type of function is so easy that we do not need to verify that manually, the interpreter/compiler will verify that for us automatically.
-3. The Curry-Howard correspondence is the basis of theorem prover such as Coq.
+3. The Curry-Howard correspondence is the basis of theorem prover such as Coq. 
 
 -- 2017-09-08
 
@@ -1228,7 +1228,7 @@ Then I asked myself what will happen if the same thing happens to my gmail accou
 -- 2017-09-24
 
 
-[tutanota client side source code](https://github.com/tutao/tutanota/blob/ea1c1ef1c70c8f3c48dcfaa70f91cd41b7fbdd95/flow/libs.js#L86) contains Flow type definition for Mithril.
+[tutanota client side source code](https://github.com/tutao/tutanota/blob/ea1c1ef1c70c8f3c48dcfaa70f91cd41b7fbdd95/flow/libs.js#L86) contains Flow type definition for Mithril. 
 
 -- 2017-10-01
 
@@ -1292,7 +1292,7 @@ Compared to wine and tea, chocolate is inexpensive. The most expensive chocolate
 -- 2018-03-09
 
 
-Just published my first Firefox extension: [arxiv-url], a Firefox addon to replace arxiv pdf links to corresponding abstract links.
+Just published my first Firefox extension: [arxiv-url], a Firefox addon to replace arxiv pdf links to corresponding abstract links. 
 
 [arxiv-url]: https://addons.mozilla.org/en-US/firefox/addon/arxiv-url/
 
@@ -1340,7 +1340,7 @@ I learnt typing on a typewriter, so membrane keyboards, especially membrane keyb
 -- 2018-03-14
 
 
-Saw "novel blockchain gameplay" in an elevator ad of a browser game. This reminds me of a time when a lot of products advertise themselves using "novel nano-meter technology".
+Saw "novel blockchain gameplay" in an elevator ad of a browser game. This reminds me of a time when a lot of products advertise themselves using "novel nano-meter technology". 
 
 -- 2018-03-18
 
@@ -1551,7 +1551,7 @@ IBM bought RedHat as a cloud computing company, thus irrelevant projects origina
 2. Cygwin: nowadays WSL seems a better option (if I have the opportunity to use Windows in future)
 3. Gnome: I switched to KDE last year
 
-
+ 
 
 -- 2018-11-03
 
@@ -1700,7 +1700,7 @@ Currently I'm using a tree based todo manager, roughly something like:
      subsubtask1
   ...]]]
  task 2
- ...]
+ ...]  
 ```
 
 I'm quite satisfied with it for a few months, and found that it is much more expressive than former flat todo managers I've used.
@@ -1755,7 +1755,7 @@ BTW:
 -- 2019-03-03
 
 
-I read the first 4 items of Effective Java 2nd. edition several years ago, and had an impression that the book better renamed to Ineffective Java. There are 78 items total in the Effective Java 2nd. editon. Today I just learned that Effective Java updated to 3rd. edition on the end of 2017, targeting Java 9 (2nd. edition is target at Java 6). Now there are 90 items in the book. I am wondering does this imply that Java is more ineffective now? Or maybe People have finally discovered far more pitfalls of Java, thus although recent versions of Java fixed some issues, the net known ineffectiveness increases?
+I read the first 4 items of Effective Java 2nd. edition several years ago, and had an impression that the book better renamed to Ineffective Java. There are 78 items total in the Effective Java 2nd. editon. Today I just learned that Effective Java updated to 3rd. edition on the end of 2017, targeting Java 9 (2nd. edition is target at Java 6). Now there are 90 items in the book. I am wondering does this imply that Java is more ineffective now? Or maybe People have finally discovered far more pitfalls of Java, thus although recent versions of Java fixed some issues, the net known ineffectiveness increases?   
 
 -- 2019-03-08
 
@@ -1766,7 +1766,7 @@ GraalVM's native image feature is impressive to me:
 ; du -sh default*
 11M     default  # stand alone
 2.8M    default.jar # not counting the size of JVM
-; bench '/usr/bin/java -jar default.jar' './default'
+; bench '/usr/bin/java -jar default.jar' './default' 
 benchmarking bench//usr/bin/java -jar default.jar
 time                 118.3 ms   (115.1 ms .. 120.1 ms)
                      1.000 R²   (0.999 R² .. 1.000 R²)
@@ -1941,7 +1941,7 @@ So, according to Manjaro, all Linux Graphical Desktop Environments are efficient
 
 This must be joking.
 
- (I used KDE for two or three years and haven't used recent versions of Gnome, so I am unsure if Gnome is resource inefficient nowadays. If it is, then the resource inefficient Gnome is joking; if it is not, then Manjaro is making a joke about Gnome. That's why this must be joking. ;-)
+ (I used KDE for two or three years and haven't used recent versions of Gnome, so I am unsure if Gnome is resource inefficient nowadays. If it is, then the resource inefficient Gnome is joking; if it is not, then Manjaro is making a joke about Gnome. That's why this must be joking. ;-) 
 
 -- 2019-03-29
 
@@ -2015,9 +2015,9 @@ Unfortunately, figuring out these five sections in three chapters ("quickstart",
 -- 2019-04-20
 
 
-Android's Messages app does not provide a "delete all" function. Fortunately, most popular third-party sms apps all support "delete all" or "select all then delete", e.g. chompSMS, Handcent Next SMS, Textra.
+Android's Messages app does not provide a "delete all" function. Fortunately, most popular third-party sms apps all support "delete all" or "select all then delete", e.g. chompSMS, Handcent Next SMS, Textra. 
 
-Considering the fact that in early versions of Android, the messaging app does have this feature, my conspiracy theory is Google do not like us to delete our SMS, which could be analyzed by Google to build smarter AI and sell more ads.
+Considering the fact that in early versions of Android, the messaging app does have this feature, my conspiracy theory is Google do not like us to delete our SMS, which could be analyzed by Google to build smarter AI and sell more ads.  
 
 -- 2019-04-20
 
@@ -2026,7 +2026,7 @@ Just came across a video titled [Learn Python Programming Language in 2 Hours][v
 
 The speaker argues that the first reason to use Python is:
 
-> Solve complex problems in **less time** and **fewer lines of code**
+> Solve complex problems in **less time** and **fewer lines of code** 
 
 [video]: https://youtu.be/yE9v9rt6ziw
 
@@ -2048,7 +2048,7 @@ Currently this video has 411k views, 8.1k upvotes (less than 200 downvotes) on Y
 -- 2019-04-20
 
 
-Just tried the first three quizs of [Python introduction course on stepik][stepik], which is included in JetBrains' PyCharm Educational (I tried it with the EduTools plugin on IntelliJ).
+Just tried the first three quizs of [Python introduction course on stepik][stepik], which is included in JetBrains' PyCharm Educational (I tried it with the EduTools plugin on IntelliJ). 
 
 [stepik]: https://stepik.org/course/238
 
@@ -2066,7 +2066,7 @@ print("Hello, world! My name is weakish.")
 
 Failed! It turns out that the auto answer detection system thinks it is wired that my name is `weakish.`! Obviously the first quiz is to teach you just follow the instruction brainlessly. "My name ..." starts with a capital character, so it is a sentence. It is reasonable to end a sentence with a period (`.`), although this will fail the quiz.
 
-The second quiz introduces comments, without telling the learner comment is used for what.
+The second quiz introduces comments, without telling the learner comment is used for what. 
 
 And the third quiz introduces variable, but its first line is:
 
@@ -2074,7 +2074,7 @@ And the third quiz introduces variable, but its first line is:
 a = b = 2
 ```
 
-What? Introducing chained assignment before normal variable assignment (`a = 2`)?
+What? Introducing chained assignment before normal variable assignment (`a = 2`)? 
 
 Chained assignment is not often used in practice. And I do not think it is necessary to introducing it to beginners.
 
@@ -2199,7 +2199,7 @@ And the video also talks about docker and containers, without realizing that con
 
 To be honest, I like neither android, docker, nor systemd. I am not sure the fact that both android and docker are not in favor of systemd makes me more depressive or less depressive.
 
-
+ 
 
 -- 2019-05-03
 
@@ -2226,7 +2226,7 @@ egghand's subtitles are auto generated (at least on some videos I watched), but 
 
 ```python
 first, *rest = [1, 2, 3]  # first -> 1, rest -> [2, 3]  (1)
-lambda (x, y): (y, x)  # (2)
+lambda (x, y): (y, x)  # (2) 
 ```
 
 Python 3 supports `(1)` but not `(2)`, and Python 2 supports `(2)` but not `(1)`.
@@ -2235,7 +2235,7 @@ What a pity! If there is a python version supports both (Python 6?), I can write
 
 ```python
 lambda (first, *rest): ...
-```
+``` 
 
 -- 2019-05-10
 
@@ -2327,7 +2327,7 @@ But there is a long way to go:
 
 1. The touch bar need to provide more physical like feedback.
 2. The application need to allow user to configure controls, to keep some common operations in a fixed position, e.g. F5 (refresh) for browsers.
-3. The application need to pay great attention to design the touch bar controls, to offer a consistent and convenient  UI. For example, in Spark (an email client on Mac OS X), if I click the move button in the toolbar, the popup menu will list suggested folders first. However, if I press the move button on the touch bar, the touch bar just shows the full list (I have to slide for more folders), and the suggested list is missing.
+3. The application need to pay great attention to design the touch bar controls, to offer a consistent and convenient  UI. For example, in Spark (an email client on Mac OS X), if I click the move button in the toolbar, the popup menu will list suggested folders first. However, if I press the move button on the touch bar, the touch bar just shows the full list (I have to slide for more folders), and the suggested list is missing. 
 
 -- 2019-08-07
 
@@ -2376,7 +2376,7 @@ For parsing simplicity, the existential operator from CoffeeScript turns into so
 IMO `??` is acceptable, but `a?.[1]` is really very ugly. And in fact this reveals a fundamental problem of JavaScript:
 
 JavaScript sucks. Thus people add more features as workarounds. But people cannot remove features from it (otherwise it may become a bigger tragedy than Python 2/3). So JavaScript still sucks, and becomes more bloated and uglier at the same time.
-
+  
 
 -- 2019-11-13
 
@@ -2446,7 +2446,8 @@ Just downloaded my Translator Toolkit data via Google Takeout. Google Translator
 -- 2019-12-05
 
 
-On December 14, 2019, all yahoo groups become private (based on Yahoo Mails), the yahoo groups website will be shutdown and **all yahoo groups content will be deleted**!
+On December 14, 2019, all yahoo groups become private (based on Yahoo Mails), the yahoo groups website will be shutdown and **all yahoo groups content will be deleted**! 
+
 -- 2019-12-05
 
 
@@ -2575,5 +2576,277 @@ Haven't checked the RSS reader for two or three years. The RSS reader reported t
 I though TED talks are amazing. Recently I listened a lot of TED talks and found out that TED talks on average are *not* interesting to me. Previously I have only listened popular TED talks shared on social networks where I only follow people I find interesting. That's why I had this wrong impression.
 
 -- 2020-05-20
+
+
+Go 1.14 allows [embedding interfaces with identical method names][6977], as long as these methods have **identical signatures**.
+
+Again, Go avoided to attack the function subtyping problem.
+
+[6977]: https://github.com/golang/proposal/blob/master/design/6977-overlapping-interfaces.md 
+
+-- 2020-05-23
+
+
+It's  2020, and twitter & github still do not support IPv6.
+
+-- 2020-06-12
+
+
+Go is influenced by Python. Now Go also influences Python, e.g. black (`go fmt`) and pytest (`go test`).
+
+-- 2020-06-15
+
+
+Recently I watched [Openbook 2019 talk by Audrey Tang on YouTube][talk]. The talk is given in Chinese and here is some notes I have taken.
+
+[talk]: https://youtu.be/fzLz3LBMHz4
+
+## Assistant Intelligence
+
+Audrey regards AI as Assistant Intelligence instead of Artificial Intelligence.
+
+## Reading
+
+Audrey finds the following reading methods help her to understand the content:
+
+1. Translation or abstract translation.
+2. Taking notes and doodling with pens.
+
+When not having a pen at hand, Audrey will scan the book or pdf quickly (about 0.2s per page). Then she will rest for a while, maybe drinking some tea, and "review" those pages in mind with her eyes closed. If something occurred to her, she will note them down.
+
+When having a lot of materials to read, she will quickly scan them before sleep, and absorb them in sleep. She found out an 8 hour sleep can absorb around 400 pages of material.
+
+Audrey did most of her reading  on an iPad Pro (with a pen).
+She uses the kindle app for iPad, but she converts all books she bought from different channels using calibre.
+
+## Emoji as a universal language
+
+Audrey thinks emoji is a more universal language than English.
+
+However, I think while it is cool to [making slides in pictures and emoji][emoji-slide]. It is difficult to express complex ideas only with emoji. For example, can you [guess what these slides mean][guess]?
+
+[emoji-slide]: https://speakerdeck.com/audreyt/reinventing-democracy
+[guess]: https://paper.dropbox.com/doc/Reinventing-Democracy-EbWGsC1m7MTUqaxNNAmdC
+
+## Humor over Rumor
+
+Audrey introduces the disinformation definition in Taiwan: intentional harmful untruth (harmful to the public). To counter disinformation, clarification need to take a humorous form, to become a meme spreading faster and wider than the disinformation. Also, humor helps to counter the irrational anger which motivates people to spread the disinformation.
+
+## iCloud
+
+Unfortunately, although Audrey is a [key sponsor][] of [sandstorm][] (self hosted platform for open source applications), and introduces sandstorm to Taiwan government, she herself still relies on iCloud to sync personal files.
+
+[sandstorm]: https://sandstorm.io/
+[key sponsor]: https://sandstorm.io/about
+
+-- 2020-07-02
+
+
+> FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
+>
+> -- <https://fastapi.tiangolo.com>
+
+**"based on standard Python type hints"**, so Let's just check the source code:
+
+```python
+class FastAPI(Starlette):
+    def __init__(
+        self,
+        *,
+        debug: bool = False,
+        routes: List[BaseRoute] = None,
+        title: str = "FastAPI",
+        description: str = "",
+        version: str = "0.1.0",
+        openapi_url: Optional[str] = "/openapi.json",
+        openapi_tags: Optional[List[Dict[str, Any]]] = None,
+        servers: Optional[List[Dict[str, Union[str, Any]]]] = None,
+        default_response_class: Type[Response] = JSONResponse,
+        docs_url: Optional[str] = "/docs",
+        redoc_url: Optional[str] = "/redoc",
+        swagger_ui_oauth2_redirect_url: Optional[str] = "/docs/oauth2-redirect",
+        swagger_ui_init_oauth: Optional[dict] = None,
+        middleware: Sequence[Middleware] = None,
+        exception_handlers: Dict[Union[int, Type[Exception]], Callable] = None,
+        on_startup: Sequence[Callable] = None,
+        on_shutdown: Sequence[Callable] = None,
+        openapi_prefix: str = "",
+        root_path: str = "",
+        **extra: Dict[str, Any],
+    ) -> None: ...
+```
+
+`routes`, `middleware`, `exception_handlers`, `on_startup`, `on_shutdown` should be 'Optional', and types of `swagger_ui_init_oauth`, `exception_handlers`, `on_startup`, `on_shutdown` are inaccurate.
+
+It is 2020 and sadly the only mainstream dynamic programming language with a community which treats typing seriously is JavaScript.
+
+
+
+-- 2020-07-04
+
+
+[Sinatra] in Ruby:
+
+```ruby
+require 'sinatra'
+get '/' do
+      'Hello, World!'
+end
+```
+
+In Python (a.k.a. Flask):
+
+```python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+```
+
+In JavaScript (a.k.a. Express):
+
+```javascript
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+```
+
+In Java (a.k.a. Javalin):
+
+```java
+import io.javalin.Javalin;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        Javalin app = Javalin.create(config -> config.defaultContentType = "application/json").start(7000);
+        app.get("/", ctx -> ctx.json("Hello, World!"));
+    }
+}
+```
+
+In Go (a.k.a. Gin):
+
+```go
+package main
+import "github.com/gin-gonic/gin"
+
+func main() {
+	r := gin.Default()
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"hello": "world",
+		})
+	})
+	r.Run()
+}
+```
+
+[Sinatra]: http://sinatrarb.com/
+
+-- 2020-07-05
+
+
+Shame on me: I had not checked whether the producer violates GPL before buying an ebook reader.
+
+[Reddit: Onyx Boox will not share their linux kernel source code](https://www.reddit.com/r/linux/comments/hl09g7/onyx_boox_chinese_company_will_not_share_their/)
+
+-- 2020-07-11
+
+
+First impression on [hey email][hey]:
+
+1. I cannot write an email in plain text. There are no options in settings. All emails are HTML.
+2. To organize in emails in "Imbox"/"The Feed"/"Paper Trail", I have to manually classify them, or set up that all mails from a certain address go to one of these categories. I expected there will be something fancy magic based on the so called machine learning here, but there is not. And at least in Gmail I can create filters based on more conditions (e.g. subject or body content).
+3. I can select text in email and click "save clips". But they are only shown in the clips menu, there is no highlight in the original email. And in the clips page, I cannot click the clipped text to go to the exact position of the original email (I can only go to the beginning of the email). Therefore context is lost during clipping.
+4. I do not think a dedicated new mail services is necessary to implement most of the UX features hey offered.
+
+[hey]: https://app.hey.com/
+
+-- 2020-07-11
+
+
+> Also, vertical KDE panel is not supported under i3, so do not buy them.
+
+Oh, I must be very sleepy to write the above sentence. And maybe I dislike KDE subconsciously?
+
+-- 2020-07-14
+
+
+suitezero.archive posted their collection, a pair of fake Nike sneakers on [instagram]. Unlike most other fake Nike shoes, this pair has its own brand 登云 (meaning climbing the clouds in Chinese) and is produced by 上海皮鞋一厂 (Shanghai No.1 Leather Shoe Factory), a Chinese government-owned enterprise.
+
+[instagram]: https://www.instagram.com/p/B3Ig37PlQqB/
+
+![attached image](1596041471.jpg)
+
+-- 2020-07-29
+
+
+According to Uniqlo's size chart, the perfect height is around 165 cm and 150 cm. A person of 165 cm height can choose from both Men's Clothing and Women's Clothing, and a person of 150 cm height can choose from both Women's Clothing and Kids' Clothing.
+
+-- 2020-08-06
+
+
+There is no options in [Google Podcasts](https://podcasts.google.com) to export subscriptions in OPML. Even Google Takeout does not include Google Podcasts subscriptions. (violation of GDPR?)
+
+-- 2020-08-18
+
+
+The English words "Republic of China" is still preserved on the redesigned Taiwan passport. They are in a much smaller font wrapping around the national emblem, unnoticeable at a quick glance.
+
+IMHO, keeping it simple and stupid is much better using these creative tricks. The English words  "Republic of China" and all  Chinese words (including "Republic of China") should be removed. Also, national emblem can be replaced with Prunus mume (just like the design of the Japanese passport).
+
+-- 2020-09-02
+
+
+Macbook Pro 13 (2019) claimed to support "up to 10 hours wireless web", but in my daily use (two browsers with dozens of tabs, two IDEs, one electron based editor, one mail client, two IM applications, using both the internal and an external monitor) it can only last about 3 hours.
+
+-- 2020-10-24
+
+
+Why the KISS (Keep it simple, stupid) principle looks so seductive to me? Because the world is too vast to explore.
+
+-- 2020-10-25
+
+
+Burmese names do not have surnames. And traditionally Bamars can change their name at will, often with no government oversight. In other words, Burmese names are both screen names and real names.
+
+-- 2020-10-28
+
+
+[nico] is a minimalistic zero-configuration HTTP server. It can be used as a reverse proxy or a static file server, with auto applied SSL certificates. Nico have no options to configure. You can not even specify the ports to listen (it always listen on 80/443).
+
+The binary size on Linux amd64: 6.5 M (for comparison, Caddy is 35 M).
+
+[nico]: https://github.com/txthinking/nico
+
+-- 2020-11-15
+
+
+Q: Why I do not have faith in God?
+
+A: As Larry Wall paraphrased, faith is just two bits away:
+
+> 1. God exists, and
+> 2. God is good to people who really look for him
+
+I am not able to prove the first bit is true but let me just assume the first bit is true.
+
+The second bit is I have to really look for the God. Jesus said you only have to have faith the size of a mustard seed. But no matter how small the size of the faith, it is **still an opt-in option**. If God is really good, then why faith is **not an opt-out option**?
+
+Because we are sinners. And the sensible default option for sinners is no faith and going to hell. Salvation is a **gift** from the God.
+
+However, **a gift is something declinable by its very definition**. Thus I can choose to **decline this gift and keep on the default option**. I did so.
+
+Although I do not have faith in God, I am still grateful to God. **Thank God for allowing such a sinner as I to have the free will to decline his gift**.
+
+And what if the first bit is not true? Then I would like to thank god for being nonexistent.
+
+-- 2020-11-21
 
 
