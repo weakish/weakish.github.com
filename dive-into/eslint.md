@@ -46,6 +46,7 @@ TypeScript also has other helpful checks like `noFallthroughCasesInSwitch`.
 {
   "compilerOptions": {
     "strict": true,
+    "noUncheckedIndexAccess": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "noImplicitReturns": true,
