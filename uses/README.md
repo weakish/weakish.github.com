@@ -75,9 +75,6 @@ No JavaScript.
     One of the only two software subscriptions I have.
     I use it for Go, Java, Python and PHP.
 
-- [Abricotine](https://abricotine.brrd.fr/)
-
-    Markdown editor with **inline preview**.
 
 - [Leafpad](https://en.wikipedia.org/wiki/Leafpad)
 
