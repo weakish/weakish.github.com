@@ -89,11 +89,6 @@ No JavaScript.
 
     Probably the most functional GUI file manager in Linux.
 
-[Pop!_OS]: https://support.system76.com/articles/difference-between-pop-ubuntu/
-[Devuan]: https://devuan.org/
-[Fedora]: https://getfedora.org/
-[Arch]: https://www.archlinux.org/
-[Pyright]: https://github.com/microsoft/pyright
 [VSCodium]: https://vscodium.com/
 
 ## Wear
