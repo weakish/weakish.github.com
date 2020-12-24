@@ -66,14 +66,14 @@ No JavaScript.
 
 - [vscode](https://github.com/microsoft/vscode)
 
-    I use it for typescript and python (with the excellent [Pyright] extension).
+    I use it to write TypeScript, JavaScript, Markdown, and Clojure.
     Visual Studio Code is non free.
     I use [VSCodium], a community-driven, freely-licensed binary distribution.
 
 - [IntelliJ Idea](https://www.jetbrains.com/idea/)
 
     One of the only two software subscriptions I have.
-    I use it for Go, Java, and PHP.
+    I use it for Go, Java, Python and PHP.
 
 - [Abricotine](https://abricotine.brrd.fr/)
 
