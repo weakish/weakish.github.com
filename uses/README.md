@@ -55,13 +55,9 @@ No JavaScript.
 
 ## Software
 
-- [KDE Neon](https://neon.kde.org/)
+- [i3](https://i3wm.org/)
 
-    I want a full functional desktop environment.
-    So I have to choose between Gnome and KDE.
-    I do not choose Gnome because I do not like systemd, and KDE is much less dependent on systemd.
-    KDE Neon is the distribution provided by the KDE community, using Ubuntu LTS (a popular distribution) under the hood.
-    I may try [Pop!_OS] (Ubuntu with the tech-savvy professional in mind), [Devuan] (I really dislike systemd!), [Fedora] (a bit more cutting edge than Ubuntu and still popular), or [Arch] (AUR and Arch wiki) in future.
+    i3 is an active maintained tiling window manager with good documentation.
 
 - [Firefox](https://www.mozilla.org/)
 
