@@ -27,7 +27,16 @@
           <a href="https://www.instagram.com/jakukyo/" title="Instagram"><img src="https://icongr.am/feather/instagram.svg" alt="Feather Icon Instagram"></a>
           <a href="https://twitter.com/weakish" title="Twitter"><img src="https://icongr.am/feather/twitter.svg" alt="Feather Icon Twitter"></a>
           <a href="/rss.xml" title="RSS 2.0 Feed"><img src="https://icongr.am/feather/rss.svg" alt="Feather Icon RSS"></a>
-          <a href="/uses/" title="uses"><img src="https://icongr.am/feather/book-open.svg" alt="Feather Icon Book Open"></a>
+          <a href="{{site.url}}/uses/" title="uses"><img src="https://icongr.am/feather/book-open.svg" alt="Feather Icon Book Open"></a>
+          {% assign leading = site.url | slice: 0 %}
+          {% if leading == '/' %}
+            {% assign zerome_url = '/Me.ZeroNetwork.bit/?Profile/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/weakish@zeroid.bit' %}
+            {% assign zeronet_logo = 'zeronet_logo.svg' %}
+          {% else %}
+            {% assign zerome_url = "/log" %}
+            {% assign zeronet_logo = 'zeronet_grey.svg' %}
+          {% endif %}
+          <a href="{{ zerome_url }}" title="ZeroMe"><img src="{{ site.url }}/assets/images/{{ zeronet_logo }}" alt="ZeroNet Logo" width="32" height="32"></a>
         </p>
       </div>
         <p>

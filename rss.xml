@@ -23,20 +23,22 @@ layout: none
     <width>128</width>
     <height>128</height>
  </image>
+ {% assign absolutelink = '<a href="' | append: site.url | append: '/' %}
+ {% assign absoluteimglink = '<img src=' | append: site.url | append: '/' %}
  {% for path in site.articles %}
- {% assign page = site.pages | where: "path", path | first %}
- <item>
-  {% comment %}liquid does not know "\n"{% endcomment %}
-  <title>{{page.content | newline_to_br | split: '<br />' | first | remove_first: '# '}}</title>
-  {% assign page_content_lines = page.content | newline_to_br | split: '<br />' %}
-  {% assign page_content = '' %}
-  {% for line in page_content_lines offset:1 %}
-    {% assign page_content = page_content | append: line %}
-  {% endfor %}
-  <description>{{ page_content | markdownify | replace: '<a href="/', '<a href="https://mmap.page/' | replace: '<img src="/', '<img src="https://mmap.page/' | xml_escape}}</description>
-  <link>{{ site.url }}{{ page.url }}</link>
-  <guid isPermaLink="false">{{ page.url }}</guid>
- </item>
-{% endfor %}
+  {% assign page = site.pages | where: "path", path | first %}
+  <item>
+    {% comment %}liquid does not know "\n"{% endcomment %}
+    <title>{{page.content | newline_to_br | split: '<br />' | first | remove_first: '# '}}</title>
+    {% assign page_content_lines = page.content | newline_to_br | split: '<br />' %}
+    {% assign page_content = '' %}
+    {% for line in page_content_lines offset:1 %}
+      {% assign page_content = page_content | append: line %}
+    {% endfor %}
+    <description>{{ page_content | markdownify | replace: '<a href="/', absolutelink | replace: '<img src="/', absoluteimglink | xml_escape}}</description>
+    <link>{{ site.url }}{{ page.url }}</link>
+    <guid isPermaLink="false">{{ page.url }}</guid>
+  </item>
+ {% endfor %}
 </channel>
 </rss>

@@ -1,3 +1,5 @@
+markdown: CommonMarkGhPages
+
 plugins:
   - jekyll-redirect-from
   - jekyll-sitemap

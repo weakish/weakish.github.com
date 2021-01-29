@@ -29,7 +29,10 @@
   {% assign minHeader = include.h_min | default: 1 %}
   {% assign maxHeader = include.h_max | default: 6 %}
   {% assign beforeHeading = include.beforeHeading %}
-  {% assign nodes = include.html | split: '<h' %}
+  {% assign absolutelink = '<a href="' | append: site.url | append: '/' %}
+  {% assign absoluteimglink = '<img src="' | append: site.url | append: '/' %}
+  {% assign html_with_absolute_urls = include.html | replace: '<a href="/', absolutelink | replace: '<img src="/', absoluteimglink %}
+  {% assign nodes = html_with_absolute_urls | split: '<h' %}
 
   {% capture edited_headings %}{% endcapture %}
 
