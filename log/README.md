@@ -2837,7 +2837,7 @@ A: As Larry Wall paraphrased, faith is just two bits away:
 
 I am not able to prove the first bit is true but let me just assume the first bit is true.
 
-The second bit is I have to really look for the God. Jesus said you only have to have faith the size of a mustard seed. But no matter how small the size of the faith, it is **still an opt-in option**. If God is really good, then why faith is **not an opt-out option**?
+The second bit is I have to really look for the God. Jesus said you only have to have faith the size of a mustard seed. But no matter how small the size of the faith is, it is **still an opt-in option**. If God is really good, then why faith is **not an opt-out option**?
 
 Because we are sinners. And the sensible default option for sinners is no faith and going to hell. Salvation is a **gift** from the God.
 
@@ -2848,5 +2848,101 @@ Although I do not have faith in God, I am still grateful to God. **Thank God for
 And what if the first bit is not true? Then I would like to thank god for being nonexistent.
 
 -- 2020-11-21
+
+
+surge.sh still focuses on static site hosting (Netlify used to focus on static site hosting but they added a lot of dynamic features later), with a command line UI (now.sh (rebranded as vercel now) used to feature this but now their documentation encourages you to do things via their web dashboard). 
+
+-- 2020-11-28
+
+
+Trying to manually resolve a dependencies conflict broken my KDE desktop. Almost all KDE applicants do not work. It seems that KDE Neon assumes you will never uninstall those preinstalled KDE packages and specifies their dependencies causally. Fortunately I can still log into the i3 session (previously I used i3 as the window manager of the KDE session), but I still miss dolphin (temporarily using nautilus) and konsole (temporarily using hyper).
+
+Maybe this is a good time to try out other distributions or even operating systems, e.g. Pop!_OS?
+
+-- 2020-12-17
+
+
+JAMStack is another buzzword targeting clients using LAMP stack (e.g. wordpress) to host their website. Static website generator will not work because it will confuse those clients: "Static website? Our site was static N years ago and we use FTP to upload those static web pages to the server. Didn't you told us that static website is outdated with limited features? Why go back to a static site?"
+
+I do not think it is a good idea to switch from one shitty language (PHP) to another shitty language (JavaScript), particularly when this switch usually means more CO2 emissions.
+
+-- 2020-12-19
+
+
+[Pop!_OS][pop] is a Ubuntu based distribution which features:
+
+- A tiling extension for gnome shell (I am a happy i3 user and if you really want to use GNOME, you can install this extension yourself on Ubuntu).
+- Flatpak (Although Ubuntu have snap preinstalled, you can still use Flatpak on Ubuntu, just as on most other Linux distributions).
+- Automatic full-disk encryption during installation. (I'm astonished that Ubuntu still requires manual setup to enable full-disk encryption during installation in 2020. But to be honest, manual setup is not hard.)
+
+So nothing exciting here. But to be fair, "just works out of the box" is a big feature. Particularly, out of the box full-disk encryption is very important for inexperienced users to adapt it.
+
+Pop!_OS is what Ubuntu should have been.
+
+[pop]: https://pop.system76.com/ 
+
+-- 2020-12-20
+
+
+Fedora Silverblue uses [OSTree] for its base system, and it is the most mature distribution with an OSTree based base system.
+
+Since the base system is immutable, new software are installed via Flatpak (sandboxed GUI applications with all its dependencies packaged in) or toolbox (command line programs running inside docker like containers). There are a few exceptions (shell, drivers, etc.) need to be installed via layered rpm packages, which require a reboot.
+
+[OSTree]: https://ostreedev.github.io/ostree/
+
+I think this is a cool idea. However, I am still unsure whether it is worth to trade in extra disk space and incompatibilities with some software for the confidence that I can  rollback to a usable base system quickly (just reboot) anytime (not require a Internet connection).
+
+-- 2020-12-20
+
+
+While immature distributions (Arch, Ubuntu, Fedora, etc.) dropped x86 support between 2017-2019, a lot of serious distributions (Slackware, Debian, Gentoo, OpenSUSE, Alpine, etc.) still support old x86 computers.
+
+FYI, CRUX dropped x86 support on [2013].
+
+[2013]: https://crux.nu/Main/ReleaseNotes3-0
+
+-- 2020-12-22
+
+
+The fish shell improves user experience a lot, both for interactive usage and scripting usage.
+
+For example, to convert some SVG wallpapers to JPG (I use feh to display wallpapers under the i3 window manage, and feh does not recognize SVG files):
+
+```fish
+for i in /usr/share/wallpapers/**/1920x1080.svg
+  convert $i (string split "/" $i)[5].jpg
+end
+```
+
+Concise and clear.
+
+-- 2020-12-23
+
+
+Pop!_OS advertises itself as a developer friendly Linux distribution. However, it uses flatpak, whose sandbox system has a lot of issues with IDEs and editors (they typically need to access system commands and files).
+
+Personally I prefer AppImage. It solves the "with dependencies packaged in and run on any Linux distributions" problem in a simple way and does not rely on  a centric distribution channel. If I want to use AppImage packaged programs in sandbox, I can use firejail. "Do one thing and do it well." AppImage respects the old unix philosophy. 
+
+-- 2020-12-26
+
+
+LinkedIn forces me to login & bind my mobile phone number to **just view** its content. Today I discovered an alternative way to check someone's work & education background, search "NAME site:rocketreach.co" or "NAME COMPANY site:rocketreach.co" in search engines.
+
+-- 2021-01-23
+
+
+Shell scripting is a very bad programming language. But YAML is worse.
+
+-- 2021-01-24
+
+
+From 20200702, the Internet has around 16 months to [migrate from onion services v2 to v3][v3] once and for all. Now there are less than half a year left, and [onion services run by the Tor projec itself still use v2][v2].
+
+Also, the future v2 deprecation will turn all existing v2 tor URLs to dead links. This incompatibility is really bad.
+
+[v3]: https://blog.torproject.org/v2-deprecation-timeline
+[v2]: https://onion.torproject.org
+
+-- 2021-01-26
 
 
