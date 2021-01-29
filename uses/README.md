@@ -6,8 +6,8 @@
 
 - [GitHub Pages](https://pages.github.com/)
 
-    Unfortunately it dose not support IPv6.
-    I am considering to switch to Netlify.
+    Unfortunately it [dose not support IPv6][github-354].
+    I am considering a switch to [Netlify].
 
 - [icongram](https://icongr.am/)
 
@@ -18,12 +18,15 @@
 
     The HTML form at the page bottom allows visitors to search this site via site search at DuckDuckGo.
 
+[github-354]: https://github.com/isaacs/github/issues/354
+[Netlify]: https://www.netlify.com/blog/2018/11/26/announcing-ipv6-support-on-the-netlify-application-delivery-network/
 [Feather]: https://feathericons.com/
+
 
 ### Languages
 
 Just HTML and CSS.
-No JavaScript.
+100% JavaScript free.
 
 ### Static Site Generator
 
@@ -58,23 +61,23 @@ No JavaScript.
 - [i3](https://i3wm.org/)
 
     i3 is an active maintained tiling window manager with good documentation.
+    Also its [container tree based layout](/dive-into/i3/) is very flexible.
 
 - [Firefox](https://www.mozilla.org/)
 
-    Firefox also has a lot of issues.
+    Firefox sucks.
     But other browsers suck more.
 
 - [vscode](https://github.com/microsoft/vscode)
 
-    I use it to write TypeScript, JavaScript, Markdown, and Clojure.
+    Mostly used for markdown editing and scripting.
     Visual Studio Code is non free.
     I use [VSCodium], a community-driven, freely-licensed binary distribution.
 
 - [IntelliJ Idea](https://www.jetbrains.com/idea/)
 
     One of the only two software subscriptions I have.
-    I use it for Go, Java, Python and PHP.
-
+    I use it for TypeScript, JavaScript, Go, Java, Python and PHP.
 
 - [Leafpad](https://en.wikipedia.org/wiki/Leafpad)
 
@@ -93,7 +96,8 @@ No JavaScript.
 
 ## Wear
 
-I wear [vintage style running shoes][thedeffest], those revised models originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
+All casual clothing, mostly Muji, Uniqlo, and Decathlon. I have no formal, semi-formal, or informal clothing. I usually ignore any dress code. I do not go places enforcing a non-casual dress code.
+I usually wear sneakers and prefer [vintage style running shoes][thedeffest], those revised models originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
 
 [thedeffest]: https://www.thedeffest.com/
 [1960s]: /uses/mexico-66.jpg "https://www.onitsukatiger.com/system/static/39dbf4ad139bf877663cb601ad40e373.jpg"
