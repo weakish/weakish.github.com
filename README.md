@@ -25,6 +25,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 ## Tools
 
 - [Build a Micro Static Site With GitHub Pages](dive-into/gh-pages/)
+- [Deploy Jekyll Site to ZeroNet](dive-into/jekyll-zeronet/)
 - [Selected Gitmojis](dive-into/gitmoji/)
 - [OSX Survival Guide](dive-into/osx/)
 - [Android Setup Guide](dive-into/android/)

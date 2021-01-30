@@ -39,10 +39,10 @@ docs/
     README.md
     quick-start.md
     install/
-    linux.md
-    osx.md
-    bsd.md
-    win.md
+        linux.md
+        osx.md
+        bsd.md
+        win.md
 ```
 
 URL paths will be:
