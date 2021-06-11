@@ -50,7 +50,8 @@ TypeScript also has other helpful checks like `noFallthroughCasesInSwitch`.
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true
     // more options omitted
   }
 }

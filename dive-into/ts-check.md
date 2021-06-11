@@ -219,6 +219,7 @@ to tell vscode to check JavaScript files.
     "noUnusedLocals": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
     "allowJs": true,
     "checkJs": true,
     "noEmit": true,
