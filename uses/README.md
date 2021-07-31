@@ -98,6 +98,8 @@ Just HTML and CSS.
 
 All casual clothing, mostly Uniqlo and Decathlon. I have no formal, semi-formal, or informal clothing. I usually ignore any dress code. I do not go places enforcing a non-casual dress code.
 I usually wear sneakers and prefer [vintage style running shoes][thedeffest], those revised models originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
+(Update: It turns out that some of those shoes are not very comfortable when my feet hurt.
+And after all, I do not have a pair of athelete's feet.)
 
 [thedeffest]: https://www.thedeffest.com/
 [1960s]: /uses/mexico-66.jpg "https://www.onitsukatiger.com/system/static/39dbf4ad139bf877663cb601ad40e373.jpg"
