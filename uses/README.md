@@ -54,7 +54,7 @@ Just HTML and CSS.
 
 - [Razer DeathAdder Left-handed Edition](https://www.razer.com/eu-en/gaming-mice/razer-deathadder-left-handed-edition)
 
-    One of the few left-handed mouses available in my region.
+    One of the few left-handed mouses.
 
 ## Software
 
@@ -96,7 +96,7 @@ Just HTML and CSS.
 
 ## Wear
 
-All casual clothing, mostly Muji, Uniqlo, and Decathlon. I have no formal, semi-formal, or informal clothing. I usually ignore any dress code. I do not go places enforcing a non-casual dress code.
+All casual clothing, mostly Uniqlo and Decathlon. I have no formal, semi-formal, or informal clothing. I usually ignore any dress code. I do not go places enforcing a non-casual dress code.
 I usually wear sneakers and prefer [vintage style running shoes][thedeffest], those revised models originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
 
 [thedeffest]: https://www.thedeffest.com/
