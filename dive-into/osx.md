@@ -59,6 +59,30 @@ I also installed [AltTab] to switch applications with `alt-tab`.
 
 [AltTab]: https://alt-tab-macos.netlify.app/
 
+By the way, OS X has native system-wide support for some Emacs keybinds, e.g.
+
+| Command | Key |
+| - | - |
+| beginning-of-line | `^a` |
+| end-of-line | `^e` |
+| previous-line | `^p` |
+| next-line | `^n` |
+| forward-char | `^f` |
+| backward-char | `^b` |
+| delete-char | `^d` |
+| backward-delete-char | `^h` |
+| transpose-char | `^t` |
+| kill-line | `^k` |
+| yank-line | `^y` |
+| insert-line | `^o` |
+| page-down | `^v` |
+| recenter | `^l` |
+
+And there are some keybinds slightly different the orignal Emacs keybinds:
+
+- forward/backward-word, use two keys (`Control` and `Option`) for the `Meta` key.
+- shrink/extend-selection, add an additional `Shift` key but not needing to enter the selection mode (`C-SPC`) first.
+
 ## Mouse
 
 Unselect "Scroll direction: Natural" in System Preferences > Mouse.
