@@ -96,7 +96,7 @@ Just HTML and CSS.
 
 ## Wear
 
-All casual clothing, mostly Uniqlo and Decathlon. I have no formal, semi-formal, or informal clothing. I usually ignore any dress code. I do not go places enforcing a non-casual dress code.
+All casual clothing, mostly H&M, Uniqlo and Decathlon. I have no formal, semi-formal, or informal clothing. I usually ignore any dress code. I do not go places enforcing a non-casual dress code.
 I usually wear sneakers and prefer [vintage style running shoes][thedeffest], those revised models originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
 (Update: It turns out that some of those shoes are not very comfortable when my feet hurt.
 And after all, I do not have a pair of athelete's feet.)
