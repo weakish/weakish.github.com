@@ -15,3 +15,10 @@
 - **Notepad++** 輕便的文本編輯器
 - **Windows Terminal** 應該預裝卻沒有預裝的終端模擬器
 - **PowerToys** 這些功能也應該直接做進系統
+
+## Docker
+
+鑑於 Docker Desktop For Windows 的許可問題，我直接在 WSL2 的 Debian 裏安裝了 Docker.
+WSL2 中的 Debian 環境和標準 Debian 有所差異（比如沒有 systemd），所以 Docker 不能開箱即用，需要額外進行一些配置，詳見[這裏的說明][github-wsl]。
+
+[github-wsl]: https://github.com/microsoft/WSL/discussions/4872#discussioncomment-76635
