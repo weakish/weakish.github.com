@@ -22,3 +22,11 @@
 WSL2 中的 Debian 環境和標準 Debian 有所差異（比如沒有 systemd），所以 Docker 不能開箱即用，需要額外進行一些配置，詳見[這裏的說明][github-wsl]。
 
 [github-wsl]: https://github.com/microsoft/WSL/discussions/4872#discussioncomment-76635
+
+## 命令行下訪問剪貼板
+
+WSL 2 下可以使用 `powershell.exe Get-Clipboard` 和 `clip.exe` 讀寫剪貼板的內容：
+
+```sh
+powershell.exe Get-Clipboard | cut -d ',' -f1 | clip.exe
+```
