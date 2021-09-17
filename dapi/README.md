@@ -94,6 +94,7 @@
 - [Flutter试玩](flutter/)
 - [编程入门路线](learn-programming/)
 - [这里并不是 blog](not-a-blog/)
+- [Windows 使用手冊](windows-handbook/)
 
 ## 文藝
 
