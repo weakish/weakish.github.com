@@ -2946,3 +2946,35 @@ Also, the future v2 deprecation will turn all existing v2 tor URLs to dead links
 -- 2021-01-26
 
 
+The ZWJ (Zero Width Joiner)  Unicode character can combine multiple emojis to be displayed as a single emoji. However, a platform may or may not include support for certain the emoji ZWJ sequences. For example, 👁‍🗨 is an emoji ZWJ sequence combining 👁 and 🗨. And if an Emoji ZWJ Sequence is not supported on the platform, it will be displayed as individual emojis, e.g. 🏔️‍🦁‍🏁
+
+-- 2021-09-21
+
+
+The version history of Telegram for macOS looks normal [on its website](https://macos.telegram.org/). But the release messages of [its beta version is very interesting](https://install.appcenter.ms/users/keepcoder/apps/telegram-swift/distribution_groups/public).
+
+For example:
+
+> Thought to be lost for decades, Rembrandt’s first portrait “The Farmer and the Service Message Fix” was recently discovered in the attic of a Belgian café.
+>
+> A spoonful of sugar makes the service message fix go down.
+>
+> What's cooler, fixes or a cucumber?
+>
+> I’ve got 99 problems but the fixes ain’t one.
+>
+> The secret ingredient to a good update is a tablespoon of fixes.
+>
+> No devs were harmed in the making of the widget/themes in this update.
+>
+> Mom, where did you put my fixes?
+>
+> Fixes are in the eye of the beholder.
+>
+> Fixes are now machine-washable.
+>
+> Roll a D20 to resist the fixes check.
+
+-- 2021-10-01
+
+
