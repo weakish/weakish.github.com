@@ -41,7 +41,6 @@ Just HTML and CSS.
 - HP Z22n G2 Display
 
     Compact. Accurate color. 1920 x 1080 is sufficient for Linux.
-    (I use a 4K display with a MacBook Pro at office.)
 
 - [IKBC C87](https://www.ikbckeyboard.com/product-page/c87)
 
@@ -58,10 +57,13 @@ Just HTML and CSS.
 
 ## Software
 
-- [i3](https://i3wm.org/)
+- Windows
 
-    i3 is an active maintained tiling window manager with good documentation.
-    Also its [container tree based layout](/dive-into/i3/) is very flexible.
+    An init.d with more features than systemd to start Linux.
+
+- [Debian](https://www.debian.org/)
+
+    Under WSL at office and Ubuntu at Home.
 
 - [Firefox](https://www.mozilla.org/)
 
@@ -70,14 +72,9 @@ Just HTML and CSS.
 
 - [vscode](https://github.com/microsoft/vscode)
 
-    Mostly used for markdown editing and scripting.
-    Visual Studio Code is non free.
-    I use [VSCodium], a community-driven, freely-licensed binary distribution.
-
-- [IntelliJ Idea](https://www.jetbrains.com/idea/)
-
-    One of the only two software subscriptions I have.
-    I use it for TypeScript, JavaScript, Go, Java, Python and PHP.
+    So I do pair programming with [GitHub Copilot][copilot].
+    Also it works well with WSL.
+    And with [gitpod], I can use vscode as long as I have access to Internet and a morden web browser.
 
 - [Leafpad](https://en.wikipedia.org/wiki/Leafpad)
 
@@ -86,13 +83,14 @@ Just HTML and CSS.
 - [Konsole](https://konsole.kde.org/)
 
     The default terminal emulator in KDE.
-    Quite feature-rich.
+    A feature-rich one.
 
 - [Dolphin](https://kde.org/applications/en/system/org.kde.dolphin)
 
     Probably the most functional GUI file manager in Linux.
 
-[VSCodium]: https://vscodium.com/
+[copilot]: https://copilot.github.com/
+[gitpod]: https://www.gitpod.io/
 
 ## Wear
 
