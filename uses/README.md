@@ -55,6 +55,18 @@ Just HTML and CSS.
 
     One of the few left-handed mouses.
 
+- [iPhone SE]
+
+    A small portable phone.
+    In fact I prefer Android phones, but Google only provides three years of security updates for Pixel phones.
+    For example, Pixel 4a will not receive any security updates after 2023.
+    I also prefer the first generation of iPhone SE, which is lighter and smaller.
+    However, the first generation uses the A9 chip which is vulnerable to [checkm8].
+
+
+[iPhone SE]: https://support.apple.com/kb/SP820?locale=en_US
+[checkm8]: https://arstechnica.com/information-technology/2019/09/developer-of-checkm8-explains-why-idevice-jailbreak-exploit-is-a-game-changer/
+
 ## Software
 
 - Windows
