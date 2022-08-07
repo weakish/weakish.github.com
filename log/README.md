@@ -1,6 +1,189 @@
-commit 6d90c7720e6365866122cb717222efb68e0533da<br>
-Author: Jang Rush <weakish@gmail.com><br>
-Date:   Sat Oct 2 04:47:44 2021 +0800<br>
+
+
+Date:   Sun Aug 7 04:01:09 2022 +0000
+
+A Survey on Social Networks
+
+- [FSF] is cautious on social networks:
+
+    - Gnu Social (former StatusNet)
+
+    - Mastodon
+
+    - PeerTube
+
+    - Twitter
+
+        FSF uses a custom script to post to their GNU social, Mastodon,
+        and Twitter accounts simultaneously.
+        This avoids using the nonfree JS of the Twitter website.
+        Choqok, a KDE application which supports Twitter and GNU Social,
+        is used to view replies and retweet posts.
+        Unlike Facebook, FSF have no ethical objection
+        to **merely** having an account on Twitter.
+
+- [EFF] tends to reach for more people:
+
+    - Twitter
+    - Facebook
+    - Instagram
+    - YouTube
+    - Flickr
+
+- [Debian] hosts a micronews site (a static site generated via pelican),
+  and the feed is automatically syndicated to these non-official accounts:
+
+    - Mastodon & GNU Social
+
+        Since both use the ActivityPub protocol,
+        the non-official Debian Mastodon account can be subscribed from
+        GNU Social.
+
+    - Twitter
+
+        Besides the non-official @debian, @debconf, @planetdebian
+        accounts, several Debian teams have accounts on Twitter.
+
+    - Facebook
+
+    - LinkedIn
+
+    - Hacker News
+
+- [Gentoo] seemingly chooses the most popular social networks:
+
+    - Twitter
+
+    - Facebook
+
+- Python, Slackware, FreeBSD, NetBSD, etc.
+
+    They just do not care about social networks.
+
+Summary
+
+- Host content on your own site, optionally syndicate to social networks.
+- Use distributed social networks such as Mastodon.
+- Twitter is an acceptable choice among popular social networks.
+
+[FSF]: https://www.fsf.org/
+[EFF]: https://www.eff.org/
+[Debian]: https://wiki.debian.org/Teams/Publicity/micronews
+[Gentoo]: https://www.gentoo.org/
+
+
+
+Date:   Sat Aug 6 02:24:37 2022 +0000
+
+Stacked encryption systems
+
+tl;dr
+
+- Compared to block level encryption or file system native encryption,
+stacked encrypted files can be easily backed up via popular cloud
+storage services such as DropBox.
+- Use cryfs for sensitive data.
+- Use gocryptfs in reverse mode for other data if the cloud storage does
+not support end to end encryption itself.
+
+Comparison:
+
+- ecryptfs
+
+    - pros: mature, merged in Linux kernel
+    - cons: Linux only
+    - cons: no protection over meta data such as file numbers or file
+    sizes
+
+- gocryptfs
+
+    - pros: also offers a [reverse mode], which can be used to backup
+    files on a block encrypted disk (e.g. LUKS) to a cloud storage
+    (e.g. DropBox)
+    - pros: fastest in performance among stacked encryption solutions
+    - pros: available under Linux and macOS, with third party Windows
+    and Android port
+    - cons: no protection over meta data
+    - cons: [weaker integrity protection][threat model]
+
+- cryfs
+
+    - pros: meta data protected via chunked storage
+    - pros: support Linux, macOS, and Windows (experimental)
+    - pros: included in [slackware 15]
+    - cons: significant speed and size overhead
+
+[reverse mode]: https://nuetzlich.net/gocryptfs/reverse_mode_crypto/
+[threat model]: https://nuetzlich.net/gocryptfs/threat_model/
+[slackware 15]: http://www.slackware.com/releasenotes/packages15.0.php
+
+For more information, refer to comparisons on websites of [gocryptfs]
+and [cryfs].
+
+[gocryptfs]: https://nuetzlich.net/gocryptfs/comparison/
+[cryfs]: https://www.cryfs.org/comparison
+
+
+
+Date:   Sat Aug 6 02:17:17 2022 +0000
+
+Just tried installing EndeavourOS on a virtual machine.
+
+The Caramares installer can configure LUKS full disk encryption
+automatically. However, when booting the freshly installed system,
+I can only type the encryption passphrase in US qwerty keyboard layout.
+
+[frostschutz] suggests a workaround:
+
+> add the passphrase twice. So the same sequence of key presses will be accepted
+> in both US/qwerty layout and whatever you usually use (in my case, DE/qwertz).
+
+[frostschutz]: https://unix.stackexchange.com/a/174657
+
+Inspired from frostschutz, I configured the installation with qwerty
+layout. When I input the passphrase for LUKS encryption, I just input
+the sequence of key presses as the same if I were on a dvorak layout.
+
+When setting up the user password during the installation, I input a
+temporary password containing only numbers.
+
+After booting into the installed system, I changed the user password and
+the keyboard layout.
+
+
+
+Date:   Mon Jan 17 16:39:49 2022 +0000
+
+I used to think Dvorak layout is universal,
+
+until recently I became interested in text processors
+and learned that most of them do not support Dvorak layout.
+
+For example, Pomara [DM100] does not support Dovark:
+
+> Q: DM100のキーボードは「QWERTY配列」だが「Dvorak配列」に変更はできませんか。
+>
+> A: 変更はできません。
+
+[DM100]: https://www.kingjim.co.jp/faq/pomera/dm100/1413.html
+
+
+
+Date:   Wed Dec 29 23:33:25 2021 +0800
+
+Recently I bought a HP Pavilion laptop.
+
+The setup process is terrible.
+I have to turn off my WiFi router to setup a local account.
+Otherwise it forces me to setup a Microsoft online account.
+
+Also, it requires me to setup a PIN after I have already setup a
+password.
+How stupid it is!
+
+
+
+Date:   Sat Oct 2 04:47:44 2021 +0800
 
 I decided to take notes as git commit messages.
 
@@ -34,9 +217,9 @@ generate a static html page:
 - I may use branches for notes in different languages or categories in
 future.
 
-commit 16392778165344aea67b7923653e0bc4c9b37a73<br>
-Author: Jang Rush <weakish@gmail.com><br>
-Date:   Sat Oct 2 04:25:48 2021 +0800<br>
+
+
+Date:   Sat Oct 2 04:25:48 2021 +0800
 
 Just switched from vim to neovim.
 
@@ -60,9 +243,9 @@ sudo update-alternatives --config vim
 
 The content above itself is written under neovim.
 
-commit 99a22785d5ecb156e77c04bbcf5272763250f5be<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Oct 1 13:47:08 2021 +0000<br>
+
+
+Date:   Fri Oct 1 13:47:08 2021 +0000
 
 The version history of Telegram for macOS looks normal [on its website](https://macos.telegram.org/). But the release messages of [its beta version is very interesting](https://install.appcenter.ms/users/keepcoder/apps/telegram-swift/distribution_groups/public).
 
@@ -88,15 +271,15 @@ For example:
 >
 > Roll a D20 to resist the fixes check.
 
-commit 18f8bd31c6f35d21f54b3196e5e572f5003a6732<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Sep 21 13:43:23 2021 +0000<br>
+
+
+Date:   Tue Sep 21 13:43:23 2021 +0000
 
 The ZWJ (Zero Width Joiner)  Unicode character can combine multiple emojis to be displayed as a single emoji. However, a platform may or may not include support for certain the emoji ZWJ sequences. For example, 👁‍🗨 is an emoji ZWJ sequence combining 👁 and 🗨. And if an Emoji ZWJ Sequence is not supported on the platform, it will be displayed as individual emojis, e.g. 🏔️‍🦁‍🏁
 
-commit c676171db1efd674ed213cf5ac010657c9e3eada<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Jan 26 16:29:25 2021 +0000<br>
+
+
+Date:   Tue Jan 26 16:29:25 2021 +0000
 
 From 20200702, the Internet has around 16 months to [migrate from onion services v2 to v3][v3] once and for all. Now there are less than half a year left, and [onion services run by the Tor projec itself still use v2][v2].
 
@@ -105,29 +288,29 @@ Also, the future v2 deprecation will turn all existing v2 tor URLs to dead links
 [v3]: https://blog.torproject.org/v2-deprecation-timeline
 [v2]: https://onion.torproject.org
 
-commit 777e697d841ee965cc247f35c54cdf5447437aab<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Jan 24 06:07:27 2021 +0000<br>
+
+
+Date:   Sun Jan 24 06:07:27 2021 +0000
 
 Shell scripting is a very bad programming language. But YAML is worse.
 
-commit 284d5d135e6c2bb75e1119b4e2090dd4a8090ea8<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Jan 23 17:42:32 2021 +0000<br>
+
+
+Date:   Sat Jan 23 17:42:32 2021 +0000
 
 LinkedIn forces me to login & bind my mobile phone number to **just view** its content. Today I discovered an alternative way to check someone's work & education background, search "NAME site:rocketreach.co" or "NAME COMPANY site:rocketreach.co" in search engines.
 
-commit 881be22a7e89e7888ff896b093c13264c770d5a1<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Dec 26 06:49:35 2020 +0000<br>
+
+
+Date:   Sat Dec 26 06:49:35 2020 +0000
 
 Pop!_OS advertises itself as a developer friendly Linux distribution. However, it uses flatpak, whose sandbox system has a lot of issues with IDEs and editors (they typically need to access system commands and files).
 
 Personally I prefer AppImage. It solves the "with dependencies packaged in and run on any Linux distributions" problem in a simple way and does not rely on  a centric distribution channel. If I want to use AppImage packaged programs in sandbox, I can use firejail. "Do one thing and do it well." AppImage respects the old unix philosophy.
 
-commit 2079e567430ba37e618f9a6122e0123109d75000<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Dec 23 15:05:48 2020 +0000<br>
+
+
+Date:   Wed Dec 23 15:05:48 2020 +0000
 
 The fish shell improves user experience a lot, both for interactive usage and scripting usage.
 
@@ -141,9 +324,9 @@ end
 
 Concise and clear.
 
-commit 2a72a05012a51495b777836324271e53de267b48<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Dec 22 17:02:03 2020 +0000<br>
+
+
+Date:   Tue Dec 22 17:02:03 2020 +0000
 
 While immature distributions (Arch, Ubuntu, Fedora, etc.) dropped x86 support between 2017-2019, a lot of serious distributions (Slackware, Debian, Gentoo, OpenSUSE, Alpine, etc.) still support old x86 computers.
 
@@ -151,9 +334,9 @@ FYI, CRUX dropped x86 support on [2013].
 
 [2013]: https://crux.nu/Main/ReleaseNotes3-0
 
-commit e330dc2b4e935ddd58fc3812d77651d91116b78e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Dec 20 16:44:26 2020 +0000<br>
+
+
+Date:   Sun Dec 20 16:44:26 2020 +0000
 
 Fedora Silverblue uses [OSTree] for its base system, and it is the most mature distribution with an OSTree based base system.
 
@@ -163,9 +346,9 @@ Since the base system is immutable, new software are installed via Flatpak (sand
 
 I think this is a cool idea. However, I am still unsure whether it is worth to trade in extra disk space and incompatibilities with some software for the confidence that I can  rollback to a usable base system quickly (just reboot) anytime (not require a Internet connection).
 
-commit 1b9bf1d58e00a67b882d57c1e011e2bee15f086a<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Dec 20 16:14:42 2020 +0000<br>
+
+
+Date:   Sun Dec 20 16:14:42 2020 +0000
 
 [Pop!_OS][pop] is a Ubuntu based distribution which features:
 
@@ -179,31 +362,31 @@ Pop!_OS is what Ubuntu should have been.
 
 [pop]: https://pop.system76.com/
 
-commit a7fe6e9ff276e765f1c80f56644bbada17b50a79<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Dec 19 17:31:32 2020 +0000<br>
+
+
+Date:   Sat Dec 19 17:31:32 2020 +0000
 
 JAMStack is another buzzword targeting clients using LAMP stack (e.g. wordpress) to host their website. Static website generator will not work because it will confuse those clients: "Static website? Our site was static N years ago and we use FTP to upload those static web pages to the server. Didn't you told us that static website is outdated with limited features? Why go back to a static site?"
 
 I do not think it is a good idea to switch from one shitty language (PHP) to another shitty language (JavaScript), particularly when this switch usually means more CO2 emissions.
 
-commit 24afa67379346d606a5f6a57dd24b6df6d366698<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Dec 17 18:42:43 2020 +0000<br>
+
+
+Date:   Thu Dec 17 18:42:43 2020 +0000
 
 Trying to manually resolve a dependencies conflict broken my KDE desktop. Almost all KDE applicants do not work. It seems that KDE Neon assumes you will never uninstall those preinstalled KDE packages and specifies their dependencies causally. Fortunately I can still log into the i3 session (previously I used i3 as the window manager of the KDE session), but I still miss dolphin (temporarily using nautilus) and konsole (temporarily using hyper).
 
 Maybe this is a good time to try out other distributions or even operating systems, e.g. Pop!_OS?
 
-commit 57e86d541a746d2b633558657a33ec5a49901eaf<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Nov 28 02:35:44 2020 +0000<br>
+
+
+Date:   Sat Nov 28 02:35:44 2020 +0000
 
 surge.sh still focuses on static site hosting (Netlify used to focus on static site hosting but they added a lot of dynamic features later), with a command line UI (now.sh (rebranded as vercel now) used to feature this but now their documentation encourages you to do things via their web dashboard).
 
-commit 9120500e68f97dc811138abf37515c380d49cc67<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Nov 21 10:26:32 2020 +0000<br>
+
+
+Date:   Sat Nov 21 10:26:32 2020 +0000
 
 Q: Why I do not have faith in God?
 
@@ -224,9 +407,9 @@ Although I do not have faith in God, I am still grateful to God. **Thank God for
 
 And what if the first bit is not true? Then I would like to thank god for being nonexistent.
 
-commit 6198ba0945711a144335b5ff77a1f31555416cfc<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Nov 15 07:52:56 2020 +0000<br>
+
+
+Date:   Sun Nov 15 07:52:56 2020 +0000
 
 [nico] is a minimalistic zero-configuration HTTP server. It can be used as a reverse proxy or a static file server, with auto applied SSL certificates. Nico have no options to configure. You can not even specify the ports to listen (it always listen on 80/443).
 
@@ -234,64 +417,64 @@ The binary size on Linux amd64: 6.5 M (for comparison, Caddy is 35 M).
 
 [nico]: https://github.com/txthinking/nico
 
-commit 821144d05a1b8517dd04c685b83f838fb6279102<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Oct 28 15:01:12 2020 +0000<br>
+
+
+Date:   Wed Oct 28 15:01:12 2020 +0000
 
 Burmese names do not have surnames. And traditionally Bamars can change their name at will, often with no government oversight. In other words, Burmese names are both screen names and real names.
 
-commit 7b63158293ed479bc6d6f5bd8bc7dcf513f5cb17<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Oct 25 13:58:06 2020 +0000<br>
+
+
+Date:   Sun Oct 25 13:58:06 2020 +0000
 
 Why the KISS (Keep it simple, stupid) principle looks so seductive to me? Because the world is too vast to explore.
 
-commit ab3893e123180cd27be7c1b7bccce82207189593<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Oct 24 11:49:59 2020 +0000<br>
+
+
+Date:   Sat Oct 24 11:49:59 2020 +0000
 
 Macbook Pro 13 (2019) claimed to support "up to 10 hours wireless web", but in my daily use (two browsers with dozens of tabs, two IDEs, one electron based editor, one mail client, two IM applications, using both the internal and an external monitor) it can only last about 3 hours.
 
-commit a68e6ac0edf302f2ef6618c14aad34d9e2e66ca8<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Sep 2 15:04:13 2020 +0000<br>
+
+
+Date:   Wed Sep 2 15:04:13 2020 +0000
 
 The English words "Republic of China" is still preserved on the redesigned Taiwan passport. They are in a much smaller font wrapping around the national emblem, unnoticeable at a quick glance.
 
 IMHO, keeping it simple and stupid is much better using these creative tricks. The English words  "Republic of China" and all  Chinese words (including "Republic of China") should be removed. Also, national emblem can be replaced with Prunus mume (just like the design of the Japanese passport).
 
-commit 1afc3f5860be324b92f10cf2728f278b106fb69a<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Aug 18 16:43:32 2020 +0000<br>
+
+
+Date:   Tue Aug 18 16:43:32 2020 +0000
 
 There is no options in [Google Podcasts](https://podcasts.google.com) to export subscriptions in OPML. Even Google Takeout does not include Google Podcasts subscriptions. (violation of GDPR?)
 
-commit b49ecfe48e5dfa2acfbb579f368624d84ba01490<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Aug 6 15:35:15 2020 +0000<br>
+
+
+Date:   Thu Aug 6 15:35:15 2020 +0000
 
 According to Uniqlo's size chart, the perfect height is around 165 cm and 150 cm. A person of 165 cm height can choose from both Men's Clothing and Women's Clothing, and a person of 150 cm height can choose from both Women's Clothing and Kids' Clothing.
 
-commit f121d1e540aad3623fae8a985684d2da10cb931b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Jul 29 16:46:55 2020 +0000<br>
+
+
+Date:   Wed Jul 29 16:46:55 2020 +0000
 
 suitezero.archive posted their collection, a pair of fake Nike sneakers on [instagram]. Unlike most other fake Nike shoes, this pair has its own brand 登云 (meaning climbing the clouds in Chinese) and is produced by 上海皮鞋一厂 (Shanghai No.1 Leather Shoe Factory), a Chinese government-owned enterprise.
 
 [instagram]: https://www.instagram.com/p/B3Ig37PlQqB/
 ![attached image](https://mmap.page/log/1596041471.jpg)
 
-commit 2074f7f92993641530b45f248cc58917d0535f5e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Jul 14 01:52:58 2020 +0000<br>
+
+
+Date:   Tue Jul 14 01:52:58 2020 +0000
 
 > Also, vertical KDE panel is not supported under i3, so do not buy them.
 
 Oh, I must be very sleepy to write the above sentence. And maybe I dislike KDE subconsciously?
 
-commit e8cca0d29cbc2b6ae66db04b53feb460133a722a<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Jul 11 10:24:38 2020 +0000<br>
+
+
+Date:   Sat Jul 11 10:24:38 2020 +0000
 
 First impression on [hey email][hey]:
 
@@ -302,17 +485,17 @@ First impression on [hey email][hey]:
 
 [hey]: https://app.hey.com/
 
-commit aca217a72e8db322d16acbf3b6eaebf1bd2eb55f<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Jul 11 06:36:26 2020 +0000<br>
+
+
+Date:   Sat Jul 11 06:36:26 2020 +0000
 
 Shame on me: I had not checked whether the producer violates GPL before buying an ebook reader.
 
 [Reddit: Onyx Boox will not share their linux kernel source code](https://www.reddit.com/r/linux/comments/hl09g7/onyx_boox_chinese_company_will_not_share_their/)
 
-commit ff8a182a0f0d56e788c50245360a3a4de3af094e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Jul 5 08:02:21 2020 +0000<br>
+
+
+Date:   Sun Jul 5 08:02:21 2020 +0000
 
 [Sinatra] in Ruby:
 
@@ -378,9 +561,9 @@ func main() {
 
 [Sinatra]: http://sinatrarb.com/
 
-commit e897f7c880f7c067890ef85f0174907b32ce7321<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Jul 4 17:57:49 2020 +0000<br>
+
+
+Date:   Sat Jul 4 17:57:49 2020 +0000
 
 > FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 >
@@ -420,9 +603,9 @@ class FastAPI(Starlette):
 
 It is 2020 and sadly the only mainstream dynamic programming language with a community which treats typing seriously is JavaScript.
 
-commit 5907643ecc082c0422362d0b977219563a091103<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Jul 2 16:35:44 2020 +0000<br>
+
+
+Date:   Thu Jul 2 16:35:44 2020 +0000
 
 Recently I watched [Openbook 2019 talk by Audrey Tang on YouTube][talk]. The talk is given in Chinese and here is some notes I have taken.
 
@@ -466,21 +649,21 @@ Unfortunately, although Audrey is a [key sponsor][] of [sandstorm][] (self hoste
 [sandstorm]: https://sandstorm.io/
 [key sponsor]: https://sandstorm.io/about
 
-commit 5a8c3995f48fe2c5464ee21d640d9c6fc6127901<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Jun 15 15:23:40 2020 +0000<br>
+
+
+Date:   Mon Jun 15 15:23:40 2020 +0000
 
 Go is influenced by Python. Now Go also influences Python, e.g. black (`go fmt`) and pytest (`go test`).
 
-commit 073edd3cf8c3119dbaa7ff827954a4d877b32cf2<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Jun 12 15:09:10 2020 +0000<br>
+
+
+Date:   Fri Jun 12 15:09:10 2020 +0000
 
 It's  2020, and twitter & github still do not support IPv6.
 
-commit 127617873f29d848968d7ac7e8aab5914aa9a736<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat May 23 17:51:13 2020 +0000<br>
+
+
+Date:   Sat May 23 17:51:13 2020 +0000
 
 Go 1.14 allows [embedding interfaces with identical method names][6977], as long as these methods have **identical signatures**.
 
@@ -488,41 +671,41 @@ Again, Go avoided to attack the function subtyping problem.
 
 [6977]: https://github.com/golang/proposal/blob/master/design/6977-overlapping-interfaces.md
 
-commit c2d443af6e21f1b00f156b64c827d60cc136de23<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed May 20 14:06:24 2020 +0000<br>
+
+
+Date:   Wed May 20 14:06:24 2020 +0000
 
 I though TED talks are amazing. Recently I listened a lot of TED talks and found out that TED talks on average are *not* interesting to me. Previously I have only listened popular TED talks shared on social networks where I only follow people I find interesting. That's why I had this wrong impression.
 
-commit 7c84e92e8cf7d3787f296388770086b9cfc3eae1<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu May 14 13:21:09 2020 +0000<br>
+
+
+Date:   Thu May 14 13:21:09 2020 +0000
 
 [GitHub action/workflow] offers these shells: cmd, sh, bash, power shell, and **python**.
 
 [GitHub action/workflow]: https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#using-a-specific-shell
 
-commit 11c425762656c38f84d32b808a3e2d860d198cda<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Apr 25 16:59:43 2020 +0000<br>
+
+
+Date:   Sat Apr 25 16:59:43 2020 +0000
 
 [Combo Pinyin](https://github.com/rime/home/wiki/ComboPinyin) is an interesting Chinese input method, which is similar to chord-typing (pressing multiple keys at the same time to input a character). However, I find it difficult to type. For example, to type guang, I have to type five keys (F-U-K-L-SPC) at the same time, which is very difficult to my fingers.
 
-commit 381431fb1962004d1bb443c2ae7bcd92675feccc<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Apr 12 15:23:34 2020 +0000<br>
+
+
+Date:   Sun Apr 12 15:23:34 2020 +0000
 
 Haven't checked the RSS reader for two or three years. The RSS reader reported that about fifty RSS feeds are unreachable. By clicking the htmlUrl and googling author name and old post content, I managed to recover 17 blogs.
 
-commit 7f208883802bc9d8f24bc24abb86d10488020e41<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Apr 12 09:12:33 2020 +0000<br>
+
+
+Date:   Sun Apr 12 09:12:33 2020 +0000
 
 The opening of Stanford's CS106A is full of propaganda and buzzwords http://web.stanford.edu/class/cs106a/lectures/1-Welcome/1-Welcome.pdf
 
-commit ec81d7438a6cfa0449306de769d1e05eb3ae7590<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Mar 28 16:41:48 2020 +0000<br>
+
+
+Date:   Sat Mar 28 16:41:48 2020 +0000
 
 Just discovered this in [Sentry's ToS][sentry]:
 
@@ -531,27 +714,27 @@ Just discovered this in [Sentry's ToS][sentry]:
 
 [sentry]: https://sentry.io/terms/
 
-commit 27a375db559af4c577a42ff1123fad980ccd5145<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Mar 20 17:23:15 2020 +0000<br>
+
+
+Date:   Fri Mar 20 17:23:15 2020 +0000
 
 The new MacBook Air has the best keyboard in current Apple laptops: scissor mechanism without touchbar.
 
-commit 9764688ae9a1e433d344b5b4aa8bb65d454a8f1e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Mar 11 16:48:12 2020 +0000<br>
+
+
+Date:   Wed Mar 11 16:48:12 2020 +0000
 
 On Apple laptops released in recent years, every key is a power button, and there is NO WAY to turn it off.
 
-commit 3160fa6ad887cba50144623685d5123999c8d14b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Jan 22 17:17:03 2020 +0000<br>
+
+
+Date:   Wed Jan 22 17:17:03 2020 +0000
 
 golint is very noisy, and it gives a lot of false positive results. I just switched to the peaceful `staticcheck` instead.
 
-commit aa80210a7d4aa2ef56fee9f144deb0f6511a138b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Jan 20 14:51:31 2020 +0000<br>
+
+
+Date:   Mon Jan 20 14:51:31 2020 +0000
 
 1. Open your browser, click `ctrl+L` to focus on address bar.
 2. Type `data:,anything you plan to do` (data and semicolon and comma)
@@ -563,9 +746,9 @@ And todos can be exported as an HTML file, or get synced with multiple devices (
 
 Bonus: If you need to input non-ascii characters, type `data:text/plain;charset=UTF-8,any content` instead.
 
-commit 105e67f2d3f891994e5b739a7d7d96041f390194<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Jan 12 09:44:11 2020 +0000<br>
+
+
+Date:   Sun Jan 12 09:44:11 2020 +0000
 
 I am a bit uncertain about the future of JetBrains. They put a lot of efforts to ship great IDEs. But new languages are very serious about tooling and development productivity to attract more users. vscode has greater out of box support for TypeScript than WebStrom. And the Rust extension of vscode is developed by the IDE and editors team of the Rust language people (yes, they have a dedicated team for this).
 
@@ -577,42 +760,42 @@ The same thing happens to JetBrains' own language, Kotlin. Android Studio/Intell
 
 JetBrains IDEs still have the state of art IDEs for languages such as Java, Python, Go. But their language servers may catch up in future, puting JetBrains IDEs in an awkward situation.
 
-commit 80a7673f6181452ea2687e29c502d1b86e5f1984<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Jan 10 14:59:12 2020 +0000<br>
+
+
+Date:   Fri Jan 10 14:59:12 2020 +0000
 
 json-diff hung for one day to compare two big json files (~100 MB in file size, and ~40 k objects), while jsondiffpatch finished the comparison in less  than 20 seconds.
 
-commit c8ab2da0b3cc9c591e5d4d5100dd10ccc11d8655<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Jan 9 12:09:14 2020 +0000<br>
+
+
+Date:   Thu Jan 9 12:09:14 2020 +0000
 
 [bellard.org](https://bellard.org/) still uses html 4, as [debian.org](https://www.debian.org/) and [netbsd.org](http://www.netbsd.org/) does. They have an attitude.
 
-commit 75d33b951a5d6970baa5a624e496ab399770cd66<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Dec 28 13:30:56 2019 +0000<br>
+
+
+Date:   Sat Dec 28 13:30:56 2019 +0000
 
 It seems that the story writer of MonsterMatch need to learn more physics.
 ![attached image](https://mmap.page/log/1577540089.jpg)
 
-commit be8de402b90ed71fcb12a5dd111418e07e48a44c<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Dec 16 01:42:34 2019 +0000<br>
+
+
+Date:   Mon Dec 16 01:42:34 2019 +0000
 
 Firefox Notes does not support markdown. It only captures some key presses like `# h1` to mimic Markdown but directly pasting `# h1` does not work (Yes, the browser distinguishes key press event and text input event). Also there is only three levels of heading.  And the worst thing is it does not support code block! :-(
 
-commit 4e08a9a4fb26357a59385fa09c8e16f2642923ce<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Dec 15 11:19:22 2019 +0000<br>
+
+
+Date:   Sun Dec 15 11:19:22 2019 +0000
 
 I am not a fan of uniformed code formatting (like `gofmt`). I do not think issues like CamlCase v.s. snake_case or spaces are important. But I myself use [Prettier] because I am too lazy to type tabs and semicolons. :-)
 
 [Prettier]: https://prettier.io/
 
-commit f45b61366cb7584e70db93c6d7d7f104e7c062ad<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Dec 14 13:43:14 2019 +0000<br>
+
+
+Date:   Sat Dec 14 13:43:14 2019 +0000
 
 The three most popular style guides in JavaScript community (airbnb, standard, google) are all unnecessarily lengthy.
 
@@ -622,9 +805,9 @@ Another example is they all tell you to write `let arr = [];` instead of `let ar
 
 Style guides should keep focus on a dozen of matters truly important, in other words, pitfalls of JavaScript design, e.g. using `===` instead of `==`.
 
-commit 8a08cb9db96f3243f54f2c6282b991b8f462c30c<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Dec 7 07:36:53 2019 +0000<br>
+
+
+Date:   Sat Dec 7 07:36:53 2019 +0000
 
 Years ago I noticed that WebStorm (2016.3) was very slow to detect type errors with Flow, while vscode (with vscode-flow-ide extension) checked error on saving file instantly.
 
@@ -632,27 +815,27 @@ Today I found out that `// @ts-check` against JSDoc comments works out of box wi
 
 This is yet another example that WebStrom is becoming more and more less relevant in JavaScript development these years.
 
-commit 7aad5c670680a93c90f9441ee2d931596143fb5c<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Dec 5 14:08:50 2019 +0000<br>
+
+
+Date:   Thu Dec 5 14:08:50 2019 +0000
 
 On December 14, 2019, all yahoo groups become private (based on Yahoo Mails), the yahoo groups website will be shutdown and **all yahoo groups content will be deleted**!
 
-commit 0a606818e894ce38794524bd3fa02f00b3b67126<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Dec 5 13:48:35 2019 +0000<br>
+
+
+Date:   Thu Dec 5 13:48:35 2019 +0000
 
 Just downloaded my Translator Toolkit data via Google Takeout. Google Translator Toolkit was shutdown on December 4, 2019. Yet another good service I used to be shutdown by Google.
 
-commit 8e336a9d8d3db3e0d7416b13b927be9643849646<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Dec 5 12:42:25 2019 +0000<br>
+
+
+Date:   Thu Dec 5 12:42:25 2019 +0000
 
 The ancient Chinese saying "steal the whole country and they make you a prince, steal a hook and they hang you" (竊國者侯，竊鉤者誅) probably describes integer overflow. In a system people with a positive sin value will be punished and those with a negative sin value will be rewarded, one who stole the whole country gained a lot of sin value, causing a sin value overflow.
 
-commit 8e40dc243d6c9355e5712162e9ed35369e5c8dc0<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Nov 24 08:02:17 2019 +0000<br>
+
+
+Date:   Sun Nov 24 08:02:17 2019 +0000
 
 React components and hooks are just functions, nothing magical:
 
@@ -697,9 +880,9 @@ App.type('hello')
 App = render(Component) // { len: 5 }
 ```
 
-commit 8a9608e8fe6bf0249e11ad5c31921c76768c3a1e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Nov 23 16:25:54 2019 +0000<br>
+
+
+Date:   Sat Nov 23 16:25:54 2019 +0000
 
 Updated the jekyll templates of my personal website to get rid of JavaScript. Now mmap.page on [clearnet](https://mmap.page) and [zeronet](/16XMwj6YRNqRHWbmSD8oxYUZCKfM1uzwP9/) is JavaScript free. ^_^
 
@@ -707,9 +890,9 @@ If you want to deploy a minimalistic JavaScript free site to GitHub Pages and/or
 
 [micro-gh-page]: https://mmap.page/micro-gh-page/
 
-commit 5fca688d7af36d83c5f40d56b5b89addb1703bef<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Nov 13 01:35:22 2019 +0000<br>
+
+
+Date:   Wed Nov 13 01:35:22 2019 +0000
 
 For parsing simplicity, the existential operator from CoffeeScript turns into something like `foo ?? bar()`, `a?.[1]`, and `f.(x)` in JavaScript (stage 3), to avoid confusion with ternary expression (`a ? [b] :c`).
 
@@ -717,9 +900,9 @@ IMO `??` is acceptable, but `a?.[1]` is really very ugly. And in fact this revea
 
 JavaScript sucks. Thus people add more features as workarounds. But people cannot remove features from it (otherwise it may become a bigger tragedy than Python 2/3). So JavaScript still sucks, and becomes more bloated and uglier at the same time.
 
-commit c93a295718824a36b6a71702f6d849ec2c0e264e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Oct 16 17:50:32 2019 +0000<br>
+
+
+Date:   Wed Oct 16 17:50:32 2019 +0000
 
 Just upgrade to 0net-py3:
 
@@ -728,43 +911,43 @@ Just upgrade to 0net-py3:
 
 Seemingly it works fine.
 
-commit 59e05f3f44c940d25a0e783274d2c27bb628158e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Sep 21 03:04:32 2019 +0000<br>
+
+
+Date:   Sat Sep 21 03:04:32 2019 +0000
 
 Just discovered the Files app (an android app by Google) is translated to Files Geek (文件极客) in Chinese UI.
 
-commit a01e3b771d6bafc50f62b305cc9fd5a3f23789d9<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Sep 20 14:29:47 2019 +0000<br>
+
+
+Date:   Fri Sep 20 14:29:47 2019 +0000
 
 Sam Hartman sent the [Bits from the DPL (August 2019)][letter] letter yesterday (Sep 19, 2019). In the letter, Sam talked a lot about the complexity and anxiety on init system diversity within the  Debian project.
 
 [letter]: https://lists.debian.org/debian-devel-announce/2019/09/msg00001.html
 
-commit 90ddbc9de164a9991373bf9541613912ca582450<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Aug 21 13:07:04 2019 +0000<br>
+
+
+Date:   Wed Aug 21 13:07:04 2019 +0000
 
 BitBucket is [dropping hg support][blog]. This reminds me the time when Macintosh computers dropped PowerPC CPUs.
 
 [blog]:  https://bitbucket.org/blog/sunsetting-mercurial-support-in-bitbucket
 
-commit 30b6484c070d1fea15272dbbe392ff679b755582<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Aug 14 18:13:13 2019 +0000<br>
+
+
+Date:   Wed Aug 14 18:13:13 2019 +0000
 
 Just learned a new word "Xi-ple" today. To my surprise, this word is ungoogleable.
 
-commit 39192a05db76180d91d53cf2665b7e476ef323a8<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Aug 7 13:31:04 2019 +0000<br>
+
+
+Date:   Wed Aug 7 13:31:04 2019 +0000
 
 The IRL podcast by mozilla is not only boring but also burning (it burns RAM very quickly under Firefox).
 
-commit dafe1974231928513361d9293d10a20446d1febd<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Aug 7 13:05:45 2019 +0000<br>
+
+
+Date:   Wed Aug 7 13:05:45 2019 +0000
 
 Touch bar does have some advantages:
 
@@ -777,17 +960,17 @@ But there is a long way to go:
 2. The application need to allow user to configure controls, to keep some common operations in a fixed position, e.g. F5 (refresh) for browsers.
 3. The application need to pay great attention to design the touch bar controls, to offer a consistent and convenient  UI. For example, in Spark (an email client on Mac OS X), if I click the move button in the toolbar, the popup menu will list suggested folders first. However, if I press the move button on the touch bar, the touch bar just shows the full list (I have to slide for more folders), and the suggested list is missing.
 
-commit 34d1e5a5cce10fc8ba34403afdb1d05f3c4f3cf2<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Aug 4 12:59:44 2019 +0000<br>
+
+
+Date:   Sun Aug 4 12:59:44 2019 +0000
 
 The dark theme of Spark (a mail client on osx) is a disaster. I've to change the setting to "always use light theme". The reason is few mail clients (including those Web Clients) have considered dark background in designing default HTML email templates. And it seems that Spark has not implement some smart algorithm to swap colors.
 
 The old fashioned plain text emails play nicely with dark theme. Another example of simple design is more future proof.
 
-commit d78c8c47b061175a6e0e7c94aa80400c8097ef6e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Aug 1 13:53:34 2019 +0000<br>
+
+
+Date:   Thu Aug 1 13:53:34 2019 +0000
 
 After recent update of KDE Neon, the bluetooth adapter will power off after each hibernation. Unfortunately I need a mouse to turn on the bluetooth in KDE UI, but I use a bluetooth mouse.
 
@@ -799,35 +982,35 @@ Finally, I found a way to turn on bluetooth via command line (I use a wired keyb
 [bluetooth]# exit
 ```
 
-commit 481c3ac6125e9b7c2a0f98c313c3a1ca248b2045<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Jul 29 02:07:17 2019 +0000<br>
+
+
+Date:   Mon Jul 29 02:07:17 2019 +0000
 
 Looks like the development of Ceylon has ceased. The latest commit is on [May 22, 2019][7e653a1], removing words like "crap", "shit", "fucked up" from code comment. And the penultimate commit is on [Feb 11, 2019][d3994d6], fixing the CI build.
 
 [7e653a1]: https://github.com/eclipse/ceylon/commit/7e653a1cd0ff54e7b773f92e26af8ba56b85f308
 [d3994d6]: https://github.com/eclipse/ceylon/commit/d3994d6cd120c4df85952cd9432123b413cfd65a
 
-commit 6ec89fa552b9d1cc65a83061cc4142c43849a8b7<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Jul 27 06:18:33 2019 +0000<br>
+
+
+Date:   Sat Jul 27 06:18:33 2019 +0000
 
 The current version of IntelliJ (2019.2) has a built-in sublime keymap. And I once heard a JetBrainer referred to `ctrl+shift+a` as "command palette" (although actually IntelliJ introduced the "find any action" feature prior to Sublime). FYI, Micosoft released an extension "Sublime Text Keymap and Settings Importer" for vscode on 2016.
 
 Such an influential editor, Sublime Text.
 
-commit df2efda54b9df1bfc94f8e8c91a24af569e7e6f4<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Jul 25 15:49:56 2019 +0000<br>
+
+
+Date:   Thu Jul 25 15:49:56 2019 +0000
 
 How I stop using proxy extension in Firefox?
 
 1. Use clash. Usually I'd rather add a rule in clash config, instead of switch proxy.
 2. Occasionally, when I need to switch proxy, I just press alt+home to open the proxy settings, because I have set homepage to `chrome://browser/content/preferences/connection.xul`.
 
-commit fd6efc8036513193a5d97fed8518f6f7853561e4<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Jul 2 18:13:44 2019 +0000<br>
+
+
+Date:   Tue Jul 2 18:13:44 2019 +0000
 
 Future programmers may use different abstractions. Today we can write bytes to a file, and tomorrow we may write to a [blob]. Whether the blob is ultimately a file or some cloud storage service is just implementation details.
 
@@ -835,15 +1018,15 @@ On writing this, it occurred to me that maybe these abstractions are not very di
 
 [blob]: https://godoc.org/gocloud.dev/blob
 
-commit 7e76f517e59239ea7dc56e2a99a6d2d1a0a7a3ce<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Jun 29 17:18:43 2019 +0000<br>
+
+
+Date:   Sat Jun 29 17:18:43 2019 +0000
 
 Just find out that web developer tools of modern browsers (Firefox & Chrome)  can recognize webpack and typescript. Debugging on the original typescript source is much easier than on the generated JavaScript code.
 
-commit bef0ae842d8bf016014251b24dca93062c57dc92<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri May 17 14:24:59 2019 +0000<br>
+
+
+Date:   Fri May 17 14:24:59 2019 +0000
 
 This patch to the legacy marriage framework just got approved today and will be merged into the `release` branch very soon! Congratulations! First patch of this kind in Asia!
 
@@ -854,9 +1037,9 @@ This patch to the legacy marriage framework just got approved today and will be 
 -      }
 ```
 
-commit 2ac9fd0e59949ecf34b56cddb76fcdadc47693db<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat May 11 07:26:30 2019 +0000<br>
+
+
+Date:   Sat May 11 07:26:30 2019 +0000
 
 Do not under stand why Beta users need to accept [Confidentiality agreement][terms] of keeping special information secret. Isn't beta means public? It seems GitHub redefines Beta.
 
@@ -864,9 +1047,9 @@ I sign up for a Beta program because I am an impatient person, not want to wait 
 
 [terms]: https://help.github.com/en/articles/github-pre-release-program
 
-commit 5ac4791452afb6bf063089769a1d98f23ed1d5e4<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri May 10 17:41:40 2019 +0000<br>
+
+
+Date:   Fri May 10 17:41:40 2019 +0000
 
 ```python
 first, *rest = [1, 2, 3]  # first -> 1, rest -> [2, 3]  (1)
@@ -881,21 +1064,21 @@ What a pity! If there is a python version supports both (Python 6?), I can write
 lambda (first, *rest): ...
 ```
 
-commit cd0698641be9609947bdeadc30f366e35fe5a555<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed May 8 14:53:37 2019 +0000<br>
+
+
+Date:   Wed May 8 14:53:37 2019 +0000
 
 egghand's subtitles are auto generated (at least on some videos I watched), but they are not marked as such confusingly (unlike YouTube).
 
-commit 5abe643d74180b8acffde6ce8454f5b8907653e0<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon May 6 14:13:58 2019 +0000<br>
+
+
+Date:   Mon May 6 14:13:58 2019 +0000
 
 Just realized that I can look at the bright side of JavaScript's switch structure. JavaScript's switch **statement** is **fall-through**, which sounds like a scream: "Don't break! Return! Wrap me into a function!"
 
-commit aa21db7263db9a55fe3ff5ab5a16ed49c4958359<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat May 4 10:50:06 2019 +0000<br>
+
+
+Date:   Sat May 4 10:50:06 2019 +0000
 
 To those who dislikes systemd:
 
@@ -904,9 +1087,9 @@ To those who dislikes systemd:
 3. Gentoo: Gentoo uses OpenRC by default
 4. Slackware:  Slackware is still systemd free
 
-commit 3b56dee9a1e421dcfb517f550d75d8334ba25398<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri May 3 19:27:03 2019 +0000<br>
+
+
+Date:   Fri May 3 19:27:03 2019 +0000
 
 Just watched the [The Tragedy of systemd][video], which I thought is very misleading.
 
@@ -920,9 +1103,9 @@ And the video also talks about docker and containers, without realizing that con
 
 To be honest, I like neither android, docker, nor systemd. I am not sure the fact that both android and docker are not in favor of systemd makes me more depressive or less depressive.
 
-commit 7522c6bacc4a2d8f944082ae2c47e651b7ec3652<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed May 1 12:49:28 2019 +0000<br>
+
+
+Date:   Wed May 1 12:49:28 2019 +0000
 
 It seems the Japanese new era is not very welcome yet:
 
@@ -933,9 +1116,9 @@ It seems the Japanese new era is not very welcome yet:
 [commit]: https://github.com/bminor/glibc/commit/466afec30896585b60c2106df7a722a86247c9f3#diff-33e83cd438ad668f1ff09e8680f6bf11
 ![attached image](https://mmap.page/log/1556715169.jpg)
 
-commit 46e0f8eb9e6ebbf811e7930ac1ef5cca042c833a<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Apr 26 15:00:08 2019 +0000<br>
+
+
+Date:   Fri Apr 26 15:00:08 2019 +0000
 
 Just came across a [Q&A][qa] on zhihu (a quora clone in CN):
 
@@ -946,17 +1129,17 @@ Brilliant! Never forget to check the presumption under the question first.
 
 [qa]: https://www.zhihu.com/question/320757143/answer/663749715
 
-commit 92b7dc020e7aaa069b4f46948a15fb1e23e19882<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Apr 25 16:34:56 2019 +0000<br>
+
+
+Date:   Thu Apr 25 16:34:56 2019 +0000
 
 React has so many opt-in, legacy, experimental features. Thus I suggest taking a look at ReasonReact first, which has a much smaller API surface. After a glance of ReasonReact, you can probably pick up React quickly by skipping a lot of concepts. I guess this will be faster than learning React directly, particularly when you are already familiar with some static typed functional languages such as OCaml, F#, and Haskell.
 
 Though I do not suggest diving deep into ReasonReact and actually write code in it, since TypeScript has a far more better ecosystem.
 
-commit a43ab701d2d2d2a4db0e90573f0e695424f0fa83<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Apr 20 16:59:52 2019 +0000<br>
+
+
+Date:   Sat Apr 20 16:59:52 2019 +0000
 
 And the first koan of "Kotlin Koans" from stepik and JetBrains annoyed me again.
 
@@ -984,9 +1167,9 @@ fun start(): String = "OK"
 
 Hmm, stupid auto answer detection system. And I wonder why introduce learners the special single expression function in the very beginning, before the normal and more common used function with block body? A lot of functions are hard, if not impossible, to declare as a single expression function. Besides, learners familiar with other programming languages will pick up the normal function with block body syntax almost immediately. Why burden their progress insanely?
 
-commit 17a616237a2b1540dfdd07a295ef8a6278348de4<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Apr 20 16:37:32 2019 +0000<br>
+
+
+Date:   Sat Apr 20 16:37:32 2019 +0000
 
 Just tried the first three quizs of [Python introduction course on stepik][stepik], which is included in JetBrains' PyCharm Educational (I tried it with the EduTools plugin on IntelliJ).
 
@@ -1063,9 +1246,9 @@ I myself learned Python via reading the A Byte of Python book years ago. I am no
 [HtDP]: https://htdp.org/
 [why]: https://poignant.guide/
 
-commit a122b131e5dca34b8491009a86efd0028787b23c<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Apr 20 14:47:02 2019 +0000<br>
+
+
+Date:   Sat Apr 20 14:47:02 2019 +0000
 
 Just came across a video titled [Learn Python Programming Language in 2 Hours][video].
 
@@ -1089,17 +1272,17 @@ Currently this video has 411k views, 8.1k upvotes (less than 200 downvotes) on Y
 
 ![attached image](https://mmap.page/log/1555771818.jpg)
 
-commit 6cc72a59859d46192b669f5bd72c67b24727e14b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Apr 20 14:15:00 2019 +0000<br>
+
+
+Date:   Sat Apr 20 14:15:00 2019 +0000
 
 Android's Messages app does not provide a "delete all" function. Fortunately, most popular third-party sms apps all support "delete all" or "select all then delete", e.g. chompSMS, Handcent Next SMS, Textra.
 
 Considering the fact that in early versions of Android, the messaging app does have this feature, my conspiracy theory is Google do not like us to delete our SMS, which could be analyzed by Google to build smarter AI and sell more ads.
 
-commit 97555834889719d86eddce5af61abd7b09cd508c<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Apr 20 05:47:32 2019 +0000<br>
+
+
+Date:   Sat Apr 20 05:47:32 2019 +0000
 
 I [complained about](/?Post/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/1553695047) Flask's official documentation lacks a dedicated page for REST APIs and suggested to use Flask-RESTful extension instead.
 
@@ -1115,9 +1298,9 @@ But without using the extension, it is still possible to learn enough Flask to w
 
 Unfortunately, figuring out these five sections in three chapters ("quickstart", "testing", "pattern") are the relative pieces for a quick start of REST API service already costs me more than 30 minutes. :-(
 
-commit daa2d5af772b0fd806f7bad34078f5ffb00004fe<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Apr 14 08:38:25 2019 +0000<br>
+
+
+Date:   Sun Apr 14 08:38:25 2019 +0000
 
 Most web video player lacks the feature of full browser window. Fortunately, with xrandr under Linux, we can split the physical monitor into multiple virtual monitors.
 
@@ -1130,15 +1313,15 @@ xrandr --setmonitor right 960/254x1080/286+960+0 none
 
 Note that not all window managers respect this setting though. For example, I have no luck with KWin (KDE) and Mutter (Gnome). On the other hand, xfce and openbox do respect this.
 
-commit 8786faa5adf066c08cc6c59c46591c107e90eb36<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Apr 12 19:29:33 2019 +0000<br>
+
+
+Date:   Fri Apr 12 19:29:33 2019 +0000
 
 https://defend.wikileaks.org/2019/04/11/emergency-julian-assange-has-been-arrested/
 
-commit 28c7182737d83a95cd42a85e28ce403330a09167<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Mar 30 10:06:33 2019 +0000<br>
+
+
+Date:   Sat Mar 30 10:06:33 2019 +0000
 
 Briefly tried Manjaro:
 
@@ -1149,9 +1332,9 @@ But it is problematic with package dependencies:
 1. The dependencies declaration of Arch package is less rigid, compared to Debian/Fedora/Opensuse, etc.
 2. New arch packages are postponed to enter Manjaro's repository, which causes missing dependencies.
 
-commit 5d7e2f2599ffbb4637b833a11596644dfc141731<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Mar 29 01:37:00 2019 +0000<br>
+
+
+Date:   Fri Mar 29 01:37:00 2019 +0000
 
 Recently I learned a new notion (or buzzword, if you prefer), [edge computing]:
 
@@ -1171,9 +1354,9 @@ Such material is objectionable, harmful, sensitive, or "inconvenient" to who? To
 
 That is what ZeroNet does, **edge censorship**. Let the user/client/node/hub decide to mute and ban what content and which content producer.
 
-commit 4c7eed67b8f413d4bc2d189e08da0aa7b751e548<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Mar 29 01:12:39 2019 +0000<br>
+
+
+Date:   Fri Mar 29 01:12:39 2019 +0000
 
 The download page of Manjaro offers 11 favors, xfce, kde, cinnamon, openbox, awesome, budgie, mate, I3, Architect (text), Deepin, Gnome. And there are tabs (it turns out these are actually pretended checkboxes) like "beginner-friendly", "resource-efficient", "traditionally-workflow".
 
@@ -1185,9 +1368,9 @@ This must be joking.
 
  (I used KDE for two or three years and haven't used recent versions of Gnome, so I am unsure if Gnome is resource inefficient nowadays. If it is, then the resource inefficient Gnome is joking; if it is not, then Manjaro is making a joke about Gnome. That's why this must be joking. ;-)
 
-commit 5e4f5950aa06b319684d0448a785fabda4c64db5<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Mar 28 17:29:54 2019 +0000<br>
+
+
+Date:   Thu Mar 28 17:29:54 2019 +0000
 
 manjaro's advertise for developers features Godot, KDevelop, Geany.
 
@@ -1195,9 +1378,9 @@ solus's advertise for developers features Atom, Idea, GNOME Builder, Qt Creator,
 
 Seems there are two different groups of developers under Linux desktop.
 
-commit e7ff9bb858299a0629e94d00827872817ce0371e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Mar 27 13:54:21 2019 +0000<br>
+
+
+Date:   Wed Mar 27 13:54:21 2019 +0000
 
 Although Flask is widely used to build REST API servers, [its official documentation][doc] still cannot afford a dedicated page for REST APIs.
 
@@ -1209,23 +1392,23 @@ I recommend go direct to check [the full example of the  quick start guide][exam
 
 Life is short. Pick up tools and libraries fast.
 
-commit 2888f0581e0e276fd1266e1313d65e3aa155571d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Mar 24 14:53:02 2019 +0000<br>
+
+
+Date:   Sun Mar 24 14:53:02 2019 +0000
 
 With the [pyright] extension, vscode can check type annotations of Python code.
 
 [pyright]: https://github.com/Microsoft/pyright
 
-commit cc2f3052ad86e1585cae2f05555229a25b901de3<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Mar 24 06:11:16 2019 +0000<br>
+
+
+Date:   Sun Mar 24 06:11:16 2019 +0000
 
 Finally gandi.net added support for `ALIAS`.
 
-commit 201ec7e00377a0b100d17559d884f45f87f5f34e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Mar 17 14:28:19 2019 +0000<br>
+
+
+Date:   Sun Mar 17 14:28:19 2019 +0000
 
 Just read an insightful blog post by [André Staltz] talking about [the dying web] replaced by the GOOG-FB-AMZN Trinet.
 
@@ -1242,9 +1425,9 @@ Reasons why web is dying faster in China:
 [André Staltz]: https://staltz.com
 [the dying web]: https://staltz.com/the-web-began-dying-in-2014-heres-how.html
 
-commit 51e7ef87b095f9dcaee814eda95545bf0c97bb75<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Mar 16 14:35:26 2019 +0000<br>
+
+
+Date:   Sat Mar 16 14:35:26 2019 +0000
 
 In golden old days, a simple web page has an index.html, linking to an index.js. I can just open the index.html in a web browser to see the effect. And after some edits of index.html or index.js, I just refresh the page to see the effect. Once I am satisfied, I can copy the directory to any static hosting space.
 
@@ -1264,17 +1447,17 @@ And if I get bored, I can replace index.js with index.ts, and start coding in Ty
 
 None of webpack, browserify, and rollup is as zero configuration as parcel.
 
-commit 07c2051ba831a5b5ee5eb0451a2d6480cbd13b3d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Mar 16 08:01:15 2019 +0000<br>
+
+
+Date:   Sat Mar 16 08:01:15 2019 +0000
 
 Hmm, just noticed that [w3.org] still uses "old-fashioned" XHTML 1.0 Strict.
 
 [w3.org]: https://www.w3.org/
 
-commit 8228e92b45bc38bca0fa9e66da3df55db7bd1db2<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Mar 10 08:26:57 2019 +0000<br>
+
+
+Date:   Sun Mar 10 08:26:57 2019 +0000
 
 Saw this piece of Go code when watching [Advanced Testing With Go][youtube] by Mitchell Hashimoto:
 
@@ -1324,9 +1507,9 @@ db.connect()
 defer db.close()
 ```
 
-commit d6b0c57125773f3f68274c5ddb668530e0143808<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Mar 9 05:55:06 2019 +0000<br>
+
+
+Date:   Sat Mar 9 05:55:06 2019 +0000
 
 GraalVM's native image feature is impressive to me:
 
@@ -1367,15 +1550,15 @@ However, currently this only works for simple Ceylon programs.
 
 But graal does looks promising to me.
 
-commit ae5a37c4b52b01aca1cd41ab863b53600dd44459<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Mar 8 17:37:25 2019 +0000<br>
+
+
+Date:   Fri Mar 8 17:37:25 2019 +0000
 
 I read the first 4 items of Effective Java 2nd. edition several years ago, and had an impression that the book better renamed to Ineffective Java. There are 78 items total in the Effective Java 2nd. editon. Today I just learned that Effective Java updated to 3rd. edition on the end of 2017, targeting Java 9 (2nd. edition is target at Java 6). Now there are 90 items in the book. I am wondering does this imply that Java is more ineffective now? Or maybe People have finally discovered far more pitfalls of Java, thus although recent versions of Java fixed some issues, the net known ineffectiveness increases?
 
-commit a9fe3316942ba690a40cd244738bd32eecaf3af3<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Mar 3 13:22:12 2019 +0000<br>
+
+
+Date:   Sun Mar 3 13:22:12 2019 +0000
 
 Go advertises itself as having first class functions:
 
@@ -1398,9 +1581,9 @@ BTW:
 - `big.NewInt(0).Add` looks wired to me. It is not something like `curriedAdd = add 0`, but means initialize a big.Int (here `0` is the empty value on initialization, and Go forces to assign an empty value on initialization) which receives the result of Add.
 - GoLand is not very good at analyzing these higher order functions. Sometimes GoLand reported "No problems found" but actually the code does not compile.
 
-commit 77a18a2ab6de67b4462962a5773da46fa600bfd0<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Feb 28 16:05:24 2019 +0000<br>
+
+
+Date:   Thu Feb 28 16:05:24 2019 +0000
 
 Currently I'm using a tree based todo manager, roughly something like:
 
@@ -1436,17 +1619,17 @@ But today I find out that I need to express something like this:
 
 Hmm, tree based todos are cool. But eventually I will need an AST (abstract syntax tree) to manage todos?
 
-commit a3e19688901faa884f75444bb054b02bcc6e5fa8<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Feb 26 15:21:14 2019 +0000<br>
+
+
+Date:   Tue Feb 26 15:21:14 2019 +0000
 
 Looks like there will be no more compact mobile phones. :-(
 
 Well, at least there are compact pad (Huawei Mate X) and compact camera/audio player (Sony Xperia 1) in 2019.
 
-commit 7bb97c8b4873653e03e5118dd25ff9c728ea5141<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Feb 24 18:01:34 2019 +0000<br>
+
+
+Date:   Sun Feb 24 18:01:34 2019 +0000
 
 小学时候写篇 300 字作文，常常绞尽脑汁，觉得怎么字数还不够啊，现在却为了把豆瓣短评控制在 350 字内大费周章（考虑空格和标点，大概等价于小学时代的 300 字）。
 
@@ -1454,15 +1637,15 @@ Alita: Battle Angel (2019) 短评（恰好 350 字）：
 
 尽管神还原了原作中的许多经典画面，但恰如并不 Scrap 的 Iron City 一般，整部电影明快的调子，完全不同于 Gun Dream 的阴郁风味。强行分明善恶，操作粗暴，改编也有太多草率之处，甚至留下不少漏洞，比如原作中心脏仅为大脑提供养分，所以 Alita 用自己的心连接 Hugo 的头颅情理之中，而电影中将心脏改为发动机，实在让人很难假设它还有一个没交代的提供大脑养分的辅助功能；原作 Grewishka 有赏格，一众猎人只是畏其实力不敢出手，电影改成受上层庇护，那么 Hugo 被工厂通缉时，Alita 本应先质疑工厂是否弄虚作假；最后 Hugo 向上攀爬，电影中 Alita 劝解的话分明是对原作中执念破灭、一心求死的 Hugo 而说，对电影中逃避通缉求生的 Hugo，只需简单交代有防御轮即可。幸赖 CG 视效硬拉上五星，避免本片沦为 Ghost in the Shell 2017 一样的平庸之作。
 
-commit 76e52c3999bbd5b609431272566e735a47208b60<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Feb 23 17:10:13 2019 +0000<br>
+
+
+Date:   Sat Feb 23 17:10:13 2019 +0000
 
 Google Play Store lacks the "ignore this update/version of app" function.
 
-commit 7855840d55e8715279c6ed30783724135a8d0f7e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Feb 15 08:38:01 2019 +0000<br>
+
+
+Date:   Fri Feb 15 08:38:01 2019 +0000
 
 The abandonware nuclide has a distinct feature "[Remote Development]" (use a remote machine as the workspace for compiling/building and language services via ssh).
 
@@ -1470,9 +1653,9 @@ Unfortunately none of Atom, VS Code and JetBrains IDEs has support for this feat
 
 [Remote Development]: https://nuclide.io/docs/features/remote/
 
-commit 4d8a4cfc76223d27bbf32c38cb818391534ff75b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Feb 12 15:27:52 2019 +0000<br>
+
+
+Date:   Tue Feb 12 15:27:52 2019 +0000
 
 RubyGems has a so-called  *twiddle-wakka* shortcut `~>`. Therefore, assuming in a semver setup, you can write `~> 2.2` instead of the verbose `['>= 2.2.0', '< 3.0']`. Seems neat, isn't it?
 
@@ -1480,9 +1663,9 @@ However, later Alice reported a bug about the software, and Bob found out that t
 
 However, `~> 2.2.2` is not equivalent to  `['>= 2.2.2', '< 3.0']` (Bob thought so), but `['>= 2.2.2', '< 2.3.0']`!
 
-commit 8aeaf89a22920fea7602c30404a813b5955dbb25<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Jan 24 18:56:59 2019 +0000<br>
+
+
+Date:   Thu Jan 24 18:56:59 2019 +0000
 
 Recently the term "headless CMS" and "decoupled CMS" gain a lot of popularity. But these two terms are rather confusing to me.
 
@@ -1495,17 +1678,17 @@ To me, "headless CMS" sounds like some system mainly intended to be used with `c
 
 BTW, I wish the next generation of website will be both frontend agnostic and gateway agnostic. That is, a user of a website can directly access those micro-services. And optionally they may provide some default gateways and/or frontends. Just like a user of a programming library/framework can directly access those low-level functions/classes. And optionally the library/framework may provide some high level APIs and/or examples.
 
-commit bda13260951d3e66ae8d6c29cf1e8330e2c0005e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Jan 12 01:28:49 2019 +0000<br>
+
+
+Date:   Sat Jan 12 01:28:49 2019 +0000
 
 I use [the fish port of z] (alternative to autojump) and remap the command name to `h` (`set -U Z_CMD "h"`). `h` is easier to type (on dvorak keyboard layout) and remember ("head to").
 
  [the fish port of z]: https://github.com/jethrokuan/z
 
-commit 5e004d19955b76c45c73e63b250f4d3ab559236a<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Dec 6 13:08:05 2018 +0000<br>
+
+
+Date:   Thu Dec 6 13:08:05 2018 +0000
 
 Wrote a simple script ([zerome2md]) to dump ZeroMe posts to a markdown file (for backup or publish eleswhere).
 
@@ -1515,9 +1698,9 @@ Images are supported. Comments are not supported yet (patch welcome).
 
 The "exported" markdown file can be consumed by static site builders like Jekyll, e.g. a static mirror of my ZeroMe posts on clearnet: [mmap.page/log/](https://mmap.page/log/)
 
-commit ac2c3eec9e94dec68ef43bdd246c6a2a6690f435<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Dec 4 15:05:24 2018 +0000<br>
+
+
+Date:   Tue Dec 4 15:05:24 2018 +0000
 
 The image support of ZeroMe feels quite hacky to me:
 
@@ -1530,23 +1713,23 @@ The image support of ZeroMe feels quite hacky to me:
 },
 ```
 
-commit 8aefd035e0b67bc61e5ccb6479010f379249337b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Nov 17 05:49:51 2018 +0000<br>
+
+
+Date:   Sat Nov 17 05:49:51 2018 +0000
 
 It is such a surprise for me that GitHub does not have any public available issue tracker for itself!
 
 Some users have created one ([isaacs/github](https://github.com/isaacs/github)). To  use it, you need to open an issue on it and email a copy to  support@github.com, then manually post replies from github staff. :-(
 
-commit a9303e4c07caf7efd4774a160f17d79068b1dd7f<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Nov 17 05:39:03 2018 +0000<br>
+
+
+Date:   Sat Nov 17 05:39:03 2018 +0000
 
 Two exotic project ideas occurred to me on the bed. After getting up and turning on the computer, I found out that I had already forgot one of them.
 
-commit 05716dede83ffbe12608eddc05fb1c929f29c363<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Nov 16 18:12:38 2018 +0000<br>
+
+
+Date:   Fri Nov 16 18:12:38 2018 +0000
 
 Ansible advertises itself as agent-less, but:
 
@@ -1557,9 +1740,9 @@ On the other hand, Patchwork (based on fabric) is true agentless (sending shell 
 
 BTW, the cloud provider modules from both Ansible and SaltStack are disorderly and unsystematic. Some use cloud providers' SDK, some use libcloud (a unified interface for different cloud APIs), and some directly use requests.
 
-commit 1d83141ff3d2b0ed1153572a2265d677e9d73edd<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Nov 16 14:01:19 2018 +0000<br>
+
+
+Date:   Fri Nov 16 14:01:19 2018 +0000
 
 Flickr will limit free users' photos to 1000 (extra photos will get deleted in next year). Upon hearing this I am quite depressed, because downloading photos and uploading to a new platform (provided that I can find an alternative) will take a lot of time and effort.
 
@@ -1567,9 +1750,9 @@ Later I learned that flickr will not delete old photos licensed under Creative C
 
 Today I just checked my flickr account and found out that I only have less than five hundreds photos there...
 
-commit bb9d5a2d50af32d8592795a1e82d954de7eb14ce<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Nov 3 12:51:03 2018 +0000<br>
+
+
+Date:   Sat Nov 3 12:51:03 2018 +0000
 
 Upgraded KDE Neon from 16.04 to 18.04 today via its built-in "Distribution Upgrade" GUI. The whole process is mostly smooth, except it reports a mysterious error "installArchives() Failed" before restart. I just ignored it and had not discovered anything wrong.
 
@@ -1580,9 +1763,9 @@ The system feels the same, without any dramatic change. I have not noticed any d
 
 I used to rebind middle key to forward button (so I can press it via my thumb, instead of clicking the hard-to-press wheel) via `xinput set-button-map`. I knew I had to add it to my startup script, but because: 1) I am lazy; 2) I seldom restart my computer these days; I did not write it. Now I do not need to write it -- another example of advantage of "lazy evaluation". ;-)
 
-commit 5f8dfcd91309f8eea0615067c29c797fe343cc33<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Nov 3 12:12:41 2018 +0000<br>
+
+
+Date:   Sat Nov 3 12:12:41 2018 +0000
 
 IBM bought RedHat as a cloud computing company, thus irrelevant projects originally sponsored by RedHat may not receive bandwidth from IBM in future. Fortunately:
 
@@ -1590,15 +1773,15 @@ IBM bought RedHat as a cloud computing company, thus irrelevant projects origina
 2. Cygwin: nowadays WSL seems a better option (if I have the opportunity to use Windows in future)
 3. Gnome: I switched to KDE last year
 
-commit 5f65a9f57f92b9502099e72e923c2fd73c6fd2c9<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Nov 3 11:43:46 2018 +0000<br>
+
+
+Date:   Sat Nov 3 11:43:46 2018 +0000
 
 I've seen a lot of note applications/services' export function does not support exporting attachments. Vivaldi Browser is just another example (its sync all feature does not include attachments of notes).
 
-commit 205d905652b2d2d6891069370e84490bc3945fbd<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Oct 24 15:27:03 2018 +0000<br>
+
+
+Date:   Wed Oct 24 15:27:03 2018 +0000
 
 The new palm phone reveals how ugly big today's phones are.
 
@@ -1607,9 +1790,9 @@ The new palm phone reveals how ugly big today's phones are.
 Photo credit: [theverge.com](https://www.theverge.com/2018/10/15/17974850/new-palm-smartphone-android-lifemode-time-well-spent-verizon)
 ![attached image](https://mmap.page/log/1540394982.jpg)
 
-commit 61f7dd736d1bfcbfce3165625ec53c93a42bb65a<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Sep 14 12:44:30 2018 +0000<br>
+
+
+Date:   Fri Sep 14 12:44:30 2018 +0000
 
 Oops, `python -m SimpleHTTPServer` does not support range request.
 
@@ -1623,15 +1806,15 @@ func main() {
 }
 ```
 
-commit a45f3b44b7268c930464396bfcb1f7836fed3d09<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Sep 12 13:31:56 2018 +0000<br>
+
+
+Date:   Wed Sep 12 13:31:56 2018 +0000
 
 Go advertises first-class function, but to pass a function, you have to match the exact signature. No sub-typing of functions. Yes, even Java supports covariant return result (no contravariant parameter though), but Go supports neither.
 
-commit 768797fec145dbac1a7f0cc2456f15be73b3f535<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Sep 11 15:12:57 2018 +0000<br>
+
+
+Date:   Tue Sep 11 15:12:57 2018 +0000
 
 Programming needs practice. And I think "how many lines of source code I have **deleted**" estimates my experience on programming better (than how many lines I have written).
 
@@ -1641,92 +1824,92 @@ A shell-fu to calculate how many lines I have deleted in a git repository:
 git log --shortstat --no-merges --author=$(whoami) | grep 'files\? changed' | awk '{deleted+=$6} END {print deleted}'
 ```
 
-commit 03533af13b0896b1c18d6cfc4b31e7eb7b9d5b5d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Sep 1 04:02:40 2018 +0000<br>
+
+
+Date:   Sat Sep 1 04:02:40 2018 +0000
 
 Refactoring with statically typed code (using Python's type hint) is an enjoyable process. To switch an  upstream library, I just replaced one import statement, one type definition, and one invoking statement. Then I just fix all the typing problems reported by PyCharm. After that, I run the program and find out that it just works! No "find usage" or "search and replace". And the project does not have any test (I am too lazy to write one.) Static typing is the preservative to slow down the inevitable decaying of code.
 
-commit 68a5975ed34f8691cf22e5937f64d6c77dd3574e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Aug 23 15:40:56 2018 +0000<br>
+
+
+Date:   Thu Aug 23 15:40:56 2018 +0000
 
 Gists are second class citizen of GitHub. For example, GitHub API does not support searching gists (in both old v3 REST API and the new v4 GraphQL API).
 
-commit a157ec8714c8d605e139196569c7b936a7254289<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Aug 23 15:20:15 2018 +0000<br>
+
+
+Date:   Thu Aug 23 15:20:15 2018 +0000
 
 When will Java have "real" function type? What Java uses interface to mimic is **nominal**, not **structural**.
 
-commit 4ac0c5d6c28fc2d70ac5a25bd8816df82e5c42c5<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Aug 18 13:06:05 2018 +0000<br>
+
+
+Date:   Sat Aug 18 13:06:05 2018 +0000
 
 Learning ML/Haskell deepened my understanding of typing.
 
-commit 7eaf58e81ab8b06810a590c6893073c79abbf4eb<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Aug 12 05:17:56 2018 +0000<br>
+
+
+Date:   Sun Aug 12 05:17:56 2018 +0000
 
 vscode does not have built-in syntax highlighting for Haskell, while it does support F# out of the box.
 
-commit 7592dd1809c6cbd21dbae47276380532b46e1a5a<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Aug 11 06:05:19 2018 +0000<br>
+
+
+Date:   Sat Aug 11 06:05:19 2018 +0000
 
 Google Photo's "free up device space" (delete already backed up photos from device) and recover storage (compress already uploaded photos from original to high quality) applies to ALL photos. I cannot free up / recover storage selectively, for example, only archived photos or photos within certain albums.
 
-commit e722cd27525453a2edbb00a2c23f38faeeb54a6a<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Aug 11 02:43:48 2018 +0000<br>
+
+
+Date:   Sat Aug 11 02:43:48 2018 +0000
 
 Not sure when GitHub changed its front page (they call it dashboard), slow to load. I miss the old GitHub front page, loaded almost instantly.
 
-commit 0eed35408f1ff797c42f0e7b96871386aac2c47e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Aug 10 17:11:56 2018 +0000<br>
+
+
+Date:   Fri Aug 10 17:11:56 2018 +0000
 
 I want to install an extension of JupyterLab (toc), then I found out that installing JupyterLab extensions requires nodejs (because JupyterLab extensions are npm packages). So I install nodejs via `conda`, which automatically downgrading my JupyterLab from v0.33 to v0.28. After all of this, I am about to install the extension, but it turns out it requires JupyterLab v0.33! :-( The Jupyter blog said JupyterLab is ready for users on Feb. 2018 ...
 
-commit 3fb56a8db4d8d5bbc861ddc7b1461a4e7a11003d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Jul 30 12:07:23 2018 +0000<br>
+
+
+Date:   Mon Jul 30 12:07:23 2018 +0000
 
 Not sure whether BDFL's retirement is good or bad, but personally I dislike PEP 572 (I dislike a lot of aspects of Python, though).
 
-commit 2a61b3406631782ecf60dcdf9de2f544f3cf43d1<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Jul 28 13:19:44 2018 +0000<br>
+
+
+Date:   Sat Jul 28 13:19:44 2018 +0000
 
 languagedetective.com predicts your native language with English text you wrote as input. I tested with [one of my blog post](https://weakish.github.io/StutteringTalkaholic/web/html-history/) and the result is: 70.6% Native, 29.4% Non-Native. Bingo!
 But it is not good at predicting my native language: 37.9% Arabic, 16.1% Korean, 14.7% Hindi, 11.1% Chinese, 8.6% German, 6.5% Turkish, 2.1% Japanese, 1.6% French, 0.7% Italian, 0.7% Spanish.
 
 My native language is Chinese.
 
-commit f527208af715e6be8f9f3932d6caf4443aac9eb9<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Jun 24 15:29:15 2018 +0000<br>
+
+
+Date:   Sun Jun 24 15:29:15 2018 +0000
 
 Suddenly I wanted to eat tempura, but it is unavailable from the menu of the izakaya I went. So I ate some fried salmon sushi instead.
 
-commit 9ad0e81f72ab9fd1068dfab44f6e2b45916e5074<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Jun 16 08:34:15 2018 +0000<br>
+
+
+Date:   Sat Jun 16 08:34:15 2018 +0000
 
 My Razer DeathAdder has blue LED on wheel and logo, feeling very disturbing to me. Thanks to [razercfg](http://bues.ch/cms/hacking/razercfg.html), I can turn them off under Linux.
 
 (I am not a game player. I bought this mouse just because there are not many left hand mouse available on my area.)
 
-commit f0663929a91e80d4db022ffdc3280f45f908b8b7<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Jun 12 14:50:34 2018 +0000<br>
+
+
+Date:   Tue Jun 12 14:50:34 2018 +0000
 
 I am really confused with those color modes with monitors. Cannot them show color temperature instead?
 
-commit 82a461009b5676a9ecdb41102f93aa4aab986c57<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Jun 11 16:15:44 2018 +0000<br>
+
+
+Date:   Mon Jun 11 16:15:44 2018 +0000
 
 How not to waste time on matching socks, i.e. O(1) to pick out socks to wear? Make all socks the same. How?
 
@@ -1735,21 +1918,21 @@ How not to waste time on matching socks, i.e. O(1) to pick out socks to wear? Ma
 
 I myself had shifted my mind and treated all socks equally without discrimination, from the beginning of my undergraduate.
 
-commit 80da007aaed4a65ccbc1f37455e4225bfc7def6f<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Jun 5 12:48:21 2018 +0000<br>
+
+
+Date:   Tue Jun 5 12:48:21 2018 +0000
 
 Microsoft is acquiring GitHub. GitHub in fact has an (maybe unintended) use: as a bootstrap mechanism to download tunnel software/tools to bypass firewall. After acquired by Microsoft, I doubt those  tunnel software/tools may be unavailable within the firewall.
 
-commit 98aad6fe3b57a30733c837d72b56c93afb73e75c<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon May 14 11:55:16 2018 +0000<br>
+
+
+Date:   Mon May 14 11:55:16 2018 +0000
 
 Recently I found out that MUJI French Linen shirts/pants have raw (undyed) color for adults.
 
-commit 0f3f3420fef2419821ca5c5ec9a1668c251e1fac<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Apr 18 14:25:34 2018 +0000<br>
+
+
+Date:   Wed Apr 18 14:25:34 2018 +0000
 
 Just figured out why some people are so excited about Flutter (a mobile framework for Android/iOS in Dart by Google).
 
@@ -1762,17 +1945,17 @@ If Dart is counted as Java, then Java becomes an alternative full stack language
 
 (To me, this is not excited at all, though. ;-)
 
-commit 0c3d01c9f56632e15b28b48cbeabba429eb7920b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Apr 16 18:13:34 2018 +0000<br>
+
+
+Date:   Mon Apr 16 18:13:34 2018 +0000
 
 > God made a woman from the rib he had taken out of the man (Genesis 2:22)
 
 So heterosexual intercourse is excitation of one's own body part, i.e. self-gratification?
 
-commit 2b45c2acd57572cb8f2610441b291ab9f97943c8<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Apr 13 14:36:03 2018 +0000<br>
+
+
+Date:   Fri Apr 13 14:36:03 2018 +0000
 
 My personal choices to score movies:
 
@@ -1791,45 +1974,45 @@ I am poor, thus:
 However, I still watch quite a lot of movies after all.
 Thanks to my just the right amount of poverty, I can afford buying movie tickets, and cannot afford some other more expensive forms of entertainment. In fact I am not sure, movie is entertainment to me. Maybe it is rather a form of escaping of the desert of reality? Or, maybe all forms of entertainment are ways of escaping to me?
 
-commit c3410f4facc43c87378869e31fd57de8584536ba<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Apr 8 15:38:41 2018 +0000<br>
+
+
+Date:   Sun Apr 8 15:38:41 2018 +0000
 
 Both "**Three** Billboards Outside Ebbing, Missouri" and "The **Third** Murder" talk about the problems of the environment and the feeling of hopelessness, though in distinct (American/Japanese) ways.
 
-commit b7a027904f375bef575c7abc4e64811481cbafa4<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Apr 2 00:40:06 2018 +0000<br>
+
+
+Date:   Mon Apr 2 00:40:06 2018 +0000
 
 Digg Reader was dead at the end of last month (March 2018).
 
-commit 21ee6659cecc8e42a76b84377f517164ab2870b0<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Mar 28 13:54:07 2018 +0000<br>
+
+
+Date:   Wed Mar 28 13:54:07 2018 +0000
 
 debian.org is not available in CN (not sure whether it has been blocked by the great firewall or just some routing issue).
 
-commit 10e0edfb5af2acf02550e5c4c0f6d481e261262b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Mar 26 17:04:27 2018 +0000<br>
+
+
+Date:   Mon Mar 26 17:04:27 2018 +0000
 
 Almost all smart phones today use a non-removable battery. And most smart phones do not use all-day battery. What an insane design combination!
 
-commit 4adcb4610d7e61fd0a79d84dbd3b8c5e6aca318b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Mar 18 12:33:31 2018 +0000<br>
+
+
+Date:   Sun Mar 18 12:33:31 2018 +0000
 
 Saw "novel blockchain gameplay" in an elevator ad of a browser game. This reminds me of a time when a lot of products advertise themselves using "novel nano-meter technology".
 
-commit bb5e58e5fe9ea41632d7f1be2f33592c26662e8b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Mar 14 14:23:22 2018 +0000<br>
+
+
+Date:   Wed Mar 14 14:23:22 2018 +0000
 
 I learnt typing on a typewriter, so membrane keyboards, especially membrane keyboards with short key travel, feel unnatural to me. However, I found out that my fingers are more tired when typing a lot on mechanical keyboards. (Have not tried Topre keyboards.)
 
-commit 35bf2a7014deda8baffd3c6f80638238abe9c0a3<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Mar 13 15:55:41 2018 +0000<br>
+
+
+Date:   Tue Mar 13 15:55:41 2018 +0000
 
 One of my favorite poem of Li Ch'ing-chao (李清照) is "As in a Dream" (如夢令）.
 
@@ -1845,18 +2028,18 @@ but she answers: "The cherry-apple trees are the same."　（卻道海棠依舊�
 
 "Don't you know? Don't you know?" That is the reality distortion field of a groggy poet.
 
-commit f608c2eaaa33c53300f7ba86be44a483dbc063d6<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Mar 10 08:34:07 2018 +0000<br>
+
+
+Date:   Sat Mar 10 08:34:07 2018 +0000
 
 Very pessimistic about mobile phones I would have to buy in future:
 - Android: With the recent release of Xperia XZ2 Compact (5"), Android phones finally stepped into the no more phones under 5" era.
 - GNU/Linux: Librem 5, as its name told, is a 5" phone.
 - iOS: Unfortunately it seems the only choice left, Defective by Design.
 
-commit 1a6d9af36dca862db4ba1acaaa52d880ee61c669<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Mar 9 17:40:50 2018 +0000<br>
+
+
+Date:   Fri Mar 9 17:40:50 2018 +0000
 
 Just published my first Firefox extension: [arxiv-url], a Firefox addon to replace arxiv pdf links to corresponding abstract links.
 
@@ -1873,27 +2056,27 @@ Note:
 
 [AMO]: https://addons.mozilla.org
 
-commit 58750411b4c5170d7df501c596543e80b6bfdd76<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Mar 9 15:02:46 2018 +0000<br>
+
+
+Date:   Fri Mar 9 15:02:46 2018 +0000
 
 Compared to wine and tea, chocolate is inexpensive. The most expensive chocolate I've eaten is Amedei CRU, which is still affordable.
 
-commit fb192e995ece8e5f6aa0aab086c45766ff36eb18<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Mar 2 12:53:58 2018 +0000<br>
+
+
+Date:   Fri Mar 2 12:53:58 2018 +0000
 
 extensiontest.com (test if a chrome extension is compatible with firefox) is not 100% accurate. Just encountered an chrome extension passing extensiontest.com but not usable in Firefox.
 
-commit 9903a5ee87514dbbab9d7b35ca280a8ae32cc0de<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Feb 27 15:10:09 2018 +0000<br>
+
+
+Date:   Tue Feb 27 15:10:09 2018 +0000
 
 Backing up to USB 3 external hard disk with `borg create -C lz4` is very fast.
 
-commit 1e65794b3495358b84cba9cf88627fba03f4c060<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Feb 21 09:37:21 2018 +0000<br>
+
+
+Date:   Wed Feb 21 09:37:21 2018 +0000
 
 Moving one icon on my mobile phone, all icons between the old place and the new place of the moved icon, will shift their places.
 
@@ -1931,21 +2114,21 @@ And now it infects my Android phone.
 
 My workaround: Only put icons most frequently used on the first screen. Put all other icons in folders. And arrange those folders by their names, pretending that they cannot be arranged freely.
 
-commit 681acb23178c951fe72b5e490568d6b8acebb197<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Oct 6 17:01:38 2017 +0000<br>
+
+
+Date:   Fri Oct 6 17:01:38 2017 +0000
 
 Recently I started to read a book during wait time when I had taken a bag with me (a thin book is light and there is no more worries for short of battery), or just let my mind fly away when I had not. A win-win strategy for the life of my neck and the life of mobile phone battery.
 
-commit a748cbb687be9bbda10918875adeec1dd90a3896<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Oct 1 13:11:09 2017 +0000<br>
+
+
+Date:   Sun Oct 1 13:11:09 2017 +0000
 
 [tutanota client side source code](https://github.com/tutao/tutanota/blob/ea1c1ef1c70c8f3c48dcfaa70f91cd41b7fbdd95/flow/libs.js#L86) contains Flow type definition for Mithril.
 
-commit 4eae0edd2c29c9b7cdcc3c08662b06520e62dde0<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Sep 24 11:47:31 2017 +0000<br>
+
+
+Date:   Sun Sep 24 11:47:31 2017 +0000
 
 Microsoft had suspended my outlook mail account for several weeks , saying my account is used to send a lot of junk mails, or violates their TOS in *unspecified* way.
 
@@ -1955,15 +2138,15 @@ And to get help from Microsoft support for my locked account issue I need to hav
 
 Then I asked myself what will happen if the same thing happens to my gmail account? Then I realized the fact that I did not bother set up my own domain for emails put me into danger.
 
-commit 7556f3fa4b12fe08593b84e5956bd45fb6675275<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Sep 14 14:29:37 2017 +0000<br>
+
+
+Date:   Thu Sep 14 14:29:37 2017 +0000
 
 I always prefer a small screen mobile device, which is easier to carry. I do not read/browse/view a lot with the mobile phone, since either neck or shoulders are in an unnatural angle.
 
-commit 0b7a8aee418183f7b5a789475bea53ffa0adbcd1<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Sep 13 10:32:45 2017 +0000<br>
+
+
+Date:   Wed Sep 13 10:32:45 2017 +0000
 
 iPhone X shows that machine learning can be done on client side, without talking to a remote server. This is encouraging for privacy concerned services and users.
 
@@ -1971,9 +2154,9 @@ I am not sure about the long term impact of animoji. Will it make people's  coun
 
 iPhone {X, 8, 8P, 7, 7P, 6S, 6SP, SE}. Consumers need to choose one from **eight** models. Not sure if this is good or bad for consumers, but this is definitely not the Apple way.
 
-commit c4ef6b9fa3ebb91bcfdbd1b99f05dfa2940b8eda<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Sep 12 06:45:26 2017 +0000<br>
+
+
+Date:   Tue Sep 12 06:45:26 2017 +0000
 
 I found out that I could not understand some code I wrote 8 months ago.
 
@@ -1984,21 +2167,21 @@ The commit message said
 
 So this is the fault of the previous version of me myself. If the previous version of me myself truly understood the algorithm, then I would have resumed or reinvented the algorithm quickly now.
 
-commit 9ea2dc221a1219f27ea530ab71bdd94d589015f2<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Sep 9 22:44:23 2017 +0000<br>
+
+
+Date:   Sat Sep 9 22:44:23 2017 +0000
 
 Years passed, and Google Contact still does not support exporting contacts. It still redirects me to the "old version" for exporting.
 
-commit 0b4b731318d63ff627180d9cfc3e6c8e6f03e713<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Sep 9 12:26:47 2017 +0000<br>
+
+
+Date:   Sat Sep 9 12:26:47 2017 +0000
 
 I think sometimes a ML/Haskell like syntax may be a better alternative for math notation than lisp. Lisp is unambiguous but slightly harder to type manually (I am too lazy to use the lisp IDE/mode and copy-paste, or extend the editor to support auto completion in code blocks.) Compared to C like syntax, ML/Haskell saves some typing of commas and parenthesis.
 
-commit e9b53cd49f2bfdd11b24ce5838ee4c1a40126dbe<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Sep 8 05:03:57 2017 +0000<br>
+
+
+Date:   Fri Sep 8 05:03:57 2017 +0000
 
 The intuition behind Curry-Howard correspondence:
 
@@ -2012,45 +2195,45 @@ Notes:
 2. The verification of returned type of function is so easy that we do not need to verify that manually, the interpreter/compiler will verify that for us automatically.
 3. The Curry-Howard correspondence is the basis of theorem prover such as Coq.
 
-commit c0835e30f98d9f67889884f22889a28aa482fa37<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Sep 5 07:49:17 2017 +0000<br>
+
+
+Date:   Tue Sep 5 07:49:17 2017 +0000
 
 Baidu Map iOS keeps requesting location on background when location info is not available, draining batteries and heating device very quickly.
 
-commit c8fbff9ff5366507702beb7bc74515cfd284ddd0<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Sep 4 15:49:30 2017 +0000<br>
+
+
+Date:   Mon Sep 4 15:49:30 2017 +0000
 
 Now mail.google.com redirects to www.google.com/gmail/about/, which has a fancy design. I miss the simple UI with a login form and storage space counter.
 
-commit 362e27ebef938f8b5a3642e49b4162da69d66313<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Sep 3 07:15:32 2017 +0000<br>
+
+
+Date:   Sun Sep 3 07:15:32 2017 +0000
 
 To stop EME (Encrypted Media Extension) from entering W3C Standard, FSF asked people to **dial up** Tim Berners-Lee. First, asking people to dial up a person is not protest but **DDOS**. Second, no one cares W3C standard today. If Apple (safari), Google (chrome), Mozilla (firefox) and Microsoft (Edge) were dead-set, then the story is over. Neither W3C nor Tim Berners-Lee can do anything about it. (Fortunately Mozilla is not dead-set on EME, although Firefox Desktop has implemented it years ago.)
 
-commit 4358571b67c1cf2b6452036aa38906bdce185ff5<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Sep 2 07:43:20 2017 +0000<br>
+
+
+Date:   Sat Sep 2 07:43:20 2017 +0000
 
 MIT scheme taught me a chuunibyou way to say goodbye: "Moriturus te saluto."
 
-commit 425acab229df73f3bc472ffbbc94a3cc0d70809b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Sep 1 14:32:22 2017 +0000<br>
+
+
+Date:   Fri Sep 1 14:32:22 2017 +0000
 
 Powershell aliases still do not support tab completion.
 
-commit b7f65e83de36746b62d6c049462365fcfc24f10d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Aug 28 07:27:37 2017 +0000<br>
+
+
+Date:   Mon Aug 28 07:27:37 2017 +0000
 
 Finally, concepts such as polymorphism, generics, type variable/parameter, overloading, and type class are united in my brain.
 
-commit ec5342f994f83c25952e72183a1a3ac7d595a140<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Aug 27 14:50:26 2017 +0000<br>
+
+
+Date:   Sun Aug 27 14:50:26 2017 +0000
 
 Failed to understand the `fmap` signature in Haskell in about 15 minutes:
 
@@ -2086,9 +2269,9 @@ So I have to:
 
 As an ignorant person, obviously  I chose 2.
 
-commit 02c405ae1ce53c41a118dbda690b57e1f3b68fe4<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Aug 27 06:29:32 2017 +0000<br>
+
+
+Date:   Sun Aug 27 06:29:32 2017 +0000
 
 about.me has not been about me for a long time.
 
@@ -2096,51 +2279,51 @@ about.me was a simple profile page before 2016.
 
 Now it is supposed to direct bandwidth to the site matters most to the user. about.me called it "personal pages with a purpose". While this feature may be useful, this is not the original about.me anymore. The original purpose of about.me is you can insert a `about.me/you` link in bios of other sites, less to type and easier to update.
 
-commit 172c930a2e19509b6eff765cbdcc01ff2c43d364<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Aug 25 04:03:20 2017 +0000<br>
+
+
+Date:   Fri Aug 25 04:03:20 2017 +0000
 
 "Go to definition" does not work for shell scripts in vscode. `*` (from vscodevim extension) can be used as a workaround.
 
-commit 21f5448676ab4c1ea60f03955678287321ce4721<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Aug 25 03:09:43 2017 +0000<br>
+
+
+Date:   Fri Aug 25 03:09:43 2017 +0000
 
 `sh` is the only language I am using that has dynamic scoping for variables. (Privacy leaked: I do not use Emacs.)
 
-commit c76d78dd6347d93f211684786616184679ee6ed4<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Aug 21 23:57:28 2017 +0000<br>
+
+
+Date:   Mon Aug 21 23:57:28 2017 +0000
 
 A recent Windows update forced me to re-select options like no personalized ad, ruined my registry key for a customized keyboard layout (dvorak and swap esc & caps), and pined the Mail app on my taskbar. This is more like a regression than an update to me. (To be fair, it does allow me to launch some Windows applications under WSL.)
 
-commit 3d83fa0619b999003945cebf7bdd8d486a113c73<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Jan 27 08:57:51 2017 +0000<br>
+
+
+Date:   Fri Jan 27 08:57:51 2017 +0000
 
 Lantern only provides binary package in deb format for Linux. To install lantern on rpm based Linux distributions, first install `rpmbuild`, `alien` (to convert deb to rpm) and `libappindicator3-1` (lantern's dependency), then use `alien` to convert the deb to rpm, and finally install the converted rpm.
 
-commit 80e4d05abb2027fd1e8d2cafc9e102ab68cec748<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Jan 26 11:48:39 2017 +0000<br>
+
+
+Date:   Thu Jan 26 11:48:39 2017 +0000
 
   Used openSUSE Leap 42.2 for a few days. You have to add a few repositories to install things like mp3, flash, and input methods. You have to configure mounting NTFS partitions yourself (via YaST or manually editing `/etc/fstab`). Default fonts setting for Chinese is terrible. Other things work out of the box mostly. KDE Plasma 5.8.2 roughly catches up the polishness of recent versions of Windows.
 
-commit 39e79b5d7fb7a27cc0d1465ed85e2002b53de4bb<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Jan 24 12:55:36 2017 +0000<br>
+
+
+Date:   Tue Jan 24 12:55:36 2017 +0000
 
 Encountered ads with only one sentence "Only bricks produced by The Lego Group are Lego ® bricks." and one Lego logo. This is advertising of silliness. No sense and no design.
 
-commit a73f929609c80ae5c19825387e5fe92b7594d51d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Jan 22 10:09:15 2017 +0000<br>
+
+
+Date:   Sun Jan 22 10:09:15 2017 +0000
 
 cdrtools author's viewpoint on [controversy of cdrtools license compatibility](http://cdrtools.sourceforge.net/private/linux-dist.html).
 
-commit f54d4822f19f8eaf91c5282df76a791d3fdb01e6<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Jan 18 16:22:03 2017 +0000<br>
+
+
+Date:   Wed Jan 18 16:22:03 2017 +0000
 
 A programmer's client (a local cinema) website got hacked, with racist messages posted. The policy suspected the programmer hacked the site, and got a warrant to seize the programmer's computer. Then they sent **21 armed polices**, 3 of them to seize the computer, and **18 of them as witness**.
 
@@ -2156,9 +2339,9 @@ News reports:
 1. [first news report on nationalpost.com](http://news.nationalpost.com/news/canada/lawyer-tells-client-on-phone-during-predawn-raid-theyre-going-to-shoot-you-sam-put-your-hands-up)
 2. [more recent report on Motherboard](https://motherboard.vice.com/read/why-did-police-kill-an-alleged-small-time-hacker-canada-sam-maloney) ([ZeroNet mirror](http://127.0.0.1:43110/1uEc35aRpkDgVmJ35jcMEHm4D2JCcEejp/motherboard/))
 
-commit f2a674311aaade5fa8027d01374ac123c4004740<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Jan 16 13:44:08 2017 +0000<br>
+
+
+Date:   Mon Jan 16 13:44:08 2017 +0000
 
 The so called whatsapp 'backdoor' was documented in the [blog post of Open Whisper Systems on 05 Apr 2016](https://whispersystems.org/blog/whatsapp-complete/).
 
@@ -2166,9 +2349,9 @@ I think the notification on security code for a contact changing should be "opt 
 
 I would rather call it a less secure design choice. Anyway, no matter you think it is a backdoor or not, it is not news.
 
-commit 727792d26b35e4dee4aa3c026ab41102a0be4a84<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Jan 10 12:48:10 2017 +0000<br>
+
+
+Date:   Tue Jan 10 12:48:10 2017 +0000
 
 Sign and publish your posts/comments from command line:
 
@@ -2184,9 +2367,9 @@ For example, if you are signed in with `you@zeroid.bit`, then you can find `cert
 
 Thanks to @nofish for this tip.
 
-commit 95874aa41438afacb9e2c1f2ef37420a7b67aceb<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Jan 9 13:02:24 2017 +0000<br>
+
+
+Date:   Mon Jan 9 13:02:24 2017 +0000
 
 > the ideas enshrined in the Ubuntu Manifesto:
 > that software should be available free of charge,
@@ -2212,9 +2395,9 @@ Later "the next big thing" of Ubuntu gradually changed to "universal user experi
 Not know how well Ubuntu will do in next 10 years.
 Anywhere, "universal user experience" has nothing to do with the  original Nguni Bantu word "Ubuntu".
 
-commit a734b6515042471adbe55c2c1edf3df326b8ea38<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Jan 8 11:05:00 2017 +0000<br>
+
+
+Date:   Sun Jan 8 11:05:00 2017 +0000
 
 Install ZeroNet as an auto-start service on FreeBSD:
 
@@ -2230,15 +2413,15 @@ Run ZeroNet command:
 su -m nobody zeronet siteCreate
 ```
 
-commit 8208881a346d2bfcc254e7ebe61858b591ff2e16<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Jan 7 14:18:06 2017 +0000<br>
+
+
+Date:   Sat Jan 7 14:18:06 2017 +0000
 
 vscode's refactoring is still much less powerful than WebStorm, even for TypeScript.
 
-commit 7c2cfb5b03b803e3241245f35a7cdca3726f622d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Jan 6 11:24:26 2017 +0000<br>
+
+
+Date:   Fri Jan 6 11:24:26 2017 +0000
 
 "A Little Java, A Few Patterns" uses a special coding style to remark mutability:
 
@@ -2253,9 +2436,9 @@ anArray.append(1)
 ; // Same as above.
 ```
 
-commit 2d908a2516ee9e6487821ef2a07f0b7de4e6414d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Jan 5 11:01:29 2017 +0000<br>
+
+
+Date:   Thu Jan 5 11:01:29 2017 +0000
 
 new History().repeat
 
@@ -2263,9 +2446,9 @@ There is no first class functions in Java, so to pass functions, we wrap functio
 
 P.S. Same applies to TypeScript, Flow, Kotlin, and Swift. Ceylon's function type is first class, though.
 
-commit cffb6c594b67a444955116461316f0a2ba77a8c4<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Jan 4 12:31:52 2017 +0000<br>
+
+
+Date:   Wed Jan 4 12:31:52 2017 +0000
 
 If you run ZeroNet on a remote machine, the doc recommends enabling `UiPassword`. But if your are using an unsafe network (public wifi, evil ISP, etc), password is transferred over insecure HTTP protocol. So for safety, you need to configure a reverse proxy with SSL for ZeroNet.
 
@@ -2277,41 +2460,41 @@ And run this command at local machine:
 
 Then you can just access `http://127.0.0.1:43110/` on your local machine, securely.
 
-commit c72f01e8229205a8340fbcc35448b5332fde54a1<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Jan 3 10:32:23 2017 +0000<br>
+
+
+Date:   Tue Jan 3 10:32:23 2017 +0000
 
 Miss `finally` or `defer` in C.
 
-commit fcfe96e7b3af7045d2fca3a29c1b53155a877583<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Jan 2 11:59:03 2017 +0000<br>
+
+
+Date:   Mon Jan 2 11:59:03 2017 +0000
 
 Yoda expressions are useful for tests in C, such as in `assert(true == ...` and `assert(false == ...`.
 
-commit 64d89862aef3358faba7bbeac17dc7db28046e6a<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Jan 1 06:27:48 2017 +0000<br>
+
+
+Date:   Sun Jan 1 06:27:48 2017 +0000
 
 Just found some old notes on K&R C book.
 
 The ink (I used a cheap ballpoint pen) is fading but still readable with some efforts.  Most notes are tricky parts of C, which are somehow irrelevant now (either being familiar with them or found out I rarely use them). Some notes I cannot agree now, e.g. "Union really looks like a dirty hack on struct."  on p. 125. However, on p.89, there is a note on `while (*s++ = *t++)` saying "Take me minutes to understand." Currently it would still take me minutes to understand it. Proud of it.^W^W^W
 
-commit 3af5b23fe2b9b2f725f613ee389fda9b5b804d70<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Dec 31 04:25:24 2016 +0000<br>
+
+
+Date:   Sat Dec 31 04:25:24 2016 +0000
 
 Apache Portable Runtime is originally supporting library for Apache web server. Thus it uses memory pool heavily. So it may not be suitable to use APR as a standard library for general C programming.
 
-commit d933e37cc71af49f6445c37ad1a82e67014654a1<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Dec 28 12:57:20 2016 +0000<br>
+
+
+Date:   Wed Dec 28 12:57:20 2016 +0000
 
 USB 3 external disks are 10-20% slower on VirtualBox.
 
-commit 4fbe5543cfa7a2094fb3e30d2dd85442fe4037ee<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Dec 27 15:40:28 2016 +0000<br>
+
+
+Date:   Tue Dec 27 15:40:28 2016 +0000
 
 The confusing^W smarty Kotlin
 
@@ -2328,27 +2511,27 @@ the type f may be one of:
 2. `(IntArray) -> Int`, a variadic function
 3. `f`, an object named `f` with an `invoke` method
 
-commit 3e939f8b079c4d044e860aa523e4b3700d3078c0<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Dec 24 09:50:34 2016 +0000<br>
+
+
+Date:   Sat Dec 24 09:50:34 2016 +0000
 
 Just fried some peanuts, which increased the PM 2.5 by 8 ug/m^3 in kitchen. So frying will not be a source of local air pollution  if you have extractor hood opened and keep the oil temperature low.
 
-commit 6b1db2859946ccc0051b5a9372af7ced68c60e9e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Dec 23 13:55:52 2016 +0000<br>
+
+
+Date:   Fri Dec 23 13:55:52 2016 +0000
 
 Opened software manager in OpenSUSE and found in "rpm groups" there are `application` and `applications`, `developement` and `development`.
 
-commit 2cfb0d8d429ef4e7b565d2e5486878223b4ead17<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Dec 22 15:10:50 2016 +0000<br>
+
+
+Date:   Thu Dec 22 15:10:50 2016 +0000
 
 PyCharm 2016.3 claims to support Python 3.6's f-strings (formatted literal). But in fact it just supports syntax highlight. All PyCharm's intelligent features are not enabled for code embedded in f-strings.
 
-commit 2c254d1b3ac5c8436b7a3ce582f40b7c68e90aa8<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Dec 21 13:02:18 2016 +0000<br>
+
+
+Date:   Wed Dec 21 13:02:18 2016 +0000
 
 [Beaker](https://beakerbrowser.com/) is similar to ZeroNet. Their difference:
 
@@ -2366,9 +2549,9 @@ Also, because Beaker requires  a customized browser:
 
 Other differences are technical details, like ZeroNet is written in Python, while Beaker is written in JavaScript, and ZeroNet uses base58 encoded site address (compatible with bitcoin), while Beaker uses hex encoded address.
 
-commit 0db9db85c655aaeee957d00ef41a9ac688f832b0<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Dec 20 12:21:20 2016 +0000<br>
+
+
+Date:   Tue Dec 20 12:21:20 2016 +0000
 
 Problems of Sia:
 
@@ -2376,18 +2559,18 @@ Problems of Sia:
 2. The Sia developers mined the first 100 blocks of Sia.
 3. 3.9% of all successful storage contract payouts go to Siafund, of which 87.5% is owned by Sia's parent company.
 
-commit 3f7436706d38ffefcc566908469c264db2386bbe<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Dec 19 12:54:21 2016 +0000<br>
+
+
+Date:   Mon Dec 19 12:54:21 2016 +0000
 
 Problems of StorJ:
 
 - Semi-central: storage is distributed, but the abstract object layer and payment is central.
 - For every dollar a renter paid to StorJ, the host finally get 60 cents, StorJ keeps 40 cents.
 
-commit 4126b8d61711f89728e1440be0a9c5b9c44af4a8<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Dec 18 10:25:47 2016 +0000<br>
+
+
+Date:   Sun Dec 18 10:25:47 2016 +0000
 
 Just launched [0git.bit](/0git.bit), a list of git repositories on ZeroNet.
 
@@ -2405,53 +2588,53 @@ Its source code is hosted at ZeroNet, [browsable and cloneable](/0git.0git.bit).
 
 P.S. editing posts is not implemented yet.
 
-commit 99c485b376711023ef29ff8000dd04dcdab93133<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Dec 16 17:05:01 2016 +0000<br>
+
+
+Date:   Fri Dec 16 17:05:01 2016 +0000
 
 Currently FaceBook Message and Google Allo has optional end to end encryption. And WhatsApp has end to end encryption enabled for all messages. On the other hand, WeChat still uses http.  #ThisIsChina
 
-commit 757496497d4e1b6668e4af728b88ffdebcebb720<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Dec 15 15:30:29 2016 +0000<br>
+
+
+Date:   Thu Dec 15 15:30:29 2016 +0000
 
 [SetupList](/setuplist.0web.bit/) now has its .bit domain [setuplist.0web.bit](/setuplist.0web.bit/).
 
 P.S. If you want to register a .bit domain, but do not want to setup a full namecoin node on your machine, you may get a .bit domain for your zeronet site at [0web.bit](/0web.bit/) for 0.001BTC/0.1XMR.
 
-commit 58b69ed0e0f314e10d6cfadd35fc04cf8fe2a735<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Dec 14 12:35:44 2016 +0000<br>
+
+
+Date:   Wed Dec 14 12:35:44 2016 +0000
 
 Yandex mail smtp refuses to send a GPG encrypted mail saying it looks like spam...
 
-commit 0507b70f72b862d549d42faeb5db1ee8caf70e6e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Dec 12 10:52:02 2016 +0000<br>
+
+
+Date:   Mon Dec 12 10:52:02 2016 +0000
 
 Visual Studio Code only provides 32 bit downloads for Windows.
 
-commit d52e74344be26ab5b4fce68ad992ef9f331df874<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Dec 11 11:46:13 2016 +0000<br>
+
+
+Date:   Sun Dec 11 11:46:13 2016 +0000
 
 Lesson learned: when your `data.json` local copy is outdated (e.g. rollback to an old version manually because of file system issue), do not post new content to the zite that outdated `data.json` belongs to. Otherwise you will publish your "deletions".
 
-commit 2acd6d6a5ce4efe85e4a9ac0803b61ac108abe56<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Dec 10 12:30:14 2016 +0000<br>
+
+
+Date:   Sat Dec 10 12:30:14 2016 +0000
 
 When the function parameter is a function pointer, CLion (2016.3) cannot auto complete function name as parameter, like IntelliJ Idea for Java.
 
-commit c3a8f82d1380a116bb2c04491b1dbc1255063c1d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Dec 9 13:04:49 2016 +0000<br>
+
+
+Date:   Fri Dec 9 13:04:49 2016 +0000
 
 Go back to use paper to manage my todos. (Some todos are still in WunderList, e.g. shopping list, cause I do not want to bring paper and pencil to supermarkets.)
 
-commit ce64cbf72472e4f9f4379cebfd165f65d763e3cf<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Dec 8 13:25:03 2016 +0000<br>
+
+
+Date:   Thu Dec 8 13:25:03 2016 +0000
 
 C is a hacky language. For example, string in C. If you think string in C is an array of characters, then you cannot put some characters in string (such as Unicode character) and you can put some noncharacters into string. If you think string is an an array of bytes, like a buffer, then you cannot put the byte `\0` into string. So string in C is inconsistent viewed from both high level and low level.
 
@@ -2461,9 +2644,9 @@ Go, advertised as modern C, inherits C's hacky mindset:
 
 - For variable declaration without initialization, instead of checking it is correctly initialized later, Go just implicitly initialize it with a zero value. Even worse, Go uses `nil` as zero value for pointers, slices, interfaces, maps, channels, and functions.
 
-commit 0729221cae5e2f560112c753087e80d9998bcf75<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Dec 7 11:02:23 2016 +0000<br>
+
+
+Date:   Wed Dec 7 11:02:23 2016 +0000
 
 @zeronetuseri6293 asked how to explain Systemd is bad "like I am five". I just prepare some text to brainwash five-year-old "Systemd is bad":
 
@@ -2485,29 +2668,29 @@ Systemd said: "I am very very powerful. I will do all these things. Send those v
 You as a five year old may not think Systemd is bad.
 But I hope you understand why some people consider Systemd as "bad".
 
-commit 57447fcfe058af49ff98eb7a3586669b9f5a7f88<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Dec 6 09:36:47 2016 +0000<br>
+
+
+Date:   Tue Dec 6 09:36:47 2016 +0000
 
 ZeroMail does not hide sender (and effectively timestamp and conversations may reveal receipt).
 
 Similarly, MaidSafe Email does not hide receipt.
 
-commit 6efc3cc588660c2d827f39f07acf64d049ac092c<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Dec 5 13:46:50 2016 +0000<br>
+
+
+Date:   Mon Dec 5 13:46:50 2016 +0000
 
 mypy is still incomplete.
 
-commit dcb1677a9fa18badf1afa7a62e6d05ecd4af5b60<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Dec 3 12:25:10 2016 +0000<br>
+
+
+Date:   Sat Dec 3 12:25:10 2016 +0000
 
 [911 The new pearl harbor](https://www.youtube.com/watch?v=8DOnAn_PX6M) Politicians do not have imagination is totally a stereotype!
 
-commit 914350efe5d5e504a7c99f7a8eabd951b528d725<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Dec 2 13:13:16 2016 +0000<br>
+
+
+Date:   Fri Dec 2 13:13:16 2016 +0000
 
 Brace formatting style
 
@@ -2553,15 +2736,15 @@ I guess for large screens a few wasted lines is affordable for clarity.
 
 Maybe the Java style is suitable for a setup with small fonts on a small screen, provided the syntax highlight scheme distinguishes braces clearly?
 
-commit 74af79ff28814abca39beadf089160a32532913e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Dec 1 12:34:15 2016 +0000<br>
+
+
+Date:   Thu Dec 1 12:34:15 2016 +0000
 
 ZeroNet's answer to CDN/cloud hosting industry: kill it. I think this is one of the most charming part of technology: rather than sloving a problem, make the problem irrelevant.
 
-commit 6210e61ac0bd2ddd0691a21f90bae546a8f0115b<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Nov 30 11:04:37 2016 +0000<br>
+
+
+Date:   Wed Nov 30 11:04:37 2016 +0000
 
 Firefox version 41 to 50 (including 45 ESR used by the latest version of the Tor browser) has a memory corruption vulnerability allows malicious code to be executed on Windows, thus deanonymize Tor users.
 
@@ -2573,46 +2756,46 @@ To protect yourself from similar possible future vulnerabilities:
 
 3. Less secure than the above solutions, but the easiest: Use Tor Browser with JavaScript off, or at least block JavaScript by default, and whitelist sites you trusted.
 
-commit d6d566c75335090dc5e9440dbcddf4732e0f3840<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Nov 29 13:31:00 2016 +0000<br>
+
+
+Date:   Tue Nov 29 13:31:00 2016 +0000
 
 [$20 credit for new users of Vultr](http://www.vultr.com/?ref=7046521-3B) (KVM VPS with SSD, billed hourly/monthly, located in US, EU, Austrilia, Singapore, and Japan).
 
 Vultr v.s. DigitalOcean: They are quite similar except that Vultr has slightly more RAM for $5/m plan, and Vultr's snapshots are still free right now.
 
-commit cc7e2b9c02d397124d9b6e7410781f5aab7ae871<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Nov 27 11:32:09 2016 +0000<br>
+
+
+Date:   Sun Nov 27 11:32:09 2016 +0000
 
 Tunanota and ProtonMail looks promising, but they do not work with others, i.e. Tunanota users cannot exchange encrypted mails with ProtonMail users. Also, Tunanota and ProtonMail do not work with GPG users. Encryption is important, but openness is also important. And GPG is a good example of implementating encryption without reducing openness.
 
 An conterexample is Scryptmail, which supports import and export of GPG keys.
 
-commit 7ad3895ad64ad5cc797bc2e116c66f92a3980d74<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Nov 26 04:11:19 2016 +0000<br>
+
+
+Date:   Sat Nov 26 04:11:19 2016 +0000
 
 Black Friday sales for VPS: https://www.lowendtalk.com/categories/offers
 
-commit b3208a5fe6cd78e16cfd54e94a49a8dd817f05b4<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Nov 25 09:10:29 2016 +0000<br>
+
+
+Date:   Fri Nov 25 09:10:29 2016 +0000
 
 Kotlin uses `Array<T>` for `vararg p: T` (variadic functions) underhood, but:
 
 - Basic types are special, e.g. `IntArray` for `vararg p: Int`.
 - `p: Array<T>` and `vararg p: T` behaves differently. In other words, given a function `Array<T> -> Unit`, we do not know how to invoke it just from its signature. (`Array<T> -> Unit` may be an infix function, but all infix functions can be invoked as normal functions.)
 
-commit 71c466b597036be9daad6230d5902aca77cfdc89<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Nov 24 13:35:48 2016 +0000<br>
+
+
+Date:   Thu Nov 24 13:35:48 2016 +0000
 
 Overloading an operator should be consistent to all types supporting the operator.
 
-commit a0c75f04637df9ec9a68eee6393d34b27961a6cc<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Nov 23 11:24:24 2016 +0000<br>
+
+
+Date:   Wed Nov 23 11:24:24 2016 +0000
 
 Flaws of TypeScript's type system:
 
@@ -2621,9 +2804,9 @@ Flaws of TypeScript's type system:
 - all types are assignable to empty interfaces, and
 - TypeScript cannot infer expected type with unused parameter in generics.
 
-commit d845034d2f62b5cf22a58e14a2da305822e83c06<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Nov 22 15:56:41 2016 +0000<br>
+
+
+Date:   Tue Nov 22 15:56:41 2016 +0000
 
 [Watch Trump's Pick to Run the CIA Call Edward Snowden a 'Traitor' Who Should Be 'Given a Death Sentence'](https://reason.com/blog/2016/11/18/watch-trumps-reported-pick-to-run-the-ci).
 
@@ -2634,9 +2817,9 @@ Make America great again so the great U.S. government could brought back Assange
 
 I bet the greatest archivement of Trump would be what he had done before elected as U.S. President: stopping Hillary.
 
-commit 0fea02758f06282d85936202056bc91aa50bf8b7<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Nov 20 08:03:57 2016 +0000<br>
+
+
+Date:   Sun Nov 20 08:03:57 2016 +0000
 
 TypeScript 2.0 brings in more fix of the poorly designed type system:
 
@@ -2644,15 +2827,15 @@ TypeScript 2.0 brings in more fix of the poorly designed type system:
 tsc --strictNullChecks --noImplicitThis --noUnusedParameters --noUnusedLocals
 ```
 
-commit 70b7438e33c5eabf38b61622a50f9bca00374bc5<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Nov 17 00:56:56 2016 +0000<br>
+
+
+Date:   Thu Nov 17 00:56:56 2016 +0000
 
 Quora hides posts/answers to force you to register/login. Now its Chinese clone Zhihu finally borrows this "feature".
 
-commit d118e4c179fdf5efd8f377bd10a92356e344ce1e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Nov 16 12:36:35 2016 +0000<br>
+
+
+Date:   Wed Nov 16 12:36:35 2016 +0000
 
 JavaScript's ASI (auto semicolon insertion) is confusing. However, if I prefer to not omit semicolons, I only need to remember one rule: not  breaking line after `throw`. (There are other rules, but I am unlikely to write code related to other rules, e.g. `i\n++\nb`.)
 
@@ -2667,15 +2850,15 @@ On the other side,  if I prefer to omit semicolons, I need to remember additiona
 
 Thus my choice is not omitting semicolons.
 
-commit 41218d752f81d1b37086b1d57baa7cfcfac9902e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Nov 15 10:34:25 2016 +0000<br>
+
+
+Date:   Tue Nov 15 10:34:25 2016 +0000
 
 After repositioning Windows 8.1's task bar to left, right, or top, hovering cursor to bottom left corner still reveals the windows start icon.
 
-commit 25ad638b66b4eb35ab55defe3de643d39c17d947<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Nov 14 10:18:03 2016 +0000<br>
+
+
+Date:   Mon Nov 14 10:18:03 2016 +0000
 
 Windows 8.1's Microsoft Pinyin input method:
 
@@ -2683,9 +2866,9 @@ Windows 8.1's Microsoft Pinyin input method:
 2. no keyboard shortcut to switch between traditional Chinese and simplified Chinese
 3. no option to set default to English
 
-commit da35b45c5e6f5296d38cd536ed6bc09a021d9dfc<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Nov 13 15:34:25 2016 +0000<br>
+
+
+Date:   Sun Nov 13 15:34:25 2016 +0000
 
 Use registery to swap keys under Windows.
 
@@ -2707,9 +2890,9 @@ Notes:
 - `3a,00`: Caps.
 - `00,00,00,00,00`: end.
 
-commit 74fe14cdfc9a37f54d1b1b9d1e123ed7c6957f00<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Nov 4 12:40:09 2016 +0000<br>
+
+
+Date:   Fri Nov 4 12:40:09 2016 +0000
 
 A quick review of germ.io:
 
@@ -2730,9 +2913,9 @@ Missing:
 - When change status from ideation to action, assign to no one by default, should assign to the one change status by default.
 - No way to hide completed and not taken tasks.
 
-commit eb732b12d5d0e092ea2db197d3fba97980b5039d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Nov 3 14:48:39 2016 +0000<br>
+
+
+Date:   Thu Nov 3 14:48:39 2016 +0000
 
 For any one want to pick up programming language , I recommend [The Little Schemer](https://www.amazon.com/Little-Schemer-Daniel-P-Friedman/dp/0262560992)，less than 200 pages and can be finished in a weekend. It starts from zero and gradually introduces concepts like recursion, higher-order functions, curry, Church encoding, halting problem, lambda calculus,  fixed point, Y combinator, continuation, CPS, Godel Incompleteness Theorem, and a basic interperator for a simplified progarmming language.
 
@@ -2740,33 +2923,33 @@ If you think The Little Schemer is expensive, you can try [CoffeeScript Ristrett
 
 Do not worry the above books do not use a language you are going to use in your work. After all, the right approach to pick the certain programming language you are going to use is to focus on  semantics, instead of syntax; focus on concepts, instead of concrete details; focus on good parts, instead of all parts; also learning the implemantation of the language is a good way, since modeling is an effective way of learning (no need a full implement, also not worry about performance, just implement basic and import concepts).  The Littele Schemer fully conforms to this approach. Once you learned the scheme language with it, you know how to learn a new languge, and you know essential concepts of programing language. Then you can just pick up any language you are going to use in the same way. And because you only need to understand new semantics and concepts of the new language, it will be fast. For syntax, just use a good IDE or setup your editor properly.
 
-commit 51e528d72f9a4f91512a8a1e3b0a72a34d8e34d2<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Nov 3 13:18:58 2016 +0000<br>
+
+
+Date:   Thu Nov 3 13:18:58 2016 +0000
 
 All Linux distributions where UEFI Secure Boot works out of the box (e.g. Fedora, OpenSuse, Ubuntu) are using systemd! #WTF
 
-commit d05592432f82986db24670a30eba5ff27b28b49e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Nov 2 14:06:09 2016 +0000<br>
+
+
+Date:   Wed Nov 2 14:06:09 2016 +0000
 
 Although Python still does not understand type hints, at least IDEs will give a warning. Or you can check types via `mypy`.
 
-commit 0e8fb8fe201ea8e4660315a7512d7a90ccfde9da<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Oct 31 23:16:18 2016 +0000<br>
+
+
+Date:   Mon Oct 31 23:16:18 2016 +0000
 
 The email to onfirm email address on dida365.com (Chinese version of TickTick) does not show any explicit url link. The link it is hide in HTML. It is wrong to assume every email client renders HTML correctly.
 
-commit 5ec881413f27eb38fe47fa0dd84c823e9efae5d8<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Oct 29 23:13:01 2016 +0000<br>
+
+
+Date:   Sat Oct 29 23:13:01 2016 +0000
 
 mp3.163.com (a music distribution site in China) does not have any API. In fact it even encryptes post params with some home made algorithm (the algorithm is different on different clients and is evolving, the current API in web UI is based on AES, RSA and MD5) on HTTP (it does not support HTTPS). That's why I have never registered an account on it.
 
-commit a1b86e2d0ac34097f09d950f35f20593f87986be<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Oct 28 13:29:44 2016 +0000<br>
+
+
+Date:   Fri Oct 28 13:29:44 2016 +0000
 
 WTF! New generation of MacBook Pro!
 
@@ -2774,21 +2957,21 @@ It's Pro so it does not need to be so thin that it uses  a painful to type keybo
 
 In fact, Apple now effectly does not sell laptops. MacBook and MacBook Air only has 4 or 8GB unupgradable RAM. Now they ruied MacBook Pro, the only series of sufficient RAM.
 
-commit fb4d9e85f41d24ec25516ab5ae0d2ba966a50381<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Oct 25 12:25:13 2016 +0000<br>
+
+
+Date:   Tue Oct 25 12:25:13 2016 +0000
 
 The main audience of code is human beings, not tests. Improving testability should not harm readability.
 
-commit 4162dc3aa10a0eaeefd4b858ba92aaa956661ab0<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Oct 23 01:02:28 2016 +0000<br>
+
+
+Date:   Sun Oct 23 01:02:28 2016 +0000
 
 citibank's "change password" gives misleading error info ("must contain at least 1 digit and 1 letter") if new password contains some special characters like `@`.
 
-commit 52d3697317bc0599c924642dd7201cd383536bc5<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Oct 21 11:45:33 2016 +0000<br>
+
+
+Date:   Fri Oct 21 11:45:33 2016 +0000
 
 In Ceylon, cases in `switch` need to be both disjoint and exhausted. Using a strict form helps to reduce bugs.
 
@@ -2821,9 +3004,9 @@ case (is File|Link|Nil) {
 
 The compiler will refuse to compile, saying cases are not exhausted.
 
-commit 65f020c095a73726b1665fd9b4f5980dbeb98ea1<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Oct 18 14:58:51 2016 +0000<br>
+
+
+Date:   Tue Oct 18 14:58:51 2016 +0000
 
 I prefer explicit else branch over fall through flow.
 
@@ -2887,9 +3070,9 @@ if (condition) {
 }
 ```
 
-commit 07f026f18513e5f83ddfc82a75fe9df4f567c39d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Oct 13 13:41:07 2016 +0000<br>
+
+
+Date:   Thu Oct 13 13:41:07 2016 +0000
 
 Programming languages are clearer than natural languages. So "well-commented code" may not be well-written.
 
@@ -2903,57 +3086,57 @@ Here 'commenting' mainly refers to inline comments,
 i.e. comments explaining implementation details.
 Doc annotation of public modules and functions on their usage is fine.
 
-commit 86d7c89e2e6f4223f75ca92585101f9253690c55<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Oct 10 13:57:39 2016 +0000<br>
+
+
+Date:   Mon Oct 10 13:57:39 2016 +0000
 
  Windows Mobile does not support two factor auth, you have to use an app password. Now app password does not work on my phone (used to work on previous versions of Windows Mobile 10). I have to turn off two factor auth. Not too old Android versions support two factor auth out of the box.
 
-commit d681144f7c082830879ff264eb0a22653d2efe04<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Oct 8 06:39:05 2016 +0000<br>
+
+
+Date:   Sat Oct 8 06:39:05 2016 +0000
 
 September 2015 Evernote Food shutdown. dianping.com (restaurant review site in China) also shutdown its public API service (individual developers cannot apply API access, APIs are only available to a few parterners) on that month.
 
-commit f09e770fb259a6dfcd527437d4f4a8bcc15ddc8d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Oct 7 13:25:59 2016 +0000<br>
+
+
+Date:   Fri Oct 7 13:25:59 2016 +0000
 
 Thought there was something wrong with the sound configuration on my machine. Then I found out the mp3 I was playing is 32kbps.
 
-commit 4a2e4a92ab44bce0fa5d669cba5ddb3c3503c309<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Oct 6 22:56:16 2016 +0000<br>
+
+
+Date:   Thu Oct 6 22:56:16 2016 +0000
 
 vscode is open source (MIT) and Visual Studio Code is proprietary. So confusing the names!
 
-commit ecc27c1e6c4de4ce9365cdaf12719244878280b5<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Oct 3 09:20:35 2016 +0000<br>
+
+
+Date:   Mon Oct 3 09:20:35 2016 +0000
 
 Visual Studio Code: "Code editing. Redefined." How a code editor borrowed a lot from SublimeText and TextMate dare to declare this?
 
-commit 25e833c684e2a000a584c619ee86bd70314d30df<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Oct 2 10:06:49 2016 +0000<br>
+
+
+Date:   Sun Oct 2 10:06:49 2016 +0000
 
 Finally iPhones get water resistent.
 
-commit 5147a1921bc54663b489e56fc5931850a36ab3a8<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Sep 30 12:26:42 2016 +0000<br>
+
+
+Date:   Fri Sep 30 12:26:42 2016 +0000
 
 GitHub helps spreading Git. But there is no balanced competitor currently. This is anti-decentred for a DVCS.
 
-commit 0bea4df34cb67bbd95b186f694d80ebce0c2b149<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Sep 29 10:26:29 2016 +0000<br>
+
+
+Date:   Thu Sep 29 10:26:29 2016 +0000
 
 Found an old macro (in a lisp like language) I wrote a year ago. Now I have difficulties to understand it.
 
-commit 543d965997f846f74b63acaeda59c65f5b7d02e2<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Sep 25 12:35:17 2016 +0000<br>
+
+
+Date:   Sun Sep 25 12:35:17 2016 +0000
 
 `A then B else C` in Ceylon feels confusing to me.
 
@@ -2968,22 +3151,22 @@ Date:   Sun Sep 25 12:35:17 2016 +0000<br>
 
 I think `if (A) then B else C` is much cleaner.
 
-commit c7b3cf95256deb685c01f0a35b711d9571fd1284<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Sep 22 13:19:06 2016 +0000<br>
+
+
+Date:   Thu Sep 22 13:19:06 2016 +0000
 
 [Snapshots of all current, non empty, functional ZeroMe hubs](https://github.com/weakish/0me-hubs-snapshots),
 powered by [0net-snapshot](https://github.com/weakish/0net-snapshot).
 
-commit b152a20f6dfbe7f5cf7125bc916700d7f7093c96<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Sep 21 11:18:09 2016 +0000<br>
+
+
+Date:   Wed Sep 21 11:18:09 2016 +0000
 
 All my todos are on wunderlist, which is down now. And I can hardly remember what to do. If wunderlist is implemented as a ZeroSite ...
 
-commit 19ed78cad4f49580173a3a45a6bc64017e512bcf<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Sep 17 08:47:39 2016 +0000<br>
+
+
+Date:   Sat Sep 17 08:47:39 2016 +0000
 
 An ugly workaround of TypeScript's structural typing:
 
@@ -3019,15 +3202,15 @@ function sub(x: number): string {
 // higher will not accept `sub`!
 ```
 
-commit 9c01fd0a97b2ee7cffb3760ab195647c6177a3c9<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Sep 16 13:50:58 2016 +0000<br>
+
+
+Date:   Fri Sep 16 13:50:58 2016 +0000
 
 There are currently 18 ZeroMe hubs (excluding empty hubs with no registered user). And I am seeding 5.  via [zerome-crawler](https://weakish.github.io/zerome-crawler/)
 
-commit 568b02af2a6578f4ceea6fa1ffdc1157342122ef<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Sep 12 12:59:39 2016 +0000<br>
+
+
+Date:   Mon Sep 12 12:59:39 2016 +0000
 
 `camelCaseAreHardToReadIfThereAreMoreThanThreeWords`
 
@@ -3038,15 +3221,15 @@ Exceptions:
 - `TypeName` since `TypeNamesWithMoreThanThreeWords` should be avoided.
 - `FooBar fooBar` so wherever we see `fooBar`, we know it is of type `FooBar`.
 
-commit 31d1025d4523645bc0bf59d57113bfcf925fcd3d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Sep 11 00:38:14 2016 +0000<br>
+
+
+Date:   Sun Sep 11 00:38:14 2016 +0000
 
 Relieased that I have forgotten what does Hallelujah mean. To me it means some beautiful nonsense in music.
 
-commit 4b61b223f35a6a025e1d5fc341178750b9babd62<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Fri Sep 9 10:40:04 2016 +0000<br>
+
+
+Date:   Fri Sep 9 10:40:04 2016 +0000
 
 In Python, whitespace (space or tab) can be used: (use dot to indicate whitespace)
 
@@ -3071,45 +3254,45 @@ PEP 8 has a different opinion:
 - Use `space` for indentation.
 - Keep code unaligned.
 
-commit 60aabbb0eb30fd73a74361e85d612e00d8049b60<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Sep 7 12:56:56 2016 +0000<br>
+
+
+Date:   Wed Sep 7 12:56:56 2016 +0000
 
 IDEs for static typed languages are so powerful, particularly for refactoring. The dark side is making me less acclimatized to dynamic typed languages IDEs, e.g. even PyCharm and RubyMine cannot match IntelliJ or Eclipse.
 
-commit 49634656ad0bccb1c16a74dfe7f8b9be55cf5888<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sun Sep 4 11:12:57 2016 +0000<br>
+
+
+Date:   Sun Sep 4 11:12:57 2016 +0000
 
 `i++` should be a pure side effect, a.k.a. `void`, just like `b = c` should be `void` (invalidating `if (a = 0)`).
 
-commit d7b79a172b0c2369a5138595e1776c0bf44cf0ea<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Sep 3 13:15:12 2016 +0000<br>
+
+
+Date:   Sat Sep 3 13:15:12 2016 +0000
 
 I used to confuse coding style with formatting style. Formatting style like `using n spaces to indent` and `closing brace on its own line` are unlikely to affect readability of code, and they can be auto adjusted via IDE or command line tools. What really matter is coding style, like `if (a=0)` and `++i`. PEP 8 for Python talks a lot about formatting style. This is a cost of Python's layout based (indentation sensitive) syntax: possibly cleaner for small pieces of code, while hard or impossible to be auto formatted by tools like IDEs (crucial for a large code base).
 
-commit 5f36dda8f6d223a9033ec2d25ab60be8b6cdf466<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Sep 1 11:21:29 2016 +0000<br>
+
+
+Date:   Thu Sep 1 11:21:29 2016 +0000
 
 Wish every programming language website has [a gentle introduction like  Ceylon](http://ceylon-lang.org/documentation/1.2/introduction/), demostrating both basic usage and advanced features, but not lengthy.
 
-commit 4af2c1a28e43578eab8a45a5ffd216ec618286a5<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Wed Aug 31 13:02:58 2016 +0000<br>
+
+
+Date:   Wed Aug 31 13:02:58 2016 +0000
 
 [An example of ZeroSite of photos](http://127.0.0.1:43110/ZAlex.bit/photos/index.html)
 
-commit 2bf67efb5a1273808c02191bb3f2cfac2fa8368e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Aug 30 15:46:40 2016 +0000<br>
+
+
+Date:   Tue Aug 30 15:46:40 2016 +0000
 
 Just add a 0BSD style license on my profile page: Permission to use, copy, modify, and/or distribute all my posts and comments at ZeroMe for any purpose with or without fee is hereby granted.
 
-commit 8e28bd87bf0fad991b471e797182799a6916015e<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Tue Aug 30 11:47:41 2016 +0000<br>
+
+
+Date:   Tue Aug 30 11:47:41 2016 +0000
 
 Cloned site private key recovery:
 
@@ -3146,39 +3329,39 @@ class Actions(object):
           # code omitted
 ```
 
-commit 1db312c9df55c1ac79044a879726589842a6a5a9<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Aug 29 14:47:34 2016 +0000<br>
+
+
+Date:   Mon Aug 29 14:47:34 2016 +0000
 
 The web flame: pretend that you cannot find exciting, new, modern technologies outside web.
 
-commit e12312016d0e04347cc41cd87bfdc2726d645b2d<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Aug 29 14:45:35 2016 +0000<br>
+
+
+Date:   Mon Aug 29 14:45:35 2016 +0000
 
 "IPFS is the Distributed Web ... aims to replace HTTP". WTF! A web of GET and PUT only HTTP? And FS is not file system but web?
 
-commit 10a4ed3b536ff63700972d9507b9549f3d2b9d06<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Aug 29 14:22:35 2016 +0000<br>
+
+
+Date:   Mon Aug 29 14:22:35 2016 +0000
 
 I think hg may fit ipfs more well than git. Like git's dumb http, hg supports [static http](https://www.mercurial-scm.org/wiki/StaticHTTP). Unlike git's changing-all-the-time packfile, hg's revlog is predictable. So hosting hg repos on ipfs is simpler (no need to unpack objects manually), and saves bandwidth (git repos with unpacked objects is usually larger than hg).
 
-commit 0f42367c28da95420716dd77983b70e93b142f58<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Mon Aug 29 12:48:06 2016 +0000<br>
+
+
+Date:   Mon Aug 29 12:48:06 2016 +0000
 
 Duokan (ebook app) exports highlights and notes to Evernote **without page numbers**.
 
-commit 3e00a0f043f4533048438816bf6d559266b9d70a<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Aug 27 13:43:17 2016 +0000<br>
+
+
+Date:   Sat Aug 27 13:43:17 2016 +0000
 
 List of all known ZeroMe hubs: https://weakish.github.io/ZeroMeHubList/
 
-commit 03cbda05270a9f85ab11ad3af2b7e721cff9215f<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Aug 27 13:35:11 2016 +0000<br>
+
+
+Date:   Sat Aug 27 13:35:11 2016 +0000
 
 Today I was bitten by `Refused to execute script from ... because its MIME type (text/plain) is not executable, and strict MIME type checking is enabled` when hot-linking a js file hosted on GitHub.
 
@@ -3202,27 +3385,27 @@ Workaround:
 - Put the script to `user.github.io/repo`
 - Use a third party CDN like rawgit.com.
 
-commit 0520b208ba3dec85ecaaf63a92d97174752c8722<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Aug 27 04:24:37 2016 +0000<br>
+
+
+Date:   Sat Aug 27 04:24:37 2016 +0000
 
 Google Buzz, Google Wave, Google Reader, Google Code. Now Google Chrome App (by 2018, except on ChromeOS).
 
-commit 314dd56e9438a3eaf24be4944cb11ddfdcdb4cbd<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Aug 25 12:55:56 2016 +0000<br>
+
+
+Date:   Thu Aug 25 12:55:56 2016 +0000
 
 TeXmacs is still unstable. Make sure auto save is turned on.
 
-commit 0e4edd2506bac3d77c8f4bf48315837141abe598<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Aug 20 15:44:41 2016 +0000<br>
+
+
+Date:   Sat Aug 20 15:44:41 2016 +0000
 
 Considering a variant of [semver](http://semver.org) major.nth_feature_introduced.YYMM
 
-commit d406b64baa08579865bf0c5f53df226eabdd4e66<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Aug 20 14:55:22 2016 +0000<br>
+
+
+Date:   Sat Aug 20 14:55:22 2016 +0000
 
 ## How to backup your favorite sites
 
@@ -3236,9 +3419,9 @@ tl;tr Favorite sites are stored in LocalStorage only. Switching browser or clear
 
 Restore: Right-click the value `Edit "value"` and replace with your backup.
 
-commit 06ad2a6f80c787fc5857d59eef341023eb630db8<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Aug 18 13:22:47 2016 +0000<br>
+
+
+Date:   Thu Aug 18 13:22:47 2016 +0000
 
 Zite (ZeroSite) publish procedure:
 
@@ -3246,9 +3429,9 @@ Zite (ZeroSite) publish procedure:
 2. browser your site via [ZeroNet proxy](https://bit.no.com:43110/) to make sure everything is O.K.
 3. publish your site on [0list](http://127.0.0.1:43110/0list.bit), [Zero Central](http://127.0.0.1:43110/1Dt7FR5aNLkqAjmosWh8cMWzJu633GYN6u) and [New 0Net Sites](http://127.0.0.1:43110/1LtvsjbtQ2tY7SCtCZzC4KhErqEK3bXD4n).
 
-commit 7dd4504a94ed9ffa16c8c6b322761530cbf5695f<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Aug 18 13:16:30 2016 +0000<br>
+
+
+Date:   Thu Aug 18 13:16:30 2016 +0000
 
 20191123: instructions updated for recent zeronet versions
 
@@ -3268,14 +3451,14 @@ sudo sh -c 'echo GatewayPorts yes' >> /etc/ssh/sshd_config
 sudo service sshd restart  # On some OSes, replace `sshd` with `ssh`.
 ```
 
-commit 8bec409df438eb8c599f1c919c5a9bb4e0967cdb<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Thu Aug 18 13:09:49 2016 +0000<br>
+
+
+Date:   Thu Aug 18 13:09:49 2016 +0000
 
 [SetupList](http://127.0.0.1:43110/1Mbwaw4Uxp1sq5GzWo3SCmYFTk7mgSWNmw) is online! (SetupList is a 0List clone for sharing software/hardware you are using.)
 
-commit df1487e4afc87f74eeb223409b3fc1eb4b1d3a17<br>
-Author: weakish <weakish@gmail.com><br>
-Date:   Sat Aug 13 10:55:43 2016 +0000<br>
+
+
+Date:   Sat Aug 13 10:55:43 2016 +0000
 
 Hello ZeroMe! (Hmm, I can follow myself!)
