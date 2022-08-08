@@ -1,49 +1,48 @@
-# OSX Survival Guide
+# macOS Survival Guide
 
-## Bootstrap
+## Create a Bootable Installer
 
-[strap] is the [successor of boxen] created by the current homebrew maintainer [Mike McQuaid].
+I created a bootable installer to install macOS offline,
+incase that something went wrong
+macOS can be installed from Internet in recovery mode, but it is unreliable and slow.
+I first tried a Sandisk 16GB USB drive, and it failed during copying the installer content.
+Then I tried a Toshiba 32GB USB drive, and the creation succeeded.
+I am not sure if 16GB is too small or macOS installer is fussy on USB drive models.
 
-[strap]: https://github.com/MikeMcQuaid/strap
-[successor of boxen]: https://mikemcquaid.com/2016/06/15/replacing-boxen/
-[Mike McQuaid]: https://mikemcquaid.com
+[installer]: https://support.apple.com/en-us/HT201372
 
-### Download the Script
+## Install Linux
+
+I always feel that I can only own a computer truely after I have installed Linux on it.
+So after finishing the macOS initial setup (user account, etc.), I rebooted to the recovery mode (Command+R on Intel based Macintosh machines with a T2 chip).
+
+Then I added an partition via disk utility in the recorvery mode.
+This partition is for Linux, so the format does not matter.
+Adding a new partition will automatically resize the current macOS partition,
+which is much slower if performed under macOS instead of recovery mode.
+
+I also disable secure boot and enable external boot.
+
+Then I just booted into the installation USB drive, and installed [EndeavourOS].
+I chose the replace partition option with encrypted file system.
+The installer set up LUKS encryption and ext4 automatically.
+If I had choosen the "erase all" option, I can do some customizations, such as ext4/btrfs, swap partition/file, etc.
+However, I need a dual boot machine.
+
+[EndeavourOS]: https://wiki.t2linux.org/distributions/endeavouros/installation/
+
+## Enable TouchID for sudo
+
+Add `auth sufficient pam_tid.so` in `/etc/pam.d/sudo`.
+
+## Install Homebrew
+
+The Homebrew installer script will install Command Line Tools for Xcode automatically.
+
+After installation, turn off analytics:
 
 ```sh
-curl https://raw.githubusercontent.com/MikeMcQuaid/strap/master/bin/strap.sh > strap.sh
-```
-
-### Configuration
-
-Edit the `strap.sh` script, e.g. using vim, uncomment and fill up the following environment variables:
-
-```sh
-# STRAP_GIT_NAME=
-# STRAP_GIT_EMAIL=
-# STRAP_GITHUB_USER=
-# STRAP_GITHUB_TOKEN=
-# CUSTOM_HOMEBREW_TAP=
-# CUSTOM_BREW_COMMAND=
-```
-
-- `STRAP_GIT_NAME` and `STRAP_GIT_EMAIL` is for git `user.name` and `user.email`, and contact info on login screen.
-- `STRAP_GITHUB_USER` is to for git `github.user` and accessing your `dotfiles` and `homebrew-brewfile` repositories.
-- `STRAP_GITHUB_TOKEN` is needed to allow homebrew to reduce the rate limit of `brew search` command and to tap your private repositories (the token can be generated at GitHub > Settings > Developer settings > Personal access tokens, with scope `repo, user`).
-- `CUSTOM_HOMEBREW_TAP` and `CUSTOM_BREW_COMMAND` are optional, to add your personal homebrew tap and custom brew command which will be run at the end of the bootstrap.
-
-The customized `strap.sh` can be automatically generated at https://macos-strap.herokuapp.com/,
-which asks for your authorization on GitHub.
-But I prefer to edit the script manually.
-
-strap is idempotent, so you can run it first,
-adding custom dotfiles and brewfile repositories later,
-then run it again.
-
-### Run
-
-```
-/bin/bash strap.sh
+brew analytics off
 ```
 
 ## Keyboard
