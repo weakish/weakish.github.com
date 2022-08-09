@@ -31,6 +31,15 @@ However, I need a dual boot machine.
 
 [EndeavourOS]: https://wiki.t2linux.org/distributions/endeavouros/installation/
 
+I started the mac holding down the option key.
+The startup manager displayed.
+I used the arrow key to select the EFI disk for Linux,
+then I pressed enter and booted into EndeavourOS sucessfully.
+
+After finished intital setup of EndeavourOS,
+I started the mac holding down the option key again.
+While holding the Control key, I chose to boot into macOS, which also made macOS the default startup disk.
+
 ## Enable TouchID for sudo
 
 Add `auth sufficient pam_tid.so` in `/etc/pam.d/sudo`.
