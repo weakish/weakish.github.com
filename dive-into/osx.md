@@ -45,6 +45,19 @@ After installation, turn off analytics:
 brew analytics off
 ```
 
+## Install ExtFS
+
+I tried to install Paragon ExtFS for ext{2,3,4} read/write support via homebrew:
+
+```sh
+brew install paragon-extfs
+```
+
+Homebrew reports the installation succeeded, but I can not find the extF application.
+Thus I manually opened the installer in `/usr/local/Caskroom/paragon-extfs/latest/` to install ExtFS.
+I allowed ExtFS in Settings > Security & Privacy, and restarted the system as ExtFS installer required.
+After that, I tried mounting a ext4 removable drive and succeeded. 
+
 ## Keyboard
 
 In System Preference > Keyboard > Modifier Keys,
