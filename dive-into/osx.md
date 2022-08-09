@@ -44,6 +44,25 @@ While holding the Control key, I chose to boot into macOS, which also made macOS
 
 Add `auth sufficient pam_tid.so` in `/etc/pam.d/sudo`.
 
+## Set Timezone to GMT
+
+I am frustrated to dealing with timezones.
+Why not everyone use UTC+0?
+
+```sh
+sudo systemsetup -settimezone GMT
+```
+
+And got a [-99 error](https://github.com/LnL7/nix-darwin/issues/359#issuecomment-1209428101).
+But it seems that the timezone has changed to GMT.
+
+```sh
+; sudo systemsetup -gettimezone
+Time Zone: GMT
+```
+
+For safety, I untick the "Set time zone automatically using current location" option in "System Preferences > Date & Time > Time Zone".
+
 ## Install Homebrew
 
 The Homebrew installer script will install Command Line Tools for Xcode automatically.
