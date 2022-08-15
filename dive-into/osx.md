@@ -73,6 +73,9 @@ After installation, turn off analytics:
 brew analytics off
 ```
 
+With all the software I need listed in `~/.Brewfile`,
+I typed `brew bundle --global` to install them all.
+
 ## Install ExtFS
 
 I tried to install Paragon ExtFS for ext{2,3,4} read/write support via homebrew:
@@ -91,7 +94,7 @@ After that, I tried mounting a ext4 removable drive and succeeded.
 In System Preference > Keyboard > Modifier Keys,
 `Control` and `Command` keys can be swapped.
 However, under the terminal I'd like to use the classical ctrl prefixed shortcuts, thus I swapped them back again.
-[iTerm2] is a terminal emulator with this option.
+As far as I know, [iTerm2] is the only terminal emulator with this option.
 
 [iTerm2]: https://www.iterm2.com/
 
@@ -126,7 +129,7 @@ And there are some keybinds slightly different the orignal Emacs keybinds:
 ## Mouse
 
 Unselect "Scroll direction: Natural" in System Preferences > Mouse.
-(The direction may be natural to touch screen, but it is not natural for mouse at all.)
+(The direction may be natural to touch screens, but it is not natural for mouses at all.)
 
 ## Trackpad
 
@@ -196,7 +199,7 @@ map "shift+d" lastClosedTab
 ## Google
 
 Google accounts can be added to the Mail.app.
-Except for the gmail, other osx applications can also sync with Google account:
+Besides gmail, other osx applications can also sync with Google account:
 
 - Contacts
 - Calenders
@@ -206,10 +209,9 @@ Except for the gmail, other osx applications can also sync with Google account:
 ## Chinese Input Method
 
 I use [the built-in Double Pinyin Input Method][double-pinyin].
-The built-in input method uses Caps to switch between English and Chinese mode,
-which makes sense to me.
-I also [use Caps to switch between English and Chinese mode under Linux][caps]
-(the trick is to `clear lock` and bind Caps to another unused key, e.g. `Multi_key`, then configure it as the switch key in fcitx).
+The built-in input method uses Caps to switch between English and Chinese mode.
+This is consistent with JIS keyboard layouts.
+For JIS keyboards without a dedicated alphanumeric key, usually pressing CapsLock is used to enter alphanumeric mode.
 
 [double-pinyin]: https://scomper.me/gtd/xi-tong-shuang-pin-shu-ru-fa-@vgow
-[caps]: https://www.wancat.cc/post/capslock/
+
