@@ -60,6 +60,8 @@ let unionType = 0
  */
 const arrayType = [1, 2, 3]
 
+const immutableArray = /** @type {const} */ ([1, 2, 3])
+
 /**
  * @type {[string, number]}
  */
@@ -242,7 +244,6 @@ for example, there is no way to pass type parameter when invoking generic functi
 The only thing we can do is let TypeScript infer the type parameter.
 If it fails to infer the type, we have to accept `any` as the type parameter.
 Another example is TypeScript cannot parse conditional types in JSDoc comments correctly. ([#27424])
-Also, there is no equivalent form of `as const` assertion yet ([#30445]).
 
 [#27424]: https://github.com/microsoft/TypeScript/issues/27424
 [#30445]: https://github.com/Microsoft/TypeScript/issues/30445
