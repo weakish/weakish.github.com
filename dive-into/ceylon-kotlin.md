@@ -84,7 +84,7 @@ h(::i) // error: overload resolution ambiguity
 Also, Kotlin only allows reference to `Foo::bar`
 [not `foo::bar`][bound-callable-references].
 
-[bound-callable-reference]: https://github.com/Kotlin/KEEP/blob/master/proposals/bound-callable-references.md
+[bound-callable-references]: https://github.com/Kotlin/KEEP/blob/master/proposals/bound-callable-references.md
 
 For anonymous function, there is no ambiguity.
 Thus the function reference is normal.
