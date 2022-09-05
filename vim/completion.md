@@ -1,113 +1,83 @@
-# VIM Completion Configuration
+# Vim Completion Configuration
 
-## Built-in
+## A Bit of History
 
-Vim has built-in support for completions in insert or replace modes.
-See `:help ins-completion`.
-
-By default, Vim uses separate Emacs style key bindings (`<C-x C-key>`)
+Vim has built-in support for completions in insert or replace modes,
+mostly based on the content of the current file and included files.
+By default, it uses separate Emacs-style key bindings (`<C-x C-key>`)
 for different kinds of completions.
+See `:help ins-completion` for more information.
 
-There are two plugins to use a single `Tab` key for completions:
+The modern approach is utilizing language server protocol, a.k.a. LSP, and machine learning.
 
-- [SuperTab](https://github.com/ervandew/supertab)
-- [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
+The concept of LSP is pioneered by vscode,
+so a lot of language servers are written in Node.js and TypeScript.
+While mostly used for LSP,
+[CoC] brings the ecosystem of vscode extensions to vim,
+which makes porting them to vim easier.
 
-There is also [AutoComplPop][] to automatically pop up completions.
+[CoC]: https://github.com/neoclide/coc.nvim
 
-[AutoComplPop]: http://www.vim.org/scripts/script.php?script_id=1879
+Then Neovim 0.5+ introduces native LSP support,
+based on Lua instead of Node.js.
+However, as mentioned above, since a lot of language servers are written in Node.js,
+most likely Node.js is still needed.
 
-### VimCompletesMe
+## LunarVim
 
-#### Why
+I use LunarVim, a Neovim distribution,
+which uses native LSP
+and will install supported language servers automatically upon opening files.
 
-Count source lines of code (VimScript comments start with `"`):
+LunarVim disables automatic support for some file types.
+I have to install and enable LSP for them manually.
 
-```sh
-; cat supertab.vim | egrep -v '^("|([[:blank:]]*$))' | wc -l
-923
-; cat VimCompletesMe.vim  | egrep -v '^("|([[:blank:]]*$))' | wc -l
-82
-```
-
-Period.
-
-#### Configuration
-
-Without any configuration, the Tab key will, depending on the context, offer:
-
-- Vim's local keyword completion (Ctrl-X_Ctrl-N)
-- File path completion when typing a path (Ctrl-X_Ctrl-F)
-- Omni-completion after typing a period or an arrow operator (Ctrl-X_Ctrl-O)
-
-With a `b:vcm_tab_complete` variable,
-you can set the Tab key to use the following type of completions:
-
-- Dictionary words (Ctrl-X_Ctrl-K)
-- User-defined completion (Ctrl-X_Ctrl-U)
-- Tags (Ctrl-X_Ctrl-])
-- Vim command line (Ctrl-X_Ctrl-V)
-- Omni completion (Ctrl-X_Ctrl-O)
-
-If any of above types of completions fails to return any results,
-hitting Tab again will switch back to Vim's local keyword completion.
-
-You can set the b:vcm_tab_complete variable interactively, or in `~/.vimrc`:
+For example, to install the [marksman] LSP for Markdown,
+under LunarVim, type:
 
 ```vim
-autocmd FileType text,markdown let b:vcm_tab_complete = 'dict'
+:LSPInstall marksman
 ```
 
-### AutoComplPop
+[marksman]: https://github.com/artempyanykh/marksman
 
-Use `Enter` to commit completion.
-Use arrow keys (`Up|Down`) to select completions.
+After installation, edit
+`~/.config/lvim/after/ftplugin/markdown.lua`
+to configure LSP for the Markdown file type:
 
-It works well for certain file types,
-while distracting on other types such as text.
+```lua
+require("lvim.lsp.manager").setup("marksman")
+-- marksman has no formatting capability.
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { name = "prettier", filetypes = { "markdown" } },
+}
+```
 
-## External engine
+## Machine Learning based Completion
 
-### [YouCompleteMe](http://valloric.github.io/YouCompleteMe/)
+Two popular options of machine learning assisted completion are Tabnine and GitHub Copilot.
 
-YouCompleteMe is a fast, as-you-type, fuzzy-search code completion engine.
-It has several completion engines:
+Compared to Copilot, Tabnine has two [advantages]:
 
-- an identifier based engine that works with every programming language,
-- a Clang based engine that provides native semantic completion
-    for C-family languages,
-- a Jedi-based completion engine for Python 2 and 3,
-- an OmniSharp-based completion engine for C#,
-- a combination of Gocode and Godef semantic engines for Go,
-- a TSServer-based completion engine for TypeScript,
-- a Tern-based completion engine for JavaScript,
-- a racer-based completion engine for Rust,
-- and an omnifunc-based completer for many other languages
+- Free plan available.
 
-YCM also provides semantic IDE-like features in a number of languages:
+    I have used the free plan for a while.
+    It does not include whole line and full-function code completion.
+    And Tabnine Pro is [$12 per month], slightly higher than Copilot ([$10 per month]).
 
-- finding declarations, definitions, usages, etc. of identifiers,
-- displaying type information for classes, variables, functions etc.,
-- displaying documentation for methods, members, etc. in the preview window,
-- fixing common coding errors, like missing semi-colons, typos, etc.,
-- semantic renaming of variables across files (JavaScript only).
+- Local machine mode.
 
-Tho downside is it consumes a lot of RAM.
+    Tabnine's free plan is based on the cloud.
+    Tabnine Pro's offline installation requires contacting [sales].
 
-### [neocomplete](https://github.com/Shougo/neocomplete.vim)
+[advantages]: https://www.tabnine.com/tabnine-vs-github-copilot
+[$12 per month]: https://www.tabnine.com/pricing
+[$10 per month]: https://github.com/features/copilot/
+[sales]: https://support.tabnine.com/hc/en-us/articles/5409869385873-Offline-Installation-Usage-of-Tabnine
 
-neocomplete maintains a cache of keywords in the current buffer.
-It requires Vim 7.3.885+ with Lua enabled.
-It sometimes be slower than YCM, but requires much less RAM.
+Thus, I [use Copilot with LunarVim].
 
-You can configure it to use Tab key to complete,
-and/or automatically pops up completion menu.
+[Tabnine]: https://www.tabnine.com/
+[use Copilot with LunarVim]: https://www.lunarvim.org/plugins/02-extra-plugins.html#copilot-lua-and-copilot-cmp
 
-## Conclusions
-
-- If we need basic completions that works out of box:
-    VimCompletesMe;
-- If we need auto-pop basic completions:
-    AutoComplPop and VimCompletesMe;
-- IDE like features: YouCompleteMe;
-- a balance between features and resources: neocomplete.
