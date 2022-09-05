@@ -85,7 +85,7 @@ Execute it:
 - `env`: dictionary of environment variables to set
 - `ignore_errors`
 - `success_exit_codes`: list of exit codes to consider a success
-- `timeout`: timeout for *each* command executed during the operation
+- `timeout`: timeout for _each_ command executed during the operation
 - `stdin`: string or buffer to send to the stdin of any commands
 - `on_success` and `on_error`: callback functions
 
@@ -105,7 +105,7 @@ for p in ['git', 'tmux', 'fish']:
     apt.packages([p])
 ```
 
-pyinfra provides `state.preserve_loop_order` for serializing execution:
+Pyinfra provides `state.preserve_loop_order` for serializing execution:
 
 ```python
 from pyinfra.api import state
@@ -200,7 +200,7 @@ unix.update()
 
 ## Inventory
 
-Currently I have only played with pyinfra on localhost.
+Currently, I have only played with Pyinfra on localhost.
 But pyinfra can also manage remote machines.
 
 ```sh

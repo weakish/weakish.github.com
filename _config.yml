@@ -20,7 +20,11 @@ repo: weakish/weakish.github.com
 articles:
     - vim/spell.md
     - vim/completion.md
-    - dive-into/osx.md  
+    - dive-into/osx.md
+    - dive-into/i3.md
+    - dive-into/android.md
+    - lists/vps.md
+    - dive-into/pyinfra.md
     - dive-into/wireguard.md
     - dive-into/borg.md
     - dive-into/make.md

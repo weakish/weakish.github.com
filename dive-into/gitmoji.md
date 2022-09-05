@@ -2,15 +2,15 @@
 
 ## tl;tr
 
-emoji | code | usage | Angular Convention
-- | - | - | -
-🎨 | `:art:` | refactor | refactor
-🐛 | `:bug:` | bug fix | fix
-🔥 | `:fire:` | remove feature | n/a
-📝 | `:memo:` | doc | docs
-🆕 | `:new:` | new feature | feat
-🔒 | `:lock:` | security fix | n/a
-⚡️ | `:zap:` | performance | perf
+| emoji | code | usage | Angular Convention |
+| - | - | - | - |
+| 🎨 | `:art:` | refactor | refactor |
+| 🐛 | `:bug:` | bug fix | fix |
+| 🔥 | `:fire:` | remove feature | n/a |
+| 📝 | `:memo:` | doc | docs |
+| 🆕 | `:new:` | new feature | feat |
+| 🔒 | `:lock:` | security fix | n/a |
+| ⚡️ | `:zap:` | performance | perf |
 
 
 ## Intersection between gitmoji and Atom style guide

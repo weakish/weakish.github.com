@@ -2,7 +2,7 @@
 
 Vim has built-in support for spell checking.
 This built-in function provides basic spell checking.
-For example, it does not recognize 'Lua' or 'Node.js'.
+For example, it does not recognize 'localhost', 'Lua' or 'Node.js'.
 However, new words can be added quickly via `zg` in normal mode.
 
 LunarVim, the Neovim distribution I use,
@@ -11,7 +11,7 @@ enables spell checking for commit messages and markdown by default.
 To check grammar and stylish errors,
 Grammarly or [LanguageTool] can be used.
 
-[LanguageTool]: https://languagetool.org/
+[languagetool]: https://languagetool.org/
 
 I prefer LanguageTool because it is open source.
 All the errors can be checked with [ltex-ls] locally,
