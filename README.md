@@ -12,7 +12,8 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 - [Haskell: Laziness, Type Class, and Monad](dive-into/haskell/)
 - [Notes on A little Java, a Few Patterns](java/a-little/)
 - [On Design of Kotlin](dive-into/kotlin/)
-- Dive into [OCaml](dive-into/ocaml/), [Ruby](dive-into/ruby/), and [Rust](dive-into/rust/)
+- [Quirks of Ruby](dive-into/ruby/)
+- Dive into [OCaml](dive-into/ocaml/), and [Rust](dive-into/rust/)
 
 ## Vim
 
