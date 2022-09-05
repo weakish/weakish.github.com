@@ -73,7 +73,7 @@ Cons are similar to assert.sh.
 
 ## [rnt](https://github.com/roman-neuhauser/rnt)
 
-Save output of  commands to `*.actual`, then compare them with `*.expected` via `diff`.
+Save output of commands to `*.actual`, then compare them with `*.expected` via `diff`.
 
 Cons are similar to assert.sh, plus:
 
@@ -223,7 +223,7 @@ Cons:
 - No setup/teardown.
 - Syntax: `env[]=~//`, `env[]?=`, `env[][]=`, etc.
 
-## [Bricolage](http://bitbucket.org/zserge/bricolage)
+## [Bricolage](https://hg.reactionary.software/repo/bricolage/)
 
 Example:
 
