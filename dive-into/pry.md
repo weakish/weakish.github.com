@@ -1,5 +1,7 @@
 # Dive into Pry
 
+**This note was written for Ruby < 2.0, thus outdated now.**
+
 ## Input
 
 - `!`: clear input buffer
@@ -17,7 +19,7 @@
 
 ## Browsing code
 
-Use `cd` to move into a object or scope.
+Use `cd` to move into an object or scope.
 As in UNIX shells use `cd ..` to go
 back, `cd /` to return to Pry top-level and `cd -` to toggle between last two
 scopes. Complex syntax (e.g `cd ../@x/@y`) also supported.
@@ -50,17 +52,17 @@ Use `watch` to watch the value of an expression and print a notification wheneve
 `edit` brings you to `EDITOR`.
 It accepts the following options:
 
-* `-c`: current file/line
-* `my_method`: method in the scope
-* `Class#a_method` or `Class.a_class_method`
-* `<filename>` or `<filename>:<line-number>`
-* `--in 1..2`: a range of the Pry input buffer
-* `-t`: open a temporary empty file in an editor
-* `--ex`: the relevant file at the line that generated the last exception
-* `--ex N`: the Nth line of the backtrace
-* `-l`: jump to the specified line number
-* `-n`: stop the automatic reloading of `.rb` files after you have edited them
-* `-r`: force Pry to reload and eval a file, even if it does not end in `.rb`
+- `-c`: current file/line
+- `my_method`: method in the scope
+- `Class#a_method` or `Class.a_class_method`
+- `<filename>` or `<filename>:<line-number>`
+- `--in 1..2`: a range of the Pry input buffer
+- `-t`: open a temporary empty file in an editor
+- `--ex`: the relevant file at the line that generated the last exception
+- `--ex N`: the Nth line of the backtrace
+- `-l`: jump to the specified line number
+- `-n`: stop the automatic reloading of `.rb` files after you have edited them
+- `-r`: force Pry to reload and eval a file, even if it does not end in `.rb`
 
 Being run without any arguments, the `edit` command modifies the last input expression.
 
