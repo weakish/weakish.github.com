@@ -47,32 +47,16 @@ In fact, the later form reveals the relationship between ability and modifier.
 
 ## Choices of language
 
-- Avoid layout sensitive languages such as Haskell, Python, and CoffeeScript, because copying from web page may break layouts.
-- Avoid low level, machine oriented languages such as C.
-- Avoid dirty languages such as JavaScript, PHP, and Ruby.
-- Avoid complicated languages such as C++, Scala, and Rust.
-- Avoid verbose languages such as Java, C#, Objective-C.
-
-Examples of suitable languages:
-
-- Scheme
-- TypedRacket
-- Lua
-- Go
-- Groovy
-- Swift
-- Kotlin
-- Ceylon
-
-Some of the above languages have pitfalls in practical projects,
-such as design flaws (Go),
-dynamic typing (Scheme, Lua, Groovy),
-lack of libraries (Scheme, TypedRacket, Lua, Swift),
-less powerful IDE and debugging support (Scheme, TypedRacket, Lua),
-and restrict to certain platforms (Swift).
-These issue does not affect brief code samples though.
+A lot of programming languages suffer from design flaws or lack of ecosystem,
+but usually these issues do not affect brief code samples.
+Thus, most languages are fine.
 
 If a language with C like syntax is chosen,
 then it is recommended to use the Java style (opening braces on same line)
-and a indent level of 2 spaces.
+and an indent level of 2 spaces.
 This saves space and does not harm readability for brief code samples.
+
+The most popular choice seems Python,
+which is the most used language in the [Jupyter] ecosystem.
+
+[jupyter]: https://jupyter.org/

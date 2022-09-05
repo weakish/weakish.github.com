@@ -1,5 +1,7 @@
 # JupyterLab Guide
 
+**This guide is outdated and unmaintained.**
+
 JupyterLab is the next generation UI of Jupyter Notebook (formly known as IPython Notebook).
 
 ## Installation
@@ -18,7 +20,8 @@ Once installed, you can start it with:
 jupyter lab
 ```
 
-To shutdown JupyterLab, first shutdown all kernels while `Kernel` menu,
+To shut down JupyterLab,
+first shut down all kernels via `Kernel` menu,
 then type `ctrl-c`.
 
 ## Notebooks
@@ -31,7 +34,7 @@ Jupyter notebooks combines:
 Multiple view(tabs) can be opened for the same notebook,
 with synced content.
 
-The blue collapser button on left of each cell can trigger collapsing and expanding cells.
+The blue collapse button on left of each cell can trigger collapsing and expanding cells.
 
 Right-click on a notebook and select "New Console for Notebook" can attach to the notebook kernel.
 This provides a log of all computations done in the kernel (in the order in the order in which they were done),
@@ -41,27 +44,17 @@ and a place to interactively inspect kernel state without changing the notebook.
 
 IPython kernel provides a variety of convenience classes for displaying rich output, including HTML:
 
-
 ```python
 from IPython.display import display, HTML
 display(HTML('<del>Hello World</del>'))
 ```
 
-
-<del>Hello World</del>
-
-
 or
-
 
 ```python
 from IPython.display import display
 display({'text/html': '<del>Hello World</del>'}, raw=True)
 ```
-
-
-<del>Hello World</del>
-
 
 MIME types supported by default:
 
@@ -135,8 +128,6 @@ via invoking subcommands like `list`, `install`/`uninstall`, `enable`/`unable`.
 
 [Binder](https://mybinder.org) is a free web service to turn a GitHub repo into a collection of interactive notebooks:
 
-1. Enter a url to a GitHub repo of Jupyter notebooks.
+1. Enter an URL to a GitHub repo of Jupyter notebooks.
 2. Binder builds a Docker image for the repository, based on `requirements.txt` or `environment.yml` in repository's root directory.
 3. Binder launches a JupyterHub server. It provides a reusable/shareable link to live repository.
-
-<i>This guide itself is authored in JupyterLab.</i>

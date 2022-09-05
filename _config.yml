@@ -41,8 +41,6 @@ articles:
     - dive-into/jetbrains.md
     - dive-into/go.md
     - dive-into/rust.md
-    - dive-into/jupyter-lab.md
-    - thoughts/express-more-in-code.md
     - dive-into/haskell.md
     - dive-into/ocaml.md
     - dive-into/flow.md
