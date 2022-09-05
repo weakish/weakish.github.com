@@ -1,5 +1,8 @@
 # Tinygo
 
+**This short introduction is outdated and unmaintained.**
+Please refer to the [official TinyGo documentation](https://tinygo.org/) instead.
+
 [Tinygo] is a Go compiler for microcontrollers and WebAssembly.
 It also supports x86 32 bit and 64 bit Linux.
 

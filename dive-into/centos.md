@@ -1,13 +1,15 @@
 # CentOS server setup guide for people from debian
 
+**This guide is outdated and unmaintained.**
+I have not used CentOS for a decade.
+
 A basic server setup guide for people from debian to CentOS.
 
-Software
---------
+## Software
 
 `yum` is apt-get/aptitude on CentOS.
 
-Remove not neccessary software:
+Remove not necessary software:
 
     yum grouplist
     yum groupremove <wildcards>
@@ -24,8 +26,7 @@ http://wiki.centos.org/AdditionalResources/Repositories/RPMForge
 
 Unlike Debian, Centos's official package repo is very limited.
 
-Services
---------
+## Services
 
 Check what is running:
 
@@ -37,9 +38,7 @@ Use `chkconfig <service> off` to disable unnecessary services.
 In Debian, you can install it via `apt-get install chkconfig`,
 though Debian people are likely to use `sysv-rc-conf` instead.
 
-
-Hostname
---------
+## Hostname
 
 Make sure your `/etc/hosts` file have a line like:
 
@@ -58,15 +57,11 @@ In Debian, you change hostname in `/etc/hostname`:
 
 Debian prefers to not include the `example.com` part.
 
-
-SSH
----
+## SSH
 
 Same to Debian.
 
-
-Firewall
---------
+## Firewall
 
 CentOS may enable iptables by default.
 You may want to disable it via `service iptables stop`
@@ -75,6 +70,3 @@ And disable its startup at boot time via `chkconfig`.
 
 If you want to mess up with it, its configuration file is located at
 `/etc/sysconfig/iptables`, different to Debian.
-
-
-

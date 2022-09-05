@@ -18,9 +18,11 @@ title: mmap.page
 repo: weakish/weakish.github.com
 
 articles:
+    - vim/spell.md
+    - vim/completion.md
+    - dive-into/osx.md  
     - dive-into/wireguard.md
     - dive-into/borg.md
-    - dive-into/osx.md
     - dive-into/make.md
     - dive-into/eslint.md
     - dive-into/npm.md
@@ -29,7 +31,6 @@ articles:
     - dive-into/react.md
     - dive-into/rarcrack.md
     - dive-into/puppet.md
-    - dive-into/tinygo.md
     - dive-into/cyclejs.md
     - dive-into/gitmoji.md
     - dive-into/gh-pages.md
@@ -46,11 +47,8 @@ articles:
     - dive-into/ceylon-kotlin.md
     - java/a-little.md
     - web/html-history.md
-    - vim/completion.md
     - dive-into/base64.md
-    - dive-into/centos.md
     - dive-into/fish.md
-    - python/persistence.md
     - cli/test.md
     - dive-into/pry.md
     - dive-into/ruby.md

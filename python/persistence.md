@@ -1,11 +1,15 @@
 # Python Persistence
 
+**This survey is outdated and unmaintained.**
+For compatibility with other programs,
+I would recommend JSON or SQLite instead.
+
 ## tl;tr
 
 If we care about compatibility with different Python versions,
 use `cPickle` with binary protocol and `fast` option.
 
-Otherwise just use marshal.
+Otherwise, just use marshal.
 
 ## Performance
 
@@ -111,4 +115,3 @@ is [fast in encoding and decoding JSON][fast_json].
 No need to use other modules.
 
 [fast_json]: http://stackoverflow.com/a/15440843
-

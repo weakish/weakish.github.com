@@ -45,7 +45,7 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 
 - [History of HTML through Linux/BSD Websites](web/html-history/)
 - Dive into [Base64](dive-into/base64/), [Borg](dive-into/borg), [Flow](dive-into/flow/), [Jetbrains IDEs](dive-into/jetbrains/), and [more](dive-into/more/).
-- Survey of tools for [cli ui testing](cli/test/), [python persistence](python/persistence/).
+- Survey of tools for [cli ui testing](cli/test/).
 - [Virtual Private Servers List](lists/vps/)
 - Other [thoughts](thoughts/).
 - [Gists][]([feed][gist-feed]) - notes, scripts, configs etc.
