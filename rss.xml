@@ -24,7 +24,7 @@ layout: none
     <height>128</height>
  </image>
  {% assign absolutelink = '<a href="' | append: site.url | append: '/' %}
- {% assign absoluteimglink = '<img src=' | append: site.url | append: '/' %}
+ {% assign absoluteimglink = '<img src="' | append: site.url | append: '/' %}
  {% for path in site.articles %}
   {% assign page = site.pages | where: "path", path | first %}
   <item>
