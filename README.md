@@ -37,7 +37,6 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 - [Android Setup Guide](dive-into/android/)
 - [i3 Quick Start](dive-into/i3/)
 - [Write Makefile Compatible with Both GNU make and BSD make](dive-into/make)
-- [JupyterLab Guide](dive-into/jupyter-lab/) ([ipynb](https://github.com/weakish/weakish.github.com/blob/master/dive-into/jupyter-lab.ipynb))
 - [A Basic Guide for New Marionettists](dive-into/puppet/) (puppet tutorial)
 - Dive into [Base64](dive-into/base64/), [Borg](dive-into/borg), [Flow](dive-into/flow/), [Jetbrains IDEs](dive-into/jetbrains/), and [Pyinfra](dive-into/pyinfra).
 - [WireGuard Quick Start](dive-into/wireguard/)
@@ -47,7 +46,6 @@ mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 - [History of HTML through Linux/BSD Websites](web/html-history/)
 - Survey of tools for [cli ui testing](cli/test/).
 - [Virtual Private Servers List](lists/vps/)
-- Other [thoughts](thoughts/).
 - [Gists][]([feed][gist-feed]) - notes, scripts, configs etc.
 - [Notes](dapi/) and [poems](poems/) written in Chinese.
 

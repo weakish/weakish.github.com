@@ -1,6 +1,6 @@
 # Quick Introduction to Go
 
-We're going to try to quickly show you enough of Go 1.14 to actually try it out.
+We're going to try to quickly show you enough of Go 1.17 to actually try it out.
 
 A Syntax Derived from C
 -----------------------
@@ -47,7 +47,7 @@ for _, name := range names {
 
 The slice uses an underlying array to store data.
 The length of an array `[n]T` is part of its type, so arrays cannot be resized.
-Thus slices are much more common than arrays.
+Thus, slices are much more common than arrays.
 
 ```go
 type slice struct {
@@ -123,11 +123,11 @@ Index out of range error with slices can only be checked at runtime.
 Strings have the same issue since strings in Go are effectively slices of bytes.
 
 Note that [Go Slices: usage and internals][go-slice] on [The Go Blog][blog] mentioned slice consists of a pointer to the **array**, the length of the segment, and its capacity.
-Instead slice contains a pointer to the **first element of the array**.
+Instead, slice contains a pointer to the **first element of the array**.
 The illusion below is correct (`ptr *Elem`).
 In C, a pointer to an array is actually a pointer to the first element of an array.
 So a pointer to an array and a pointer to the first element of an array are equivalent in C.
-But this does not applies to Go.
+But this does not apply to Go.
 
 [go-slice]: https://blog.golang.org/go-slices-usage-and-internals
 [blog]: https://blog.golang.org
@@ -809,6 +809,10 @@ func ExampleSalutations() {
 
 Example functions without output comments are compiled but not executed.
 
+### Fuzzing
+
+TODO introduced in Go 1.18
+
 ### Subtests and Sub-benchmarks
 
 The `Run` method allows defining subtests and sub-benchmarks,
@@ -904,12 +908,34 @@ func TestFoo(t *testing.T) {
 Tooling
 -------
 
+### Module
+
+Initialize a module:
+
+```sh
+go mod init yourname.github.com/hello`
+```
+
+This will create a `go.mod` file,
+where dependencies will be listed.
+
+Update `go.mod` based on Go source files,
+and install missing dependencies automatically:
+
+```sh
+go mod tidy
+```
+
+The specific dependency versions installed will be recorded in `go.sum`.
+
 ### Formatting
 
 `go fmt` formats your code.
 It has no line length limit.
 
 ### Documentation
+
+TODO Go 1.19 changes doc comments syntax.
 
 `go doc` processes Go source files to extract documentation.
 Comments that appear before top-level declarations, with no intervening newlines, are extracted along with the declaration.
@@ -963,7 +989,9 @@ This is a typical example of a poor design that roots in the unix philosophy "pa
 Unsupported
 -----------
 
-Go does not has generics.
+Go does not have generics.
+
+TODO Go 1.18 introduces generics.
 
 Go does not distinguish reassignable and irreassignable variables, even function parameters and method receiver are reassignable (just like a local variable).
 
