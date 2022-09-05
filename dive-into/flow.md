@@ -135,8 +135,8 @@ type Fooer interface {
 }
 ```
 
-This is a simple workaround for documentation
-and it prevents accidental implementation of interfaces.
+This is a simple workaround for documentation,
+which prevents accidental implementation of interfaces.
 However, it does not prevent a later modification of implementation of `Fooer`
 to remove `Foo()` and make `ImplementsFooer()` not correct any more.
 
@@ -186,7 +186,7 @@ Hegel
 [Hegel] has a more sound type system than Flow,
 and it does not have the two problems mentioned above:
 
-1. It dose not support interface.
+1. It does not support interface.
 2. No type coercion for `number + string`.
 
 [Hegel]: https://hegel.js.org/

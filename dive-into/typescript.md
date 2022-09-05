@@ -14,7 +14,7 @@ print_height(somebody);
 ```
 
 However, TypeScript has excess property checking for object literal.
-Thus if we inline the `somebody` declaration above, TypeScript raises an error:
+Thus, if we inline the `somebody` declaration above, TypeScript raises an error:
 
 ```typescript
 print_height({ height: 150, weight: 150 }); // Error!
@@ -73,7 +73,7 @@ function plus(x: number | string, y: number | string): number | string | boolean
 ```
 
 In the above example, the third overload will not be matched forever.
-Because TypeScripts looks at the overload list,
+Because TypeScript looks at the overload list,
 proceeding with the first overload attempts to call the function with the provided parameters.
 If it finds a match, it picks this overload as the correct overload.
 And since intersection type of functions are defined as function overloads in TypeScript,
@@ -114,7 +114,7 @@ type FunctionOverloads = EqEqEq<
 
 [Matt McCutchen]: https://github.com/Microsoft/TypeScript/issues/27024#issuecomment-421529650
 
-However, it still cannot handle  function intersection:
+However, it still cannot handle function intersection:
 
 ```typescript
 type FunctionIntersection = EqEqEq<F & G, G & F> // true
@@ -123,16 +123,5 @@ type FunctionIntersection = EqEqEq<F & G, G & F> // true
 Besides, `EqEq` considers `any` to equal to any type except `never`.
 This makes sense, since unlike `Any` or `Anything` in other languages, TypeScript's `any` is not a top type.
 `any` is assignable to any type except `never`.
-`EqEqEq` is more strict and does not consider `any` to be identical to other type.
+`EqEqEq` is stricter and does not consider `any` to be identical to other type.
 
-## Literal String, Literal Number, But Unique Symbol
-
-TypeScript has literal strings and literal numbers, but there is no literal symbols.
-Instead, there is unique symbols (only allowed in const declarations).
-
-In other words:
-
-```js
-let no_unique_string_type: 'non sense but valid' = 'non sense but valid'
-let no_literal_symbol: symbol = Symbol("cannot express Symbol(0) | Symbol(1)")
-```
