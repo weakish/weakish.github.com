@@ -1,8 +1,6 @@
-map memories to web pages
+Map memories to web pages.
 
-```c
-mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
-```
+    mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
 
 - [Exception and Union Type](dive-into/exceptions/)
 - [Notes on A little Java, a Few Patterns](java/a-little/)
