@@ -12,6 +12,7 @@ layout: none
  <copyright>Permission to use, copy, modify, and/or distribute this site for any purpose with or without fee is hereby granted.</copyright>
  <managingEditor>weakish@gmail.com (Jang Rush)</managingEditor>
  <webMaster>weakish@gmail.com (Jang Rush)</webMaster>
+ <pubDate>{{ site.articles[0][1] | date_to_rfc822 }}</pubDate>
  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
  <generator>Jekyll</generator>
  <docs>http://blogs.law.harvard.edu/tech/rss</docs>
@@ -25,8 +26,8 @@ layout: none
  </image>
  {% assign absolutelink = '<a href="' | append: site.url | append: '/' %}
  {% assign absoluteimglink = '<img src="' | append: site.url | append: '/' %}
- {% for path in site.articles %}
-  {% assign page = site.pages | where: "path", path | first %}
+ {% for article in site.articles %}
+  {% assign page = site.pages | where: "path", article[0] | first %}
   <item>
     {% comment %}liquid does not know "\n"{% endcomment %}
     <title>{{page.content | newline_to_br | split: '<br />' | first | remove_first: '# '}}</title>
@@ -38,6 +39,7 @@ layout: none
     <description>{{ page_content | markdownify | replace: '<a href="/', absolutelink | replace: '<img src="/', absoluteimglink | xml_escape}}</description>
     <link>{{ site.url }}{{ page.url }}</link>
     <guid isPermaLink="false">{{ page.url }}</guid>
+    <pubDate>{{ article[1] | date_to_rfc822 }}</pubDate>
   </item>
  {% endfor %}
 </channel>
