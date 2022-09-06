@@ -74,9 +74,9 @@ To turn off the tunnel, run:
 sudo wg-quick down /path/to/wg0.conf
 ```
 
-If you uses a GUI WireGuard application, you can import the configuration file instead.
+If you use a GUI WireGuard application, you can import the configuration file instead.
 
-If you uses the WireGuard mobile application, the fast way to import the configuration is scan a QR code:
+If you use the WireGuard mobile application, the fast way to import the configuration is scan a QR code:
 
 ```sh
 cat /path/to/wg0.conf | qrencode -t ansiutf8

@@ -51,16 +51,12 @@ For server backup, have a look at [borgmatic].
 
 ## Compression
 
-    borg create --compression TYPE
+    borg create --compression lz4
 
-Default is no compression.
-
-- fast repo storage and some compression: `lz4`
-- less fast repo storage and a bit more compression: `zlib`
-- very slow repo storage and high compression: `lzma`
-
-`lz4` is very fast thus preferred.
-`lzma` is preferred when the repository is on a remote host with slow (dial-up) connection.
+I prefer `lz4` since it is very fast.
+If the repository is on a remote host with slow (dial-up) connection,
+I recommend `lzma` instead.
+The default option is no compression.
 
 ## Upgrade from attic
 

@@ -232,7 +232,7 @@ ExampleClass.aMethodLooksLikeStaticButNot()
 ExampleClass.aMethodToBeCompiledToStaticMethodOnJVM()
 ```
 
-Ceylon dose not support this.
+Ceylon does not support this.
 
 Both Kotlin and Ceylon support top level function declaration,
 something like package level static method.

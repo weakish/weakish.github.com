@@ -25,7 +25,7 @@ The `Hello` function is a React component,
 which receives an object containing properties,
 and returns a ReactElement.
 Here I do not plan to change the value of the `name` property,
-so I annotates it as readonly.
+so I annotate it as readonly.
 But these properties can be mutable.
 ReactElements can be considered as extensible html elements,
 or some content to be rendered.

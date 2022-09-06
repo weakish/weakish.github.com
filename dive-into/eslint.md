@@ -1,8 +1,8 @@
 # An Optioned Guide to ESLint
 
-[eslint] is a powerful and versatile tool.
+[ESLint] is a powerful and versatile tool.
 I myself only use eslint for problems coming from JavaScript design.
-Thus I can have a short rule list:
+Thus, I can have a short rule list.
 
 [eslint]: https://eslint.org/
 

@@ -1,8 +1,8 @@
-# RarCrack
+# RarCrack Basic Guide
 
 This note is written for RarCrack 0.2.
 
-RarCrack brute forces password for encrypted zip, rar, 7z files.
+RarCrack brute-forces password for encrypted zip, rar, 7z files.
 
 ```sh
 rarcrack FILE_NAME --threads 4

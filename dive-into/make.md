@@ -1,7 +1,7 @@
 # Write Makefile Compatible with Both GNU `make` and BSD `make`
 
 BSD make is simple, but GNU make is more popular due to Linux's popularity.
-Thus I prefer to write Makefile compatible with both versions.
+Thus, I prefer to write Makefile compatible with both versions.
 
 ## Syntax
 

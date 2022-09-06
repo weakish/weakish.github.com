@@ -16,7 +16,7 @@ I am not sure if 16GB is too small or macOS installer is fussy on USB drive mode
 I always feel that I can only own a computer truely after I have installed Linux on it.
 So after finishing the macOS initial setup (user account, etc.), I rebooted to the recovery mode (Command+R on Intel based Macintosh machines with a T2 chip).
 
-Then I added an partition via disk utility in the recorvery mode.
+Then I added a partition via disk utility in the recorvery mode.
 This partition is for Linux, so the format does not matter.
 Adding a new partition will automatically resize the current macOS partition,
 which is much slower if performed under macOS instead of recovery mode.

@@ -29,15 +29,15 @@ I bind frequently used actions to F keys, so they are easier to reach.
 The "Sublime" field refers to the default keyboard shorts for the real Sublime Text editor, not the Sublime Text keymap for JetBrains IDEs.
 
 | Key | Default | Sublime | Me | Rationale |
-| - | - | - | - | - | - |
+| - | - | - | - | - |
 | F1 | help | n/a | find action | inspired by vscode |
 | F2 | next error | next bookmark | refactor: rename | inspired by file managers and vscode |
-| F3 | next occurrence | next occurrence | next occurrence  | convention |
+| F3 | next occurrence | next occurrence | next occurrence | convention |
 | F4 | jump to source | next results in find all | go to declaration/usage | more powerful than "jump to source" |
 | F5 | refactor: copy | n/a | quick documentation | near F4 |
 | F6 | refactor: move | toggle spell check | go to symbol | inspired by go to address bar in web browser |
 | F7 | debug: step into | build | find usage | consistent with `Ctrl+F7` (find usage in current file) |
-| F8 | debug: step out | n/a | last edit location  | near F9 |
+| F8 | debug: step out | n/a | last edit location | near F9 |
 | F9 | debug: resume | sort lines | toggle bookmark | Inspired by Yin Wang. |
 | F10 | menu (os) | menu (os) | menu (os) |
 | F11 | toggle fullscreen | toggle fullscreen | toggle fullscreen | convention |
