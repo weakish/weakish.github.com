@@ -4,9 +4,9 @@ layout: none
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
- <atom:link href="{{ site.url }}/rss.xml" rel="self" type="application/rss+xml" />
+ <atom:link href="{{ site.canonical_url }}/rss.xml" rel="self" type="application/rss+xml" />
  <title>{{ site.title }}</title>
- <link>{{ site.url }}</link>
+ <link>{{ site.canonical_url }}</link>
  <description>map memories to web pages</description>
  <language>en</language>
  <copyright>Permission to use, copy, modify, and/or distribute this site for any purpose with or without fee is hereby granted.</copyright>
@@ -17,15 +17,15 @@ layout: none
  <generator>Jekyll</generator>
  <docs>http://blogs.law.harvard.edu/tech/rss</docs>
  <image>
-    <url>{{site.url}}/assets/images/weakish_icon_128.jpg</url>
+    <url>{{site.canonical_url}}/assets/images/weakish_icon_128.jpg</url>
     <title>{{ site.title }}</title>
-    <link>{{ site.url }}</link>
+    <link>{{ site.canonical_url }}</link>
     <description>map memories to web pages</description>
     <width>128</width>
     <height>128</height>
  </image>
- {% assign absolutelink = '<a href="' | append: site.url | append: '/' %}
- {% assign absoluteimglink = '<img src="' | append: site.url | append: '/' %}
+ {% assign absolutelink = '<a href="' | append: site.canonical_url | append: '/' %}
+ {% assign absoluteimglink = '<img src="' | append: site.canonical_url | append: '/' %}
  {% for article in site.articles %}
   {% assign page = site.pages | where: "path", article[0] | first %}
   <item>
@@ -37,7 +37,7 @@ layout: none
       {% assign page_content = page_content | append: line %}
     {% endfor %}
     <description>{{ page_content | markdownify | replace: '<a href="/', absolutelink | replace: '<img src="/', absoluteimglink | xml_escape}}</description>
-    <link>{{ site.url }}{{ page.url }}</link>
+    <link>{{ site.canonical_url }}{{ page.url }}</link>
     <guid isPermaLink="false">{{ page.url }}</guid>
     <pubDate>{{ article[1] | date_to_rfc822 }}</pubDate>
   </item>
