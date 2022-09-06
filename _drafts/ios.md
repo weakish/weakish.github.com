@@ -39,7 +39,7 @@ Type `ideviceinfo -h` to see the domain list.
 ## Backup
 
 The current released version (1.3.0) of libimobiledevice does not work with iOS 14.
-To backup iOS 14 devices, you need to compile it from the git HEAD.
+To back up iOS 14 devices, you need to compile it from the git HEAD.
 
 First, remove the installed versions from `apt`:
 
@@ -63,6 +63,3 @@ Then run the commands directly from the `tools` directory:
 cd libimobiledevice/tools
 ./idevicebackup2 backup --full /path/to/backup/directory
 ```
-
-
-
