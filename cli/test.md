@@ -1,5 +1,7 @@
 # Command Line Interface Testing
 
+**This survey is outdated and unmaintained.**
+
 ## [assert.sh](https://github.com/lehmannro/assert.sh)
 
 Example:

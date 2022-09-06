@@ -1,5 +1,8 @@
 # Deploy Jekyll Site to ZeroNet
 
+**This guide is outdated and unmaintained.**
+The development of ZeroNet ceased.
+
 ## Basic Setup
 
 A basic setup is mostly straightforward.
