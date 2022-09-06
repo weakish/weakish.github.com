@@ -6,22 +6,12 @@
 
 - [GitHub Pages](https://pages.github.com/)
 
-    Unfortunately it [dose not support IPv6][github-354].
-    I am considering a switch to [Netlify].
-
 - [icongram](https://icongr.am/)
 
     Serving icons on the fly.
-    Thus I can directly link to [Feather] icons, without messing around with npm and JavaScript.
+    Thus, I can directly link to [Feather] icons, without messing around with npm and JavaScript.
 
-- [DuckDuckGo](https://html.duckduckgo.com/html/)
-
-    The HTML form at the page bottom allows visitors to search this site via site search at DuckDuckGo.
-
-[github-354]: https://github.com/isaacs/github/issues/354
-[Netlify]: https://www.netlify.com/blog/2018/11/26/announcing-ipv6-support-on-the-netlify-application-delivery-network/
 [Feather]: https://feathericons.com/
-
 
 ### Languages
 
@@ -30,7 +20,7 @@ Just HTML and CSS.
 
 ### Static Site Generator
 
-[Jekyll](https://jekyllrb.com/), just because GitHub Pages uses it.
+[Jekyll](https://jekyllrb.com/), just because it is the default option of GitHub Pages.
 
 ## Hardware
 
@@ -58,20 +48,15 @@ Just HTML and CSS.
 - [iPhone SE]
 
     A small portable phone.
-    In fact I prefer Android phones, but Google only provides three years of security updates for Pixel phones.
+    In fact, I prefer Android phones, but Google only provides three years of security updates for Pixel phones.
     For example, Pixel 4a will not receive any security updates after 2023.
     I also prefer the first generation of iPhone SE, which is lighter and smaller.
     However, the first generation uses the A9 chip which is vulnerable to [checkm8].
-
 
 [iPhone SE]: https://support.apple.com/kb/SP820?locale=en_US
 [checkm8]: https://arstechnica.com/information-technology/2019/09/developer-of-checkm8-explains-why-idevice-jailbreak-exploit-is-a-game-changer/
 
 ## Software
-
-- Windows
-
-    An init.d with more features than systemd to start Linux.
 
 - [Debian](https://www.debian.org/)
 
@@ -82,31 +67,21 @@ Just HTML and CSS.
     Firefox sucks.
     But other browsers suck more.
 
-- [vscode](https://github.com/microsoft/vscode)
+- [LunarVim](https://www.lunarvim.org/)
 
-    So I do pair programming with [GitHub Copilot][copilot].
-    Also it works well with WSL.
-    And with [gitpod], I can use vscode as long as I have access to Internet and a morden web browser.
-
-- [Leafpad](https://en.wikipedia.org/wiki/Leafpad)
-
-    Simple.
-
-- [Konsole](https://konsole.kde.org/)
-
-    The default terminal emulator in KDE.
-    A feature-rich one.
+    With Neovim native LSP, GitHub Copilot, and LanguageTool,
+    under Alacritty terminal emulator.
 
 - [Dolphin](https://kde.org/applications/en/system/org.kde.dolphin)
 
     Probably the most functional GUI file manager in Linux.
 
-[copilot]: https://copilot.github.com/
-[gitpod]: https://www.gitpod.io/
-
 ## Wear
 
-All casual clothing, mostly H&M, Uniqlo, and Decathlon. I have no formal, semi-formal, or informal clothing. I usually ignore any dress code. I do not go places enforcing a non-casual dress code.
+All casual clothing, mostly H&M, Uniqlo, and Decathlon.
+I have no formal, semiformal, or informal clothing,
+thus usually ignore any dress code,
+and never go to places enforcing a non-casual dress code.
 I usually wear sneakers and prefer [vintage style running shoes][thedeffest], those [revised] [models] originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
 
 [thedeffest]: https://www.thedeffest.com/
