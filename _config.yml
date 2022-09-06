@@ -16,6 +16,7 @@ defaults:
             layout: default
 
 url: https://weakish.github.io
+canonical_url: https://mmap.page
 title: mmap.page
 repo: weakish/weakish.github.com
 
