@@ -98,3 +98,14 @@ ESLint configuration file example:
   }
 }
 ```
+
+## Alternatives
+
+[Rome] and [quick-lint-ls] are faster alternatives to ESLint.
+Rome [does not allow disabling rules],
+and quick-lint-ls does not support TypeScript.
+Therefore, I still use ESLint.
+
+[Rome]: https://rome.tools/
+[quick-lint-ls]: https://quick-lint-js.com/
+[does not allow disabling rules]: https://rome.tools/#rules
