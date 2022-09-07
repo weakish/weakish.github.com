@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: weakish
+    env: static
+    buildCommand: bundle exec jekyll build --config _config.yml,_render.yml 
+    staticPublishPath: ./_site
+    domains:
+      - mmap.page
+    headers:
+      - path: /LICENSE
+        name: Content-Type
+        value: text/plain
