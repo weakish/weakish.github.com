@@ -1,5 +1,8 @@
 # Use npm without package.json
 
+**I abandoned this idea.**
+It does not work well with Node.js tooling and brings more unnecessary complexity.
+
 ## Why NOT package.json?
 
 `package.json` brings in unnecessary complexity.
