@@ -1,63 +1,6 @@
-# Pitfalls of TypeScript
+# Typescript Function Overload Considered Harmful
 
-## Excess Property Checking for Object Literal
-
-TypeScript uses structural typing (to work with typical JavaScript code).
-
-```typescript
-function print_height(person: { height: number }): void {
-    console.log(person.height)
-}
-
-const somebody = { height: 150, weight: 150 };
-print_height(somebody);
-```
-
-However, TypeScript has excess property checking for object literal.
-Thus, if we inline the `somebody` declaration above, TypeScript raises an error:
-
-```typescript
-print_height({ height: 150, weight: 150 }); // Error!
-```
-
-However, partial overlap is still permitted:
-
-```typescript
-type Point = {
-    x: number;
-    y: number;
-}
-type Label = {
-    name: string;
-}
-const partialOverlap: Point | Label = {
-    x: 0,
-    y: 0,
-    name: "origin"
-}
-function print_pl(pl: Point | Label) {
-    console.log(pl)
-}
-print_pl({ x: 0, y: 0, name: "origin"})
-```
-
-But overlap with conflicting properties is not permitted:
-
-```typescript
-type Point = {
-    x: number;
-    y: number;
-}
-type SPoint = {
-    x: string;
-    y: string;
-}
-const conflictingProperties: Point | SPoint = {x: 0, y: "0"}
-```
-
-## Function Overloads
-
-Function type declaration supports overloading.
+Typescript function type declaration supports overloading.
 
 ```typescript
 function plus(x: number, y: number): number;
@@ -100,28 +43,15 @@ type G = (x: number, y: string) => void
 type FunctionIntersectionEquality = EqEq<F & G, G & F> // true
 ```
 
-To check function overloads' type equality, use this cleaver implementation by [Matt McCutchen]:
+There is a cleaver implementation by [Matt McCutchen],
+which works with function overloads.
 
 ```typescript
 type EqEqEq<X, Y> =
     (<T>() => T extends X ? 1 : 2) extends
     (<T>() => T extends Y ? 1 : 2) ? true : false;
-
-type FunctionOverloads = EqEqEq<
-    { (x: 0, y: null): void; (x: number, y: null): void },
-    { (x: number, y: null): void; (x: 0, y: null): void }> // false
 ```
 
 [Matt McCutchen]: https://github.com/Microsoft/TypeScript/issues/27024#issuecomment-421529650
 
-However, it still cannot handle function intersection:
-
-```typescript
-type FunctionIntersection = EqEqEq<F & G, G & F> // true
-```
-
-Besides, `EqEq` considers `any` to equal to any type except `never`.
-This makes sense, since unlike `Any` or `Anything` in other languages, TypeScript's `any` is not a top type.
-`any` is assignable to any type except `never`.
-`EqEqEq` is stricter and does not consider `any` to be identical to other type.
-
+However, it still does not work with function intersection.

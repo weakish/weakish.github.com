@@ -232,8 +232,9 @@ to tell vscode to check JavaScript files.
 ```
 
 It is possible to check JavaScript files without tsconfig.json file
-with writing magic comment `// @ts-check` or setting an configuration option in vscode.
-But I prefer the tsconfig.json way, since I tend to setup some typescript compiler options.
+with writing magic comment `// @ts-check`
+or setting a configuration option in vscode.
+But I prefer the tsconfig.json way, since I tend to set up some typescript compiler options.
 
 ## Why
 
