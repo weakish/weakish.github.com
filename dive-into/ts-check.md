@@ -210,31 +210,12 @@ then import it in JSDoc comments.
 
 ## Type Checking
 
-Just enable `allowJs`, `checkJs`, `noEmit` in tsconfig.json,
-to tell vscode to check JavaScript files.
+Just create a `jsconfig.json` file under the root of the project.
 
-```json
-{
-  "compilerOptions": {
-    "strict": true,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "allowJs": true,
-    "checkJs": true,
-    "noEmit": true,
-    "target": "ES2017",
-    "incremental": true
-  }
-}
-```
-
-It is possible to check JavaScript files without tsconfig.json file
+It is possible to check JavaScript files without the `jsconfig.json` file
 with writing magic comment `// @ts-check`
 or setting a configuration option in vscode.
-But I prefer the tsconfig.json way, since I tend to set up some typescript compiler options.
+But I prefer the `jsconfig.json` way, since I tend to set up some compiler options.
 
 ## Why
 
