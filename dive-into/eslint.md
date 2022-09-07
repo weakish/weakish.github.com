@@ -15,7 +15,8 @@ without any configuration.
 
 [prettier]: https://prettier.io/
 
-Also, prettier can also avoid some lint rules, for example, eslint's `curly` rule helps to avoid misleading code:
+Prettier also helps on some non-formatting lint rules.
+For example, eslint's `curly` rule helps to avoid misleading code:
 
 ```js
 if (condition)
@@ -32,7 +33,7 @@ DoSomethingElse();
 
 ## TypeScript Can Detect Lots of Errors
 
-[ts-check](/dive-into/ts-check/) can detect a lot of problems, and it is usually faster.
+TypeScript can detect a lot of problems, and it is usually faster.
 
 For example, the `array-callback-return` rule is unnecessary,
 because if I accidentally forget to write `return` statement in array mapping function,
