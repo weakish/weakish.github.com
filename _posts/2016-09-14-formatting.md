@@ -1,13 +1,3 @@
-Tabs v.s. spaces
-----------------
-
-Tabs are more accurate than spaces to represent indentation.
-
-Line length
------------
-
-No hard limit.
-
-If tools (diff etc.) cannot handle long lines correctly,
-configure or switch the tool.
-
+Formatting is unimportant.
+Just follow the community.
+For example, use `go fmt` for Go, `black` for Python, and `prettier` for TypeScript.
