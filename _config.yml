@@ -21,6 +21,7 @@ title: mmap.page
 repo: weakish/weakish.github.com
 
 articles:
+    # TODO move weakish/coding-style into this repo
     - [dive-into/ruby.md, "Mon, 5 Sep 2022 12:07:30 +0000"]
     - [dive-into/gitmoji.md, "Mon, 5 Sep 2022 11:26:30 +0000"] 
     - [vim/spell.md, "Mon, 5 Sep 2022 08:51:52 +0000"] 
