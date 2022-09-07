@@ -8,6 +8,13 @@ However, new words can be added quickly via `zg` in normal mode.
 LunarVim, the Neovim distribution I use,
 enables spell checking for commit messages and markdown by default.
 
+To exclude East Asian characters from spell checking,
+I add the following to my `~/.config/lvim/config.lua`:
+
+```lua
+vim.opt.spelllang = vim.opt.spelllang + "cjk"
+```
+
 To check grammar and stylish errors,
 Grammarly or [LanguageTool] can be used.
 
