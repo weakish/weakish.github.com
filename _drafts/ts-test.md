@@ -49,9 +49,10 @@ Unlike Jest and Mocha, [Tape] is minimalistic.
 
 Using Tape under TypeScript projects is simple.
 Just run `ts-node node_modules/.bin/tape test/**/*.ts` instead of `tape test/**/*.js`.
-Being a [100% JavaScript] project, Tape does not have first class TypeScript support though.
+Being a [100% JavaScript] project, Tape does not have [first class TypeScript support] though.
 
 [100% JavaScript]: /_drafts/100-percent-js/
+[first class TypeScript support]: https://github.com/substack/tape/issues/577
 
 ## AVA
 
@@ -59,3 +60,35 @@ Like Tape, [AVA] is also minimalistic.
 Unlike Tape, AVA ships with TypeScript definitions and run tests concurrently.
 
 [AVA]: https://github.com/avajs/ava
+
+## Tap
+
+Like Tape and AVA, [Tap] has a minimal API surface.
+In fact, the test syntax of Tape is inspired by Tap.
+Like AVA, Tap supports running tests in parallel.
+
+[Tap]: https://node-tap.org/
+
+Currently, the coverage feature of Tap is [broken][807] on TypeScript ESM projects.
+As a workaround, I use [c8] for coverage instead.
+Also, `node --loader=ts-node/esm` should be used
+instead of the built-in TypeScript support of Tap.
+Here is the corresponding configuration in `package.json`:
+
+```json
+"scripts": {
+  "test": "NODE_NO_WARNINGS=1 c8 tap"
+},
+"tap": {
+  "node-arg": [
+    "--loader=ts-node/esm"
+  ],
+  "coverage": false,
+  "ts": false
+}
+```
+
+[c8]: https://www.npmjs.com/package/c8
+
+My project is tiny, thus I do not use the parallel mode.
+If you have a lot of tests, you may replace `c8 tap` with something such as `c8 tap -j4`.
