@@ -43,20 +43,9 @@ since TypeScript complains when you are comparing two values of different types.
 
 TypeScript also has other helpful checks like `noFallthroughCasesInSwitch`.
 
-```js
-{
-  "compilerOptions": {
-    "strict": true,
-    "noUncheckedIndexAccess": true,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true
-    // more options omitted
-  }
-}
-```
+So just extend one of strictest [tsconfig base].
+
+[tsconfig base]: https://github.com/tsconfig/bases
 
 ## Only Include Obvious Rules
 
