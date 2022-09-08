@@ -20,16 +20,32 @@ For example, eslint's `curly` rule helps to avoid misleading code:
 
 ```js
 if (condition)
-    DoSomething();
-    DoSomethingElse();
+    do_something();
+    do_something_else();
 ```
 
 However, prettier will format the above code as below to avoid the above issue:
 
 ```js
-if (condition) DoSomething();
-DoSomethingElse();
+if (condition) do_something();
+do_something_else();
 ```
+
+In the code sample above, I use `snake_case` for function names.
+The Python community favors `snake_case`:
+
+> Function names should be lowercase,
+> with words separated by underscores as necessary to improve readability.
+>
+> Variable names follow the same convention as function names.
+>
+> mixedCase is allowed only in contexts where that’s already the prevailing style
+> (e.g. threading.py), to retain backwards compatibility.
+>
+> -- [PEP 8](https://peps.python.org/pep-0008/#function-and-variable-names)
+
+However, mixedCase is prevailing in the JavaScript/TypeScript community.
+Thus, I use mixedCase for exported names.
 
 ## TypeScript Can Detect Lots of Errors
 
