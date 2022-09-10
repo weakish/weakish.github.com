@@ -2,25 +2,8 @@
 
 ## Tech Stack of This Site
 
-### Services
-
-- [GitHub Pages](https://pages.github.com/)
-
-- [icongram](https://icongr.am/)
-
-    Serving icons on the fly.
-    Thus, I can directly link to [Feather] icons, without messing around with npm and JavaScript.
-
-[Feather]: https://feathericons.com/
-
-### Languages
-
-Just HTML and CSS.
-100% JavaScript free.
-
-### Static Site Generator
-
-[Jekyll](https://jekyllrb.com/), just because it is the default option of GitHub Pages.
+- Frontend: just HTML and CSS, 100% JavaScript free.
+- Generator: [Jekyll](https://jekyllrb.com/) since this site was hosted at GitHub Page before.
 
 ## Hardware
 
@@ -52,6 +35,7 @@ Just HTML and CSS.
     For example, Pixel 4a will not receive any security updates after 2023.
     I also prefer the first generation of iPhone SE, which is lighter and smaller.
     However, the first generation uses the A9 chip which is vulnerable to [checkm8].
+    Thus, I chose the second generation.
 
 [iPhone SE]: https://support.apple.com/kb/SP820?locale=en_US
 [checkm8]: https://arstechnica.com/information-technology/2019/09/developer-of-checkm8-explains-why-idevice-jailbreak-exploit-is-a-game-changer/
@@ -71,6 +55,11 @@ Just HTML and CSS.
 
     With Neovim native LSP, GitHub Copilot, and LanguageTool,
     under Alacritty terminal emulator.
+
+- [VSCode](https://code.visualstudio.com/)
+
+    I use VSCode for ReScript, since the official vim plugin is sitll based on coc.vim,
+    and its language server is outdated compared to the one included in the VSCode extension.
 
 - [Dolphin](https://kde.org/applications/en/system/org.kde.dolphin)
 
