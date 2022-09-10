@@ -88,6 +88,7 @@ Here is the corresponding configuration in `package.json`:
 }
 ```
 
+[807]: https://github.com/tapjs/node-tap/issues/807
 [c8]: https://www.npmjs.com/package/c8
 
 My project is tiny, thus I do not use the parallel mode.
