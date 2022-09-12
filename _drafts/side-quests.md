@@ -1,0 +1,11 @@
+- [ ] music 5940
+- common setups
+  - popular
+    - macOS
+    - DropBox
+    - Gmail
+  - popular among developers
+    - 1password
+    - DropBox
+    - GitHub
+    - LogSeq
