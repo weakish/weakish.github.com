@@ -67,7 +67,7 @@
 
 ## Wear
 
-All casual clothing, mostly H&M, Uniqlo, and Decathlon.
+All casual clothing, mostly H&M, Uniqlo, Decathlon, and Lululemon.
 I have no formal, semiformal, or informal clothing,
 thus usually ignore any dress code,
 and never go to places enforcing a non-casual dress code.
