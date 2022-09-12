@@ -1,9 +1,9 @@
 # Uses
 
-## Tech Stack of This Site
+## Colophon
 
 - Frontend: just HTML and CSS, 100% JavaScript free.
-- Generator: [Jekyll](https://jekyllrb.com/) since this site was hosted at GitHub Page before.
+- Generator: [Jekyll](https://jekyllrb.com/) since this site was hosted at GitHub Pages before.
 
 ## Hardware
 

@@ -26,3 +26,6 @@ services:
       - type: redirect
         source: /coding-style/*
         destination: https://weakish.github.io/coding-style/
+      - type: rewrite
+        source: /teapot
+        destination: https://teapot.onrender.com
