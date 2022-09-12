@@ -11,7 +11,7 @@
 | 🔒 | `:lock:` | security fix | n/a |
 | 🎨 | `:art:` | refactor | refactor |
 | ⚡️ | `:zap:` | performance | perf |
-| 🔍️ | `:mag:` | test | test |
+| 💯 | `:100:` | test | test |
 | 📝 | `:memo:` | doc | docs |
 | 💤 | `:zzz:` | chore| chore |
 | 🎉 | `:tada:` | release | n/a |
@@ -77,7 +77,7 @@ And add the following:
 
 - ⚡️ `:zap:` for performance from gitmoji.
 - 🆕 `:new:` for new features. I saw someone used this.
-- 🔍️ `:mag:` for tests. I think tests are used to spot problems. Gitmoji uses this for "improve SEO".
+- 💯 `:100:` for tests, aiming at 100% branch coverage. 
 - 💤 `:zzz:` for chores. I think changes of this type is somehow boring.
 - 💥 `:boom:` for breaking changes from gitmoji.
 - 🎉 `:tada:` for new release. Gitmoji uses this for project begin and 🔖 `:bookmark` for release.
@@ -94,7 +94,7 @@ Thus, the final list is:
 * 🆕 `:new:` when adding a new feature
 * 🔒 `:lock:` when fixing security problems
 * ⚡️ `:zap:` when improving performance
-* 🔍️ `:mag:` when adding or updating tests.
+- 💯 `:100:` when adding or updating tests.
 * 💤 `:zzz:` for chores. I think changes of this type is somehow boring.
 * 💥 `:boom:` when introducing breaking changes.
 * 🎉 `:tada:` when releasing a new version.
@@ -115,6 +115,22 @@ I added the following types:
 - `:egg:` itself can be considered as an Easter egg of gitmoji.
 
 ## Change Log
+
+### 0.1.0
+
+- Use `:100:` for tests. `:mag:` should be considered as an alias of `:100:`.
+
+    When displayed in plain text, `:mag:`,
+    I think it is hard to recongnize "mag" is an abbreviation for "magnifirer".
+    On the other hands, I ensure all tests are passed in pre commit hook.
+    Thus, most of the time, changes on tests come with changes in other types,
+    e.g. `:bug:` or `:new:`.
+    Test only changes thus are most likely improve test coverage.
+    Therefore, I replace `:mag:` with `:100:`.
+
+    Any tools supporting this selected gitmoji set
+    should treat `:mag:` as an alias of `:100:`,
+    to maintain backward compatibility.
 
 ### 0.0.2022
 
