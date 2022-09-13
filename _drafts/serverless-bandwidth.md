@@ -23,6 +23,7 @@ If only bandwidth is concerned, then:
 | Digital Ocean App Platform | 0 | 12 | 102 | 0.10 |
 | Netlify | 0 | 0 | 19 | 0.55 |
 | Vercel | 0 | 0 | 20 | contact sale |
+| Gatsby | 0 | 0 | 42.50 | contact |
 | Render | 0 | 0 | 90 | 0.10 |
 | Railway | 0 | 0 | n/a | n/a |
 | Fly | 0 | 0 | 18 | 0.02/0.04/0.12 |
@@ -40,6 +41,8 @@ If only bandwidth is concerned, then:
 - [Netlify] Starter 100 GB, Pro 1 TB, and $55 per 100 GB for overage.
 
 - [Vercel] Hobby 100 GB, Pro 1 TB, and contact the sale to buy additional bandwidth.
+
+- [Gatsby] Free 100 GB, Professional 1 TB. Gatsby does not charge for overage, and they will contact the user if they continue to exceed bandwidth limits.
 
 - [Render] 100 GB free, then $0.10 per GB.
 
@@ -72,6 +75,7 @@ If only bandwidth is concerned, then:
 [Digital Ocean App Platform]: https://www.digitalocean.com/pricing/app-platform "pricing"
 [Netlify]: https://www.netlify.com/pricing/ "pricing"
 [Vercel]: https://vercel.com/pricing "pricing"
+[Gatsby]: https://www.gatsbyjs.com/pricing/ "pricing"
 [Render]: https://render.com/pricing "pricing"
 [Railway]: https://railway.app/pricing "pricing"
 [documentation]: https://docs.railway.app/reference/usecases "Railway usecases"

@@ -31,3 +31,10 @@
 
         I remembered their previous slogan is something like "TypeScript is a superset of JavaScript." (targeted at CoffeeScrit and Dart). Then "TypeScript is JavaScript that scales." (only targeted at big projects.) Now they seemingly want to attract all JavaScript deverlopers.
 
+- [ ] Two mobile phones.
+
+- [ ] Manage global installed npm packages.
+
+        {p}npm list -g -j --depth 0
+
+        Maybe I can use a pesudo package?
