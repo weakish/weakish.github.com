@@ -185,7 +185,7 @@ const f = (
 
 [spec]: https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md#62-function-overloads
 
-By default TypeScript will infer parameters' type of overloaded function implementation as `any`,
+By default, TypeScript will infer parameters' type of overloaded function implementation as `any`,
 thus we need to specify specific types compatible with all overloads in parameter list of the function implementation.
 
 Also, because here different overloads have different arity, we use default parameters to ensure the function implementation compatible with all overloads.
@@ -237,3 +237,29 @@ Possible reasons:
 1. Get rid of the compilation step.
 2. Avoid using TypeScript features unavailable in ECMAScript.
 3. Secretly migrate a JavaScript project to TypeScript when other project developers do not want to switch to TypeScript.
+
+## Alternatives
+
+An alternative approach for a secret migration from JavaScript is to rewrite them in ReScript,
+and use genType to generate TypeScript files.
+
+```ts
+/* TypeScript file generated from index.res by genType. */
+/* eslint-disable import/first */
+
+// @ts-ignore: Implicit any on import
+import * as indexBS__Es6Import from './index.bs';
+const indexBS: any = indexBS__Es6Import;
+
+// tslint:disable-next-line:interface-over-type-literal
+export const h1: (line:string) => string = indexBS.h1;
+```
+
+This TypeScript files work, but the `indexBS` part is not perfectly human-readable.
+The TypeScript compiler can be used to generate corresponding `.d.ts` files.
+
+```ts
+export declare const htm: (text: string) => string;
+```
+
+This approach also brings in a sound type system.
