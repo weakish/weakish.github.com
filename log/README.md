@@ -1,6 +1,76 @@
 
 
-Date:   Sun Aug 7 04:01:09 2022 +0000
+Date:   1663055452
+
+I watched spderosso's [presentation] and skimed the [paper] on gitless.
+
+I find the summary presentation is much more approachable.
+Paper is like source code.
+Presentation or blog post is like a README.
+
+[presentation]: https://www.youtube.com/watch?v=31XZYMjg93o '"What’s Wrong With Git?" from Git Merge 2017.'
+[paper]: https://spderosso.github.io/oopsla16.pdf 'Purposes, Concepts, Misfits, and a Redesign of Git'
+
+
+
+Date:   1662903070
+
+I used to have a `git switch` alias pointed to `legit switch`, and haven't checked the native switch command introduced by recent versions of git till today.
+
+Reading `git help switch` got me very confused.
+Then after some googling, I understood that basically git switch is just git checkout.
+
+It turns out that in `git checkout foo`, `foo` can mean a branch or a file.
+And if both branch foo and file foo exist, the branch takes priority.
+Recent versions of git introduces `switch` and `restore` to offer a cleaner user interface.
+
+Initially I got confused because I never knew `git checkout path` till today.
+I always did `git checkout rev path` before.
+
+Conclusion: git sucks.
+
+
+
+Date:   1662883909
+
+The advantage of 11ty is that it works with existing projects.
+
+- It does not require a special project structure,
+  since files do not need to move around.
+- Frontmatter can be absent on content files.
+
+
+
+Date:   1662828447
+
+Although deprecated since HTML 2 (1995), the HTML element plaintext is still supported by all major browsers.
+
+https://caniuse.com/?search=plaintext
+
+The backward compatibility of web shines!
+
+
+
+Date:   1659874628
+
+Alternatives to homebrew are still alive!
+
+[MacPorts] supports all the current versions of macOS:
+10.15, 11, and 12.
+
+[Fink] supports the oldest current version of macOS: 10.15.
+In other words, it has not supported M1 yet.
+
+[pkgsrc] built packages against macOS 11 (x86 & M1) and 10.14,
+suitable for users running recent macOS releases.
+
+[MacPorts]: https://trac.macports.org/
+[Fink]: https://www.finkproject.org/
+[pkgsrc]: https://pkgsrc.joyent.com/install-on-osx/
+
+
+
+Date:   1659844869
 
 A Survey on Social Networks
 
@@ -73,7 +143,7 @@ Summary
 
 
 
-Date:   Sat Aug 6 02:24:37 2022 +0000
+Date:   1659752677
 
 Stacked encryption systems
 
@@ -125,7 +195,7 @@ and [cryfs].
 
 
 
-Date:   Sat Aug 6 02:17:17 2022 +0000
+Date:   1659752237
 
 Just tried installing EndeavourOS on a virtual machine.
 
@@ -152,7 +222,7 @@ the keyboard layout.
 
 
 
-Date:   Mon Jan 17 16:39:49 2022 +0000
+Date:   1642437589
 
 I used to think Dvorak layout is universal,
 
@@ -169,7 +239,7 @@ For example, Pomara [DM100] does not support Dovark:
 
 
 
-Date:   Wed Dec 29 23:33:25 2021 +0800
+Date:   1640792005
 
 Recently I bought a HP Pavilion laptop.
 
@@ -183,7 +253,7 @@ How stupid it is!
 
 
 
-Date:   Sat Oct 2 04:47:44 2021 +0800
+Date:   1633121264
 
 I decided to take notes as git commit messages.
 
@@ -219,7 +289,7 @@ future.
 
 
 
-Date:   Sat Oct 2 04:25:48 2021 +0800
+Date:   1633119948
 
 Just switched from vim to neovim.
 
@@ -245,7 +315,7 @@ The content above itself is written under neovim.
 
 
 
-Date:   Fri Oct 1 13:47:08 2021 +0000
+Date:   1633096028
 
 The version history of Telegram for macOS looks normal [on its website](https://macos.telegram.org/). But the release messages of [its beta version is very interesting](https://install.appcenter.ms/users/keepcoder/apps/telegram-swift/distribution_groups/public).
 
@@ -273,13 +343,13 @@ For example:
 
 
 
-Date:   Tue Sep 21 13:43:23 2021 +0000
+Date:   1632231803
 
 The ZWJ (Zero Width Joiner)  Unicode character can combine multiple emojis to be displayed as a single emoji. However, a platform may or may not include support for certain the emoji ZWJ sequences. For example, 👁‍🗨 is an emoji ZWJ sequence combining 👁 and 🗨. And if an Emoji ZWJ Sequence is not supported on the platform, it will be displayed as individual emojis, e.g. 🏔️‍🦁‍🏁
 
 
 
-Date:   Tue Jan 26 16:29:25 2021 +0000
+Date:   1611678565
 
 From 20200702, the Internet has around 16 months to [migrate from onion services v2 to v3][v3] once and for all. Now there are less than half a year left, and [onion services run by the Tor projec itself still use v2][v2].
 
@@ -290,19 +360,19 @@ Also, the future v2 deprecation will turn all existing v2 tor URLs to dead links
 
 
 
-Date:   Sun Jan 24 06:07:27 2021 +0000
+Date:   1611468447
 
 Shell scripting is a very bad programming language. But YAML is worse.
 
 
 
-Date:   Sat Jan 23 17:42:32 2021 +0000
+Date:   1611423752
 
 LinkedIn forces me to login & bind my mobile phone number to **just view** its content. Today I discovered an alternative way to check someone's work & education background, search "NAME site:rocketreach.co" or "NAME COMPANY site:rocketreach.co" in search engines.
 
 
 
-Date:   Sat Dec 26 06:49:35 2020 +0000
+Date:   1608965375
 
 Pop!_OS advertises itself as a developer friendly Linux distribution. However, it uses flatpak, whose sandbox system has a lot of issues with IDEs and editors (they typically need to access system commands and files).
 
@@ -310,7 +380,7 @@ Personally I prefer AppImage. It solves the "with dependencies packaged in and r
 
 
 
-Date:   Wed Dec 23 15:05:48 2020 +0000
+Date:   1608735948
 
 The fish shell improves user experience a lot, both for interactive usage and scripting usage.
 
@@ -326,7 +396,7 @@ Concise and clear.
 
 
 
-Date:   Tue Dec 22 17:02:03 2020 +0000
+Date:   1608656523
 
 While immature distributions (Arch, Ubuntu, Fedora, etc.) dropped x86 support between 2017-2019, a lot of serious distributions (Slackware, Debian, Gentoo, OpenSUSE, Alpine, etc.) still support old x86 computers.
 
@@ -336,7 +406,7 @@ FYI, CRUX dropped x86 support on [2013].
 
 
 
-Date:   Sun Dec 20 16:44:26 2020 +0000
+Date:   1608482666
 
 Fedora Silverblue uses [OSTree] for its base system, and it is the most mature distribution with an OSTree based base system.
 
@@ -348,7 +418,7 @@ I think this is a cool idea. However, I am still unsure whether it is worth to t
 
 
 
-Date:   Sun Dec 20 16:14:42 2020 +0000
+Date:   1608480882
 
 [Pop!_OS][pop] is a Ubuntu based distribution which features:
 
@@ -364,7 +434,7 @@ Pop!_OS is what Ubuntu should have been.
 
 
 
-Date:   Sat Dec 19 17:31:32 2020 +0000
+Date:   1608399092
 
 JAMStack is another buzzword targeting clients using LAMP stack (e.g. wordpress) to host their website. Static website generator will not work because it will confuse those clients: "Static website? Our site was static N years ago and we use FTP to upload those static web pages to the server. Didn't you told us that static website is outdated with limited features? Why go back to a static site?"
 
@@ -372,7 +442,7 @@ I do not think it is a good idea to switch from one shitty language (PHP) to ano
 
 
 
-Date:   Thu Dec 17 18:42:43 2020 +0000
+Date:   1608230563
 
 Trying to manually resolve a dependencies conflict broken my KDE desktop. Almost all KDE applicants do not work. It seems that KDE Neon assumes you will never uninstall those preinstalled KDE packages and specifies their dependencies causally. Fortunately I can still log into the i3 session (previously I used i3 as the window manager of the KDE session), but I still miss dolphin (temporarily using nautilus) and konsole (temporarily using hyper).
 
@@ -380,13 +450,13 @@ Maybe this is a good time to try out other distributions or even operating syste
 
 
 
-Date:   Sat Nov 28 02:35:44 2020 +0000
+Date:   1606530944
 
 surge.sh still focuses on static site hosting (Netlify used to focus on static site hosting but they added a lot of dynamic features later), with a command line UI (now.sh (rebranded as vercel now) used to feature this but now their documentation encourages you to do things via their web dashboard).
 
 
 
-Date:   Sat Nov 21 10:26:32 2020 +0000
+Date:   1605954392
 
 Q: Why I do not have faith in God?
 
@@ -409,7 +479,7 @@ And what if the first bit is not true? Then I would like to thank god for being 
 
 
 
-Date:   Sun Nov 15 07:52:56 2020 +0000
+Date:   1605426776
 
 [nico] is a minimalistic zero-configuration HTTP server. It can be used as a reverse proxy or a static file server, with auto applied SSL certificates. Nico have no options to configure. You can not even specify the ports to listen (it always listen on 80/443).
 
@@ -419,25 +489,25 @@ The binary size on Linux amd64: 6.5 M (for comparison, Caddy is 35 M).
 
 
 
-Date:   Wed Oct 28 15:01:12 2020 +0000
+Date:   1603897272
 
 Burmese names do not have surnames. And traditionally Bamars can change their name at will, often with no government oversight. In other words, Burmese names are both screen names and real names.
 
 
 
-Date:   Sun Oct 25 13:58:06 2020 +0000
+Date:   1603634286
 
 Why the KISS (Keep it simple, stupid) principle looks so seductive to me? Because the world is too vast to explore.
 
 
 
-Date:   Sat Oct 24 11:49:59 2020 +0000
+Date:   1603540199
 
 Macbook Pro 13 (2019) claimed to support "up to 10 hours wireless web", but in my daily use (two browsers with dozens of tabs, two IDEs, one electron based editor, one mail client, two IM applications, using both the internal and an external monitor) it can only last about 3 hours.
 
 
 
-Date:   Wed Sep 2 15:04:13 2020 +0000
+Date:   1599059053
 
 The English words "Republic of China" is still preserved on the redesigned Taiwan passport. They are in a much smaller font wrapping around the national emblem, unnoticeable at a quick glance.
 
@@ -445,19 +515,19 @@ IMHO, keeping it simple and stupid is much better using these creative tricks. T
 
 
 
-Date:   Tue Aug 18 16:43:32 2020 +0000
+Date:   1597769012
 
 There is no options in [Google Podcasts](https://podcasts.google.com) to export subscriptions in OPML. Even Google Takeout does not include Google Podcasts subscriptions. (violation of GDPR?)
 
 
 
-Date:   Thu Aug 6 15:35:15 2020 +0000
+Date:   1596728115
 
 According to Uniqlo's size chart, the perfect height is around 165 cm and 150 cm. A person of 165 cm height can choose from both Men's Clothing and Women's Clothing, and a person of 150 cm height can choose from both Women's Clothing and Kids' Clothing.
 
 
 
-Date:   Wed Jul 29 16:46:55 2020 +0000
+Date:   1596041215
 
 suitezero.archive posted their collection, a pair of fake Nike sneakers on [instagram]. Unlike most other fake Nike shoes, this pair has its own brand 登云 (meaning climbing the clouds in Chinese) and is produced by 上海皮鞋一厂 (Shanghai No.1 Leather Shoe Factory), a Chinese government-owned enterprise.
 
@@ -466,7 +536,7 @@ suitezero.archive posted their collection, a pair of fake Nike sneakers on [inst
 
 
 
-Date:   Tue Jul 14 01:52:58 2020 +0000
+Date:   1594691578
 
 > Also, vertical KDE panel is not supported under i3, so do not buy them.
 
@@ -474,7 +544,7 @@ Oh, I must be very sleepy to write the above sentence. And maybe I dislike KDE s
 
 
 
-Date:   Sat Jul 11 10:24:38 2020 +0000
+Date:   1594463078
 
 First impression on [hey email][hey]:
 
@@ -487,7 +557,7 @@ First impression on [hey email][hey]:
 
 
 
-Date:   Sat Jul 11 06:36:26 2020 +0000
+Date:   1594449386
 
 Shame on me: I had not checked whether the producer violates GPL before buying an ebook reader.
 
@@ -495,7 +565,7 @@ Shame on me: I had not checked whether the producer violates GPL before buying a
 
 
 
-Date:   Sun Jul 5 08:02:21 2020 +0000
+Date:   1593936141
 
 [Sinatra] in Ruby:
 
@@ -563,7 +633,7 @@ func main() {
 
 
 
-Date:   Sat Jul 4 17:57:49 2020 +0000
+Date:   1593885469
 
 > FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 >
@@ -605,7 +675,7 @@ It is 2020 and sadly the only mainstream dynamic programming language with a com
 
 
 
-Date:   Thu Jul 2 16:35:44 2020 +0000
+Date:   1593707744
 
 Recently I watched [Openbook 2019 talk by Audrey Tang on YouTube][talk]. The talk is given in Chinese and here is some notes I have taken.
 
@@ -651,19 +721,19 @@ Unfortunately, although Audrey is a [key sponsor][] of [sandstorm][] (self hoste
 
 
 
-Date:   Mon Jun 15 15:23:40 2020 +0000
+Date:   1592234620
 
 Go is influenced by Python. Now Go also influences Python, e.g. black (`go fmt`) and pytest (`go test`).
 
 
 
-Date:   Fri Jun 12 15:09:10 2020 +0000
+Date:   1591974550
 
 It's  2020, and twitter & github still do not support IPv6.
 
 
 
-Date:   Sat May 23 17:51:13 2020 +0000
+Date:   1590256273
 
 Go 1.14 allows [embedding interfaces with identical method names][6977], as long as these methods have **identical signatures**.
 
@@ -673,13 +743,13 @@ Again, Go avoided to attack the function subtyping problem.
 
 
 
-Date:   Wed May 20 14:06:24 2020 +0000
+Date:   1589983584
 
 I though TED talks are amazing. Recently I listened a lot of TED talks and found out that TED talks on average are *not* interesting to me. Previously I have only listened popular TED talks shared on social networks where I only follow people I find interesting. That's why I had this wrong impression.
 
 
 
-Date:   Thu May 14 13:21:09 2020 +0000
+Date:   1589462469
 
 [GitHub action/workflow] offers these shells: cmd, sh, bash, power shell, and **python**.
 
@@ -687,25 +757,25 @@ Date:   Thu May 14 13:21:09 2020 +0000
 
 
 
-Date:   Sat Apr 25 16:59:43 2020 +0000
+Date:   1587833983
 
 [Combo Pinyin](https://github.com/rime/home/wiki/ComboPinyin) is an interesting Chinese input method, which is similar to chord-typing (pressing multiple keys at the same time to input a character). However, I find it difficult to type. For example, to type guang, I have to type five keys (F-U-K-L-SPC) at the same time, which is very difficult to my fingers.
 
 
 
-Date:   Sun Apr 12 15:23:34 2020 +0000
+Date:   1586705014
 
 Haven't checked the RSS reader for two or three years. The RSS reader reported that about fifty RSS feeds are unreachable. By clicking the htmlUrl and googling author name and old post content, I managed to recover 17 blogs.
 
 
 
-Date:   Sun Apr 12 09:12:33 2020 +0000
+Date:   1586682753
 
 The opening of Stanford's CS106A is full of propaganda and buzzwords http://web.stanford.edu/class/cs106a/lectures/1-Welcome/1-Welcome.pdf
 
 
 
-Date:   Sat Mar 28 16:41:48 2020 +0000
+Date:   1585413708
 
 Just discovered this in [Sentry's ToS][sentry]:
 
@@ -716,25 +786,25 @@ Just discovered this in [Sentry's ToS][sentry]:
 
 
 
-Date:   Fri Mar 20 17:23:15 2020 +0000
+Date:   1584724995
 
 The new MacBook Air has the best keyboard in current Apple laptops: scissor mechanism without touchbar.
 
 
 
-Date:   Wed Mar 11 16:48:12 2020 +0000
+Date:   1583945292
 
 On Apple laptops released in recent years, every key is a power button, and there is NO WAY to turn it off.
 
 
 
-Date:   Wed Jan 22 17:17:03 2020 +0000
+Date:   1579713423
 
 golint is very noisy, and it gives a lot of false positive results. I just switched to the peaceful `staticcheck` instead.
 
 
 
-Date:   Mon Jan 20 14:51:31 2020 +0000
+Date:   1579531891
 
 1. Open your browser, click `ctrl+L` to focus on address bar.
 2. Type `data:,anything you plan to do` (data and semicolon and comma)
@@ -748,7 +818,7 @@ Bonus: If you need to input non-ascii characters, type `data:text/plain;charset=
 
 
 
-Date:   Sun Jan 12 09:44:11 2020 +0000
+Date:   1578822251
 
 I am a bit uncertain about the future of JetBrains. They put a lot of efforts to ship great IDEs. But new languages are very serious about tooling and development productivity to attract more users. vscode has greater out of box support for TypeScript than WebStrom. And the Rust extension of vscode is developed by the IDE and editors team of the Rust language people (yes, they have a dedicated team for this).
 
@@ -762,32 +832,32 @@ JetBrains IDEs still have the state of art IDEs for languages such as Java, Pyth
 
 
 
-Date:   Fri Jan 10 14:59:12 2020 +0000
+Date:   1578668352
 
 json-diff hung for one day to compare two big json files (~100 MB in file size, and ~40 k objects), while jsondiffpatch finished the comparison in less  than 20 seconds.
 
 
 
-Date:   Thu Jan 9 12:09:14 2020 +0000
+Date:   1578571754
 
 [bellard.org](https://bellard.org/) still uses html 4, as [debian.org](https://www.debian.org/) and [netbsd.org](http://www.netbsd.org/) does. They have an attitude.
 
 
 
-Date:   Sat Dec 28 13:30:56 2019 +0000
+Date:   1577539856
 
 It seems that the story writer of MonsterMatch need to learn more physics.
 ![attached image](https://mmap.page/log/1577540089.jpg)
 
 
 
-Date:   Mon Dec 16 01:42:34 2019 +0000
+Date:   1576460554
 
 Firefox Notes does not support markdown. It only captures some key presses like `# h1` to mimic Markdown but directly pasting `# h1` does not work (Yes, the browser distinguishes key press event and text input event). Also there is only three levels of heading.  And the worst thing is it does not support code block! :-(
 
 
 
-Date:   Sun Dec 15 11:19:22 2019 +0000
+Date:   1576408762
 
 I am not a fan of uniformed code formatting (like `gofmt`). I do not think issues like CamlCase v.s. snake_case or spaces are important. But I myself use [Prettier] because I am too lazy to type tabs and semicolons. :-)
 
@@ -795,7 +865,7 @@ I am not a fan of uniformed code formatting (like `gofmt`). I do not think issue
 
 
 
-Date:   Sat Dec 14 13:43:14 2019 +0000
+Date:   1576330994
 
 The three most popular style guides in JavaScript community (airbnb, standard, google) are all unnecessarily lengthy.
 
@@ -807,7 +877,7 @@ Style guides should keep focus on a dozen of matters truly important, in other w
 
 
 
-Date:   Sat Dec 7 07:36:53 2019 +0000
+Date:   1575704213
 
 Years ago I noticed that WebStorm (2016.3) was very slow to detect type errors with Flow, while vscode (with vscode-flow-ide extension) checked error on saving file instantly.
 
@@ -817,25 +887,25 @@ This is yet another example that WebStrom is becoming more and more less relevan
 
 
 
-Date:   Thu Dec 5 14:08:50 2019 +0000
+Date:   1575554930
 
 On December 14, 2019, all yahoo groups become private (based on Yahoo Mails), the yahoo groups website will be shutdown and **all yahoo groups content will be deleted**!
 
 
 
-Date:   Thu Dec 5 13:48:35 2019 +0000
+Date:   1575553715
 
 Just downloaded my Translator Toolkit data via Google Takeout. Google Translator Toolkit was shutdown on December 4, 2019. Yet another good service I used to be shutdown by Google.
 
 
 
-Date:   Thu Dec 5 12:42:25 2019 +0000
+Date:   1575549745
 
 The ancient Chinese saying "steal the whole country and they make you a prince, steal a hook and they hang you" (竊國者侯，竊鉤者誅) probably describes integer overflow. In a system people with a positive sin value will be punished and those with a negative sin value will be rewarded, one who stole the whole country gained a lot of sin value, causing a sin value overflow.
 
 
 
-Date:   Sun Nov 24 08:02:17 2019 +0000
+Date:   1574582537
 
 React components and hooks are just functions, nothing magical:
 
@@ -882,7 +952,7 @@ App = render(Component) // { len: 5 }
 
 
 
-Date:   Sat Nov 23 16:25:54 2019 +0000
+Date:   1574526354
 
 Updated the jekyll templates of my personal website to get rid of JavaScript. Now mmap.page on [clearnet](https://mmap.page) and [zeronet](/16XMwj6YRNqRHWbmSD8oxYUZCKfM1uzwP9/) is JavaScript free. ^_^
 
@@ -892,7 +962,7 @@ If you want to deploy a minimalistic JavaScript free site to GitHub Pages and/or
 
 
 
-Date:   Wed Nov 13 01:35:22 2019 +0000
+Date:   1573608922
 
 For parsing simplicity, the existential operator from CoffeeScript turns into something like `foo ?? bar()`, `a?.[1]`, and `f.(x)` in JavaScript (stage 3), to avoid confusion with ternary expression (`a ? [b] :c`).
 
@@ -902,7 +972,7 @@ JavaScript sucks. Thus people add more features as workarounds. But people canno
 
 
 
-Date:   Wed Oct 16 17:50:32 2019 +0000
+Date:   1571248232
 
 Just upgrade to 0net-py3:
 
@@ -913,13 +983,13 @@ Seemingly it works fine.
 
 
 
-Date:   Sat Sep 21 03:04:32 2019 +0000
+Date:   1569035072
 
 Just discovered the Files app (an android app by Google) is translated to Files Geek (文件极客) in Chinese UI.
 
 
 
-Date:   Fri Sep 20 14:29:47 2019 +0000
+Date:   1568989787
 
 Sam Hartman sent the [Bits from the DPL (August 2019)][letter] letter yesterday (Sep 19, 2019). In the letter, Sam talked a lot about the complexity and anxiety on init system diversity within the  Debian project.
 
@@ -927,7 +997,7 @@ Sam Hartman sent the [Bits from the DPL (August 2019)][letter] letter yesterday 
 
 
 
-Date:   Wed Aug 21 13:07:04 2019 +0000
+Date:   1566392824
 
 BitBucket is [dropping hg support][blog]. This reminds me the time when Macintosh computers dropped PowerPC CPUs.
 
@@ -935,19 +1005,19 @@ BitBucket is [dropping hg support][blog]. This reminds me the time when Macintos
 
 
 
-Date:   Wed Aug 14 18:13:13 2019 +0000
+Date:   1565806393
 
 Just learned a new word "Xi-ple" today. To my surprise, this word is ungoogleable.
 
 
 
-Date:   Wed Aug 7 13:31:04 2019 +0000
+Date:   1565184664
 
 The IRL podcast by mozilla is not only boring but also burning (it burns RAM very quickly under Firefox).
 
 
 
-Date:   Wed Aug 7 13:05:45 2019 +0000
+Date:   1565183145
 
 Touch bar does have some advantages:
 
@@ -962,7 +1032,7 @@ But there is a long way to go:
 
 
 
-Date:   Sun Aug 4 12:59:44 2019 +0000
+Date:   1564923584
 
 The dark theme of Spark (a mail client on osx) is a disaster. I've to change the setting to "always use light theme". The reason is few mail clients (including those Web Clients) have considered dark background in designing default HTML email templates. And it seems that Spark has not implement some smart algorithm to swap colors.
 
@@ -970,7 +1040,7 @@ The old fashioned plain text emails play nicely with dark theme. Another example
 
 
 
-Date:   Thu Aug 1 13:53:34 2019 +0000
+Date:   1564667614
 
 After recent update of KDE Neon, the bluetooth adapter will power off after each hibernation. Unfortunately I need a mouse to turn on the bluetooth in KDE UI, but I use a bluetooth mouse.
 
@@ -984,7 +1054,7 @@ Finally, I found a way to turn on bluetooth via command line (I use a wired keyb
 
 
 
-Date:   Mon Jul 29 02:07:17 2019 +0000
+Date:   1564366037
 
 Looks like the development of Ceylon has ceased. The latest commit is on [May 22, 2019][7e653a1], removing words like "crap", "shit", "fucked up" from code comment. And the penultimate commit is on [Feb 11, 2019][d3994d6], fixing the CI build.
 
@@ -993,7 +1063,7 @@ Looks like the development of Ceylon has ceased. The latest commit is on [May 22
 
 
 
-Date:   Sat Jul 27 06:18:33 2019 +0000
+Date:   1564208313
 
 The current version of IntelliJ (2019.2) has a built-in sublime keymap. And I once heard a JetBrainer referred to `ctrl+shift+a` as "command palette" (although actually IntelliJ introduced the "find any action" feature prior to Sublime). FYI, Micosoft released an extension "Sublime Text Keymap and Settings Importer" for vscode on 2016.
 
@@ -1001,7 +1071,7 @@ Such an influential editor, Sublime Text.
 
 
 
-Date:   Thu Jul 25 15:49:56 2019 +0000
+Date:   1564069796
 
 How I stop using proxy extension in Firefox?
 
@@ -1010,7 +1080,7 @@ How I stop using proxy extension in Firefox?
 
 
 
-Date:   Tue Jul 2 18:13:44 2019 +0000
+Date:   1562091224
 
 Future programmers may use different abstractions. Today we can write bytes to a file, and tomorrow we may write to a [blob]. Whether the blob is ultimately a file or some cloud storage service is just implementation details.
 
@@ -1020,13 +1090,13 @@ On writing this, it occurred to me that maybe these abstractions are not very di
 
 
 
-Date:   Sat Jun 29 17:18:43 2019 +0000
+Date:   1561828723
 
 Just find out that web developer tools of modern browsers (Firefox & Chrome)  can recognize webpack and typescript. Debugging on the original typescript source is much easier than on the generated JavaScript code.
 
 
 
-Date:   Fri May 17 14:24:59 2019 +0000
+Date:   1558103099
 
 This patch to the legacy marriage framework just got approved today and will be merged into the `release` branch very soon! Congratulations! First patch of this kind in Asia!
 
@@ -1039,7 +1109,7 @@ This patch to the legacy marriage framework just got approved today and will be 
 
 
 
-Date:   Sat May 11 07:26:30 2019 +0000
+Date:   1557559590
 
 Do not under stand why Beta users need to accept [Confidentiality agreement][terms] of keeping special information secret. Isn't beta means public? It seems GitHub redefines Beta.
 
@@ -1049,7 +1119,7 @@ I sign up for a Beta program because I am an impatient person, not want to wait 
 
 
 
-Date:   Fri May 10 17:41:40 2019 +0000
+Date:   1557510100
 
 ```python
 first, *rest = [1, 2, 3]  # first -> 1, rest -> [2, 3]  (1)
@@ -1066,19 +1136,19 @@ lambda (first, *rest): ...
 
 
 
-Date:   Wed May 8 14:53:37 2019 +0000
+Date:   1557327217
 
 egghand's subtitles are auto generated (at least on some videos I watched), but they are not marked as such confusingly (unlike YouTube).
 
 
 
-Date:   Mon May 6 14:13:58 2019 +0000
+Date:   1557152038
 
 Just realized that I can look at the bright side of JavaScript's switch structure. JavaScript's switch **statement** is **fall-through**, which sounds like a scream: "Don't break! Return! Wrap me into a function!"
 
 
 
-Date:   Sat May 4 10:50:06 2019 +0000
+Date:   1556967006
 
 To those who dislikes systemd:
 
@@ -1089,7 +1159,7 @@ To those who dislikes systemd:
 
 
 
-Date:   Fri May 3 19:27:03 2019 +0000
+Date:   1556911623
 
 Just watched the [The Tragedy of systemd][video], which I thought is very misleading.
 
@@ -1105,7 +1175,7 @@ To be honest, I like neither android, docker, nor systemd. I am not sure the fac
 
 
 
-Date:   Wed May 1 12:49:28 2019 +0000
+Date:   1556714968
 
 It seems the Japanese new era is not very welcome yet:
 
@@ -1118,7 +1188,7 @@ It seems the Japanese new era is not very welcome yet:
 
 
 
-Date:   Fri Apr 26 15:00:08 2019 +0000
+Date:   1556290808
 
 Just came across a [Q&A][qa] on zhihu (a quora clone in CN):
 
@@ -1131,7 +1201,7 @@ Brilliant! Never forget to check the presumption under the question first.
 
 
 
-Date:   Thu Apr 25 16:34:56 2019 +0000
+Date:   1556210096
 
 React has so many opt-in, legacy, experimental features. Thus I suggest taking a look at ReasonReact first, which has a much smaller API surface. After a glance of ReasonReact, you can probably pick up React quickly by skipping a lot of concepts. I guess this will be faster than learning React directly, particularly when you are already familiar with some static typed functional languages such as OCaml, F#, and Haskell.
 
@@ -1139,7 +1209,7 @@ Though I do not suggest diving deep into ReasonReact and actually write code in 
 
 
 
-Date:   Sat Apr 20 16:59:52 2019 +0000
+Date:   1555779592
 
 And the first koan of "Kotlin Koans" from stepik and JetBrains annoyed me again.
 
@@ -1169,7 +1239,7 @@ Hmm, stupid auto answer detection system. And I wonder why introduce learners th
 
 
 
-Date:   Sat Apr 20 16:37:32 2019 +0000
+Date:   1555778252
 
 Just tried the first three quizs of [Python introduction course on stepik][stepik], which is included in JetBrains' PyCharm Educational (I tried it with the EduTools plugin on IntelliJ).
 
@@ -1248,7 +1318,7 @@ I myself learned Python via reading the A Byte of Python book years ago. I am no
 
 
 
-Date:   Sat Apr 20 14:47:02 2019 +0000
+Date:   1555771622
 
 Just came across a video titled [Learn Python Programming Language in 2 Hours][video].
 
@@ -1274,7 +1344,7 @@ Currently this video has 411k views, 8.1k upvotes (less than 200 downvotes) on Y
 
 
 
-Date:   Sat Apr 20 14:15:00 2019 +0000
+Date:   1555769700
 
 Android's Messages app does not provide a "delete all" function. Fortunately, most popular third-party sms apps all support "delete all" or "select all then delete", e.g. chompSMS, Handcent Next SMS, Textra.
 
@@ -1282,7 +1352,7 @@ Considering the fact that in early versions of Android, the messaging app does h
 
 
 
-Date:   Sat Apr 20 05:47:32 2019 +0000
+Date:   1555739252
 
 I [complained about](/?Post/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/1553695047) Flask's official documentation lacks a dedicated page for REST APIs and suggested to use Flask-RESTful extension instead.
 
@@ -1300,7 +1370,7 @@ Unfortunately, figuring out these five sections in three chapters ("quickstart",
 
 
 
-Date:   Sun Apr 14 08:38:25 2019 +0000
+Date:   1555231105
 
 Most web video player lacks the feature of full browser window. Fortunately, with xrandr under Linux, we can split the physical monitor into multiple virtual monitors.
 
@@ -1315,13 +1385,13 @@ Note that not all window managers respect this setting though. For example, I ha
 
 
 
-Date:   Fri Apr 12 19:29:33 2019 +0000
+Date:   1555097373
 
 https://defend.wikileaks.org/2019/04/11/emergency-julian-assange-has-been-arrested/
 
 
 
-Date:   Sat Mar 30 10:06:33 2019 +0000
+Date:   1553940393
 
 Briefly tried Manjaro:
 
@@ -1334,7 +1404,7 @@ But it is problematic with package dependencies:
 
 
 
-Date:   Fri Mar 29 01:37:00 2019 +0000
+Date:   1553823420
 
 Recently I learned a new notion (or buzzword, if you prefer), [edge computing]:
 
@@ -1356,7 +1426,7 @@ That is what ZeroNet does, **edge censorship**. Let the user/client/node/hub dec
 
 
 
-Date:   Fri Mar 29 01:12:39 2019 +0000
+Date:   1553821959
 
 The download page of Manjaro offers 11 favors, xfce, kde, cinnamon, openbox, awesome, budgie, mate, I3, Architect (text), Deepin, Gnome. And there are tabs (it turns out these are actually pretended checkboxes) like "beginner-friendly", "resource-efficient", "traditionally-workflow".
 
@@ -1370,7 +1440,7 @@ This must be joking.
 
 
 
-Date:   Thu Mar 28 17:29:54 2019 +0000
+Date:   1553794194
 
 manjaro's advertise for developers features Godot, KDevelop, Geany.
 
@@ -1380,7 +1450,7 @@ Seems there are two different groups of developers under Linux desktop.
 
 
 
-Date:   Wed Mar 27 13:54:21 2019 +0000
+Date:   1553694861
 
 Although Flask is widely used to build REST API servers, [its official documentation][doc] still cannot afford a dedicated page for REST APIs.
 
@@ -1394,7 +1464,7 @@ Life is short. Pick up tools and libraries fast.
 
 
 
-Date:   Sun Mar 24 14:53:02 2019 +0000
+Date:   1553439182
 
 With the [pyright] extension, vscode can check type annotations of Python code.
 
@@ -1402,13 +1472,13 @@ With the [pyright] extension, vscode can check type annotations of Python code.
 
 
 
-Date:   Sun Mar 24 06:11:16 2019 +0000
+Date:   1553407876
 
 Finally gandi.net added support for `ALIAS`.
 
 
 
-Date:   Sun Mar 17 14:28:19 2019 +0000
+Date:   1552832899
 
 Just read an insightful blog post by [André Staltz] talking about [the dying web] replaced by the GOOG-FB-AMZN Trinet.
 
@@ -1427,7 +1497,7 @@ Reasons why web is dying faster in China:
 
 
 
-Date:   Sat Mar 16 14:35:26 2019 +0000
+Date:   1552746926
 
 In golden old days, a simple web page has an index.html, linking to an index.js. I can just open the index.html in a web browser to see the effect. And after some edits of index.html or index.js, I just refresh the page to see the effect. Once I am satisfied, I can copy the directory to any static hosting space.
 
@@ -1449,7 +1519,7 @@ None of webpack, browserify, and rollup is as zero configuration as parcel.
 
 
 
-Date:   Sat Mar 16 08:01:15 2019 +0000
+Date:   1552723275
 
 Hmm, just noticed that [w3.org] still uses "old-fashioned" XHTML 1.0 Strict.
 
@@ -1457,7 +1527,7 @@ Hmm, just noticed that [w3.org] still uses "old-fashioned" XHTML 1.0 Strict.
 
 
 
-Date:   Sun Mar 10 08:26:57 2019 +0000
+Date:   1552206417
 
 Saw this piece of Go code when watching [Advanced Testing With Go][youtube] by Mitchell Hashimoto:
 
@@ -1509,7 +1579,7 @@ defer db.close()
 
 
 
-Date:   Sat Mar 9 05:55:06 2019 +0000
+Date:   1552110906
 
 GraalVM's native image feature is impressive to me:
 
@@ -1552,13 +1622,13 @@ But graal does looks promising to me.
 
 
 
-Date:   Fri Mar 8 17:37:25 2019 +0000
+Date:   1552066645
 
 I read the first 4 items of Effective Java 2nd. edition several years ago, and had an impression that the book better renamed to Ineffective Java. There are 78 items total in the Effective Java 2nd. editon. Today I just learned that Effective Java updated to 3rd. edition on the end of 2017, targeting Java 9 (2nd. edition is target at Java 6). Now there are 90 items in the book. I am wondering does this imply that Java is more ineffective now? Or maybe People have finally discovered far more pitfalls of Java, thus although recent versions of Java fixed some issues, the net known ineffectiveness increases?
 
 
 
-Date:   Sun Mar 3 13:22:12 2019 +0000
+Date:   1551619332
 
 Go advertises itself as having first class functions:
 
@@ -1583,7 +1653,7 @@ BTW:
 
 
 
-Date:   Thu Feb 28 16:05:24 2019 +0000
+Date:   1551369924
 
 Currently I'm using a tree based todo manager, roughly something like:
 
@@ -1621,7 +1691,7 @@ Hmm, tree based todos are cool. But eventually I will need an AST (abstract synt
 
 
 
-Date:   Tue Feb 26 15:21:14 2019 +0000
+Date:   1551194474
 
 Looks like there will be no more compact mobile phones. :-(
 
@@ -1629,7 +1699,7 @@ Well, at least there are compact pad (Huawei Mate X) and compact camera/audio pl
 
 
 
-Date:   Sun Feb 24 18:01:34 2019 +0000
+Date:   1551031294
 
 小学时候写篇 300 字作文，常常绞尽脑汁，觉得怎么字数还不够啊，现在却为了把豆瓣短评控制在 350 字内大费周章（考虑空格和标点，大概等价于小学时代的 300 字）。
 
@@ -1639,13 +1709,13 @@ Alita: Battle Angel (2019) 短评（恰好 350 字）：
 
 
 
-Date:   Sat Feb 23 17:10:13 2019 +0000
+Date:   1550941813
 
 Google Play Store lacks the "ignore this update/version of app" function.
 
 
 
-Date:   Fri Feb 15 08:38:01 2019 +0000
+Date:   1550219881
 
 The abandonware nuclide has a distinct feature "[Remote Development]" (use a remote machine as the workspace for compiling/building and language services via ssh).
 
@@ -1655,7 +1725,7 @@ Unfortunately none of Atom, VS Code and JetBrains IDEs has support for this feat
 
 
 
-Date:   Tue Feb 12 15:27:52 2019 +0000
+Date:   1549985272
 
 RubyGems has a so-called  *twiddle-wakka* shortcut `~>`. Therefore, assuming in a semver setup, you can write `~> 2.2` instead of the verbose `['>= 2.2.0', '< 3.0']`. Seems neat, isn't it?
 
@@ -1665,7 +1735,7 @@ However, `~> 2.2.2` is not equivalent to  `['>= 2.2.2', '< 3.0']` (Bob thought s
 
 
 
-Date:   Thu Jan 24 18:56:59 2019 +0000
+Date:   1548356219
 
 Recently the term "headless CMS" and "decoupled CMS" gain a lot of popularity. But these two terms are rather confusing to me.
 
@@ -1680,7 +1750,7 @@ BTW, I wish the next generation of website will be both frontend agnostic and ga
 
 
 
-Date:   Sat Jan 12 01:28:49 2019 +0000
+Date:   1547256529
 
 I use [the fish port of z] (alternative to autojump) and remap the command name to `h` (`set -U Z_CMD "h"`). `h` is easier to type (on dvorak keyboard layout) and remember ("head to").
 
@@ -1688,7 +1758,7 @@ I use [the fish port of z] (alternative to autojump) and remap the command name 
 
 
 
-Date:   Thu Dec 6 13:08:05 2018 +0000
+Date:   1544101685
 
 Wrote a simple script ([zerome2md]) to dump ZeroMe posts to a markdown file (for backup or publish eleswhere).
 
@@ -1700,7 +1770,7 @@ The "exported" markdown file can be consumed by static site builders like Jekyll
 
 
 
-Date:   Tue Dec 4 15:05:24 2018 +0000
+Date:   1543935924
 
 The image support of ZeroMe feels quite hacky to me:
 
@@ -1715,7 +1785,7 @@ The image support of ZeroMe feels quite hacky to me:
 
 
 
-Date:   Sat Nov 17 05:49:51 2018 +0000
+Date:   1542433791
 
 It is such a surprise for me that GitHub does not have any public available issue tracker for itself!
 
@@ -1723,13 +1793,13 @@ Some users have created one ([isaacs/github](https://github.com/isaacs/github)).
 
 
 
-Date:   Sat Nov 17 05:39:03 2018 +0000
+Date:   1542433143
 
 Two exotic project ideas occurred to me on the bed. After getting up and turning on the computer, I found out that I had already forgot one of them.
 
 
 
-Date:   Fri Nov 16 18:12:38 2018 +0000
+Date:   1542391958
 
 Ansible advertises itself as agent-less, but:
 
@@ -1742,7 +1812,7 @@ BTW, the cloud provider modules from both Ansible and SaltStack are disorderly a
 
 
 
-Date:   Fri Nov 16 14:01:19 2018 +0000
+Date:   1542376879
 
 Flickr will limit free users' photos to 1000 (extra photos will get deleted in next year). Upon hearing this I am quite depressed, because downloading photos and uploading to a new platform (provided that I can find an alternative) will take a lot of time and effort.
 
@@ -1752,7 +1822,7 @@ Today I just checked my flickr account and found out that I only have less than 
 
 
 
-Date:   Sat Nov 3 12:51:03 2018 +0000
+Date:   1541249463
 
 Upgraded KDE Neon from 16.04 to 18.04 today via its built-in "Distribution Upgrade" GUI. The whole process is mostly smooth, except it reports a mysterious error "installArchives() Failed" before restart. I just ignored it and had not discovered anything wrong.
 
@@ -1765,7 +1835,7 @@ I used to rebind middle key to forward button (so I can press it via my thumb, i
 
 
 
-Date:   Sat Nov 3 12:12:41 2018 +0000
+Date:   1541247161
 
 IBM bought RedHat as a cloud computing company, thus irrelevant projects originally sponsored by RedHat may not receive bandwidth from IBM in future. Fortunately:
 
@@ -1775,13 +1845,13 @@ IBM bought RedHat as a cloud computing company, thus irrelevant projects origina
 
 
 
-Date:   Sat Nov 3 11:43:46 2018 +0000
+Date:   1541245426
 
 I've seen a lot of note applications/services' export function does not support exporting attachments. Vivaldi Browser is just another example (its sync all feature does not include attachments of notes).
 
 
 
-Date:   Wed Oct 24 15:27:03 2018 +0000
+Date:   1540394823
 
 The new palm phone reveals how ugly big today's phones are.
 
@@ -1792,7 +1862,7 @@ Photo credit: [theverge.com](https://www.theverge.com/2018/10/15/17974850/new-pa
 
 
 
-Date:   Fri Sep 14 12:44:30 2018 +0000
+Date:   1536929070
 
 Oops, `python -m SimpleHTTPServer` does not support range request.
 
@@ -1808,13 +1878,13 @@ func main() {
 
 
 
-Date:   Wed Sep 12 13:31:56 2018 +0000
+Date:   1536759116
 
 Go advertises first-class function, but to pass a function, you have to match the exact signature. No sub-typing of functions. Yes, even Java supports covariant return result (no contravariant parameter though), but Go supports neither.
 
 
 
-Date:   Tue Sep 11 15:12:57 2018 +0000
+Date:   1536678777
 
 Programming needs practice. And I think "how many lines of source code I have **deleted**" estimates my experience on programming better (than how many lines I have written).
 
@@ -1826,61 +1896,61 @@ git log --shortstat --no-merges --author=$(whoami) | grep 'files\? changed' | aw
 
 
 
-Date:   Sat Sep 1 04:02:40 2018 +0000
+Date:   1535774560
 
 Refactoring with statically typed code (using Python's type hint) is an enjoyable process. To switch an  upstream library, I just replaced one import statement, one type definition, and one invoking statement. Then I just fix all the typing problems reported by PyCharm. After that, I run the program and find out that it just works! No "find usage" or "search and replace". And the project does not have any test (I am too lazy to write one.) Static typing is the preservative to slow down the inevitable decaying of code.
 
 
 
-Date:   Thu Aug 23 15:40:56 2018 +0000
+Date:   1535038856
 
 Gists are second class citizen of GitHub. For example, GitHub API does not support searching gists (in both old v3 REST API and the new v4 GraphQL API).
 
 
 
-Date:   Thu Aug 23 15:20:15 2018 +0000
+Date:   1535037615
 
 When will Java have "real" function type? What Java uses interface to mimic is **nominal**, not **structural**.
 
 
 
-Date:   Sat Aug 18 13:06:05 2018 +0000
+Date:   1534597565
 
 Learning ML/Haskell deepened my understanding of typing.
 
 
 
-Date:   Sun Aug 12 05:17:56 2018 +0000
+Date:   1534051076
 
 vscode does not have built-in syntax highlighting for Haskell, while it does support F# out of the box.
 
 
 
-Date:   Sat Aug 11 06:05:19 2018 +0000
+Date:   1533967519
 
 Google Photo's "free up device space" (delete already backed up photos from device) and recover storage (compress already uploaded photos from original to high quality) applies to ALL photos. I cannot free up / recover storage selectively, for example, only archived photos or photos within certain albums.
 
 
 
-Date:   Sat Aug 11 02:43:48 2018 +0000
+Date:   1533955428
 
 Not sure when GitHub changed its front page (they call it dashboard), slow to load. I miss the old GitHub front page, loaded almost instantly.
 
 
 
-Date:   Fri Aug 10 17:11:56 2018 +0000
+Date:   1533921116
 
 I want to install an extension of JupyterLab (toc), then I found out that installing JupyterLab extensions requires nodejs (because JupyterLab extensions are npm packages). So I install nodejs via `conda`, which automatically downgrading my JupyterLab from v0.33 to v0.28. After all of this, I am about to install the extension, but it turns out it requires JupyterLab v0.33! :-( The Jupyter blog said JupyterLab is ready for users on Feb. 2018 ...
 
 
 
-Date:   Mon Jul 30 12:07:23 2018 +0000
+Date:   1532952443
 
 Not sure whether BDFL's retirement is good or bad, but personally I dislike PEP 572 (I dislike a lot of aspects of Python, though).
 
 
 
-Date:   Sat Jul 28 13:19:44 2018 +0000
+Date:   1532783984
 
 languagedetective.com predicts your native language with English text you wrote as input. I tested with [one of my blog post](https://weakish.github.io/StutteringTalkaholic/web/html-history/) and the result is: 70.6% Native, 29.4% Non-Native. Bingo!
 But it is not good at predicting my native language: 37.9% Arabic, 16.1% Korean, 14.7% Hindi, 11.1% Chinese, 8.6% German, 6.5% Turkish, 2.1% Japanese, 1.6% French, 0.7% Italian, 0.7% Spanish.
@@ -1889,13 +1959,13 @@ My native language is Chinese.
 
 
 
-Date:   Sun Jun 24 15:29:15 2018 +0000
+Date:   1529854155
 
 Suddenly I wanted to eat tempura, but it is unavailable from the menu of the izakaya I went. So I ate some fried salmon sushi instead.
 
 
 
-Date:   Sat Jun 16 08:34:15 2018 +0000
+Date:   1529138055
 
 My Razer DeathAdder has blue LED on wheel and logo, feeling very disturbing to me. Thanks to [razercfg](http://bues.ch/cms/hacking/razercfg.html), I can turn them off under Linux.
 
@@ -1903,13 +1973,13 @@ My Razer DeathAdder has blue LED on wheel and logo, feeling very disturbing to m
 
 
 
-Date:   Tue Jun 12 14:50:34 2018 +0000
+Date:   1528815034
 
 I am really confused with those color modes with monitors. Cannot them show color temperature instead?
 
 
 
-Date:   Mon Jun 11 16:15:44 2018 +0000
+Date:   1528733744
 
 How not to waste time on matching socks, i.e. O(1) to pick out socks to wear? Make all socks the same. How?
 
@@ -1920,19 +1990,19 @@ I myself had shifted my mind and treated all socks equally without discriminatio
 
 
 
-Date:   Tue Jun 5 12:48:21 2018 +0000
+Date:   1528202901
 
 Microsoft is acquiring GitHub. GitHub in fact has an (maybe unintended) use: as a bootstrap mechanism to download tunnel software/tools to bypass firewall. After acquired by Microsoft, I doubt those  tunnel software/tools may be unavailable within the firewall.
 
 
 
-Date:   Mon May 14 11:55:16 2018 +0000
+Date:   1526298916
 
 Recently I found out that MUJI French Linen shirts/pants have raw (undyed) color for adults.
 
 
 
-Date:   Wed Apr 18 14:25:34 2018 +0000
+Date:   1524061534
 
 Just figured out why some people are so excited about Flutter (a mobile framework for Android/iOS in Dart by Google).
 
@@ -1947,7 +2017,7 @@ If Dart is counted as Java, then Java becomes an alternative full stack language
 
 
 
-Date:   Mon Apr 16 18:13:34 2018 +0000
+Date:   1523902414
 
 > God made a woman from the rib he had taken out of the man (Genesis 2:22)
 
@@ -1955,7 +2025,7 @@ So heterosexual intercourse is excitation of one's own body part, i.e. self-grat
 
 
 
-Date:   Fri Apr 13 14:36:03 2018 +0000
+Date:   1523630163
 
 My personal choices to score movies:
 
@@ -1976,43 +2046,43 @@ Thanks to my just the right amount of poverty, I can afford buying movie tickets
 
 
 
-Date:   Sun Apr 8 15:38:41 2018 +0000
+Date:   1523201921
 
 Both "**Three** Billboards Outside Ebbing, Missouri" and "The **Third** Murder" talk about the problems of the environment and the feeling of hopelessness, though in distinct (American/Japanese) ways.
 
 
 
-Date:   Mon Apr 2 00:40:06 2018 +0000
+Date:   1522629606
 
 Digg Reader was dead at the end of last month (March 2018).
 
 
 
-Date:   Wed Mar 28 13:54:07 2018 +0000
+Date:   1522245247
 
 debian.org is not available in CN (not sure whether it has been blocked by the great firewall or just some routing issue).
 
 
 
-Date:   Mon Mar 26 17:04:27 2018 +0000
+Date:   1522083867
 
 Almost all smart phones today use a non-removable battery. And most smart phones do not use all-day battery. What an insane design combination!
 
 
 
-Date:   Sun Mar 18 12:33:31 2018 +0000
+Date:   1521376411
 
 Saw "novel blockchain gameplay" in an elevator ad of a browser game. This reminds me of a time when a lot of products advertise themselves using "novel nano-meter technology".
 
 
 
-Date:   Wed Mar 14 14:23:22 2018 +0000
+Date:   1521037402
 
 I learnt typing on a typewriter, so membrane keyboards, especially membrane keyboards with short key travel, feel unnatural to me. However, I found out that my fingers are more tired when typing a lot on mechanical keyboards. (Have not tried Topre keyboards.)
 
 
 
-Date:   Tue Mar 13 15:55:41 2018 +0000
+Date:   1520956541
 
 One of my favorite poem of Li Ch'ing-chao (李清照) is "As in a Dream" (如夢令）.
 
@@ -2030,7 +2100,7 @@ but she answers: "The cherry-apple trees are the same."　（卻道海棠依舊�
 
 
 
-Date:   Sat Mar 10 08:34:07 2018 +0000
+Date:   1520670847
 
 Very pessimistic about mobile phones I would have to buy in future:
 - Android: With the recent release of Xperia XZ2 Compact (5"), Android phones finally stepped into the no more phones under 5" era.
@@ -2039,7 +2109,7 @@ Very pessimistic about mobile phones I would have to buy in future:
 
 
 
-Date:   Fri Mar 9 17:40:50 2018 +0000
+Date:   1520617250
 
 Just published my first Firefox extension: [arxiv-url], a Firefox addon to replace arxiv pdf links to corresponding abstract links.
 
@@ -2058,25 +2128,25 @@ Note:
 
 
 
-Date:   Fri Mar 9 15:02:46 2018 +0000
+Date:   1520607766
 
 Compared to wine and tea, chocolate is inexpensive. The most expensive chocolate I've eaten is Amedei CRU, which is still affordable.
 
 
 
-Date:   Fri Mar 2 12:53:58 2018 +0000
+Date:   1519995238
 
 extensiontest.com (test if a chrome extension is compatible with firefox) is not 100% accurate. Just encountered an chrome extension passing extensiontest.com but not usable in Firefox.
 
 
 
-Date:   Tue Feb 27 15:10:09 2018 +0000
+Date:   1519744209
 
 Backing up to USB 3 external hard disk with `borg create -C lz4` is very fast.
 
 
 
-Date:   Wed Feb 21 09:37:21 2018 +0000
+Date:   1519205841
 
 Moving one icon on my mobile phone, all icons between the old place and the new place of the moved icon, will shift their places.
 
@@ -2116,19 +2186,19 @@ My workaround: Only put icons most frequently used on the first screen. Put all 
 
 
 
-Date:   Fri Oct 6 17:01:38 2017 +0000
+Date:   1507309298
 
 Recently I started to read a book during wait time when I had taken a bag with me (a thin book is light and there is no more worries for short of battery), or just let my mind fly away when I had not. A win-win strategy for the life of my neck and the life of mobile phone battery.
 
 
 
-Date:   Sun Oct 1 13:11:09 2017 +0000
+Date:   1506863469
 
 [tutanota client side source code](https://github.com/tutao/tutanota/blob/ea1c1ef1c70c8f3c48dcfaa70f91cd41b7fbdd95/flow/libs.js#L86) contains Flow type definition for Mithril.
 
 
 
-Date:   Sun Sep 24 11:47:31 2017 +0000
+Date:   1506253651
 
 Microsoft had suspended my outlook mail account for several weeks , saying my account is used to send a lot of junk mails, or violates their TOS in *unspecified* way.
 
@@ -2140,13 +2210,13 @@ Then I asked myself what will happen if the same thing happens to my gmail accou
 
 
 
-Date:   Thu Sep 14 14:29:37 2017 +0000
+Date:   1505399377
 
 I always prefer a small screen mobile device, which is easier to carry. I do not read/browse/view a lot with the mobile phone, since either neck or shoulders are in an unnatural angle.
 
 
 
-Date:   Wed Sep 13 10:32:45 2017 +0000
+Date:   1505298765
 
 iPhone X shows that machine learning can be done on client side, without talking to a remote server. This is encouraging for privacy concerned services and users.
 
@@ -2156,7 +2226,7 @@ iPhone {X, 8, 8P, 7, 7P, 6S, 6SP, SE}. Consumers need to choose one from **eight
 
 
 
-Date:   Tue Sep 12 06:45:26 2017 +0000
+Date:   1505198726
 
 I found out that I could not understand some code I wrote 8 months ago.
 
@@ -2169,19 +2239,19 @@ So this is the fault of the previous version of me myself. If the previous versi
 
 
 
-Date:   Sat Sep 9 22:44:23 2017 +0000
+Date:   1504997063
 
 Years passed, and Google Contact still does not support exporting contacts. It still redirects me to the "old version" for exporting.
 
 
 
-Date:   Sat Sep 9 12:26:47 2017 +0000
+Date:   1504960007
 
 I think sometimes a ML/Haskell like syntax may be a better alternative for math notation than lisp. Lisp is unambiguous but slightly harder to type manually (I am too lazy to use the lisp IDE/mode and copy-paste, or extend the editor to support auto completion in code blocks.) Compared to C like syntax, ML/Haskell saves some typing of commas and parenthesis.
 
 
 
-Date:   Fri Sep 8 05:03:57 2017 +0000
+Date:   1504847037
 
 The intuition behind Curry-Howard correspondence:
 
@@ -2197,43 +2267,43 @@ Notes:
 
 
 
-Date:   Tue Sep 5 07:49:17 2017 +0000
+Date:   1504597757
 
 Baidu Map iOS keeps requesting location on background when location info is not available, draining batteries and heating device very quickly.
 
 
 
-Date:   Mon Sep 4 15:49:30 2017 +0000
+Date:   1504540170
 
 Now mail.google.com redirects to www.google.com/gmail/about/, which has a fancy design. I miss the simple UI with a login form and storage space counter.
 
 
 
-Date:   Sun Sep 3 07:15:32 2017 +0000
+Date:   1504422932
 
 To stop EME (Encrypted Media Extension) from entering W3C Standard, FSF asked people to **dial up** Tim Berners-Lee. First, asking people to dial up a person is not protest but **DDOS**. Second, no one cares W3C standard today. If Apple (safari), Google (chrome), Mozilla (firefox) and Microsoft (Edge) were dead-set, then the story is over. Neither W3C nor Tim Berners-Lee can do anything about it. (Fortunately Mozilla is not dead-set on EME, although Firefox Desktop has implemented it years ago.)
 
 
 
-Date:   Sat Sep 2 07:43:20 2017 +0000
+Date:   1504338200
 
 MIT scheme taught me a chuunibyou way to say goodbye: "Moriturus te saluto."
 
 
 
-Date:   Fri Sep 1 14:32:22 2017 +0000
+Date:   1504276342
 
 Powershell aliases still do not support tab completion.
 
 
 
-Date:   Mon Aug 28 07:27:37 2017 +0000
+Date:   1503905257
 
 Finally, concepts such as polymorphism, generics, type variable/parameter, overloading, and type class are united in my brain.
 
 
 
-Date:   Sun Aug 27 14:50:26 2017 +0000
+Date:   1503845426
 
 Failed to understand the `fmap` signature in Haskell in about 15 minutes:
 
@@ -2271,7 +2341,7 @@ As an ignorant person, obviously  I chose 2.
 
 
 
-Date:   Sun Aug 27 06:29:32 2017 +0000
+Date:   1503815372
 
 about.me has not been about me for a long time.
 
@@ -2281,49 +2351,49 @@ Now it is supposed to direct bandwidth to the site matters most to the user. abo
 
 
 
-Date:   Fri Aug 25 04:03:20 2017 +0000
+Date:   1503633800
 
 "Go to definition" does not work for shell scripts in vscode. `*` (from vscodevim extension) can be used as a workaround.
 
 
 
-Date:   Fri Aug 25 03:09:43 2017 +0000
+Date:   1503630583
 
 `sh` is the only language I am using that has dynamic scoping for variables. (Privacy leaked: I do not use Emacs.)
 
 
 
-Date:   Mon Aug 21 23:57:28 2017 +0000
+Date:   1503359848
 
 A recent Windows update forced me to re-select options like no personalized ad, ruined my registry key for a customized keyboard layout (dvorak and swap esc & caps), and pined the Mail app on my taskbar. This is more like a regression than an update to me. (To be fair, it does allow me to launch some Windows applications under WSL.)
 
 
 
-Date:   Fri Jan 27 08:57:51 2017 +0000
+Date:   1485507471
 
 Lantern only provides binary package in deb format for Linux. To install lantern on rpm based Linux distributions, first install `rpmbuild`, `alien` (to convert deb to rpm) and `libappindicator3-1` (lantern's dependency), then use `alien` to convert the deb to rpm, and finally install the converted rpm.
 
 
 
-Date:   Thu Jan 26 11:48:39 2017 +0000
+Date:   1485431319
 
   Used openSUSE Leap 42.2 for a few days. You have to add a few repositories to install things like mp3, flash, and input methods. You have to configure mounting NTFS partitions yourself (via YaST or manually editing `/etc/fstab`). Default fonts setting for Chinese is terrible. Other things work out of the box mostly. KDE Plasma 5.8.2 roughly catches up the polishness of recent versions of Windows.
 
 
 
-Date:   Tue Jan 24 12:55:36 2017 +0000
+Date:   1485262536
 
 Encountered ads with only one sentence "Only bricks produced by The Lego Group are Lego ® bricks." and one Lego logo. This is advertising of silliness. No sense and no design.
 
 
 
-Date:   Sun Jan 22 10:09:15 2017 +0000
+Date:   1485079755
 
 cdrtools author's viewpoint on [controversy of cdrtools license compatibility](http://cdrtools.sourceforge.net/private/linux-dist.html).
 
 
 
-Date:   Wed Jan 18 16:22:03 2017 +0000
+Date:   1484756523
 
 A programmer's client (a local cinema) website got hacked, with racist messages posted. The policy suspected the programmer hacked the site, and got a warrant to seize the programmer's computer. Then they sent **21 armed polices**, 3 of them to seize the computer, and **18 of them as witness**.
 
@@ -2341,7 +2411,7 @@ News reports:
 
 
 
-Date:   Mon Jan 16 13:44:08 2017 +0000
+Date:   1484574248
 
 The so called whatsapp 'backdoor' was documented in the [blog post of Open Whisper Systems on 05 Apr 2016](https://whispersystems.org/blog/whatsapp-complete/).
 
@@ -2351,7 +2421,7 @@ I would rather call it a less secure design choice. Anyway, no matter you think 
 
 
 
-Date:   Tue Jan 10 12:48:10 2017 +0000
+Date:   1484052490
 
 Sign and publish your posts/comments from command line:
 
@@ -2369,7 +2439,7 @@ Thanks to @nofish for this tip.
 
 
 
-Date:   Mon Jan 9 13:02:24 2017 +0000
+Date:   1483966944
 
 > the ideas enshrined in the Ubuntu Manifesto:
 > that software should be available free of charge,
@@ -2397,7 +2467,7 @@ Anywhere, "universal user experience" has nothing to do with the  original Nguni
 
 
 
-Date:   Sun Jan 8 11:05:00 2017 +0000
+Date:   1483873500
 
 Install ZeroNet as an auto-start service on FreeBSD:
 
@@ -2415,13 +2485,13 @@ su -m nobody zeronet siteCreate
 
 
 
-Date:   Sat Jan 7 14:18:06 2017 +0000
+Date:   1483798686
 
 vscode's refactoring is still much less powerful than WebStorm, even for TypeScript.
 
 
 
-Date:   Fri Jan 6 11:24:26 2017 +0000
+Date:   1483701866
 
 "A Little Java, A Few Patterns" uses a special coding style to remark mutability:
 
@@ -2438,7 +2508,7 @@ anArray.append(1)
 
 
 
-Date:   Thu Jan 5 11:01:29 2017 +0000
+Date:   1483614089
 
 new History().repeat
 
@@ -2448,7 +2518,7 @@ P.S. Same applies to TypeScript, Flow, Kotlin, and Swift. Ceylon's function type
 
 
 
-Date:   Wed Jan 4 12:31:52 2017 +0000
+Date:   1483533112
 
 If you run ZeroNet on a remote machine, the doc recommends enabling `UiPassword`. But if your are using an unsafe network (public wifi, evil ISP, etc), password is transferred over insecure HTTP protocol. So for safety, you need to configure a reverse proxy with SSL for ZeroNet.
 
@@ -2462,19 +2532,19 @@ Then you can just access `http://127.0.0.1:43110/` on your local machine, secure
 
 
 
-Date:   Tue Jan 3 10:32:23 2017 +0000
+Date:   1483439543
 
 Miss `finally` or `defer` in C.
 
 
 
-Date:   Mon Jan 2 11:59:03 2017 +0000
+Date:   1483358343
 
 Yoda expressions are useful for tests in C, such as in `assert(true == ...` and `assert(false == ...`.
 
 
 
-Date:   Sun Jan 1 06:27:48 2017 +0000
+Date:   1483252068
 
 Just found some old notes on K&R C book.
 
@@ -2482,19 +2552,19 @@ The ink (I used a cheap ballpoint pen) is fading but still readable with some ef
 
 
 
-Date:   Sat Dec 31 04:25:24 2016 +0000
+Date:   1483158324
 
 Apache Portable Runtime is originally supporting library for Apache web server. Thus it uses memory pool heavily. So it may not be suitable to use APR as a standard library for general C programming.
 
 
 
-Date:   Wed Dec 28 12:57:20 2016 +0000
+Date:   1482929840
 
 USB 3 external disks are 10-20% slower on VirtualBox.
 
 
 
-Date:   Tue Dec 27 15:40:28 2016 +0000
+Date:   1482853228
 
 The confusing^W smarty Kotlin
 
@@ -2513,25 +2583,25 @@ the type f may be one of:
 
 
 
-Date:   Sat Dec 24 09:50:34 2016 +0000
+Date:   1482573034
 
 Just fried some peanuts, which increased the PM 2.5 by 8 ug/m^3 in kitchen. So frying will not be a source of local air pollution  if you have extractor hood opened and keep the oil temperature low.
 
 
 
-Date:   Fri Dec 23 13:55:52 2016 +0000
+Date:   1482501352
 
 Opened software manager in OpenSUSE and found in "rpm groups" there are `application` and `applications`, `developement` and `development`.
 
 
 
-Date:   Thu Dec 22 15:10:50 2016 +0000
+Date:   1482419450
 
 PyCharm 2016.3 claims to support Python 3.6's f-strings (formatted literal). But in fact it just supports syntax highlight. All PyCharm's intelligent features are not enabled for code embedded in f-strings.
 
 
 
-Date:   Wed Dec 21 13:02:18 2016 +0000
+Date:   1482325338
 
 [Beaker](https://beakerbrowser.com/) is similar to ZeroNet. Their difference:
 
@@ -2551,7 +2621,7 @@ Other differences are technical details, like ZeroNet is written in Python, whil
 
 
 
-Date:   Tue Dec 20 12:21:20 2016 +0000
+Date:   1482236480
 
 Problems of Sia:
 
@@ -2561,7 +2631,7 @@ Problems of Sia:
 
 
 
-Date:   Mon Dec 19 12:54:21 2016 +0000
+Date:   1482152061
 
 Problems of StorJ:
 
@@ -2570,7 +2640,7 @@ Problems of StorJ:
 
 
 
-Date:   Sun Dec 18 10:25:47 2016 +0000
+Date:   1482056747
 
 Just launched [0git.bit](/0git.bit), a list of git repositories on ZeroNet.
 
@@ -2590,13 +2660,13 @@ P.S. editing posts is not implemented yet.
 
 
 
-Date:   Fri Dec 16 17:05:01 2016 +0000
+Date:   1481907901
 
 Currently FaceBook Message and Google Allo has optional end to end encryption. And WhatsApp has end to end encryption enabled for all messages. On the other hand, WeChat still uses http.  #ThisIsChina
 
 
 
-Date:   Thu Dec 15 15:30:29 2016 +0000
+Date:   1481815829
 
 [SetupList](/setuplist.0web.bit/) now has its .bit domain [setuplist.0web.bit](/setuplist.0web.bit/).
 
@@ -2604,37 +2674,37 @@ P.S. If you want to register a .bit domain, but do not want to setup a full name
 
 
 
-Date:   Wed Dec 14 12:35:44 2016 +0000
+Date:   1481718944
 
 Yandex mail smtp refuses to send a GPG encrypted mail saying it looks like spam...
 
 
 
-Date:   Mon Dec 12 10:52:02 2016 +0000
+Date:   1481539922
 
 Visual Studio Code only provides 32 bit downloads for Windows.
 
 
 
-Date:   Sun Dec 11 11:46:13 2016 +0000
+Date:   1481456773
 
 Lesson learned: when your `data.json` local copy is outdated (e.g. rollback to an old version manually because of file system issue), do not post new content to the zite that outdated `data.json` belongs to. Otherwise you will publish your "deletions".
 
 
 
-Date:   Sat Dec 10 12:30:14 2016 +0000
+Date:   1481373014
 
 When the function parameter is a function pointer, CLion (2016.3) cannot auto complete function name as parameter, like IntelliJ Idea for Java.
 
 
 
-Date:   Fri Dec 9 13:04:49 2016 +0000
+Date:   1481288689
 
 Go back to use paper to manage my todos. (Some todos are still in WunderList, e.g. shopping list, cause I do not want to bring paper and pencil to supermarkets.)
 
 
 
-Date:   Thu Dec 8 13:25:03 2016 +0000
+Date:   1481203503
 
 C is a hacky language. For example, string in C. If you think string in C is an array of characters, then you cannot put some characters in string (such as Unicode character) and you can put some noncharacters into string. If you think string is an an array of bytes, like a buffer, then you cannot put the byte `\0` into string. So string in C is inconsistent viewed from both high level and low level.
 
@@ -2646,7 +2716,7 @@ Go, advertised as modern C, inherits C's hacky mindset:
 
 
 
-Date:   Wed Dec 7 11:02:23 2016 +0000
+Date:   1481108543
 
 @zeronetuseri6293 asked how to explain Systemd is bad "like I am five". I just prepare some text to brainwash five-year-old "Systemd is bad":
 
@@ -2670,7 +2740,7 @@ But I hope you understand why some people consider Systemd as "bad".
 
 
 
-Date:   Tue Dec 6 09:36:47 2016 +0000
+Date:   1481017007
 
 ZeroMail does not hide sender (and effectively timestamp and conversations may reveal receipt).
 
@@ -2678,19 +2748,19 @@ Similarly, MaidSafe Email does not hide receipt.
 
 
 
-Date:   Mon Dec 5 13:46:50 2016 +0000
+Date:   1480945610
 
 mypy is still incomplete.
 
 
 
-Date:   Sat Dec 3 12:25:10 2016 +0000
+Date:   1480767910
 
 [911 The new pearl harbor](https://www.youtube.com/watch?v=8DOnAn_PX6M) Politicians do not have imagination is totally a stereotype!
 
 
 
-Date:   Fri Dec 2 13:13:16 2016 +0000
+Date:   1480684396
 
 Brace formatting style
 
@@ -2738,13 +2808,13 @@ Maybe the Java style is suitable for a setup with small fonts on a small screen,
 
 
 
-Date:   Thu Dec 1 12:34:15 2016 +0000
+Date:   1480595655
 
 ZeroNet's answer to CDN/cloud hosting industry: kill it. I think this is one of the most charming part of technology: rather than sloving a problem, make the problem irrelevant.
 
 
 
-Date:   Wed Nov 30 11:04:37 2016 +0000
+Date:   1480503877
 
 Firefox version 41 to 50 (including 45 ESR used by the latest version of the Tor browser) has a memory corruption vulnerability allows malicious code to be executed on Windows, thus deanonymize Tor users.
 
@@ -2758,7 +2828,7 @@ To protect yourself from similar possible future vulnerabilities:
 
 
 
-Date:   Tue Nov 29 13:31:00 2016 +0000
+Date:   1480426260
 
 [$20 credit for new users of Vultr](http://www.vultr.com/?ref=7046521-3B) (KVM VPS with SSD, billed hourly/monthly, located in US, EU, Austrilia, Singapore, and Japan).
 
@@ -2766,7 +2836,7 @@ Vultr v.s. DigitalOcean: They are quite similar except that Vultr has slightly m
 
 
 
-Date:   Sun Nov 27 11:32:09 2016 +0000
+Date:   1480246329
 
 Tunanota and ProtonMail looks promising, but they do not work with others, i.e. Tunanota users cannot exchange encrypted mails with ProtonMail users. Also, Tunanota and ProtonMail do not work with GPG users. Encryption is important, but openness is also important. And GPG is a good example of implementating encryption without reducing openness.
 
@@ -2774,13 +2844,13 @@ An conterexample is Scryptmail, which supports import and export of GPG keys.
 
 
 
-Date:   Sat Nov 26 04:11:19 2016 +0000
+Date:   1480133479
 
 Black Friday sales for VPS: https://www.lowendtalk.com/categories/offers
 
 
 
-Date:   Fri Nov 25 09:10:29 2016 +0000
+Date:   1480065029
 
 Kotlin uses `Array<T>` for `vararg p: T` (variadic functions) underhood, but:
 
@@ -2789,13 +2859,13 @@ Kotlin uses `Array<T>` for `vararg p: T` (variadic functions) underhood, but:
 
 
 
-Date:   Thu Nov 24 13:35:48 2016 +0000
+Date:   1479994548
 
 Overloading an operator should be consistent to all types supporting the operator.
 
 
 
-Date:   Wed Nov 23 11:24:24 2016 +0000
+Date:   1479900264
 
 Flaws of TypeScript's type system:
 
@@ -2806,7 +2876,7 @@ Flaws of TypeScript's type system:
 
 
 
-Date:   Tue Nov 22 15:56:41 2016 +0000
+Date:   1479830201
 
 [Watch Trump's Pick to Run the CIA Call Edward Snowden a 'Traitor' Who Should Be 'Given a Death Sentence'](https://reason.com/blog/2016/11/18/watch-trumps-reported-pick-to-run-the-ci).
 
@@ -2819,7 +2889,7 @@ I bet the greatest archivement of Trump would be what he had done before elected
 
 
 
-Date:   Sun Nov 20 08:03:57 2016 +0000
+Date:   1479629037
 
 TypeScript 2.0 brings in more fix of the poorly designed type system:
 
@@ -2829,13 +2899,13 @@ tsc --strictNullChecks --noImplicitThis --noUnusedParameters --noUnusedLocals
 
 
 
-Date:   Thu Nov 17 00:56:56 2016 +0000
+Date:   1479344216
 
 Quora hides posts/answers to force you to register/login. Now its Chinese clone Zhihu finally borrows this "feature".
 
 
 
-Date:   Wed Nov 16 12:36:35 2016 +0000
+Date:   1479299795
 
 JavaScript's ASI (auto semicolon insertion) is confusing. However, if I prefer to not omit semicolons, I only need to remember one rule: not  breaking line after `throw`. (There are other rules, but I am unlikely to write code related to other rules, e.g. `i\n++\nb`.)
 
@@ -2852,13 +2922,13 @@ Thus my choice is not omitting semicolons.
 
 
 
-Date:   Tue Nov 15 10:34:25 2016 +0000
+Date:   1479206065
 
 After repositioning Windows 8.1's task bar to left, right, or top, hovering cursor to bottom left corner still reveals the windows start icon.
 
 
 
-Date:   Mon Nov 14 10:18:03 2016 +0000
+Date:   1479118683
 
 Windows 8.1's Microsoft Pinyin input method:
 
@@ -2868,7 +2938,7 @@ Windows 8.1's Microsoft Pinyin input method:
 
 
 
-Date:   Sun Nov 13 15:34:25 2016 +0000
+Date:   1479051265
 
 Use registery to swap keys under Windows.
 
@@ -2892,7 +2962,7 @@ Notes:
 
 
 
-Date:   Fri Nov 4 12:40:09 2016 +0000
+Date:   1478263209
 
 A quick review of germ.io:
 
@@ -2915,7 +2985,7 @@ Missing:
 
 
 
-Date:   Thu Nov 3 14:48:39 2016 +0000
+Date:   1478184519
 
 For any one want to pick up programming language , I recommend [The Little Schemer](https://www.amazon.com/Little-Schemer-Daniel-P-Friedman/dp/0262560992)，less than 200 pages and can be finished in a weekend. It starts from zero and gradually introduces concepts like recursion, higher-order functions, curry, Church encoding, halting problem, lambda calculus,  fixed point, Y combinator, continuation, CPS, Godel Incompleteness Theorem, and a basic interperator for a simplified progarmming language.
 
@@ -2925,31 +2995,31 @@ Do not worry the above books do not use a language you are going to use in your 
 
 
 
-Date:   Thu Nov 3 13:18:58 2016 +0000
+Date:   1478179138
 
 All Linux distributions where UEFI Secure Boot works out of the box (e.g. Fedora, OpenSuse, Ubuntu) are using systemd! #WTF
 
 
 
-Date:   Wed Nov 2 14:06:09 2016 +0000
+Date:   1478095569
 
 Although Python still does not understand type hints, at least IDEs will give a warning. Or you can check types via `mypy`.
 
 
 
-Date:   Mon Oct 31 23:16:18 2016 +0000
+Date:   1477955778
 
 The email to onfirm email address on dida365.com (Chinese version of TickTick) does not show any explicit url link. The link it is hide in HTML. It is wrong to assume every email client renders HTML correctly.
 
 
 
-Date:   Sat Oct 29 23:13:01 2016 +0000
+Date:   1477782781
 
 mp3.163.com (a music distribution site in China) does not have any API. In fact it even encryptes post params with some home made algorithm (the algorithm is different on different clients and is evolving, the current API in web UI is based on AES, RSA and MD5) on HTTP (it does not support HTTPS). That's why I have never registered an account on it.
 
 
 
-Date:   Fri Oct 28 13:29:44 2016 +0000
+Date:   1477661384
 
 WTF! New generation of MacBook Pro!
 
@@ -2959,19 +3029,19 @@ In fact, Apple now effectly does not sell laptops. MacBook and MacBook Air only 
 
 
 
-Date:   Tue Oct 25 12:25:13 2016 +0000
+Date:   1477398313
 
 The main audience of code is human beings, not tests. Improving testability should not harm readability.
 
 
 
-Date:   Sun Oct 23 01:02:28 2016 +0000
+Date:   1477184548
 
 citibank's "change password" gives misleading error info ("must contain at least 1 digit and 1 letter") if new password contains some special characters like `@`.
 
 
 
-Date:   Fri Oct 21 11:45:33 2016 +0000
+Date:   1477050333
 
 In Ceylon, cases in `switch` need to be both disjoint and exhausted. Using a strict form helps to reduce bugs.
 
@@ -3006,7 +3076,7 @@ The compiler will refuse to compile, saying cases are not exhausted.
 
 
 
-Date:   Tue Oct 18 14:58:51 2016 +0000
+Date:   1476802731
 
 I prefer explicit else branch over fall through flow.
 
@@ -3072,7 +3142,7 @@ if (condition) {
 
 
 
-Date:   Thu Oct 13 13:41:07 2016 +0000
+Date:   1476366067
 
 Programming languages are clearer than natural languages. So "well-commented code" may not be well-written.
 
@@ -3088,55 +3158,55 @@ Doc annotation of public modules and functions on their usage is fine.
 
 
 
-Date:   Mon Oct 10 13:57:39 2016 +0000
+Date:   1476107859
 
  Windows Mobile does not support two factor auth, you have to use an app password. Now app password does not work on my phone (used to work on previous versions of Windows Mobile 10). I have to turn off two factor auth. Not too old Android versions support two factor auth out of the box.
 
 
 
-Date:   Sat Oct 8 06:39:05 2016 +0000
+Date:   1475908745
 
 September 2015 Evernote Food shutdown. dianping.com (restaurant review site in China) also shutdown its public API service (individual developers cannot apply API access, APIs are only available to a few parterners) on that month.
 
 
 
-Date:   Fri Oct 7 13:25:59 2016 +0000
+Date:   1475846759
 
 Thought there was something wrong with the sound configuration on my machine. Then I found out the mp3 I was playing is 32kbps.
 
 
 
-Date:   Thu Oct 6 22:56:16 2016 +0000
+Date:   1475794576
 
 vscode is open source (MIT) and Visual Studio Code is proprietary. So confusing the names!
 
 
 
-Date:   Mon Oct 3 09:20:35 2016 +0000
+Date:   1475486435
 
 Visual Studio Code: "Code editing. Redefined." How a code editor borrowed a lot from SublimeText and TextMate dare to declare this?
 
 
 
-Date:   Sun Oct 2 10:06:49 2016 +0000
+Date:   1475402809
 
 Finally iPhones get water resistent.
 
 
 
-Date:   Fri Sep 30 12:26:42 2016 +0000
+Date:   1475238402
 
 GitHub helps spreading Git. But there is no balanced competitor currently. This is anti-decentred for a DVCS.
 
 
 
-Date:   Thu Sep 29 10:26:29 2016 +0000
+Date:   1475144789
 
 Found an old macro (in a lisp like language) I wrote a year ago. Now I have difficulties to understand it.
 
 
 
-Date:   Sun Sep 25 12:35:17 2016 +0000
+Date:   1474806917
 
 `A then B else C` in Ceylon feels confusing to me.
 
@@ -3153,20 +3223,20 @@ I think `if (A) then B else C` is much cleaner.
 
 
 
-Date:   Thu Sep 22 13:19:06 2016 +0000
+Date:   1474550346
 
 [Snapshots of all current, non empty, functional ZeroMe hubs](https://github.com/weakish/0me-hubs-snapshots),
 powered by [0net-snapshot](https://github.com/weakish/0net-snapshot).
 
 
 
-Date:   Wed Sep 21 11:18:09 2016 +0000
+Date:   1474456689
 
 All my todos are on wunderlist, which is down now. And I can hardly remember what to do. If wunderlist is implemented as a ZeroSite ...
 
 
 
-Date:   Sat Sep 17 08:47:39 2016 +0000
+Date:   1474102059
 
 An ugly workaround of TypeScript's structural typing:
 
@@ -3204,13 +3274,13 @@ function sub(x: number): string {
 
 
 
-Date:   Fri Sep 16 13:50:58 2016 +0000
+Date:   1474033858
 
 There are currently 18 ZeroMe hubs (excluding empty hubs with no registered user). And I am seeding 5.  via [zerome-crawler](https://weakish.github.io/zerome-crawler/)
 
 
 
-Date:   Mon Sep 12 12:59:39 2016 +0000
+Date:   1473685179
 
 `camelCaseAreHardToReadIfThereAreMoreThanThreeWords`
 
@@ -3223,13 +3293,13 @@ Exceptions:
 
 
 
-Date:   Sun Sep 11 00:38:14 2016 +0000
+Date:   1473554294
 
 Relieased that I have forgotten what does Hallelujah mean. To me it means some beautiful nonsense in music.
 
 
 
-Date:   Fri Sep 9 10:40:04 2016 +0000
+Date:   1473417604
 
 In Python, whitespace (space or tab) can be used: (use dot to indicate whitespace)
 
@@ -3256,43 +3326,43 @@ PEP 8 has a different opinion:
 
 
 
-Date:   Wed Sep 7 12:56:56 2016 +0000
+Date:   1473253016
 
 IDEs for static typed languages are so powerful, particularly for refactoring. The dark side is making me less acclimatized to dynamic typed languages IDEs, e.g. even PyCharm and RubyMine cannot match IntelliJ or Eclipse.
 
 
 
-Date:   Sun Sep 4 11:12:57 2016 +0000
+Date:   1472987577
 
 `i++` should be a pure side effect, a.k.a. `void`, just like `b = c` should be `void` (invalidating `if (a = 0)`).
 
 
 
-Date:   Sat Sep 3 13:15:12 2016 +0000
+Date:   1472908512
 
 I used to confuse coding style with formatting style. Formatting style like `using n spaces to indent` and `closing brace on its own line` are unlikely to affect readability of code, and they can be auto adjusted via IDE or command line tools. What really matter is coding style, like `if (a=0)` and `++i`. PEP 8 for Python talks a lot about formatting style. This is a cost of Python's layout based (indentation sensitive) syntax: possibly cleaner for small pieces of code, while hard or impossible to be auto formatted by tools like IDEs (crucial for a large code base).
 
 
 
-Date:   Thu Sep 1 11:21:29 2016 +0000
+Date:   1472728889
 
 Wish every programming language website has [a gentle introduction like  Ceylon](http://ceylon-lang.org/documentation/1.2/introduction/), demostrating both basic usage and advanced features, but not lengthy.
 
 
 
-Date:   Wed Aug 31 13:02:58 2016 +0000
+Date:   1472648578
 
 [An example of ZeroSite of photos](http://127.0.0.1:43110/ZAlex.bit/photos/index.html)
 
 
 
-Date:   Tue Aug 30 15:46:40 2016 +0000
+Date:   1472572000
 
 Just add a 0BSD style license on my profile page: Permission to use, copy, modify, and/or distribute all my posts and comments at ZeroMe for any purpose with or without fee is hereby granted.
 
 
 
-Date:   Tue Aug 30 11:47:41 2016 +0000
+Date:   1472557661
 
 Cloned site private key recovery:
 
@@ -3331,37 +3401,37 @@ class Actions(object):
 
 
 
-Date:   Mon Aug 29 14:47:34 2016 +0000
+Date:   1472482054
 
 The web flame: pretend that you cannot find exciting, new, modern technologies outside web.
 
 
 
-Date:   Mon Aug 29 14:45:35 2016 +0000
+Date:   1472481935
 
 "IPFS is the Distributed Web ... aims to replace HTTP". WTF! A web of GET and PUT only HTTP? And FS is not file system but web?
 
 
 
-Date:   Mon Aug 29 14:22:35 2016 +0000
+Date:   1472480555
 
 I think hg may fit ipfs more well than git. Like git's dumb http, hg supports [static http](https://www.mercurial-scm.org/wiki/StaticHTTP). Unlike git's changing-all-the-time packfile, hg's revlog is predictable. So hosting hg repos on ipfs is simpler (no need to unpack objects manually), and saves bandwidth (git repos with unpacked objects is usually larger than hg).
 
 
 
-Date:   Mon Aug 29 12:48:06 2016 +0000
+Date:   1472474886
 
 Duokan (ebook app) exports highlights and notes to Evernote **without page numbers**.
 
 
 
-Date:   Sat Aug 27 13:43:17 2016 +0000
+Date:   1472305397
 
 List of all known ZeroMe hubs: https://weakish.github.io/ZeroMeHubList/
 
 
 
-Date:   Sat Aug 27 13:35:11 2016 +0000
+Date:   1472304911
 
 Today I was bitten by `Refused to execute script from ... because its MIME type (text/plain) is not executable, and strict MIME type checking is enabled` when hot-linking a js file hosted on GitHub.
 
@@ -3387,25 +3457,25 @@ Workaround:
 
 
 
-Date:   Sat Aug 27 04:24:37 2016 +0000
+Date:   1472271877
 
 Google Buzz, Google Wave, Google Reader, Google Code. Now Google Chrome App (by 2018, except on ChromeOS).
 
 
 
-Date:   Thu Aug 25 12:55:56 2016 +0000
+Date:   1472129756
 
 TeXmacs is still unstable. Make sure auto save is turned on.
 
 
 
-Date:   Sat Aug 20 15:44:41 2016 +0000
+Date:   1471707881
 
 Considering a variant of [semver](http://semver.org) major.nth_feature_introduced.YYMM
 
 
 
-Date:   Sat Aug 20 14:55:22 2016 +0000
+Date:   1471704922
 
 ## How to backup your favorite sites
 
@@ -3421,7 +3491,7 @@ Restore: Right-click the value `Edit "value"` and replace with your backup.
 
 
 
-Date:   Thu Aug 18 13:22:47 2016 +0000
+Date:   1471526567
 
 Zite (ZeroSite) publish procedure:
 
@@ -3431,7 +3501,7 @@ Zite (ZeroSite) publish procedure:
 
 
 
-Date:   Thu Aug 18 13:16:30 2016 +0000
+Date:   1471526190
 
 20191123: instructions updated for recent zeronet versions
 
@@ -3453,12 +3523,12 @@ sudo service sshd restart  # On some OSes, replace `sshd` with `ssh`.
 
 
 
-Date:   Thu Aug 18 13:09:49 2016 +0000
+Date:   1471525789
 
 [SetupList](http://127.0.0.1:43110/1Mbwaw4Uxp1sq5GzWo3SCmYFTk7mgSWNmw) is online! (SetupList is a 0List clone for sharing software/hardware you are using.)
 
 
 
-Date:   Sat Aug 13 10:55:43 2016 +0000
+Date:   1471085743
 
 Hello ZeroMe! (Hmm, I can follow myself!)

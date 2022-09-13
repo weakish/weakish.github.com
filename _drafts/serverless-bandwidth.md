@@ -1,5 +1,21 @@
 # The Cost of Serverless Bandwidth
 
+If only bandwidth is concerned, then:
+
+- Serverless provides typically have a free plain,
+  often with 100 GB free transfer per month.
+  VPS provides usually have no free plan.
+
+- The cheapest paid plan of both serverless and VPS provides often include 1 TB free transfer
+  per month, but the cheapest VPS plan is usually cheaper than serverless.
+
+- Overage is expensive compared to included transfer.
+  Overage seems an afterthought for many serverless providers.
+  They do not meter it, or handle it case by case, or enforce a soft limit,
+  or charge a much more expensively, compared to VPS.
+
+- Cloudflare offers a distinguished deal on bandwidth.
+
 ## Comparison
 
 | Provider | 1 GB | 100 GB | 1 TB | Overage per GB |

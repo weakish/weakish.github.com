@@ -238,6 +238,110 @@ However, some operations often failed on some repositories or branches,
 saying internal errors occurred,
 which makes me feel less confident.
 
+## Jujutsu
+
+Like gitless, [jj] does not expose the concept staging.
+And jj relies heavily on the rewriting history mechanism, like git-branchless.
+By automatically committing every change in the working directory,
+jj can rebase and handle conflicts more automatically. 
+
+Basically, when checking out a revision,
+jj immediately create a commit (a detached HEAD) on top of it.
+When any change is made in the working directory,
+jj keeps amending this commit, creating more and more detached heads. 
+And `jj describe` can be used to amend the commit message of this commit.
+
+[jj]: https://github.com/martinvonz/jj 
+
+For the git level, jj keeps producing detached heads for all the changes
+made into the working directory, and all the operations performed via jj command.
+
+```
+; git log --graph --pretty=graph --all --
+* f2f0567 -refs/jj/keep/dbce4358-5003-4393-b827-6cfc2273b028 :new: jj
+| * 0159040 -refs/jj/keep/127fc31a-8672-427b-b2d7-1a59d9707313 :new: jj
+|/  
+| * 2e7ff4c -refs/jj/keep/0f18d67c-764a-4593-948d-2034ece6a005 :new: jj
+|/  
+| * 92a059d -refs/jj/keep/4d9e73e5-71e7-4c6e-83ba-251a2547b874 :new: jj
+|/  
+| * dbb0886 -refs/jj/keep/09fae392-3bd6-467a-92f5-6dae1b2eed99
+|/  
+| * 7a2dac3 -refs/jj/keep/65e6c1ff-cc6f-42de-a45c-a6f90f93a689
+|/
+* 151d512 HEAD, master
+```
+
+When this commit is done, type `jj new` to start a new automatically amending commit,
+on top of this commit.
+In fact, `new` is essentially `checkout`.
+From the git level, `new` moves the `HEAD`.
+The previous amending commit is not a detached head anymore.
+And a new detached head is created for the current working directory.
+
+```
+* 28f9890 -refs/jj/keep/9186c278-3dd9-4d90-bf57-7fe721ddced8
+* f2f0567 -HEAD, refs/jj/keep/dbce4358-5003-4393-b827-6cfc2273b028 :new: jj
+| * 0159040 -refs/jj/keep/127fc31a-8672-427b-b2d7-1a59d9707313 :new: jj
+|/  
+```
+
+To come back to the previous amending commit,
+use `jj squash`.
+Now the HEAD goes back to master, and a new detached head on top of the master,
+with all the changes in the working tree, is created.
+
+```
+* 71ca53d -refs/jj/keep/63ac97c4-e880-4f46-a0a2-87130cd18b3e, list :new: jj
+| * 662fb65 -refs/jj/keep/a1049d85-df81-4df6-a6b4-e825a0972169
+| | * 55ba9f8 -refs/jj/keep/d19c9d87-9319-44fb-8b5e-65838f4238a0
+| |/  
+| | * 28f9890 -refs/jj/keep/9186c278-3dd9-4d90-bf57-7fe721ddced8
+| |/  
+| * f2f0567 -refs/jj/keep/dbce4358-5003-4393-b827-6cfc2273b028 :new: jj
+|/  
+| * 0159040 -refs/jj/keep/127fc31a-8672-427b-b2d7-1a59d9707313 :new: jj
+|/  
+| * 2e7ff4c -refs/jj/keep/0f18d67c-764a-4593-948d-2034ece6a005 :new: jj
+|/  
+| * 92a059d -refs/jj/keep/4d9e73e5-71e7-4c6e-83ba-251a2547b874 :new: jj
+|/  
+| * dbb0886 -refs/jj/keep/09fae392-3bd6-467a-92f5-6dae1b2eed99
+|/  
+| * 7a2dac3 -refs/jj/keep/65e6c1ff-cc6f-42de-a45c-a6f90f93a689
+|/  
+* 151d512 -HEAD, master :new: update log
+```
+
+To restore a file content from master, use `jj restore`.
+For example, the following command restore README from master.
+
+```sh
+jj restore --from master README.md
+```
+
+In fact, since the master is the parent of the current working directory commit,
+the above command can be replaced with `jj restore README.md`.
+
+[revsets]: https://github.com/martinvonz/jj/blob/main/docs/revsets.md
+
+When finally done the coding, use `jj branch master` to move the master branch forward.
+Then sync with the remote:
+
+```
+jj git fetch
+jj git push
+```
+
+Currently, the built-in diff of jj is line based.
+To get a more powerful diff, use the `--git` option.
+For example, `jj diff --git | delta`.
+
+Similar to gitless, [signed commits are not supported][jj-58].
+
+
+[jj-58]: https://github.com/martinvonz/jj/issues/58
+
 ## More Git Frontends
 
 - [git-branchless](https://github.com/arxanas/git-branchless)
@@ -246,10 +350,6 @@ which makes me feel less confident.
     but in another direction, in the sprit of mercurial.
     Even if I am not sold out to this workflow, some commends are attractive.
     Optimized for history rewriting.
-
-- [jj](https://github.com/martinvonz/jj). 
-
-    Inspired by git, mercurial, darcs. Can use git or its own backend.
 
 - [sturdy](https://getsturdy.com/)
 
