@@ -1,6 +1,24 @@
 
 
-Date:   1663055452
+Date: <a id="1663085149" href="#1663085149">1663085149</a>
+
+The order form of $JD website has a field to fill in the email address to receive the receipt.
+
+But it turns out they just sent me an email, containing a link to download the receipt from their site.
+
+
+
+Date: <a id="1663072643" href="#1663072643">1663072643</a>
+
+Bad marketing is mostly harmless to users.
+
+Good marketing can be harmful.
+The markketing of git, to some extent thanks to Linus and GitHub,
+is so sucessful that so many people are suffering.
+
+
+
+Date: <a id="1663055452" href="#1663055452">1663055452</a>
 
 I watched spderosso's [presentation] and skimed the [paper] on gitless.
 
@@ -13,7 +31,7 @@ Presentation or blog post is like a README.
 
 
 
-Date:   1662903070
+Date: <a id="1662903070" href="#1662903070">1662903070</a>
 
 I used to have a `git switch` alias pointed to `legit switch`, and haven't checked the native switch command introduced by recent versions of git till today.
 
@@ -31,7 +49,7 @@ Conclusion: git sucks.
 
 
 
-Date:   1662883909
+Date: <a id="1662883909" href="#1662883909">1662883909</a>
 
 The advantage of 11ty is that it works with existing projects.
 
@@ -41,7 +59,7 @@ The advantage of 11ty is that it works with existing projects.
 
 
 
-Date:   1662828447
+Date: <a id="1662828447" href="#1662828447">1662828447</a>
 
 Although deprecated since HTML 2 (1995), the HTML element plaintext is still supported by all major browsers.
 
@@ -51,7 +69,7 @@ The backward compatibility of web shines!
 
 
 
-Date:   1659874628
+Date: <a id="1659874628" href="#1659874628">1659874628</a>
 
 Alternatives to homebrew are still alive!
 
@@ -70,7 +88,7 @@ suitable for users running recent macOS releases.
 
 
 
-Date:   1659844869
+Date: <a id="1659844869" href="#1659844869">1659844869</a>
 
 A Survey on Social Networks
 
@@ -143,7 +161,7 @@ Summary
 
 
 
-Date:   1659752677
+Date: <a id="1659752677" href="#1659752677">1659752677</a>
 
 Stacked encryption systems
 
@@ -195,7 +213,7 @@ and [cryfs].
 
 
 
-Date:   1659752237
+Date: <a id="1659752237" href="#1659752237">1659752237</a>
 
 Just tried installing EndeavourOS on a virtual machine.
 
@@ -222,7 +240,7 @@ the keyboard layout.
 
 
 
-Date:   1642437589
+Date: <a id="1642437589" href="#1642437589">1642437589</a>
 
 I used to think Dvorak layout is universal,
 
@@ -239,7 +257,7 @@ For example, Pomara [DM100] does not support Dovark:
 
 
 
-Date:   1640792005
+Date: <a id="1640792005" href="#1640792005">1640792005</a>
 
 Recently I bought a HP Pavilion laptop.
 
@@ -253,7 +271,7 @@ How stupid it is!
 
 
 
-Date:   1633121264
+Date: <a id="1633121264" href="#1633121264">1633121264</a>
 
 I decided to take notes as git commit messages.
 
@@ -289,7 +307,7 @@ future.
 
 
 
-Date:   1633119948
+Date: <a id="1633119948" href="#1633119948">1633119948</a>
 
 Just switched from vim to neovim.
 
@@ -315,7 +333,7 @@ The content above itself is written under neovim.
 
 
 
-Date:   1633096028
+Date: <a id="1633096028" href="#1633096028">1633096028</a>
 
 The version history of Telegram for macOS looks normal [on its website](https://macos.telegram.org/). But the release messages of [its beta version is very interesting](https://install.appcenter.ms/users/keepcoder/apps/telegram-swift/distribution_groups/public).
 
@@ -343,13 +361,13 @@ For example:
 
 
 
-Date:   1632231803
+Date: <a id="1632231803" href="#1632231803">1632231803</a>
 
 The ZWJ (Zero Width Joiner)  Unicode character can combine multiple emojis to be displayed as a single emoji. However, a platform may or may not include support for certain the emoji ZWJ sequences. For example, 👁‍🗨 is an emoji ZWJ sequence combining 👁 and 🗨. And if an Emoji ZWJ Sequence is not supported on the platform, it will be displayed as individual emojis, e.g. 🏔️‍🦁‍🏁
 
 
 
-Date:   1611678565
+Date: <a id="1611678565" href="#1611678565">1611678565</a>
 
 From 20200702, the Internet has around 16 months to [migrate from onion services v2 to v3][v3] once and for all. Now there are less than half a year left, and [onion services run by the Tor projec itself still use v2][v2].
 
@@ -360,19 +378,19 @@ Also, the future v2 deprecation will turn all existing v2 tor URLs to dead links
 
 
 
-Date:   1611468447
+Date: <a id="1611468447" href="#1611468447">1611468447</a>
 
 Shell scripting is a very bad programming language. But YAML is worse.
 
 
 
-Date:   1611423752
+Date: <a id="1611423752" href="#1611423752">1611423752</a>
 
 LinkedIn forces me to login & bind my mobile phone number to **just view** its content. Today I discovered an alternative way to check someone's work & education background, search "NAME site:rocketreach.co" or "NAME COMPANY site:rocketreach.co" in search engines.
 
 
 
-Date:   1608965375
+Date: <a id="1608965375" href="#1608965375">1608965375</a>
 
 Pop!_OS advertises itself as a developer friendly Linux distribution. However, it uses flatpak, whose sandbox system has a lot of issues with IDEs and editors (they typically need to access system commands and files).
 
@@ -380,7 +398,7 @@ Personally I prefer AppImage. It solves the "with dependencies packaged in and r
 
 
 
-Date:   1608735948
+Date: <a id="1608735948" href="#1608735948">1608735948</a>
 
 The fish shell improves user experience a lot, both for interactive usage and scripting usage.
 
@@ -396,7 +414,7 @@ Concise and clear.
 
 
 
-Date:   1608656523
+Date: <a id="1608656523" href="#1608656523">1608656523</a>
 
 While immature distributions (Arch, Ubuntu, Fedora, etc.) dropped x86 support between 2017-2019, a lot of serious distributions (Slackware, Debian, Gentoo, OpenSUSE, Alpine, etc.) still support old x86 computers.
 
@@ -406,7 +424,7 @@ FYI, CRUX dropped x86 support on [2013].
 
 
 
-Date:   1608482666
+Date: <a id="1608482666" href="#1608482666">1608482666</a>
 
 Fedora Silverblue uses [OSTree] for its base system, and it is the most mature distribution with an OSTree based base system.
 
@@ -418,7 +436,7 @@ I think this is a cool idea. However, I am still unsure whether it is worth to t
 
 
 
-Date:   1608480882
+Date: <a id="1608480882" href="#1608480882">1608480882</a>
 
 [Pop!_OS][pop] is a Ubuntu based distribution which features:
 
@@ -434,7 +452,7 @@ Pop!_OS is what Ubuntu should have been.
 
 
 
-Date:   1608399092
+Date: <a id="1608399092" href="#1608399092">1608399092</a>
 
 JAMStack is another buzzword targeting clients using LAMP stack (e.g. wordpress) to host their website. Static website generator will not work because it will confuse those clients: "Static website? Our site was static N years ago and we use FTP to upload those static web pages to the server. Didn't you told us that static website is outdated with limited features? Why go back to a static site?"
 
@@ -442,7 +460,7 @@ I do not think it is a good idea to switch from one shitty language (PHP) to ano
 
 
 
-Date:   1608230563
+Date: <a id="1608230563" href="#1608230563">1608230563</a>
 
 Trying to manually resolve a dependencies conflict broken my KDE desktop. Almost all KDE applicants do not work. It seems that KDE Neon assumes you will never uninstall those preinstalled KDE packages and specifies their dependencies causally. Fortunately I can still log into the i3 session (previously I used i3 as the window manager of the KDE session), but I still miss dolphin (temporarily using nautilus) and konsole (temporarily using hyper).
 
@@ -450,13 +468,13 @@ Maybe this is a good time to try out other distributions or even operating syste
 
 
 
-Date:   1606530944
+Date: <a id="1606530944" href="#1606530944">1606530944</a>
 
 surge.sh still focuses on static site hosting (Netlify used to focus on static site hosting but they added a lot of dynamic features later), with a command line UI (now.sh (rebranded as vercel now) used to feature this but now their documentation encourages you to do things via their web dashboard).
 
 
 
-Date:   1605954392
+Date: <a id="1605954392" href="#1605954392">1605954392</a>
 
 Q: Why I do not have faith in God?
 
@@ -479,7 +497,7 @@ And what if the first bit is not true? Then I would like to thank god for being 
 
 
 
-Date:   1605426776
+Date: <a id="1605426776" href="#1605426776">1605426776</a>
 
 [nico] is a minimalistic zero-configuration HTTP server. It can be used as a reverse proxy or a static file server, with auto applied SSL certificates. Nico have no options to configure. You can not even specify the ports to listen (it always listen on 80/443).
 
@@ -489,25 +507,25 @@ The binary size on Linux amd64: 6.5 M (for comparison, Caddy is 35 M).
 
 
 
-Date:   1603897272
+Date: <a id="1603897272" href="#1603897272">1603897272</a>
 
 Burmese names do not have surnames. And traditionally Bamars can change their name at will, often with no government oversight. In other words, Burmese names are both screen names and real names.
 
 
 
-Date:   1603634286
+Date: <a id="1603634286" href="#1603634286">1603634286</a>
 
 Why the KISS (Keep it simple, stupid) principle looks so seductive to me? Because the world is too vast to explore.
 
 
 
-Date:   1603540199
+Date: <a id="1603540199" href="#1603540199">1603540199</a>
 
 Macbook Pro 13 (2019) claimed to support "up to 10 hours wireless web", but in my daily use (two browsers with dozens of tabs, two IDEs, one electron based editor, one mail client, two IM applications, using both the internal and an external monitor) it can only last about 3 hours.
 
 
 
-Date:   1599059053
+Date: <a id="1599059053" href="#1599059053">1599059053</a>
 
 The English words "Republic of China" is still preserved on the redesigned Taiwan passport. They are in a much smaller font wrapping around the national emblem, unnoticeable at a quick glance.
 
@@ -515,19 +533,19 @@ IMHO, keeping it simple and stupid is much better using these creative tricks. T
 
 
 
-Date:   1597769012
+Date: <a id="1597769012" href="#1597769012">1597769012</a>
 
 There is no options in [Google Podcasts](https://podcasts.google.com) to export subscriptions in OPML. Even Google Takeout does not include Google Podcasts subscriptions. (violation of GDPR?)
 
 
 
-Date:   1596728115
+Date: <a id="1596728115" href="#1596728115">1596728115</a>
 
 According to Uniqlo's size chart, the perfect height is around 165 cm and 150 cm. A person of 165 cm height can choose from both Men's Clothing and Women's Clothing, and a person of 150 cm height can choose from both Women's Clothing and Kids' Clothing.
 
 
 
-Date:   1596041215
+Date: <a id="1596041215" href="#1596041215">1596041215</a>
 
 suitezero.archive posted their collection, a pair of fake Nike sneakers on [instagram]. Unlike most other fake Nike shoes, this pair has its own brand 登云 (meaning climbing the clouds in Chinese) and is produced by 上海皮鞋一厂 (Shanghai No.1 Leather Shoe Factory), a Chinese government-owned enterprise.
 
@@ -536,7 +554,7 @@ suitezero.archive posted their collection, a pair of fake Nike sneakers on [inst
 
 
 
-Date:   1594691578
+Date: <a id="1594691578" href="#1594691578">1594691578</a>
 
 > Also, vertical KDE panel is not supported under i3, so do not buy them.
 
@@ -544,7 +562,7 @@ Oh, I must be very sleepy to write the above sentence. And maybe I dislike KDE s
 
 
 
-Date:   1594463078
+Date: <a id="1594463078" href="#1594463078">1594463078</a>
 
 First impression on [hey email][hey]:
 
@@ -557,7 +575,7 @@ First impression on [hey email][hey]:
 
 
 
-Date:   1594449386
+Date: <a id="1594449386" href="#1594449386">1594449386</a>
 
 Shame on me: I had not checked whether the producer violates GPL before buying an ebook reader.
 
@@ -565,7 +583,7 @@ Shame on me: I had not checked whether the producer violates GPL before buying a
 
 
 
-Date:   1593936141
+Date: <a id="1593936141" href="#1593936141">1593936141</a>
 
 [Sinatra] in Ruby:
 
@@ -633,7 +651,7 @@ func main() {
 
 
 
-Date:   1593885469
+Date: <a id="1593885469" href="#1593885469">1593885469</a>
 
 > FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 >
@@ -675,7 +693,7 @@ It is 2020 and sadly the only mainstream dynamic programming language with a com
 
 
 
-Date:   1593707744
+Date: <a id="1593707744" href="#1593707744">1593707744</a>
 
 Recently I watched [Openbook 2019 talk by Audrey Tang on YouTube][talk]. The talk is given in Chinese and here is some notes I have taken.
 
@@ -721,19 +739,19 @@ Unfortunately, although Audrey is a [key sponsor][] of [sandstorm][] (self hoste
 
 
 
-Date:   1592234620
+Date: <a id="1592234620" href="#1592234620">1592234620</a>
 
 Go is influenced by Python. Now Go also influences Python, e.g. black (`go fmt`) and pytest (`go test`).
 
 
 
-Date:   1591974550
+Date: <a id="1591974550" href="#1591974550">1591974550</a>
 
 It's  2020, and twitter & github still do not support IPv6.
 
 
 
-Date:   1590256273
+Date: <a id="1590256273" href="#1590256273">1590256273</a>
 
 Go 1.14 allows [embedding interfaces with identical method names][6977], as long as these methods have **identical signatures**.
 
@@ -743,13 +761,13 @@ Again, Go avoided to attack the function subtyping problem.
 
 
 
-Date:   1589983584
+Date: <a id="1589983584" href="#1589983584">1589983584</a>
 
 I though TED talks are amazing. Recently I listened a lot of TED talks and found out that TED talks on average are *not* interesting to me. Previously I have only listened popular TED talks shared on social networks where I only follow people I find interesting. That's why I had this wrong impression.
 
 
 
-Date:   1589462469
+Date: <a id="1589462469" href="#1589462469">1589462469</a>
 
 [GitHub action/workflow] offers these shells: cmd, sh, bash, power shell, and **python**.
 
@@ -757,25 +775,25 @@ Date:   1589462469
 
 
 
-Date:   1587833983
+Date: <a id="1587833983" href="#1587833983">1587833983</a>
 
 [Combo Pinyin](https://github.com/rime/home/wiki/ComboPinyin) is an interesting Chinese input method, which is similar to chord-typing (pressing multiple keys at the same time to input a character). However, I find it difficult to type. For example, to type guang, I have to type five keys (F-U-K-L-SPC) at the same time, which is very difficult to my fingers.
 
 
 
-Date:   1586705014
+Date: <a id="1586705014" href="#1586705014">1586705014</a>
 
 Haven't checked the RSS reader for two or three years. The RSS reader reported that about fifty RSS feeds are unreachable. By clicking the htmlUrl and googling author name and old post content, I managed to recover 17 blogs.
 
 
 
-Date:   1586682753
+Date: <a id="1586682753" href="#1586682753">1586682753</a>
 
 The opening of Stanford's CS106A is full of propaganda and buzzwords http://web.stanford.edu/class/cs106a/lectures/1-Welcome/1-Welcome.pdf
 
 
 
-Date:   1585413708
+Date: <a id="1585413708" href="#1585413708">1585413708</a>
 
 Just discovered this in [Sentry's ToS][sentry]:
 
@@ -786,25 +804,25 @@ Just discovered this in [Sentry's ToS][sentry]:
 
 
 
-Date:   1584724995
+Date: <a id="1584724995" href="#1584724995">1584724995</a>
 
 The new MacBook Air has the best keyboard in current Apple laptops: scissor mechanism without touchbar.
 
 
 
-Date:   1583945292
+Date: <a id="1583945292" href="#1583945292">1583945292</a>
 
 On Apple laptops released in recent years, every key is a power button, and there is NO WAY to turn it off.
 
 
 
-Date:   1579713423
+Date: <a id="1579713423" href="#1579713423">1579713423</a>
 
 golint is very noisy, and it gives a lot of false positive results. I just switched to the peaceful `staticcheck` instead.
 
 
 
-Date:   1579531891
+Date: <a id="1579531891" href="#1579531891">1579531891</a>
 
 1. Open your browser, click `ctrl+L` to focus on address bar.
 2. Type `data:,anything you plan to do` (data and semicolon and comma)
@@ -818,7 +836,7 @@ Bonus: If you need to input non-ascii characters, type `data:text/plain;charset=
 
 
 
-Date:   1578822251
+Date: <a id="1578822251" href="#1578822251">1578822251</a>
 
 I am a bit uncertain about the future of JetBrains. They put a lot of efforts to ship great IDEs. But new languages are very serious about tooling and development productivity to attract more users. vscode has greater out of box support for TypeScript than WebStrom. And the Rust extension of vscode is developed by the IDE and editors team of the Rust language people (yes, they have a dedicated team for this).
 
@@ -832,32 +850,32 @@ JetBrains IDEs still have the state of art IDEs for languages such as Java, Pyth
 
 
 
-Date:   1578668352
+Date: <a id="1578668352" href="#1578668352">1578668352</a>
 
 json-diff hung for one day to compare two big json files (~100 MB in file size, and ~40 k objects), while jsondiffpatch finished the comparison in less  than 20 seconds.
 
 
 
-Date:   1578571754
+Date: <a id="1578571754" href="#1578571754">1578571754</a>
 
 [bellard.org](https://bellard.org/) still uses html 4, as [debian.org](https://www.debian.org/) and [netbsd.org](http://www.netbsd.org/) does. They have an attitude.
 
 
 
-Date:   1577539856
+Date: <a id="1577539856" href="#1577539856">1577539856</a>
 
 It seems that the story writer of MonsterMatch need to learn more physics.
 ![attached image](https://mmap.page/log/1577540089.jpg)
 
 
 
-Date:   1576460554
+Date: <a id="1576460554" href="#1576460554">1576460554</a>
 
 Firefox Notes does not support markdown. It only captures some key presses like `# h1` to mimic Markdown but directly pasting `# h1` does not work (Yes, the browser distinguishes key press event and text input event). Also there is only three levels of heading.  And the worst thing is it does not support code block! :-(
 
 
 
-Date:   1576408762
+Date: <a id="1576408762" href="#1576408762">1576408762</a>
 
 I am not a fan of uniformed code formatting (like `gofmt`). I do not think issues like CamlCase v.s. snake_case or spaces are important. But I myself use [Prettier] because I am too lazy to type tabs and semicolons. :-)
 
@@ -865,7 +883,7 @@ I am not a fan of uniformed code formatting (like `gofmt`). I do not think issue
 
 
 
-Date:   1576330994
+Date: <a id="1576330994" href="#1576330994">1576330994</a>
 
 The three most popular style guides in JavaScript community (airbnb, standard, google) are all unnecessarily lengthy.
 
@@ -877,7 +895,7 @@ Style guides should keep focus on a dozen of matters truly important, in other w
 
 
 
-Date:   1575704213
+Date: <a id="1575704213" href="#1575704213">1575704213</a>
 
 Years ago I noticed that WebStorm (2016.3) was very slow to detect type errors with Flow, while vscode (with vscode-flow-ide extension) checked error on saving file instantly.
 
@@ -887,25 +905,25 @@ This is yet another example that WebStrom is becoming more and more less relevan
 
 
 
-Date:   1575554930
+Date: <a id="1575554930" href="#1575554930">1575554930</a>
 
 On December 14, 2019, all yahoo groups become private (based on Yahoo Mails), the yahoo groups website will be shutdown and **all yahoo groups content will be deleted**!
 
 
 
-Date:   1575553715
+Date: <a id="1575553715" href="#1575553715">1575553715</a>
 
 Just downloaded my Translator Toolkit data via Google Takeout. Google Translator Toolkit was shutdown on December 4, 2019. Yet another good service I used to be shutdown by Google.
 
 
 
-Date:   1575549745
+Date: <a id="1575549745" href="#1575549745">1575549745</a>
 
 The ancient Chinese saying "steal the whole country and they make you a prince, steal a hook and they hang you" (竊國者侯，竊鉤者誅) probably describes integer overflow. In a system people with a positive sin value will be punished and those with a negative sin value will be rewarded, one who stole the whole country gained a lot of sin value, causing a sin value overflow.
 
 
 
-Date:   1574582537
+Date: <a id="1574582537" href="#1574582537">1574582537</a>
 
 React components and hooks are just functions, nothing magical:
 
@@ -952,7 +970,7 @@ App = render(Component) // { len: 5 }
 
 
 
-Date:   1574526354
+Date: <a id="1574526354" href="#1574526354">1574526354</a>
 
 Updated the jekyll templates of my personal website to get rid of JavaScript. Now mmap.page on [clearnet](https://mmap.page) and [zeronet](/16XMwj6YRNqRHWbmSD8oxYUZCKfM1uzwP9/) is JavaScript free. ^_^
 
@@ -962,7 +980,7 @@ If you want to deploy a minimalistic JavaScript free site to GitHub Pages and/or
 
 
 
-Date:   1573608922
+Date: <a id="1573608922" href="#1573608922">1573608922</a>
 
 For parsing simplicity, the existential operator from CoffeeScript turns into something like `foo ?? bar()`, `a?.[1]`, and `f.(x)` in JavaScript (stage 3), to avoid confusion with ternary expression (`a ? [b] :c`).
 
@@ -972,7 +990,7 @@ JavaScript sucks. Thus people add more features as workarounds. But people canno
 
 
 
-Date:   1571248232
+Date: <a id="1571248232" href="#1571248232">1571248232</a>
 
 Just upgrade to 0net-py3:
 
@@ -983,13 +1001,13 @@ Seemingly it works fine.
 
 
 
-Date:   1569035072
+Date: <a id="1569035072" href="#1569035072">1569035072</a>
 
 Just discovered the Files app (an android app by Google) is translated to Files Geek (文件极客) in Chinese UI.
 
 
 
-Date:   1568989787
+Date: <a id="1568989787" href="#1568989787">1568989787</a>
 
 Sam Hartman sent the [Bits from the DPL (August 2019)][letter] letter yesterday (Sep 19, 2019). In the letter, Sam talked a lot about the complexity and anxiety on init system diversity within the  Debian project.
 
@@ -997,7 +1015,7 @@ Sam Hartman sent the [Bits from the DPL (August 2019)][letter] letter yesterday 
 
 
 
-Date:   1566392824
+Date: <a id="1566392824" href="#1566392824">1566392824</a>
 
 BitBucket is [dropping hg support][blog]. This reminds me the time when Macintosh computers dropped PowerPC CPUs.
 
@@ -1005,19 +1023,19 @@ BitBucket is [dropping hg support][blog]. This reminds me the time when Macintos
 
 
 
-Date:   1565806393
+Date: <a id="1565806393" href="#1565806393">1565806393</a>
 
 Just learned a new word "Xi-ple" today. To my surprise, this word is ungoogleable.
 
 
 
-Date:   1565184664
+Date: <a id="1565184664" href="#1565184664">1565184664</a>
 
 The IRL podcast by mozilla is not only boring but also burning (it burns RAM very quickly under Firefox).
 
 
 
-Date:   1565183145
+Date: <a id="1565183145" href="#1565183145">1565183145</a>
 
 Touch bar does have some advantages:
 
@@ -1032,7 +1050,7 @@ But there is a long way to go:
 
 
 
-Date:   1564923584
+Date: <a id="1564923584" href="#1564923584">1564923584</a>
 
 The dark theme of Spark (a mail client on osx) is a disaster. I've to change the setting to "always use light theme". The reason is few mail clients (including those Web Clients) have considered dark background in designing default HTML email templates. And it seems that Spark has not implement some smart algorithm to swap colors.
 
@@ -1040,7 +1058,7 @@ The old fashioned plain text emails play nicely with dark theme. Another example
 
 
 
-Date:   1564667614
+Date: <a id="1564667614" href="#1564667614">1564667614</a>
 
 After recent update of KDE Neon, the bluetooth adapter will power off after each hibernation. Unfortunately I need a mouse to turn on the bluetooth in KDE UI, but I use a bluetooth mouse.
 
@@ -1054,7 +1072,7 @@ Finally, I found a way to turn on bluetooth via command line (I use a wired keyb
 
 
 
-Date:   1564366037
+Date: <a id="1564366037" href="#1564366037">1564366037</a>
 
 Looks like the development of Ceylon has ceased. The latest commit is on [May 22, 2019][7e653a1], removing words like "crap", "shit", "fucked up" from code comment. And the penultimate commit is on [Feb 11, 2019][d3994d6], fixing the CI build.
 
@@ -1063,7 +1081,7 @@ Looks like the development of Ceylon has ceased. The latest commit is on [May 22
 
 
 
-Date:   1564208313
+Date: <a id="1564208313" href="#1564208313">1564208313</a>
 
 The current version of IntelliJ (2019.2) has a built-in sublime keymap. And I once heard a JetBrainer referred to `ctrl+shift+a` as "command palette" (although actually IntelliJ introduced the "find any action" feature prior to Sublime). FYI, Micosoft released an extension "Sublime Text Keymap and Settings Importer" for vscode on 2016.
 
@@ -1071,7 +1089,7 @@ Such an influential editor, Sublime Text.
 
 
 
-Date:   1564069796
+Date: <a id="1564069796" href="#1564069796">1564069796</a>
 
 How I stop using proxy extension in Firefox?
 
@@ -1080,7 +1098,7 @@ How I stop using proxy extension in Firefox?
 
 
 
-Date:   1562091224
+Date: <a id="1562091224" href="#1562091224">1562091224</a>
 
 Future programmers may use different abstractions. Today we can write bytes to a file, and tomorrow we may write to a [blob]. Whether the blob is ultimately a file or some cloud storage service is just implementation details.
 
@@ -1090,13 +1108,13 @@ On writing this, it occurred to me that maybe these abstractions are not very di
 
 
 
-Date:   1561828723
+Date: <a id="1561828723" href="#1561828723">1561828723</a>
 
 Just find out that web developer tools of modern browsers (Firefox & Chrome)  can recognize webpack and typescript. Debugging on the original typescript source is much easier than on the generated JavaScript code.
 
 
 
-Date:   1558103099
+Date: <a id="1558103099" href="#1558103099">1558103099</a>
 
 This patch to the legacy marriage framework just got approved today and will be merged into the `release` branch very soon! Congratulations! First patch of this kind in Asia!
 
@@ -1109,7 +1127,7 @@ This patch to the legacy marriage framework just got approved today and will be 
 
 
 
-Date:   1557559590
+Date: <a id="1557559590" href="#1557559590">1557559590</a>
 
 Do not under stand why Beta users need to accept [Confidentiality agreement][terms] of keeping special information secret. Isn't beta means public? It seems GitHub redefines Beta.
 
@@ -1119,7 +1137,7 @@ I sign up for a Beta program because I am an impatient person, not want to wait 
 
 
 
-Date:   1557510100
+Date: <a id="1557510100" href="#1557510100">1557510100</a>
 
 ```python
 first, *rest = [1, 2, 3]  # first -> 1, rest -> [2, 3]  (1)
@@ -1136,19 +1154,19 @@ lambda (first, *rest): ...
 
 
 
-Date:   1557327217
+Date: <a id="1557327217" href="#1557327217">1557327217</a>
 
 egghand's subtitles are auto generated (at least on some videos I watched), but they are not marked as such confusingly (unlike YouTube).
 
 
 
-Date:   1557152038
+Date: <a id="1557152038" href="#1557152038">1557152038</a>
 
 Just realized that I can look at the bright side of JavaScript's switch structure. JavaScript's switch **statement** is **fall-through**, which sounds like a scream: "Don't break! Return! Wrap me into a function!"
 
 
 
-Date:   1556967006
+Date: <a id="1556967006" href="#1556967006">1556967006</a>
 
 To those who dislikes systemd:
 
@@ -1159,7 +1177,7 @@ To those who dislikes systemd:
 
 
 
-Date:   1556911623
+Date: <a id="1556911623" href="#1556911623">1556911623</a>
 
 Just watched the [The Tragedy of systemd][video], which I thought is very misleading.
 
@@ -1175,7 +1193,7 @@ To be honest, I like neither android, docker, nor systemd. I am not sure the fac
 
 
 
-Date:   1556714968
+Date: <a id="1556714968" href="#1556714968">1556714968</a>
 
 It seems the Japanese new era is not very welcome yet:
 
@@ -1188,7 +1206,7 @@ It seems the Japanese new era is not very welcome yet:
 
 
 
-Date:   1556290808
+Date: <a id="1556290808" href="#1556290808">1556290808</a>
 
 Just came across a [Q&A][qa] on zhihu (a quora clone in CN):
 
@@ -1201,7 +1219,7 @@ Brilliant! Never forget to check the presumption under the question first.
 
 
 
-Date:   1556210096
+Date: <a id="1556210096" href="#1556210096">1556210096</a>
 
 React has so many opt-in, legacy, experimental features. Thus I suggest taking a look at ReasonReact first, which has a much smaller API surface. After a glance of ReasonReact, you can probably pick up React quickly by skipping a lot of concepts. I guess this will be faster than learning React directly, particularly when you are already familiar with some static typed functional languages such as OCaml, F#, and Haskell.
 
@@ -1209,7 +1227,7 @@ Though I do not suggest diving deep into ReasonReact and actually write code in 
 
 
 
-Date:   1555779592
+Date: <a id="1555779592" href="#1555779592">1555779592</a>
 
 And the first koan of "Kotlin Koans" from stepik and JetBrains annoyed me again.
 
@@ -1239,7 +1257,7 @@ Hmm, stupid auto answer detection system. And I wonder why introduce learners th
 
 
 
-Date:   1555778252
+Date: <a id="1555778252" href="#1555778252">1555778252</a>
 
 Just tried the first three quizs of [Python introduction course on stepik][stepik], which is included in JetBrains' PyCharm Educational (I tried it with the EduTools plugin on IntelliJ).
 
@@ -1318,7 +1336,7 @@ I myself learned Python via reading the A Byte of Python book years ago. I am no
 
 
 
-Date:   1555771622
+Date: <a id="1555771622" href="#1555771622">1555771622</a>
 
 Just came across a video titled [Learn Python Programming Language in 2 Hours][video].
 
@@ -1344,7 +1362,7 @@ Currently this video has 411k views, 8.1k upvotes (less than 200 downvotes) on Y
 
 
 
-Date:   1555769700
+Date: <a id="1555769700" href="#1555769700">1555769700</a>
 
 Android's Messages app does not provide a "delete all" function. Fortunately, most popular third-party sms apps all support "delete all" or "select all then delete", e.g. chompSMS, Handcent Next SMS, Textra.
 
@@ -1352,7 +1370,7 @@ Considering the fact that in early versions of Android, the messaging app does h
 
 
 
-Date:   1555739252
+Date: <a id="1555739252" href="#1555739252">1555739252</a>
 
 I [complained about](/?Post/12h51ug6CcntU2aiBjhP8Ns2e5VypbWWtv/1GnJD7CXskmG8GywMbTvbP12wneCFW9XzR/1553695047) Flask's official documentation lacks a dedicated page for REST APIs and suggested to use Flask-RESTful extension instead.
 
@@ -1370,7 +1388,7 @@ Unfortunately, figuring out these five sections in three chapters ("quickstart",
 
 
 
-Date:   1555231105
+Date: <a id="1555231105" href="#1555231105">1555231105</a>
 
 Most web video player lacks the feature of full browser window. Fortunately, with xrandr under Linux, we can split the physical monitor into multiple virtual monitors.
 
@@ -1385,13 +1403,13 @@ Note that not all window managers respect this setting though. For example, I ha
 
 
 
-Date:   1555097373
+Date: <a id="1555097373" href="#1555097373">1555097373</a>
 
 https://defend.wikileaks.org/2019/04/11/emergency-julian-assange-has-been-arrested/
 
 
 
-Date:   1553940393
+Date: <a id="1553940393" href="#1553940393">1553940393</a>
 
 Briefly tried Manjaro:
 
@@ -1404,7 +1422,7 @@ But it is problematic with package dependencies:
 
 
 
-Date:   1553823420
+Date: <a id="1553823420" href="#1553823420">1553823420</a>
 
 Recently I learned a new notion (or buzzword, if you prefer), [edge computing]:
 
@@ -1426,7 +1444,7 @@ That is what ZeroNet does, **edge censorship**. Let the user/client/node/hub dec
 
 
 
-Date:   1553821959
+Date: <a id="1553821959" href="#1553821959">1553821959</a>
 
 The download page of Manjaro offers 11 favors, xfce, kde, cinnamon, openbox, awesome, budgie, mate, I3, Architect (text), Deepin, Gnome. And there are tabs (it turns out these are actually pretended checkboxes) like "beginner-friendly", "resource-efficient", "traditionally-workflow".
 
@@ -1440,7 +1458,7 @@ This must be joking.
 
 
 
-Date:   1553794194
+Date: <a id="1553794194" href="#1553794194">1553794194</a>
 
 manjaro's advertise for developers features Godot, KDevelop, Geany.
 
@@ -1450,7 +1468,7 @@ Seems there are two different groups of developers under Linux desktop.
 
 
 
-Date:   1553694861
+Date: <a id="1553694861" href="#1553694861">1553694861</a>
 
 Although Flask is widely used to build REST API servers, [its official documentation][doc] still cannot afford a dedicated page for REST APIs.
 
@@ -1464,7 +1482,7 @@ Life is short. Pick up tools and libraries fast.
 
 
 
-Date:   1553439182
+Date: <a id="1553439182" href="#1553439182">1553439182</a>
 
 With the [pyright] extension, vscode can check type annotations of Python code.
 
@@ -1472,13 +1490,13 @@ With the [pyright] extension, vscode can check type annotations of Python code.
 
 
 
-Date:   1553407876
+Date: <a id="1553407876" href="#1553407876">1553407876</a>
 
 Finally gandi.net added support for `ALIAS`.
 
 
 
-Date:   1552832899
+Date: <a id="1552832899" href="#1552832899">1552832899</a>
 
 Just read an insightful blog post by [André Staltz] talking about [the dying web] replaced by the GOOG-FB-AMZN Trinet.
 
@@ -1497,7 +1515,7 @@ Reasons why web is dying faster in China:
 
 
 
-Date:   1552746926
+Date: <a id="1552746926" href="#1552746926">1552746926</a>
 
 In golden old days, a simple web page has an index.html, linking to an index.js. I can just open the index.html in a web browser to see the effect. And after some edits of index.html or index.js, I just refresh the page to see the effect. Once I am satisfied, I can copy the directory to any static hosting space.
 
@@ -1519,7 +1537,7 @@ None of webpack, browserify, and rollup is as zero configuration as parcel.
 
 
 
-Date:   1552723275
+Date: <a id="1552723275" href="#1552723275">1552723275</a>
 
 Hmm, just noticed that [w3.org] still uses "old-fashioned" XHTML 1.0 Strict.
 
@@ -1527,7 +1545,7 @@ Hmm, just noticed that [w3.org] still uses "old-fashioned" XHTML 1.0 Strict.
 
 
 
-Date:   1552206417
+Date: <a id="1552206417" href="#1552206417">1552206417</a>
 
 Saw this piece of Go code when watching [Advanced Testing With Go][youtube] by Mitchell Hashimoto:
 
@@ -1579,7 +1597,7 @@ defer db.close()
 
 
 
-Date:   1552110906
+Date: <a id="1552110906" href="#1552110906">1552110906</a>
 
 GraalVM's native image feature is impressive to me:
 
@@ -1622,13 +1640,13 @@ But graal does looks promising to me.
 
 
 
-Date:   1552066645
+Date: <a id="1552066645" href="#1552066645">1552066645</a>
 
 I read the first 4 items of Effective Java 2nd. edition several years ago, and had an impression that the book better renamed to Ineffective Java. There are 78 items total in the Effective Java 2nd. editon. Today I just learned that Effective Java updated to 3rd. edition on the end of 2017, targeting Java 9 (2nd. edition is target at Java 6). Now there are 90 items in the book. I am wondering does this imply that Java is more ineffective now? Or maybe People have finally discovered far more pitfalls of Java, thus although recent versions of Java fixed some issues, the net known ineffectiveness increases?
 
 
 
-Date:   1551619332
+Date: <a id="1551619332" href="#1551619332">1551619332</a>
 
 Go advertises itself as having first class functions:
 
@@ -1653,7 +1671,7 @@ BTW:
 
 
 
-Date:   1551369924
+Date: <a id="1551369924" href="#1551369924">1551369924</a>
 
 Currently I'm using a tree based todo manager, roughly something like:
 
@@ -1691,7 +1709,7 @@ Hmm, tree based todos are cool. But eventually I will need an AST (abstract synt
 
 
 
-Date:   1551194474
+Date: <a id="1551194474" href="#1551194474">1551194474</a>
 
 Looks like there will be no more compact mobile phones. :-(
 
@@ -1699,7 +1717,7 @@ Well, at least there are compact pad (Huawei Mate X) and compact camera/audio pl
 
 
 
-Date:   1551031294
+Date: <a id="1551031294" href="#1551031294">1551031294</a>
 
 小学时候写篇 300 字作文，常常绞尽脑汁，觉得怎么字数还不够啊，现在却为了把豆瓣短评控制在 350 字内大费周章（考虑空格和标点，大概等价于小学时代的 300 字）。
 
@@ -1709,13 +1727,13 @@ Alita: Battle Angel (2019) 短评（恰好 350 字）：
 
 
 
-Date:   1550941813
+Date: <a id="1550941813" href="#1550941813">1550941813</a>
 
 Google Play Store lacks the "ignore this update/version of app" function.
 
 
 
-Date:   1550219881
+Date: <a id="1550219881" href="#1550219881">1550219881</a>
 
 The abandonware nuclide has a distinct feature "[Remote Development]" (use a remote machine as the workspace for compiling/building and language services via ssh).
 
@@ -1725,7 +1743,7 @@ Unfortunately none of Atom, VS Code and JetBrains IDEs has support for this feat
 
 
 
-Date:   1549985272
+Date: <a id="1549985272" href="#1549985272">1549985272</a>
 
 RubyGems has a so-called  *twiddle-wakka* shortcut `~>`. Therefore, assuming in a semver setup, you can write `~> 2.2` instead of the verbose `['>= 2.2.0', '< 3.0']`. Seems neat, isn't it?
 
@@ -1735,7 +1753,7 @@ However, `~> 2.2.2` is not equivalent to  `['>= 2.2.2', '< 3.0']` (Bob thought s
 
 
 
-Date:   1548356219
+Date: <a id="1548356219" href="#1548356219">1548356219</a>
 
 Recently the term "headless CMS" and "decoupled CMS" gain a lot of popularity. But these two terms are rather confusing to me.
 
@@ -1750,7 +1768,7 @@ BTW, I wish the next generation of website will be both frontend agnostic and ga
 
 
 
-Date:   1547256529
+Date: <a id="1547256529" href="#1547256529">1547256529</a>
 
 I use [the fish port of z] (alternative to autojump) and remap the command name to `h` (`set -U Z_CMD "h"`). `h` is easier to type (on dvorak keyboard layout) and remember ("head to").
 
@@ -1758,7 +1776,7 @@ I use [the fish port of z] (alternative to autojump) and remap the command name 
 
 
 
-Date:   1544101685
+Date: <a id="1544101685" href="#1544101685">1544101685</a>
 
 Wrote a simple script ([zerome2md]) to dump ZeroMe posts to a markdown file (for backup or publish eleswhere).
 
@@ -1770,7 +1788,7 @@ The "exported" markdown file can be consumed by static site builders like Jekyll
 
 
 
-Date:   1543935924
+Date: <a id="1543935924" href="#1543935924">1543935924</a>
 
 The image support of ZeroMe feels quite hacky to me:
 
@@ -1785,7 +1803,7 @@ The image support of ZeroMe feels quite hacky to me:
 
 
 
-Date:   1542433791
+Date: <a id="1542433791" href="#1542433791">1542433791</a>
 
 It is such a surprise for me that GitHub does not have any public available issue tracker for itself!
 
@@ -1793,13 +1811,13 @@ Some users have created one ([isaacs/github](https://github.com/isaacs/github)).
 
 
 
-Date:   1542433143
+Date: <a id="1542433143" href="#1542433143">1542433143</a>
 
 Two exotic project ideas occurred to me on the bed. After getting up and turning on the computer, I found out that I had already forgot one of them.
 
 
 
-Date:   1542391958
+Date: <a id="1542391958" href="#1542391958">1542391958</a>
 
 Ansible advertises itself as agent-less, but:
 
@@ -1812,7 +1830,7 @@ BTW, the cloud provider modules from both Ansible and SaltStack are disorderly a
 
 
 
-Date:   1542376879
+Date: <a id="1542376879" href="#1542376879">1542376879</a>
 
 Flickr will limit free users' photos to 1000 (extra photos will get deleted in next year). Upon hearing this I am quite depressed, because downloading photos and uploading to a new platform (provided that I can find an alternative) will take a lot of time and effort.
 
@@ -1822,7 +1840,7 @@ Today I just checked my flickr account and found out that I only have less than 
 
 
 
-Date:   1541249463
+Date: <a id="1541249463" href="#1541249463">1541249463</a>
 
 Upgraded KDE Neon from 16.04 to 18.04 today via its built-in "Distribution Upgrade" GUI. The whole process is mostly smooth, except it reports a mysterious error "installArchives() Failed" before restart. I just ignored it and had not discovered anything wrong.
 
@@ -1835,7 +1853,7 @@ I used to rebind middle key to forward button (so I can press it via my thumb, i
 
 
 
-Date:   1541247161
+Date: <a id="1541247161" href="#1541247161">1541247161</a>
 
 IBM bought RedHat as a cloud computing company, thus irrelevant projects originally sponsored by RedHat may not receive bandwidth from IBM in future. Fortunately:
 
@@ -1845,13 +1863,13 @@ IBM bought RedHat as a cloud computing company, thus irrelevant projects origina
 
 
 
-Date:   1541245426
+Date: <a id="1541245426" href="#1541245426">1541245426</a>
 
 I've seen a lot of note applications/services' export function does not support exporting attachments. Vivaldi Browser is just another example (its sync all feature does not include attachments of notes).
 
 
 
-Date:   1540394823
+Date: <a id="1540394823" href="#1540394823">1540394823</a>
 
 The new palm phone reveals how ugly big today's phones are.
 
@@ -1862,7 +1880,7 @@ Photo credit: [theverge.com](https://www.theverge.com/2018/10/15/17974850/new-pa
 
 
 
-Date:   1536929070
+Date: <a id="1536929070" href="#1536929070">1536929070</a>
 
 Oops, `python -m SimpleHTTPServer` does not support range request.
 
@@ -1878,13 +1896,13 @@ func main() {
 
 
 
-Date:   1536759116
+Date: <a id="1536759116" href="#1536759116">1536759116</a>
 
 Go advertises first-class function, but to pass a function, you have to match the exact signature. No sub-typing of functions. Yes, even Java supports covariant return result (no contravariant parameter though), but Go supports neither.
 
 
 
-Date:   1536678777
+Date: <a id="1536678777" href="#1536678777">1536678777</a>
 
 Programming needs practice. And I think "how many lines of source code I have **deleted**" estimates my experience on programming better (than how many lines I have written).
 
@@ -1896,61 +1914,61 @@ git log --shortstat --no-merges --author=$(whoami) | grep 'files\? changed' | aw
 
 
 
-Date:   1535774560
+Date: <a id="1535774560" href="#1535774560">1535774560</a>
 
 Refactoring with statically typed code (using Python's type hint) is an enjoyable process. To switch an  upstream library, I just replaced one import statement, one type definition, and one invoking statement. Then I just fix all the typing problems reported by PyCharm. After that, I run the program and find out that it just works! No "find usage" or "search and replace". And the project does not have any test (I am too lazy to write one.) Static typing is the preservative to slow down the inevitable decaying of code.
 
 
 
-Date:   1535038856
+Date: <a id="1535038856" href="#1535038856">1535038856</a>
 
 Gists are second class citizen of GitHub. For example, GitHub API does not support searching gists (in both old v3 REST API and the new v4 GraphQL API).
 
 
 
-Date:   1535037615
+Date: <a id="1535037615" href="#1535037615">1535037615</a>
 
 When will Java have "real" function type? What Java uses interface to mimic is **nominal**, not **structural**.
 
 
 
-Date:   1534597565
+Date: <a id="1534597565" href="#1534597565">1534597565</a>
 
 Learning ML/Haskell deepened my understanding of typing.
 
 
 
-Date:   1534051076
+Date: <a id="1534051076" href="#1534051076">1534051076</a>
 
 vscode does not have built-in syntax highlighting for Haskell, while it does support F# out of the box.
 
 
 
-Date:   1533967519
+Date: <a id="1533967519" href="#1533967519">1533967519</a>
 
 Google Photo's "free up device space" (delete already backed up photos from device) and recover storage (compress already uploaded photos from original to high quality) applies to ALL photos. I cannot free up / recover storage selectively, for example, only archived photos or photos within certain albums.
 
 
 
-Date:   1533955428
+Date: <a id="1533955428" href="#1533955428">1533955428</a>
 
 Not sure when GitHub changed its front page (they call it dashboard), slow to load. I miss the old GitHub front page, loaded almost instantly.
 
 
 
-Date:   1533921116
+Date: <a id="1533921116" href="#1533921116">1533921116</a>
 
 I want to install an extension of JupyterLab (toc), then I found out that installing JupyterLab extensions requires nodejs (because JupyterLab extensions are npm packages). So I install nodejs via `conda`, which automatically downgrading my JupyterLab from v0.33 to v0.28. After all of this, I am about to install the extension, but it turns out it requires JupyterLab v0.33! :-( The Jupyter blog said JupyterLab is ready for users on Feb. 2018 ...
 
 
 
-Date:   1532952443
+Date: <a id="1532952443" href="#1532952443">1532952443</a>
 
 Not sure whether BDFL's retirement is good or bad, but personally I dislike PEP 572 (I dislike a lot of aspects of Python, though).
 
 
 
-Date:   1532783984
+Date: <a id="1532783984" href="#1532783984">1532783984</a>
 
 languagedetective.com predicts your native language with English text you wrote as input. I tested with [one of my blog post](https://weakish.github.io/StutteringTalkaholic/web/html-history/) and the result is: 70.6% Native, 29.4% Non-Native. Bingo!
 But it is not good at predicting my native language: 37.9% Arabic, 16.1% Korean, 14.7% Hindi, 11.1% Chinese, 8.6% German, 6.5% Turkish, 2.1% Japanese, 1.6% French, 0.7% Italian, 0.7% Spanish.
@@ -1959,13 +1977,13 @@ My native language is Chinese.
 
 
 
-Date:   1529854155
+Date: <a id="1529854155" href="#1529854155">1529854155</a>
 
 Suddenly I wanted to eat tempura, but it is unavailable from the menu of the izakaya I went. So I ate some fried salmon sushi instead.
 
 
 
-Date:   1529138055
+Date: <a id="1529138055" href="#1529138055">1529138055</a>
 
 My Razer DeathAdder has blue LED on wheel and logo, feeling very disturbing to me. Thanks to [razercfg](http://bues.ch/cms/hacking/razercfg.html), I can turn them off under Linux.
 
@@ -1973,13 +1991,13 @@ My Razer DeathAdder has blue LED on wheel and logo, feeling very disturbing to m
 
 
 
-Date:   1528815034
+Date: <a id="1528815034" href="#1528815034">1528815034</a>
 
 I am really confused with those color modes with monitors. Cannot them show color temperature instead?
 
 
 
-Date:   1528733744
+Date: <a id="1528733744" href="#1528733744">1528733744</a>
 
 How not to waste time on matching socks, i.e. O(1) to pick out socks to wear? Make all socks the same. How?
 
@@ -1990,19 +2008,19 @@ I myself had shifted my mind and treated all socks equally without discriminatio
 
 
 
-Date:   1528202901
+Date: <a id="1528202901" href="#1528202901">1528202901</a>
 
 Microsoft is acquiring GitHub. GitHub in fact has an (maybe unintended) use: as a bootstrap mechanism to download tunnel software/tools to bypass firewall. After acquired by Microsoft, I doubt those  tunnel software/tools may be unavailable within the firewall.
 
 
 
-Date:   1526298916
+Date: <a id="1526298916" href="#1526298916">1526298916</a>
 
 Recently I found out that MUJI French Linen shirts/pants have raw (undyed) color for adults.
 
 
 
-Date:   1524061534
+Date: <a id="1524061534" href="#1524061534">1524061534</a>
 
 Just figured out why some people are so excited about Flutter (a mobile framework for Android/iOS in Dart by Google).
 
@@ -2017,7 +2035,7 @@ If Dart is counted as Java, then Java becomes an alternative full stack language
 
 
 
-Date:   1523902414
+Date: <a id="1523902414" href="#1523902414">1523902414</a>
 
 > God made a woman from the rib he had taken out of the man (Genesis 2:22)
 
@@ -2025,7 +2043,7 @@ So heterosexual intercourse is excitation of one's own body part, i.e. self-grat
 
 
 
-Date:   1523630163
+Date: <a id="1523630163" href="#1523630163">1523630163</a>
 
 My personal choices to score movies:
 
@@ -2046,43 +2064,43 @@ Thanks to my just the right amount of poverty, I can afford buying movie tickets
 
 
 
-Date:   1523201921
+Date: <a id="1523201921" href="#1523201921">1523201921</a>
 
 Both "**Three** Billboards Outside Ebbing, Missouri" and "The **Third** Murder" talk about the problems of the environment and the feeling of hopelessness, though in distinct (American/Japanese) ways.
 
 
 
-Date:   1522629606
+Date: <a id="1522629606" href="#1522629606">1522629606</a>
 
 Digg Reader was dead at the end of last month (March 2018).
 
 
 
-Date:   1522245247
+Date: <a id="1522245247" href="#1522245247">1522245247</a>
 
 debian.org is not available in CN (not sure whether it has been blocked by the great firewall or just some routing issue).
 
 
 
-Date:   1522083867
+Date: <a id="1522083867" href="#1522083867">1522083867</a>
 
 Almost all smart phones today use a non-removable battery. And most smart phones do not use all-day battery. What an insane design combination!
 
 
 
-Date:   1521376411
+Date: <a id="1521376411" href="#1521376411">1521376411</a>
 
 Saw "novel blockchain gameplay" in an elevator ad of a browser game. This reminds me of a time when a lot of products advertise themselves using "novel nano-meter technology".
 
 
 
-Date:   1521037402
+Date: <a id="1521037402" href="#1521037402">1521037402</a>
 
 I learnt typing on a typewriter, so membrane keyboards, especially membrane keyboards with short key travel, feel unnatural to me. However, I found out that my fingers are more tired when typing a lot on mechanical keyboards. (Have not tried Topre keyboards.)
 
 
 
-Date:   1520956541
+Date: <a id="1520956541" href="#1520956541">1520956541</a>
 
 One of my favorite poem of Li Ch'ing-chao (李清照) is "As in a Dream" (如夢令）.
 
@@ -2100,7 +2118,7 @@ but she answers: "The cherry-apple trees are the same."　（卻道海棠依舊�
 
 
 
-Date:   1520670847
+Date: <a id="1520670847" href="#1520670847">1520670847</a>
 
 Very pessimistic about mobile phones I would have to buy in future:
 - Android: With the recent release of Xperia XZ2 Compact (5"), Android phones finally stepped into the no more phones under 5" era.
@@ -2109,7 +2127,7 @@ Very pessimistic about mobile phones I would have to buy in future:
 
 
 
-Date:   1520617250
+Date: <a id="1520617250" href="#1520617250">1520617250</a>
 
 Just published my first Firefox extension: [arxiv-url], a Firefox addon to replace arxiv pdf links to corresponding abstract links.
 
@@ -2128,25 +2146,25 @@ Note:
 
 
 
-Date:   1520607766
+Date: <a id="1520607766" href="#1520607766">1520607766</a>
 
 Compared to wine and tea, chocolate is inexpensive. The most expensive chocolate I've eaten is Amedei CRU, which is still affordable.
 
 
 
-Date:   1519995238
+Date: <a id="1519995238" href="#1519995238">1519995238</a>
 
 extensiontest.com (test if a chrome extension is compatible with firefox) is not 100% accurate. Just encountered an chrome extension passing extensiontest.com but not usable in Firefox.
 
 
 
-Date:   1519744209
+Date: <a id="1519744209" href="#1519744209">1519744209</a>
 
 Backing up to USB 3 external hard disk with `borg create -C lz4` is very fast.
 
 
 
-Date:   1519205841
+Date: <a id="1519205841" href="#1519205841">1519205841</a>
 
 Moving one icon on my mobile phone, all icons between the old place and the new place of the moved icon, will shift their places.
 
@@ -2186,19 +2204,19 @@ My workaround: Only put icons most frequently used on the first screen. Put all 
 
 
 
-Date:   1507309298
+Date: <a id="1507309298" href="#1507309298">1507309298</a>
 
 Recently I started to read a book during wait time when I had taken a bag with me (a thin book is light and there is no more worries for short of battery), or just let my mind fly away when I had not. A win-win strategy for the life of my neck and the life of mobile phone battery.
 
 
 
-Date:   1506863469
+Date: <a id="1506863469" href="#1506863469">1506863469</a>
 
 [tutanota client side source code](https://github.com/tutao/tutanota/blob/ea1c1ef1c70c8f3c48dcfaa70f91cd41b7fbdd95/flow/libs.js#L86) contains Flow type definition for Mithril.
 
 
 
-Date:   1506253651
+Date: <a id="1506253651" href="#1506253651">1506253651</a>
 
 Microsoft had suspended my outlook mail account for several weeks , saying my account is used to send a lot of junk mails, or violates their TOS in *unspecified* way.
 
@@ -2210,13 +2228,13 @@ Then I asked myself what will happen if the same thing happens to my gmail accou
 
 
 
-Date:   1505399377
+Date: <a id="1505399377" href="#1505399377">1505399377</a>
 
 I always prefer a small screen mobile device, which is easier to carry. I do not read/browse/view a lot with the mobile phone, since either neck or shoulders are in an unnatural angle.
 
 
 
-Date:   1505298765
+Date: <a id="1505298765" href="#1505298765">1505298765</a>
 
 iPhone X shows that machine learning can be done on client side, without talking to a remote server. This is encouraging for privacy concerned services and users.
 
@@ -2226,7 +2244,7 @@ iPhone {X, 8, 8P, 7, 7P, 6S, 6SP, SE}. Consumers need to choose one from **eight
 
 
 
-Date:   1505198726
+Date: <a id="1505198726" href="#1505198726">1505198726</a>
 
 I found out that I could not understand some code I wrote 8 months ago.
 
@@ -2239,19 +2257,19 @@ So this is the fault of the previous version of me myself. If the previous versi
 
 
 
-Date:   1504997063
+Date: <a id="1504997063" href="#1504997063">1504997063</a>
 
 Years passed, and Google Contact still does not support exporting contacts. It still redirects me to the "old version" for exporting.
 
 
 
-Date:   1504960007
+Date: <a id="1504960007" href="#1504960007">1504960007</a>
 
 I think sometimes a ML/Haskell like syntax may be a better alternative for math notation than lisp. Lisp is unambiguous but slightly harder to type manually (I am too lazy to use the lisp IDE/mode and copy-paste, or extend the editor to support auto completion in code blocks.) Compared to C like syntax, ML/Haskell saves some typing of commas and parenthesis.
 
 
 
-Date:   1504847037
+Date: <a id="1504847037" href="#1504847037">1504847037</a>
 
 The intuition behind Curry-Howard correspondence:
 
@@ -2267,43 +2285,43 @@ Notes:
 
 
 
-Date:   1504597757
+Date: <a id="1504597757" href="#1504597757">1504597757</a>
 
 Baidu Map iOS keeps requesting location on background when location info is not available, draining batteries and heating device very quickly.
 
 
 
-Date:   1504540170
+Date: <a id="1504540170" href="#1504540170">1504540170</a>
 
 Now mail.google.com redirects to www.google.com/gmail/about/, which has a fancy design. I miss the simple UI with a login form and storage space counter.
 
 
 
-Date:   1504422932
+Date: <a id="1504422932" href="#1504422932">1504422932</a>
 
 To stop EME (Encrypted Media Extension) from entering W3C Standard, FSF asked people to **dial up** Tim Berners-Lee. First, asking people to dial up a person is not protest but **DDOS**. Second, no one cares W3C standard today. If Apple (safari), Google (chrome), Mozilla (firefox) and Microsoft (Edge) were dead-set, then the story is over. Neither W3C nor Tim Berners-Lee can do anything about it. (Fortunately Mozilla is not dead-set on EME, although Firefox Desktop has implemented it years ago.)
 
 
 
-Date:   1504338200
+Date: <a id="1504338200" href="#1504338200">1504338200</a>
 
 MIT scheme taught me a chuunibyou way to say goodbye: "Moriturus te saluto."
 
 
 
-Date:   1504276342
+Date: <a id="1504276342" href="#1504276342">1504276342</a>
 
 Powershell aliases still do not support tab completion.
 
 
 
-Date:   1503905257
+Date: <a id="1503905257" href="#1503905257">1503905257</a>
 
 Finally, concepts such as polymorphism, generics, type variable/parameter, overloading, and type class are united in my brain.
 
 
 
-Date:   1503845426
+Date: <a id="1503845426" href="#1503845426">1503845426</a>
 
 Failed to understand the `fmap` signature in Haskell in about 15 minutes:
 
@@ -2341,7 +2359,7 @@ As an ignorant person, obviously  I chose 2.
 
 
 
-Date:   1503815372
+Date: <a id="1503815372" href="#1503815372">1503815372</a>
 
 about.me has not been about me for a long time.
 
@@ -2351,49 +2369,49 @@ Now it is supposed to direct bandwidth to the site matters most to the user. abo
 
 
 
-Date:   1503633800
+Date: <a id="1503633800" href="#1503633800">1503633800</a>
 
 "Go to definition" does not work for shell scripts in vscode. `*` (from vscodevim extension) can be used as a workaround.
 
 
 
-Date:   1503630583
+Date: <a id="1503630583" href="#1503630583">1503630583</a>
 
 `sh` is the only language I am using that has dynamic scoping for variables. (Privacy leaked: I do not use Emacs.)
 
 
 
-Date:   1503359848
+Date: <a id="1503359848" href="#1503359848">1503359848</a>
 
 A recent Windows update forced me to re-select options like no personalized ad, ruined my registry key for a customized keyboard layout (dvorak and swap esc & caps), and pined the Mail app on my taskbar. This is more like a regression than an update to me. (To be fair, it does allow me to launch some Windows applications under WSL.)
 
 
 
-Date:   1485507471
+Date: <a id="1485507471" href="#1485507471">1485507471</a>
 
 Lantern only provides binary package in deb format for Linux. To install lantern on rpm based Linux distributions, first install `rpmbuild`, `alien` (to convert deb to rpm) and `libappindicator3-1` (lantern's dependency), then use `alien` to convert the deb to rpm, and finally install the converted rpm.
 
 
 
-Date:   1485431319
+Date: <a id="1485431319" href="#1485431319">1485431319</a>
 
   Used openSUSE Leap 42.2 for a few days. You have to add a few repositories to install things like mp3, flash, and input methods. You have to configure mounting NTFS partitions yourself (via YaST or manually editing `/etc/fstab`). Default fonts setting for Chinese is terrible. Other things work out of the box mostly. KDE Plasma 5.8.2 roughly catches up the polishness of recent versions of Windows.
 
 
 
-Date:   1485262536
+Date: <a id="1485262536" href="#1485262536">1485262536</a>
 
 Encountered ads with only one sentence "Only bricks produced by The Lego Group are Lego ® bricks." and one Lego logo. This is advertising of silliness. No sense and no design.
 
 
 
-Date:   1485079755
+Date: <a id="1485079755" href="#1485079755">1485079755</a>
 
 cdrtools author's viewpoint on [controversy of cdrtools license compatibility](http://cdrtools.sourceforge.net/private/linux-dist.html).
 
 
 
-Date:   1484756523
+Date: <a id="1484756523" href="#1484756523">1484756523</a>
 
 A programmer's client (a local cinema) website got hacked, with racist messages posted. The policy suspected the programmer hacked the site, and got a warrant to seize the programmer's computer. Then they sent **21 armed polices**, 3 of them to seize the computer, and **18 of them as witness**.
 
@@ -2411,7 +2429,7 @@ News reports:
 
 
 
-Date:   1484574248
+Date: <a id="1484574248" href="#1484574248">1484574248</a>
 
 The so called whatsapp 'backdoor' was documented in the [blog post of Open Whisper Systems on 05 Apr 2016](https://whispersystems.org/blog/whatsapp-complete/).
 
@@ -2421,7 +2439,7 @@ I would rather call it a less secure design choice. Anyway, no matter you think 
 
 
 
-Date:   1484052490
+Date: <a id="1484052490" href="#1484052490">1484052490</a>
 
 Sign and publish your posts/comments from command line:
 
@@ -2439,7 +2457,7 @@ Thanks to @nofish for this tip.
 
 
 
-Date:   1483966944
+Date: <a id="1483966944" href="#1483966944">1483966944</a>
 
 > the ideas enshrined in the Ubuntu Manifesto:
 > that software should be available free of charge,
@@ -2467,7 +2485,7 @@ Anywhere, "universal user experience" has nothing to do with the  original Nguni
 
 
 
-Date:   1483873500
+Date: <a id="1483873500" href="#1483873500">1483873500</a>
 
 Install ZeroNet as an auto-start service on FreeBSD:
 
@@ -2485,13 +2503,13 @@ su -m nobody zeronet siteCreate
 
 
 
-Date:   1483798686
+Date: <a id="1483798686" href="#1483798686">1483798686</a>
 
 vscode's refactoring is still much less powerful than WebStorm, even for TypeScript.
 
 
 
-Date:   1483701866
+Date: <a id="1483701866" href="#1483701866">1483701866</a>
 
 "A Little Java, A Few Patterns" uses a special coding style to remark mutability:
 
@@ -2508,7 +2526,7 @@ anArray.append(1)
 
 
 
-Date:   1483614089
+Date: <a id="1483614089" href="#1483614089">1483614089</a>
 
 new History().repeat
 
@@ -2518,7 +2536,7 @@ P.S. Same applies to TypeScript, Flow, Kotlin, and Swift. Ceylon's function type
 
 
 
-Date:   1483533112
+Date: <a id="1483533112" href="#1483533112">1483533112</a>
 
 If you run ZeroNet on a remote machine, the doc recommends enabling `UiPassword`. But if your are using an unsafe network (public wifi, evil ISP, etc), password is transferred over insecure HTTP protocol. So for safety, you need to configure a reverse proxy with SSL for ZeroNet.
 
@@ -2532,19 +2550,19 @@ Then you can just access `http://127.0.0.1:43110/` on your local machine, secure
 
 
 
-Date:   1483439543
+Date: <a id="1483439543" href="#1483439543">1483439543</a>
 
 Miss `finally` or `defer` in C.
 
 
 
-Date:   1483358343
+Date: <a id="1483358343" href="#1483358343">1483358343</a>
 
 Yoda expressions are useful for tests in C, such as in `assert(true == ...` and `assert(false == ...`.
 
 
 
-Date:   1483252068
+Date: <a id="1483252068" href="#1483252068">1483252068</a>
 
 Just found some old notes on K&R C book.
 
@@ -2552,19 +2570,19 @@ The ink (I used a cheap ballpoint pen) is fading but still readable with some ef
 
 
 
-Date:   1483158324
+Date: <a id="1483158324" href="#1483158324">1483158324</a>
 
 Apache Portable Runtime is originally supporting library for Apache web server. Thus it uses memory pool heavily. So it may not be suitable to use APR as a standard library for general C programming.
 
 
 
-Date:   1482929840
+Date: <a id="1482929840" href="#1482929840">1482929840</a>
 
 USB 3 external disks are 10-20% slower on VirtualBox.
 
 
 
-Date:   1482853228
+Date: <a id="1482853228" href="#1482853228">1482853228</a>
 
 The confusing^W smarty Kotlin
 
@@ -2583,25 +2601,25 @@ the type f may be one of:
 
 
 
-Date:   1482573034
+Date: <a id="1482573034" href="#1482573034">1482573034</a>
 
 Just fried some peanuts, which increased the PM 2.5 by 8 ug/m^3 in kitchen. So frying will not be a source of local air pollution  if you have extractor hood opened and keep the oil temperature low.
 
 
 
-Date:   1482501352
+Date: <a id="1482501352" href="#1482501352">1482501352</a>
 
 Opened software manager in OpenSUSE and found in "rpm groups" there are `application` and `applications`, `developement` and `development`.
 
 
 
-Date:   1482419450
+Date: <a id="1482419450" href="#1482419450">1482419450</a>
 
 PyCharm 2016.3 claims to support Python 3.6's f-strings (formatted literal). But in fact it just supports syntax highlight. All PyCharm's intelligent features are not enabled for code embedded in f-strings.
 
 
 
-Date:   1482325338
+Date: <a id="1482325338" href="#1482325338">1482325338</a>
 
 [Beaker](https://beakerbrowser.com/) is similar to ZeroNet. Their difference:
 
@@ -2621,7 +2639,7 @@ Other differences are technical details, like ZeroNet is written in Python, whil
 
 
 
-Date:   1482236480
+Date: <a id="1482236480" href="#1482236480">1482236480</a>
 
 Problems of Sia:
 
@@ -2631,7 +2649,7 @@ Problems of Sia:
 
 
 
-Date:   1482152061
+Date: <a id="1482152061" href="#1482152061">1482152061</a>
 
 Problems of StorJ:
 
@@ -2640,7 +2658,7 @@ Problems of StorJ:
 
 
 
-Date:   1482056747
+Date: <a id="1482056747" href="#1482056747">1482056747</a>
 
 Just launched [0git.bit](/0git.bit), a list of git repositories on ZeroNet.
 
@@ -2660,13 +2678,13 @@ P.S. editing posts is not implemented yet.
 
 
 
-Date:   1481907901
+Date: <a id="1481907901" href="#1481907901">1481907901</a>
 
 Currently FaceBook Message and Google Allo has optional end to end encryption. And WhatsApp has end to end encryption enabled for all messages. On the other hand, WeChat still uses http.  #ThisIsChina
 
 
 
-Date:   1481815829
+Date: <a id="1481815829" href="#1481815829">1481815829</a>
 
 [SetupList](/setuplist.0web.bit/) now has its .bit domain [setuplist.0web.bit](/setuplist.0web.bit/).
 
@@ -2674,37 +2692,37 @@ P.S. If you want to register a .bit domain, but do not want to setup a full name
 
 
 
-Date:   1481718944
+Date: <a id="1481718944" href="#1481718944">1481718944</a>
 
 Yandex mail smtp refuses to send a GPG encrypted mail saying it looks like spam...
 
 
 
-Date:   1481539922
+Date: <a id="1481539922" href="#1481539922">1481539922</a>
 
 Visual Studio Code only provides 32 bit downloads for Windows.
 
 
 
-Date:   1481456773
+Date: <a id="1481456773" href="#1481456773">1481456773</a>
 
 Lesson learned: when your `data.json` local copy is outdated (e.g. rollback to an old version manually because of file system issue), do not post new content to the zite that outdated `data.json` belongs to. Otherwise you will publish your "deletions".
 
 
 
-Date:   1481373014
+Date: <a id="1481373014" href="#1481373014">1481373014</a>
 
 When the function parameter is a function pointer, CLion (2016.3) cannot auto complete function name as parameter, like IntelliJ Idea for Java.
 
 
 
-Date:   1481288689
+Date: <a id="1481288689" href="#1481288689">1481288689</a>
 
 Go back to use paper to manage my todos. (Some todos are still in WunderList, e.g. shopping list, cause I do not want to bring paper and pencil to supermarkets.)
 
 
 
-Date:   1481203503
+Date: <a id="1481203503" href="#1481203503">1481203503</a>
 
 C is a hacky language. For example, string in C. If you think string in C is an array of characters, then you cannot put some characters in string (such as Unicode character) and you can put some noncharacters into string. If you think string is an an array of bytes, like a buffer, then you cannot put the byte `\0` into string. So string in C is inconsistent viewed from both high level and low level.
 
@@ -2716,7 +2734,7 @@ Go, advertised as modern C, inherits C's hacky mindset:
 
 
 
-Date:   1481108543
+Date: <a id="1481108543" href="#1481108543">1481108543</a>
 
 @zeronetuseri6293 asked how to explain Systemd is bad "like I am five". I just prepare some text to brainwash five-year-old "Systemd is bad":
 
@@ -2740,7 +2758,7 @@ But I hope you understand why some people consider Systemd as "bad".
 
 
 
-Date:   1481017007
+Date: <a id="1481017007" href="#1481017007">1481017007</a>
 
 ZeroMail does not hide sender (and effectively timestamp and conversations may reveal receipt).
 
@@ -2748,19 +2766,19 @@ Similarly, MaidSafe Email does not hide receipt.
 
 
 
-Date:   1480945610
+Date: <a id="1480945610" href="#1480945610">1480945610</a>
 
 mypy is still incomplete.
 
 
 
-Date:   1480767910
+Date: <a id="1480767910" href="#1480767910">1480767910</a>
 
 [911 The new pearl harbor](https://www.youtube.com/watch?v=8DOnAn_PX6M) Politicians do not have imagination is totally a stereotype!
 
 
 
-Date:   1480684396
+Date: <a id="1480684396" href="#1480684396">1480684396</a>
 
 Brace formatting style
 
@@ -2808,13 +2826,13 @@ Maybe the Java style is suitable for a setup with small fonts on a small screen,
 
 
 
-Date:   1480595655
+Date: <a id="1480595655" href="#1480595655">1480595655</a>
 
 ZeroNet's answer to CDN/cloud hosting industry: kill it. I think this is one of the most charming part of technology: rather than sloving a problem, make the problem irrelevant.
 
 
 
-Date:   1480503877
+Date: <a id="1480503877" href="#1480503877">1480503877</a>
 
 Firefox version 41 to 50 (including 45 ESR used by the latest version of the Tor browser) has a memory corruption vulnerability allows malicious code to be executed on Windows, thus deanonymize Tor users.
 
@@ -2828,7 +2846,7 @@ To protect yourself from similar possible future vulnerabilities:
 
 
 
-Date:   1480426260
+Date: <a id="1480426260" href="#1480426260">1480426260</a>
 
 [$20 credit for new users of Vultr](http://www.vultr.com/?ref=7046521-3B) (KVM VPS with SSD, billed hourly/monthly, located in US, EU, Austrilia, Singapore, and Japan).
 
@@ -2836,7 +2854,7 @@ Vultr v.s. DigitalOcean: They are quite similar except that Vultr has slightly m
 
 
 
-Date:   1480246329
+Date: <a id="1480246329" href="#1480246329">1480246329</a>
 
 Tunanota and ProtonMail looks promising, but they do not work with others, i.e. Tunanota users cannot exchange encrypted mails with ProtonMail users. Also, Tunanota and ProtonMail do not work with GPG users. Encryption is important, but openness is also important. And GPG is a good example of implementating encryption without reducing openness.
 
@@ -2844,13 +2862,13 @@ An conterexample is Scryptmail, which supports import and export of GPG keys.
 
 
 
-Date:   1480133479
+Date: <a id="1480133479" href="#1480133479">1480133479</a>
 
 Black Friday sales for VPS: https://www.lowendtalk.com/categories/offers
 
 
 
-Date:   1480065029
+Date: <a id="1480065029" href="#1480065029">1480065029</a>
 
 Kotlin uses `Array<T>` for `vararg p: T` (variadic functions) underhood, but:
 
@@ -2859,13 +2877,13 @@ Kotlin uses `Array<T>` for `vararg p: T` (variadic functions) underhood, but:
 
 
 
-Date:   1479994548
+Date: <a id="1479994548" href="#1479994548">1479994548</a>
 
 Overloading an operator should be consistent to all types supporting the operator.
 
 
 
-Date:   1479900264
+Date: <a id="1479900264" href="#1479900264">1479900264</a>
 
 Flaws of TypeScript's type system:
 
@@ -2876,7 +2894,7 @@ Flaws of TypeScript's type system:
 
 
 
-Date:   1479830201
+Date: <a id="1479830201" href="#1479830201">1479830201</a>
 
 [Watch Trump's Pick to Run the CIA Call Edward Snowden a 'Traitor' Who Should Be 'Given a Death Sentence'](https://reason.com/blog/2016/11/18/watch-trumps-reported-pick-to-run-the-ci).
 
@@ -2889,7 +2907,7 @@ I bet the greatest archivement of Trump would be what he had done before elected
 
 
 
-Date:   1479629037
+Date: <a id="1479629037" href="#1479629037">1479629037</a>
 
 TypeScript 2.0 brings in more fix of the poorly designed type system:
 
@@ -2899,13 +2917,13 @@ tsc --strictNullChecks --noImplicitThis --noUnusedParameters --noUnusedLocals
 
 
 
-Date:   1479344216
+Date: <a id="1479344216" href="#1479344216">1479344216</a>
 
 Quora hides posts/answers to force you to register/login. Now its Chinese clone Zhihu finally borrows this "feature".
 
 
 
-Date:   1479299795
+Date: <a id="1479299795" href="#1479299795">1479299795</a>
 
 JavaScript's ASI (auto semicolon insertion) is confusing. However, if I prefer to not omit semicolons, I only need to remember one rule: not  breaking line after `throw`. (There are other rules, but I am unlikely to write code related to other rules, e.g. `i\n++\nb`.)
 
@@ -2922,13 +2940,13 @@ Thus my choice is not omitting semicolons.
 
 
 
-Date:   1479206065
+Date: <a id="1479206065" href="#1479206065">1479206065</a>
 
 After repositioning Windows 8.1's task bar to left, right, or top, hovering cursor to bottom left corner still reveals the windows start icon.
 
 
 
-Date:   1479118683
+Date: <a id="1479118683" href="#1479118683">1479118683</a>
 
 Windows 8.1's Microsoft Pinyin input method:
 
@@ -2938,7 +2956,7 @@ Windows 8.1's Microsoft Pinyin input method:
 
 
 
-Date:   1479051265
+Date: <a id="1479051265" href="#1479051265">1479051265</a>
 
 Use registery to swap keys under Windows.
 
@@ -2962,7 +2980,7 @@ Notes:
 
 
 
-Date:   1478263209
+Date: <a id="1478263209" href="#1478263209">1478263209</a>
 
 A quick review of germ.io:
 
@@ -2985,7 +3003,7 @@ Missing:
 
 
 
-Date:   1478184519
+Date: <a id="1478184519" href="#1478184519">1478184519</a>
 
 For any one want to pick up programming language , I recommend [The Little Schemer](https://www.amazon.com/Little-Schemer-Daniel-P-Friedman/dp/0262560992)，less than 200 pages and can be finished in a weekend. It starts from zero and gradually introduces concepts like recursion, higher-order functions, curry, Church encoding, halting problem, lambda calculus,  fixed point, Y combinator, continuation, CPS, Godel Incompleteness Theorem, and a basic interperator for a simplified progarmming language.
 
@@ -2995,31 +3013,31 @@ Do not worry the above books do not use a language you are going to use in your 
 
 
 
-Date:   1478179138
+Date: <a id="1478179138" href="#1478179138">1478179138</a>
 
 All Linux distributions where UEFI Secure Boot works out of the box (e.g. Fedora, OpenSuse, Ubuntu) are using systemd! #WTF
 
 
 
-Date:   1478095569
+Date: <a id="1478095569" href="#1478095569">1478095569</a>
 
 Although Python still does not understand type hints, at least IDEs will give a warning. Or you can check types via `mypy`.
 
 
 
-Date:   1477955778
+Date: <a id="1477955778" href="#1477955778">1477955778</a>
 
 The email to onfirm email address on dida365.com (Chinese version of TickTick) does not show any explicit url link. The link it is hide in HTML. It is wrong to assume every email client renders HTML correctly.
 
 
 
-Date:   1477782781
+Date: <a id="1477782781" href="#1477782781">1477782781</a>
 
 mp3.163.com (a music distribution site in China) does not have any API. In fact it even encryptes post params with some home made algorithm (the algorithm is different on different clients and is evolving, the current API in web UI is based on AES, RSA and MD5) on HTTP (it does not support HTTPS). That's why I have never registered an account on it.
 
 
 
-Date:   1477661384
+Date: <a id="1477661384" href="#1477661384">1477661384</a>
 
 WTF! New generation of MacBook Pro!
 
@@ -3029,19 +3047,19 @@ In fact, Apple now effectly does not sell laptops. MacBook and MacBook Air only 
 
 
 
-Date:   1477398313
+Date: <a id="1477398313" href="#1477398313">1477398313</a>
 
 The main audience of code is human beings, not tests. Improving testability should not harm readability.
 
 
 
-Date:   1477184548
+Date: <a id="1477184548" href="#1477184548">1477184548</a>
 
 citibank's "change password" gives misleading error info ("must contain at least 1 digit and 1 letter") if new password contains some special characters like `@`.
 
 
 
-Date:   1477050333
+Date: <a id="1477050333" href="#1477050333">1477050333</a>
 
 In Ceylon, cases in `switch` need to be both disjoint and exhausted. Using a strict form helps to reduce bugs.
 
@@ -3076,7 +3094,7 @@ The compiler will refuse to compile, saying cases are not exhausted.
 
 
 
-Date:   1476802731
+Date: <a id="1476802731" href="#1476802731">1476802731</a>
 
 I prefer explicit else branch over fall through flow.
 
@@ -3142,7 +3160,7 @@ if (condition) {
 
 
 
-Date:   1476366067
+Date: <a id="1476366067" href="#1476366067">1476366067</a>
 
 Programming languages are clearer than natural languages. So "well-commented code" may not be well-written.
 
@@ -3158,55 +3176,55 @@ Doc annotation of public modules and functions on their usage is fine.
 
 
 
-Date:   1476107859
+Date: <a id="1476107859" href="#1476107859">1476107859</a>
 
  Windows Mobile does not support two factor auth, you have to use an app password. Now app password does not work on my phone (used to work on previous versions of Windows Mobile 10). I have to turn off two factor auth. Not too old Android versions support two factor auth out of the box.
 
 
 
-Date:   1475908745
+Date: <a id="1475908745" href="#1475908745">1475908745</a>
 
 September 2015 Evernote Food shutdown. dianping.com (restaurant review site in China) also shutdown its public API service (individual developers cannot apply API access, APIs are only available to a few parterners) on that month.
 
 
 
-Date:   1475846759
+Date: <a id="1475846759" href="#1475846759">1475846759</a>
 
 Thought there was something wrong with the sound configuration on my machine. Then I found out the mp3 I was playing is 32kbps.
 
 
 
-Date:   1475794576
+Date: <a id="1475794576" href="#1475794576">1475794576</a>
 
 vscode is open source (MIT) and Visual Studio Code is proprietary. So confusing the names!
 
 
 
-Date:   1475486435
+Date: <a id="1475486435" href="#1475486435">1475486435</a>
 
 Visual Studio Code: "Code editing. Redefined." How a code editor borrowed a lot from SublimeText and TextMate dare to declare this?
 
 
 
-Date:   1475402809
+Date: <a id="1475402809" href="#1475402809">1475402809</a>
 
 Finally iPhones get water resistent.
 
 
 
-Date:   1475238402
+Date: <a id="1475238402" href="#1475238402">1475238402</a>
 
 GitHub helps spreading Git. But there is no balanced competitor currently. This is anti-decentred for a DVCS.
 
 
 
-Date:   1475144789
+Date: <a id="1475144789" href="#1475144789">1475144789</a>
 
 Found an old macro (in a lisp like language) I wrote a year ago. Now I have difficulties to understand it.
 
 
 
-Date:   1474806917
+Date: <a id="1474806917" href="#1474806917">1474806917</a>
 
 `A then B else C` in Ceylon feels confusing to me.
 
@@ -3223,20 +3241,20 @@ I think `if (A) then B else C` is much cleaner.
 
 
 
-Date:   1474550346
+Date: <a id="1474550346" href="#1474550346">1474550346</a>
 
 [Snapshots of all current, non empty, functional ZeroMe hubs](https://github.com/weakish/0me-hubs-snapshots),
 powered by [0net-snapshot](https://github.com/weakish/0net-snapshot).
 
 
 
-Date:   1474456689
+Date: <a id="1474456689" href="#1474456689">1474456689</a>
 
 All my todos are on wunderlist, which is down now. And I can hardly remember what to do. If wunderlist is implemented as a ZeroSite ...
 
 
 
-Date:   1474102059
+Date: <a id="1474102059" href="#1474102059">1474102059</a>
 
 An ugly workaround of TypeScript's structural typing:
 
@@ -3274,13 +3292,13 @@ function sub(x: number): string {
 
 
 
-Date:   1474033858
+Date: <a id="1474033858" href="#1474033858">1474033858</a>
 
 There are currently 18 ZeroMe hubs (excluding empty hubs with no registered user). And I am seeding 5.  via [zerome-crawler](https://weakish.github.io/zerome-crawler/)
 
 
 
-Date:   1473685179
+Date: <a id="1473685179" href="#1473685179">1473685179</a>
 
 `camelCaseAreHardToReadIfThereAreMoreThanThreeWords`
 
@@ -3293,13 +3311,13 @@ Exceptions:
 
 
 
-Date:   1473554294
+Date: <a id="1473554294" href="#1473554294">1473554294</a>
 
 Relieased that I have forgotten what does Hallelujah mean. To me it means some beautiful nonsense in music.
 
 
 
-Date:   1473417604
+Date: <a id="1473417604" href="#1473417604">1473417604</a>
 
 In Python, whitespace (space or tab) can be used: (use dot to indicate whitespace)
 
@@ -3326,43 +3344,43 @@ PEP 8 has a different opinion:
 
 
 
-Date:   1473253016
+Date: <a id="1473253016" href="#1473253016">1473253016</a>
 
 IDEs for static typed languages are so powerful, particularly for refactoring. The dark side is making me less acclimatized to dynamic typed languages IDEs, e.g. even PyCharm and RubyMine cannot match IntelliJ or Eclipse.
 
 
 
-Date:   1472987577
+Date: <a id="1472987577" href="#1472987577">1472987577</a>
 
 `i++` should be a pure side effect, a.k.a. `void`, just like `b = c` should be `void` (invalidating `if (a = 0)`).
 
 
 
-Date:   1472908512
+Date: <a id="1472908512" href="#1472908512">1472908512</a>
 
 I used to confuse coding style with formatting style. Formatting style like `using n spaces to indent` and `closing brace on its own line` are unlikely to affect readability of code, and they can be auto adjusted via IDE or command line tools. What really matter is coding style, like `if (a=0)` and `++i`. PEP 8 for Python talks a lot about formatting style. This is a cost of Python's layout based (indentation sensitive) syntax: possibly cleaner for small pieces of code, while hard or impossible to be auto formatted by tools like IDEs (crucial for a large code base).
 
 
 
-Date:   1472728889
+Date: <a id="1472728889" href="#1472728889">1472728889</a>
 
 Wish every programming language website has [a gentle introduction like  Ceylon](http://ceylon-lang.org/documentation/1.2/introduction/), demostrating both basic usage and advanced features, but not lengthy.
 
 
 
-Date:   1472648578
+Date: <a id="1472648578" href="#1472648578">1472648578</a>
 
 [An example of ZeroSite of photos](http://127.0.0.1:43110/ZAlex.bit/photos/index.html)
 
 
 
-Date:   1472572000
+Date: <a id="1472572000" href="#1472572000">1472572000</a>
 
 Just add a 0BSD style license on my profile page: Permission to use, copy, modify, and/or distribute all my posts and comments at ZeroMe for any purpose with or without fee is hereby granted.
 
 
 
-Date:   1472557661
+Date: <a id="1472557661" href="#1472557661">1472557661</a>
 
 Cloned site private key recovery:
 
@@ -3401,37 +3419,37 @@ class Actions(object):
 
 
 
-Date:   1472482054
+Date: <a id="1472482054" href="#1472482054">1472482054</a>
 
 The web flame: pretend that you cannot find exciting, new, modern technologies outside web.
 
 
 
-Date:   1472481935
+Date: <a id="1472481935" href="#1472481935">1472481935</a>
 
 "IPFS is the Distributed Web ... aims to replace HTTP". WTF! A web of GET and PUT only HTTP? And FS is not file system but web?
 
 
 
-Date:   1472480555
+Date: <a id="1472480555" href="#1472480555">1472480555</a>
 
 I think hg may fit ipfs more well than git. Like git's dumb http, hg supports [static http](https://www.mercurial-scm.org/wiki/StaticHTTP). Unlike git's changing-all-the-time packfile, hg's revlog is predictable. So hosting hg repos on ipfs is simpler (no need to unpack objects manually), and saves bandwidth (git repos with unpacked objects is usually larger than hg).
 
 
 
-Date:   1472474886
+Date: <a id="1472474886" href="#1472474886">1472474886</a>
 
 Duokan (ebook app) exports highlights and notes to Evernote **without page numbers**.
 
 
 
-Date:   1472305397
+Date: <a id="1472305397" href="#1472305397">1472305397</a>
 
 List of all known ZeroMe hubs: https://weakish.github.io/ZeroMeHubList/
 
 
 
-Date:   1472304911
+Date: <a id="1472304911" href="#1472304911">1472304911</a>
 
 Today I was bitten by `Refused to execute script from ... because its MIME type (text/plain) is not executable, and strict MIME type checking is enabled` when hot-linking a js file hosted on GitHub.
 
@@ -3457,25 +3475,25 @@ Workaround:
 
 
 
-Date:   1472271877
+Date: <a id="1472271877" href="#1472271877">1472271877</a>
 
 Google Buzz, Google Wave, Google Reader, Google Code. Now Google Chrome App (by 2018, except on ChromeOS).
 
 
 
-Date:   1472129756
+Date: <a id="1472129756" href="#1472129756">1472129756</a>
 
 TeXmacs is still unstable. Make sure auto save is turned on.
 
 
 
-Date:   1471707881
+Date: <a id="1471707881" href="#1471707881">1471707881</a>
 
 Considering a variant of [semver](http://semver.org) major.nth_feature_introduced.YYMM
 
 
 
-Date:   1471704922
+Date: <a id="1471704922" href="#1471704922">1471704922</a>
 
 ## How to backup your favorite sites
 
@@ -3491,7 +3509,7 @@ Restore: Right-click the value `Edit "value"` and replace with your backup.
 
 
 
-Date:   1471526567
+Date: <a id="1471526567" href="#1471526567">1471526567</a>
 
 Zite (ZeroSite) publish procedure:
 
@@ -3501,7 +3519,7 @@ Zite (ZeroSite) publish procedure:
 
 
 
-Date:   1471526190
+Date: <a id="1471526190" href="#1471526190">1471526190</a>
 
 20191123: instructions updated for recent zeronet versions
 
@@ -3523,12 +3541,12 @@ sudo service sshd restart  # On some OSes, replace `sshd` with `ssh`.
 
 
 
-Date:   1471525789
+Date: <a id="1471525789" href="#1471525789">1471525789</a>
 
 [SetupList](http://127.0.0.1:43110/1Mbwaw4Uxp1sq5GzWo3SCmYFTk7mgSWNmw) is online! (SetupList is a 0List clone for sharing software/hardware you are using.)
 
 
 
-Date:   1471085743
+Date: <a id="1471085743" href="#1471085743">1471085743</a>
 
 Hello ZeroMe! (Hmm, I can follow myself!)
