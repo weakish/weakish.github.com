@@ -18,6 +18,23 @@
 | 💩 | `:poop:` | dirty | n/a |
 | 🥚 | `:egg:` | Easter eggs | n/a |
 
+## Features
+
+
+- Only 13 types.
+
+    Do not need to open gitmoji.dev in the browser before writing a commit message.
+
+- Only use emojis with a short emoji code (less than five characters).
+
+    Commit message title is recommended to be less than 50 characters.
+
+- Most emojis have corresponding types in Angular convention.
+
+- Looks good and comprehensible in plain text.
+
+    Friendlier for unfancy terminals and acceptable (I hope) for emoji haters. 
+
 ## Intersection between gitmoji and Atom style guide
 
 * 🎨 `:art:` when improving the format/structure of the code
