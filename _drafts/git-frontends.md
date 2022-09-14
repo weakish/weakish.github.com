@@ -376,6 +376,38 @@ Similar to gitless, [signed commits are not supported][jj-58].
 
 [jj-58]: https://github.com/martinvonz/jj/issues/58
 
+There are two modes for using an existing git repository as the jj backend:
+
+1. `jj init --git-repo=/path/to/git/repo`,
+   then use `jj git import` and `jj git export` to sync changes.
+
+2. `jj init --git-repo=.` to share a working a directory with git,
+   then the import and export will happen automatically on every command.
+
+I first use the second mode, to save typing `jj git import` and `jj git export`.
+Later I want to rebase your jj made commits to signed commits with git,
+but git refuses to do so, saying waiting editors to close files.
+I guess this is because jj is continuing amending during the git rebase.
+Thus, I changed to the second mode later.
+
+Currently, the integration part of jj and git is unpolished.
+Ironically, to use jj effectively, you have to learn a lot of git concepts.
+
+However, with jj, I am more confident that:
+
+- All my changes are constantly committed. I will never lose changes I made.
+  However, I may feel lost in some many detached heads.
+
+- I have full control over the history.
+  Commits can be rewritten later.
+  Operations can be undone and redone.
+
+In my opinion, currently jj may still not be suited for everyday use,
+but it can be used as a powerful git history rewriting tool.
+Also, if a git repository is used to manage notes,
+and the normal git workflow like meaningful small commits feels too heavy,
+jj can be used instead.
+
 ## More Git Frontends
 
 - [git-branchless](https://github.com/arxanas/git-branchless)
