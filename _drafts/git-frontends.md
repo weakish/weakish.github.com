@@ -253,7 +253,7 @@ And `jj describe` can be used to amend the commit message of this commit.
 
 [jj]: https://github.com/martinvonz/jj 
 
-For the git level, jj keeps producing detached heads for all the changes
+From the git level, jj keeps producing detached heads for all the changes
 made into the working directory, and all the operations performed via jj command.
 
 ```
@@ -325,7 +325,28 @@ the above command can be replaced with `jj restore README.md`.
 
 [revsets]: https://github.com/martinvonz/jj/blob/main/docs/revsets.md
 
-When finally done the coding, use `jj branch master` to move the master branch forward.
+Again, restore updates the working directory and the working commit.
+Under jj, working directory and working commit is the same thing.
+
+And restore can be performed on *any* commit!
+The above command `jj restore README.md` is a shortcut for
+`jj restore --from 'parents(x)' --to='@' README.md`.
+In other words, restore the content of `README.md` from commit `@-` to `@`,
+where `parents(@)` and `@` are the [revset] syntax inspired by Mercurial.
+`@` refers to the working commit.
+As always, restore amends the history, creating new commits,
+and descendants of the amended commit will be rebased. 
+
+[revset]: https://github.com/martinvonz/jj/blob/main/docs/revsets.md
+
+When using git, sometimes I do several unrelated changes in parallel,
+then use `git add --patch` to commit them separately.
+Since jj keeps committing everything, the corresponding command is `jj split`,
+which will open a diff editor to split the working commit to two commits.
+Continuing the `split` command on the first (`jj split -r 'parents(@)'`)
+or the second commit (`jj split`), more commits can be split out.
+
+When finally done the coding, use `jj branch set master` to move the master branch forward.
 Then sync with the remote:
 
 ```
@@ -337,8 +358,21 @@ Currently, the built-in diff of jj is line based.
 To get a more powerful diff, use the `--git` option.
 For example, `jj diff --git | delta`.
 
-Similar to gitless, [signed commits are not supported][jj-58].
+By default, jj uses Meld as the diff editor.
+If it is not installed, jj commands using the diff editor will error out.
+I use kdiff3 and my jj configuration is as below:
 
+```
+[ui]
+diff-editor = "kdiff3"
+merge-tools.kdiff3.edit-args = ["--merge", "--cs", "CreateBakFiles=0"]
+```
+
+Also, kdiff3 will back up merging files as `.orig`.
+This should be added in `.gitconfig`.
+Otherwise, they will be committed in by jj automatically.
+
+Similar to gitless, [signed commits are not supported][jj-58].
 
 [jj-58]: https://github.com/martinvonz/jj/issues/58
 
