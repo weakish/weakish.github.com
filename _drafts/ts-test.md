@@ -105,3 +105,12 @@ I will not talk about it more here.
 
 [Testing]: https://deno.land/manual@v1.25.2/testing
 
+## Coverage Report Service
+
+The most popular choice among open source projects is [codecov].
+I have tried a few alternatives,
+none of them offers a better user experience (easy integration and clear documentation)
+than codecov.
+
+[codecov]: https://about.codecov.io/
+
