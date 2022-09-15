@@ -93,3 +93,15 @@ Here is the corresponding configuration in `package.json`:
 
 My project is tiny, thus I do not use the parallel mode.
 If you have a lot of tests, you may replace `c8 tap` with something such as `c8 tap -j4`.
+
+## Deno Test
+
+Deno offers a built-in test runner for TypeScript projects targeted at browser and deno.
+The deno release, a single executable, ships `deno test`, which also support coverage.
+And there is a simple assertion library in the standard library.
+
+Since the [Testing] chapter of the Deno manual is clearly written,
+I will not talk about it more here.
+
+[Testing]: https://deno.land/manual@v1.25.2/testing
+
