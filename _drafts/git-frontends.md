@@ -287,7 +287,7 @@ And a new detached head is created for the current working directory.
 ```
 
 To come back to the previous amending commit,
-use `jj squash`.
+use `jj squash`, which squash the descendant to its paranent.
 Now the HEAD goes back to master, and a new detached head on top of the master,
 with all the changes in the working tree, is created.
 
@@ -312,6 +312,9 @@ with all the changes in the working tree, is created.
 |/  
 * 151d512 -HEAD, master :new: update log
 ```
+
+The opposite of `squash` is `unsquash`, which squash the paranent of a commit into the commit.
+And there are also `backout`, applying the reverse of a commit on another commit.
 
 To restore a file content from master, use `jj restore`.
 For example, the following command restore README from master.
@@ -389,35 +392,61 @@ Later I want to rebase your jj made commits to signed commits with git,
 but git refuses to do so, saying waiting editors to close files.
 I guess this is because jj is continuing amending during the git rebase.
 Thus, I changed to the second mode later.
+However, the downside of this is that some tools,
+use `.git` directory to detect the project root,
+and use `.gitignore` to ignore uninterested files.
 
 Currently, the integration part of jj and git is unpolished.
 Ironically, to use jj effectively, you have to learn a lot of git concepts.
+And since jj does not integrate with other tools well,
+using jj may reduce productivity, or at least requires some extra configuration.  
 
 However, with jj, I am more confident that:
 
 - All my changes are constantly committed. I will never lose changes I made.
-  However, I may feel lost in some many detached heads.
+  However, I may feel lost in so many detached heads.
 
 - I have full control over the history.
   Commits can be rewritten later.
   Operations can be undone and redone.
 
-In my opinion, currently jj may still not be suited for everyday use,
-but it can be used as a powerful git history rewriting tool.
-Also, if a git repository is used to manage notes,
+In my opinion, due to unpolished UI and integration with other tools including git,
+currently jj may still not be suited for everyday use.
+However, if a git repository is used to manage notes,
 and the normal git workflow like meaningful small commits feels too heavy,
 jj can be used instead.
 
-## More Git Frontends
+Also, with git import and export,
+it can be used as a standalone git history rewriting tool.
 
-- [git-branchless](https://github.com/arxanas/git-branchless)
+## Git Branchless
 
-    Like gitless, git-branchless also simplifies the concept branch,
-    but in another direction, in the sprit of mercurial.
-    Even if I am not sold out to this workflow, some commends are attractive.
-    Optimized for history rewriting.
+Like gitless, git-branchless also simplifies the concept branch,
+but in another direction, in a way similar to Mercurial.
+Unlike gitless, git-branchless is actively developed.
 
-- [sturdy](https://getsturdy.com/)
+Like jj, git-branchless also support powerful history rewritting,
+and revset from Mercurial.
+Unlike gitless and jj, git-branchless is implemented as a git addon,
+installing hooks and aliases.
 
-    More radical. Always online. Everything happens on live.
- 
+The `move` command provided by git-branchless is much more powerful than `git rebase`,
+but not `git rebase --interactive`.
+Sometimes it is quicker and smoother to use `move` instead of `rebase --interactive`.
+And most importantly, unlike `git rebase`,
+`move` will abort if it detects the move will result in a merge conflict,
+asking you to retry with the `--merge` option.
+However, it is less powerful than jj.
+With the support of first class conflicts and the recording everything approach,
+jj can rewrite history more freely. 
+
+Like jj, but unlike legit and gitless, git-branchless is written in Rust.
+
+[git-branchless]: https://github.com/arxanas/git-branchless
+
+## Sturdy
+
+[Sturdy](https://getsturdy.com/) is more radical.
+It is always online.
+Everything happens on live.
+
