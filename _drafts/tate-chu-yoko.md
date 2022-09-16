@@ -23,12 +23,10 @@ text-orientation: mixed;
 
 ```html
 <p lang="jp">
-UNIX時間とはコンピューターシステム上での時刻表現の一種。
 昭和<span class="tatechuyoko">45</span>年
 <span class="tatechuyoko">1</span>月<span class="tatechuyoko">1</span>日
 午前<span class="tatechuyoko">0</span>時
 <span class="tatechuyoko">0</span>分<span class="tatechuyoko">0</span>秒
-（UNIXエポック）から形式的な経過秒数として表される。
 </p>
 ```
 
