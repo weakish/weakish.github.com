@@ -1,5 +1,19 @@
 - [ ] music 5940
 
+- [ ] ssh send all public keys to the server connected & github list all users' public keys     
+
+    - [ ] test: `ssh whoami.filippo.io`, doc: https://words.filippo.io/ssh-whoami-filippo-io/
+    - [ ] whoami.filippo.io uses datasets from https://blog.benjojo.co.uk/post/auditing-github-users-keys
+    - [ ] for privacy, use `ssh -o "IdentitiesOnly=yes" -i /path/to/private/key user@host` to connect 
+    - [ ] github ssh public key lists can be used to help verifying ssh key signed commits
+    - [ ] this can be used to implement an auth with github (actually ssh public key) system.
+    - [ ] Linus is still using a 2048 RSA ssh key as 2022-09
+
+- [ ] share bike balance withdraw
+
+    - [x] applied
+    - [ ] the process will take about 1-3 working days
+
 - common setups
   - popular
     - macOS

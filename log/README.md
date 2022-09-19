@@ -1,5 +1,18 @@
 
 
+Date: <a id="1663086020" href="#1663086020">1663086020</a>
+
+TypeScript is less apearing to me.
+
+If I want to write in a dynamic language
+with a powerful gradual type system.
+Then Python ships with it.
+
+If I want a sound type system for JavaScript,
+then there is ReScript.
+
+
+
 Date: <a id="1663085149" href="#1663085149">1663085149</a>
 
 The order form of $JD website has a field to fill in the email address to receive the receipt.
