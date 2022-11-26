@@ -15,12 +15,13 @@ Map memories to web pages.
 - [RarCrack Basic Guide](dive-into/rarcrack/)
 - [Notes](dapi/) and [poems](poems/) written in Chinese
 
-| [gh] | [gist] | [nitter] | [gpg] | [rss] | [log] | [/uses] |
-| - | - | - | - | - | - | - |
+| [gh] | [gist] | [nitter] | [mastodon] | [gpg] | [rss] | [log] | [/uses] |
+| - | - | - | - | - | - | - | - |
 
 [gh]: https://github.com/weakish "GitHub"
 [Gist]: https://gist.github.com/weakish "GitHub Gist"
 [nitter]: https://nitter.net/weakish "@weakish"
+[mastodon]: https://social.vivaldi.net/@lib "@lib@vivaldi.net"
 [gpg]: https://api.github.com/users/weakish/gpg_keys "2414 AEA0 EA48 5263 9697 F1BA 55F6 EEC2 EA3F 0A87"
 [rss]: /rss.xml "RSS Feed (XML)"
 [/uses]: /uses/ "Setups, gear, software"
