@@ -22,6 +22,7 @@ Isan is a agricultural area and one of the poorest, least developed regions of T
     * [How to learn Isaan](https://www.youtube.com/watch?v=WO9wtAIE3R4) (Vientiane Lao)
     * [Like / Don't like in Thai Isaan dialect](https://www.youtube.com/watch?v=-Qm_HgGGits) (Vientiane Lao)
     * [Farang Survival Isaan: Greeting phrases and words](https://www.youtube.com/watch?v=uNOl8HM5Er4) (Vientiane Lao)
+    * [Learn Northern Thai and Northeastern Thai Basics](https://www.youtube.com/watch?v=inJcoeldmY0) (Vientiane Lao)
 
 [Lao]: https://en.wikipedia.org/wiki/Lao_language
 [Isan]: https://en.wikipedia.org/wiki/Isan_language
