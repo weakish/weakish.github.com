@@ -51,7 +51,7 @@ Using Tape under TypeScript projects is simple.
 Just run `ts-node node_modules/.bin/tape test/**/*.ts` instead of `tape test/**/*.js`.
 Being a [100% JavaScript] project, Tape does not have [first class TypeScript support] though.
 
-[100% JavaScript]: /_drafts/100-percent-js/
+[100% JavaScript]: 100-percent-js.md
 [first class TypeScript support]: https://github.com/substack/tape/issues/577
 
 ## AVA

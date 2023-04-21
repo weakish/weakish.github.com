@@ -1,8 +1,8 @@
 # Dive into more...
 
-- [Centos](../centos/)
-- [cycle.js](../cyclejs/)
-- [Fish](../fish/)
-- [Pry](../pry/)
-- [RarCrack](../rarcrack/)
-- [Tinygo](../tinygo/)
+- [Centos](centos.md)
+- [cycle.js](cyclejs.md)
+- [Fish](fish.md)
+- [Pry](pry.md)
+- [RarCrack](rarcrack.md)
+- [Tinygo](tinygo.md)

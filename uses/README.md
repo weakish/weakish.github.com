@@ -26,7 +26,7 @@ small and lightweight.
 
 ## Editor
 
-- [LazyVim] with [codeium](../vim/completion/) and [LanguageTool](../vim/spell/) under [kitty] terminal.
+- [LazyVim] with [codeium](../vim/completion.md) and [LanguageTool](../vim/spell.md) under [kitty] terminal.
 
     I choose this Neovim setup because it keeps configurations simple and uses the modern plugin manager [lazy.vim].
     Previously I use LunarVim, which is a bit complex and lagged.

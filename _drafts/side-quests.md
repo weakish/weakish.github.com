@@ -9,22 +9,6 @@
     - [ ] this can be used to implement an auth with github (actually ssh public key) system.
     - [ ] Linus is still using a 2048 RSA ssh key as 2022-09
 
-- [ ] share bike balance withdraw
-
-    - [x] applied
-    - [ ] the process will take about 1-3 working days
-
-- common setups
-  - popular
-    - macOS
-    - DropBox
-    - Gmail
-  - popular among developers
-    - 1password
-    - DropBox
-    - GitHub
-    - LogSeq
-
 - [ ] /jobs
 
 - [ ] clean up redirects
@@ -44,8 +28,6 @@
             - Python 3 is just Python with types.
 
         I remembered their previous slogan is something like "TypeScript is a superset of JavaScript." (targeted at CoffeeScrit and Dart). Then "TypeScript is JavaScript that scales." (only targeted at big projects.) Now they seemingly want to attract all JavaScript deverlopers.
-
-- [ ] Two mobile phones.
 
 - [ ] Manage global installed npm packages.
 
