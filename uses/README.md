@@ -5,73 +5,53 @@
 - Frontend: just HTML and CSS, 100% JavaScript free.
 - Generator: [Jekyll](https://jekyllrb.com/) since this site was hosted at GitHub Pages before.
 
-## Hardware
+## Computers
 
-- [Intel NUC](https://www.intel.com/content/www/us/en/products/boards-kits/nuc.html)
+- `MacBookPro15,4`
 
-    Compact. Inexpensive. Linux friendly.
+    The last generation of Intel based MacBookPro.
 
-- HP Z22n G2 Display
+- iPhone 13 mini
 
-    Compact. Accurate color. 1920 x 1080 is sufficient for Linux.
-
-- [IKBC C87](https://www.ikbckeyboard.com/product-page/c87)
-
-    * Wired: Bluetooth keyboards may have troubles when booting a full-disk encryption Linux.
-    * 80%: Less space but all functional keys (F1-F12, arrow keys, etc) are available.
-    * Cherry MX Brown: Cherry MX Switches are reliable. Actually I am fine with both brown and red switches.
-    * PBT: Resist to oil, sweat, and lotion. More durable.
-    * Steel board: I dislike this. It makes the keyboard heavier.
-    * Not programmable: Less convenient but acceptable.
-
-- [Razer DeathAdder Left-handed Edition](https://www.razer.com/eu-en/gaming-mice/razer-deathadder-left-handed-edition)
-
-    One of the few left-handed mouses.
-
-- [iPhone SE]
-
-    A small portable phone.
-    In fact, I prefer Android phones, but Google only provides three years of security updates for Pixel phones.
+    Nowadays there are few choices left for compact smart-phones weight less than 150 grams.
+    And although I prefer Android phones, Google only provides three years of security updates for Pixel phones.
     For example, Pixel 4a will not receive any security updates after 2023.
-    I also prefer the first generation of iPhone SE, which is lighter and smaller.
-    However, the first generation uses the A9 chip which is vulnerable to [checkm8].
-    Thus, I chose the second generation.
 
-[iPhone SE]: https://support.apple.com/kb/SP820?locale=en_US
-[checkm8]: https://arstechnica.com/information-technology/2019/09/developer-of-checkm8-explains-why-idevice-jailbreak-exploit-is-a-game-changer/
+## Camera
 
-## Software
+Panasonic [GM1S] with Lumix G 14mm f/2.5 and Lumix G VARIO 35-100mm/f4-f5.6 lens,
+small and lightweight.
 
-- [Debian](https://www.debian.org/)
+[GM1S]: https://panasonic.jp/dc/p-db/DMC-GM1SK.html
 
-    Under WSL at office and Ubuntu at Home.
+## Editor
 
-- [Firefox](https://www.mozilla.org/)
+- [LazyVim] with [codeium](../vim/completion/) and [LanguageTool](../vim/spell/) under [kitty] terminal.
 
-    Firefox sucks.
-    But other browsers suck more.
-
-- [LunarVim](https://www.lunarvim.org/)
-
-    With Neovim native LSP, GitHub Copilot, and LanguageTool,
-    under Alacritty terminal emulator.
+    I choose this Neovim setup because it keeps configurations simple and uses the modern plugin manager [lazy.vim].
+    Previously I use LunarVim, which is a bit complex and lagged.
+    I prefer kitty because it works well with Neovim (true color & undercurl) and it is from Kovid Goyal, the author of [calibre].
 
 - [VSCode](https://code.visualstudio.com/)
 
-    I use VSCode for ReScript, since the official vim plugin is sitll based on coc.vim,
-    and its language server is outdated compared to the one included in the VSCode extension.
+    I also use VSCode, because it has better support for some languages or frameworks.
+    For example, the official vim plugin of ReScript is still based on coc.vim,
+    and its language server is [outdated] compared to the one included in the VSCode extension.
 
-- [Dolphin](https://kde.org/applications/en/system/org.kde.dolphin)
-
-    Probably the most functional GUI file manager in Linux.
+[LazyVim]: https://www.lazyvim.org/
+[lazy.vim]: https://github.com/folke/lazy.nvim
+[kitty]: https://sw.kovidgoyal.net/kitty/
+[calibre]: https://github.com/kovidgoyal/calibre
+[outdated]: https://github.com/rescript-lang/vim-rescript/issues/61
 
 ## Wear
 
-All casual clothing, mostly H&M, Uniqlo, Decathlon, and Lululemon.
-I have no formal, semiformal, or informal clothing,
-thus usually ignore any dress code,
-and never go to places enforcing a non-casual dress code.
-I usually wear sneakers and prefer [vintage style running shoes][thedeffest], those [revised] [models] originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
+Although I want to respect dress code,
+since I only have casual clothing, no formal, semiformal, or informal clothing,
+I am only able to conform to dress code like covering the body between shouder and knee.
+I used to prefer [vintage style running shoes][thedeffest], those [revised] [models] originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
+But later I found out that these shoes are hard to buy.
+Currently, I am wearing Kalenji One, which is comfortable and lightweight (less than 200 grams), under 14 USD. 
 
 [thedeffest]: https://www.thedeffest.com/
 [revised]: https://www.thedeffest.com/blog/new-balance-ms327laa-retro-runners

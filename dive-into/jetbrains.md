@@ -10,7 +10,7 @@
 
 I use Sublime Text keymap with a few tweaks:
 
-- Basic completion: **Tab**. With the auto formatting function, I do not need to use Tab to indent. Thus Tab can be used to trigger completion. And when the completions pop up, I can press Tab again to confirm the completion candicate, very convinient.
+- Basic completion: **Tab**. With the auto formatting function, I do not need to use Tab to indent. Thus, Tab can be used to trigger completion. And when the completions pop up, I can press Tab again to confirm the completion candidate, very convenient.
 - Find Action: the ultimate keyboard shortcut deserves **F1** (inspired by vscode)
 - Rename variable name: **F2** is used for renaming file names in most file managers and renaming variables in vscode. For consistency, I also removed `Ctrl+F2` for toggling bookmark, and bind `Ctrl+F2` to introducing variables, `Shift+F2` to inline variables, `Ctrl+Shift+F2` to introduce constants, `Alt+F2` to introduce functions (extract methods).
 - Go to declaration or usage: **F4** since this powerful navigation includes the function of "go to source".

@@ -13,10 +13,10 @@ I am not sure if 16GB is too small or macOS installer is fussy on USB drive mode
 
 ## Install Linux
 
-I always feel that I can only own a computer truely after I have installed Linux on it.
+I always feel that I can only own a computer truly after I have installed Linux on it.
 So after finishing the macOS initial setup (user account, etc.), I rebooted to the recovery mode (Command+R on Intel based Macintosh machines with a T2 chip).
 
-Then I added a partition via disk utility in the recorvery mode.
+Then I added a partition via disk utility in the recovery mode.
 This partition is for Linux, so the format does not matter.
 Adding a new partition will automatically resize the current macOS partition,
 which is much slower if performed under macOS instead of recovery mode.
@@ -26,7 +26,7 @@ I also disable secure boot and enable external boot.
 Then I just booted into the installation USB drive, and installed [EndeavourOS].
 I chose the replace partition option with encrypted file system.
 The installer set up LUKS encryption and ext4 automatically.
-If I had choosen the "erase all" option, I can do some customizations, such as ext4/btrfs, swap partition/file, etc.
+If I had chosen the "erase all" option, I can do some customizations, such as ext4/btrfs, swap partition/file, etc.
 However, I need a dual boot machine.
 
 [EndeavourOS]: https://wiki.t2linux.org/distributions/endeavouros/installation/
@@ -36,7 +36,7 @@ The startup manager displayed.
 I used the arrow key to select the EFI disk for Linux,
 then I pressed enter and booted into EndeavourOS sucessfully.
 
-After finished intital setup of EndeavourOS,
+After finished initial setup of EndeavourOS,
 I started the mac holding down the option key again.
 While holding the Control key, I chose to boot into macOS, which also made macOS the default startup disk.
 
@@ -47,7 +47,7 @@ Add `auth sufficient pam_tid.so` in `/etc/pam.d/sudo`.
 ## Set Timezone to GMT
 
 I am frustrated to dealing with timezones.
-Why not everyone use UTC+0?
+Why not everyone uses UTC+0?
 
 ```sh
 sudo systemsetup -settimezone GMT
@@ -91,12 +91,7 @@ After that, I tried mounting a ext4 removable drive and succeeded.
 
 ## Keyboard
 
-In System Preference > Keyboard > Modifier Keys,
-`Control` and `Command` keys can be swapped.
-However, under the terminal I'd like to use the classical ctrl prefixed shortcuts, thus I swapped them back again.
-As far as I know, [iTerm2] is the only terminal emulator with this option.
-
-[iTerm2]: https://www.iterm2.com/
+In System Preference > Keyboard > Modifier Keys, I set CapsLock as Esc.
 
 I also installed [AltTab] to switch applications with `alt-tab`.
 
@@ -121,7 +116,7 @@ By the way, OS X has native system-wide support for some Emacs keybinds, e.g.
 | page-down | `^v` |
 | recenter | `^l` |
 
-And there are some keybinds slightly different the orignal Emacs keybinds:
+And there are some keybinds slightly different the original Emacs keybinds:
 
 - forward/backward-word, use two keys (`Control` and `Option`) for the `Meta` key.
 - shrink/extend-selection, add an additional `Shift` key but not needing to enter the selection mode (`C-SPC`) first.
@@ -135,10 +130,6 @@ Unselect "Scroll direction: Natural" in System Preferences > Mouse.
 
 Select "Tap to click" in System Preferences > Trackpad.
 
-## Lock Screen
-
-Press `Control+Shift+Power` to turn off and lock screen.
-Alternatively, you can put the `Screen Lock` icon on touch bar (System Preference > Keyboard > Touch Bar) or configures hot corners.
 
 ## Turn off Internal Display
 
@@ -205,13 +196,3 @@ Besides gmail, other osx applications can also sync with Google account:
 - Calenders
 - Messages (with Google Talk)
 - Notes (via gmail, tagged as notes)
-
-## Chinese Input Method
-
-I use [the built-in Double Pinyin Input Method][double-pinyin].
-The built-in input method uses Caps to switch between English and Chinese mode.
-This is consistent with JIS keyboard layouts.
-For JIS keyboards without a dedicated alphanumeric key, usually pressing CapsLock is used to enter alphanumeric mode.
-
-[double-pinyin]: https://scomper.me/gtd/xi-tong-shuang-pin-shu-ru-fa-@vgow
-
