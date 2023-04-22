@@ -11,11 +11,11 @@
 
 - [ ] /jobs
 
-- [ ] clean up redirects
-
+- [ ] clean up redirects:
     - render.yaml redirects
     - jekyll-redirects
     - manually moved to link in markdown
+    - P.S. Maybe it is also a chance to redesign the directory structure, to something more flat?
 
 - [ ] TypeScript slogans
 

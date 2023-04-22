@@ -3,7 +3,33 @@
 ## Colophon
 
 - Frontend: just HTML and CSS, 100% JavaScript free.
-- Generator: [Jekyll](https://jekyllrb.com/) since this site was hosted at GitHub Pages before.
+- Generator: [Jekyll](https://jekyllrb.com/) since this site was hosted at GitHub Pages before. [^1]
+
+[^1]: I have considered migrating to other static site generators several times.
+
+    But I'd like to keep the source of the content in the same way:
+
+    1. I'd like to use standard GFM, which renders nicely on GitHub and is compatible with a lot of programs.
+       This rules out a lot of static site generators without writing a customized Markdown reader.
+       For example, the default Markdown reader of [Pelican] uses `<{filename}../article.md>` for internal links,
+       and its [Pandoc plugin][pelican-pandoc] expects all Markdown files to start with a YAML header.
+
+    2. I prefer a content first directory structure, not nesting Markdown files under a specific directory.
+       This again rules out a lot of static site generators.
+       For example, [Hugo] assumes a `content` directory.
+
+    Also, I do not want JavaScript at the client side.
+
+    As far as I know, the static site generators satisfying these needs are Jekyll, Eleventy, and Lume.
+    Eleventy, as a meta static site generator, allows customizing almost everything,
+    while Lume is more out of the box.
+
+    Migrating to Eleventy or Lume will allow me to stop writing Liquid templates,
+    which is my main pain point for Jekyll.
+
+[Pelican]: https://docs.getpelican.com/en/latest/content.html#linking-to-internal-content
+[pelican-pandoc]: https://github.com/pelican-plugins/pandoc-reader#specifying-file-metadata
+[Hugo]: https://gohugo.io/getting-started/configuration/#contentdir
 
 ## Computers
 
