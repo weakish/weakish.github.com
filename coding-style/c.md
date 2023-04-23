@@ -71,7 +71,7 @@ Do omit parameter names when it is obvious, for example,
 int plus(int, int);
 ```
 
-not
+is preferred to
 
 ```c
 int plus(int adder, int addee);
@@ -88,7 +88,7 @@ Mark non-return
 
 Mark a function never returns (always abort) with `__dead`.
 
-For compatibilities with different operation systems, use a shim:
+To be compatible with different operating systems, use a shim:
 
 ```c
 /*
@@ -110,5 +110,9 @@ This is based on the code at [openntpd][], with `#ifndef` and `__pure` removed.
 Standards
 ---------
 
-- Use C11 without extension, `-std=c11 -pedantic`.
-- Use POSIX.1-2008, `#define _XOPEN_SOURCE 700`.
+- Lua still sticks to ANSI C (C89, `gcc -ansi`).
+  But for most programs, I think, a more recent version is more convinient.
+  For example, C17 without extension, `-std=c17 -pedantic`.
+- Use [POSIX.1-2008/POSIX.1-2017][posix], `#define _XOPEN_SOURCE 700`.
+
+[posix]: https://pubs.opengroup.org/onlinepubs/9699919799/toc.htm
