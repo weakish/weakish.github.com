@@ -99,37 +99,49 @@ I also installed [AltTab] to switch applications with `alt-tab`.
 
 By the way, OS X has native system-wide support for some Emacs keybinds, e.g.
 
-| Command | Key |
-| - | - |
-| beginning-of-line | `^a` |
-| end-of-line | `^e` |
-| previous-line | `^p` |
-| next-line | `^n` |
-| forward-char | `^f` |
-| backward-char | `^b` |
-| delete-char | `^d` |
-| backward-delete-char | `^h` |
-| transpose-char | `^t` |
-| kill-line | `^k` |
-| yank-line | `^y` |
-| insert-line | `^o` |
-| page-down | `^v` |
-| recenter | `^l` |
+| Command | Key | Alternatives |
+| - | - | - |
+| beginning-of-line | `^a` | `<D-Left>` |
+| end-of-line | `^e` |`<D-Right>` |
+| previous-line | `^p` | `<Up>` |
+| next-line | `^n` | `<Down>` |
+| forward-char | `^f` | `<Right>` |
+| backward-char | `^b` | `<Left>` |
+| delete-char | `^d` | N/A |
+| backward-delete-char | `^h` | `<Delete>` |
+| transpose-char | `^t` | N/A |
+| kill-line | `^k` | N/A |
+| yank-line | `^y` | N/A |
+| insert-line | `^o` | N/A |
+| page-down | `^v` | `<Fn+Down>` |
+| recenter | `^l` | N/A |
 
 And there are some keybinds slightly different the original Emacs keybinds:
 
-- forward/backward-word, use two keys (`Control` and `Option`) for the `Meta` key.
+- forward/backward-word, use two keys (`Control` and `Option`) for the `Meta` key. Alternatives: `Option` with arrow keys.
+- `M-<` and `M->` are unavailable on macOS. But `<D-Up>` and `<D-Down>` can be used to go to the begin and end of document.
+- `M-v` is unavailable, but `<Fn+Up>` can be used for page up.
+- `C-l` for recenter is unavailable.
+- Also, `C-s` and `C-r` for search is unavailable.
 - shrink/extend-selection, add an additional `Shift` key but not needing to enter the selection mode (`C-SPC`) first.
 
-## Mouse
-
-Unselect "Scroll direction: Natural" in System Preferences > Mouse.
-(The direction may be natural to touch screens, but it is not natural for mouses at all.)
+However, my keyboad has arrow keys and I feel using arrow keys are more nature.
 
 ## Trackpad
 
-Select "Tap to click" in System Preferences > Trackpad.
+In System Preferences > Trackpad:
 
+- Change "Look up" to three-finger tap.
+
+- Select "Swipe down with three fingers" for App Expose.
+
+- Unselect "Lanuchpad" and "Show Desktop".
+
+- Select "Tap to click".
+
+- Unselect "Scroll direction: Natural".
+
+    It may be natural on touchsceen, but I feel it unnatural on trackpad and mouse.
 
 ## Turn off Internal Display
 
@@ -147,9 +159,11 @@ Then move one window to another full screen window in another virtual desktop.
 
 Drag the edge between two tiling windows to adjust the size of the two windows at the same time.
 
+Rectangle offers more advanced manual tiling features.
+
 ## Virtual Desktops
 
-Press `Ctrl-Left/Right` to switch among virtual desktops.
+Press `Ctrl-Left/Right` or swipe three fingers from left to right to switch among virtual desktops.
 
 Press `Ctrl-Up/Down` to show an overview of desktops or go back to normal mode.
 
