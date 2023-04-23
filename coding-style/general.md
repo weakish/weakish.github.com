@@ -1,0 +1,215 @@
+General coding style for programming
+====================================
+
+## The goal of coding style is readability
+
+If there is a good reason to go against the style,
+just do it.
+
+## Avoid regression
+
+> So we don't fix bugs by introducing new problems.
+> That way lies madness,
+> and nobody ever knows if you actually make any real progress at all.
+> Is it two steps forwards, one step back,
+> or one step forward and two steps back?
+
+-- [Linus Torvalds](https://lwn.net/Articles/243460/)
+
+## Prefer small functions
+
+- Extract small functions from a complex function.
+- One function should only do one thing.
+
+## Avoid top level variables
+
+- Prefer passing parameter to function.
+- Local variable is fine.
+- Top level immutable value is fine.
+
+## More documentation comments but less inline comments
+
+Programming languages are clearer than natural languages.
+So in most cases try to express as much as possible in programming language itself.
+Also, a compiler cannot warn you that comments is outdated.
+And an outdated comment can be very misleading.
+
+- Use meaningful function and variable/value name.
+- Declare local variable near its usage.
+- Avoid deep nested function call expression. Extract meaningful immediate value declaration.
+
+Here 'commenting' mainly refers to inline comments,
+i.e. comments explaining implementation details.
+Doc annotation of public modules and functions on their usage is fine.
+
+## Break long line of parameters logically
+
+A simple approach is break for one, break for all.
+To save lines, related parameters may be grouped in one line.
+
+## Prefer readability to testability
+
+The main audience of code is human beings, not tests.
+
+Improving testability should not harm readability.
+
+Obscuring code to improve testability may bring in potential bugs not caught by tests.
+
+## Prefer `under_line`
+
+`camelCaseAreHardToReadIfThereAreMoreThanThreeWords`
+
+`under_line_is_much_easier_to_read`
+
+Exceptions:
+
+- `TypeName` since `TypeNamesWithMoreThanThreeWords` should be avoided.
+- `FooBar fooBar` so wherever we see `fooBar`, we know it is of type `FooBar`.
+
+## Applicable to some languages
+
+### Prefer explicit else branch
+
+Some languages make the else clause of `if` mandated.
+This is a good design.
+
+For other languages,
+prefer explicit else branch over fall through control flow.
+
+For example:
+
+```ceylon
+Boolean if_else(Integer x) {
+    if (x > 0) {
+        if (x < 10) {
+            return false;
+        }
+    } else if (x < -10) {
+        return false;
+    }
+    return true;
+}
+```
+
+It is short, but difficult to figure out the control flow.
+
+Rewrite it more explicitly, without omitting else branch:
+
+```ceylon
+Boolean if_else(Integer x) {
+    if (x > 0) {
+        // This is for demonstration only.
+        // `if (x > 0, x < 10)` is clearer.
+        // Pretend there were more complex branching here.
+        if (x < 10) {
+            return false;
+        } else {
+            return true;
+        }
+    } else if (x < -10) {
+        return false;
+    } else {
+        return true;
+    }
+}
+```
+
+Also, avoid using `variable` to save else branch.
+
+For example:
+
+```ceylon
+variable Integer x = 0;
+if (condition) {
+    x = 1
+    ;
+}
+```
+
+can be rewritten to
+
+```ceylon
+Integer x;
+if (condition) {
+    x = 1;
+} else {
+    x = 0;
+}
+```
+
+### Only use `i++` to increase `i`
+
+`y=i++` and `y=++i` is really confusing to me.
+
+If the language allows `++` operators,
+only use `i++` to increase `i`, i.e. just the statement `i++;`.
+I think a meaningful evaluated value of `i++` should be `void`
+if a programming language allows `++`.
+
+The same applies to `i--` and `--i`.
+
+### Do not use return value of assignment statement
+
+Similarly to usage of `i++`,
+if assignment statements of the language return value,
+do not use them.
+
+### Test against true/false
+
+Condition tests should accept a boolean value.
+So we do not need to remember which values are considered true or false.
+For example, in Ruby only `false` and `nil` is false,
+but in Python, `''`, `0`, `()`, `[]`, and `{}` are also `false`.
+
+Prefer
+
+```ruby
+if not a.nil?
+  # do something
+end
+```
+
+over
+
+```ruby
+if a
+  # do something
+end
+```
+
+### Prefer explicit type annotation
+
+Some languages allow you to use `auto`, `var`, etc.
+to let the compiler infer the variable type for you.
+Use this feature sparingly.
+Explicit type annotation serves as documentation.
+Omitting them may reduce readability of code.
+
+`ClassInterface<TypeParameter> variable_name = ClassInterface<TypeParameter>()`
+and `ClassInterface variable_name = ClassInterface()`
+may be replaced with
+`value variable_name = ClassInterface<TypeParameter>()`
+and `value variable_name = ClassInterface()`.
+
+Think long and hard when you want to omit type annotation under other conditions.
+
+Also, for languages variable declaration and assignment are indistinguishable in syntax, e.g. Python, type annotation helps to distinguish them.
+
+### Use semicolons to remark mutation
+
+"A Little Java, A Few Patterns" uses a special coding style to remark mutation:
+
+```java
+class PutSemicolonOnItsOwnLineForMutability
+{
+    Pie p = new Crust();
+    Pie p = new Top(new Anchovy(), p)
+    ; // the future begins, i.e. from this line on, references to `p` reflect the change
+    Pieman yy = new Bottom();
+    yy.addTop(new Anchovy())
+    ; // same as above
+}
+```
+
+This is a brilliant idea.
+In languages semicolons are not mandatory, a semicolon can be used at the end of the line to remark mutability.
