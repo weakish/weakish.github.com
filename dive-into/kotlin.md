@@ -240,7 +240,7 @@ I understood that interoperability is important, though.
 
 String templates are supported both inside raw strings and inside escaped strings. If you need to represent a literal `$` character in a raw string (which does't support backslash escaping), you can use the following syntax):
 
-```koltin
+```kotlin
 val price = """
 ${'$'}9.99
 """

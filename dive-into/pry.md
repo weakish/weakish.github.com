@@ -187,13 +187,13 @@ In a pry session, run `pry-theme list` to list all installed themes.
 
 Try a theme:
 
-```pry
+```sh
 pry-theme try pry-modern-256
 ```
 
 If the theme is not installed, you can install it:
 
-```pry
+```sh
 pry-theme install theme-name
 ```
 
@@ -201,13 +201,13 @@ You can use `uninstall` to uninstall it.
 
 Show current theme:
 
-```pry
+```sh
 pry-theme current
 ```
 
 You can edit a theme:
 
-```pry
+```sh
 pry-theme edit
 ```
 

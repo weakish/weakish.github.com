@@ -156,8 +156,7 @@ Cons are similar to rnt except for 'Separate expected output'.
 
 Tests look like documents:
 
-```cram
-
+```
 This is a comment.
 
   $ echo 'Lines beginning with two space followed by $ is a test.'
@@ -191,7 +190,7 @@ Cons:
 
 ## [shelltestrunner](http://joyful.com/shelltestrunner/)
 
-```shelltestrunner
+```sh
 # optional comment
 a one-line shell command
 <<<
