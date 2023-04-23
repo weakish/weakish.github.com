@@ -2,7 +2,7 @@ services:
   - type: web
     name: weakish
     env: static
-    buildCommand: bundle exec jekyll build --config _config.yml,_render.yml 
+    buildCommand: curl -fsSL https://deno.land/x/install/install.sh | sh && /opt/render/.deno/bin/deno task build
     staticPublishPath: ./_site
     domains:
       - mmap.page

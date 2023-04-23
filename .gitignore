@@ -2,3 +2,5 @@ _site
 
 **.orig
 .vscode/
+.DS_STORE
+_bin/
