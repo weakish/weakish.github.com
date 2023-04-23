@@ -19,6 +19,44 @@ site:
       integrity="sha512-Ya9H+OPj8NgcQk34nCrbehaA0atbzGdZCI2uCbqVRELgnlrh8vQ2INMnkadVMSniC54HChLIh5htabVuKJww8g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/@microflash/rehype-starry-night@2.1.0/index.css">
+    <style>
+      /* rehype-starry-night/index.css assumes dark theme. */
+      /* This is a workaround for light theme. */
+      @media(prefers-color-scheme: light) {
+        .highlight {
+          --highlight-code-highlight: #fff8c5;
+        }
+        .highlight-language {
+          background-color: rgb(216, 222, 228);
+        }
+      }
+
+      /* GitHub width and padding */
+      /* suggested by github-markdown.css README */
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+
+      @media(max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+
+      /* Inspired by gnu.org */
+      footer {
+        font-size: 0.875em;
+        padding: 1.5em 3%;
+        color: #333;
+        background: #f4f4f4;
+        margin-top: 3em;
+      }
+    </style>
     <link
       rel="alternate"
       type="application/rss+xml"

@@ -3,6 +3,7 @@ import liquid from "lume/plugins/liquid.ts";
 import pagefind from "lume/plugins/pagefind.ts";
 import remark from "lume/plugins/remark.ts";
 import resolve_urls from "lume/plugins/resolve_urls.ts";
+import rehypeStarryNight from "https://esm.sh/@microflash/rehype-starry-night";
 import sitemap from "lume/plugins/sitemap.ts";
 
 const site = lume({
@@ -13,7 +14,9 @@ site.copyRemainingFiles();
 
 site.use(liquid());
 site.use(pagefind());
-site.use(remark());
+site.use(remark({
+  rehypePlugins: [rehypeStarryNight],
+}));
 site.use(resolve_urls());
 site.use(sitemap());
 
