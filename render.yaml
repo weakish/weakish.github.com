@@ -35,6 +35,10 @@ services:
       - type: redirect
         source: /StutteringTalkaholic/dive-into/:slug/
         destination: /dive-into/:slug/
+      ## dapi
+      - type: redirect
+        source: /dapi/no-blog/
+        destination: /dapi/not-a-blog/
       # coding-style
       - type: redirect
         source: /coding-style/javascript/
