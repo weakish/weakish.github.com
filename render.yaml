@@ -11,6 +11,31 @@ services:
         name: Content-Type
         value: text/plain
     routes:
+      # old URLs
+      ## /fun
+      - type: redirect
+        source: /fun/exodia/
+        destination: /poems/exodia/
+      - type: redirect
+        source: /fun/heart/
+        destination: https://gist.github.com/weakish/494919
+      ## StutteringTalkaholic  
+      - type: redirect
+        source: /StutteringTalkaholic/
+        destination: /log/
+      - type: redirect
+        source: /StutteringTalkaholic/hardening/
+        destination: https://gist.github.com/weakish/7467298
+      - type: redirect
+        source: /StutteringTalkaholic/ruby/api-doc/
+        destination: https://gist.github.com/weakish/5240f6af3aa9a84a6dabeb8d1abcb245
+      - type: redirect
+        source: /StutteringTalkaholic/zh/:slug/
+        destination: /dapi/:slug/
+      - type: redirect
+        source: /StutteringTalkaholic/dive-into/:slug/
+        destination: /dive-into/:slug/
+      # coding-style
       - type: redirect
         source: /coding-style/javascript/
         destination: /dive-into/eslint/
@@ -26,6 +51,7 @@ services:
       - type: redirect
         source: /coding-style/*
         destination: https://weakish.github.io/coding-style/
+      # teapot  
       - type: rewrite
         source: /teapot
         destination: https://teapot.onrender.com
