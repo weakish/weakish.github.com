@@ -1,0 +1,60 @@
+---
+site:
+  canonical_url: https://mmap.page
+  title: mmap.page
+  repo: weakish/weakish.github.com
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} {{ site.title }}</title>
+    <link rel="canonical" href="{{site.canonical_url}}{{url}}">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css"
+      integrity="sha512-Ya9H+OPj8NgcQk34nCrbehaA0atbzGdZCI2uCbqVRELgnlrh8vQ2INMnkadVMSniC54HChLIh5htabVuKJww8g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="{{location}}/rss.xml">
+    <link
+      rel="alternate"
+      type="application/git+http"
+      href="https://github.com/{{site.repo}}.git">
+  </head>
+  <body>
+
+    <h1>
+      <a href="{{location}}/">{{ site.title }}</a>
+    </h1>
+    <article class="markdown-body">
+      {{ content }}
+    </article>
+    <footer>
+      <p>
+        Permission to use, copy, modify, and/or distribute this site for any purpose with or without fee is hereby granted.
+        This site is provided "as is" without express or implied warranty.
+      </p>
+      <p>
+        This site does not use cookies or tracking codes.
+      </p>
+      <p>
+        Site source is
+        <a href="https://github.com/{{site.repo}}/">available</a>
+        and feedback is
+        <a href="https://github.com/{{site.repo}}/issues">welcome</a>.
+      </p>
+      <noscript>
+        <p>
+          This site does not use JavaScript.
+        </p>
+      </noscript>
+    </footer>
+  </body>
+</html>
