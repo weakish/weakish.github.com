@@ -3,9 +3,13 @@
 ## Colophon
 
 - Frontend: just HTML and CSS, 100% JavaScript free.
-- Generator: [Jekyll](https://jekyllrb.com/) since this site was hosted at GitHub Pages before. [^1]
+- Generator: [Lume]
 
-[^1]: I have considered migrating to other static site generators several times.
+[Lume]: https://lume.land
+
+[^1]: This site was hosted at GitHub Pages before.
+    Thus, I have used Jekyll for many years.
+    I have considered migrating to other static site generators several times.
 
     But I'd like to keep the source of the content in the same way:
 
@@ -24,12 +28,19 @@
     Eleventy, as a meta static site generator, allows customizing almost everything,
     while Lume is more out of the box.
 
-    Migrating to Eleventy or Lume will allow me to stop writing Liquid templates,
+    Finally I have migrating to Lume, allowing me to stop writing Liquid templates,
     which is my main pain point for Jekyll.
+
+    The migration process is easier than I thought, since Lume also supports Liquid templates.
+    The only thing I find missing is using `README.md` as the index page.
+    This nice feature of Jekyll makes browsering the Markdown files more convenient on GitHub.
+    However, customizing destination URL is easy in Lume.
+    I wrote [a trivial `url` function][url] in configuration to implement this feature.
 
 [Pelican]: https://docs.getpelican.com/en/latest/content.html#linking-to-internal-content
 [pelican-pandoc]: https://github.com/pelican-plugins/pandoc-reader#specifying-file-metadata
 [Hugo]: https://gohugo.io/getting-started/configuration/#contentdir
+[url]: https://github.com/weakish/weakish.github.com/commit/1d8a2f4b7682cf246cb8e2d3996b5bb66c431240
 
 ## Computers
 
