@@ -2,7 +2,7 @@ Coding Style for Python
 =======================
 
 The design of Python is well considered.
-Also, the community tends to adhering PEP 8.
+Also, the community tends to adhere PEP 8.
 
 Python doss have some flaws, but most of them are fixed by type hints.
 For example, Python does not have the capability to define a constant variable,

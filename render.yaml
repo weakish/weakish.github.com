@@ -39,23 +39,7 @@ services:
       - type: redirect
         source: /dapi/no-blog/
         destination: /dapi/not-a-blog/
-      # coding-style
-      - type: redirect
-        source: /coding-style/javascript/
-        destination: /dive-into/eslint/
-      - type: redirect
-        source: /coding-style/typescript/
-        destination: /dive-into/eslint/
-      - type: redirect
-        source: /coding-style/:lang/
-        destination: https://weakish.github.io/coding-style/:lang/
-      - type: redirect
-        source: /coding-style/
-        destination: https://weakish.github.io/coding-style/
-      - type: redirect
-        source: /coding-style/*
-        destination: https://weakish.github.io/coding-style/
-      # teapot  
+      # teapot
       - type: rewrite
         source: /teapot
         destination: https://teapot.onrender.com

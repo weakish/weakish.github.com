@@ -1,9 +1,14 @@
-This is for personal reference only.
+Style Guide
+===========
 
-# Coding style v.s. formatting style
+These are for personal reference only.
 
-Formatting style does not affect AST and thus is unlikely to affect readability
-of code, and can be auto adjusted via `ceylon format` or other tools if they
-do.
-
-
+- [General](general.md)
+- [Formatting](formatting.md)
+- [C](c.md)
+- [Go](go.md)
+- [JavaScript/TypeScript](../dive-into/eslint.md)
+- [Kotlin](kotlin.md)
+- [Python](python.md)
+- [Ruby](ruby.md)
+- [Shell](sh.md)

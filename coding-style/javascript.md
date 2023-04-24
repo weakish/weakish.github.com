@@ -3,4 +3,4 @@ JavaScript Coding Style
 
 See [An Optioned Guide to ESLint].
 
-[An Optioned Guide to ESLint]: https://mmap.page/dive-into/eslint/
+[An Optioned Guide to ESLint]: ../dive-into/eslint.md

@@ -1,6 +1,12 @@
 Ceylon coding style
 ===================
 
+> (Ceylon) failed its transition to Eclipse and the community gave up.
+>
+> -- [Eclipse Ceylon Termination Review][443]
+
+[443]: https://gitlab.eclipse.org/eclipsefdn/emo-team/emo/-/issues/443#note_1097289
+
 ## Avoid `... then ... else ...`
 
 I feel `A then B else C` confusing.
