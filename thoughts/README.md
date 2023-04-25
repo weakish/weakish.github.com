@@ -1,1 +1,4 @@
-- [Express More in Code](express-more-in-code/) code as an alternative form for math and table.
+Thoughts
+========
+
+Some random thoughts.
