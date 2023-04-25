@@ -63,7 +63,7 @@ small and lightweight.
 
 ## Editor
 
-- [LazyVim] with [codeium](../vim/completion.md) and [LanguageTool](../vim/spell.md) under [kitty] terminal.
+- [LazyVim] with [Codeium & Copilot](../vim/completion.md) and [LanguageTool](../vim/spell.md) under [kitty] terminal.
 
     I choose this Neovim setup because it keeps configurations simple and uses the modern plugin manager [lazy.vim].
     Previously I use LunarVim, which is a bit complex and lagged.
@@ -74,6 +74,7 @@ small and lightweight.
     I also use VSCode, because it has better support for some languages or frameworks.
     For example, the official vim plugin of ReScript is still based on coc.vim,
     and its language server is [outdated] compared to the one included in the VSCode extension.
+    Also, both Copilot Lab and Codeium Chat are only available under VSCode.
 
 [LazyVim]: https://www.lazyvim.org/
 [lazy.vim]: https://github.com/folke/lazy.nvim

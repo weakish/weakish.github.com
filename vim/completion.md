@@ -36,13 +36,50 @@ I have used Tabnine (free plan) for a while.
 It does not include whole line and full-function code completion.
 Although Tabnine Pro offers offline installation, it requires contacting [sales].
 Its free plan is based on the cloud, just like Copilot.
-And Tabnine Pro is [$12 per month], slightly higher than Copilot ([$10 per month]).
+
+Tabnine Pro is [$12 per month], slightly higher than Copilot ([$10 per month]).
+And qualified open source project contributors can use Copilot for free.
 
 [$12 per month]: https://www.tabnine.com/pricing
 [$10 per month]: https://github.com/features/copilot/
 [sales]: https://support.tabnine.com/hc/en-us/articles/5409869385873-Offline-Installation-Usage-of-Tabnine
 
 Both Codeium and Amazon CodeWhisperer are free for personal use.
-Currently CodeWhisperer only supports VSCode and JetBrain IDEs.
-Thus, I use Codeium.
+Currently, CodeWhisperer only supports VSCode and JetBrain IDEs.
+
+I use Copilot and Codeium at the same time under Neovim,
+where [nvim-cmp] can use both as a completion source.
+Codeium tends to offer multi-line completion as a whole,
+and Copilot are more likely to provide completions line by line.
+The completion quality is roughly the same, as I have experienced.
+
+[nvim-cmp]: https://github.com/hrsh7th/nvim-cmp
+
+### My LazyVim Configuration for Copilot and Codeium
+
+```lua
+-- lua/config/lazy.lua
+require("lazy").setup({
+  spec = {
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { import = "lazyvim.plugins.extras.coding.copilot" },
+    { import = "plugins" },
+  },
+})
+
+-- lua/plugins/cmp.lua
+return {
+  -- The official plugin does not support nvim-cmp, use a community one instead.
+  {
+    "jcdickinson/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({})
+    end,
+  },
+}
+```
 
