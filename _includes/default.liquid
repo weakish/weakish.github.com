@@ -1,7 +1,6 @@
 ---
 site:
   canonical_url: https://mmap.page
-  title: mmap.page
   repo: weakish/weakish.github.com
 ---
 
@@ -11,7 +10,7 @@ site:
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ toc[0].value }} {{ site.title }}</title>
+    <title>{{ title | default: "mmap.page" }}</title>
     <link rel="canonical" href="{{site.canonical_url}}{{url}}">
     <link
       rel="stylesheet"
