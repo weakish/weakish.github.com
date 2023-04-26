@@ -14,9 +14,6 @@ GitHub Pages will use `README.md` as index page.
 And your project probably already have one.
 There is no need to write `index.html` or `index.md`.
 
-Also, GitHub Pages will automatically add an "edit on GitHub" link to page footer.
-Nice.
-
 ## Why
 
 Focus on content, not the site design and configuration.
@@ -56,6 +53,9 @@ URL paths will be:
 /docs/install/bsd.html
 /docs/install/win.html
 ```
+
+And you can link them as `[quick start](quick-start.md)`,
+so the link will work on both GitHub and GitHub Pages.
 
 ## Conclusion
 
