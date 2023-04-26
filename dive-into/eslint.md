@@ -8,12 +8,15 @@ Thus, I can have a short rule list.
 
 ## No Formatting Rule
 
-Use [prettier] instead.
+Use [deno fmt] or [prettier] instead.
 
-I use prettier with its default options,
+I use `deno fmt` or prettier with its default options,
 without any configuration.
 
+[deno fmt]: https://deno.land/manual/tools/formatter
 [prettier]: https://prettier.io/
+
+`deno fmt` is faster, while prettier supports more formats.
 
 Prettier also helps on some non-formatting lint rules.
 For example, eslint's `curly` rule helps to avoid misleading code:
