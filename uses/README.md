@@ -45,21 +45,40 @@ Made with [Lume][] [^1]
 
 - `MacBookPro15,4`
 
-    The last generation of Intel based MacBookPro.
+    The last generation of Intel based MacBookPro. [^2]
+    I use [MacPorts] as the package manager for command line programs and [Homebrew] for GUI applications. [^3]
 
 - iPhone 13 mini
 
-    Nowadays there are few choices left for compact smart-phones weight less than 150 grams.
+    Nowadays, there are few choices left for compact smart-phones weight less than 150 grams.
     And although I prefer Android phones, Google only provides three years of security updates for Pixel phones.
-    For example, Pixel 4a will not receive any security updates after 2023. Also, it is easier to buy iPhones in most regions of the world, while compact Android phones are hard to buy in a lot of regions. For example, [Balmuda Phone] is only available in Japan.
+    For example, Pixel 4a will not receive any security updates after 2023.
+    Also, it is easier to buy iPhones in most regions of the world,
+    while compact Android phones are hard to buy in a lot of regions.
+    For example, [Balmuda Phone] is only available in Japan.
 
 
+[^2]: My previous personal Apple computer was last generation of PowerPC based iBook (`PowerBook 6,7`).
+
+[^3]: Previously I also use Homebrew for command line programs.
+    The migration to MacPorts is very smooth.
+    Among all Homebrew formulas I need, only [tldr] is not found in MacPorts.
+    I installed tldr via pnpm instead, which is also the recommendated installation method on tldr website.
+
+[MacPorts]: https://www.macports.org
+[Homebrew]: https://github.com/Homebrew/homebrew-cask
 [Balmuda Phone]: https://tech.balmuda.com/jp/phone/story/
+[tldr]: https://tldr.sh
 
 ## Camera
 
 Panasonic [GM1S] with Lumix G 14mm f/2.5 and Lumix G VARIO 35-100mm/f4-f5.6 lens,
-small and lightweight.
+small[^4] and lightweight.
+
+[^4]: I once considered buying a camera in Fujifilm X100 series,
+    which is one of the few digital compact cameras available today
+    still having physical wheels to adjust aperture, shutter speed, and ISO.
+    But it is too large to fit in the pocket.
 
 [GM1S]: https://panasonic.jp/dc/p-db/DMC-GM1SK.html
 
