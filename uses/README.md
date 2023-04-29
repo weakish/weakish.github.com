@@ -2,8 +2,7 @@
 
 ## Colophon
 
-- Frontend: just HTML and CSS, 100% JavaScript free.
-- Generator: [Lume]
+Made with [Lume][] [^1]
 
 [Lume]: https://lume.land
 
@@ -52,7 +51,10 @@
 
     Nowadays there are few choices left for compact smart-phones weight less than 150 grams.
     And although I prefer Android phones, Google only provides three years of security updates for Pixel phones.
-    For example, Pixel 4a will not receive any security updates after 2023.
+    For example, Pixel 4a will not receive any security updates after 2023. Also, it is easier to buy iPhones in most regions of the world, while compact Android phones are hard to buy in a lot of regions. For example, [Balmuda Phone] is only available in Japan.
+
+
+[Balmuda Phone]: https://tech.balmuda.com/jp/phone/story/
 
 ## Camera
 
