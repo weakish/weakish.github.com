@@ -72,13 +72,22 @@ Made with [Lume][] [^1]
 
 ## Camera
 
-Panasonic [GM1S] with Lumix G 14mm f/2.5 and Lumix G VARIO 35-100mm/f4-f5.6 lens,
-small[^4] and lightweight.
+Panasonic [GM1S] (204g) with Lumix G 14mm f/2.5 (55g) and Lumix G VARIO 35-100mm/f4-f5.6 lens (135g),
+small[^4] and lightweight[^5].
 
 [^4]: I once considered buying a camera in Fujifilm X100 series,
     which is one of the few digital compact cameras available today
     still having physical wheels to adjust aperture, shutter speed, and ISO.
     But it is too large to fit in the pocket.
+    It is a pity that Fujifilm does not produce X70 anymore.
+    Although Panasonic also discontinued GM series, at least it still produces LX 100 II.
+
+[^5]: A discontinued lighter interchangeable lens alternative with a 1/1.7" or 1/2.3" sensor:
+    Pentax Q/Q7/Q10/Q-S1 (180g/200g/200g/203g) with Pentax 01 Standard Prime (37g).
+    An APS-C fixed lens camera with similar weight: Rioch GR III (257g).
+    A discontinued APS-C fixed lens camera: Fujifilm X70 (340g).
+    An M43 camera with zoom lens: Panasonic LX 100 II (392g).
+    A compact 1" camera with zoom lens: Sony RX100 VII (302g), and Panasonic DMC-LX10 (310g).
 
 [GM1S]: https://panasonic.jp/dc/p-db/DMC-GM1SK.html
 
