@@ -50,29 +50,28 @@ Made with [Lume][] [^1]
 
 - iPhone 13 mini
 
-    Nowadays, there are few choices left for compact smart-phones weight less than 150 grams.
-    And although I prefer Android phones, Google only provides three years of security updates for Pixel phones.
-    For example, Pixel 4a will not receive any security updates after 2023.
-    Also, it is easier to buy iPhones in most regions of the world,
-    while compact Android phones are hard to buy in a lot of regions.
-    For example, [Balmuda Phone] is only available in Japan.
-
+    Nowadays, there are fewer choices left for compact smart-phones.
+    I bought iPhone 13 mini (131.5 x 64.2 x 7.65 mm, 141 g, 2406 mAH) in 2022, before iPhone SE 3rd generation (138.4 x 67.3 x 7.3 mm, 144 g, 2018 mAH) is available in the Apple Store.
+    I prefer Android phones, but [Balmuda Phone] (123 x 69 x 13.7 mm, 138 g, 2500 mAH) and [Sony Xperia Ace III] (140 x 69 x 8.9 mm, 162 g, 4500 mAH) are only available in Japan,
+    while Samsung Galaxy S23 (146.3 x 70.9 x 7.6 mm, 168 g, 3900 mAh), Sony Xperia 10 V (155 x 68 x 8.3 mm, 159 g, 5000 mAh), and Asus Zenfone 10 (146.5 x 68.1 x 9.4 mm, 172 g, 4300 mAh) are slightly bigger.
+    Previously I used Sony Xperia XZ1 Compact (129 x 65 x 9.3 mm, 140 g, 2700 mAH), then iPhone SE 2rd generation (138.4 x 67.3 x 7.3 mm, 148 g, 1821 mAH).
 
 [^2]: My previous personal Apple computer was last generation of PowerPC based iBook (`PowerBook 6,7`).
 
 [^3]: Previously I also use Homebrew for command line programs.
     The migration to MacPorts is very smooth.
     Among all Homebrew formulas I need, only [tldr] is not found in MacPorts.
-    I installed tldr via pnpm instead, which is also the recommendated installation method on tldr website.
+    I installed tldr via pnpm instead, which is also the recommended installation method on tldr website.
 
 [MacPorts]: https://www.macports.org
 [Homebrew]: https://github.com/Homebrew/homebrew-cask
 [Balmuda Phone]: https://tech.balmuda.com/jp/phone/story/
+[Sony Xperia Ace III]: https://xperia.sony.jp/xperia/acem3/spec_docomo.html
 [tldr]: https://tldr.sh
 
 ## Camera
 
-Panasonic [GM1S] (204g) with Lumix G 14mm f/2.5 (55g) and Lumix G VARIO 35-100mm/f4-f5.6 lens (135g),
+Panasonic [GM1S] (204g) with Lumix G 14mm f/2.5 (55g) and Lumix G VARIO 35-100 mm/f4-f5.6 lens (135g),
 small[^4] and lightweight[^5].
 
 [^4]: I once considered buying a camera in Fujifilm X100 series,
