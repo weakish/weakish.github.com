@@ -56,6 +56,12 @@ Made with [Lume][] [^1]
     while Samsung Galaxy S23 (146.3 x 70.9 x 7.6 mm, 168 g, 3900 mAh), Sony Xperia 10 V (155 x 68 x 8.3 mm, 159 g, 5000 mAh), and Asus Zenfone 10 (146.5 x 68.1 x 9.4 mm, 172 g, 4300 mAh) are slightly bigger.
     Previously I used Sony Xperia XZ1 Compact (129 x 65 x 9.3 mm, 140 g, 2700 mAH), then iPhone SE 2rd generation (138.4 x 67.3 x 7.3 mm, 148 g, 1821 mAH).
 
+- iPad 9th generation
+
+    Among the iPads that Apple is still selling, the 9th generation iPad is the only one with a headphone jack,
+    and the cheapest one can be used as a second display via sidecar with Mac.
+    
+
 [^2]: My previous personal Apple computer was last generation of PowerPC based iBook (`PowerBook 6,7`).
 
 [^3]: Previously I also use Homebrew for command line programs.
