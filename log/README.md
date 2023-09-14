@@ -563,7 +563,7 @@ Date: <a id="1596041215" href="#1596041215">1596041215</a>
 suitezero.archive posted their collection, a pair of fake Nike sneakers on [instagram]. Unlike most other fake Nike shoes, this pair has its own brand 登云 (meaning climbing the clouds in Chinese) and is produced by 上海皮鞋一厂 (Shanghai No.1 Leather Shoe Factory), a Chinese government-owned enterprise.
 
 [instagram]: https://www.instagram.com/p/B3Ig37PlQqB/
-![attached image](https://mmap.page/log/1596041471.jpg)
+![attached image](/log/1596041471.jpg)
 
 
 
@@ -878,7 +878,7 @@ Date: <a id="1578571754" href="#1578571754">1578571754</a>
 Date: <a id="1577539856" href="#1577539856">1577539856</a>
 
 It seems that the story writer of MonsterMatch need to learn more physics.
-![attached image](https://mmap.page/log/1577540089.jpg)
+![attached image](/log/1577540089.jpg)
 
 
 
@@ -1215,7 +1215,7 @@ It seems the Japanese new era is not very welcome yet:
 - Google Chrome Dev welcomes the new era (But only the dev channel, beta and stable still consider today is in 平成31年).
 
 [commit]: https://github.com/bminor/glibc/commit/466afec30896585b60c2106df7a722a86247c9f3#diff-33e83cd438ad668f1ff09e8680f6bf11
-![attached image](https://mmap.page/log/1556715169.jpg)
+![attached image](/log/1556715169.jpg)
 
 
 
@@ -1371,7 +1371,7 @@ I do not want to talk about technical details like C# 8.0 supports slicing notat
 
 Currently this video has 411k views, 8.1k upvotes (less than 200 downvotes) on YouTube. I think this is a good example of why learning to code is hard: so many poor and popular teaching materials on Internet.
 
-![attached image](https://mmap.page/log/1555771818.jpg)
+![attached image](/log/1555771818.jpg)
 
 
 
@@ -1797,7 +1797,7 @@ Images are supported. Comments are not supported yet (patch welcome).
 
 [zerome2md]: https://github.com/weakish/zerome2md
 
-The "exported" markdown file can be consumed by static site builders like Jekyll, e.g. a static mirror of my ZeroMe posts on clearnet: [mmap.page/log/](https://mmap.page/log/)
+The "exported" markdown file can be consumed by static site builders like Jekyll, e.g. a static mirror of my ZeroMe posts on clearnet: [mmap.page/log/](/log/)
 
 
 
@@ -1889,7 +1889,7 @@ The new palm phone reveals how ugly big today's phones are.
  3.3-inch, 445-ppi LCD display, 62.5 grams weight, IP68, cool! Type C, Android 8.1, 3GB RAM, 32GB storage, O.K. $349.99, expansive but still acceptable. Verizon Only, ShareNumber only, BAD!
 
 Photo credit: [theverge.com](https://www.theverge.com/2018/10/15/17974850/new-palm-smartphone-android-lifemode-time-well-spent-verizon)
-![attached image](https://mmap.page/log/1540394982.jpg)
+![attached image](/log/1540394982.jpg)
 
 
 

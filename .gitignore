@@ -4,3 +4,4 @@ _site
 .vscode/
 .DS_STORE
 _bin/
+_cache/
