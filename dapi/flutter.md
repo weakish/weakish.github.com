@@ -117,7 +117,7 @@ class MyApp extends StatelessWidget {
 
 效果是这样的：
 
-![hello-world](img/flutter/Screenshot_0.png)
+![hello-world](/dapi/img/flutter/Screenshot_0.png)
 
 ## 使用Flutter包
 
