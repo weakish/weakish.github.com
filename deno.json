@@ -9,7 +9,7 @@
     "jsxImportSource": "react"
   },
   "imports": {
-    "lume/": "https://deno.land/x/lume@v1.16.2/",
+    "lume/": "https://deno.land/x/lume@v1.18.5/",
     "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime"
   }
 }
