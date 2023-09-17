@@ -1,5 +1,6 @@
 import lume from "lume/mod.ts";
 import liquid from "lume/plugins/liquid.ts";
+import jsx from "lume/plugins/jsx.ts";
 import pagefind from "lume/plugins/pagefind.ts";
 import remark from "lume/plugins/remark.ts";
 import resolve_urls from "lume/plugins/resolve_urls.ts";
@@ -17,6 +18,7 @@ site.includes([".html"], "/_layouts/");
 site.copyRemainingFiles();
 
 site.use(liquid());
+site.use(jsx());
 site.use(pagefind());
 site.use(imagick());
 site.use(remark({
