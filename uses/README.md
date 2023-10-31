@@ -121,8 +121,10 @@ small[^4] and lightweight[^5].
 
 I only have casual clothing, no formal, semiformal, or informal clothing.
 I used to prefer [vintage style running shoes][thedeffest], those [revised] [models] originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
-However, I found out that these shoes are hard to buy,
-and now I wear sneakers bought in a supermarket [^6] and slippers bought in a convenience store.
+However, I found out that their toe boxes are narrow.
+Nowadays, I often wear a pair of white Crocs Classical Clog instead, which has a large toe box.
+I also put on some charms to make it prettier and more distinguishable.
+
 
 [thedeffest]: https://www.thedeffest.com/
 [revised]: https://www.thedeffest.com/blog/new-balance-ms327laa-retro-runners
@@ -131,8 +133,6 @@ and now I wear sneakers bought in a supermarket [^6] and slippers bought in a co
 [1970s]: /uses/comp-100.jpg "https://www.thedeffest.com/vintage-ads/new-balance-100-w100-vintage-sneaker-ad-from-1979"
 [1980s]: /uses/nb-420.jpg "https://i.ebayimg.com/images/g/ApEAAOSwd7Fb-MP7/s-l1600.jpg"
 [ad]: /uses/nb-ads.jpg "https://images.squarespace-cdn.com/content/v1/5ab94f5e3c3a536987d16ce5/1586282359719-W9JJP53TVVP0EAJVXOLJ/ke17ZwdGBToddI8pDm48kGNEFA4rC7c0McDIySn7RjkUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcPlG31PR0Q5DeNaNXE1QnS_LzyNcqI129vtg_t5azkwh6fx-4rvXr20Sq8_feGDMO/New+Balance+1982+vintage+sneaker+ad+%40+The+Deffest?format=1500w"
-
-[^6]: Breaker 4X4 White, a unisex canvas sneaker, size available from EU 29 to 47.
 
 This page is inspired by [uses.tech].
 
