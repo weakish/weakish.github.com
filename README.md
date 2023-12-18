@@ -4,7 +4,7 @@ Map memories to web pages.
 
 - [Exception and Union Type](dive-into/exceptions.md)
 - [Notes on A little Java, a Few Patterns](java/a-little.md)
-- [Quirks of Ruby](dive-into/ruby.md) and [TypeScript Function Overload](dive-into/typescript.md)
+- [Quirks of Ruby](dive-into/ruby.md)
 - [Fight for Type Safety Stand with JavaScript](dive-into/ts-check.md) (ts-check with JSDoc comments)
 - [An Optioned Guide to ESLint](dive-into/eslint.md)
 - [Write Makefile Compatible with Both GNU make and BSD make](dive-into/make.md)
