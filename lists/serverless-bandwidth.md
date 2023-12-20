@@ -33,6 +33,7 @@ If only bandwidth is concerned, then:
 | Cloudflare Pages           | 0    | 0      | 0     | 0              |
 | Digital Ocean Droplets     | 4    | 4      | 4     | 0.01           |
 | Linode Compute             | 5    | 5      | 5     | 0.01           |
+| Koyeb                      | 0    | 0      | 36    | 0.04           |
 
 ### Details
 
@@ -48,6 +49,8 @@ If only bandwidth is concerned, then:
   and they will contact the user if they continue to exceed bandwidth limits.
 
 - [Render] 100 GB free, then $0.10 per GB.
+
+- [Koyeb] 100 GB free, then $0.04 per GB (not charged yet).
 
 - [Railway] 100 GB free for all the plans. Overage billing is not mentioned on
   their pricing page. And I suspect overage billing or throttling has not been
@@ -92,6 +95,7 @@ If only bandwidth is concerned, then:
 [Vercel]: https://vercel.com/pricing "pricing"
 [Gatsby]: https://www.gatsbyjs.com/pricing/ "pricing"
 [Render]: https://render.com/pricing "pricing"
+[Koyeb]: https://www.koyeb.com/docs/faqs/pricing#how-does-charging-for-outbound-bandwidth-work "charging for outbound bandwidth"
 [Railway]: https://railway.app/pricing "pricing"
 [documentation]: https://docs.railway.app/reference/usecases "Railway usecases"
 [Fly]: https://fly.io/docs/about/pricing/ "pricing"
