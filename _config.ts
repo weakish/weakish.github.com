@@ -10,12 +10,16 @@ import rehypePicture from "https://esm.sh/rehype-picture@5";
 import rehypeImgSize from "https://esm.sh/rehype-img-size@1.0.1";
 import sitemap from "lume/plugins/sitemap.ts";
 import imagick from "lume/plugins/imagick.ts";
+import textLoader from "lume/core/loaders/text.ts";
+import GeminiEngine from "./gemini.ts";
 
 const site = lume({
   location: new URL("https://mmap.page"),
 });
 site.includes([".html"], "/_layouts/");
 site.copyRemainingFiles();
+
+site.loadPages([".gmi"], textLoader, new GeminiEngine());
 
 site.use(liquid());
 site.use(jsx());

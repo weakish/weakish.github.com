@@ -1,0 +1,14 @@
+# Gemini
+
+Gemini is a protocol "in between Gopher and the web"*, but for me, Gopher is more like FTP, and Gemini is more like HTTP. Gemini does have some pitfalls in its design+, but it is still a good enough alternative to Web with an active community.#
+
+=> https://geminiprotocol.net/history/ * History of Project Gemini
+=> https://daniel.haxx.se/blog/2023/05/28/the-gemini-protocol-seen-by-this-http-client-person/ + Daniel Stenberg (author of curl) on the Gemini protocol
+=> https://github.com/kr1sp1n/awesome-gemini # Awesome Gemini
+
+## Gemini Text
+
+If Gemini is to HTTP, then Gemini text is to HTML. It's a line-oriented minimalistic hypertext markup language inspired by Markdown and gophermaps. It has link lines and preformatted text lines. Optionally, it supports three levels of headings, unsorted lists, and quote lines.
+There is no syntax for escaping special markers. In other words, it assumes no normal text line will starts with =>, ```, *, #, or >. And no lines in preformatted text block will start with ```.
+
+=> https://geminiprotocol.net/docs/specification.gmi Gemini Speculative Specification
