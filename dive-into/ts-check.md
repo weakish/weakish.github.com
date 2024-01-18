@@ -1,7 +1,7 @@
 # Fight for Type Safety Stand with JavaScript
 
 TypeScript 2.3 and later support type-checking JavaScript files with JSDoc types.
-And JSDoc's uses the Closure Compiler's type language,
+JSDoc uses the Closure Compiler's type language,
 which in turn is originally based on the abandoned ES4 spec.
 Therefore, to some extent, TypeScript can check against [ES4 type language][es4-draft]!
 
@@ -211,7 +211,6 @@ If it fails to infer the type, we have to accept `any` as the type parameter.
 Another example is TypeScript cannot parse conditional types in JSDoc comments correctly. ([#27424])
 
 [#27424]: https://github.com/microsoft/TypeScript/issues/27424
-[#30445]: https://github.com/Microsoft/TypeScript/issues/30445
 
 So why not code in TypeScript instead?
 
