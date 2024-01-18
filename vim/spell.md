@@ -22,6 +22,7 @@ and use Neovim's built-in spell checking instead.
 Now I use [ltex_extra.nvim], which provides code actions for adding unknown words, disable rules, and hide false positives.
 
 [168]: https://github.com/valentjn/ltex-ls/issues/168
+[ltex_extra.nvim]: https://github.com/barreiroleo/ltex_extra.nvim
 
 
 BTW, the Grammarly LSP [does not support this][294], either.
