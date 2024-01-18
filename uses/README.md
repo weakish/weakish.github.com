@@ -66,14 +66,11 @@ Made with [Lume][] [^1]
 
 [^3]: Previously I also use Homebrew for command line programs.
     The migration to MacPorts is very smooth.
-    Among all Homebrew formulas I need, only [tldr] is not found in MacPorts.
-    I installed tldr via pnpm instead, which is also the recommended installation method on tldr website.
 
 [MacPorts]: https://www.macports.org
 [Homebrew]: https://github.com/Homebrew/homebrew-cask
 [Balmuda Phone]: https://tech.balmuda.com/jp/phone/story/
 [Sony Xperia Ace III]: https://xperia.sony.jp/xperia/acem3/spec_docomo.html
-[tldr]: https://tldr.sh
 
 ## Camera
 
