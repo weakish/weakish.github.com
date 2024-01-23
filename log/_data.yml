@@ -1,2 +1,2 @@
-imagick:
+transformImages:
   format: [avif, jpg]

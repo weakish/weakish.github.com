@@ -6,10 +6,13 @@
   },
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "types": [
+      "lume/types.ts"
+    ]
   },
   "imports": {
-    "lume/": "https://deno.land/x/lume@v1.18.5/",
+    "lume/": "https://deno.land/x/lume@v2.0.3/",
     "react": "https://esm.sh/react@18.2.0/",
     "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime"
   }

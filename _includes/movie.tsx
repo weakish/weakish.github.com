@@ -1,6 +1,4 @@
-import type { PageData } from "lume/core.ts";
-
-export interface MoviePageData extends PageData {
+export interface MoviePageData extends Lume.Data {
   id: number;
   year: number;
   vote: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
