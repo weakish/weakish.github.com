@@ -16,7 +16,7 @@ Map memories to web pages.
 - [Notes](/dapi/README.md) and [poems](poems/README.md) written in Chinese
 
 | [gh] | [gist] | [nitter] | [mastodon] | [gpg] | [rss] | [log] | [/uses] |
-| - | - | - | - | - | - | - | - |
+|------|--------|----------|------------|-------|-------|-------|---------|
 
 [gh]: https://github.com/weakish "GitHub"
 [Gist]: https://gist.github.com/weakish "GitHub Gist"
