@@ -1,0 +1,82 @@
+# Dive into Hare
+## Installation
+```sh
+sudo apk add hare hare-doc
+```
+## Features
+### Type Inference
+```hare
+for (let i = 0z; i < len(l); i += 1) {
+    print(l[i]);
+};
+```
+In the code above, the type of `i` is inferred to be `size` because `0z` is a size literal value. If using `let i = 0`, then the type of i will be inferred to be integer, which does not match the type of `len(i)`.
+BTW, `+= 1` is written since there is no `++` in Hare.
+
+### Re-binding Variables
+Like Rust, Hare allows re-binding variables, in other words, shadowing in the same scope.
+```hare
+// Good Example
+const source = os::open("main.ha")!;
+const source = io::drain(source)!;
+const source = strings::fromutf8(source)!;
+const source = strings::split(source, "\n");
+
+// Bad Example
+let x = 1;
+let x = 0;
+```
+### Bounds Checked Arrays and Slices
+Unlike Go, arrays and slices in Hare are bounds checked. For example, the following code will not compile.
+```hare
+const x = [1, 2, 3, 4];
+x[4] = 5;
+```
+However, it is possible to skip bound checks:
+```hare
+use fmt;
+
+export fn main() void = {
+	const x = [1, 3, 3, 7];
+	const z: *[*]int = &x; // [*] means unbounded
+	z[4] = 8; // undefined behavior
+	fmt::println(z[4])!; // prints 8 on my machine
+};
+```
+### Initialization
+Unlike C, Hare variables must be initialized upon declaration. Unlike Go, the initialization is explicit.
+```h
+use crypto::sha256;
+let sum: [sha256::SZ]u8 = [0...];
+```
+### Control Flow
+* `if` and `switch` are expressions.
+* `switch` expressions are exhaustive.
+### Error Handling
+In Go, it is common to panic after encounting errors if errors are not expected:
+```go
+ret, err := f()
+if err != nil {
+    panic(err)
+}
+```
+It is tedious to write this again and again. In Hare, we just use `!` when calling functions which may return errors:
+```hare
+const v = f()!;
+```
+And in Go, it is also common to "rethrow" errors:
+```go
+ret, err := f()
+if err != nil {
+    return ret, err
+}
+```
+Similarly, Hare provides a shortcut for this:
+```hare
+const v = f()?;
+```
+### Pointers
+* By default, pointers cannot be null, unless expicitly marked as nullable.
+* Pointers support auto-dereferencing.
+
+
