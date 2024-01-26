@@ -2,6 +2,7 @@ _site
 
 **.orig
 .vscode/
+.idea
 .DS_STORE
 _bin/
 _cache/
