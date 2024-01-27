@@ -61,7 +61,7 @@ But it seems that the timezone has changed to GMT.
 Time Zone: GMT
 ```
 
-For safety, I untick the "Set time zone automatically using current location" option in "System Preferences > Date & Time > Time Zone".
+For safety, I unselect the "Set time zone automatically using current location" option in "System Preferences > Date & Time > Time Zone".
 
 ## Install Homebrew
 
@@ -92,10 +92,6 @@ After that, I tried mounting a ext4 removable drive and succeeded.
 ## Keyboard
 
 In System Preference > Keyboard > Modifier Keys, I set CapsLock as Esc.
-
-I also installed [AltTab] to switch applications with `alt-tab`.
-
-[AltTab]: https://alt-tab-macos.netlify.app/
 
 By the way, OS X has native system-wide support for some Emacs keybinds, e.g.
 
