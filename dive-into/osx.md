@@ -93,22 +93,53 @@ In System Preferences > Trackpad:
 1. Close the lid to put laptop to sleep.
 2. Reactivate laptop via external input devices, e.g. keyboard.
 
-## Tiling
+## Window Management
 
-Long press the restore button, then select tiling in drop-down menu.
+I feel the window management under macOS weird.
 
-Another way is activating mission control.
-Then move one window to another full screen window in another virtual desktop.
+### Stage Manager
 
-Drag the edge between two tiling windows to adjust the size of the two windows at the same time.
+I do not use stage manager.
+It is inaccessible from keyboard shortcuts.
+Besides, it causes latency when switching between windows. 
 
-Rectangle offers more advanced manual tiling features.
+### Tiling
 
-## Virtual Desktops
+By default, macOS only supports tiling two windows vertically.
+I want to tile windows via keyboard shortcuts.
+Therefore, in Settings > Keyboard > Keyboard Shortcuts > App Shortcuts,
+I add the following two shortcuts under "All Applications":
+
+- "Move Window to Left Side of Screen": `C-A-Left`
+- "Move Window to Right Side of Screen": `C-A-Right`
+
+
+### Virtual Desktops
 
 Press `Ctrl-Left/Right` or swipe three fingers from left to right to switch among virtual desktops.
 
-Press `Ctrl-Up/Down` to show an overview of desktops or go back to normal mode.
+Press `Ctrl-Up` to show an overview of desktops.
+
+`Fn-f` will turn the focused application to full screen.
+All full screen application will occupy an entire virtual desktop,
+which will be created and destroyed upon the application entered and exited full screen.
+
+`Ctrl-Down` shows all windows of the current application
+and ``Cmd-``` switches among windows of the current application.
+Both of them only apply to windows in the current virtual desktop.
+Therefore, full screen applications do not work with them.
+
+There is no such concept called maximize under recent versions of macOS.
+The most similar thing is "zoom", which sometimes maximizes the window,
+sometimes not, depending on the type of the window and its content.
+Similarly to tilling, I added keyboard shortcut for it:
+
+- "Zoom": `Alt-Cmd-f`
+
+Also, I enabled `Ctrl-Num` shortcuts under
+`Settings > Keyboard > Keyboard shortcuts > Mission Control > Mission Control`.
+However, this only works for virtual desktops I created by myself,
+not automatically managed desktops for full screen applications.
 
 ## Finder
 
