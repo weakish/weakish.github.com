@@ -3,14 +3,15 @@
 ## Create a Bootable Installer
 
 I created a bootable installer to install macOS offline,
-incase that something went wrong
-macOS can be installed from Internet in recovery mode, but it is unreliable and slow.
+in case that something went wrong.
+Although macOS can be installed from Internet in recovery mode, it is unreliable and slow.
 I first tried a Sandisk 16GB USB drive, and it failed during copying the installer content.
 Then I tried a Toshiba 32GB USB drive, and the creation succeeded.
 I am not sure if 16GB is too small or macOS installer is fussy on USB drive models.
 
 [installer]: https://support.apple.com/en-us/HT201372
 
+I also set secure boot to medium security, to avoid connecting to Apple servers when installing operating systems. 
 
 ## Enable TouchID for sudo
 
