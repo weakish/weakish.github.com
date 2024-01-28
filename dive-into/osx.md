@@ -11,34 +11,6 @@ I am not sure if 16GB is too small or macOS installer is fussy on USB drive mode
 
 [installer]: https://support.apple.com/en-us/HT201372
 
-## Install Linux
-
-I always feel that I can only own a computer truly after I have installed Linux on it.
-So after finishing the macOS initial setup (user account, etc.), I rebooted to the recovery mode (Command+R on Intel based Macintosh machines with a T2 chip).
-
-Then I added a partition via disk utility in the recovery mode.
-This partition is for Linux, so the format does not matter.
-Adding a new partition will automatically resize the current macOS partition,
-which is much slower if performed under macOS instead of recovery mode.
-
-I also disable secure boot and enable external boot.
-
-Then I just booted into the installation USB drive, and installed [EndeavourOS].
-I chose the replace partition option with encrypted file system.
-The installer set up LUKS encryption and ext4 automatically.
-If I had chosen the "erase all" option, I can do some customizations, such as ext4/btrfs, swap partition/file, etc.
-However, I need a dual boot machine.
-
-[EndeavourOS]: https://wiki.t2linux.org/distributions/endeavouros/installation/
-
-I started the mac holding down the option key.
-The startup manager displayed.
-I used the arrow key to select the EFI disk for Linux,
-then I pressed enter and booted into EndeavourOS sucessfully.
-
-After finished initial setup of EndeavourOS,
-I started the mac holding down the option key again.
-While holding the Control key, I chose to boot into macOS, which also made macOS the default startup disk.
 
 ## Enable TouchID for sudo
 
