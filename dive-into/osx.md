@@ -15,7 +15,7 @@ I also set secure boot to medium security, to avoid connecting to Apple servers 
 
 ## Enable TouchID for sudo
 
-Add `auth sufficient pam_tid.so` in `/etc/pam.d/sudo`.
+Add `auth sufficient pam_tid.so` in `/etc/pam.d/sudo_local`.
 
 ## Set Timezone to GMT
 
