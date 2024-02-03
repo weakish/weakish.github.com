@@ -68,7 +68,7 @@ And there are some keybinds slightly different the original Emacs keybinds:
 - Also, `C-s` and `C-r` for search is unavailable.
 - shrink/extend-selection, add an additional `Shift` key but not needing to enter the selection mode (`C-SPC`) first.
 
-However, my keyboad has arrow keys and I feel using arrow keys are more nature.
+My keyboad has arrow keys and I feel using arrow keys are more nature.
 
 ## Trackpad
 
@@ -161,19 +161,23 @@ BTW, most applications' user configuration files are in `~/Library/Application S
 To enable developer tools, select "Show Develop menu in menu bar" in Safari > Preferences > Advanced.
 You can also change the default encoding to UTF-8.
 
-There are several vi shortcuts extensions for safari, for example, [sVim].
+There are several vi shortcuts extensions for safari, for example, [vimari].
 
-[sVim]: https://github.com/flipxfx/sVim
+[vimari]: https://github.com/televator-apps/vimari
 
-sVim can be configured via sVimrc via the extension settings in Safari.
-I mapped `d` and `D` to close and undo close tab:
+Due to the limitation of Safari, vimari has fewer key bindings than similar extensions for other browsers.
+Also, by default it binds `w/q` for next/previous tab, which I feel hard to remember.
+[Vimium] uses `J/K`, which I also hard to remember.
+Thus, I just remove them and use Safari native keyboard shortcuts.
+Also, I find myself more frequently open links in new tabs,
+so I swapped `f` and `F`, using `f` to toggle links for opening the link in background tab.
 
+```json
+"hintToggle": "shift+f",
+"newTabHintToggle": "f",
 ```
-" Shortcuts
 
-map "d" quit
-map "shift+d" lastClosedTab
-```
+[Vimium]: https://github.com/philc/vimium
 
 ## Google
 
