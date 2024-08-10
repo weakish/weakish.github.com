@@ -111,8 +111,9 @@ Made with [Lume][] [^1]
 I only have casual clothing, no formal, semiformal, or informal clothing.
 I used to prefer [vintage style running shoes][thedeffest], those [revised] [models] originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
 However, I found out that their toe boxes are narrow.
-Nowadays, I often wear a pair of white Crocs Classical Clog instead, which has a large toe box.
+Nowadays, I often wear white Crocs Classical Clog instead, which has a large toe box.
 I also put on some charms to make it prettier and more distinguishable.
+Occasionally, I wear Vibram FiveFingers KSO ECO Green, which is extremely light and minimalistic.
 
 
 [thedeffest]: https://www.thedeffest.com/
