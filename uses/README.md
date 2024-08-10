@@ -72,6 +72,13 @@ Made with [Lume][] [^1]
 [Balmuda Phone]: https://tech.balmuda.com/jp/phone/story/
 [Sony Xperia Ace III]: https://xperia.sony.jp/xperia/acem3/spec_docomo.html
 
+## Online Services
+
+- Transfer files: [WeTransfer] and [SwissTransfer]. No account is needed for both the sender and the receiver. The former has a 2GB limit, while the latter has a 50GB limit.
+
+[WeTransfer]: https://wetransfer.com
+[SwissTransfer]: https://www.swisstransfer.com
+
 ## Camera
 
 - Olympus Pen D3
