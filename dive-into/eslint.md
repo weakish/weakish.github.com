@@ -97,10 +97,14 @@ ni -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
 
 ## Alternatives
 
-[Rome] and [quick-lint-ls] are faster alternatives to ESLint.
-Rome does not support Svelte,
-and quick-lint-ls does not support TypeScript.
+[Biome] and [quick-lint-ls] are faster alternatives to ESLint.
+Biome currently only has [particial support for Svelte and Astro][biome-docs],
+and quick-lint-ls before 3.0 does not support TypeScript.
 Therefore, I still use ESLint.
+However, since [quick-lint-ls 3.0 introduces TypeScript support][quick-lint-ts],
+I plan to try it in future.
 
-[Rome]: https://rome.tools/
+[Biome]: https://biomejs.dev/
+[biome-docs]: https://biomejs.dev/internals/language-support/
 [quick-lint-ls]: https://quick-lint-js.com/
+[quick-lint-ts]: https://quick-lint-js.com/blog/version-3.0/
