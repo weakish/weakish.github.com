@@ -1,5 +1,7 @@
 # Fight for Type Safety Stand with JavaScript
 
+Note: This note is based on old versions of TypeScript and ReScript.
+
 TypeScript 2.3 and later support type-checking JavaScript files with JSDoc types.
 JSDoc uses the Closure Compiler's type language,
 which in turn is originally based on the abandoned ES4 spec.

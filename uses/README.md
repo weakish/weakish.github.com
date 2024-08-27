@@ -109,18 +109,15 @@ Made with [Lume][] [^1]
 ## Wear
 
 I only have casual clothing, no formal, semiformal, or informal clothing.
-I used to prefer [vintage style running shoes][thedeffest], those [revised] [models] originated from [1960s], [1970s], and [1980s], [light and comfort][ad].
+I used to prefer [vintage style running shoes][thedeffest], those revised [models] originated from [1960s] to [1980s], [light and comfort][ad].
 However, I found out that their toe boxes are narrow.
-Nowadays, I often wear white Crocs Classical Clog instead, which has a large toe box.
-I also put on some charms to make it prettier and more distinguishable.
+Nowadays, I often wear a pair of Crocs Classical Clog instead, which has a large toe box.
+I also put on some charms to make my white Crocs prettier.
 Occasionally, I wear Vibram FiveFingers KSO ECO Green, which is extremely light and minimalistic.
 
-
 [thedeffest]: https://www.thedeffest.com/
-[revised]: https://www.thedeffest.com/blog/new-balance-ms327laa-retro-runners
 [models]: https://www.mizuno.jp/mizuno1906/journal/journal_collection/046/
 [1960s]: https://www.onitsukatiger.com/gb/en-gb/onitsukatiger-inspiration/onitsukatiger-mexico-66/
-[1970s]: /uses/comp-100.jpg "https://www.thedeffest.com/vintage-ads/new-balance-100-w100-vintage-sneaker-ad-from-1979"
 [1980s]: /uses/nb-420.jpg "https://i.ebayimg.com/images/g/ApEAAOSwd7Fb-MP7/s-l1600.jpg"
 [ad]: /uses/nb-ads.jpg "https://images.squarespace-cdn.com/content/v1/5ab94f5e3c3a536987d16ce5/1586282359719-W9JJP53TVVP0EAJVXOLJ/ke17ZwdGBToddI8pDm48kGNEFA4rC7c0McDIySn7RjkUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcPlG31PR0Q5DeNaNXE1QnS_LzyNcqI129vtg_t5azkwh6fx-4rvXr20Sq8_feGDMO/New+Balance+1982+vintage+sneaker+ad+%40+The+Deffest?format=1500w"
 
