@@ -74,12 +74,16 @@ which are merely personal choice of programming style.
 So here is the five ESLint rules I use:
 
 ```js
+{
+"parser": "@typescript-eslint/parser",
+"plugins": ["@typescript-eslint"],
 "rules": {
     "prefer-arrow-callback": "error", // avoid the evil `this`
     "no-multi-assign": "error", // no `a = b = c = 1`
     "no-var": "error", // use `const` and `let` instead of `var`
     "prefer-const": "error", // use `const` when there is no reassignment
     "no-param-reassign": "error", // use nonreassignable function parameters
+}
 }
 ```
 
@@ -89,22 +93,6 @@ I do not use `npm init @eslint/config` and add dependencies by hand:
 
 ```sh
 ni -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
-```
-
-ESLint configuration file example:
-
-```json
-{
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "rules": {
-    "prefer-arrow-callback": "error", // avoid the evil `this`
-    "no-multi-assign": "error", // no `a = b = c = 1`
-    "no-var": "error", // use `const` and `let` instead of `var`
-    "prefer-const": "error", // use `const` when there is no reassignment
-    "no-param-reassign": "error" // use nonreassignable function parameters
-  }
-}
 ```
 
 ## Alternatives
