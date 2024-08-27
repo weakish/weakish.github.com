@@ -15,8 +15,8 @@ Map memories to web pages.
 - [RarCrack Basic Guide](dive-into/rarcrack.md)
 - [Notes](/dapi/README.md) and [poems](poems/README.md) written in Chinese
 
-| [gh] | [gist] | [mastodon] | [gpg] | [rss] | [log] | [/uses] |
-|------|--------|------------|-------|-------|-------|---------|
+| [gh] | [gist] | [mastodon] | [gpg] | [rss] | [log] | [movies] | [/uses] |
+|------|--------|------------|-------|-------|-------|----------|---------|
 
 [gh]: https://github.com/weakish "GitHub"
 [Gist]: https://gist.github.com/weakish "GitHub Gist"
@@ -25,3 +25,4 @@ Map memories to web pages.
 [rss]: /rss.xml "RSS Feed (XML)"
 [/uses]: uses/README.md "Setups, gear, software"
 [log]: log/README.md "Micro web log"
+[movies]: movies/ "Recently Watched Movies"
