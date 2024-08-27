@@ -124,3 +124,9 @@ Occasionally, I wear Vibram FiveFingers KSO ECO Green, which is extremely light 
 This page is inspired by [uses.tech].
 
 [uses.tech]: https://uses.tech/
+
+## Drink
+
+Water, milk, and Juice.
+I seldom drink coffee or tea, and almost never drink alcohol.
+However, I do like drinking chocolate.
