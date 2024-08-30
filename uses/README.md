@@ -84,6 +84,11 @@ Made with [Lume][] [^1]
 - Olympus Pen D3
 
     Fully manual compact half-frame camera.
+    I often load it with Fomapan Classical 100 or Eastman Double X.
+    I prefer Orthochromatic films such as Rollei Ortho 25 Plus and Ilford Ortho Plus, but they are hard to buy.
+    Sometimes I also use color films produced by Kodak or Fujifilm.
+    I use Ilford HP5 Plus pushed two or three stops for low light.
+
 
 ## Editor
 
