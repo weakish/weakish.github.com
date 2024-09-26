@@ -12,7 +12,7 @@
     ]
   },
   "imports": {
-    "lume/": "https://deno.land/x/lume@v2.2.0/",
+    "lume/": "https://deno.land/x/lume@v2.3.2/",
     "react": "https://esm.sh/react@18.2.0/",
     "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime"
   }

@@ -1,4 +1,5 @@
 import lume from "lume/mod.ts";
+import sri from "lume/plugins/sri.ts";
 import feed from "lume/plugins/feed.ts";
 import liquid from "lume/plugins/liquid.ts";
 import jsx from "lume/plugins/jsx.ts";
@@ -45,6 +46,7 @@ site.use(feed({
   output: "/feed.json", /* jsonfeed.org uses feed.json */
   limit: Number.MAX_SAFE_INTEGER, /* number of items in a feed is unlimited according to json feed spec */
 }))
+site.use(sri());
 site.use(liquid());
 site.use(jsx());
 site.use(pagefind());
