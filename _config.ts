@@ -21,6 +21,7 @@ site.copyRemainingFiles();
 
 site.loadPages([".gmi"], { loader: textLoader, engine: new GeminiEngine() });
 
+site.ignore("render.yaml");
 site.use(liquid());
 site.use(jsx());
 site.use(pagefind());
