@@ -1,4 +1,5 @@
 import lume from "lume/mod.ts";
+import feed from "lume/plugins/feed.ts";
 import liquid from "lume/plugins/liquid.ts";
 import jsx from "lume/plugins/jsx.ts";
 import pagefind from "lume/plugins/pagefind.ts";
@@ -21,7 +22,29 @@ site.copyRemainingFiles();
 
 site.loadPages([".gmi"], { loader: textLoader, engine: new GeminiEngine() });
 
+const feedOptions = {
+  query: "layout=default.liquid", /* all my articles use default.liquid template */
+}
+
 site.ignore("render.yaml");
+site.use(feed({
+  ...feedOptions,
+  info: {
+    title: "Recent Memories Mapped to Web Pages",
+    subtitle: "Recent Updates from mmap.page",
+  },
+  output: "/rss.xml",
+  limit: 15, /* RSS 0.91 allows no more than 15 items */
+}));
+site.use(feed({
+  ...feedOptions,
+  info: {
+    title: "Memories Mapped to Web Pages",
+    subtitle: "All posts from mmap.page",
+  },
+  output: "/feed.json", /* jsonfeed.org uses feed.json */
+  limit: Number.MAX_SAFE_INTEGER, /* number of items in a feed is unlimited according to json feed spec */
+}))
 site.use(liquid());
 site.use(jsx());
 site.use(pagefind());
