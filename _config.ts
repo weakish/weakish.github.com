@@ -29,7 +29,9 @@ site.preprocess([".html"], (pages) => {
     const { entry } = page.src;
     page.data.lastmod = getGitDate("modified", entry.src);
     // `git log --diff-filter=A --follow` yields no output for files where the latest commit had a merge conflict.
-    // https://stackoverflow.com/questions/2390199/finding-the-date-time-a-file-was-first-added-to-a-git-repository#comment118580024_25633731)
+    // See also:
+    // lumeland/lume#667
+    // https://stackoverflow.com/questions/2390199/finding-the-date-time-a-file-was-first-added-to-a-git-repository#comment118580024_25633731
     page.data.date = getGitDate("created", entry.src) ?? getGitDate("modified", entry.src);
   }
 });
