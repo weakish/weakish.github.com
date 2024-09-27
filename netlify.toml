@@ -1,0 +1,62 @@
+[build]
+  publish = "_site"
+  command = "deno task build"
+
+[[headers]]
+    for = "/LICENSE"
+    [headers.values]
+        Content-Type = "text/plain"
+
+[[redirects]]
+    from = "/fun/exodia/"
+    to = "/poems/exodia/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/fun/heart/"
+    to = "https://gist.github.com/weakish/494919"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/StutteringTalkaholic/"
+    to = "/log/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/StutteringTalkaholic/hardening/"
+    to = "https://gist.github.com/weakish/7467298"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/StutteringTalkaholic/ruby/api-doc/"
+    to = "https://gist.github.com/weakish/5240f6af3aa9a84a6dabeb8d1abcb245"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/StutteringTalkaholic/zh/:slug/"
+    to = "/dapi/:slug/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/StutteringTalkaholic/dive-into/:slug/"
+    to = "/dive-into/:slug/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dapi/no-blog/"
+    to = "/dapi/not-a-blog/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/teapot"
+    to = "https://teapot.onrender.com"
+    status = 200
+    force = true
