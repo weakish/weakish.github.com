@@ -103,6 +103,7 @@ and quick-lint-ls before 3.0 does not support TypeScript.
 Therefore, I still use ESLint.
 However, since [quick-lint-ls 3.0 introduces TypeScript support][quick-lint-ts],
 I plan to try it in future.
+Also, Deno 2.0 introduces compatibility with Node.js and npm, so I also plan to try `deno lint` on non Deno projects.
 
 [Biome]: https://biomejs.dev/
 [biome-docs]: https://biomejs.dev/internals/language-support/
