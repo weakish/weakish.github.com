@@ -6,6 +6,7 @@ import jsx from "lume/plugins/jsx.ts";
 import pagefind from "lume/plugins/pagefind.ts";
 import remark from "lume/plugins/remark.ts";
 import resolve_urls from "lume/plugins/resolve_urls.ts";
+import lume_glow from "https://deno.land/x/lume_glow/plugin.ts";
 import rehypeExtractExcerpt from "https://esm.sh/rehype-extract-excerpt@0.3.1"
 import rehypePicture from "https://esm.sh/rehype-picture@5.0.0";
 import rehypeImgSize from "https://esm.sh/rehype-img-size@1.0.1";
@@ -66,6 +67,7 @@ site.use(liquid());
 site.use(jsx());
 site.use(pagefind());
 site.use(transformImages());
+site.use(lume_glow());
 site.use(remark({
   rehypePlugins: [[rehypeImgSize, { dir: "." }], [
     rehypeExtractExcerpt,
