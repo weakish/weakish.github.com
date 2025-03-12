@@ -10,6 +10,7 @@ import rehypeStarryNight from 'https://cdn.jsdelivr.net/npm/rehype-starry-night@
 import rehypeExtractExcerpt from "https://esm.sh/rehype-extract-excerpt@0.3.1"
 import rehypePicture from "https://esm.sh/rehype-picture@5.0.0";
 import rehypeImgSize from "https://esm.sh/rehype-img-size@1.0.1";
+import purgecss from "lume/plugins/purgecss.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import { getGitDate } from "lume/core/utils/date.ts";
 import favicon from "lume/plugins/favicon.ts";
@@ -86,5 +87,6 @@ site.use(sitemap({
 }));
 
 site.use(favicon());
+site.use(purgecss());
 
 export default site;
