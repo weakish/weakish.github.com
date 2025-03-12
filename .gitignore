@@ -1,5 +1,7 @@
 _site
 
+deno.lock
+
 **.orig
 .vscode/
 .idea
