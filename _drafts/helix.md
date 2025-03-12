@@ -104,20 +104,15 @@ Helix has not integrated a git frontend to view history and stage changes [yet][
 but I am comfortable using git command line directly,
 where I have a lot of aliases defined in my `~/.gitconfig`.
 Sometimes when finding `git -p` a bit tedious to use,
-I run [gitui] to stage changes.
-Since I have configured to always sign git commits,
-gitui disabled the commit function in the UI to avoid accidental unsign commits.
-Therefore, I commit and push via the git command line afterwards.
-There is [a branch supporting git commit signing][#1544],
-but I am too lazy to compile it myself.
+I run [gitui] instead.
 When I need to reorganize and rewrite git history a lot,
+
 I use [GitUp], which is powerful and speedy at rewriting git history.
-It also does [not support signing commits yet][#691].
+However, it has [not support signing commits yet][#691].
 If repositories require commits signing, I run `git rebase --signoff` before push.  
 
 [#227]: https://github.com/helix-editor/helix/issues/227
 [gitui]: https://github.com/extrawurst/gitui
-[#1544]: https://github.com/extrawurst/gitui/pull/1544
 [GitUp]: https://gitup.co
 [#691]: https://github.com/git-up/GitUp/pull/691
 
