@@ -1,6 +1,6 @@
 [build]
   publish = "_site"
-  command = "deno task build"
+  command = "deno upgrade && deno task build"
 
 [[headers]]
     for = "/LICENSE"
