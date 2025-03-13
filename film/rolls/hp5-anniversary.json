@@ -1,0 +1,480 @@
+{
+  "name": "HP5+ Anniversary",
+  "iso": 400,
+  "pullPush": "0",
+  "cameraName": "Olympus Pen D3",
+  "frames": {
+    "1": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/1.7",
+      "shutterSpeed": "1/30",
+      "date": "2025-02-15",
+      "exposureValue": 0.0,
+      "distance": "1.2m",
+      "note": "An artwork by Ari Bayuaji titled 'One Eye Rangda', 2023–2024.",
+      "location": "Bangkok Art & Culture Centre"
+    },
+    "2": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-23",
+      "exposureValue": 0.0,
+      "distance": "1.2m",
+      "note": "I forgot to adjust focal distance. Fortunately under f/16 the depth of field is acceptable.",
+      "location": {
+        "latitude": 13.76323611665441,
+        "longitude": 100.50278357906785
+      }
+    },
+    "3": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/250",
+      "date": "2025-02-23",
+      "exposureValue": 0.0,
+      "distance": "1.2m",
+      "note": "I forgot to adjust focal distance.",
+      "location": "Phra Nakhon, Bangkok, Thailand"
+    },
+    "4": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/250",
+      "date": "2025-02-23",
+      "exposureValue": 0.0,
+      "distance": "1.2m",
+      "note": "I forgot to adjust focal distance.",
+      "location": "Phra Nakhon, Bangkok, Thailand"
+    },
+    "5": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/125",
+      "date": "2025-02-23",
+      "exposureValue": 0.0,
+      "distance": "1.2m",
+      "note": "Bang Khunphrom 1. I forgot to adjust focal distance. Fortunately the result turns out to be not bad.",
+      "location": {
+        "latitude": 13.76511238226101,
+        "longitude": 100.50090481175685
+      }
+    },
+    "6": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/250",
+      "date": "2025-02-23",
+      "exposureValue": 0.0,
+      "note": "There are still a few traditional wooden houses in Bangkok.",
+      "location": {
+        "latitude": 13.76174340024402,
+        "longitude": 100.50035646458448
+      }
+    },
+    "7": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-23",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.76063863191435,
+        "longitude": 100.50172765663223
+      }
+    },
+    "8": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-23",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Phra Nakhon, Bangkok, Thailand"
+    },
+    "9": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-25",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.763913075420907,
+        "longitude": 100.49622342408219
+      }
+    },
+    "10": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-25",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.763913075420907,
+        "longitude": 100.49622342408219
+      }
+    },
+    "11": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-25",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.763913075420907,
+        "longitude": 100.49622342408219
+      }
+    },
+    "12": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-25",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.763913075420907,
+        "longitude": 100.49622342408219
+      }
+    },
+    "13": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-25",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.763913075420907,
+        "longitude": 100.49622342408219
+      }
+    },
+    "14": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-25",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.763913075420907,
+        "longitude": 100.49622342408219
+      }
+    },
+    "15": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-25",
+      "exposureValue": 0.0,
+      "note": "House and apartment.",
+      "location": "Phra Nakhon, Bangkok, Thailand"
+    },
+    "16": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/250",
+      "date": "2025-02-28",
+      "exposureValue": 0.0,
+      "distance": "3m",
+      "location": {
+        "latitude": 13.76469551548219,
+        "longitude": 100.4998347009899
+      }
+    },
+    "17": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/250",
+      "date": "2025-02-28",
+      "exposureValue": 0.0,
+      "distance": "5m",
+      "note": "",
+      "location": {
+        "latitude": 13.764741792905669,
+        "longitude": 100.49979651609324
+      }
+    },
+    "18": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-28",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.710966610842103,
+        "longitude": 100.50480617714888
+      }
+    },
+    "19": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/250",
+      "date": "2025-02-28",
+      "exposureValue": 0.0,
+      "note": "Away Bangkok Riverside Kene",
+      "location": {
+        "latitude": 13.710935092692493,
+        "longitude": 100.50482957168151
+      }
+    },
+    "20": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-28",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.710576785534299,
+        "longitude": 100.5052024909155
+      }
+    },
+    "21": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/500",
+      "date": "2025-02-28",
+      "exposureValue": 0.0,
+      "note": "The composition is not accurate enough that a tiny part of the building is included in the upper left corner of the frame accidentally. However, this somehow looks like a photo printed on a big loose leaf paper.",
+      "location": {
+        "latitude": 13.710576785534299,
+        "longitude": 100.5052024909155
+      }
+    },
+    "22": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-01",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "J. No 14 Lodge" 
+    },
+    "23": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-01",
+      "exposureValue": 0.0,
+      "note": "Cropped to square format.",
+      "location": "J. No 14 Lodge"
+    },
+    "24": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-01",
+      "exposureValue": 0.0,
+      "note": "Cropped to square format.",
+      "location": "J. No 14 Lodge"
+    },
+    "25": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/8",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "distance": "5m",
+      "note": "",
+      "location": "J. No 14 Lodge" 
+    },
+    "26": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/4",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "distance": "5m",
+      "note": "",
+      "location": "J. No 14 Lodge"
+    },
+    "27": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "distance": "5m",
+      "note": "",
+      "location": "J. No 14 Lodge"
+    },
+    "28": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/4",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "distance": "2m",
+      "note": "",
+      "location": "J. No 14 Lodge"
+    },
+    "29": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "distance": "2m",
+      "note": "Cropped to square format.",
+      "location": "J. No 14 Lodge"
+    },
+    "30": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "distance": "3m",
+      "note": "",
+      "location": "J. No 14 Lodge"
+    },
+    "31": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/1.7",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "distance": "1.2m",
+      "note": "",
+      "location": "J. No 14 Lodge"
+    },
+    "32": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-02T13:14:09.654",
+      "exposureValue": 0.0,
+      "distance": "1.2m",
+      "note": "",
+      "location": "J. No 14 Lodge"
+    },
+    "33": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "note": "This Chinese couplet for the Spring Festival does not follow the tone pattern.",
+      "location": {
+        "latitude": 13.701912258354472,
+        "longitude": 100.51002604511343
+      }
+    },
+    "34": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "note": "Thai numerals & Arabic numerals",
+      "location": "Bang Kho Laem, Bangkok, Thailand",
+    },
+    "35": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/8",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.647182803782067,
+        "longitude": 100.596131292363
+      }
+    },
+    "36": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-02",
+      "exposureValue": 0.0,
+      "note": "Cropped to square format.",
+      "location": {
+        "latitude": 13.64779636737133,
+        "longitude": 100.5962741228736
+      }
+    },
+    "37": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/8",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-08",
+      "exposureValue": 0.0,
+      "note": "Bangkok South Criminal Court",
+      "location": {
+        "latitude": 13.713740571338557,
+        "longitude": 100.51492383949267
+      }
+    },
+    "38": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-09",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "The Temple of the Emerald Buddha" 
+    },
+    "39": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-09",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "The Temple of the Emerald Buddha" 
+    },
+    "40": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-09",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "The Temple of the Emerald Buddha" 
+    },
+    "41": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-09",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "The Temple of the Emerald Buddha" 
+    },
+    "42": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-09",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "The Temple of the Emerald Buddha" 
+    },
+    "43": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-09",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "The Temple of the Emerald Buddha" 
+    },
+    "44": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-09",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "The Grand Palace"
+    }
+  },
+  "note": "Ilford HP5 Plus vintage packaging for 145th anniversary, bought in New Zealand, exposed to one X-ray scan at airport. https://www.flickr.com/photos/weakish/albums/72177720324408696",
+  "date": "2025-02-15T17:22:10.447"
+}
