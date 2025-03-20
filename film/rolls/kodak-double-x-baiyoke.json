@@ -1,0 +1,213 @@
+{
+  "name": "Kodak Double X Baiyoke",
+  "iso": 250,
+  "pullPush": "0",
+  "cameraName": "Olympus Pen D3",
+  "frames": {
+    "1": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/8, f/16",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "concat fram 7 and frame 8",
+      "location": {
+        "latitude": 13.741804370639668,
+        "longitude": 100.51064733306069
+      }
+    },
+    "2": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/8",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-14",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.754870605436817,
+        "longitude": 100.53800307654903
+      }
+    },
+    "3": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/1.7",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "distance": "5m",
+      "note": "",
+      "location": "The Stranger Bar, Bangkok, Thailand"
+    },
+    "4": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/1.7",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "distance": "5m",
+      "note": "5",
+      "location": "The Stranger Bar, Bangkok, Thailand"
+    },
+    "5": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/1.7",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "distance": "5m",
+      "note": "5",
+      "location": "The Stranger Bar, Bangkok, Thailand"
+    },
+    "6": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/1.7",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "distance": "5m",
+      "note": "5",
+      "location": "The Stranger Bar, Bangkok, Thailand"
+    },
+    "7": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/8",
+      "shutterSpeed": "1/125",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.741804370639668,
+        "longitude": 100.51064733306069
+      }
+    },
+    "8": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.741934840743923,
+        "longitude": 100.51089253469381
+      }
+    },
+    "9": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": {
+        "latitude": 13.741934840743923,
+        "longitude": 100.51089253469381
+      }
+    },
+    "10": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Yaowarat, Bangkok, Thailand"
+    },
+    "11": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/30",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "distance": "5m",
+      "note": "",
+      "location": {
+        "latitude": 13.741102796946382,
+        "longitude": 100.50966411629834
+      }
+    },
+    "12": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Yaowarat, Bangkok, Thailand"
+    },
+    "13": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Yaowarat, Bangkok, Thailand"
+    },
+    "14": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/16",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Yaowarat, Bangkok, Thailand"
+    },
+    "15": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Yaowarat, Bangkok, Thailand"
+    },
+    "16": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Yaowarat, Bangkok, Thailand"
+    },
+    "17": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Yaowarat, Bangkok, Thailand"
+    },
+    "18": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Yaowarat, Bangkok, Thailand"
+    },
+    "19": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Yaowarat, Bangkok, Thailand"
+    },
+    "20": {
+      "lensName": "Copal-x F Zuiko",
+      "aperture": "f/11",
+      "shutterSpeed": "1/500",
+      "date": "2025-03-16",
+      "exposureValue": 0.0,
+      "note": "",
+      "location": "Yaowarat, Bangkok, Thailand"
+    }
+  },
+  "note": "Scan: MACHINE_NAME=EZ Publisher, SOFT_VER=EZ Publisher 1.00, DATE=20250317, NUMBER_OF_IMAGES=73. https://flickr.com/photos/weakish/albums/72177720324533091",
+  "date": "2025-03-14"
+}
