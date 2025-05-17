@@ -2,7 +2,7 @@
 
 ## Colophon
 
-Made with [Lume][] [^1]
+Made with [Lume][].[^1]
 
 [Lume]: https://lume.land
 
@@ -45,6 +45,10 @@ Made with [Lume][] [^1]
 [pelican-pandoc]: https://github.com/pelican-plugins/pandoc-reader#specifying-file-metadata
 [Hugo]: https://gohugo.io/getting-started/configuration/#contentdir
 [url]: https://github.com/weakish/weakish.github.com/commit/1d8a2f4b7682cf246cb8e2d3996b5bb66c431240
+
+I keep a local copy of the site source in my phone and browse them with [Obsidian].
+
+[Obsidian]: https://obsidian.md
 
 ## Computers
 
