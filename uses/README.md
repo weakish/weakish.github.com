@@ -94,27 +94,18 @@ Made with [Lume][] [^1]
     Sometimes I also use color films produced by Kodak or Fujifilm.
     I use Ilford HP5 Plus pushed two or three stops for low light.
 
-
 ## Editor
 
-- [LazyVim] with [Codeium & Copilot](../vim/completion.md) and [LanguageTool](../vim/spell.md) under [kitty] terminal.
+I mainly use VSCode since it is a popular choice for a lot of languages and frameworks.
+Also, it has first class support for GitHub Copilot which I use a lot (currently I am on its Pro plan).
 
-    I choose this Neovim setup because it keeps configurations simple and uses the modern plugin manager [lazy.vim].
-    Previously I use LunarVim, which is a bit complex and lagged.
-    I prefer kitty because it works well with Neovim (true color & undercurl) and it is from Kovid Goyal, the author of [calibre].
+## Terminal
 
-- [VSCode](https://code.visualstudio.com/)
+I use [kitty] because previously I had used Neovim for some time and kitty works well with Neovim (true color & undercurl).
+Also, kitty is from Kovid Goyal, the author of [calibre].
 
-    I also use VSCode, because it has better support for some languages or frameworks.
-    For example, the official vim plugin of ReScript is still based on coc.vim,
-    and its language server is [outdated] compared to the one included in the VSCode extension.
-    Also, both Copilot Lab and Codeium Chat are only available under VSCode.
-
-[LazyVim]: https://www.lazyvim.org/
-[lazy.vim]: https://github.com/folke/lazy.nvim
 [kitty]: https://sw.kovidgoyal.net/kitty/
 [calibre]: https://github.com/kovidgoyal/calibre
-[outdated]: https://github.com/rescript-lang/vim-rescript/issues/61
 
 ## Wear
 
