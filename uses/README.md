@@ -55,7 +55,7 @@ Made with [Lume][] [^1]
 
 - iPhone 13 mini
 
-    Nowadays, there are fewer choices left for compact smart-phones.
+    Nowadays, there are almost no choices left for compact smart-phones.
     I bought iPhone 13 mini (131.5 x 64.2 x 7.65 mm, 141 g, 2406 mAH) in 2022, before iPhone SE 3rd generation (138.4 x 67.3 x 7.3 mm, 144 g, 2018 mAH) is available in the Apple Store.
     I prefer Android phones, but [Balmuda Phone] (123 x 69 x 13.7 mm, 138 g, 2500 mAH) is discontinued and [Sony Xperia Ace III] (140 x 69 x 8.9 mm, 162 g, 4500 mAH) are only available in Japan,
     while Samsung Galaxy S23 (146.3 x 70.9 x 7.6 mm, 168 g, 3900 mAh), Sony Xperia 10 V (155 x 68 x 8.3 mm, 159 g, 5000 mAh), and Asus Zenfone 10 (146.5 x 68.1 x 9.4 mm, 172 g, 4300 mAh) are slightly bigger.
@@ -118,7 +118,6 @@ Made with [Lume][] [^1]
 
 ## Wear
 
-I only have casual clothing, no formal, semiformal, or informal clothing.
 I used to prefer [vintage style running shoes][thedeffest], those revised [models] originated from [1960s] to [1980s], [light and comfort][ad].
 However, I found out that their toe boxes are narrow.
 Nowadays, I often wear a pair of Crocs Classical Clog instead, which has a large toe box.
@@ -131,12 +130,12 @@ Occasionally, I wear Vibram FiveFingers KSO ECO Green, which is extremely light 
 [1980s]: /uses/nb-420.jpg "https://i.ebayimg.com/images/g/ApEAAOSwd7Fb-MP7/s-l1600.jpg"
 [ad]: /uses/nb-ads.jpg "https://images.squarespace-cdn.com/content/v1/5ab94f5e3c3a536987d16ce5/1586282359719-W9JJP53TVVP0EAJVXOLJ/ke17ZwdGBToddI8pDm48kGNEFA4rC7c0McDIySn7RjkUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcPlG31PR0Q5DeNaNXE1QnS_LzyNcqI129vtg_t5azkwh6fx-4rvXr20Sq8_feGDMO/New+Balance+1982+vintage+sneaker+ad+%40+The+Deffest?format=1500w"
 
-This page is inspired by [uses.tech].
-
-[uses.tech]: https://uses.tech/
-
 ## Drink
 
 Water, milk, and Juice.
 I seldom drink coffee or tea, and almost never drink alcohol.
 However, I do like drinking chocolate.
+
+This page is inspired by [uses.tech].
+
+[uses.tech]: https://uses.tech/
