@@ -107,6 +107,19 @@ Also, kitty is from Kovid Goyal, the author of [calibre].
 [kitty]: https://sw.kovidgoyal.net/kitty/
 [calibre]: https://github.com/kovidgoyal/calibre
 
+## Browser
+
+Safari is my main browser since it is the default one on macOS and iOS,
+and it is said to be more power efficient than other alternatives.
+
+Occasionally I use Chromium for fancy features such as [WebGPU].
+
+[WebGPU]: https://caniuse.com/webgpu "Can I use page for WebGPU"
+
+Personally I prefer Firefox and Vivaldi but ironically I do not use them,
+just like I prefer Linux and BSD but I do not use them.
+I have not thought about this too much, maybe because I have low self-esteem and think I do not deserve the best.
+
 ## Wear
 
 I used to prefer [vintage style running shoes][thedeffest], those revised [models] originated from [1960s] to [1980s], [light and comfort][ad].
