@@ -67,7 +67,7 @@ Made with [Lume][] [^1]
     and the cheapest one can be used as a second display via sidecar with Mac.
     
 
-[^2]: My previous personal Apple computer was last generation of PowerPC based iBook (`PowerBook 6,7`).
+[^2]: My previous personal Apple computer was the last generation of PowerPC based iBook (`PowerBook 6,7`).
 
 [^3]: Previously I also use Homebrew for command line programs.
     The migration to MacPorts is very smooth.
