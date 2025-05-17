@@ -1,4 +1,4 @@
-export const layout = "default.liquid";
+export const layout = "default.njk";
 
 // README.md -> index.html
 export function url(page: Lume.Page) {

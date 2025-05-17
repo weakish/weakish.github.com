@@ -34,7 +34,7 @@ for (const {id, note} of movieNotes) {
     notes[id] = note
 }
 
-export const layout = "default.liquid";
+export const layout = "default.njk";
 
 export default (data) => (
     <>

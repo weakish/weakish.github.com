@@ -1,7 +1,7 @@
 import lume from "lume/mod.ts";
 import sri from "lume/plugins/sri.ts";
 import feed from "lume/plugins/feed.ts";
-import liquid from "lume/plugins/liquid.ts";
+import nunjucks from "lume/plugins/nunjucks.ts";
 import jsx from "lume/plugins/jsx.ts";
 import pagefind from "lume/plugins/pagefind.ts";
 import remark from "lume/plugins/remark.ts";
@@ -38,7 +38,7 @@ site.preprocess([".html"], (pages) => {
   }
 });
 const feedOptions = {
-  query: "layout=default.liquid", /* all my articles use default.liquid template */
+  query: "layout=default.njk", /* all my articles use default.njk template */
   items: {
     updated: "=lastmod",
   },
@@ -65,7 +65,7 @@ site.use(feed({
 }))
 
 site.use(sri());
-site.use(liquid());
+site.use(nunjucks());
 site.use(jsx());
 site.use(pagefind());
 site.use(transformImages());

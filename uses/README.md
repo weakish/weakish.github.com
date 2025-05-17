@@ -40,11 +40,18 @@ Made with [Lume][].[^1]
     which introduces a lot of breaking changes for subjectively better redesign.
     Particularly, it drops the support for Liquid templates, which requires me to either maintain a Liquid plugin myself or migrate existing Liquid templates to something like JSX.
     However, I have motivation to do neither.
+    So I let GitHub Copilot to rewrite the Liquid templates to Nunjucks which has a similar syntax to Liquid.
+    It turns out GitHub Copilot is smart enough for this task.
+    However, it seems GitHub Copilot is unfamiliar with Lume
+    so it does not know [YAML front matter is supported in templates for Lume][Lume templates]
+    and also it is necessary to use the safe filter to avoid escaping HTML tags,
+    which liquid does not escape by default.
 
 [Pelican]: https://docs.getpelican.com/en/latest/content.html#linking-to-internal-content
 [pelican-pandoc]: https://github.com/pelican-plugins/pandoc-reader#specifying-file-metadata
 [Hugo]: https://gohugo.io/getting-started/configuration/#contentdir
 [url]: https://github.com/weakish/weakish.github.com/commit/1d8a2f4b7682cf246cb8e2d3996b5bb66c431240
+[Lume templates]: https://lume.land/docs/creating-pages/layouts/#layout-data "Lume documentation on layout data"
 
 I keep a local copy of the site source in my phone and browse them with [Obsidian].
 
