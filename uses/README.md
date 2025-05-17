@@ -36,6 +36,11 @@ Made with [Lume][] [^1]
     However, customizing destination URL is easy in Lume.
     I wrote [a trivial `url` function][url] in configuration to implement this feature.
 
+    However, I am not happy with Lume 3.0,
+    which introduces a lot of breaking changes for subjectively better redesign.
+    Particularly, it drops the support for Liquid templates, which requires me to either maintain a Liquid plugin myself or migrate existing Liquid templates to something like JSX.
+    However, I have motivation to do neither.
+
 [Pelican]: https://docs.getpelican.com/en/latest/content.html#linking-to-internal-content
 [pelican-pandoc]: https://github.com/pelican-plugins/pandoc-reader#specifying-file-metadata
 [Hugo]: https://gohugo.io/getting-started/configuration/#contentdir
