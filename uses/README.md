@@ -57,7 +57,7 @@ Made with [Lume][] [^1]
 
     Nowadays, there are fewer choices left for compact smart-phones.
     I bought iPhone 13 mini (131.5 x 64.2 x 7.65 mm, 141 g, 2406 mAH) in 2022, before iPhone SE 3rd generation (138.4 x 67.3 x 7.3 mm, 144 g, 2018 mAH) is available in the Apple Store.
-    I prefer Android phones, but [Balmuda Phone] (123 x 69 x 13.7 mm, 138 g, 2500 mAH) and [Sony Xperia Ace III] (140 x 69 x 8.9 mm, 162 g, 4500 mAH) are only available in Japan,
+    I prefer Android phones, but [Balmuda Phone] (123 x 69 x 13.7 mm, 138 g, 2500 mAH) is discontinued and [Sony Xperia Ace III] (140 x 69 x 8.9 mm, 162 g, 4500 mAH) are only available in Japan,
     while Samsung Galaxy S23 (146.3 x 70.9 x 7.6 mm, 168 g, 3900 mAh), Sony Xperia 10 V (155 x 68 x 8.3 mm, 159 g, 5000 mAh), and Asus Zenfone 10 (146.5 x 68.1 x 9.4 mm, 172 g, 4300 mAh) are slightly bigger.
     Previously I used Sony Xperia XZ1 Compact (129 x 65 x 9.3 mm, 140 g, 2700 mAH), then iPhone SE 2rd generation (138.4 x 67.3 x 7.3 mm, 148 g, 1821 mAH).
 
