@@ -49,3 +49,54 @@ while one thing I like about markdown is its syntax is language agnostic,
 
 [obsidian-callout]: https://help.obsidian.md/callouts
 [gfm-callout]: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts
+
+## Organizing Notes
+
+### Tags
+
+Obsidian supports two ways to [tag a note][]:
+
+1. Just write `#tag` anywhere in the note text.
+
+    That is similar to what people do in some social media like Twitter and Instagram.
+
+2. Use the `tags` field in the YAML front matter.
+
+    This is also [the way used in Lume][lume-tags].
+
+[tag a note]: https://help.obsidian.md/tags
+[lume-tags]: https://lume.land/docs/creating-pages/tags/
+
+Currently I am not using tags in this site.
+However, I do plan to use them in the future.
+Below are some initial thoughts:
+
+- I will use the YAML front matter way, since:
+
+    * It is supported in Lume.
+
+    * It avoids accidentally tagging a note when writing something like an IRC channel name.
+
+- Obsidian supports nested tags like `#tag/subtag`. But I will not use them, since:
+
+    * It is not supported in Lume.
+
+    * I'd like to keep the hierarchy of tags simple and flat.
+
+    * There are alternatives to nested tags: just use fields.
+    
+        For example, instead of tagging `#status/draft`,
+        I might use `status: draft` in the YAML front matter.
+
+- I will use `#kebab-case`.
+
+    Obsidian supports `#camelCase`, `#PascalCase`, `#snake_case`, and `#kebab-case`.
+    I find kebab-case more readable and this also matches the style guides of [StackOverflow][so-tag].
+
+- I will only use the tag to categorize the note according to its topic.
+
+    In other words, I will avoid [meta-tags][].
+    And if I do need them, I will use a field in the YAML front matter instead.
+
+[so-tag]: https://stackoverflow.com/help/tagging
+[meta-tags]: https://stackoverflow.blog/2010/08/07/the-death-of-meta-tags/
