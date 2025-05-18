@@ -2,56 +2,7 @@
 
 ## Colophon
 
-Made with [Lume][].[^1]
-
-[Lume]: https://lume.land
-
-[^1]: This site was hosted at GitHub Pages before.
-    Thus, I have used Jekyll for many years.
-    I have considered migrating to other static site generators several times.
-
-    But I'd like to keep the source of the content in the same way:
-
-    1. I'd like to use standard GFM, which renders nicely on GitHub and is compatible with a lot of programs.
-       This rules out a lot of static site generators without writing a customized Markdown reader.
-       For example, the default Markdown reader of [Pelican] uses `<{filename}../article.md>` for internal links,
-       and its [Pandoc plugin][pelican-pandoc] expects all Markdown files to start with a YAML header.
-
-    2. I prefer a content first directory structure, not nesting Markdown files under a specific directory.
-       This again rules out a lot of static site generators.
-       For example, [Hugo] assumes a `content` directory.
-
-    Also, I do not want JavaScript at the client side.
-
-    As far as I know, the static site generators satisfying these needs are Jekyll, Eleventy, and Lume.
-    Eleventy, as a meta static site generator, allows customizing almost everything,
-    while Lume is more out of the box.
-
-    Finally I have migrating to Lume, allowing me to stop writing Liquid templates,
-    which is my main pain point for Jekyll.
-
-    The migration process is easier than I thought, since Lume also supports Liquid templates.
-    The only thing I find missing is using `README.md` as the index page.
-    This nice feature of Jekyll makes browsering the Markdown files more convenient on GitHub.
-    However, customizing destination URL is easy in Lume.
-    I wrote [a trivial `url` function][url] in configuration to implement this feature.
-
-    However, I am not happy with Lume 3.0,
-    which introduces a lot of breaking changes for subjectively better redesign.
-    Particularly, it drops the support for Liquid templates, which requires me to either maintain a Liquid plugin myself or migrate existing Liquid templates to something like JSX.
-    However, I have motivation to do neither.
-    So I let GitHub Copilot to rewrite the Liquid templates to Nunjucks which has a similar syntax to Liquid.
-    It turns out GitHub Copilot is smart enough for this task.
-    However, it seems GitHub Copilot is unfamiliar with Lume
-    so it does not know [YAML front matter is supported in templates for Lume][Lume templates]
-    and also it is necessary to use the safe filter to avoid escaping HTML tags,
-    which liquid does not escape by default.
-
-[Pelican]: https://docs.getpelican.com/en/latest/content.html#linking-to-internal-content
-[pelican-pandoc]: https://github.com/pelican-plugins/pandoc-reader#specifying-file-metadata
-[Hugo]: https://gohugo.io/getting-started/configuration/#contentdir
-[url]: https://github.com/weakish/weakish.github.com/commit/1d8a2f4b7682cf246cb8e2d3996b5bb66c431240
-[Lume templates]: https://lume.land/docs/creating-pages/layouts/#layout-data "Lume documentation on layout data"
+Made with [[Lume]].
 
 I keep a local copy of the site source in my phone and browse them with [[Obsidian]].
 
@@ -59,8 +10,13 @@ I keep a local copy of the site source in my phone and browse them with [[Obsidi
 
 - `MacBookPro15,4`
 
-    The last generation of Intel based MacBookPro. [^2]
-    I use [MacPorts] as the package manager for command line programs and [Homebrew] for GUI applications. [^3]
+    The last generation of Intel based MacBookPro.
+
+    I use [MacPorts] as the package manager for command line programs and [Homebrew] for GUI applications.
+    Previously I also use Homebrew for command line programs.
+    The migration to MacPorts was very smooth.
+
+    My previous personal Apple computer was the last generation of PowerPC based iBook (`PowerBook 6,7`).
 
 - iPhone 13 mini
 
@@ -74,39 +30,23 @@ I keep a local copy of the site source in my phone and browse them with [[Obsidi
 
     Among the iPads that Apple is still selling, the 9th generation iPad is the only one with a headphone jack,
     and the cheapest one can be used as a second display via sidecar with Mac.
-    
-
-[^2]: My previous personal Apple computer was the last generation of PowerPC based iBook (`PowerBook 6,7`).
-
-[^3]: Previously I also use Homebrew for command line programs.
-    The migration to MacPorts is very smooth.
 
 [MacPorts]: https://github.com/weakish/dotfiles/blob/master/ports.txt "ports installed on my machine"
 [Homebrew]: https://github.com/weakish/dotfiles/blob/master/Brewfile "Brewfile on my machine"
 [Balmuda Phone]: https://tech.balmuda.com/jp/phone/story/
 [Sony Xperia Ace III]: https://xperia.sony.jp/xperia/acem3/spec_docomo.html
 
-## Online Services
-
-- Transfer files: [WeTransfer] and [SwissTransfer]. No account is needed for both the sender and the receiver. The former has a 2GB limit, while the latter has a 50GB limit.
-
-[WeTransfer]: https://wetransfer.com
-[SwissTransfer]: https://www.swisstransfer.com
-
-## Camera
-
-- Olympus Pen D3
-
-    Fully manual compact half-frame camera.
-    I often load it with Fomapan Classical 100 or Eastman Double X.
-    I prefer Orthochromatic films such as Rollei Ortho 25 Plus and Ilford Ortho Plus, but they are hard to buy.
-    Sometimes I also use color films produced by Kodak or Fujifilm.
-    I use Ilford HP5 Plus pushed two or three stops for low light.
-
 ## Editor
 
 I mainly use VSCode since it is a popular choice for a lot of languages and frameworks.
-Also, it has first class support for GitHub Copilot which I use a lot (currently I am on its Pro plan).
+Also, it has first class support for GitHub Copilot which I used a lot.
+Currently I am on its Pro plan but GitHub does not bill me for it (`SKU: free_engaged_oss`).
+
+Some of my friends are using [Cursor][] but I have not tried it yet.
+I might try it and [Windsurf][] in future.
+
+[Cursor]: https://www.cursor.com
+[Windsurf]: https://windsurf.com/editor
 
 ## Terminal
 
@@ -128,6 +68,23 @@ Occasionally I use Chromium for fancy features such as [WebGPU].
 Personally I prefer Firefox and Vivaldi but ironically I do not use them,
 just like I prefer Linux and BSD but I do not use them.
 I have not thought about this too much, maybe because I have low self-esteem and think I do not deserve the best.
+
+## Online Services
+
+- Transfer files: [WeTransfer] and [SwissTransfer]. No account is needed for both the sender and the receiver. The former has a 2GB limit, while the latter has a 50GB limit.
+
+[WeTransfer]: https://wetransfer.com
+[SwissTransfer]: https://www.swisstransfer.com
+
+## Camera
+
+- Olympus Pen D3
+
+    Fully manual compact half-frame camera.
+    I often load it with Fomapan Classical 100 or Eastman Double X.
+    I prefer Orthochromatic films such as Rollei Ortho 25 Plus and Ilford Ortho Plus, but they are hard to buy.
+    Sometimes I also use color films produced by Kodak or Fujifilm.
+    I use Ilford HP5 Plus pushed two or three stops for low light.
 
 ## Wear
 
