@@ -90,15 +90,38 @@ I have not thought about this too much, maybe because I have low self-esteem and
 
 I used to prefer [vintage style running shoes][thedeffest], those revised [models] originated from [1960s] to [1980s], [light and comfort][ad].
 However, I found out that their toe boxes are narrow.
-Nowadays, I often wear a pair of Crocs Classical Clog instead, which has a large toe box.
+So I bought a pair of Crocs Classical Clog instead, which has a large toe box.
 I also put on some charms to make my white Crocs prettier.
-Occasionally, I wear Vibram FiveFingers KSO ECO Green, which is extremely light and minimalistic.
+I wore it a lot but did not bought a new pair after it was worn out, since:
+
+- I feel the material is too hard for my feet skin so I have to wear socks.
+
+- The heel to toe drop is low but the sole still feels too thick for me.
+
+- Some places do not allow wearing Clogs.
+
+Currently my favorite pair is [Vibram FiveFingers KSO ECO Green][kso],
+which is extremely light (M43 4.9 oz) and minimalistic (3mm rubber outsole).
+Walking wearing it, I can feel the ground and my toes are not constrained.
+However, I feel it is not suitable to wear it running on hard surface so later I bought a pair of [Vibram FiveFingers V-Run Ivory / Yellow][v-run],
+which is also extremely light (M43 4.8 oz) but offers a bit more cushioning (2mm EVA insole, 4mm EVA midsole, 2.5 mm rubber outsole).
+Both of them have fast lacing system, which I prefer since I hate tying shoelaces.
+
+I also have a pair of [Altra Solstice XT 3 White][altra], zero drop and wide toe box.
+Its 23mm stack feels too thick for my walk but is fine for gym.
+The stack of Altra running shoes and hiking shoes are too thick for me so I do not consider them after trying them on at the store.
+
+I also have a pair of running sandals bought from a local shop where they assemble sandals themselves.
+Zerodrop, hybrid outsole for both road and trail, red foam and rainbow straps.
 
 [thedeffest]: https://www.thedeffest.com/
 [models]: https://www.mizuno.jp/mizuno1906/journal/journal_collection/046/
 [1960s]: https://www.onitsukatiger.com/gb/en-gb/onitsukatiger-inspiration/onitsukatiger-mexico-66/
 [1980s]: /uses/nb-420.jpg "https://i.ebayimg.com/images/g/ApEAAOSwd7Fb-MP7/s-l1600.jpg"
 [ad]: /uses/nb-ads.jpg "https://images.squarespace-cdn.com/content/v1/5ab94f5e3c3a536987d16ce5/1586282359719-W9JJP53TVVP0EAJVXOLJ/ke17ZwdGBToddI8pDm48kGNEFA4rC7c0McDIySn7RjkUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcPlG31PR0Q5DeNaNXE1QnS_LzyNcqI129vtg_t5azkwh6fx-4rvXr20Sq8_feGDMO/New+Balance+1982+vintage+sneaker+ad+%40+The+Deffest?format=1500w"
+[kso]: https://www.vibram.com/us/shop/fivefingers/kso-eco-mens/M95_MilitaryGreen.html
+[v-run]: https://www.vibram.com/us/shop/fivefingers/men/v-run-mens/M31_2_IvoryYellow.html
+[altra]: https://www.altrarunning.com/en-us/gym-training/mens-solstice-xt-3/AL0A85Q5.html?dwvar_AL0A85Q5_color=110
 
 ## Drink
 
