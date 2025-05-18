@@ -7,6 +7,10 @@ I want to browse my personal website (this site) on my phone.
 
 I cloned the source repository of my website to my phone and opened it in Obsidian as a vault.
 
+## Markdown Extensions
+
+### Wiki Links
+
 One thing I like about Obsidian is the wiki-link syntax.
 The bracketed link syntax reminds my good old days of using [ikiwiki][].
 The way Obsidian implemented it means I can link to any page with its name,
@@ -17,6 +21,8 @@ It turns out [very easy][8dc019a] since someone already wrote [a remark plugin f
 [ikiwiki]: https://ikiwiki.info
 [8dc019a]: https://github.com/weakish/weakish.github.com/commit/8dc019a4f9e05cfa221589eaf50497f1671617fa
 [remark-obsidian]: https://www.npmjs.com/package/remark-obsidian
+
+### Highlighted Text and Callouts
 
 Besides wiki-links, with this plugin, I also get callouts and highlighted text for free.
 
