@@ -53,9 +53,7 @@ Made with [Lume][].[^1]
 [url]: https://github.com/weakish/weakish.github.com/commit/1d8a2f4b7682cf246cb8e2d3996b5bb66c431240
 [Lume templates]: https://lume.land/docs/creating-pages/layouts/#layout-data "Lume documentation on layout data"
 
-I keep a local copy of the site source in my phone and browse them with [Obsidian].
-
-[Obsidian]: https://obsidian.md
+I keep a local copy of the site source in my phone and browse them with [[Obsidian]].
 
 ## Computers
 

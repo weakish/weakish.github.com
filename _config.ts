@@ -18,6 +18,7 @@ import favicon from "lume/plugins/favicon.ts";
 import transformImages from "lume/plugins/transform_images.ts";
 import textLoader from "lume/core/loaders/text.ts";
 import GeminiEngine from "./gemini.ts";
+import remarkObsidian from "https://esm.sh/remark-obsidian@1.8.0";
 
 const site = lume({
   location: new URL("https://mmap.page"),
@@ -70,6 +71,9 @@ site.use(jsx());
 site.use(pagefind());
 site.use(transformImages());
 site.use(remark({
+  remarkPlugins: [
+    remarkObsidian
+  ],
   rehypePlugins: [[
     rehypeStarryNight, {
       grammars: all 
