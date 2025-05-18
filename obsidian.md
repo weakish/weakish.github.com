@@ -5,7 +5,10 @@ I want to browse my personal website (this site) on my phone.
 
 [Obsidian]: https://obsidian.md
 
-I cloned the source repository of my website to my phone and opened it in Obsidian as a vault.
+I cloned the source repository of my website to my iCloud drive,
+then opened it in Obsidian iOS app as a vault.
+My modifications on the iPhone will be synced via iCloud to my Mac,
+then I will finish the changes, commit them, and push them to GitHub.
 
 ## Markdown Extensions
 
