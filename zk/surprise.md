@@ -1,0 +1,7 @@
+> One of the most basic presuppositions of communication is that the partners can mutually surprise each other. Only in the way can information be produced in the respective other. Information is an intra-systematic event. It results when one compares one message or entry with regard to other possibilities.
+>
+> -- [Zettelkasten] 1:18–21
+
+If there is no surprise, then it is overcommunication.
+And if the surprise is not mutual, then it is not communication with someone, but merely informing someone.
+BTW, GPT-4.1 spotted a typo in the quote, "only in the way" should be "only in this way".
