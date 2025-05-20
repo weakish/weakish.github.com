@@ -1,5 +1,7 @@
 Using fixed numbers enables "arbitrary internal branching" (2:16).
 For example, "a slip with number 57/12 can then be continued with 57/13" (2:18), and "a particular word in the middle of" (2:17) it "can be supplemented" by "57/12a" (2:19).
+Recalling that writing is also a process of thinking [[0a]],
+this also means a kind of internal growth (Wachstum nach innen) is made possible
 
 ---
 
