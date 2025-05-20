@@ -20,7 +20,7 @@ To optimize search performance:
 
         - A list of backlinks.
 
-- Make the slip number easily visible, e.g. "on the left of the first line" of the slip. (2:12)
+- Make the slip number easily visible, e.g. "on the left of the first line" of the slip. (2:12) or as the file name in a digital slip box.
 
 ---
 
