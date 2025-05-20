@@ -1,0 +1,8 @@
+Using fixed numbers enables "arbitrary internal branching" (2:16).
+For example, "a slip with number 57/12 can then be continued with 57/13" (2:18), and "a particular word in the middle of" (2:17) it "can be supplemented" by "57/12a" (2:19).
+
+---
+
+> ¹⁷We do not need to add notes at the end, but we can connect them anywhere—even to a particular word in the middle of a continuous text. ¹⁸A slip with number 57/12 can then be continued with 57/13, etc. ¹⁹At the same time it can be supplemented at a certain word or thought by 57/12a or 57/12b, etc. ²⁰Internally, this slip can be complemented by 57/12a1, etc. ²¹On the page itself I use red letters or numbers in order to mark the place of connection. ²²There can be several places of connection on a slip. ²³In this way, a kind of internal growth (_Wachstum nach innen_) is made possible, depending on what kind of material for thought occurs.
+>
+> -- [[Zettelkasten]] Section II
