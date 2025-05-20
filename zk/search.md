@@ -1,0 +1,27 @@
+To optimize search performance:
+
+- Use boxes with drawers that can be pulled open. (2:1)
+
+- The drawers can be pulled out for a search operated on the chair. (2:4)
+
+- Use normal paper instead of card stock to reduce weight for a search on the chair (2:5). For the same reason, use wooden boxes instead of metal boxes (2:1).
+
+    Plastic boxes are lighter but were not common at the time of Luhmann.
+
+    Technically, only the drawers need to be wooden, but boxes with a metal body and wooden drawers are uncommon.
+
+- Only use one side of a piece of paper in octavo format (half letter-size) so reading it during a search does not require taking it out. (2:2)
+
+    Half letter-size allows the whole paper to be skimmed at a glance.
+
+    Potentially I can use the back side for something not needed to read during a search:
+    
+        - Verbatim blockquotes from the source, in case my future writing needs them for both citation and verifying my rephrasing.
+
+        - A list of backlinks.
+
+---
+
+> ¹The technical requirements of slip boxes involve wooden boxes, which have drawers that can be pulled open, and pieces of paper in octavo format (about half of a letter-size sheet). ²We should only write on one side of these papers so that in searching through them, we do not have to take out a paper in order to read it. ³This doubles the space, but not entirely (since we would not write on both sides of all the slips). ⁴This consideration is not unimportant as the arrangement of boxes can, after some decades, become so large that it cannot be easily be used from one’s chair. ⁵In order to counteract this tendency, I recommend taking normal paper and not card stock.
+>
+> -- [Zettelkasten] Section II
