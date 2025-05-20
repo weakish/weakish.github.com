@@ -1,8 +1,6 @@
 > That slip boxes can be recommended as partners of communication is first of all due to a simple problem about technical and economic theoretical research. It is impossible to think without writing; at least it is impossible in any sophisticated or networked (anschlußfähig) fashion. Somehow we must mark differences, and capture distinctions which are either implicitly or explicitly contained in concepts. Only if we have secured in this way the constancy of the schema that produces information, can the consistency of the subsequent processes of processing information be guaranteed. And if one has to write anyway, it is useful to take advantage of this activity in order to create in the system of notes a competent partner o communication.
 >
-> -- [Zettelkasten] 1:13–17
-
-[Zettelkasten]: https://luhmann.surge.sh/communicating-with-slip-boxes
+> -- [[Zettelkasten]] 1:13–17
 
 Sophisticated thinking is information processing involving multiple networked concepts.
 And it is hard to keep all of these concepts, together with their differences in mind.
