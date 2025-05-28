@@ -16,51 +16,6 @@ Also, Luhmann had [hub notes](https://zettelkasten.de/posts/zettelkasten-hubs/)
 
 > [!note] I guess hub notes are similar to MoCs
 
-## Introducing the Antinet Zettelkasten
-
-https://zettelkasten.de/posts/introduction-antinet-zettelkasten/
-
-The ==four principles== Niklas Luhmann used to build his notebox system are:
-
-1. ==Analog==
-2. ==Numeric-alpha==
-3. ==Tree==
-4. ==Index==
-
-The ==first letters of those four principles (A, N, T, I) are what comprise an Antinet==. An Antinet Zettelkasten is a network of these four principles.
-
-### Analog
-
-Luhmann did not specify analog as a requirement over digital. The reason why is simple. ==Digital tools were not an option when he started building his Zettelkasten.==
-
-### Notecard Address
-
-This enables what Luhmann phrased as ==“the possibility of linking.”==
-
-It’s merely ==the location of where the leaf lives on a branch or stem on your tree of knowledge. Think of it more like a geographic coordinate system==, like a latitude and longitude scheme (for instance, -77.0364,38.8951).
-
-The Numeric-alpha addresses never change; however, ==due to the infinite internal branching of the system, its position shifts over time==.
-
-### Tree
-
-The third principle is based on something Luhmann refers to as ==“the possibility of arbitrary internal branching.”==
-
-One researcher who studied Luhmann’s system in person says, “==at first glance, Luhmann’s organization of his collection appears to lack any clear order; it even seems chaotic==. However, this was a deliberate choice.”
-
-Think of a Zettelkasten as a tree. A real tree. What does a real tree contain? It contains a trunk, branches, stems, leaves, and vines (depending on the tree). ==Think of each individual leaf as a notecard.== With a Zettelkasten, you’ll be building a tree of knowledge. One that has different branches, different stems of thought, and even ==vines that link to other branches==. This allows one to explore and swing between branches, stems, and leaves.
-
-### Index
-
-==Luhmann calls this concept a “Register.”==
-
-### The Net in Antinet
-
-The Antinet, according to Luhmann, was ==self-referential== in nature. It was self-referential because of its ability to reference itself via the ==numeric-alpha addresses==.
-
-When the four principles are combined into a system, the Antinet becomes a ==thinking tool==, a ==communication partner==, and a ==second mind==. They combine to create many other novel phenomena, such as ==insightful surprises by way of ordered randomness==.
-
-
-
 ## A Paper Zettelkasten System for Nonfiction Writers
 
 https://analogoffice.net/2022/08/12/a-paper-zettelkasten.html
