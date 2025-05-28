@@ -1,0 +1,1 @@
+Sascha (Oct 27, 2020). [Introduction to the Zettelkasten Method](https://zettelkasten.de/introduction/)
