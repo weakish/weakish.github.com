@@ -1,21 +1,3 @@
-## Introduction to the Zettelkasten Method
-
-https://zettelkasten.de/introduction/
-
-That brings us back to our short definition:
-
-> ==A Zettelkasten is a personal tool for thinking and writing. It has hypertextual features to make a web of thought possible. The difference to other systems is that you create ==a web of thoughts== instead of notes of arbitrary size and form, and ==emphasize connection, not a collection==.
-
-> [!note] typo: s/a web of thought/a web of thoughts/
-
-There are several ways to identify notes, the most common are:
-
-1. There is of course the **Luhmann-ID**. You create some kind of arbitrary hierarchy wherein each Zettel has a place where it could be. Using a paper-based Zettelkasten, I recommend using this technique because it helps to deal with its organisation. The other types of ID wouldn’t work as well for paper.
-
-Also, Luhmann had [hub notes](https://zettelkasten.de/posts/zettelkasten-hubs/). These are Zettels that ==list many other places to look at for a continuation of a topic==.
-
-> [!note] I guess hub notes are similar to MoCs
-
 ## A Paper Zettelkasten System for Nonfiction Writers
 
 https://analogoffice.net/2022/08/12/a-paper-zettelkasten.html
