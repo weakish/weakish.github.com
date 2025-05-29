@@ -1,0 +1,1 @@
+Anna Havron (August 12, 2022). [A Paper Zettelkasten System for Nonfiction Writers](https://analogoffice.net/2022/08/12/a-paper-zettelkasten.html)
