@@ -1,4 +1,5 @@
 export const layout = "default.njk";
+export const type = "article";
 
 // README.md -> index.html
 export function url(page: Lume.Page) {

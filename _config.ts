@@ -39,7 +39,7 @@ site.preprocess([".html"], (pages) => {
   }
 });
 const feedOptions = {
-  query: "layout=default.njk", /* all my articles use default.njk template */
+  query: "type=article",
   items: {
     updated: "=lastmod",
   },
