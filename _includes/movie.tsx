@@ -1,8 +1,11 @@
+// "default" means "my media"
+// more info: https://www.omdb.org/en/de/forum_entry/1182
 interface MoviePageData extends Lume.Data {
     id: number;
     title: string;
     year: number;
-    vote: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+    vote?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+    tag?: "watchlist" | "ignorelist" | "default";
     note: string;
 }
 
@@ -19,10 +22,17 @@ import {
     parse
 } from "https://deno.land/std@0.201.0/csv/mod.ts";
   
-const movies : MoviePageData[] = parse(Deno.readTextFileSync("movies/ratings.csv"), {
+const watchedMovies : MoviePageData[] = parse(Deno.readTextFileSync("movies/ratings.csv"), {
     skipFirstRow: true,
     strip: true,
 });
+
+const otherMovies : MoviePageData[] = parse(Deno.readTextFileSync("movies/movies.csv"), {
+  skipFirstRow: true,
+  strip: true,
+})
+
+const movies: MoviePageData[] = watchedMovies.concat(otherMovies);
 
 const movieNotes : MovieNote[] = parse(Deno.readTextFileSync("movies/notes.csv"), {
     skipFirstRow: true,
@@ -48,16 +58,19 @@ export default (data) => (
         </tr>
       </thead>
       <tbody>
-        {movies.map(({id, title, year, vote}) =>
+        {movies
+          .filter(({ tag }) => tag !== "watchlist" && tag !== "default")
+          .map(({id, title, year, vote}) =>
           <tr key={id}>
             <td>
               <a href={`https://omdb.org/m${id}`} title="omdb page">{title}</a>
             </td>
             <td>{year}</td>
-            <td>{(id in notes) ? <details><summary>{vote}</summary>{notes[id]}</details> : vote}</td>
+            <td>{(id in notes) ? <details><summary>{vote ?? 0}</summary>{notes[id]}</details> : vote ?? 0}</td>
           </tr>
         )}
       </tbody>
     </table>
+    <small>0 means I have not watched and do not want to watch the movie.</small>
     </>
 );
