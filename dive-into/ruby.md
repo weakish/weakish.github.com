@@ -15,8 +15,8 @@ but definitely poignant.
 ## `begin ... end while`
 
 ```ruby
-begin "code executed" end while false
-"code not executed" while false
+begin puts "code executed" end while false
+puts "code not executed" while false
 ```
 
 This is really anti-intuitive.
@@ -27,7 +27,7 @@ And the creator of Ruby said not using this.
 
 -- [matz](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/6745)
 
-Unfortunately, this feature still exists in Ruby 3.1.
+Unfortunately, this feature still exists in Ruby 3.3.
 
 ## `Proc.new`
 
@@ -38,9 +38,9 @@ def some_method
 	myproc = Proc.new {return "End."}
 	myproc.call
 
-	# Any code below will not get executed!
-	# ...
+	puts "This will not get executed!"
 end
+some_method
 ```
 
 Well, you can argue that `Proc.new` inserts code into the enclosing method, just like block.
@@ -95,27 +95,27 @@ def a(x)
   end
   b
 end
+a(1) # in `b': undefined local variable or method `x' for main (NameError)
 ```
 
 In Ruby, `def` starts a new scope, without access to outer variables.
 Only `@var` and `$var` can be accessed.
 And no `extern` keyword like in C.
-In Ruby, lambda creates closure:
+
+Lambda and `define_method` do create closure though:
 
 ```ruby
 def a(x)
   b = ->{ x }
   b.call
 end
-```
+a(1) # 1
 
-Or `define_method`:
-
-```ruby
-def a(x)
-  define_method(:b) { x }
-  b
+def c(x)
+  define_method(:d) { x }
+  d
 end
+c(1) # 1
 ```
 
 In Ruby 1.9, `define_method` is not available in main Object, you can
