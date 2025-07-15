@@ -13,6 +13,18 @@
         Content-Type = "text/plain"
 
 [[redirects]]
+    from = "/dive-into/android/"
+    to = "/uses/android/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dive-into/base64/"
+    to = "/zk/7a/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/uses/lume/"
     to = "/humans.txt"
     status = 301
