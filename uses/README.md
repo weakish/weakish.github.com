@@ -83,7 +83,7 @@ then I will finish the changes, commit them, and push them to GitHub.
 
 ## Online Services
 
-- Transfer files: [WeTransfer] and [SwissTransfer]. No account is needed for both the sender and the receiver. The former has a 2GB limit, while the latter has a 50GB limit.
+- Transfer files: [WeTransfer] and [SwissTransfer]. No account is needed for either the sender or the receiver. The former is more limited (share and receive up to 3GB per month, 10 transfers per month, expires in 3 days), while the latter is more generous (50GB file limit, expires in 30 days).
 
 [WeTransfer]: https://wetransfer.com
 [SwissTransfer]: https://www.swisstransfer.com
