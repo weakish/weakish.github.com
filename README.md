@@ -1,6 +1,11 @@
-Map memories to web pages.
+This is a learning-by-doing project for me to experiment [Lume][] and [Deno][].
 
-    mmap(NULL, SIZE_MAX, PROT_READ, MAP_SHARED, 2, 0)
+[Deno]: https://deno.land
+[Lume]: https://lume.land
+
+## Random Pages
+
+Some random pages for demonstration purposes (content may be outdated or auto generated via AI):
 
 - [Exception and Union Type](dive-into/exceptions.md)
 - [Notes on A little Java, a Few Patterns](java/a-little.md)
@@ -14,6 +19,11 @@ Map memories to web pages.
 - [Build a Micro Static Site With GitHub Pages](dive-into/gh-pages.md)
 - [RarCrack Basic Guide](dive-into/rarcrack.md)
 - [Notes](/dapi/README.md) and [poems](poems/README.md) written in Chinese
+
+## Markdown Sandbox
+
+The following table uses GitHub Flavored Markdown (GFM) table syntax,
+which may not render correctly in all Markdown viewers:
 
 | [gh] | [gist] | [mastodon] | [gpg] | [rss] | [json] | [/log] | [/movies] | [/uses] |
 |------|--------|------------|-------|-------|--------|--------| --------- | ------- |
