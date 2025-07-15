@@ -66,8 +66,18 @@ If a backup copy is required, omit the `--inplace` option.
 
 ## Hosted Services
 
-- [rsync.net] also works with scp, rsync, git, etc. Nodes available globally.
-- [BorgBase] dedicated borg repository hosting with specific APIs. It also offers a free plan (5 GB and 2 repos), and paid plans are cheaper than rsync.net. Nodes available in US and EU.
+- [rsync.net][] supports borg and scp, rsync, git, etc.
+  Nodes available globally.
+  A `--remote-path` argument with `borg14`, `borg12`, or `borg0` must be specified to use borg with rsync.net.
+
+- [BorgBase][] is a dedicated borg repository hosting service with specific APIs.
+  Besides paid plans with a similar price to rsync.net (cheaper for more than 1TB files),
+  it also offers a free plan (10 GB and 2 repos).
+  Nodes available in US and EU.
+
+- [Hetzner][] Storage Box supports borg, rsync, sftp, scp, rclone, and restic (but not git).
+  Its plans are much cheaper than BorgBase or rsync.net but start from 1 TB. 
 
 [rsync.net]: https://www.rsync.net/products/borg.html
 [BorgBase]: https://www.borgbase.com/
+[Hetzner]: https://www.hetzner.com/storage/storage-box/

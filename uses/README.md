@@ -88,6 +88,11 @@ then I will finish the changes, commit them, and push them to GitHub.
 [WeTransfer]: https://wetransfer.com
 [SwissTransfer]: https://www.swisstransfer.com
 
+- Backup files: iCloud for my iPhone and iPad, Time machine and [Backblaze][] for my MacBook Pro, and [borg][] for Linux.
+
+[Backblaze]: https://secure.backblaze.com/r/04svpb "Backblaze referral link, use this link to get a free month Backblaze for you and me"
+[borg]: borg.md "Borg Tutorial"
+
 ## Camera
 
 - Olympus Pen D3
