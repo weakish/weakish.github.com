@@ -23,7 +23,6 @@ import remarkObsidian from "https://esm.sh/remark-obsidian@1.8.0";
 const site = lume({
   location: new URL("https://mmap.page"),
 });
-site.copyRemainingFiles();
 
 site.loadPages([".gmi"], { loader: textLoader, engine: new GeminiEngine() });
 
@@ -38,38 +37,13 @@ site.preprocess([".html"], (pages) => {
     page.data.date = getGitDate("created", entry.src) ?? getGitDate("modified", entry.src);
   }
 });
-const feedOptions = {
-  query: "type=article",
-  items: {
-    updated: "=lastmod",
-  },
-}
-
-site.ignore("render.yaml");
-site.use(feed({
-  ...feedOptions,
-  info: {
-    title: "Recent Memories Mapped to Web Pages",
-    subtitle: "Recent Updates from mmap.page",
-  },
-  output: "/rss.xml",
-  limit: 15, /* RSS 0.91 allows no more than 15 items */
-}));
-site.use(feed({
-  ...feedOptions,
-  info: {
-    title: "Memories Mapped to Web Pages",
-    subtitle: "All posts from mmap.page",
-  },
-  output: "/feed.json", /* jsonfeed.org uses feed.json */
-  limit: Number.MAX_SAFE_INTEGER, /* number of items in a feed is unlimited according to json feed spec */
-}))
 
 site.use(sri());
 site.use(nunjucks());
 site.use(jsx());
 site.use(pagefind());
 site.use(transformImages());
+site.add([".png", ".jpg"]);
 site.use(remark({
   remarkPlugins: [
     remarkObsidian
@@ -92,11 +66,37 @@ site.use(remark({
 }));
 site.use(resolve_urls());
 
-site.use(sitemap({
-  lastmod: "lastmod",
-}));
-
 site.use(favicon());
 site.use(purgecss());
+
+site.copy("LICENSE");
+site.use(sitemap({
+  lastmod: "=lastmod",
+}));
+
+const feedOptions = {
+  query: "type=article",
+  items: {
+    updated: "=lastmod",
+  },
+}
+site.use(feed({
+  ...feedOptions,
+  info: {
+    title: "Recent Memories Mapped to Web Pages",
+    subtitle: "Recent Updates from mmap.page",
+  },
+  output: "/rss.xml",
+  limit: 15, /* RSS 0.91 allows no more than 15 items */
+}));
+site.use(feed({
+  ...feedOptions,
+  info: {
+    title: "Memories Mapped to Web Pages",
+    subtitle: "All posts from mmap.page",
+  },
+  output: "/feed.json", /* jsonfeed.org uses feed.json */
+  limit: Number.MAX_SAFE_INTEGER, /* number of items in a feed is unlimited according to json feed spec */
+}))
 
 export default site;

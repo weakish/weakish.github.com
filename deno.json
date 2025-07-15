@@ -6,14 +6,22 @@
   },
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
+    "jsxImportSource": "lume",
     "types": [
       "lume/types.ts"
     ]
   },
   "imports": {
-    "lume/": "https://deno.land/x/lume@v2.5.2/",
-    "react": "https://esm.sh/react@18.2.0/",
-    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime"
+    "lume/": "https://deno.land/x/lume@v3.0.4/",
+    "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.10/jsx-runtime.ts"
+  },
+  "unstable": [
+    "temporal",
+    "fmt-component"
+  ],
+  "lint": {
+    "plugins": [
+      "https://deno.land/x/lume@v3.0.4/lint.ts"
+    ]
   }
 }
