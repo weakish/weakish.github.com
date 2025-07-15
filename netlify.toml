@@ -7,6 +7,23 @@
     [headers.values]
         Content-Type = "text/plain"
 
+[[headers]]
+    for = "/humans.txt"
+    [headers.values]
+        Content-Type = "text/plain"
+
+[[redirects]]
+    from = "/uses/lume/"
+    to = "/humans.txt"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/uses/obsidian/"
+    to = "/humans.txt"
+    status = 301
+    force = true
+
 [[redirects]]
     from = "/fun/exodia/"
     to = "/poems/exodia/"

@@ -70,6 +70,7 @@ site.use(favicon());
 site.use(purgecss());
 
 site.copy("LICENSE");
+site.copy("humans.txt");
 site.use(sitemap({
   lastmod: "=lastmod",
 }));

@@ -2,9 +2,10 @@
 
 ## Colophon
 
-Made with [[Lume]].
-
-I keep a local copy of the site source in my phone and browse them with [[Obsidian]].
+A plain text file documents the colophon of this site.
+As for the URL to this plain text, if you are interested in the colophon of this site,
+you probably know it.
+If not, you can figure it out via the source code of this site.
 
 ## Computers
 
@@ -68,6 +69,15 @@ Occasionally I use Chromium for fancy features such as [WebGPU].
 Personally I prefer Firefox and Vivaldi but ironically I do not use them,
 just like I prefer Linux and BSD but I do not use them.
 I have not thought about this too much, maybe because I have low self-esteem and think I do not deserve the best.
+
+To browse markdown files on my mobile phone, I use [Obsidian][].
+I cloned the corresponding repository to my iCloud drive,
+then opened it in Obsidian iOS app as a vault.
+My modifications on the iPhone will be synced via iCloud to my Mac,
+then I will finish the changes, commit them, and push them to GitHub.
+
+[Obsidian]: https://obsidian.md
+
 
 ## Online Services
 

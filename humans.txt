@@ -1,0 +1,109 @@
+HUMANS.TXT
+==========
+
+Having a humans.txt file and having not a robots.txt file under the root directory is a statement,
+particularly after [Wikipedia deleted the humans.txt page][wikipedia].
+
+About
+-----
+
+This is a learning-by-doing project to experiment with Lume and Deno.
+Pull requests are welcome.
+
+Why Lume
+--------
+
+What I like about Lume:
+
+- JavaScript is not mandatory on the client side (vs. docsify).
+- It allows a content-first directory structure,
+  not forcing Markdown files into a specific directory (vs. Hugo & Astro).
+- TypeScript is supported as a first-class citizen (vs. Eleventy & Jekyll).
+
+README as Index
+---------------
+
+Jekyll supports using README.md as the index page.
+Lume does not support this out of the box,
+but this feature can be implemented easily with a configuration function:
+
+    // README.md -> index.html
+    export function url(page: Lume.Page) {
+        if (page.src.path.endsWith("README")) {
+            return page.src.path.replace("README", "index") + ".html";
+        } else {
+            return;
+        }
+    }
+
+Wiki Links
+----------
+
+One thing I like about Obsidian is the wiki-link syntax.
+The bracketed link syntax reminds me of my good old days using ikiwiki.
+I use the `remark-obsidian` npm package for wiki-link syntax here.
+
+TODO:
+Obsidian lets you link to any page by its name,
+regardless of which directory the file is in.
+This search-to-link feature has not been implemented here yet.
+
+Also, `remark-obsidian` adds support for highlighted text and callouts.
+
+I seldom use highlighted text
+but I think it might be useful
+if I quote a large chunk of text and want to highlight some part of it.
+The `==highlighted text==` syntax is not supported in GitHub Flavored Markdown (GFM),
+but it is supported in lowdown.
+
+> Two additional types of double-emphasis are the strike-through and highlight.
+> These are produced by pairs of tilde and equal characters, respectively:
+>
+>     ~~Kirk~~Picard is the best ==captain==.
+>
+>  ==The highlight variant may be enabled in lowdown(1) with highlight parsing enabled.==
+>
+> -- [man 5 lowdown][lowdown(5)]
+
+As for callouts, I am not a fan.
+First, the Obsidian callout syntax is not compatible with GFM.
+Second, those callout types use English words such as "note" and "tip",
+while one thing I like about Markdown is its language-agnostic syntax.
+
+Keywords
+--------
+
+I use Obsidian tags as keywords in Zettelkasten.
+
+Obsidian supports two ways to add tags to a note:
+
+1. Just write `#tag` anywhere in the note text,
+   similar to what people do on social media like Twitter and Instagram.
+   However, this may accidentally tag a note
+   when writing something like an IRC channel name.
+
+2. Use the `tags` field in the YAML front matter,
+   which is compatible with Lume.
+
+TODO:
+Currently, I list keywords as the last line of a zettel,
+e.g. `keywords: #register #keywords #bibliography`,
+to avoid the YAML front matter to occupy the precious first lines of a zettel.
+I need to add support for this style of tagging in Lume.
+
+Obsidian supports nested tags like `#tag/subtag`, but I will not use them, since:
+
+* It is not supported in Lume.
+* I prefer to keep the tag hierarchy simple and flat.
+
+Obsidian supports `#camelCase`, `#PascalCase`, `#snake_case`, and `#kebab-case`.
+I find kebab-case more readable, and it matches the style guides of [Stack Overflow][so-tag].
+
+Keywords in Zettelkasten exclude [meta-tags][],
+which is consistent with Stack Overflow practice.
+
+[wikipedia]: https://en.wikipedia.org/wiki/Wikipedia:Articles_for_deletion/Humans.txt
+[lowdown(5)]: https://manpages.ubuntu.com/manpages/jammy/man5/lowdown.5.html
+[so-tag]: https://stackoverflow.com/help/tagging
+[meta-tags]: https://stackoverflow.blog/2010/08/07/the-death-of-meta-tags/
+
