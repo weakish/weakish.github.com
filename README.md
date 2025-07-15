@@ -5,11 +5,43 @@ This is a learning-by-doing project for me to experiment [Lume][] and [Deno][].
 
 ## Random Pages
 
-Some random pages for demonstration purposes (content may be outdated or auto generated via AI):
+Some random pages for demonstration purposes (content may be outdated or auto generated via AI).
+
+### Syntax Highlighting
+
+Syntax highlighting in Lume is supported via [Prism][] or [Highlight.js][].
+And two community plugins for [Glow][] and [Shiki][] are available. 
+
+[Prism]: https://lume.land/plugins/prism/
+[Highlight.js]: https://lume.land/plugins/code_highlight/
+[Glow]: https://deno.land/x/lume_glow
+[Shiki]: https://deno.land/x/lume_shiki
+
+Glow is too naive to me and supports only a limited set of languages.
+Compared to Prism and Highlight.js, Shiki is more powerful and ships zero JavaScript in runtime.
+For this site, I use [starry-night][], which is similar to Shiki in essence,
+but matches GitHub in that it produces classes and works with the CSS it ships.
+There is no Lume plugin for Starry Night, but it is easy to use with Lume:
+
+[starry-night]: https://github.com/wooorm/starry-night
+
+```ts
+site.use(remark({
+  rehypePlugins: [[
+    rehypeStarryNight, {
+      grammars: all 
+    }]],
+}));
+```
+
+Some random pages with syntax highlighting:
 
 - [Exception and Union Type](dive-into/exceptions.md)
 - [Notes on A little Java, a Few Patterns](java/a-little.md)
 - [Quirks of Ruby](dive-into/ruby.md)
+
+### More Random Pages
+
 - [Fight for Type Safety Stand with JavaScript](dive-into/ts-check.md) (ts-check with JSDoc comments)
 - [An Optioned Guide to ESLint](dive-into/eslint.md)
 - [Write Makefile Compatible with Both GNU make and BSD make](dive-into/make.md)
