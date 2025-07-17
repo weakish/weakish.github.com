@@ -67,6 +67,13 @@ site:
   <body>
     <header>
       <a href="{{ location }}/">mmap.page</a>
+      {% if removal %}
+        <h1>RM: {{ removal }}</h1>
+        <p>
+          This page is <strong>marked for removal</strong>.
+          If you want to maintain and update it, please open a pull request. 
+        </p>
+      {% endif %}
     </header>
     <article class="markdown-body">
       {{ content | safe }}

@@ -1,7 +1,8 @@
-# CentOS server setup guide for people from debian
+---
+removal: obsolete
+---
 
-**This guide is outdated and unmaintained.**
-I have not used CentOS for a decade.
+# CentOS server setup guide for people from debian
 
 A basic server setup guide for people from debian to CentOS.
 
