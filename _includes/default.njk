@@ -75,11 +75,20 @@ site:
         </p>
       {% endif %}
       {% if wnp %}
-        <h1>O: {{wnp}}</h1>
+        <h1>{{wnp}}</h1>
         <p>
           This is a Work-Needing and Prospective Page.
           If you wish to take over the maintenance, please open an issue or send a pull request.
         </p>
+        <p>Prefix:</p>
+        <dl>
+          <dt><strong>O</strong>rphaned</dt>
+          <dd>No one is maintaining this page.</dd>
+          <dt><strong>R</strong>equest <strong>F</strong>or <strong>A</strong>doption</dt>
+          <dd>The page is maintained but up for adoption.</dd>
+          <dt><strong>R</strong>equest</strong> <strong>F</strong>or <strong>H</strong>elp</dt>
+          <dd>The page is maintained but needs help.</dd>
+        </dl>
       {% endif %}
     </header>
     <article class="markdown-body">

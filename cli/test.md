@@ -1,5 +1,5 @@
 ---
-wnp: outdated
+wnp: "O: outdated"
 ---
 
 # Command Line Interface Testing
