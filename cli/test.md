@@ -1,6 +1,8 @@
-# Command Line Interface Testing
+---
+wnp: outdated
+---
 
-**This survey is outdated and unmaintained.**
+# Command Line Interface Testing
 
 ## [assert.sh](https://github.com/lehmannro/assert.sh)
 
