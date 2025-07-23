@@ -78,6 +78,16 @@ then I will finish the changes, commit them, and push them to GitHub.
 
 [Obsidian]: https://obsidian.md
 
+## Window Manager
+
+Back to the days when I was using Linux
+(before [systemd killed portability][init-freedom] and [Wayland killed compatibility][KiCad]),
+I fell in love with tiling window managers like awesomewm and i3.
+On macOS, I use [PaperWM.spoon][paperwm], a tiled scrollable window manager.
+
+[init-freedom]: https://www.devuan.org/os/init-freedom "Init Freedom"
+[KiCad]: https://www.kicad.org/blog/2025/06/KiCad-and-Wayland-Support/ "KiCad and Wayland Support"
+[paperwm]: https://github.com/mogenson/PaperWM.spoon "PaperWM.spoon GitHub repository"
 
 ## Online Services
 
