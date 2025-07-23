@@ -18,33 +18,11 @@ import favicon from "lume/plugins/favicon.ts";
 import transformImages from "lume/plugins/transform_images.ts";
 import textLoader from "lume/core/loaders/text.ts";
 import GeminiEngine from "./gemini.ts";
-import remarkObsidian from "https://esm.sh/remark-obsidian@1.8.0";
-import { existsSync } from "https://deno.land/std@0.214.0/fs/exists.ts";
-import { join } from "https://deno.land/std@0.214.0/path/mod.ts";
+import { customWikiLinks } from "./custom-wiki-links.ts";
 
 const site = lume({
   location: new URL("https://mmap.page"),
 });
-
-// Custom link resolver for wiki links
-function createWikiLinkResolver() {
-  const searchDirs = ["zk", "zk/Register"];
-  const baseDir = ".";
-  
-  return function resolveLinkPath(link: string): string {
-    // Search for the file across all directories
-    for (const searchDir of searchDirs) {
-      const fullPath = join(baseDir, searchDir, `${link}.md`);
-      if (existsSync(fullPath)) {
-        // Return the path relative to site root with leading slash
-        return `/${searchDir}/${link}/`;
-      }
-    }
-    
-    // If not found, return the original link (fallback)
-    return `/${link}/`;
-  };
-}
 
 site.loadPages([".gmi"], { loader: textLoader, engine: new GeminiEngine() });
 
@@ -68,9 +46,7 @@ site.use(transformImages());
 site.add([".png", ".jpg"]);
 site.use(remark({
   remarkPlugins: [
-    [remarkObsidian, {
-      resolveWikiLink: createWikiLinkResolver()
-    }]
+    customWikiLinks
   ],
   rehypePlugins: [[
     rehypeStarryNight, {

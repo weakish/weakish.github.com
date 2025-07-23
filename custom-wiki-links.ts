@@ -1,19 +1,25 @@
 // Custom remark plugin to handle wiki links with proper path resolution
-import { existsSync } from "https://deno.land/std@0.214.0/fs/exists.ts";
-import { join } from "https://deno.land/std@0.214.0/path/mod.ts";
 
 export function customWikiLinks() {
   const searchDirs = ["zk", "zk/Register"];
   const baseDir = ".";
   
   function resolveLinkPath(link: string): string {
-    // Search for the file across all directories
-    for (const searchDir of searchDirs) {
-      const fullPath = join(baseDir, searchDir, `${link}.md`);
-      if (existsSync(fullPath)) {
-        return `/${searchDir}/${link}/`;
+    // Use Deno's file system API
+    try {
+      for (const searchDir of searchDirs) {
+        const fullPath = `${baseDir}/${searchDir}/${link}.md`;
+        try {
+          Deno.statSync(fullPath);
+          return `/${searchDir}/${link}/`;
+        } catch {
+          // File doesn't exist, continue to next directory
+        }
       }
+    } catch {
+      // Fallback if Deno API fails
     }
+    
     // If not found, return the original link (fallback)
     return `/${link}/`;
   }
