@@ -61,16 +61,14 @@ Also, kitty is from Kovid Goyal, the author of [calibre].
 
 ## Browser
 
-Safari is my main browser since it is the default one on macOS and iOS,
-and it is said to be more power efficient than other alternatives.
+I use DuckDuckGo browser with the advertisements in DuckDuckGo search engine disabled,
+otherwise it will [not block some Microsoft tracking scripts under certain conditions][ddg-help].
+
+[ddg-help]: https://duckduckgo.com/duckduckgo-help-pages/privacy/web-tracking-protections#duckduckgo-private-search-ads
 
 Occasionally I use Chromium for fancy features such as [WebGPU].
 
 [WebGPU]: https://caniuse.com/webgpu "Can I use page for WebGPU"
-
-Personally I prefer Firefox and Vivaldi but ironically I do not use them,
-just like I prefer Linux and BSD but I do not use them.
-I have not thought about this too much, maybe because I have low self-esteem and think I do not deserve the best.
 
 To browse markdown files on my mobile phone, I use [Obsidian][].
 I cloned the corresponding repository to my iCloud drive,
