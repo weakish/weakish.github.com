@@ -79,10 +79,13 @@ site:
         <p>
           This is a Work-Needing and Prospective Page.
           {% if wnp.type == "O" %}
-          Orphaned: no one is maintaining this page.
+          <strong>O</strong>rphaned: no one is maintaining this page.
+          If you wish to take over the maintenance, please open an issue or send a pull request.
           {% elif wnp.type == "RFA" %}
+          <strong>R</strong>equest <strong>F</strong>or <strong>A</strong>doption: this page is maintained but up for adoption.
           If you wish to take over the maintenance, please open an issue or send a pull request.
           {% elif wnp.type == "RFH" %}
+          <strong>R</strong>equest <strong>F</strong>or <strong>H</strong>elp: this page is maintained but needs help.
           If you wish to help, please open an issue or send a pull request.
           {% endif %}
         </p>
