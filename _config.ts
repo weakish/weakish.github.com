@@ -18,7 +18,7 @@ import favicon from "lume/plugins/favicon.ts";
 import transformImages from "lume/plugins/transform_images.ts";
 import textLoader from "lume/core/loaders/text.ts";
 import GeminiEngine from "./gemini.ts";
-import remarkObsidian from "https://esm.sh/remark-obsidian@1.8.0";
+import { customWikiLinks } from "./custom-wiki-links.ts";
 
 const site = lume({
   location: new URL("https://mmap.page"),
@@ -46,7 +46,7 @@ site.use(transformImages());
 site.add([".png", ".jpg"]);
 site.use(remark({
   remarkPlugins: [
-    remarkObsidian
+    customWikiLinks
   ],
   rehypePlugins: [[
     rehypeStarryNight, {
