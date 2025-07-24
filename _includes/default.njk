@@ -78,17 +78,14 @@ site:
         <h1>{{wnp.type}}: {{wnp.description}}</h1>
         <p>
           This is a Work-Needing and Prospective Page.
+          {% if wnp.type == "O" %}
+          Orphaned: no one is maintaining this page.
+          {% elif wnp.type == "RFA" %}
           If you wish to take over the maintenance, please open an issue or send a pull request.
+          {% elif wnp.type == "RFH" %}
+          If you wish to help, please open an issue or send a pull request.
+          {% endif %}
         </p>
-        <p>Prefix:</p>
-        <dl>
-          <dt><strong>O</strong>rphaned</dt>
-          <dd>No one is maintaining this page.</dd>
-          <dt><strong>R</strong>equest <strong>F</strong>or <strong>A</strong>doption</dt>
-          <dd>The page is maintained but up for adoption.</dd>
-          <dt><strong>R</strong>equest</strong> <strong>F</strong>or <strong>H</strong>elp</dt>
-          <dd>The page is maintained but needs help.</dd>
-        </dl>
       {% endif %}
     </header>
     <article class="markdown-body">
