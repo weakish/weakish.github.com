@@ -78,6 +78,13 @@ then I will finish the changes, commit them, and push them to GitHub.
 
 [Obsidian]: https://obsidian.md
 
+## Email
+
+I use Apple Mail on my Mac and iPhone.
+I've used Spark before but it [does not provide offline access to emails][spark].
+
+[spark]: https://sparkmailapp.com/help/general/email-storage-and-backups "Help documentation of Spark"
+
 ## Window Manager
 
 Back to the days when I was using Linux
