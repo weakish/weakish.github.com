@@ -1,13 +1,46 @@
 // Custom remark plugin to handle wiki links with proper path resolution
 
+// Types for AST nodes
+interface ASTNode {
+  type: string;
+  value?: string;
+  children?: ASTNode[];
+  parent?: ASTNode;
+  url?: string;
+  title?: string | null;
+  data?: {
+    hName?: string;
+  };
+  _wikiLinksReplacement?: ASTNode[];
+  _highlightReplacement?: ASTNode[];
+}
+
+interface TextNode extends ASTNode {
+  type: 'text';
+  value: string;
+}
+
+interface LinkNode extends ASTNode {
+  type: 'link';
+  url: string;
+  title: string | null;
+  children: ASTNode[];
+}
+
 export function customWikiLinks() {
   const baseDir = ".";
+  
+  // Cache the directory list since it's stable during build
+  let cachedDirectories: string[] | null = null;
   
   function getAllDirectories(dir: string): string[] {
     const directories: string[] = [];
     try {
       for (const entry of Deno.readDirSync(dir)) {
-        if (entry.isDirectory && !entry.name.startsWith('.') && entry.name !== 'node_modules' && entry.name !== '_site') {
+        if (entry.isDirectory && 
+            !entry.name.startsWith('.') && 
+            !entry.name.startsWith('_') && 
+            entry.name !== 'node_modules') {
           const fullPath = dir === '.' ? entry.name : `${dir}/${entry.name}`;
           directories.push(fullPath);
           // Recursively get subdirectories
@@ -18,6 +51,13 @@ export function customWikiLinks() {
       // If directory doesn't exist or can't be read, continue
     }
     return directories;
+  }
+  
+  function getCachedDirectories(): string[] {
+    if (cachedDirectories === null) {
+      cachedDirectories = getAllDirectories(baseDir);
+    }
+    return cachedDirectories;
   }
   
   function resolveLinkPath(link: string): string {
@@ -34,8 +74,8 @@ export function customWikiLinks() {
       }
     }
     
-    // Search recursively in all directories
-    const allDirs = getAllDirectories(baseDir);
+    // Search recursively in all directories using cached results
+    const allDirs = getCachedDirectories();
     for (const searchDir of allDirs) {
       for (const pattern of patterns) {
         const fullPath = `${baseDir}/${searchDir}/${pattern}`;
@@ -52,7 +92,7 @@ export function customWikiLinks() {
     return `/${link}/`;
   }
 
-  function isInCodeContext(node: any): boolean {
+  function isInCodeContext(node: ASTNode): boolean {
     // Check if we're inside a code block or inline code
     // Since we're setting parent references in processNode, this should work
     let parent = node.parent;
@@ -65,7 +105,7 @@ export function customWikiLinks() {
     return false;
   }
 
-  function processWikiLinks(node: any): void {
+  function processWikiLinks(node: ASTNode): void {
     if (node.type === 'text' && typeof node.value === 'string' && !isInCodeContext(node)) {
       // Advanced wiki link regex that supports:
       // [[link]], [[link|text]], [[link#heading]], [[link#heading|text]]
@@ -74,7 +114,7 @@ export function customWikiLinks() {
       
       if (matches.length > 0) {
         // We need to replace this text node with multiple nodes
-        const newNodes: any[] = [];
+        const newNodes: ASTNode[] = [];
         let lastIndex = 0;
         
         for (const match of matches) {
@@ -103,7 +143,7 @@ export function customWikiLinks() {
           }
           
           // Add the link
-          newNodes.push({
+          const linkNode: LinkNode = {
             type: 'link',
             url: resolvedPath,
             title: null,
@@ -111,7 +151,8 @@ export function customWikiLinks() {
               type: 'text',
               value: displayText
             }]
-          });
+          };
+          newNodes.push(linkNode);
           
           lastIndex = matchIndex + fullMatch.length;
         }
@@ -130,13 +171,13 @@ export function customWikiLinks() {
     }
   }
 
-  function processHighlights(node: any): void {
+  function processHighlights(node: ASTNode): void {
     if (node.type === 'text' && typeof node.value === 'string' && !isInCodeContext(node)) {
       const highlightRegex = /==([^=]+)==/g;
       const matches = [...node.value.matchAll(highlightRegex)];
       
       if (matches.length > 0) {
-        const newNodes: any[] = [];
+        const newNodes: ASTNode[] = [];
         let lastIndex = 0;
         
         for (const match of matches) {
@@ -181,7 +222,7 @@ export function customWikiLinks() {
     }
   }
 
-  function processNode(node: any, parent: any = null): void {
+  function processNode(node: ASTNode, parent: ASTNode | null = null): void {
     // Set parent reference for context checking
     node.parent = parent;
     
@@ -213,7 +254,7 @@ export function customWikiLinks() {
     }
   }
 
-  return function transformer(tree: any) {
+  return function transformer(tree: ASTNode) {
     processNode(tree);
   };
 }
