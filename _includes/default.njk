@@ -80,16 +80,16 @@ site:
           This is a Work-Needing and Prospective Page.
           {% if wnpp.type == "O" %}
           <strong>O</strong>rphaned: no one is maintaining this page.
-          If you wish to take over the maintenance, please open an issue or send a pull request.
+          If you wish to take over the maintenance, please <a href="https://github.com/{{ site.repo }}/issues">open an issue</a> or <a href="https://github.com/{{ site.repo }}/pulls">send a pull request</a>.
           {% elif wnpp.type == "RFA" %}
           <strong>R</strong>equest <strong>F</strong>or <strong>A</strong>doption: this page is maintained but up for adoption.
-          If you wish to take over the maintenance, please open an issue or send a pull request.
+          If you wish to take over the maintenance, please <a href="https://github.com/{{ site.repo }}/issues">open an issue</a> or <a href="https://github.com/{{ site.repo }}/pulls">send a pull request</a>.
           {% elif wnpp.type == "RFH" %}
           <strong>R</strong>equest <strong>F</strong>or <strong>H</strong>elp: this page is maintained but needs help.
-          If you wish to help, please open an issue or send a pull request.
+          If you wish to help, please <a href="https://github.com/{{ site.repo }}/issues">open an issue</a> or <a href="https://github.com/{{ site.repo }}/pulls">send a pull request</a>.
           {% endif %}
         </p>
-      {% endif %}
+            {% endif %}
     </header>
     <article class="markdown-body">
       {{ content | safe }}
@@ -107,7 +107,7 @@ site:
         without any JavaScript.
         I am unaware of any third party CSS file used by this site implements this style of tracking.
         Please submit
-        <a href="https://github.com/{{ site.repo }}/issues">an issue or a pull request</a> if you spot any.
+        <a href="https://github.com/{{ site.repo }}/issues">an issue</a> or <a href="https://github.com/{{ site.repo }}/pulls">a pull request</a> if you spot any.
       </p>
       <p>
         Site source is
