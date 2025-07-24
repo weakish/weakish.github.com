@@ -1,5 +1,5 @@
 ---
-wnp:
+wnpp:
   type: "RFH"
   description: "C23"
 ---

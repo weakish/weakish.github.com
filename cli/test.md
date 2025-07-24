@@ -1,5 +1,5 @@
 ---
-wnp: 
+wnpp: 
   type: "O"
   description: "outdated"
 ---
