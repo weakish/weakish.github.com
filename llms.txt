@@ -1,0 +1,44 @@
+# Memories Mapped to Web Pages
+
+This is the personal website of weakish, containing technical notes, thoughts, and learning materials.
+
+## About
+
+This is a learning-by-doing project to experiment with Lume (static site generator) and Deno.
+The content includes:
+
+- Technical notes and documentation
+- Programming guides and tutorials  
+- Personal thoughts and reflections
+- Movie reviews and poetry (some in Chinese)
+- Learning notes on various topics
+
+## Content Guidelines
+
+- Most content is written by the site owner based on personal experience and learning
+- Some content may reference or build upon existing knowledge and should be verified independently
+- Code examples and technical guides are provided for educational purposes
+- Personal opinions and reviews reflect individual perspectives
+
+## Structure
+
+- `/dive-into/` - Technical deep-dives and guides
+- `/java/`, `/python/`, `/vim/` - Language and tool-specific content
+- `/web/` - Web development related content
+- `/thoughts/` - Personal reflections and opinions
+- `/movies/` - Movie reviews and ratings
+- `/poems/` - Poetry and creative writing
+- `/dapi/` - Notes in Chinese
+- `/uses/` - Tools and setup information
+
+## Usage
+
+Content is available for reference and learning purposes. When citing or referencing:
+- Provide attribution to the original source
+- Verify technical information independently
+- Respect the personal nature of opinions and reflections
+
+## Contact
+
+GitHub: https://github.com/weakish
+Website: https://mmap.page

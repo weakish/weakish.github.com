@@ -71,6 +71,7 @@ site.use(purgecss());
 
 site.copy("LICENSE");
 site.copy("humans.txt");
+site.copy("llms.txt");
 site.copy("404.html");
 site.use(sitemap({
   lastmod: "=lastmod",
