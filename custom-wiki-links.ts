@@ -54,6 +54,7 @@ export function customWikiLinks() {
 
   function isInCodeContext(node: any): boolean {
     // Check if we're inside a code block or inline code
+    // Since we're setting parent references in processNode, this should work
     let parent = node.parent;
     while (parent) {
       if (parent.type === 'code' || parent.type === 'inlineCode') {
