@@ -69,6 +69,6 @@ Overloading an operator should be consistent to all types supporting the operato
 
 ## Reduce using infix functions
 
-Infix functions provides a new syntax of function call, similar to operators.
+Infix functions provide a new syntax for function calls, similar to operators.
 
 Only use infix functions when they are obviously cleaner than non infix form.

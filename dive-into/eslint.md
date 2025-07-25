@@ -1,4 +1,4 @@
-# An Optioned Guide to ESLint
+# An Opinionated Guide to ESLint
 
 [ESLint] is a powerful and versatile tool.
 I myself only use eslint for problems coming from JavaScript design.
@@ -98,7 +98,7 @@ ni -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ## Alternatives
 
 [Biome] and [quick-lint-ls] are faster alternatives to ESLint.
-Biome currently only has [particial support for Svelte and Astro][biome-docs],
+Biome currently only has [partial support for Svelte and Astro][biome-docs],
 and quick-lint-ls before 3.0 does not support TypeScript.
 Therefore, I still use ESLint.
 However, since [quick-lint-ls 3.0 introduces TypeScript support][quick-lint-ts],

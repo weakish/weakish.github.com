@@ -55,20 +55,19 @@ Improving testability should not harm readability.
 
 Obscuring code to improve testability may bring in potential bugs not caught by tests.
 
-## Prefer `under_line`
+## Prefer `snake_case` to `camelCase`
 
 `camelCaseAreHardToReadIfThereAreMoreThanThreeWords`
 
-`under_line_is_much_easier_to_read`
+`snake_case_is_much_easier_to_read`
 
 Exceptions:
 
 - `TypeName` since `TypeNamesWithMoreThanThreeWords` should be avoided.
 - `FooBar fooBar` so wherever we see `fooBar`, we know it is of type `FooBar`.
+- Keep a balance between preference on snake case and consistency with existing code in the project and/or the community.
 
-## Applicable to some languages
-
-### Prefer explicit else branch
+## Prefer explicit else branch
 
 Some languages make the else clause of `if` mandated.
 This is a good design.
@@ -137,7 +136,7 @@ if (condition) {
 }
 ```
 
-### Only use `i++` to increase `i`
+## Only use `i++` to increase `i`
 
 `y=i++` and `y=++i` is really confusing to me.
 
@@ -148,17 +147,17 @@ if a programming language allows `++`.
 
 The same applies to `i--` and `--i`.
 
-### Do not use return value of assignment statement
+## Do not use return value of assignment statement
 
 Similarly to usage of `i++`,
 if assignment statements of the language return value,
 do not use them.
 
-### Test against true/false
+## Test against true/false
 
 Condition tests should accept a boolean value.
-So we do not need to remember which values are considered true or false.
-For example, in Ruby only `false` and `nil` is false,
+So we do not need to remember rules for truthy and falsy values.
+For example, in Ruby only `false` and `nil` are false,
 but in Python, `''`, `0`, `()`, `[]`, and `{}` are also `false`.
 
 Prefer
@@ -185,15 +184,25 @@ Use this feature sparingly.
 Explicit type annotation serves as documentation.
 Omitting them may reduce readability of code.
 
-`ClassInterface<TypeParameter> variable_name = ClassInterface<TypeParameter>()`
-and `ClassInterface variable_name = ClassInterface()`
-may be replaced with
-`value variable_name = ClassInterface<TypeParameter>()`
-and `value variable_name = ClassInterface()`.
+Exceptions:
+
+Prefer
+
+```ceylon
+value variable_name = ClassInterface<TypeParameter>();
+value variable_name = ClassInterface()
+```
+
+to
+
+```ceylon
+ClassInterface<TypeParameter> variable_name = ClassInterface<TypeParameter>();
+ClassInterface variable_name = ClassInterface();
+```
 
 Think long and hard when you want to omit type annotation under other conditions.
 
-Also, for languages variable declaration and assignment are indistinguishable in syntax, e.g. Python, type annotation helps to distinguish them.
+Also, for languages where variable declarations and assignments are indistinguishable in syntax, e.g. Python, type annotation helps to distinguish them.
 
 ### Use semicolons to remark mutation
 
@@ -205,7 +214,7 @@ class PutSemicolonOnItsOwnLineForMutability
     Pie p = new Crust();
     Pie p = new Top(new Anchovy(), p)
     ; // the future begins, i.e. from this line on, references to `p` reflect the change
-    Pieman yy = new Bottom();
+    Pie yy = new Bottom();
     yy.addTop(new Anchovy())
     ; // same as above
 }

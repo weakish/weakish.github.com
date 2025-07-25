@@ -1,8 +1,7 @@
 Code Formatting
 ===============
 
-Formatting style does not affect AST and thus is unlikely to affect readability
-of code.
+Formatting style does not affect AST and thus is unlikely to affect readability of code.
 If they do, it can be automatically adjusted via tools.
 
 Use the official formatter if the language tool chain includes it, for example:
@@ -35,5 +34,3 @@ and you need to review someone else's commits with a lot of formatting changes,
 you can use `git diff -w` to ignore whitespace,
 or use similar options in other tools,
 such as "Hide whitespace changes" in GitHub's "Diff settings".
-
-

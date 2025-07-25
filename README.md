@@ -43,7 +43,7 @@ Some random pages with syntax highlighting:
 ### More Random Pages
 
 - [Fight for Type Safety Stand with JavaScript](dive-into/ts-check.md) (ts-check with JSDoc comments)
-- [An Optioned Guide to ESLint](dive-into/eslint.md)
+- [An Opinionated Guide to ESLint](dive-into/eslint.md)
 - [Write Makefile Compatible with Both GNU make and BSD make](dive-into/make.md)
 - Neovim [code completion](vim/completion.md) and [spell checking](vim/spell.md)
 - [Selected Gitmojis](dive-into/gitmoji.md)
