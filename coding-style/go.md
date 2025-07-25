@@ -17,13 +17,14 @@ Functions, interfaces, pointers may be `nil`
 The compiler does not check nullability for functions, interfaces, and pointers.
 
 Thus, any function taking a function, an interface, or a pointer,
-need to check whether input is `nil` itself.
-Since all methods implicitly accepts a pointer,
-all methods should check whether its receiver is `nil` or not.
+needs to check whether input is `nil` itself.
+Since all methods implicitly accept a pointer,
+all methods should check whether their receiver is `nil` or not.
 Though, if you are careful enough, you may omit checking nullability in unexported functions.
 
-You can use the [RequireNonNull] function from goaround package
-to check every not nullable parameters,
+
+You can use the [RequireNonNull] function from the goaround package
+to check every non-nullable parameter,
 which will panic if the parameter passed in is `nil`.
 
 [RequireNonNull]: https://github.com/weakish/goaround/blob/master/null.go
@@ -66,7 +67,7 @@ Do not rely on zero values
 Do not rely on Go's default initialized value.
 Initialize it explicitly instead if the value is intended to be used later.
 
-The program should be semantically equivalent if Go changed zero values of default initialization.
+Similarly, always check presence when retrieving elements from a map.
 
 Similarly, always check presentence when retrieving elements from a map.
 For example, if you want to retrieve an integer from a map,
@@ -109,7 +110,7 @@ if x < 0 {
 We can extract it as a function:
 
 ```go
-func f(x int) {
+func f(x int) string {
     if x < 0 {
         return "0"
     } else {
@@ -126,4 +127,4 @@ Do not use `%#q` in `printf`
 ----------------------------
 
 There are more good things to remember than the special rules of `%#q`.
- 
+
