@@ -79,6 +79,12 @@
     force = true
 
 [[redirects]]
+    from = "/dapi/avoid-html/"
+    to = "/coding-style/html/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/dapi/no-blog/"
     to = "/dapi/not-a-blog/"
     status = 301
