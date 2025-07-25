@@ -1,95 +1,93 @@
-# 人工智能
+# Artificial Intelligence
 
-## 预备知识
+## Prerequisites
 
-1. 初中程度的数学知识（主要是概率论）
-2. 基本的编程知识
+1. Middle school level mathematics (primarily probability theory)
+2. Basic programming knowledge
 
-## 潜艇和鱼
+## Submarines and Fish
 
-> 机器会思考吗？
-> 这和问「潜艇会游泳吗」差不多。
+> Can machines think?
+> This is similar to asking "Can submarines swim?"
 
 -- [Dijkstra (1984)](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD898.html)
 
-螺旋桨的转动，作用于水体，水体的反作用力推动潜艇游泳。
-这就是潜艇游泳的原理，非常简单。
-事实上，工程上的实作也很简单。
-潜艇之所以复杂，是因为作为军用船舶有额外的需求，
-比如老式潜艇通过双桨对转抵消反扭力来避免潜艇偏转，
-现代潜艇通过自动控制技术来纠正潜艇偏转。
-如果忽略这些需求，只是造会游泳的潜艇的话，并不复杂。
+The rotation of propellers acts on water, and the reaction force of water propels the submarine to swim.
+This is the principle of submarine swimming, very simple.
+In fact, engineering implementation is also simple.
+Submarines are complex because, as military vessels, they have additional requirements.
+For example, older submarines use counter-rotating dual propellers to cancel out torque and prevent submarine turning,
+while modern submarines use automatic control technology to correct submarine turning.
+If we ignore these requirements and just build submarines that can swim, it's not complex.
 
-但是造机器鱼就麻烦了。
-实际上，鱼游泳的机制我们并不是很清楚。
-直到 [2015] 年，才有对鱼游泳机制（水体和鱼体的动量平衡）的量化研究发表，
-而且这一研究仅限于鱼游泳的两种情形：
-平稳前进和C型逃脱（鱼身迅速弯成C形，然后向外翻转快速游动）。
+But building mechanical fish would be troublesome.
+In fact, we don't really understand the mechanism of fish swimming.
+It wasn't until [2015] that quantitative research on fish swimming mechanisms (momentum balance between water and fish body) was published,
+and this research was limited to only two swimming scenarios:
+steady forward movement and C-start escape (fish body rapidly bends into C-shape, then flips outward for rapid swimming).
 
 [2015]: http://aip.scitation.org/doi/full/10.1063/1.4919784
 
-如果说潜艇是在流体力学还没有搞清楚鱼游泳机制的时候，
-另辟蹊径造出游泳的机器，
-那么人工智能，就是试图在脑科学还没有搞清楚人类思考机制的时候，
-另辟蹊径造出思考的机器。
+If submarines were built by finding alternative approaches when fluid mechanics hadn't yet figured out fish swimming mechanisms,
+then artificial intelligence is an attempt to build thinking machines by finding alternative approaches when neuroscience hasn't yet figured out human thinking mechanisms.
 
-## 逻辑和计算
+## Logic and Computation
 
-潜艇是怎么在鱼游泳的机制还没有搞清楚的时候造出来的呢？
-鱼游泳具体的机制当时并不清楚（直到现在也不是很清楚），
-但是鱼是通过水的反作用力游动的，这是比较容易观察到的。
-那么，如果我们能找到什么东西给水施加作用力，就可以通过水的反作用力驱动潜艇了。
-有什么东西可以给水施加作用力呢？
-当时最常见的就是船桨和螺旋桨了。
-由于潜艇并非依靠人力驱动，那螺旋桨就明显比船桨合适了。
-所以，用螺旋桨就可以让潜艇游泳了。
+How were submarines built when the mechanism of fish swimming wasn't understood?
+The specific mechanism of fish swimming wasn't clear at the time (and isn't very clear even now),
+but it was relatively easy to observe that fish swim through the reaction force of water.
+So, if we could find something to exert force on water, we could propel submarines through water's reaction force.
+What could exert force on water?
+At the time, the most common were ship oars and propellers.
+Since submarines weren't powered by human force, propellers were obviously more suitable than oars.
+Therefore, propellers could make submarines swim.
 
-同样，人思考的机制并不清楚，但人的思考，有一个特征是很容易观察到的。
-那就是人的思考是通用的。
-那么，有什么东西是通用于各个领域的呢？
-最容易想到的就是逻辑。
+Similarly, the mechanism of human thinking isn't clear, but there's one characteristic of human thinking that's easy to observe:
+human thinking is universal.
+So, what is universal across all domains?
+The most obvious answer is logic.
 
-什么是逻辑？
-欧几里得的几何学是从公理（命题）出发，构造证明得到其他定理（命题），
-构造证明所依据的规则是逻辑。
-做出证明是困难的，但是已经构造出证明，验证证明的正确性则是容易的
-（验证实际的证明并不是那么容易，但这只是因为实际的证明几乎总是包含一些隐含知识并省略一些中间步骤）。
+What is logic?
+Euclidean geometry starts from axioms (propositions) and constructs proofs to derive other theorems (propositions).
+The rules for constructing proofs are logic.
+Creating proofs is difficult, but once a proof is constructed, verifying its correctness is easy
+(verifying actual proofs isn't that easy, but this is only because actual proofs almost always contain implicit knowledge and skip intermediate steps).
 
-如果我们接触过静态类型的程序语言，那么我们发现静态类型语言的类型系统和逻辑简直是双胞胎：
+If we've encountered statically typed programming languages, we find that type systems in static languages are like twins with logic:
 
-从参数（类型）出发，构造函数得到返回值（类型），
-构造函数所依据的规则是类型系统。
-构造函数是困难的，但是已经构造出函数，验证函数的类型正确是容易的
-（它是如此容易，以至于我们不需要手工验证，编译器会自动验证）。
+Starting from parameters (types), constructing functions to get return values (types),
+the rules for constructing functions are the type system.
+Constructing functions is difficult, but once functions are constructed, verifying type correctness is easy
+(it's so easy that we don't need manual verification—compilers automatically verify).
 
-没错，它们确实是一对双胞胎，这对双胞胎的名字叫柯里-霍华德同构(Curry-Howard correspondence).
+Indeed, they are twins, called the Curry-Howard correspondence.
 
-柯里-霍华德同构意味着计算(computing)和逻辑是等价的，
-换句话说，任何逻辑能表达的东西，都能转化成计算。
-而逻辑看起来是通用于各个领域的，那也就是说，各个领域的问题都能转化成计算。
-看起来我们离人工智能已经很接近了。
-事实上，80 年代确实出现了人工智能的热潮，
-日本还号称要举国制造「第五代计算机」，发展 Prolog 之类的逻辑式编程语言。
+The Curry-Howard correspondence means that computing and logic are equivalent.
+In other words, anything logic can express can be converted into computation.
+Since logic appears universal across all domains, problems from all domains can be converted into computation.
+It seems we're already very close to artificial intelligence.
+In fact, there was indeed an AI boom in the 1980s,
+with Japan even claiming to build a national "Fifth Generation Computer" project, developing logic programming languages like Prolog.
 
-理论上，我们只需输入一些知识，然后问逻辑式编程语言一些问题，就能自动获得答案。
-但现实并没有那么美好。
-想想看，我们要预测明天的天气，需要输入哪些知识？
-如果仅仅输入历史数据、当前卫星云图、设备监测到的数值，
-逻辑编程语言并不能演算出答案。
-我们还需要输入如何从输入数据演算答案的知识。
-也就是说这些如何从输入数据演算答案的知识才是天气预测程序的关键，
-而不是逻辑式编程语言自带的那些逻辑规则！
+Theoretically, we only need to input some knowledge, then ask the logic programming language some questions to automatically get answers.
+But reality wasn't so beautiful.
+Think about it: to predict tomorrow's weather, what knowledge do we need to input?
+If we only input historical data, current satellite cloud images, and device-monitored values,
+logic programming languages can't compute the answer.
+We also need to input knowledge about how to compute answers from input data.
+That is, this knowledge of how to compute answers from input data is the key to weather prediction programs,
+not the logical rules that come with logic programming languages!
 
-像预测天气这样一个具体的应用问题都很难有效地转化为逻辑演算，
-可想而知，要将人类的通用思考转化为逻辑运算就更难了。
+Even a specific application problem like weather prediction is hard to effectively convert to logical computation,
+so it's even harder to convert general human thinking into logical operations.
 
-所以最后这条路并没有走通。
-这条道路后来被称为强人工智能。
+So this path didn't work out in the end.
+This approach was later called strong AI.
 
-当然，强人工智能虽然失败了，
-但柯里-霍华德同构启发了以 Coq 为代表的自动化定理证明辅助工具，
-并顺便解决了自然语言证明几乎总是包含隐含知识和跳过中间步骤的问题。
-而逻辑式编程的思想也影响了另一些编程语言的设计。
+Of course, although strong AI failed,
+the Curry-Howard correspondence inspired automated theorem proving assistance tools represented by Coq,
+and incidentally solved the problem that natural language proofs almost always contain implicit knowledge and skip intermediate steps.
+The ideas of logic programming also influenced the design of other programming languages.
 
 ## 搜索和解析
 
