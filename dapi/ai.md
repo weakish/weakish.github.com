@@ -267,39 +267,39 @@ To summarize the general approach to guessing:
 
 Collecting statistics on data, representing data, then appropriately simplifying, fitting data to guess a high-probability answer—this is called machine learning.
 
-## 概率和贝叶斯定理
+## Probability and Bayes' Theorem
 
-上面我们提到了机器学习是通过拟合来猜测答案，实际上，机器学习同时也通过猜测的答案来更好地拟合。
+Above we mentioned that machine learning guesses answers through fitting. Actually, machine learning also improves fitting through guessed answers.
 
-考虑过滤垃圾邮件这个例子。
-一方面我们统计邮件中某些词语在正常邮件和垃圾邮件中出现的频率，
-根据两者的不同推断一封新邮件是正常邮件还是垃圾邮件，
-另一方面，我们又利用推断的结果反过来推断某些词语在正常邮件和垃圾邮件中出现的频率。
-这样，这个系统分类的邮件越多，识别效果就越好。
+Consider the example of filtering spam emails.
+On one hand, we count the frequency of certain words appearing in normal emails and spam emails,
+inferring whether a new email is normal or spam based on the differences between the two.
+On the other hand, we use the inference results to conversely infer the frequency of certain words appearing in normal emails and spam emails.
+This way, the more emails this system classifies, the better its recognition becomes.
 
-抽象一下，
-我们根据历史数据统计某一特征 f 在分类 S 和 N 中出现的概率
-(`pSucc f S`和`pSucc f N`)，
-据此推断新数据属于 S 还是 N.
-同时，我们根据新数据的分类，
-推断分类为 S 和 N 的数据具有特征 f 的概率(`pSucc S f`和`pSucc N f`),
-并进而调整 `pSucc f S` 和 `pSucc f N` 的值。
+Abstractly speaking,
+we count the probability of a feature f appearing in classifications S and N based on historical data
+(`pSucc f S` and `pSucc f N`),
+and use this to infer whether new data belongs to S or N.
+Meanwhile, we use the classification of new data
+to infer the probability that data classified as S and N have feature f (`pSucc S f` and `pSucc N f`),
+and then adjust the values of `pSucc f S` and `pSucc f N`.
 
-那么这个学习过程其实是辗转计算`pSucc f S`和`pSucc S f`这一组概率
-(`N`的情况同理)。
+So this learning process is actually alternately calculating the group of probabilities `pSucc f S` and `pSucc S f`
+(the case for `N` is similar).
 
-那`pSucc f S`和`pSucc S f`有什么关系呢？
+So what's the relationship between `pSucc f S` and `pSucc S f`?
 
-我们尝试代入一个具体的例子来摸索一下。
-假设`f`代表邮件中出现了「正规发票」这个词，
-而`S`代表这封邮件是垃圾邮件。
-那么，直觉上，我们有：
+Let's try substituting a concrete example to explore.
+Suppose `f` represents the appearance of the phrase "legitimate invoice" in emails,
+and `S` represents that this email is spam.
+Then, intuitively, we have:
 
-1. 包含「正规发票」这个词的邮件是垃圾邮件的概率越大，相应地，垃圾邮件中包含「正规发票」这个词的概率也越大
-2. 包含「正规发票」这个词的邮件是垃圾邮件的概率和垃圾邮件中包含「正规发票」这个词的概率并不相等
-3. 包含「正规发票」这个词的邮件是垃圾邮件的概率大于垃圾邮件中包含「正规发票」这个词的概率
+1. The greater the probability that emails containing "legitimate invoice" are spam, correspondingly, the greater the probability that spam emails contain "legitimate invoice"
+2. The probability that emails containing "legitimate invoice" are spam is not equal to the probability that spam emails contain "legitimate invoice"
+3. The probability that emails containing "legitimate invoice" are spam is greater than the probability that spam emails contain "legitimate invoice"
 
-抽象上述表述，我们得到：
+Abstracting the above statements, we get:
 
 ```haskell
 pSucc f S = coefficient * (pSucc S f) -- coefficient > 0
@@ -307,11 +307,11 @@ pSucc f S /= pSucc S f
 pSucc f S > pSucc S f
 ```
 
-一般地，`f`和`S`可以认为是两个先后发生的事件，
-`pSucc f S`可以认为是`f`发生后`S`发生的概率（这叫做条件概率或后验概率），
-`pSucc S f`同理。
+Generally, `f` and `S` can be considered as two events occurring in sequence,
+`pSucc f S` can be considered as the probability that `S` occurs after `f` occurs (this is called conditional probability or posterior probability),
+and `pSucc S f` is similar.
 
-交换`f`和`S`, 我们得到：
+Swapping `f` and `S`, we get:
 
 ```haskell
 pSucc S f = coefficient * (pSucc f S) -- coefficient > 0
@@ -319,75 +319,74 @@ pSucc S f /= pSucc f S
 pSucc S f > pSucc f S
 ```
 
-我们看到，前 2 条没问题，第 3 条出现了矛盾。
-这说明前面我们抽象不当，`f`和`S`并不是一般的两个事件，
-`f`和`S`还具有一些我们没有考虑的隐含性质。
+We see that the first 2 conditions are fine, but the 3rd creates a contradiction.
+This shows that our abstraction was inappropriate—`f` and `S` are not general events;
+`f` and `S` have some hidden properties we haven't considered.
 
-回头看我们的直觉：
+Looking back at our intuition:
 
-> 包含「正规发票」这个词的邮件是垃圾邮件的概率大于垃圾邮件中包含「正规发票」这个词的概率
+> The probability that emails containing "legitimate invoice" are spam is greater than the probability that spam emails contain "legitimate invoice"
 
-这一条背后其实有一个假设：
+This statement actually has an underlying assumption:
 
-> 碰到包含「正规发票」这个词的邮件的概率要小于碰到垃圾邮件的概率。
+> The probability of encountering emails containing "legitimate invoice" is less than the probability of encountering spam emails.
 
-也就是说，`p f < p S`.
+That is, `p f < p S`.
 
-假设`p f`不为 0, 稍加变形，我们得到 `(p S) / (p f) > 1`.
+Assuming `p f` is not 0, with slight transformation, we get `(p S) / (p f) > 1`.
 
-然后我们再将`f`和`S`抽象为一般事件，那么我们可以用`(p S) / (p f)`来表示
+Then abstracting `f` and `S` as general events, we can use `(p S) / (p f)` to represent the coefficient in
 
 ```haskell
 pSucc f S = coefficient * (pSucc S f)
 ```
 
-中的系数`coefficient`，这样，当`p f < p S`的时候，
-就有`pSucc f S > pSucc S f`,
-反之，当`p f > p S`的时候，`pSucc f S < pSucc S f`.
+This way, when `p f < p S`, we have `pSucc f S > pSucc S f`,
+conversely, when `p f > p S`, we have `pSucc f S < pSucc S f`.
 
-这样我们就得到了`pSucc f S`和`pSucc S f`的关系：
+Thus we get the relationship between `pSucc f S` and `pSucc S f`:
 
 ```haskell
 pSucc f S = ((p S) / (p f)) * (pSucc S f)
 ```
 
-显而易见，互换`f`和`S`没问题(假设`p S`不为 0)。
+Obviously, swapping `f` and `S` is fine (assuming `p S` is not 0).
 
-既然`f`和`S`是一般事件，我们不妨用`a`和`b`替换它们，以凸显其一般性：
+Since `f` and `S` are general events, we might as well replace them with `a` and `b` to highlight their generality:
 
 ```haskell
 pSucc a b = ((p b) / (p a)) * (pSucc b a)
 ```
 
-贝叶斯在 18 世纪发现了上面这个公式，因此它被称为贝叶斯定理(Bayes' theorem).
-之所以称为定理，是因为贝叶斯是基于条件概率的定义推导出这个公式的。
-我们认为贝叶斯定理足够简单，因此跳过条件概率的定义直接讲贝叶斯定理。
+Bayes discovered this formula in the 18th century, so it's called Bayes' theorem.
+It's called a theorem because Bayes derived this formula based on the definition of conditional probability.
+We consider Bayes' theorem simple enough, so we skip the definition of conditional probability and directly discuss Bayes' theorem.
 
-回到垃圾邮件过滤的问题，前面我们提到：
+Returning to the spam email filtering problem, we mentioned earlier:
 
-> 一方面我们统计邮件中某些词语在正常邮件和垃圾邮件中出现的频率，
-> 根据两者的不同推断一封新邮件是正常邮件还是垃圾邮件，
+> On one hand, we count the frequency of certain words appearing in normal emails and spam emails,
+> inferring whether a new email is normal or spam based on the differences between the two.
 
-这和贝叶斯定理有些差距。
-也就是说，实际上我们没有直接统计`p f`，而是分别统计了`pSucc N f`和`pSucc S f`.
-由于我们的分类系统不考虑无法判定的情况，因此一封邮件要么是正常邮件，要么是垃圾邮件，
-也就是说，`p N + p S = 1`.
-同时，既然`pSucc N f`表示已知一封邮件是正常邮件时，它具有特征`f`的概率，
-那么一封正常邮件具有特征`f`的概率就是`(p N) * (pSucc N f)`.
-同理，一封垃圾邮件具有特征`f`的概率就是`(p S) * (pSucc S f)`.
-因此一封邮件具有特征`f`的概率为：
+This differs somewhat from Bayes' theorem.
+That is, we didn't directly count `p f`, but separately counted `pSucc N f` and `pSucc S f`.
+Since our classification system doesn't consider undecidable cases, an email is either normal or spam,
+that is, `p N + p S = 1`.
+Meanwhile, since `pSucc N f` represents the probability that an email has feature `f` given that it's normal,
+the probability that a normal email has feature `f` is `(p N) * (pSucc N f)`.
+Similarly, the probability that a spam email has feature `f` is `(p S) * (pSucc S f)`.
+Therefore, the probability that an email has feature `f` is:
 
 ```haskell
 p f = (p N) * (pSucc N f) + (p S) * (pSucc S f)
 ```
 
-由此我们得到贝叶斯定理的一个变体，如果我们定义：
+From this we get a variant of Bayes' theorem. If we define:
 
 ```haskell
 p -b = 1 - (p b)
 ```
 
-那么贝叶斯定理就可以表述为：
+Then Bayes' theorem can be stated as:
 
 ```haskell
 pSucc a b =
@@ -395,122 +394,120 @@ pSucc a b =
     ((p b) * (pSucc b a) + (p -b) * (pSucc -b a))
 ```
 
-垃圾邮件过滤系统不可能只检查一个词，
-因此我们尝试推广到多个特征的情况：
+Spam email filtering systems can't just check one word,
+so we try to generalize to multiple features:
 
 ```haskell
 pSucc [f1, f2 .. fn] S =
     (p S) * (pSucc S [f1, f2 .. fn]) / (p [f1, f2 .. fn])
 ```
 
-其中，`p S`和`p [f1, f2 .. fn]`都很容易统计，
-而`pSucc S [f1, f2 .. fn]`的计算复杂度很高，
-特别是，`S`中同时具有`[f1, f2 .. fn]`的样本可能很少（稀疏），
-那训练的效果就很差了。
-那怎么办呢？
-上一节我们假设结构具有马尔可夫性质，化简了问题，
-这里我们也可以假设`[f1, f2 .. fn]`的每一项都是独立事件。
-这样，`pSucc S [f1, f2 .. fn]`就可以化简为
+Here, `p S` and `p [f1, f2 .. fn]` are both easy to count,
+while `pSucc S [f1, f2 .. fn]` has high computational complexity.
+Especially when samples in `S` that simultaneously have `[f1, f2 .. fn]` might be few (sparse),
+training effectiveness becomes poor.
+What to do?
+In the previous section we assumed structures have Markov properties, simplifying the problem.
+Here we can also assume each item in `[f1, f2 .. fn]` is an independent event.
+This way, `pSucc S [f1, f2 .. fn]` can be simplified to
 
 ```haskell
 (pSucc S f1) * (pSucc S f2) * .. * (pSucc S fn)
 ```
 
-这样我们就只需要独立计算分类为`S`的情况下具有某一个特征的概率了，
-避免了样本稀疏的问题，
-同时，和上一节用马尔可夫结构化简一样，每一项都可以分布式地跑。
+This way we only need to independently calculate the probability of having a specific feature given classification `S`,
+avoiding the sparse sample problem.
+Meanwhile, like the previous section's simplification using Markov structures, each item can run distributedly.
 
-上面的式子中，如果某一项没有出现过，
-也就是说，分类为`S`的情况下训练集的数据中不存在具有某特定特征的样本，
-那一项的条件概率会为 0, 从而导致最后相乘的结果为 0, 也就是将其他各项的概率消除。
-为了避免这个问题，我们可以强行将概率为 0 的项修正为一个小概率，比如 0.01,
-具体数值无关紧要，因为以后如果训练集中新增了相应的样本，这个概率会自动得到修正的。
-当然，这样有点粗暴。更合理的做法是所有的样本数都加 1, 并相应增加总数，
-这样原本为 0 的样本数就变为 1, 避免了概率为 0 的情况。
-因为训练集一般都很大，所以样本数加 1 没什么影响。
-这种做法称为拉普拉斯平滑(Laplacian Smoothing).
-当然，如果有必要，也可以改为加上一个小于 1 的正数。
+In the above formula, if some item hasn't appeared,
+that is, if no samples in the training set classified as `S` have a specific feature,
+that item's conditional probability would be 0, making the final multiplication result 0, eliminating the probabilities of other items.
+To avoid this problem, we can forcibly correct items with probability 0 to a small probability, say 0.01.
+The specific value doesn't matter because if corresponding samples are later added to the training set, this probability will be automatically corrected.
+Of course, this is somewhat crude. A more reasonable approach is to add 1 to all sample counts and correspondingly increase the total,
+so originally 0 sample counts become 1, avoiding probability 0 situations.
+Since training sets are generally large, adding 1 to sample counts has little impact.
+This approach is called Laplacian Smoothing.
+Of course, if necessary, you can also add a positive number less than 1.
 
-和马尔可夫性质不一定成立一样，`[f1, f2 .. fn]`的每一项都是独立事件，
-这个假设也不一定成立。
-因此这个算法叫做幼稚贝叶斯分类器或者朴素贝叶斯分类器
-(Naive Bayes classifier).
-这个名称就是强调独立事件的假设不一定成立。
+Like how Markov properties don't necessarily hold, the assumption that each item in `[f1, f2 .. fn]` is an independent event
+also doesn't necessarily hold.
+Therefore this algorithm is called the Naive Bayes classifier.
+This name emphasizes that the independence assumption doesn't necessarily hold.
 
-尽管独立事件的假设常常是不准确的，但幼稚贝叶斯在实际工程中出乎意料地好用。
-因为很多应用并不在乎精确的类概率，只关心最后的分类结果。
-比如垃圾邮件过滤，只需要判断是否是垃圾邮件，
-并不需要在用户界面显示「本邮件有 87.53% 的概率是垃圾邮件」之类的信息。
+Although the independence assumption is often inaccurate, Naive Bayes works surprisingly well in practical engineering.
+Because many applications don't care about precise class probabilities, only the final classification result.
+For example, spam email filtering only needs to determine whether it's spam,
+and doesn't need to display information like "This email has an 87.53% probability of being spam" in the user interface.
 
-## 贝叶斯网络和神经网络
+## Bayesian Networks and Neural Networks
 
-然而，当特征之间相关性比较强，而我们又要求比较精确的类概率的时候，幼稚贝叶斯就不够用了。
+However, when correlations between features are strong and we require relatively precise class probabilities, Naive Bayes isn't sufficient.
 
-也就是说，下面的式子里`p [f1, f2 .. fn]`不好算了。
+That is, in the following formula, `p [f1, f2 .. fn]` becomes hard to compute.
 
 ```haskell
 pSucc [f1, f2 .. fn] S =
     (p S) * (pSucc S [f1, f2 .. fn]) / (p [f1, f2 .. fn])
 ```
 
-回顾一下，如果`[f1, f2 .. fn]`是独立事件，那我们有：
+Reviewing, if `[f1, f2 .. fn]` are independent events, then we have:
 
 ```haskell
 p [f1, f2 .. fn] =
     (p f1) * (p f2) * .. * (p fn)
 ```
 
-现在每一项特征的概率可能受其他特征的影响。
-假设有一个函数`pp`可以表达这些影响
+Now each feature's probability might be influenced by other features.
+Suppose there's a function `pp` that can express these influences:
 
 ```haskell
 p [f1, f2 .. fn] =
     (pp f1) * (pp f2) * .. * (pp fn)
 ```
 
-那么问题就在于`pp`是如何定义的？
-既然`pp`表达的是某一事件受其他事件的影响，那`pp`就可以用条件概率来定义：
+So the question is: how is `pp` defined?
+Since `pp` expresses how an event is influenced by other events, `pp` can be defined using conditional probability:
 
 ```haskell
 pp f = pSucc (influenced f) f
 ```
 
-对于给定的特征`f`，我们找出所有影响它的特征`[inf1, inf2 .. infn]`：
+For a given feature `f`, we find all features that influence it, `[inf1, inf2 .. infn]`:
 
 ```haskell
 influenced f =
     pSucc [inf1, inf2 .. infn] f
 ```
 
-`pSucc [inf1, inf2 .. infn] f`这看起来是不是很熟悉？
-我们上面讨论幼稚贝叶斯的时候提到的是`pSucc [f1, f2 .. fn] S`.
-这两者的结构是一样的。
+Doesn't `pSucc [inf1, inf2 .. infn] f` look familiar?
+When we discussed Naive Bayes above, we mentioned `pSucc [f1, f2 .. fn] S`.
+These two have the same structure.
 
-因此，这其实是一个递归调用幼稚贝叶斯分类器的问题。
+Therefore, this is actually a problem of recursively calling the Naive Bayes classifier.
 
-基于同样的思路，我们可以处理`(pSucc S [f1, f2 .. fn])`.
+Based on the same approach, we can handle `(pSucc S [f1, f2 .. fn])`.
 
-不过实际工程中，因为数据量很大，递归调用贝叶斯分类器是吃不消的。
-所以为了降低计算复杂度，我们需要进行一些简化：
+However, in actual engineering, because data volumes are large, recursively calling Bayes classifiers is computationally intensive.
+So to reduce computational complexity, we need some simplifications:
 
-0. 当影响程度很低时，我们直接忽略，视为独立事件。
-1. 类似马尔可夫性质，我们只考虑直接影响给定特征`f`的特征，不考虑间接影响。例如，`pinf1`可能通过影响`inf1`来间接影响`f`，这种情况不考虑。
-2. 当我们考虑影响给定特征`f`的特征时，假定这些影响`f`的特征是相互独立事件。
+0. When influence levels are low, we directly ignore them, treating them as independent events.
+1. Similar to Markov properties, we only consider features that directly influence a given feature `f`, not indirect influences. For example, `pinf1` might indirectly influence `f` by influencing `inf1`—we don't consider such cases.
+2. When considering features that influence a given feature `f`, we assume these influencing features are mutually independent events.
 
-当然，如果有必要，上面的简化也可以放宽，以提高计算复杂度为代价，获得更准确的估计。
+Of course, if necessary, the above simplifications can be relaxed, trading increased computational complexity for more accurate estimates.
 
-进行上述简化后，我们得到了贝叶斯网络(Bayesian network).
-之所以称为贝叶斯网络，是因为特征间的相互影响关系，我们用有向无环图(DAG)来表示。
-而特征对给定特征的具体影响程度，我们用条件概率表(CPT)来表示。
-其中，特征间的相互影响关系，也就是DAG的构建，依赖于经验或领域知识。
-条件概率表，则可以用幼稚贝叶斯来改进。
+After the above simplifications, we get Bayesian networks.
+They're called Bayesian networks because we represent mutual influence relationships between features using directed acyclic graphs (DAG).
+The specific influence levels of features on given features are represented using conditional probability tables (CPT).
+The construction of mutual influence relationships between features—that is, DAG construction—relies on experience or domain knowledge.
+Conditional probability tables can be improved using Naive Bayes.
 
-
-贝叶斯网络就介绍到这里。
-现在我们换个思路，不从条件概率和贝叶斯定理入手，而从打分的角度来分类。
-假设数据具有特征`[f1, f2 .. fn]`，每个特征对应一个分值（权重），
-我们把这些特征的分数加起来，得到一个总分，然后和一个目标分数（阈值）比较，
-大于阈值结果为1，否则结果为0。
+That concludes our introduction to Bayesian networks.
+Now let's change approach—instead of starting from conditional probability and Bayes' theorem, let's approach classification from a scoring perspective.
+Suppose data has features `[f1, f2 .. fn]`, each feature corresponds to a score (weight),
+we add up these feature scores to get a total score, then compare it with a target score (threshold).
+If greater than the threshold, result is 1; otherwise result is 0.
 
 ```haskell
 f [f1, f2 .. fn] =
@@ -520,102 +517,102 @@ f [f1, f2 .. fn] =
         0
 ```
 
-这个函数`f`叫做感知器(perceptron)。
-感知器的定义，受到了神经元的启发。
-感知器接受多个输入，返回一个布尔值，
-就像神经末梢接受外部的输入，决定是否激动。
+This function `f` is called a perceptron.
+The perceptron definition was inspired by neurons.
+Perceptrons accept multiple inputs and return a boolean value,
+just like nerve endings accept external inputs and decide whether to become excited.
 
-我们注意到，感知器主要的工作是计算一个多项式的值：
+We notice that perceptrons mainly work by computing a polynomial value:
 
 ```haskell
 w1 * f1 + w2 * f2 + ... + wn * fn
 ```
 
-那么从直觉上，线性不可分的问题，比如异或(XOR)函数，就无法转化成感知器的形式。
+So intuitively, linearly inseparable problems, like the XOR function, can't be converted to perceptron form.
 
-但实际上，感知器并没有这么弱，将感知器组合一下，就可以表达异或函数。
+But actually, perceptrons aren't that weak. By combining perceptrons, we can express the XOR function.
 
-我们准备两个阈值为 0 的感知器，一个是`x-y`, 另一个是`-x+y`，
-将输入分别发给这两个感知器：
+We prepare two perceptrons with threshold 0: one is `x-y`, the other is `-x+y`.
+We send inputs to both perceptrons:
 
-| 输入 | x-y | -x+y | 输出 |
+| Input | x-y | -x+y | Output |
 | - | - | - | - |
 | (1, 0) | 1 | 0 | (1, 0) |
 | (0, 1) | 0 | 1 | (0, 1) |
 | (0, 0) | 0 | 0 | (0, 0) |
 | (1, 1) | 0 | 0 | (0, 0) |
 
-然后再将输出提供给一个阈值为 0 的`x+y`感知器：
+Then we provide the output to an `x+y` perceptron with threshold 0:
 
-| 输入 | 中间结果 | 最终输出 |
+| Input | Intermediate Result | Final Output |
 | - | - | - |
 | (1, 0) | (1, 0) | 1 |
 | (0, 1) | (0, 1) | 1 |
 | (0, 0) | (0, 0) | 0 |
 | (1, 1) | (0, 0) | 0 |
 
-比较输入和最终输出，可以看到我们的这三个感知器运算的结果是符合异或的定义的。
+Comparing input and final output, we can see that our three perceptrons compute results that match the XOR definition.
 
-这里，前两个感知器(`x-y`和`-x+y`)是第一层，最后一个感知器(`x+y`)是第二层。
-由此我们看到，通过组合感知器，可以构成一个分层的神经网络，
-分层的神经网络可以解决线性不可分问题。
+Here, the first two perceptrons (`x-y` and `-x+y`) are the first layer, and the last perceptron (`x+y`) is the second layer.
+From this we see that by combining perceptrons, we can form a layered neural network.
+Layered neural networks can solve linearly inseparable problems.
 
-但是感知器还是看起来很弱啊。
-异或函数这么简单的问题，都要三个感知器，两层网络才能搞定。
-而稍微正常一点的编程语言，异或函数都能很直接地定义。
-我们何必要自废武功用感知器和神经网络呢？这不是自虐吗？
+But perceptrons still seem very weak.
+Such a simple problem as the XOR function requires three perceptrons and a two-layer network.
+While in any decent programming language, XOR functions can be defined very directly.
+Why would we handicap ourselves using perceptrons and neural networks? Isn't this masochism?
 
-实际上，感知器和神经网络看起来很弱，但它也有优点：
+Actually, perceptrons and neural networks seem weak, but they also have advantages:
 
-1. 感知器的「接口」很齐整，每个感知器都有多个输入，返回一个结果，这就使得它们组合起来很容易。
+1. Perceptrons have very uniform "interfaces"—each perceptron has multiple inputs and returns one result, making them easy to combine.
 
-2. 感知器内部都是在进行多项式运算，而不像普通函数一样千变万化，因此优化起来很容易（特别是现在我们有很强劲的 GPU）。
+2. Perceptrons internally perform polynomial operations, unlike ordinary functions which vary wildly, making them easy to optimize (especially now that we have powerful GPUs).
 
-3. 感知器的运算结果只取决于它的输入，因此可以很容易地以分布式的方式跑。
+3. Perceptron operation results only depend on their inputs, so they can easily run in distributed fashion.
 
-4. 上面那个例子中`x-y`, `-x+y`, `x+y`的确定，来自于我们对异或函数的理解。假设我们对异或函数一无所知，感知器的结构决定了，我们比较容易通过暴力的方式来尝试各种权重和阈值。相反，我们不太可能通过暴力的方式生成字符串恰巧撞对异或函数的一般定义。
+4. In the example above, determining `x-y`, `-x+y`, `x+y` came from our understanding of the XOR function. Suppose we know nothing about the XOR function—the perceptron structure makes it relatively easy to try various weights and thresholds through brute force. Conversely, we're unlikely to generate strings that happen to match the general definition of XOR functions through brute force.
 
-5. 神经网络分层的结构，意味着我们可以逐层尝试，来逼近预期的结果。
+5. The layered structure of neural networks means we can try layer by layer to approximate expected results.
 
-看起来，神经网络还是有它的优势的。
-不过还是觉得不怎么靠谱呀。
-神经网络看起来像是在我们不知道怎么猜比较好的情况下的一种暴力的猜法。
-这不是乱枪打鸟吗？
-相反，贝叶斯网络也是猜，可是背后有概率论这样坚实的基础，出了错也比较容易找到原因，
-而不像神经网络基本是一个黑盒子。
+It seems neural networks do have their advantages.
+But they still don't seem very reliable.
+Neural networks look like a brute force guessing method when we don't know how to guess well.
+Isn't this like shooting birds randomly?
+Conversely, Bayesian networks are also guessing, but they have solid foundations in probability theory. When errors occur, it's easier to find causes,
+unlike neural networks which are basically black boxes.
 
-但是，别忘了贝叶斯网络特征间的联系，那个有向无环图的构建，是依赖领域知识的。
-如果这个领域缺乏足够的研究，没有人能构建足够好的有向无环图，
-或者这个领域只有极少数专家才了解，而那些专家没有时间或兴趣来构建那个有向无环图，
-那贝叶斯网络就发挥不了它的威力。
+But don't forget that Bayesian networks' feature relationships—the construction of directed acyclic graphs—depend on domain knowledge.
+If a domain lacks sufficient research and no one can construct good enough directed acyclic graphs,
+or if only very few experts understand the domain but those experts lack time or interest in constructing those directed acyclic graphs,
+then Bayesian networks can't demonstrate their power.
 
-相反，神经网络对领域知识的要求要低很多。
-对领域知识的低要求，对神经网络来说，算是「一招鲜，吃遍天」了。
-而随着计算力的提升，粗暴堆料的成本越来越低，神经网络也就越来越受重视。
+Conversely, neural networks require much less domain knowledge.
+Low domain knowledge requirements are like "one trick that works everywhere" for neural networks.
+And as computational power increases, the cost of brute force approaches decreases, making neural networks increasingly valued.
 
-当然，贝叶斯网络和神经网络并不是互斥的，有时两者可以结合使用。
-当计算量非常大的时候，神经网络暴力尝试的效果可能不太好。
-这时我们可以借助贝叶斯网络来更精准地调节神经网络的参数。
+Of course, Bayesian networks and neural networks aren't mutually exclusive—sometimes they can be used together.
+When computational load is very large, neural networks' brute force attempts might not work well.
+At such times we can use Bayesian networks to more precisely adjust neural network parameters.
 
-另外，以上只是神经网络的基本原理。实际使用的神经网络要复杂很多。
+Additionally, the above only covers basic neural network principles. Actually used neural networks are much more complex.
 
-比如，我们的感知器只能输出 0 或者 1,
-而既然是暴力尝试，那我们就希望整个网络对参数的调整敏感一点。
-这时候我们就不再比较多项式的值和阈值来输出 0 或者 1，
-而是将阈值转化成偏置加到多项式上，
-并使用一个激活函数对多项式的结果进行处理，
-得到一个浮点数。
-最简单的激活函数是 ReLU, 定义很简单 `max 0 n`.
-类似朴素贝叶斯，ReLu 虽然简单，但出奇地好用。
+For example, our perceptrons can only output 0 or 1,
+but since we're using brute force attempts, we want the entire network to be somewhat sensitive to parameter adjustments.
+At this point we no longer compare polynomial values with thresholds to output 0 or 1,
+but convert thresholds to biases added to polynomials,
+and use an activation function to process polynomial results,
+getting floating point numbers.
+The simplest activation function is ReLU, with a very simple definition: `max 0 n`.
+Like Naive Bayes, ReLU is simple but surprisingly effective.
 
-另外，实际使用的神经网络，无论是规模还是结构都非常复杂。
+Additionally, actually used neural networks are very complex in both scale and structure.
 
-## 总结
+## Summary
 
-强人工智能时代企图基于通用的逻辑表示一切人类的思考活动，这一尝试失败了。
-人工智能的研究方向从通用的逻辑转移到专门领域的特定问题。
-而即使专门领域的特定问题，也往往要借助机器的蛮力（统计）来猜。
-从贝叶斯网络到神经网络，猜测的方法越来越暴力，也越来越依赖机器的蛮力。
-而高度依赖机器的蛮力的神经网络，却成为一种解决各个领域机器学习问题的通用范式。
-优雅的逻辑没能达到通用智能，而暴力的神经网络反倒在不断增长的算力的支持下朝着通用的方向前进。
-也算是出人意料的展开呢。
+The strong AI era attempted to represent all human thinking activities based on universal logic—this attempt failed.
+AI research direction shifted from universal logic to specific problems in specialized domains.
+But even specific problems in specialized domains often need to rely on machine brute force (statistics) to guess.
+From Bayesian networks to neural networks, guessing methods become increasingly brute force and increasingly dependent on machine brute force.
+Neural networks, which are highly dependent on machine brute force, have become a universal paradigm for solving machine learning problems across various domains.
+Elegant logic failed to achieve general intelligence, while brute force neural networks, supported by continuously growing computational power, are progressing toward universality.
+This is quite an unexpected development.
