@@ -80,7 +80,7 @@
 
 [[redirects]]
     from = "/dapi/avoid-html/"
-    to = "/coding-style/html/avoid-html/"
+    to = "/coding-style/html/"
     status = 301
     force = true
 

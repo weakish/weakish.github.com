@@ -1,4 +1,4 @@
-# Write Less HTML
+# Less HTML
 
 ## HTML is a Text Markup Language
 
@@ -15,7 +15,7 @@ Because HTML is too unwieldy, frameworks that use HTML usually need to add some 
 such as `*ng` (Angular) and `v-` (Vue) attributes, or JSX (React).
 Otherwise, they create a template language similar to HTML.
 
-Actually, this "patching and mending for another three years" approach is not as straightforward as directly writing JavaScript.
+Actually, this patching approach is not as straightforward as directly writing JavaScript.
 
 ## The Kotlin and Ceylon Approach
 
@@ -71,7 +71,7 @@ Essentially, it initializes an HTML instance.
 
 The corresponding HTML class definition:
 
-```
+```kotlin
 class HTML : TagWithText("html") {
     fun head(init: Head.() -> Unit) = initTag(Head(), init)
     fun body(init: Body.() -> Unit) = initTag(Body(), init)
