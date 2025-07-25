@@ -89,183 +89,183 @@ the Curry-Howard correspondence inspired automated theorem proving assistance to
 and incidentally solved the problem that natural language proofs almost always contain implicit knowledge and skip intermediate steps.
 The ideas of logic programming also influenced the design of other programming languages.
 
-## 搜索和解析
+## Search and Parsing
 
-既然强人工智能这条路走不通，
-那就不奢求建造一个通用的系统，并把各个领域的问题转化为这个通用系统能理解的形式。
-转而针对专门领域建造专门的系统，应该要容易点吧？
-这条路，被称为弱人工智能。
+Since the strong AI path doesn't work,
+let's not aspire to build a universal system and convert problems from various domains into forms this universal system can understand.
+Instead, let's build specialized systems for specific domains—this should be easier, right?
+This path is called weak AI.
 
-在工程上，当我们不奢望借助一个通用的框架来解决某个专门的问题时，
-那往往一些看起来比较「笨」的做法就能取得不错的效果。
+In engineering, when we don't expect to solve a specific problem through a universal framework,
+some seemingly "dumb" approaches often achieve good results.
 
-比如，如何设计一个智能客服系统？
+For example, how do we design an intelligent customer service system?
 
-让我们先退回到需求层面。
-之所以有智能客服的需求，是要削减雇佣人工客服的开支。
-然后我们反过来想，
-假设世界上不存在智能客服系统，那该怎么做才能减少雇佣人工客服呢？
-很简单，让客户自己回答自己的咨询。
+Let's first step back to the requirements level.
+The reason for needing intelligent customer service is to reduce the cost of hiring human customer service representatives.
+Then we think in reverse:
+suppose intelligent customer service systems don't exist—how could we reduce hiring human customer service?
+Simply, let customers answer their own inquiries.
 
-通常的做法是事先准备好一些常见的问题和相应的答案，
-当客户需要联系客服时，先提供 FAQ 页面的链接。
-当常见的问题越来越多，一个页面放不下以后，就扩展这个系统，
-将一个 FAQ 页面扩展成大量页面组成的知识库。
-然后提供一个搜索功能，让客户能够快速定位到相关的问题。
+The usual approach is to prepare common questions and corresponding answers in advance.
+When customers need to contact customer service, first provide links to FAQ pages.
+When common questions become too numerous for one page, expand this system,
+extending one FAQ page into a knowledge base composed of many pages.
+Then provide a search function so customers can quickly locate relevant questions.
 
-看，实际上我们不一定需要一个智能客服系统，
-我们需要做的是维护一个知识库（问答集），然后设计一个搜索系统。
-而搜索系统的设计和实作，已经是非常成熟的经典问题了。
-当然现代的搜索系统还在发展，但这主要是为了应对规模和性能的挑战。
+See, we don't necessarily need an intelligent customer service system.
+What we need to do is maintain a knowledge base (Q&A collection) and design a search system.
+The design and implementation of search systems is already a very mature classic problem.
+Of course modern search systems are still developing, but this is mainly to address scalability and performance challenges.
 
-实际上，很多预期客户擅长或习惯搜索的企业，
-就是这样做的，
-先让客户去知识库搜索，如果不能自行解决，再联系人工客服。
+Actually, many enterprises that expect customers to be good at or accustomed to searching
+do exactly this:
+first let customers search the knowledge base, and if they can't solve it themselves, then contact human customer service.
 
-好了，减少人工客服的需求解决了。
-可是我们不能光考虑削减成本，还得考虑客户的体验。
-从体验的角度，先去搜索知识库，再联系客服，是两步，当中需要经过许多页面跳转，
-这对客户是不友好的。
-特别是，客户之前可能已经尝试通过自己的经验来解决遇到的问题，可是失败了，
-尝试和失败的过程很可能已经消磨掉客户的耐心了。
+Good, the need to reduce human customer service is solved.
+But we can't just consider cost reduction; we must also consider customer experience.
+From an experience perspective, first searching the knowledge base, then contacting customer service, is two steps involving many page jumps,
+which is unfriendly to customers.
+Especially since customers might have already tried to solve the problem through their own experience but failed,
+and the process of trying and failing might have already exhausted the customer's patience.
 
-我们注意到，搜索知识库，需要在搜索框里输入关键词，
-而联系客服，需要在对话框或工单的文本框里输入问题。
-那这两步是可以并成一步的。
-也就是说，直接让客户输入问题，
-然后系统从问题中提取出关键词，在后台进行搜索，将匹配到的结果显示在这个框下面。
-如果客户发现提示的结果符合自己遇到的问题，就可以点击链接查看解决方案。
-否则客户就继续输入问题描述或者直接提交问题给人工客服。
+We notice that searching the knowledge base requires entering keywords in a search box,
+while contacting customer service requires entering questions in a dialog box or text box in work orders.
+So these two steps can be combined into one.
+That is, let customers directly enter questions,
+then the system extracts keywords from questions, searches in the background, and displays matching results below this box.
+If customers find the suggested results match their problem, they can click links to view solutions.
+Otherwise customers continue entering problem descriptions or directly submit questions to human customer service.
 
-这里的提取关键词，可以先尝试最简单的文本匹配，在问题中匹配关键词。
-我们看到，这背后并没有用什么人工智能的技术，
-但从客户的角度来说，可能已经会有一点这个系统比较智能的感觉了。
-事实上这个设计的名字恰恰是智能提示。
+The keyword extraction here can first try the simplest text matching, matching keywords in questions.
+We see that there's no artificial intelligence technology behind this,
+but from the customer's perspective, they might already feel this system is somewhat intelligent.
+In fact, this design is precisely called intelligent suggestions.
 
-但是，别忘了，我们前面提到的一个假设「预期客户擅长或习惯搜索」。
-这个假设可不一定成立。
+But don't forget an assumption we mentioned earlier: "expecting customers to be good at or accustomed to searching."
+This assumption doesn't necessarily hold.
 
-实际上，很多业务的大多数客户，
-往往不具备将自己遇到的问题提炼成一个包含关键词的简短语句的能力或耐心。
-这时候智能客服系统要尝试分析客户含混的描述，
-当分析失败或分析的结果不够好时，要尝试引导客户改进对问题的描述。
+Actually, most customers of many businesses
+often lack the ability or patience to refine problems they encounter into short sentences containing keywords.
+At this point, intelligent customer service systems need to try analyzing customers' vague descriptions,
+and when analysis fails or results aren't good enough, try guiding customers to improve their problem descriptions.
 
-这叫做自然语言处理。
+This is called natural language processing.
 
-前面的智能提示把问题转化成现成的搜索问题，
-这里的自然语言处理，我们也想把它转化成现成的解析问题。
-代码只是一些字符串，之所以能运行，是首先被解析成了解释器或编译器能理解的结构，
-然后交给解释器或编译器来解释或者编译。
-同理，自然语言也是一些字符串，如果我们能将它解析成一个包含关键词和权重的结构，
-也就是一个搜索引擎能理解的结构，那就可以交给搜索引擎来搜索答案。
+The previous intelligent suggestions converted problems into ready-made search problems.
+Here, for natural language processing, we also want to convert it into ready-made parsing problems.
+Code is just strings, and the reason it can run is that it's first parsed into structures that interpreters or compilers can understand,
+then handed to interpreters or compilers for interpretation or compilation.
+Similarly, natural language is also strings. If we can parse it into structures containing keywords and weights—
+that is, structures search engines can understand—then we can hand it to search engines to search for answers.
 
-看起来我们离结果已经很接近了。
-编程语言的研究、设计和发展催生了很多解析相关的技术。
-我们只需要将这些技术推广到自然语言上去就可以了。
+It looks like we're already very close to results.
+Research, design, and development of programming languages have spawned many parsing-related technologies.
+We just need to extend these technologies to natural languages.
 
-但现实很残酷。
-几百行代码就可以完成类似 lisp 这样容易解析的程序语言的解析器，
-而像 Ruby 这样不容易解析的程序语言，几百行代码可能只完成了万里长征的第一步，词法分析（将字符串切成小块）。
-看起来差别很大呀。但放到自然语言面前根本就不够看。
-在自然语言面前，这根本算不上差别。
+But reality is cruel.
+A few hundred lines of code can complete parsers for easily parsable programming languages like Lisp,
+while for programming languages that are hard to parse like Ruby, a few hundred lines of code might only complete the first step of the long march—lexical analysis (cutting strings into small pieces).
+The difference seems large. But in front of natural languages, this isn't even worth looking at.
+In front of natural languages, this doesn't even count as a difference.
 
-自然语言的解析是如此的复杂，以至于解析的第一步，最初级的词法分析都搞不定。
-没办法，光靠各种解析的技术是搞不定了，只能通过别的方法猜出一个成功率较高的结果了。
+Natural language parsing is so complex that even the first step, the most elementary lexical analysis, can't be handled.
+There's no way—relying solely on various parsing technologies won't work; we can only guess a result with high success rate through other methods.
 
-## 拟合和马尔可夫性质
+## Fitting and Markov Properties
 
-那我们该怎么猜？
+So how should we guess?
 
-想到猜，你脑子里第一个反应是什么？
+When thinking of guessing, what's your first reaction?
 
-女人的心思真难猜。
+Women's thoughts are so hard to guess.
 
-实际上猜女人的心思意义很大。
-很多女人偏好网购，商家都想猜透女人的心思，有针对性地投放更精准的广告。
-但这个问题也比较复杂，而且还要避免过于精准反而引起不安导致反效果。
-我们还是找一个简单点的例子。
+Actually, guessing women's thoughts is very meaningful.
+Many women prefer online shopping, and merchants all want to figure out women's thoughts to target more precise advertising.
+But this problem is also quite complex, and we need to avoid being too precise as it might cause unease and backfire.
+Let's find a simpler example.
 
-那么猜谜呢？
+What about riddles?
 
-猜谜，谜面是自然语言，谜底是自然语言，
-这根本还是自然语言处理的问题嘛。
-况且谜面和谜底的联系是不符合自然语言的日常模式的（否则就太好猜了）。
-也就是说这可能还是自然语言处理里难度比较高的问题。
-所以我们也不讨论这个例子。
+Riddles have natural language as both the riddle and the answer—
+this is still a natural language processing problem.
+Moreover, the connection between riddles and answers doesn't follow natural patterns of natural language (otherwise they'd be too easy to guess).
+That is, this might be a relatively difficult problem within natural language processing.
+So we won't discuss this example either.
 
-咦，猜下一个数字，这个问题应该足够简单了吧。
-确实，IQ 测试和很多招聘笔试中经常有给出一个数列中的若干项，猜下一项是什么的题目。
-我们知道，计算机非常擅长处理数字。所以这很可能是一个相对简单的问题。
+Hey, guessing the next number—this problem should be simple enough.
+Indeed, IQ tests and many job interview exams often have questions about guessing the next term given several terms of a sequence.
+We know computers are very good at processing numbers. So this is likely a relatively simple problem.
 
-该怎么教计算机猜数字呢？
-先想想我们人类是如何猜数字的呢？
+How do we teach computers to guess numbers?
+First, let's think about how humans guess numbers.
 
-人类猜下一个数字，更多的是依靠一种直觉，或者说对数字的感觉，
-这也是 IQ 测试和招聘笔试想要测试的。
-但是显然我们没法把这种直觉教给计算机，
-事实上我们想把这种直觉教给我们的同类都非常非常困难。
+Humans guess the next number more by relying on intuition, or a feeling for numbers.
+This is also what IQ tests and job interviews want to test.
+But obviously we can't teach this intuition to computers.
+In fact, it's extremely difficult to teach this intuition even to our fellow humans.
 
-那还有什么猜的办法呢？
-有一个常用的办法，就是把数列看成一个以自然数为定义域的函数，
-将已知的数字转化成在笛卡儿坐标系中的点。
-然后我们尽量以一条曲线把这些点连起来。
-最后我们看看这条曲线像哪种函数的曲线，
-构造那种函数的一个例子，比较一下构造出来的曲线和我们描出来的曲线，
-逐渐调整函数的定义，使构造函数的曲线贴合描出来的曲线，
-也就是贴合已知的数字。
-这个过程叫做拟合(curve fitting)。
+So what other ways are there to guess?
+There's a commonly used method: treat the sequence as a function with natural numbers as domain,
+convert known numbers into points in the Cartesian coordinate system.
+Then we try to connect these points with a curve.
+Finally, we see what kind of function curve this curve resembles,
+construct an example of that type of function, compare the constructed curve with our drawn curve,
+gradually adjust the function definition to make the constructed function's curve fit the drawn curve,
+that is, fit the known numbers.
+This process is called curve fitting.
 
-因此，我们只要让计算机去拟合就可以了。
-那么，计算机该怎么去拟合呢？
-最简单的就是暴力搜索，把已知的函数一个一个往上套。
-对付 IQ 测试，这个暴力的方法可能已经足够好了。
-但这只是因为 IQ 测试的题库不够大而已。
-实际情况并不像 IQ 测试那么简单。
-比如这些数字可能是某个实验观测得到的结果，可能并没有什么题库可以套。
-那暴力搜索显然是行不通的。
+Therefore, we just need to make computers fit curves.
+So how should computers fit curves?
+The simplest is brute force search—try applying known functions one by one.
+For IQ tests, this brute force method might be good enough.
+But this is only because IQ test question banks aren't large enough.
+Real situations aren't as simple as IQ tests.
+For example, these numbers might be experimental observation results, and there might not be any question bank to apply.
+Then brute force search obviously won't work.
 
-那怎么办呢？
-我们可以尝试增加一些限制，来减少一些歧路（剪枝）。
-比如，我们可以假设，数列中的任何一个数字，只取决于它前面的一个数字。
-然后我们就能以两个为一组进行猜测了，
-这样的话，我们尝试拟合的相邻项函数，是一个一元（单参数）函数，这就大大缩小了范围了。
-更重要的，因为只取决于前面的一个数字，而不用去考虑更前面的数字，
-那我们可以直接把每一组数字分别传给不同的处理器跑，而不用把整个数列传过去，
-当已知数字很多的时候（现实不是 IQ 测试题，数据可能会非常非常大），
-这样分布式地拟合能大大加快进度。
+So what do we do?
+We can try adding some constraints to reduce dead ends (pruning).
+For example, we can assume that any number in the sequence only depends on the number before it.
+Then we can guess in groups of two,
+so the adjacent-term function we try to fit is a univariate (single-parameter) function, greatly reducing the scope.
+More importantly, because it only depends on the previous number without considering earlier numbers,
+we can directly send each group of numbers to different processors to run, rather than passing the entire sequence,
+when there are many known numbers (reality isn't IQ test questions—data can be very, very large),
+this distributed fitting can greatly speed up progress.
 
-我们尝试将这个猜数字的思路推广到更一般的情况，
-我们把这些数字抽象成表示某个状态的数学结构（程序语言中的数据结构），
-相应地，我们把猜下一个数字抽象成猜测下一个状态发生的概率。
-于是我们就得到了概率论中的马尔可夫性质(Markov property).
+We try to generalize this number-guessing approach to more general situations.
+We abstract these numbers into mathematical structures (data structures in programming languages) representing some state,
+correspondingly, we abstract guessing the next number into guessing the probability of the next state occurring.
+Thus we get the Markov property from probability theory.
 
-当然，这个假设可能太强了，导致有些数列难以拟合。
-比如斐波那契数列，完全不适用「只取决于它前面的一个数字」这个假设。
-那我们可以扩展马尔可夫性质。
-对斐波那契数列而言，我们可以构造一个新的序列，
-序列的每个成员是一对(pair)斐波那契数列的相邻项：
+Of course, this assumption might be too strong, making some sequences hard to fit.
+For example, the Fibonacci sequence doesn't fit the assumption that "it only depends on the number before it" at all.
+Then we can extend the Markov property.
+For the Fibonacci sequence, we can construct a new sequence
+where each member is a pair of adjacent terms from the Fibonacci sequence:
 
 ```haskell
-[1, 1, 2, 3, 5, 8, 13 ..] # 斐波那契数列
-[(1, 1), (1, 2), (2, 3), (3, 5), (5, 8), (8, 13) ..] # 新序列
+[1, 1, 2, 3, 5, 8, 13 ..] # Fibonacci sequence
+[(1, 1), (1, 2), (2, 3), (3, 5), (5, 8), (8, 13) ..] # New sequence
 ```
 
-显然，这个新序列满足马尔可夫性质，
-相应地，斐波那契数列是一个二阶马尔可夫数列。
+Obviously, this new sequence satisfies the Markov property,
+correspondingly, the Fibonacci sequence is a second-order Markov sequence.
 
-类似地，我们可以构造一个新序列，
-这个新序列的每个元素是由 n 个原序列元素组成的元组(tuple)，
-这样我们就将马尔可夫性质推广到 n 阶。
-基于计算复杂度的考虑，工程上常用的是 3 阶马尔可夫结构。
+Similarly, we can construct a new sequence
+where each element is a tuple of n elements from the original sequence,
+thus extending the Markov property to n-th order.
+Based on computational complexity considerations, third-order Markov structures are commonly used in engineering.
 
-总结一下猜的大体思路：
+To summarize the general approach to guessing:
 
-1. 收集、积累大量数据
-2. 将这些数据表示为便于猜的数学结构（数据结构）
-3. 基于上一步骤得到的结构进行拟合
-4. 适当化简以降低计算复杂度
+1. Collect and accumulate large amounts of data
+2. Represent this data as mathematical structures (data structures) convenient for guessing
+3. Fit based on the structures obtained in the previous step
+4. Appropriately simplify to reduce computational complexity
 
-统计数据，表示数据，然后适当化简，拟合数据，去猜一个概率较大的答案，这叫做机器学习(machine learning)。
+Collecting statistics on data, representing data, then appropriately simplifying, fitting data to guess a high-probability answer—this is called machine learning.
 
 ## 概率和贝叶斯定理
 
