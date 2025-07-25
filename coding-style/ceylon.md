@@ -1,5 +1,15 @@
+---
+wnpp:
+    type: "RFA"
+    description: "Ceylon is archived by Eclipse Foundation"
+---
+
 Ceylon coding style
 ===================
+
+Eclipse [archived][] the Ceylon project.
+
+[archived]: https://projects.eclipse.org/projects/technology.ceylon
 
 > (Ceylon) failed its transition to Eclipse and the community gave up.
 >
