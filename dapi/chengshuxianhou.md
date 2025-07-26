@@ -1,74 +1,74 @@
-# 如何考察成书先后
+# How to Examine the Chronological Order of Book Composition
 
-一般而言，在不考虑出土文献的前提下，判断整本书的先后：
+Generally speaking, when determining the chronological order of entire books without considering excavated texts:
 
-1. 确定了时代的书籍（多为目录类）对两书成书情况的记载。
-2. 从用字、语法、文风等语言学特征判断。
-3. 考证作者年代先后。
-4. 从涉及的史实（包括具体的历史事件，以及某一时代的思潮风尚）来判断。
-5. 其他确定了时代的书对这两种书的征引的情况。
+1. Records by books of established dates (mostly bibliographic works) regarding the composition circumstances of the two books.
+2. Judgment based on linguistic features such as character usage, grammar, and literary style.
+3. Research into the chronological order of authors.
+4. Judgment based on historical facts involved (including specific historical events and intellectual trends and customs of certain eras).
+5. Citation circumstances of these two books by other books of established dates.
 
-两本书中某段内容的先后，不一定符合两本书的先后，例如：
+The chronological order of certain passages within two books may not necessarily match the chronological order of the two books themselves, for example:
 
-I. A 书比 B 书时代早，但是 A 中的某段内容其实是后人根据 B 补的（这又包括 A 本来有这段内容或类似这段的内容，但是后来残缺了，于是后人拿 B 中的段落去补，以及 A 本来根本没有类似内容，但是后人为了使 A 更全等原因，拿 B 中的内容去补）。
-II. A 和 B 其实都是抄了更早的 C。
-III. A 抄了 C，B 抄了 D。
+I. Book A is earlier than Book B, but a certain passage in A was actually supplemented by later people based on B (this includes cases where A originally had this passage or similar content, but it was later damaged, so later people used passages from B to supplement it, as well as cases where A originally had no similar content at all, but later people used content from B to supplement it to make A more complete).
+II. Both A and B actually copied from an earlier C.
+III. A copied from C, B copied from D.
 
-对于 I. 上述判断整本书时代的方法同样适用
+For case I, the above methods for determining the dating of entire books equally apply:
 
-1. 确定了时代的书籍记载了后人补 A 的情况，或者记载了到某时 A 中的某部分已经亡佚了，目标段落恰巧在亡佚的部分
-2. 同前
-3. 确定作者有助于限定范围，例如某时代的作者不可能写出目标段落
-4. 同前
-5. 考察对目标段落的征引情况
-6. 目标段落和全书的吻合程度
-7. 目标段落在两书中的比较
+1. Books of established dates record circumstances of later people supplementing A, or record that by a certain time some part of A had already been lost, and the target passage happens to be in the lost part.
+2. Same as above.
+3. Determining the author helps limit the scope - for example, an author of a certain era could not possibly have written the target passage.
+4. Same as above.
+5. Examine citation circumstances of the target passage.
+6. The degree of consistency between the target passage and the entire book.
+7. Comparison of the target passage in the two books.
 
-7 比较复杂一点，比如 A 详细, B 简略，这有两种情况：
+Point 7 is somewhat more complex. For example, if A is detailed and B is brief, there are two possibilities:
 
-7.1 B 早 A 晚，A 在 B 的基础上添油加醋
-7.2 A 早 B 晚，B  概括了 A 的记载
+7.1 B is early, A is late - A embellished based on B.
+7.2 A is early, B is late - B summarized A's record.
 
-这个判断就比较复杂，要考虑多种因素，写出来太多了。
+This judgment is quite complex and requires considering multiple factors - too much to write out fully.
 
-举一个例子：
+Here's an example:
 
-A 简略记载了 X 国 Y 地 M 做了某件丑事。
-B 详细记载了 X 国的 M 做丑事的具体经过，对话乃至心理活动，但是没提到 Y 地。
+A briefly records that M from place Y in country X did something disgraceful.
+B records in detail the specific process of M from country X doing the disgraceful thing, including dialogue and even psychological activities, but doesn't mention place Y.
 
-假设 A 概括了 B，那么 B 没有记载 Y，A 从何得知 Y 地呢？ 除非 A 从 C 中得知了，这个属于 II，这里不讨论。如果说 A 添油加醋，何以其他细节都省略，唯独加了 Y 地？除非有其他因素（例如 A 的作者讨厌 Y 地的人，所以有意把这件记载安到 Y 地，或者 B 的作者是 Y 地的人，为家乡讳，省略了 Y 地），我们不倾向 A 概括了 B 。
+If we assume A summarized B, then since B didn't record Y, how did A know about place Y? Unless A learned it from C, which belongs to case II and won't be discussed here. If we say A embellished, why were all other details omitted while only place Y was added? Unless there are other factors (for example, A's author disliked people from place Y, so intentionally attributed this record to place Y, or B's author was from place Y and omitted place Y to avoid bringing shame to his hometown), we don't lean toward A having summarized B.
 
-然后我们考虑 B 添油加醋了 A，然后发现 B 具体描述了经过，能更好的说明 B 中的主张，那么省略 Y 地这一细节的记载很可能就是 B 的作者认为 Y 地这一细节没什么用。
+Then we consider B having embellished A, and find that B's detailed description of the process better explains B's argument, so omitting the detail of place Y was likely because B's author thought this detail about place Y was useless.
 
-由此我们倾向 B 晚于 A。当然有可能是 B 抄 A 的时候漏掉了 Y 地 两个字，或者是后人传抄 B 的时候漏掉了。但是类似的倾向性证据搜集多了就能说明问题了。
+Thus we lean toward B being later than A. Of course, it's possible that B missed the two characters "place Y" when copying A, or that later people missed them when copying B. But when enough similar tendential evidence is collected, it can explain the problem.
 
-II 的话：
+For case II:
 
-如果 C 还在，且其年代确定，那就没什么好讨论的了。
+If C still exists and its date is established, there's nothing much to discuss.
 
-如果 C 在，但年代不确定，那么应用 1-5 于 A、 B、 C
+If C exists but its date is uncertain, then apply methods 1-5 to A, B, and C.
 
-如果 C 已经亡佚，或不确定有 C 存在：
+If C has been lost or it's uncertain whether C exists:
 
-1. 确定了时代的书籍记载了A 或 B 抄 C 的情况
-2. 若语言学分析的结果是目标段落和 A 与 B 的成书年代皆不合，反而体现了早于两者的时代特征
-3. 同前
-4. 同前
-5. 同前，引用目标段落而不标 A、B，反而标明了 C 的情况。
+1. Books of established dates record circumstances of A or B copying C.
+2. If linguistic analysis results show that the target passage doesn't match the composition dates of either A or B, but rather reflects characteristics of an era earlier than both.
+3. Same as above.
+4. Same as above.
+5. Same as above - citing the target passage without attributing it to A or B, but instead indicating C.
 
-III. 将以上方法类推到 C 和 D 的考察中。
+III. Apply the above methods by analogy to examining C and D.
 
 -----
 
-以上是一般的方法。对于先秦两汉的古籍，考察其年代，首先要有“别本单行”的意识：最早是单篇，现在看到的都是后人编的。比如《莊子》和《列子》就都是后人编集的。
+The above are general methods. For examining the dates of ancient books from pre-Qin and Han periods, one must first have awareness of "separate original circulation": originally they were individual pieces, and what we see now are all later compilations. For example, both "Zhuangzi" and "Liezi" are later compilations.
 
-余嘉锡《古书通例》云：“古人著书，本无专集，往往随作数篇，即以行世。传其学者各以所得，爲题书名”，“虽其平日因人事之肆应，作爲书疏论说，亦所以发明其学理，语百变而不离其宗，承其学者，聚而编之，又以其所见闻，及后师之所讲习，相与发明其义者，附入其中，以成一家之学。故西汉以前无文集，而诸子即其文集。非其文不美也，以其爲微言大义之所托，言之有物，不徒藻绘其字句而已”，“其书不作于一时，其先后亦都无次第。随时所作，即以行世”。
+Yu Jiaxi's "General Principles of Ancient Books" states: "Ancient authors had no specialized collections; they often wrote several pieces at random and circulated them. Those who transmitted their learning each titled books based on what they obtained," "Even their daily responses to human affairs, composed as letters and treatises, also served to illuminate their scholarly principles. Though the language varied in a hundred ways, it didn't depart from their main doctrine. Those who inherited their learning gathered and compiled them, and also attached what they had seen and heard, and what later teachers had lectured on and practiced to illuminate their meaning, thus forming one school's learning. Therefore, there were no literary collections before the Western Han, and the various masters' works were their literary collections. It's not that their writing wasn't beautiful, but because they were vehicles for subtle words and great meanings, their words had substance and didn't merely embellish phrases," "Their books were not composed at one time, and their chronological order was entirely without sequence. Whatever was written at any time was circulated then."
 
-所以先秦两汉的书，不便笼统地讲时代，需分出：
+Therefore, for books from pre-Qin and Han periods, it's inappropriate to speak generally about their dating. We need to distinguish:
 
-一、 我们现在看到的版本，是什么时候定型的？
-二、 这书最早的胚胎，大约是什么时候出来的？
+1. When did the version we see now take shape?
+2. When did the earliest embryo of this book roughly appear?
 
-然后对具体的段落的年代，只能参考一和二，不能直接套用结论，很可能还要再考察。
+Then for the dating of specific passages, we can only refer to points 1 and 2 above, cannot directly apply conclusions, and may well need further examination.
 
-由于先秦两汉的书成书情况的特征，出土文献还是最简便、最直接的方法。
+Due to the characteristics of how pre-Qin and Han books were composed, excavated texts remain the most convenient and direct method.

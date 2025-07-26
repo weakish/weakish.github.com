@@ -1,31 +1,31 @@
-# Windows 使用手冊
+# Windows User Manual
 
-## 使用 Windows 的理由
+## Reasons to Use Windows
 
-- 衆所周知，好人纔能用蘋果電腦，顯然我不是好人。
-- 標榜 KISS 的 Arch 居然使用 Systemd，讓我大失所望。要說功能強大，Windows 比 Systemd 強大多了。所以與其讓 Systemd 來啓動 Linux，不如乾脆讓 Windows 來啓動。
-- 最主要的，我比較害怕蟑螂。目前 Windows 系統自帶的 unicode 版本還不夠新，蟑螂 emoji 會顯示成豆腐塊。
+- As everyone knows, only good people can use Apple computers, and clearly I'm not a good person.
+- Arch, which claims to follow the KISS principle, actually uses Systemd, which greatly disappointed me. Speaking of powerful features, Windows is much more powerful than Systemd. So rather than letting Systemd boot Linux, it's better to just let Windows boot.
+- Most importantly, I'm quite afraid of cockroaches. The current built-in Unicode version in Windows isn't new enough, so cockroach emojis display as tofu blocks.
 
-## 軟體
+## Software
 
-- **Debian** 我最熟悉的發行版
-- **Vivaldi** Opera 創始人復活了 Mozilla Application Suite
-- **Visual Studio Code** 其實我不怎麼喜歡，無奈它的生態實在太好了，比如 GitHub Copilot 和 WSL2 都是開箱即用。
-- **小狼毫** 系統自帶的微軟拼音並不尊重英文鍵盤佈局，還要改註冊表纔能換到 dvorak 佈局，也不方便輸入直角引號。
-- **Notepad++** 輕便的文本編輯器
-- **Windows Terminal** 應該預裝卻沒有預裝的終端模擬器
-- **PowerToys** 這些功能也應該直接做進系統
+- **Debian** The distribution I'm most familiar with
+- **Vivaldi** The Opera founder revived Mozilla Application Suite
+- **Visual Studio Code** I don't really like it much, but its ecosystem is just too good - things like GitHub Copilot and WSL2 work out of the box.
+- **Weasel** The built-in Microsoft Pinyin doesn't respect English keyboard layouts, requires registry edits to switch to dvorak layout, and isn't convenient for inputting straight quotation marks.
+- **Notepad++** Lightweight text editor
+- **Windows Terminal** A terminal emulator that should be pre-installed but isn't
+- **PowerToys** These features should also be built directly into the system
 
 ## Docker
 
-鑑於 Docker Desktop For Windows 的許可問題，我直接在 WSL2 的 Debian 裏安裝了 Docker.
-WSL2 中的 Debian 環境和標準 Debian 有所差異（比如沒有 systemd），所以 Docker 不能開箱即用，需要額外進行一些配置，詳見[這裏的說明][github-wsl]。
+Given the licensing issues with Docker Desktop For Windows, I installed Docker directly in Debian within WSL2.
+The Debian environment in WSL2 differs from standard Debian (for example, no systemd), so Docker doesn't work out of the box and requires some additional configuration. See [the instructions here][github-wsl].
 
 [github-wsl]: https://github.com/microsoft/WSL/discussions/4872#discussioncomment-76635
 
-## 命令行下訪問剪貼板
+## Accessing Clipboard from Command Line
 
-WSL 2 下可以使用 `powershell.exe Get-Clipboard` 和 `clip.exe` 讀寫剪貼板的內容：
+In WSL 2, you can use `powershell.exe Get-Clipboard` and `clip.exe` to read and write clipboard contents:
 
 ```sh
 powershell.exe Get-Clipboard | cut -d ',' -f1 | clip.exe
