@@ -91,6 +91,12 @@
     force = true
 
 [[redirects]]
+    from = "/dapi/learn-programming/"
+    to = "/thoughts/learn-programming/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/dapi/no-blog/"
     to = "/dapi/not-a-blog/"
     status = 301
