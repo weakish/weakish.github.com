@@ -16,15 +16,15 @@ The rotation of propellers acts on water, and the reaction force of water propel
 This is the principle of submarine swimming, very simple.
 In fact, engineering implementation is also simple.
 Submarines are complex because, as military vessels, they have additional requirements.
-For example, older submarines use counter-rotating dual propellers to cancel out torque and prevent submarine turning,
-while modern submarines use automatic control technology to correct submarine turning.
-If we ignore these requirements and just build submarines that can swim, it's not complex.
+For example, older submarines use counter-rotating dual propellers to cancel out torque and prevent the submarine from turning,
+while modern submarines use automatic control technology to correct unwanted turning.
+If we ignore these requirements and just build submarines that can move underwater, it's not complex.
 
 But building mechanical fish would be troublesome.
 In fact, we don't really understand the mechanism of fish swimming.
 It wasn't until [2015] that quantitative research on fish swimming mechanisms (momentum balance between water and fish body) was published,
 and this research was limited to only two swimming scenarios:
-steady forward movement and C-start escape (fish body rapidly bends into C-shape, then flips outward for rapid swimming).
+steady forward movement and C-start escape (fish body rapidly bends into a C-shape, then flips outward for rapid acceleration).
 
 [2015]: http://aip.scitation.org/doi/full/10.1063/1.4919784
 
@@ -55,7 +55,7 @@ Creating proofs is difficult, but once a proof is constructed, verifying its cor
 
 If we've encountered statically typed programming languages, we find that type systems in static languages are like twins with logic:
 
-Starting from parameters (types), constructing functions to get return values (types),
+Starting from parameters (types) and constructing functions to get return values (types),
 the rules for constructing functions are the type system.
 Constructing functions is difficult, but once functions are constructed, verifying type correctness is easy
 (it's so easy that we don't need manual verification—compilers automatically verify).
@@ -97,7 +97,7 @@ Instead, let's build specialized systems for specific domains—this should be e
 This path is called weak AI.
 
 In engineering, when we don't expect to solve a specific problem through a universal framework,
-some seemingly "dumb" approaches often achieve good results.
+some seemingly "naive" approaches often achieve good results.
 
 For example, how do we design an intelligent customer service system?
 
@@ -146,7 +146,7 @@ But don't forget an assumption we mentioned earlier: "expecting customers to be 
 This assumption doesn't necessarily hold.
 
 Actually, most customers of many businesses
-often lack the ability or patience to refine problems they encounter into short sentences containing keywords.
+often lack the ability or patience to distill problems they encounter into short sentences containing keywords.
 At this point, intelligent customer service systems need to try analyzing customers' vague descriptions,
 and when analysis fails or results aren't good enough, try guiding customers to improve their problem descriptions.
 
@@ -169,7 +169,7 @@ while for programming languages that are hard to parse like Ruby, a few hundred 
 The difference seems large. But in front of natural languages, this isn't even worth looking at.
 In front of natural languages, this doesn't even count as a difference.
 
-Natural language parsing is so complex that even the first step, the most elementary lexical analysis, can't be handled.
+Natural language parsing is so complex that even the first step, the most elementary lexical analysis, can't be handled reliably.
 There's no way—relying solely on various parsing technologies won't work; we can only guess a result with high success rate through other methods.
 
 ## Fitting and Markov Properties
@@ -195,7 +195,7 @@ So we won't discuss this example either.
 
 Hey, guessing the next number—this problem should be simple enough.
 Indeed, IQ tests and many job interview exams often have questions about guessing the next term given several terms of a sequence.
-We know computers are very good at processing numbers. So this is likely a relatively simple problem.
+We know computers are very good at processing numbers, so this is likely a relatively simple problem.
 
 How do we teach computers to guess numbers?
 First, let's think about how humans guess numbers.
@@ -206,12 +206,12 @@ But obviously we can't teach this intuition to computers.
 In fact, it's extremely difficult to teach this intuition even to our fellow humans.
 
 So what other ways are there to guess?
-There's a commonly used method: treat the sequence as a function with natural numbers as domain,
+There's a commonly used method: treat the sequence as a function with natural numbers as the domain,
 convert known numbers into points in the Cartesian coordinate system.
 Then we try to connect these points with a curve.
-Finally, we see what kind of function curve this curve resembles,
+Finally, we see what kind of function this curve resembles,
 construct an example of that type of function, compare the constructed curve with our drawn curve,
-gradually adjust the function definition to make the constructed function's curve fit the drawn curve,
+and gradually adjust the function definition to make the constructed function's curve fit the drawn curve—
 that is, fit the known numbers.
 This process is called curve fitting.
 
@@ -235,7 +235,7 @@ when there are many known numbers (reality isn't IQ test questions—data can be
 this distributed fitting can greatly speed up progress.
 
 We try to generalize this number-guessing approach to more general situations.
-We abstract these numbers into mathematical structures (data structures in programming languages) representing some state,
+We abstract these numbers into mathematical structures (data structures in programming languages) representing some state;
 correspondingly, we abstract guessing the next number into guessing the probability of the next state occurring.
 Thus we get the Markov property from probability theory.
 
@@ -255,7 +255,7 @@ correspondingly, the Fibonacci sequence is a second-order Markov sequence.
 
 Similarly, we can construct a new sequence
 where each element is a tuple of n elements from the original sequence,
-thus extending the Markov property to n-th order.
+thus extending to n-th order Markov processes.
 Based on computational complexity considerations, third-order Markov structures are commonly used in engineering.
 
 To summarize the general approach to guessing:
@@ -265,7 +265,7 @@ To summarize the general approach to guessing:
 3. Fit based on the structures obtained in the previous step
 4. Appropriately simplify to reduce computational complexity
 
-Collecting statistics on data, representing data, then appropriately simplifying, fitting data to guess a high-probability answer—this is called machine learning.
+Collecting statistics on data, representing data, then appropriately simplifying and fitting data to guess a high-probability answer—this is called machine learning.
 
 ## Probability and Bayes' Theorem
 
@@ -290,7 +290,7 @@ So this learning process is actually alternately calculating the group of probab
 
 So what's the relationship between `pSucc f S` and `pSucc S f`?
 
-Let's try substituting a concrete example to explore.
+Let's try substituting a concrete example to explore this.
 Suppose `f` represents the appearance of the phrase "legitimate invoice" in emails,
 and `S` represents that this email is spam.
 Then, intuitively, we have:
@@ -417,7 +417,7 @@ This way, `pSucc S [f1, f2 .. fn]` can be simplified to
 
 This way we only need to independently calculate the probability of having a specific feature given classification `S`,
 avoiding the sparse sample problem.
-Meanwhile, like the previous section's simplification using Markov structures, each item can run distributedly.
+Meanwhile, like the previous section's simplification using Markov structures, each item can be computed in parallel.
 
 In the above formula, if some item hasn't appeared,
 that is, if no samples in the training set classified as `S` have a specific feature,
@@ -432,11 +432,11 @@ Of course, if necessary, you can also add a positive number less than 1.
 
 Like how Markov properties don't necessarily hold, the assumption that each item in `[f1, f2 .. fn]` is an independent event
 also doesn't necessarily hold.
-Therefore this algorithm is called the Naive Bayes classifier.
+Therefore, this algorithm is called the Naive Bayes classifier.
 This name emphasizes that the independence assumption doesn't necessarily hold.
 
-Although the independence assumption is often inaccurate, Naive Bayes works surprisingly well in practical engineering.
-Because many applications don't care about precise class probabilities, only the final classification result.
+Although the independence assumption is often inaccurate, Naive Bayes works surprisingly well in practical applications.
+This is because many applications don't care about precise class probabilities, only the final classification result.
 For example, spam email filtering only needs to determine whether it's spam,
 and doesn't need to display information like "This email has an 87.53% probability of being spam" in the user interface.
 
@@ -522,13 +522,13 @@ The perceptron definition was inspired by neurons.
 Perceptrons accept multiple inputs and return a boolean value,
 just like nerve endings accept external inputs and decide whether to become excited.
 
-We notice that perceptrons mainly work by computing a polynomial value:
+We notice that perceptrons mainly work by computing a polynomial:
 
 ```haskell
 w1 * f1 + w2 * f2 + ... + wn * fn
 ```
 
-So intuitively, linearly inseparable problems, like the XOR function, can't be converted to perceptron form.
+So intuitively, linearly inseparable problems, like the XOR function, can't be solved by a perceptron.
 
 But actually, perceptrons aren't that weak. By combining perceptrons, we can express the XOR function.
 
@@ -570,7 +570,7 @@ Actually, perceptrons and neural networks seem weak, but they also have advantag
 
 3. Perceptron operation results only depend on their inputs, so they can easily run in distributed fashion.
 
-4. In the example above, determining `x-y`, `-x+y`, `x+y` came from our understanding of the XOR function. Suppose we know nothing about the XOR function—the perceptron structure makes it relatively easy to try various weights and thresholds through brute force. Conversely, we're unlikely to generate strings that happen to match the general definition of XOR functions through brute force.
+4. In the example above, determining `x-y`, `-x+y`, and `x+y` came from our understanding of the XOR function. Suppose we know nothing about the XOR function—the perceptron structure makes it relatively easy to try various weights and thresholds through brute force. Conversely, we're unlikely to generate strings that happen to match the general definition of XOR functions through brute force.
 
 5. The layered structure of neural networks means we can try layer by layer to approximate expected results.
 
@@ -587,7 +587,7 @@ or if only very few experts understand the domain but those experts lack time or
 then Bayesian networks can't demonstrate their power.
 
 Conversely, neural networks require much less domain knowledge.
-Low domain knowledge requirements are like "one trick that works everywhere" for neural networks.
+Low domain knowledge requirements are like "one approach that works everywhere" for neural networks.
 And as computational power increases, the cost of brute force approaches decreases, making neural networks increasingly valued.
 
 Of course, Bayesian networks and neural networks aren't mutually exclusive—sometimes they can be used together.
@@ -597,15 +597,15 @@ At such times we can use Bayesian networks to more precisely adjust neural netwo
 Additionally, the above only covers basic neural network principles. Actually used neural networks are much more complex.
 
 For example, our perceptrons can only output 0 or 1,
-but since we're using brute force attempts, we want the entire network to be somewhat sensitive to parameter adjustments.
-At this point we no longer compare polynomial values with thresholds to output 0 or 1,
+but since we're using brute force optimization, we want the entire network to be somewhat sensitive to parameter adjustments.
+At this point we no longer compare polynomials with thresholds to output 0 or 1,
 but convert thresholds to biases added to polynomials,
 and use an activation function to process polynomial results,
 getting floating point numbers.
 The simplest activation function is ReLU, with a very simple definition: `max 0 n`.
 Like Naive Bayes, ReLU is simple but surprisingly effective.
 
-Additionally, actually used neural networks are very complex in both scale and structure.
+Additionally, neural networks used in practice are much more complex in both scale and structure.
 
 ## Summary
 
