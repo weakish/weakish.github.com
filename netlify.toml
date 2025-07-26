@@ -97,6 +97,12 @@
     force = true
 
 [[redirects]]
+    from = "/dapi/windows-handbook/"
+    to = "/uses/windows/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/teapot"
     to = "https://teapot.onrender.com"
     status = 200
