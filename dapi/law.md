@@ -1,195 +1,197 @@
 # An Introduction to Law for Programmers
 
-## 预备知识和技能
+## Prerequisites and Skills
 
-- 基本的编程知识
-- 粗浅的英文阅读能力
+- Basic programming knowledge
+- Basic English reading ability
 
-## 书籍
+## Books
 
-法律方面有很多粗制滥造的书籍，
-一个幼稚的辨别方法是排除以下 4 类书籍：
+There are many shoddy books on law.
+A naive way to distinguish is to exclude the following 4 categories of books:
 
-1. 面向普通大众的书（反正你们也不懂，我搞一个 quick and dirty 的东西就行，剩下的是营销的活）
-2. 面向司法考试的书（教辅书本来就是粗制滥造的重灾区，而且出于应试需要，严重偏向司法考试出题人的学术倾向，较少照顾实际层面的惯例）
-3. 各种学术会议的砖头书（有的注水严重，有的离实际层面的问题较远）
-4. 纯法律条文书（没法跳转到定义，没有相关的 patch 信息，读起来效率太低）
+1. Books for the general public (since you don't understand anyway, I'll just make something quick and dirty, the rest is marketing work)
+2. Books for judicial examinations (tutorial books are already heavily hit by shoddy work, and due to exam needs, they heavily lean toward the academic tendencies of judicial exam writers, with little consideration for practical conventions)
+3. Various academic conference brick-sized books (some are heavily padded, some are far from practical problems)
+4. Pure legal text books (can't jump to definitions, no related patch information, too inefficient to read)
 
-当然会有误杀的情况，但总体来说效果很好。
+Of course there will be false positives, but overall the effect is very good.
 
-推荐以下 2 类书籍：
+Recommend the following 2 categories of books:
 
-1. 最近出版的法学专业的教材（帮助提炼领域知识的精华）
-2. 面向法务工作者（比如律师、企业法务人员、HR 等）的手册（实务中的坑以及填坑、绕坑的经验）
+1. Recently published law school textbooks (help distill the essence of domain knowledge)
+2. Handbooks for legal workers (such as lawyers, corporate legal personnel, HR, etc.) (practical pitfalls and experience in filling or avoiding pitfalls)
 
-## 法学理论
+## Legal Theory
 
-具有XX特色的社会主义法学理论，类似XX语言是程序员最好的朋友，都是广告。
+Socialist legal theory with XX characteristics, like XX language being a programmer's best friend, are all advertisements.
 
-学东西光看广告是不行的，还是要多读书提高一下知识水平。
+You can't learn things just by looking at advertisements - you still need to read more books to improve your knowledge level.
 
-> 这都是些初步意见，还没有作最后决定，以后可能不算数。
-> 刘伯承同志经常讲一句四川话：
-> 「黄猫、黑猫，只要捉住老鼠就是好猫。」
-> 我们之所以能够打败蒋介石，
-> 就是不讲老规矩，不按老路子打，一切看情况，打赢算数。
+> These are all preliminary opinions, not final decisions yet, and may not count in the future.
+> Comrade Liu Bocheng often said a Sichuan saying:
+> "Yellow cat, black cat, as long as it catches mice, it's a good cat."
+> The reason we were able to defeat Chiang Kai-shek
+> was that we didn't follow old rules or old ways, we looked at the situation and winning was what counted.
 
--- 邓小平《怎样恢复农业生产》
+-- Deng Xiaoping "How to Restore Agricultural Production"
 
 
-## 法律文本的结构
+## Structure of Legal Texts
 
-这里的法律文本，指成文法(statutes)。
+The legal texts here refer to statutes.
 
-由大到小，依次为编、章、节、条、款、项、目。（立法法 s. 54）
+From large to small, they are: part, chapter, section, article, paragraph, subparagraph, and item. (Legislative Law s. 54)
 
-### 编
+### Part
 
-篇幅很大的法律有这个。
+Very large laws have this.
 
-比如民事诉讼法分四编(part):
+For example, the Civil Procedure Law is divided into four parts:
 
-1. 总则
-2. 审判程序
-3. 执行程序
-4. 涉外民事诉讼程序的特别规定
+1. General Provisions
+2. Trial Procedures
+3. Enforcement Procedures
+4. Special Provisions for Foreign Civil Litigation Procedures
 
-### 章
+### Chapter
 
-大部分法律直接由章(chapter)构成，跳过编这个层级。
+Most laws are directly composed of chapters, skipping the part level.
 
-### 节
+### Section
 
-篇幅较长的章分节(section).
+Longer chapters are divided into sections.
 
-注意，这里的 section 是一般英文文本中的 section.
-某些英语国家法律语境下的 section 是有特定含义的：
+Note that "section" here is the general section in English texts.
+In some English-speaking countries' legal contexts, "section" has a specific meaning:
 
 > Section: a subdivision of a statute or document ...
 > Most statutes and codes are divided into sections.
 
 -- A Dictionary of the Law (Clapp, 2000, p. 389)
 
-也就是说，这 section 其实对应中文法律语境下的「条」。
+That is to say, this "section" actually corresponds to "article" (条) in Chinese legal contexts.
 
-### 条
+### Article
 
-这个是法律最基本的结构，粒度大概相当于程序语言中的函数或方法。
+This is the most basic structure of law, with granularity roughly equivalent to functions or methods in programming languages.
 
-条翻译为 article, 但如前所述，其实很多时候翻译为 section 可能更有助于交流。
+Article is translated as "article," but as mentioned above, it's often more helpful for communication to translate it as "section."
 
-因为这个是最基本的结构，所以引用法律条文往往注明条的序数，
-比如前面引用《立法法》，就用`s. 54`标明是第 54 条。
-除了`s.`以外，习惯上更常用`§ 54`的形式。
-个人偏好`s.`, 因为输入起来比较方便。
+Since this is the most basic structure, legal references often indicate the article number,
+for example, when citing the "Legislative Law" above, we use `s. 54` to indicate Article 54.
+Besides `s.`, it's more common to use the form `§ 54`.
+I personally prefer `s.` because it's more convenient to type.
 
-### 款
+### Paragraph
 
-长的条会分成款(paragraph)。款的开头缩进两格，末尾换行。
-这和长的函数定义用空行划分段落的做法类似。
+Long articles are divided into paragraphs. Paragraphs begin with two-space indentation and end with a line break.
+This is similar to using blank lines to divide paragraphs in long function definitions.
 
-### 项
+### Subparagraph
 
-翻译为 subparagraph, 但其实相当于 HTML 中的`ol`.
+Translated as subparagraph, but it's actually equivalent to `ol` in HTML.
 
-前面我们已经提到了中文和英文里 section 的错位，
-其实款和条也有错位，台湾的法律文本，款和项是倒过来的，
-台湾的「项」其实是 paragraph, 而「款」才是 subparapraph,
-台湾目前的这个用法，是沿用了中华民国时期的做法。
-最早可能是借鉴了日本法律文本的结构。
+We've already mentioned the misalignment between Chinese and English "section."
+Actually, paragraph and article also have misalignment. In Taiwan's legal texts, paragraph and subparagraph are reversed.
+Taiwan's "item" (項) is actually paragraph, while "subparagraph" (款) is subparagraph.
+Taiwan's current usage follows the practice from the Republic of China period.
+It may have originally borrowed from the structure of Japanese legal texts.
 
-### 目
+### Item
 
-翻译为 item, 也是一种`ol`.
+Translated as item, also a type of `ol`.
 
-「项」与「目」的区别
+The difference between "subparagraph" and "item":
 
-- 语法(syntax)层面，项用括起来的中文数字标序，目用阿拉伯数字标序。
-- 语义(semantics)层面，目比项层级低。
-- 使用频率层面，目很少出现。
+- At the syntax level, subparagraphs use Chinese numerals in parentheses for numbering, items use Arabic numerals for numbering.
+- At the semantics level, items are at a lower level than subparagraphs.
+- At the usage frequency level, items rarely appear.
 
-### 例子
+### Example
 
-民法通则 s. 134
-
-```
-承担民事责任的方式主要有：     // 第一款
-    （一）停止侵害；          // 第一款第一项
-    （二）排除妨碍；
-    （三）消除危险；
-    （四）返还财产；
-    （五）恢复原状；
-    （六）修理、重作、更换；
-    （七）赔偿损失；
-    （八）支付违约金；
-    （九）消除影响、恢复名誉；
-    （十）赔礼道歉。
-    以上承担民事责任的方式，可以单独适用，也可以合并
-适用。                                            // 第二款
-    人民法院审理民事案件，除适用上述规定外，还可以予以训
-诫、责令具结悔过、收缴进行非法活动的财物和非法所得，并可
-以依照法律规定处以罚款、拘留。
-```
-
-### 作用
-
-下面举两个例子，分别说明法律文本的结构如何帮助/阻碍我们理解法律。
-
-#### 个人合伙
-
-《民法通则》里，「个人合伙」属于第二章「自然人」，
-不属于第三章「法人」，
-「个人合伙」前面一节是「个体工商户、农村承包经营户」。
-
-所以，不用读具体的条文，或者其他细法（部门法），
-从结构上就能看出，合伙企业和其他企业不同，并不属于法人。
-合伙企业其实是将家庭经营的个体工商户模式推广到家庭之外的产物。
-
-#### 诉讼时效
-
-《民法通则》第七章《诉讼时效》可读性不是很好，
-这是法律文本结构的限制。
-法律文本只有章、条、项这些东西，表达力是很差的。
-所以有时候把法律文本改写成表格、流程图或者伪代码要容易理解一点。
-另外，改成伪代码也更容易暴露法条中一些含糊的地方
-（其中包括法条本身表述不明确及表述明确但自己没理解两种情况）。
+General Principles of Civil Law s. 134
 
 ```
-class 民事权利 {
-    private Period 诉讼时效;
-    private Period 完整诉讼时效;
-    LocalDate 知道或应当知道被侵权;
-    LocalDate 被侵权;
-    boolean 当事人自愿履行;
+The main ways of bearing civil liability are:     // First paragraph
+    (1) Cessation of infringement;               // First subparagraph of first paragraph
+    (2) Removal of obstruction;
+    (3) Elimination of danger;
+    (4) Return of property;
+    (5) Restoration to original condition;
+    (6) Repair, remake, replacement;
+    (7) Compensation for losses;
+    (8) Payment of breach of contract penalty;
+    (9) Elimination of impact, restoration of reputation;
+    (10) Apology.
+    The above ways of bearing civil liability may be applied 
+separately or in combination.                             // Second paragraph
+    When people's courts try civil cases, in addition to applying 
+the above provisions, they may also give admonition, order written 
+repentance, confiscate property and illegal gains from illegal 
+activities, and may impose fines and detention in accordance with 
+legal provisions.
+```
 
-    public 民事权利(LocalDate 知道, LocalDate 被侵, boolean 自愿) {
-        this.完整诉讼时效 = Period.ofYears(2);
-        this.诉讼时效 = this.完整诉讼时效;
-        this.知道或应当知道被侵权 = 知道;
-        this.被侵权 = 被侵;
-        this.当事人自愿履行 = 自愿;
+### Function
+
+The following two examples illustrate how the structure of legal texts helps/hinders our understanding of law.
+
+#### Individual Partnership
+
+In the "General Principles of Civil Law," "individual partnership" belongs to Chapter Two "Natural Persons,"
+not Chapter Three "Legal Persons."
+The section before "individual partnership" is "Individual Industrial and Commercial Households, Rural Contracted Management Households."
+
+So, without reading specific articles or other detailed laws (departmental laws),
+from the structure we can see that partnership enterprises are different from other enterprises and do not belong to legal persons.
+Partnership enterprises are actually the result of extending the individual industrial and commercial household model of family management beyond families.
+
+#### Statute of Limitations
+
+Chapter Seven "Statute of Limitations" of the "General Principles of Civil Law" is not very readable,
+this is a limitation of legal text structure.
+Legal texts only have chapters, articles, subparagraphs and such - their expressive power is very poor.
+So sometimes rewriting legal texts as tables, flowcharts, or pseudocode is easier to understand.
+Also, converting to pseudocode more easily exposes some ambiguous parts in legal provisions
+(including both unclear expressions in the provisions themselves and clear expressions that one hasn't understood).
+
+```
+class CivilRights {
+    private Period statuteOfLimitations;
+    private Period completeStatuteOfLimitations;
+    LocalDate knewOrShouldHaveKnownOfInfringement;
+    LocalDate wasInfringed;
+    boolean voluntaryPerformanceByParties;
+
+    public CivilRights(LocalDate knew, LocalDate infringed, boolean voluntary) {
+        this.completeStatuteOfLimitations = Period.ofYears(2);
+        this.statuteOfLimitations = this.completeStatuteOfLimitations;
+        this.knewOrShouldHaveKnownOfInfringement = knew;
+        this.wasInfringed = infringed;
+        this.voluntaryPerformanceByParties = voluntary;
     }
 
-    public Period get诉讼时效() {
-        return this.诉讼时效;
+    public Period getStatuteOfLimitations() {
+        return this.statuteOfLimitations;
     }
-    public void set诉讼时效(Period p) {
-        this.诉讼时效 = p;
+    public void setStatuteOfLimitations(Period p) {
+        this.statuteOfLimitations = p;
     }
 
-    public boolean is有效期内() {
-        if (当事人自愿履行) {
+    public boolean isWithinValidPeriod() {
+        if (voluntaryPerformanceByParties) {
             return true;
         }
         else {
-            // 民法通则 s. 137 规定有特殊情况的，人民法院可以延期。
-            // 实际诉讼中这个一般要援引司法解释具体 patch 的情况才能延期。
-            // 因此下面不考虑这个情况。
+            // General Principles of Civil Law s. 137 provides that in special circumstances, people's courts may extend.
+            // In actual litigation, this generally requires citing judicial interpretations for specific patch situations to extend.
+            // Therefore, this situation is not considered below.
             LocalDate today = LocalDate.now();
-            // 1988 年最高法关于执行通则的意见明确了 20 年期限不适用中止、中断的规定。(s. 175)
-            if (Period.between(被侵权, today) > Period.ofYears(20)) {
+            // The 1988 Supreme Court Opinion on Implementing the General Principles clarified that the 20-year limit does not apply to suspension and interruption provisions. (s. 175)
+            if (Period.between(wasInfringed, today) > Period.ofYears(20)) {
                 return false;
-            } else if (Period.between(知道或应当知道被侵权, today) > this.诉讼时效) {
+            } else if (Period.between(knewOrShouldHaveKnownOfInfringement, today) > this.statuteOfLimitations) {
                 return false;
             } else {
                 return true;
@@ -197,12 +199,12 @@ class 民事权利 {
         }
     }
 
-    public boolean 中止(boolean 因不可抗力或其他障碍无法行使请求权,
-                        LocalDate 中止原因消除) {
-        if (因不可抗力或其他障碍无法行使请求权) {
-            if (诉讼时效 <= Period.ofMonths(6)) {
-                Period 中止期间 = Period.between(LocalDate.now(), 中止原因消除);
-                this.诉讼时效 += 中止期间;
+    public boolean suspend(boolean cannotExerciseRightDueToForceEventOrObstacle,
+                        LocalDate suspensionReasonEliminated) {
+        if (cannotExerciseRightDueToForceEventOrObstacle) {
+            if (statuteOfLimitations <= Period.ofMonths(6)) {
+                Period suspensionPeriod = Period.between(LocalDate.now(), suspensionReasonEliminated);
+                this.statuteOfLimitations += suspensionPeriod;
                 return true;
             } else {
                 return false;
@@ -212,9 +214,9 @@ class 民事权利 {
         }
     }
 
-    public boolean 中断(boolean 提起诉讼, boolean 提出要求, boolean 同意履行) {
-        if (提起诉讼 || 提出要求 || 同意履行) {
-            this.诉讼时效 += this.完整诉讼时效;
+    public boolean interrupt(boolean filedLawsuit, boolean madeDemand, boolean agreedToPerform) {
+        if (filedLawsuit || madeDemand || agreedToPerform) {
+            this.statuteOfLimitations += this.completeStatuteOfLimitations;
             return true;
         } else {
             return false;
@@ -222,56 +224,56 @@ class 民事权利 {
     }
 }
 
-class 身体伤害 extends 民事权利 {
-    public 身体伤害(LocalDate 知道, LocalDate 被侵, boolean 自愿) {
-        super(知道，被侵，自愿);
-        this.完整诉讼时效 = Period.ofYears(1);
-        this.诉讼时效 = this.完整诉讼时效;
+class BodilyInjury extends CivilRights {
+    public BodilyInjury(LocalDate knew, LocalDate infringed, boolean voluntary) {
+        super(knew, infringed, voluntary);
+        this.completeStatuteOfLimitations = Period.ofYears(1);
+        this.statuteOfLimitations = this.completeStatuteOfLimitations;
     }
 }
-// 同理可定义 `class 质量不合格商品`, `class 延付拒付租金`, `class 寄存财物丢失损毁`，
-// 此处省略。
+// Similarly, we can define `class SubstandardGoods`, `class DelayedOrRefusedRent`, `class LostOrDamagedDepositedProperty`,
+// omitted here.
 
-abstract class 另有规定 extends 民事权利 {
-    @Override public boolean is有效期内();
+abstract class OtherProvisions extends CivilRights {
+    @Override public boolean isWithinValidPeriod();
 }
 ```
 
 ## Patch
 
-法律文本的麻烦之处是 Patch 是分开来发表的，
-而且后来的 Patch 并不包括以前的 Patch.
+The troublesome aspect of legal texts is that patches are published separately,
+and later patches don't include previous patches.
 
-因此工具书很重要。
+Therefore, reference books are very important.
 
-同理，不建议直接看法条。
+Similarly, reading legal provisions directly is not recommended.
 
-如果一时找不到靠谱的工具书，不得已直接读法条，
-那要保持高度警惕，特别要注意 2 点：
+If you can't find reliable reference books and have to read legal provisions directly,
+you must remain highly vigilant, paying special attention to 2 points:
 
-### 1. 含糊的地方。
+### 1. Ambiguous parts.
 
-比如《民法通则》s. 153
+For example, General Principles of Civil Law s. 153
 
-> 本法所称的「不可抗力」，是指不能预见、不能避免并不能克服的客观情况。
+> "Force majeure" as mentioned in this law refers to objective circumstances that are unforeseeable, unavoidable and insurmountable.
 
-这句话是很含糊的。
-阅读判例的时候可以帮助理解法官的思路，
-但想凭此主张自己不承担责任难度很大。
-还是要找细法里的具体规定以及司法解释。
+This sentence is very ambiguous.
+Reading case law can help understand judges' reasoning,
+but using this to claim non-liability is very difficult.
+You still need to find specific provisions in detailed laws and judicial interpretations.
 
-### 2. 过时的地方。
+### 2. Outdated parts.
 
-比如 1988 年最高法出的执行民法通则的意见第 118 条规定：
+For example, Article 118 of the 1988 Supreme Court Opinion on Implementing the General Principles of Civil Law states:
 
-> 出租人出卖出租房屋，应提前三个月通知承租人，
-> 承租人在同等条件下，享有优先购买权;
-> 出租人未按此规定出卖房屋的，承租人可以请求人民法院宣告该房屋买卖无效。
+> When a lessor sells rental property, they should notify the lessee three months in advance.
+> Under equal conditions, lessees enjoy right of first refusal.
+> If lessors sell property without following this provision, lessees may request people's courts to declare the property sale invalid.
 
-1988 年时候房屋买卖还不频繁。而现在房屋买卖是很频繁的。
-同时，有些地方因为房价波动厉害，因此往往希望尽快成交。
-要求每笔买卖都拖上 3 个月并不符合现在的实际情况。
+In 1988, property transactions were not frequent. Now property transactions are very frequent.
+At the same time, some places have severe property price fluctuations, so they often want to close deals quickly.
+Requiring every transaction to drag on for 3 months doesn't match current practical conditions.
 
-因此 2009 最高法就出 patch 更新了，先把 3 个月改成了更灵活的「合理期限」，
-其次把没有及时通知的违约责任由买卖无效改成了赔偿损失。
-（最高人民法院关于审理城镇房屋租赁合同纠纷案件具体应用法律若干问题的解释, s. 21）
+Therefore, the Supreme Court issued a patch update in 2009, first changing 3 months to the more flexible "reasonable period,"
+and second changing the breach of contract liability for failure to notify promptly from sale invalidity to compensation for losses.
+(Supreme People's Court Interpretation on Specific Legal Issues in Adjudicating Urban Property Lease Contract Dispute Cases, s. 21)
