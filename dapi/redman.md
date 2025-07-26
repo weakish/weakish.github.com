@@ -1,4 +1,4 @@
-赤狄
-====
+Red Barbarians
+===============
 
-廣瀨淡窗《送人遊宦長崎》（文化五、六年作）中有「赤狄情難測」一句，自注曰：「近來赤人申請互市。」岡村繁注謂赤狄乃俄羅斯人，此句指文化元年(1804)九月，俄羅斯船進長崎，俄羅斯使萊薩諾夫申請互市之事。(岡村繁著、俞慰慈譯《江戶漢詩選注》，見岡村繁全集第八卷《毛詩正義注疏選箋（外二種）》第526-527頁，上海：上海古籍出版社2009年6月，ISBN 978-7-5325-5110-1）
+In Hirose Tanso's "Seeing Off Someone Taking Office in Nagasaki" (written in Bunka 5-6 [1808-1809]), there is a line "The intentions of the red barbarians are hard to fathom," with the author's note: "Recently the red people have applied for trade." Okamura Shigeru's annotation states that "red barbarians" refers to Russians, and this line refers to the event in the ninth month of Bunka 1 (1804) when a Russian ship entered Nagasaki and the Russian envoy Rezanov applied for trade. (From Okamura Shigeru's work, translated by Yu Weici, "Selected Annotations on Edo Chinese Poetry," in Okamura Shigeru Complete Works Volume 8, "Selected Commentaries on the Correct Meaning and Annotations of the Book of Songs (Plus Two Other Works)," pp. 526-527, Shanghai: Shanghai Ancient Books Publishing House, June 2009, ISBN 978-7-5325-5110-1)

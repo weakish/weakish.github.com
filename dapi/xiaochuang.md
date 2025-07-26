@@ -1,10 +1,10 @@
-# 跋兩晉至唐靈座靈牀漫談
+# Postscript on "Casual Discussion of Spirit Seats and Spirit Beds from the Two Jin to Tang Dynasties"
 
-靈牀之大小，《兩晉至唐靈座靈牀漫談》引《宋書·王微傳》「五尺牀」，主張五尺之牀難爲臥具，又引《陳書·姚察傳》、《謝貞傳》以「小牀」作靈牀之文。
+Regarding the size of spirit beds, "Casual Discussion of Spirit Seats and Spirit Beds from the Two Jin to Tang Dynasties" cites the "five-chi bed" from "Song Shu · Wang Wei Biography," arguing that a five-chi bed would be difficult to use as bedding, and also cites "Chen Shu · Yao Cha Biography" and "Xie Zhen Biography" using "small bed" as spirit bed.
 
-案：《梁書》卷五二云「朔望祥忌，可權安小牀」，亦以小牀爲靈牀。且唐以前之小牀亦非臥具，《北史》卷四八「御牀西北小牀上南坐」，《舊唐書》卷一八六「各危坐於小牀」，《御覽》卷三九三引《晉中興書》云陶淡「設小床獨坐不與人共」，皆其證。（宋以後則小牀多指臥具。）唯《宋書》之「五尺牀」，《陳書》、《梁書》之「小牀」，傳主皆尚儉，故常禮或非盡以小牀爲靈牀。如《文選》陸機《弔魏武帝文》云魏武帝《遺令》以「八尺牀」（《御覽》、《類聚》引作「六尺牀」，恐爲形訛，宋趙如燧《野谷詩稿·銅雀臺辭》云「明月空照八尺牀」，亦作「八尺」。）爲靈牀。
+Investigation: "Liang Shu" Volume 52 states "on the first and fifteenth days and anniversary dates, a small bed may be temporarily arranged," also using small bed as spirit bed. Moreover, small beds before the Tang dynasty were not bedding either. "Bei Shi" Volume 48 mentions "sitting facing south on a small bed northwest of the imperial bed," "Jiu Tang Shu" Volume 186 mentions "each sitting upright on small beds," and "Yu Lan" Volume 393 cites "Jin Zhongxing Shu" saying that Tao Dan "set up a small bed to sit alone, not sharing with others" - all are evidence of this. (After the Song dynasty, small beds mostly referred to bedding.) However, the "five-chi bed" in "Song Shu" and the "small beds" in "Chen Shu" and "Liang Shu" were all used by biography subjects who valued frugality, so ordinary ritual practice may not have exclusively used small beds as spirit beds. For example, "Wen Xuan" by Lu Ji's "Eulogy for Emperor Wu of Wei" states that Emperor Wu of Wei's "Last Will" used an "eight-chi bed" ("Yu Lan" and "Lei Ju" cite it as "six-chi bed," probably a scribal error. Song dynasty Zhao Rusui's "Yegu Poetry Manuscript · Bronze Sparrow Platform Elegy" says "bright moon shines empty on the eight-chi bed," also using "eight-chi") as a spirit bed.
 
-參考文獻
---------
+References
+----------
 
-王寧玲. 兩晉至唐靈座靈牀漫談[M]. 《文教資料》,2012(34).
+Wang Ningling. Casual Discussion of Spirit Seats and Spirit Beds from the Two Jin to Tang Dynasties[M]. Educational Materials, 2012(34).

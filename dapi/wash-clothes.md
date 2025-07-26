@@ -1,15 +1,15 @@
-## 混洗内外衣或使用公共洗衣机
+## Washing Inner and Outer Clothes Together or Using Public Washing Machines
 
-为了避免交叉感染：
+To avoid cross-infection:
 
-0. 使用滴露等杀菌剂
-1. 使用60度温水
+0. Use disinfectant like Dettol
+1. Use 60-degree hot water
 
-## 毛衣
+## Sweaters
 
-0. 购买可机洗的毛衣。
-1. 选择最轻柔的模式。
-2. 选择酸碱度中性、温和的洗涤剂，或者也可以使用洗发水（毕竟毛衣的原料是羊的毛发）。
-3. 将毛衣翻过来，放进网袋或枕套里，减少磨损。
-4. 不要使用烘干机。避免把毛衣挂在衣架上晾干，以免水的重量将毛衣拉拽变形。建议将毛衣平铺在架子上晾干。
-5. 如果不在乎变形，洗涤说明上注明不可机洗的毛衣同样可以机洗，洗后也可以挂在衣架上晾干。
+0. Buy machine-washable sweaters.
+1. Choose the gentlest mode.
+2. Choose pH-neutral, gentle detergent, or you can also use shampoo (after all, the raw material of sweaters is sheep's hair).
+3. Turn the sweater inside out and put it in a mesh bag or pillowcase to reduce wear.
+4. Do not use the dryer. Avoid hanging sweaters on hangers to dry, as the weight of water will stretch and deform the sweater. It's recommended to lay the sweater flat on a rack to dry.
+5. If you don't mind deformation, sweaters marked as "not machine washable" on the care label can still be machine washed, and can also be hung on hangers to dry after washing.
