@@ -1,96 +1,95 @@
-﻿魔王訪談錄
-=============
+Devil King Interview Record
+===========================
 
-最近，由於一個特殊的機緣，我有幸到魔窟走了一遭。利用這個難得的機會，我找魔王做了一個訪談。
+Recently, due to a special opportunity, I was fortunate enough to visit the devil's lair. Taking advantage of this rare chance, I conducted an interview with the Devil King.
 
-我：魔王大人，有時間做個訪談嗎？
+Me: Your Majesty the Devil King, do you have time for an interview?
 
-魔王：可以。不過作為交換，訪談結束後你要回答我三個問題。如果你的回答不真誠，那你就得留下來給我改善下伙食。
+Devil King: Sure. But as an exchange, after the interview you must answer three questions from me. If your answers aren't sincere, then you'll have to stay here to improve my meals.
 
-我：成交。您聽說了最近「魔王火燒公主」的事件了嗎？新時代的魔王似乎很有創新精神呢。既然得不到公主的歡心，索性燒死算了。所有權的最重要的部份是處分權吧，從這個意義上說，奪走公主的生命，不正是一種終極的佔有的方式嗎？新時代的魔王，似乎大獲全勝呢。對此，像您這樣終日宅在魔窟之內的傳統魔王有什麽話要說嗎？
+Me: Deal. Have you heard about the recent "Devil King burns Princess" incident? Modern devil kings seem quite innovative. Since he couldn't win the princess's heart, he simply burned her to death. The most important part of ownership is the right of disposal, right? In this sense, isn't taking the princess's life the ultimate way of possession? The modern devil king seems to have achieved total victory. As a traditional devil king who stays in the lair all day, what do you have to say about this?
 
-魔王：燒個人也燒不死的垃圾，也配稱魔王？
+Devil King: Trash who can't even burn a person to death - does he deserve to be called a devil king?
 
-我：雖然沒死，但是這並不影響大局。公主燒成這樣，以後恐怕很少會有王子對她感興趣了吧？何況，不論公主以後還能不能討得王子的歡心，終其一生，恐怕她都走不出魔王的陰影了吧。想想公主的未來吧，求學、工作、戀愛、結婚、養兒，無時無刻不受到這次事件的影響。想想吧，每次洗髮的時候，每次水流從頭頂經臉側毫無阻礙地流向下頜的時候，公主又一次意識到，她的一隻耳朵已經沒有了，無論她多麼恨那個魔王，都無法否認，那個魔王改變了她的一生。恐怕很少有人，能像那個邪惡的魔王一樣，對她的人生施加那麼深刻而長遠的影響吧？某種意義上說，無論魔王的下場如何，他都作為揮之不去的陰影，伴隨公主一生呢。
+Me: Although she didn't die, this doesn't affect the big picture. With the princess burned like this, probably few princes will be interested in her in the future, right? Moreover, regardless of whether the princess can still win princes' favor in the future, she probably won't be able to escape the devil king's shadow for her entire life. Think about the princess's future - studying, working, dating, marriage, raising children - all constantly affected by this incident. Think about it: every time she washes her hair, every time water flows unobstructed from her head down her face to her chin, the princess realizes once again that she's lost one ear. No matter how much she hates that devil king, she cannot deny that he changed her entire life. Probably few people could have such a deep and lasting impact on her life like that evil devil king, right? In a sense, regardless of the devil king's fate, he will remain as an indelible shadow accompanying the princess for life.
 
-魔王：別喋喋不休了，我都快以為你是來推銷汽油和打火機的。提出你的問題。
+Devil King: Stop babbling - I almost thought you came to sell gasoline and lighters. Ask your question.
 
-我：我的疑惑是，爲什麽一代又一代的魔王都一根筋地去搶公主，然後讓王子尋上門來殺死自己，讓王子把毫髮無傷的公主帶回去，白白地成就了王子的英名和公主的姻緣？既然能做到魔王，怎麼也不會是笨蛋吧？十幾歲的小孩都想得到的主意，魔王沒有理由想不到吧？就算一個魔王沒想到，這麼多魔王不會一個都沒想到吧？背後到底有什麽隱情呢？
+Me: My confusion is: why do devil kings generation after generation stubbornly kidnap princesses, then let princes come to their door to kill them, letting princes take the unharmed princess back and achieve fame and marriage for free? Since they can become devil kings, they can't be stupid, right? Even teenagers could think of better ideas - devil kings have no reason not to think of them, right? Even if one devil king didn't think of it, surely not all devil kings would fail to think of it? What's the real story behind this?
 
-魔王：所以我說那小子不是魔王。燒不死人還在其次，最主要的是，火燒公主，那是只有人類纔會有的想法。當他點火的那一瞬間，他就宣告了自己的失敗，他知道公主的心裏沒有他，他沒機會得到公主的心了，只能以這樣的方式來影響公主的人生了。而魔王，永遠不會真正絕望，魔王永遠堅信，公主是深愛自己的。
+Devil King: That's why I say that guy isn't a devil king. Being unable to burn someone to death is secondary - most importantly, burning a princess is something only humans would think of. The moment he lit the fire, he declared his own failure. He knew the princess's heart didn't hold him, he had no chance of winning her heart, so he could only influence her life this way. But a devil king never truly despairs - a devil king always believes that the princess deeply loves him.
 
-我：公主深愛魔王？故事裏可從來沒這麼說過。
+Me: The princess deeply loves the devil king? The stories never say that.
 
-魔王：那是你沒有認真去讀！你想想，公主從小生在王宮之中，從小到大，就知道以後要嫁給王子，而魔王是邪惡的。你還能期望她有多少自己的主見呢？所以我們魔王都把公主帶到偏僻的魔窟，這裡沒有世俗的干擾，正適合公主在這樣一個清幽的環境中思考自己的人生，叩問自己的內心，脫離俗知俗見的束縛。假以時日，公主一定能意識到，是世俗的偏見蒙蔽了自己的本心，其實自己喜歡的，是魔王。
+Devil King: That's because you haven't read carefully! Think about it: the princess grew up in the royal palace, knowing from childhood that she would marry a prince and that devil kings are evil. How much independent thinking can you expect from her? That's why we devil kings take princesses to remote lairs - there are no worldly distractions here, perfect for the princess to contemplate her life in this tranquil environment, question her heart, and break free from conventional prejudices. Given time, the princess will surely realize that worldly bias has blinded her true heart - what she actually likes is the devil king.
 
-我：原來是這樣啊。那怎麼就沒聽說有哪位公主大徹大悟了呢？
+Me: I see. Then why haven't we heard of any princess having this great awakening?
 
-魔王：你竟敢質疑我的話？大部份的情況是，那些王子都來得太快了，公主還沒有足夠的時間想清楚。還有，一旦公主最後跟了魔王，王室一定會作為莫大的醜聞秘而不宣，難道還會編成故事四處宣揚不成？
+Devil King: How dare you question me? In most cases, those princes arrive too quickly - the princess doesn't have enough time to think clearly. Also, once a princess finally goes with a devil king, the royal family would surely keep it secret as a great scandal - would they really make it into stories and spread it everywhere?
 
-我：唉，原來是家醜不外揚呀。就沒有哪家媒體爆料嗎？
+Me: Ah, so family scandals aren't aired publicly. Haven't any media outlets broken the story?
 
-魔王：以人類為銷售對象的媒體敢把自己擺在反人類的立場上嗎？
+Devil King: Would media targeting humans as customers dare to position themselves as anti-human?
 
-我：那倒是。說不定有不少王子都被魔王做掉了，只是媒體不報導而已。
+Me: That's true. Maybe quite a few princes have been killed by devil kings, but the media just doesn't report it.
 
-魔王：那倒不是。魔王和王子戰鬥，有一個很大的破綻。所以魔王和王子的戰鬥，從來都是輸多贏少。
+Devil King: Not really. Devil kings have a major weakness when fighting princes. So in battles between devil kings and princes, they usually lose more than win.
 
-我：哦？什麽破綻？
+Me: Oh? What weakness?
 
-魔王：因為怕公主傷心欲絕，除非不得已，魔王并不想真下殺手，往往留有餘地，希望只是擊傷或是擊退，而不要傷了王子的性命。還有，生死之際，是認清內心的絕好的契機。所以很多魔王都在戰鬥中故意讓自己陷入可能毀滅的危機之中，希望在這個瞬間，公主能夠意識到，在魔王和王子生死相搏的時候，開始是想要王子獲勝，但是真到魔王要死的時刻，又暗暗希望魔王不要死。這是極端危險的，因為有勇氣來魔窟的王子實力不會太低。但是生死關頭的契機太難得了，很少有魔王能抵擋住這種致命的誘惑。
+Devil King: Because they fear the princess will be heartbroken, unless absolutely necessary, devil kings don't really want to kill, often holding back, hoping only to wound or repel rather than take the prince's life. Also, life-and-death moments are perfect opportunities to recognize one's true heart. So many devil kings deliberately put themselves in potentially destructive crises during battle, hoping that in that moment, the princess will realize that when the devil king and prince are fighting to the death, she initially wants the prince to win, but when the devil king is truly about to die, she secretly hopes he won't die. This is extremely dangerous, because princes brave enough to come to devil lairs won't be weak. But the opportunity of life-and-death moments is too precious - few devil kings can resist this fatal temptation.
 
-我：原來魔王在和王子的戰鬥中吃了這麼多暗虧呢。真是的，魔王原來多逍遙自在啊，就是因為喜歡公主纔變得這麼憋屈吧？
+Me: So devil kings suffer all these hidden disadvantages when fighting princes. Really, devil kings used to be so carefree, but they became so constrained just because they like princesses?
 
-一直漫不經心地回答我的問題的魔王，正色道：愛上公主，這是魔王的宿命。
+The Devil King, who had been answering my questions casually, spoke seriously: Falling in love with the princess is the devil king's destiny.
 
-我：就沒有魔王能逃脫這個宿命嗎？
+Me: Isn't there any devil king who can escape this destiny?
 
-魔王想了一會，道：曾經有一個例外。有一位魔王，一直不去搶公主。直到王子和公主成婚的前一天，突然出現，把公主搶走了。王子趕到，殺死了魔王。王子和公主發現，魔王的魔窟已經按婚禮的樣子佈置好了，而且比王宮的佈置更好，所以乾脆就召集眾人，在魔窟舉行了婚禮。
+The Devil King thought for a moment and said: There was once an exception. There was a devil king who never kidnapped a princess. Until the day before the prince and princess's wedding, he suddenly appeared and took the princess away. The prince caught up and killed the devil king. The prince and princess discovered that the devil king's lair had already been decorated for a wedding, and even better than the palace decorations, so they simply gathered everyone and held the wedding in the devil's lair.
 
-我：那他最終還是沒逃過宿命啊。
+Me: So he still didn't escape destiny in the end.
 
-魔王：不，他愛的不是公主，而是王子。他本來想一輩子呆在魔窟，不去打擾王子和公主的幸福生活。但是在王子成婚前的那一天，他也忍不住前去看了一眼。正好被他聽到公主在向王子抱怨婚禮的佈置不夠好，王子一個勁地賠不是。魔王看到自己的心上人賠不是的樣子，心都碎了。但是他又不能出手相助，因為王子是不會接受魔王的幫助的。於是他就乾脆把公主搶了，又把自己的魔窟按婚禮的樣子佈置。魔王的法力高強，婚禮的陳設自然不是凡間的王宮可比。然後，就是與心上人的一戰。本來魔王是希望就這樣一直戰鬥下去的，但是到後來王子體力漸漸不夠了。魔王擔心王子體力不支，新婚之夜又被公主抱怨，就故意賣個破綻。於是體力不支，本已絕望的王子一劍刺破了魔王的胸膛。絕處逢生的喜悅，成就英名的歡喜，新婚在即的快樂，交織在一起，王子臉上露出了由衷的笑容。望著王子的笑臉，那一刻的魔王是最幸福的：「恐怕你得知可以繼承王位或者公主答應你的求婚的時候，你都沒有這麼開心吧。你這一生最大的歡喜，是我帶給你的。就在此刻。而你的笑容，也溫暖了我的心。我這一生最大的溫暖，是你帶給我的。也是就在此刻。」
+Devil King: No, he didn't love the princess - he loved the prince. He originally planned to stay in his lair forever, not disturbing the prince and princess's happy life. But on the day before the prince's wedding, he couldn't help but go take a look. He happened to hear the princess complaining to the prince that the wedding decorations weren't good enough, with the prince constantly apologizing. Seeing his beloved apologizing broke the devil king's heart. But he couldn't help, because the prince wouldn't accept a devil king's assistance. So he simply kidnapped the princess and decorated his lair for the wedding. With the devil king's powerful magic, the wedding arrangements naturally couldn't be compared to an earthly palace. Then came the battle with his beloved. Originally the devil king hoped to keep fighting like this forever, but later the prince's strength gradually failed. The devil king worried that the prince's strength wouldn't hold up and the princess would complain on their wedding night, so he deliberately showed an opening. Thus the exhausted, already desperate prince pierced the devil king's chest with his sword. The joy of escaping death, the happiness of achieving fame, the pleasure of the approaching wedding - all intertwined, and the prince's face showed a genuine smile. Looking at the prince's smiling face, that devil king was happiest in that moment: "I'm afraid you weren't even this happy when you learned you could inherit the throne or when the princess agreed to your proposal. Your greatest joy in life was brought by me. Right at this moment. And your smile has also warmed my heart. My greatest warmth in life was brought by you. Also right at this moment."
 
-我沉浸在這個動人的故事中，久久沒有回過神來。突然魔王說：輪到你了。回答我三個問題！我看你一副陶醉的模樣，倒對你的性取向很是好奇，回答我，你的性取向是什麽？
+I was immersed in this touching story and didn't come back to my senses for a long time. Suddenly the Devil King said: Your turn. Answer my three questions! Seeing your enchanted expression, I'm quite curious about your sexual orientation. Tell me, what is your sexual orientation?
 
-我想了想，答道：Every man had thought that he loved women, until he met his superman.
+I thought for a moment and answered: Every man had thought that he loved women, until he met his superman.
 
-這是一個很有技巧的回答。首先它是真誠的，并沒有違反約定。其次它其實什麽也沒說。表面上似乎是說我是gay，但也可以不是，因為我可能還沒遇到我的superman嘛。當然魔王可能不會這麼容易糊弄，可能會問我到底遇到了沒有。但是這樣的話，他就又花費了一次提問的機會，我安然離開的可能性也就會變大不少。
+This was a skillful answer. First, it was sincere and didn't violate our agreement. Second, it actually said nothing. On the surface it seemed to say I was gay, but I might not be, because I might not have met my superman yet. Of course the Devil King might not be so easily fooled and might ask whether I'd actually met him. But then he'd have used up another questioning opportunity, greatly increasing my chances of leaving safely.
 
-誰知魔王卻沒有過多糾纏，接著問了一個無關的問題：大便之後你用哪種草紙？
+Who knew the Devil King didn't dwell on it much and asked an unrelated question: What kind of toilet paper do you use after defecating?
 
-我松了一口氣，心想這個魔王不過就是有點猥瑣，有點八卦，應該不難應付。我如實回答了這個問題。
+I breathed a sigh of relief, thinking this devil king was just a bit sleazy and gossipy, shouldn't be hard to handle. I answered this question truthfully.
 
-事實證明，魔王不是那麼簡單的人物。他這一問只是讓我自以為過關，產生輕視之心而已。
+Facts proved the Devil King wasn't such a simple character. This question was just to make me think I'd passed and develop contempt.
 
-魔王慢悠悠地說：嗯，我知道這種紙。雖然在超市它被標成衛生紙，其實和某些面紙一樣柔軟。好了，最後一個問題，你有沒有想過，你精心呵護的菊花，那個男人根本就不屑一顧呢？
+The Devil King said slowly: Hmm, I know this paper. Although it's labeled as toilet paper in supermarkets, it's actually as soft as some facial tissues. Now, the last question: have you ever thought that the man might not care at all about your carefully tended chrysanthemum?
 
-我後背全是冷汗，但仍然竭力喊道：那你有沒有想過，也許公主根本就不喜歡魔王呢？所謂公主其實是喜歡魔王的，只是她的本心被遮蔽了，她自己沒有意識到，也許根本就是魔王的一廂情願？
+My back was covered in cold sweat, but I still shouted with all my might: Then have you ever thought that maybe the princess doesn't like the devil king at all? That the so-called princess actually liking the devil king, just that her true heart is obscured and she hasn't realized it herself - maybe it's all just the devil king's wishful thinking?
 
-魔王：反問不是回答！今晚我可以喝到排骨湯了。
+Devil King: A counter-question isn't an answer! Tonight I can drink pork rib soup.
 
-我纔發現我一時情急，竟然忘了回答問題。但是我並不甘心就這樣死掉，所以強辯道：你根本就是被我說破了事實氣急敗壞吧？還魔王呢！一點沒有涵養！
+Only then did I realize that in my panic, I'd forgotten to answer the question. But I wasn't willing to die like this, so I argued: You're just flustered because I exposed the truth, right? Some devil king you are! No cultivation at all!
 
-魔王：氣急敗壞的是你自己吧。讓你死得明白吧，雖然我本來沒有必要告訴你。你的反問只是迴避，你沒有勇氣真誠地面對這個問題。我深信公主其實是喜歡我的，雖然她自己沒有意識到，是因為我是魔王。我有作為魔王的自尊和驕傲。你並不是魔王，那你又憑什麽深信你愛的那個男人也愛你呢？
+Devil King: The one who's flustered is you. Let me make it clear before you die, though I have no obligation to tell you. Your counter-question was just evasion - you don't have the courage to face this question sincerely. I deeply believe the princess actually likes me, though she hasn't realized it herself, because I am a devil king. I have the dignity and pride of being a devil king. You're not a devil king, so what makes you so sure that the man you love also loves you?
 
-我萬念俱灰地閉上了眼睛。魔王所說的沒錯，我害怕這個問題，我不敢面對，我沒有真誠地回答這個問題，所以我將付出我的代價。
+I closed my eyes in complete despair. The Devil King was right - I feared this question, I dared not face it, I hadn't answered sincerely, so I would pay the price.
 
-在等待死亡的那一刻，不知不覺地，我又想起那個讓我魂牽夢繞的男人。此時此刻，他又在幹什麼呢？沒來由地，我仿佛看到他就在不遠處看著我。我想，旁人只會以為我死在魔王的手裡，誰又知道我其實是死在那個人的注視之下呢？能在他的注視之下死去，也是一種幸福吧。
+While waiting for death, unconsciously, I thought again of that man who haunts my dreams. What is he doing right now? For no reason, I seemed to see him watching me not far away. I thought, others would only think I died at the devil king's hands - who would know I actually died under that person's gaze? To die under his gaze would also be a kind of happiness.
 
-這時魔王卻嘆了口氣：我想你知道答案了，說出來吧。
+Then the Devil King sighed: I think you know the answer now. Say it.
 
-我並沒有睜開眼睛，輕輕地說：當我閉上雙眼的時候，我能感覺到那個男人凝視我的目光是那樣地深情。那一刻，我知道他是愛我的。
+I didn't open my eyes, but said softly: When I close my eyes, I can feel that man's gaze upon me is so tender. In that moment, I know he loves me.
 
-說完我纔意識到，我答出來了，我不用死了。但我又有點疑惑，爲什麽魔王要提醒我，如果他不提醒我，那時的我早已把問題和約定忘到九霄雲外，我自己是不會想到要回答問題的。
+Only after speaking did I realize - I had answered, I didn't have to die. But I was also puzzled: why did the Devil King remind me? If he hadn't reminded me, I would have forgotten the question and agreement completely - I wouldn't have thought to answer on my own.
 
-魔王看到我疑惑的目光，猜到了我的想法：你剛來的時候，靈魂中充斥著悲傷、焦灼、不甘、絕望、懷疑等等情緒，這樣的靈魂勾起了我的食慾，所以我纔陪你做什麽訪談，我只是想借機吃掉你。但是剛剛你的靈魂十分平和，對我來說就是淡而無味了。所以我就提醒你一下，一般而言，在必死的心態下，突然得知已經知道答案，說出來就可以獲救的話，人會有一種絕處逢生的喜悅。我趁這個時候，在你想說未說的時刻，把你一口吞下，雖然是囫圇吞棗，但多少還有些味道。哪知你一點情緒的波動都沒有。
+The Devil King saw my puzzled look and guessed my thoughts: When you first arrived, your soul was filled with sadness, anxiety, unwillingness, despair, doubt and other emotions. Such a soul aroused my appetite, so I accompanied you in this interview - I just wanted to use the opportunity to devour you. But just now your soul was very peaceful, which is tasteless to me. So I reminded you - generally speaking, when someone is in a must-die mindset and suddenly learns they already know the answer and can be saved by speaking it, they feel joy at escaping death. I planned to swallow you whole at that moment when you wanted to speak but hadn't yet - though it would be hasty, it would still have some flavor. Who knew you'd have no emotional fluctuation at all.
 
-我：這種平和的心態，我想我並不能保持很久。
+Me: I don't think I can maintain this peaceful mindset for long.
 
-魔王：但是你已經真誠地回答了我三個問題，依照約定，我只能送你回去。
+Devil King: But you've already sincerely answered my three questions. According to our agreement, I can only send you back.
 
-於是我逃離了魔窟，回到了這個有人說比魔窟還兇險的美好的現實世界。
-
+So I escaped the devil's lair and returned to this beautiful real world that some say is even more dangerous than the devil's lair.
 
 ----
 
