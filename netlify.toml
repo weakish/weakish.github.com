@@ -91,6 +91,12 @@
     force = true
 
 [[redirects]]
+    from = "/dapi/daoliangmou/"
+    to = "/lang/rice-and-grain/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/dapi/learn-programming/"
     to = "/thoughts/learn-programming/"
     status = 301
