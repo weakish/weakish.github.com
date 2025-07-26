@@ -1,110 +1,107 @@
-# 跋说吧西藏
+# Postscript on "Tell Me, Tibet"
 
-宁肯. 说吧，西藏[M]. 北京:十月文艺出版社北京,2013-10. ISBN 9787530213360
+Ning Ken. Tell Me, Tibet[M]. Beijing: October Literature and Art Publishing House, Beijing, 2013-10. ISBN 9787530213360
 
 http://book.douban.com/subject/25764322/
 
-> 进入一棵树是可能的
-> 进入岩石也是可能的
-> 当我回忆往昔
-> 我觉得就在它们之中
+> Entering a tree is possible
+> Entering rocks is also possible
+> When I recall the past
+> I feel I'm within them
 
--- 《在一棵树中回忆》, p. 1
+-- "Recalling in a Tree," p. 1
 
->  事物总是缠绕在一起，可知部分总是引起更多未知部分。
+> Things are always entangled together, the known parts always give rise to more unknown parts.
 
--- 《在一棵树中回忆》, p. 2
+-- "Recalling in a Tree," p. 2
 
-案：「可」当为「已」。
-「可知」、「不可知」和「已知」、「未知」是两回事。
+Note: "Known" should be "already." "Known" and "unknown" are different from "already known" and "not yet known."
 
-> 宁： 我不写完这本书有点怕去西藏，为什么说呢，
-> 就是它那儿一变化之后，比如包括咱们六中那附近改变了之后，
-> 我会觉得它对我是一种摧残，就是说，
-> 如果我没把那个世界用文字固定下来之前，我要去了就把自己毁了。
+> Ning: I was a bit afraid to go to Tibet without finishing this book. Why do I say this?
+> It's because after it changes there, including after the area near our No. 6 Middle School changed,
+> I feel it would be a kind of devastation to me. That is to say,
+> if I went there before fixing that world in words, I would destroy myself.
 >
-> 林： 那就把原来一切消解了。
+> Lin: Then everything original would be dissolved.
 >
-> 宁： 那就和我原来那个东西不是一个味了。
+> Ning: Then it wouldn't be the same flavor as my original thing.
 
--- 《西藏谈话录》，p. 149
+-- "Conversations on Tibet," p. 149
 
-注：「宁」为「宁肯」，「林」为「林跃」，两人在 20 世纪 80 年代「援藏」时同住拉萨六中附近。
+Note: "Ning" refers to "Ning Ken," "Lin" refers to "Lin Yue." Both lived near Lhasa No. 6 Middle School during their "aid to Tibet" work in the 1980s.
 
-案：「那儿一变化之后」，「就和我原来那个东西不是一个味了」，因此应对的措施是「把那个世界用文字固定下来」。
-但是「把那个世界用文字固定下来」又何尝不「是一种摧残」呢？
-每次回忆，总会有一些想象的成分加进去，总会有一些东西被想象所扭曲。
-「用文字固定下来」就更是如此，毕竟和回忆相比，文字是一维的，更容易产生扭曲。
-「那儿一变化之后」，「原来那个东西」就「不是一个味了」。文字固定的效用是有限的。
+Commentary: "After it changes there," "it's not the same flavor as my original thing," so the countermeasure is to "fix that world in words." 
+But isn't "fixing that world in words" also "a kind of devastation"?
+Every time we recall, some imaginative elements are added, and some things are distorted by imagination.
+"Fixing in words" is even more so - after all, compared to memory, words are one-dimensional and more prone to distortion.
+"After it changes there," "the original thing" is "not the same flavor." The effectiveness of textual fixation is limited.
 
-> 宁： 能不用大家说习惯了的词就不用，找到自己又平常又贴切的表达。
+> Ning: If we can avoid using words everyone is used to saying, we don't use them. Find expressions that are both our own and ordinary yet appropriate.
 > ...
-> 宁： 什么一形容天，就天高云淡，云绽天开，什么月上柳梢头，人约黄昏后，就这种现成的语言你甭想在我这书里找到。
+> Ning: When describing the sky, it's always "sky high and clouds light," "clouds bloom and sky opens," "moon above the willow tips, people meet at dusk" - don't expect to find such ready-made language in my book.
 > ...
-> 宁： 实际上有些词由于过度使用已用废了，报废了。
+> Ning: Actually, some words have been worn out from overuse, scrapped.
 > ...
-> 宁： 如果我不能用一种新的语言表达，比如那种景色，或人物交代——
+> Ning: If I can't express with a new language, like that kind of scenery, or character introduction—
 > ...
-> 宁： ... 我就宁可用最朴素的语言最平白的最日常的最基本的语词表达，
-> 我不知道你记不记得鲁迅的《狂人日记》，开头给我印象特深，
-> 「今天晚上，很好的月光」。
-> 林： 那是连小学一年纪的孩子都会写的。
-> 宁： 对！非常的明白，今晚月光很好，它就不像说，「今晚月光如水」「皓月当空」，那成什么了！
+> Ning: ... I'd rather use the most plain language, the most straightforward, most daily, most basic vocabulary to express.
+> I don't know if you remember Lu Xun's "Diary of a Madman," the opening left a deep impression on me:
+> "Tonight, very good moonlight."
+> Lin: That's something even a first-grade elementary student could write.
+> Ning: Exactly! Very clear, the moonlight is very good tonight. It's not like saying, "Tonight the moonlight is like water" or "bright moon in the sky" - what would that become!
 > ...
-> 宁： 它就不像烂文人经常写的，它就一下回到最根本最原始的语言，今晚月光很好，我靠，多本真呀！
-> ... 我说语言，如果你不能出新就回到本真上来，回到这儿来。
+> Ning: It's not like what hack writers often write. It returns directly to the most fundamental, most primitive language: the moonlight is very good tonight. Damn, how authentic!
+> ... I say language, if you can't innovate, return to authenticity, return here.
 > ...
-> 宁： 哎，回到原初，回到最朴素，最准确。如果你有创新，你就用创新，没创新就回到这上。
+> Ning: Ah, return to the original, return to the most plain, most accurate. If you have innovation, use innovation; if not, return to this.
 > ...
-> 宁： 这就像语言的一个底线，你时刻站在这个预言的底线上，站在最基本上，不跨出是不跨出，
-> 一跨出就一定是达到另一个极致，是别人无法超越的，要不然就退守到底线上。
+> Ning: This is like a bottom line of language. You always stand on this bottom line of language, stand on the most basic. If you don't step out, you don't step out.
+> Once you step out, it must reach another extreme that others cannot surpass, otherwise retreat to the bottom line.
 > ...
-> 宁： 绝不能既不退守底线，也没创新，使用那种华丽的似是而非的人云亦云的现成的。
+> Ning: Never both fail to retreat to the bottom line and lack innovation, using that gorgeous, specious, parroted, ready-made [language].
 
--- 《西藏谈话录》，p. 161-163
+-- "Conversations on Tibet," pp. 161-163
 
-案：其实科技文本的语言就追求朴素准确。文学则是在朴素准确之外另有趣味的追求。
-而所谓的「华丽的似是而非的人云亦云的现成的」，则既无趣味，又不准确，确是「由于过度使用已用废」。
-不准确，也类似王国维《人间词话》中说的「隔」。
+Commentary: Actually, the language of technical texts pursues plainness and accuracy. Literature pursues interest beyond plainness and accuracy.
+The so-called "gorgeous, specious, parroted, ready-made" lacks both interest and accuracy, truly "worn out from overuse."
+Inaccuracy is also similar to what Wang Guowei called "separation" in "Remarks on Poetry in the Human World."
 
-> 宁： 是什么是就说什么事，你不如我那《天・藏》的开头，就是一个陈述句，就没任何形容词，
-> 「我的朋友王摩看到马丁格的时候，雪已飘过那个午后。」
+> Ning: Say what it is, just say what it is. Like the opening of my "Sky・Tibet," it's just a declarative sentence with no adjectives:
+> "When my friend Wang Mo saw Martin, snow had already drifted through that afternoon."
 > ...
-> 宁： 你说简单不简单，是最简单的，可实际要通过多少复杂的手段才能找到它？
-> 我最终找到这句话，这个开头，太难了，多少个开头之后才有了这个开头。
+> Ning: You say simple or not simple? It's the simplest, but how many complex means does it actually take to find it?
+> For me to finally find this sentence, this opening, was too difficult - how many openings before this opening.
 
--- 《西藏谈话录》, p. 164
+-- "Conversations on Tibet," p. 164
 
-案：用词确实是朴素准确了。但是这个句式并不朴素，仍有一种「文学」气。同时这个句式也算不上创新。
-因此这个开头是一个反面的例子，不光要注意用词，还要注意句式。
-这个开头受句式拖累，算不得「最简单」。其实平常人随便想个开头，一般不会想出这种句式。
-恰是文学气重的人，挖空心思容易想出这种句式。用力过了。
-当然不是说用大力一定不好，可是用力归用力，露出用力的痕迹可不美。
-「天然去雕饰」，很好；「妆成有却无」，也不错。
-若是整容的「美人」，一望即知，那这整容的水平看来也不怎么样。
+Commentary: The word choice is indeed plain and accurate. But this sentence structure isn't plain - it still has a "literary" air. At the same time, this sentence structure can't be called innovative either.
+Therefore, this opening is a negative example - we must pay attention not only to word choice but also to sentence structure.
+This opening is dragged down by its sentence structure and can't be called "the simplest." Actually, ordinary people wouldn't normally think of this kind of sentence structure when casually thinking of an opening.
+It's precisely people heavy on literary airs who, racking their brains, easily think of this kind of sentence structure. Too much effort.
+Of course, I'm not saying using great effort is necessarily bad, but effort is effort - showing traces of effort isn't beautiful.
+"Natural without carving" is very good; "made up but appearing natural" is also not bad.
+If it's a plastic surgery "beauty" that anyone can tell at a glance, then this plastic surgery skill doesn't seem very good either.
 
+> Ning: ... Yes, I once wrote a piece on Tibet for a fashion magazine. Oh, it made me so uncomfortable, uncomfortable to death. I never wrote again after that.
+> I even tell you, I'm not as good as what they write, because they write so slickly,
+> those clichés they write are so smooth, I really can't do it.
 
-> 宁： ... 对，我曾给一个时尚杂志写过一片西藏，哎呦写得我这难受呀，难受死了，此后再也不写了，
-> 甚至我告诉你，我不如他们写的好，因为他们都写油了，
-> 他们写的那个陈词滥调写得那叫顺溜呀，我还真做不到。
+-- "Conversations on Tibet," p. 179
 
--- 《西藏谈话录》, p. 179
+> The process of travel is a process of intensely becoming aware of the interaction between self and other. This process is one of the breeding grounds of literature.
+> The great Spanish philosopher Ortega y Gasset once said: Tell me what you pay attention to, and I will tell you who you are.
+> People often create themselves through what they pay attention to. No matter where we direct our attention, we are shaped by it.
+> You pay attention to the distance, and the distance will surely shape you. You pay attention to travel, and travel will surely shape you. In this sense, Ortega y Gasset further said:
+> "Life itself is a poetic work. Man is his own novelist, so life is actually a literary form."
 
-> 旅行的过程是一个强烈地意识到自我与他者互动的过程，这种过程正是文学的滋生地之一。
-> 西班牙大哲学家奥德嘉·嘉塞曾经说过：告诉我你关注什么，我就会告诉你你是谁。
-> 人往往是通过自己关注的东西来创造自己的，不论我们将注意力投向何方，我们都会被它塑造。
-> 你关注远方，远方必定会塑造你，你关注旅行，旅行必定会塑造你。在这个意义上，奥德嘉·嘉塞进一步说：
-> 「生命本身就是一件有诗意的工作，人是他自己的小说家，因此生命事实上就是一种文学形式。」
+-- "A Person's Path—My Autobiography," p. 203
 
--- 《一个人的道路——我的自述》, p. 203
+> After passing through large areas of chaotic modern architecture, the Humble Administrator's Garden didn't bring me joy.
+> On the contrary, it was sandwiched like a specimen in infinite chaos.
 
-> 在穿越了大面积的杂乱无章的时尚建筑后，拙政园并没有给我带来愉快之情，
-> 相反它像标本一样被夹在无限大的杂乱无章之中。
+-- "Taizhou・Questions and Answers," p. 266
 
--- 《泰州・答问》, p.266
-
-我以前写过类似的文字，苏州给我的感觉是一些古旧的残迹被抛掷到了现代的汪洋之中。
-这种怪异的不协调感让我很不适应。我只能安慰自己说很多城市连感受这种不适的机会都没有。
-后来有时看到媒体上的文章，说是「古典与现代的完美结合」就感叹真是各人有各人的想法，
-要我说是「古典与现代的完美不结合」才对。
-
+I've written similar texts before. The feeling Suzhou gave me was that some ancient remains were cast into the modern ocean.
+This strange sense of discord made me very uncomfortable. I could only comfort myself by saying that many cities don't even have the opportunity to feel this discomfort.
+Later, when I sometimes saw articles in the media saying it was "a perfect combination of classical and modern," I sighed that everyone really has their own ideas.
+If you ask me, it should be "a perfect non-combination of classical and modern."

@@ -1,64 +1,64 @@
-# 编程入门路线
+# Programming Learning Path
 
-## 路线一
+## Path One
 
-首先，学好英语。高中毕业程度就可以。
-高中英语，语法什么的基本全了， 3500 的词汇量，打个折扣，3000 也绰绰有余了。
-学到这个程度就可以，以后大量阅读英文资料，计算机方面的词汇会自然而然积累，不用特意提前去背。
+First, learn English well. High school level is sufficient.
+High school English covers basically all the grammar, with a vocabulary of 3500 words - even with a discount, 3000 words is more than enough.
+Learning to this level is sufficient. Later, through extensive reading of English materials, computing-related vocabulary will naturally accumulate - no need to deliberately memorize them in advance.
 
-其实初中程度的英语，1500 的词汇量，也勉强够了。
-初中英语的问题是有些语法没接触到，也就是说可能会碰到一些陌生的结构。
-好在很多情况下，即使不理解结构，从上下文也能推断出意思。
-而同类的结构见得多了，可能慢慢就理解了。
-中文的语法，通常是本科阶段才正式介绍，可是在此之前并不影响大家使用中文。
-非母语虽然困难很多，但一样可以。
-初中时候查双解字典，字典的解释大量使用定语从句，当时完全不知道定语从句这回事，
-但是渐渐地也能明白这个结构的作用。
+Actually, middle school level English with a vocabulary of 1500 words is barely enough.
+The problem with middle school English is that some grammar hasn't been covered, meaning you might encounter unfamiliar structures.
+Fortunately, in many cases, even without understanding the structure, you can infer meaning from context.
+And after seeing similar structures frequently, you might gradually understand them.
+Chinese grammar is typically formally introduced at the undergraduate level, but this doesn't prevent people from using Chinese before then.
+Although non-native languages are much more difficult, it's the same principle.
+When looking up bilingual dictionaries in middle school, the dictionary explanations extensively used relative clauses. At the time I had no idea what relative clauses were,
+but gradually I could understand the function of this structure.
 
-俗话说，磨刀不误砍柴功。但是也不必太刻意地追求磨刀磨得恰当好处。
-磨过头了，英语学多了，可以去翻译。
-高中程度的英语只是阅读，翻译远远不够，强行翻译容易给别人挖坑，当然自己作为练习是可以的。
-感觉自己学习编程的热情要在磨刀中消磨殆尽了，那也可以先放一放，直接去学。以后有必要再补也是一样的。
-答案不如问题重要，路线不如动力和兴趣重要。
+As the saying goes, sharpening the axe doesn't delay chopping wood. But there's no need to be too deliberate about sharpening the axe to just the right degree.
+If you over-sharpen and learn too much English, you can go into translation.
+High school level English is only sufficient for reading - translation requires much more. Forcing translation easily creates pitfalls for others, though it's fine as personal practice.
+If you feel your enthusiasm for learning programming is being worn away during the "sharpening" process, you can set it aside for now and go directly to learning. It's the same to supplement it later when necessary.
+Answers are not as important as questions; path is not as important as motivation and interest.
 
-接着，看一本入门的书。
+Next, read an introductory book.
 
-选哪一本呢？这个阶段对编程基本是一无所知，所以如何评判书的好坏呢？
+Which one to choose? At this stage you basically know nothing about programming, so how do you judge whether a book is good or bad?
 
-其实还是有办法的。
+Actually, there is a way.
 
-就是看书的厚薄。
+Look at the thickness of the book.
 
-这个肤浅的判断方法出奇地好用。
-它背后的依据是，如果一本入门书不够薄：
+This superficial judgment method is surprisingly useful.
+The reasoning behind it is that if an introductory book is not thin enough:
 
-1. 要么，这本书介绍了太多细节了，入门书应该介绍这一领域的精华，而不是让初学者迷失在细节；
-2. 要么，这本书将一些过深的内容放到入门书里了；
-3. 要么，这本书把读者当作弱智，不相信读者的能力，很多书每一步都给你截图，书看上去很厚，其实言之无物；
-4. 要么，作者随便东拼西凑搞了一本书出来，自己都不知道自己在干什么。
+1. Either the book introduces too many details - introductory books should introduce the essence of the field, not let beginners get lost in details;
+2. Or the book includes content that's too advanced for an introductory book;
+3. Or the book treats readers as idiots, doesn't trust readers' abilities - many books give you screenshots for every step, making the book look very thick but actually saying nothing substantial;
+4. Or the author just randomly cobbled together a book without knowing what they're doing.
 
-我推荐 The Little Schemer.
-如果这本书不好找，或者觉得这书不合口味，那挑一本别的入门书也是一样。记得选薄的就可以。
+I recommend The Little Schemer.
+If this book is hard to find, or if you feel it doesn't suit your taste, picking another introductory book is the same. Just remember to choose a thin one.
 
-## 路线二
+## Path Two
 
-不学英语，直接看 The Little Schemer 的中译本。
+Don't learn English, directly read the Chinese translation of The Little Schemer.
 
-注意，中译本我并没有看过，不知道翻译的质量怎么样。
+Note: I haven't read the Chinese translation, so I don't know the quality of the translation.
 
-或者也可以看裘宗燕翻译的 SICP (《计算机程序的构造和解释》)。
-这书并不薄。不过入门的话，只用看前 3 章就可以，这样算下来还是比较薄的。
-和 The Little Schemer 不同，SICP 的习题很多，
-如果感觉吃力，可以选做或者干脆不做，习题本来就是给学有余力的人准备的，别让习题挫伤自己的信心。
+Or you could read SICP (Structure and Interpretation of Computer Programs) translated by Qiu Zongyan.
+This book is not thin. However, for introduction purposes, you only need to read the first 3 chapters, which makes it relatively thin.
+Unlike The Little Schemer, SICP has many exercises.
+If you find it challenging, you can do them selectively or simply skip them. Exercises are originally prepared for those who have energy to spare - don't let exercises damage your confidence.
 
-## 路线三
+## Path Three
 
-自己制定路线。
+Create your own path.
 
-自己往往比别人更了解自己，自己制定的路线，对自己而言，说不定比别人推荐的路线更合适。
-不要惧怕探索，只要保持动力和兴趣，总能走通的，大不了走点弯路罢了。
-即使因为走了弯路进展慢一点，但自己能闯出一条独特的路，会给自己信心。
-在黑暗中独立摸索的经验，也会给你一些感觉。
+You often understand yourself better than others do, so the path you create for yourself might be more suitable than paths recommended by others.
+Don't be afraid to explore. As long as you maintain motivation and interest, you'll always find a way through - at worst you'll take some detours.
+Even if taking detours slows your progress a bit, being able to blaze your own unique trail will give you confidence.
+The experience of independently exploring in darkness will also give you a certain feeling.
 
-很少人有这个幸运或者不幸能永远沿着别人的路走。
-总有一天会碰到没人探过路的情况，这时候当初的信心和感觉会成为你的助力。
+Few people have the fortune or misfortune to always walk along others' paths.
+Someday you'll encounter situations where no one has explored the path before. At that time, the confidence and feeling from your initial experience will become your aid.

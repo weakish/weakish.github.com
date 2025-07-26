@@ -1,10 +1,10 @@
-总的思路是精简衣物，以及选择便于携带的衣物。
+The general approach is to streamline clothing and choose garments that are easy to carry.
 
-1. 选择轻便的衣物。比如避免厚重的皮大衣。
-2. 选择柔软的衣物，这样可以卷起来放置。避免无法卷起来的衣物。
-3. 内衣不够的话可以途中采购。比如沃尔玛的简适系列（有一次性内衣，即使非一次性内衣也不贵）。
-4. 长羽绒服可以穿在身上。如果出发地和目的地温差大，或目的地本身温差大的话，选择轻型羽绒服，甚至轻型羽绒背心。
-5. 美利奴羊毛衫比较轻便，透气纤维也比较适合温差大的环境。
-6. 如果运动量较大，或环境比较潮湿，可以选择AIRism之类透气性强的面料。不推荐HEATTECH之类吸汗保暖的面料，增温效果未必有多好，却显著降低舒适性。
-7. 轻便衣物的多层次搭配，是应对温差大的环境的秘方。
-7. 尽量少带鞋子。鞋子内部可以塞别的东西，比如袜子。
+1. Choose lightweight clothing. For example, avoid heavy leather coats.
+2. Choose soft clothing that can be rolled up for storage. Avoid clothing that cannot be rolled up.
+3. If underwear is insufficient, it can be purchased along the way. For example, Walmart's Comfort series (includes disposable underwear, and even non-disposable underwear is inexpensive).
+4. Long down jackets can be worn on the body. If there's a large temperature difference between departure and destination, or if the destination itself has large temperature variations, choose lightweight down jackets or even lightweight down vests.
+5. Merino wool sweaters are relatively lightweight, and breathable fibers are also suitable for environments with large temperature differences.
+6. If there's high activity levels or the environment is relatively humid, you can choose fabrics with strong breathability like AIRism. I don't recommend fabrics like HEATTECH that absorb sweat for warmth - the heating effect may not be that good, but it significantly reduces comfort.
+7. Multi-layered combinations of lightweight clothing are the secret to dealing with environments with large temperature differences.
+7. Try to bring as few shoes as possible. The inside of shoes can be stuffed with other things, like socks.

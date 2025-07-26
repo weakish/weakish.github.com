@@ -1,23 +1,23 @@
-想到一个 twitter 的翻译，粥粥（zhu⁴ zhu⁴）。【唐】韓愈《雉朝飛操》詩：「隨飛隨啄，群雌粥粥。」
+Thought of a Twitter translation: "zhu zhu" (粥粥). [Tang] Han Yu's poem "The Pheasant Flies at Dawn": "Flying and pecking as they go, the flock of hens chattering."
 
 -- [2017-08-19 09:55](http://fanfou.com/statuses/kPaEFHQbnpU)
 
-克隆本地倉庫，不是特別大的情況下，還是 `git clone --no-hardlinks` 吧。節省一點磁盤空間，相比在其中一個倉庫 rewrite history 污染另一個倉庫的風險，真的是不值得 (如果已經掉坑了，可以用 git reflog 找回丟失的 commit)
+When cloning local repositories, if they're not particularly large, it's better to use `git clone --no-hardlinks`. Saving a bit of disk space is really not worth the risk of polluting another repository when rewriting history in one of them (if you've already fallen into this trap, you can use git reflog to recover lost commits).
 
 -- [2017-08-20 22:03](http://fanfou.com/statuses/zWAvX8q_oCY)
 
-饭否 web 需要登录才能查看用户发的推。好在通过 api 无需登录就可以看 http://t.cn/RC6Z13Q (api 文档中用的是 http, 实际上 https 也可以
+Fanfou web requires login to view user posts. Fortunately, through the API you can view without logging in http://t.cn/RC6Z13Q (the API documentation uses http, but https actually works too).
 
 -- [2017-08-22 10:33](http://fanfou.com/statuses/vRHkqrVvq1Q)
 
-SSD 的一大好处就是插 USB 的时候可以把机器调整到一个便于发力的角度。
+One major benefit of SSDs is that when plugging in USB, you can adjust the machine to an angle that's convenient for applying force.
 
 -- [2017-08-24 11:31](http://fanfou.com/statuses/dz2UQfaWjL8)
 
-发现国产保护月我好像比平时去影院看了更多进口片——因为进口片都推迟放映（相比海外），我能获得的信息更多，也就更敢买票了。
+I found that during domestic film protection month, I actually went to theaters to watch more imported films than usual - because imported films are delayed (compared to overseas releases), I can get more information about them, so I dare to buy tickets more readily.
 
 -- [2017-08-26 17:40](http://fanfou.com/statuses/4h6ujACgoKQ)
 
-布歌东京也卖蛋糕和饼干了。原先不是号称只做布丁的么？
+Buge Tokyo is now selling cakes and cookies too. Didn't they originally claim to only make pudding?
 
 -- [2017-09-05 15:48](http://fanfou.com/statuses/Lyxrc2W3pFU)

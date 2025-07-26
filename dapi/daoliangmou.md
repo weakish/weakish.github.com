@@ -1,1 +1,1 @@
-粱謂粟之精良者，北地產稻稀少，二者皆不易得，故古人往往以稻粱連稱。是「稻粱謀」非同於「餬口」也。今粱、稻皆易得，則時移世易矣！
+Liang (粱) refers to the finest quality millet. Rice was rarely produced in the northern regions, and both were not easy to obtain, so the ancients often referred to them together as "rice and fine millet" (稻粱). Thus "seeking rice and fine millet" (稻粱謀) is not the same as merely "making ends meet" (餬口). Now that both fine millet and rice are easily available, times have indeed changed!
