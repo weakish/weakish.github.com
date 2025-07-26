@@ -1,3 +1,9 @@
+---
+wnpp:
+    type: O
+    description: "Not interested in this game anymore."
+---
+
 # 金庸群侠传 3 作弊教程
 
 修改原理

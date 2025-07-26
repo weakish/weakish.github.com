@@ -1,3 +1,9 @@
+---
+wnpp:
+    type: O
+    description: "Not interested in this game anymore."
+---
+
 # 金庸群侠传3古墓版攻略
 
 建立角色篇

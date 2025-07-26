@@ -1,3 +1,9 @@
+---
+wnpp:
+    type: O
+    description: "Chinese labor law is a mess in practice."
+---
+
 # 劳动法
 
 ## 劳动关系和劳务关系

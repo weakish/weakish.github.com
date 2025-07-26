@@ -1,3 +1,7 @@
+---
+removal: obsolete
+---
+
 Flutter试玩
 ===========
 

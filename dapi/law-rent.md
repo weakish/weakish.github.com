@@ -1,3 +1,10 @@
+---
+wnpp:
+    type: O
+    description: "May be obsolete."
+---
+
+
 # 房屋租赁
 
 ## 合同
