@@ -1,4 +1,8 @@
-# Artificial Intelligence
+weakish (Sep 11, 2023). Introduction to Artificial Intelligence.
+
+---
+
+# Introduction to Artificial Intelligence
 
 ## Prerequisites
 
@@ -616,3 +620,7 @@ From Bayesian networks to neural networks, guessing methods become increasingly 
 Neural networks, which are highly dependent on machine brute force, have become a universal paradigm for solving machine learning problems across various domains.
 Elegant logic failed to achieve general intelligence, while brute force neural networks, supported by continuously growing computational power, are progressing toward universality.
 This is quite an unexpected development.
+
+## Credits
+
+This article is originally written in Chinese by weakish, then translated into English by GPT-4.1, with some minor adjustments by Claude Sonnet 4 and weakish.
