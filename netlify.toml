@@ -104,9 +104,15 @@
 
 [[redirects]]
     from = "/dapi/no-blog/"
-    to = "/dapi/not-a-blog/"
+    to = "/thoughts/blog/"
     status = 301
     force = true
+
+[[redirects]]
+    from = "/dapi/not-a-blog/"
+    to = "/thoughts/blog/"
+    status = 301
+    force = true    
 
 [[redirects]]
     from = "/dapi/windows-handbook/"
