@@ -133,6 +133,12 @@
     force = true
 
 [[redirects]]
+    from = "/dapi/zhuzhu/"
+    to = "/dapi/log/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/teapot"
     to = "https://teapot.onrender.com"
     status = 200
