@@ -118,7 +118,7 @@ On macOS, I use [PaperWM.spoon][paperwm], a tiled scrollable window manager.
     Sometimes I also use color films produced by Kodak or Fujifilm.
     I use Ilford HP5 Plus pushed two or three stops for low light.
 
-## Wear
+## Shoes
 
 I used to prefer [vintage style running shoes][thedeffest], those revised [models] originated from [1960s] to [1980s], [light and comfort][ad].
 However, I found out that their toe boxes are narrow.
@@ -155,9 +155,22 @@ Zerodrop, hybrid outsole for both road and trail, red foam and rainbow straps.
 [v-run]: https://www.vibram.com/us/shop/fivefingers/men/v-run-mens/M31_2_IvoryYellow.html
 [altra]: https://www.altrarunning.com/en-us/gym-training/mens-solstice-xt-3/AL0A85Q5.html?dwvar_AL0A85Q5_color=110
 
+All my shoes can be used for running, except for sandals I wear indoors.
+
+## Clothes
+
+I chose clothes based on the following principles:
+
+1. Lightweight for comfort and ease of carrying. Multi-layered combinations of lightweight clothes handle temperature differences well.
+2. Can be rolled up to reduce storage space.
+3. Cotton and linen for everyday wear, comfortable, machine washable under high water temperature for hygiene, and fast to dry in a dryer.
+4. Speed drying materials like AIRism for intense activities.
+5. Prefer Merino to HEATTECH. I feel the HEATTECH is not so good for warmth but it is very uncomfortable, while Merino is lightweight and breathable. I chose machine-washable Merino clothes, which can be washed inside a mesh bag or pillowcase in the gentle mode of a washing machine with pH-neutral detergent. When traveling, sometimes I use shampoo instead since Merino is basically sheep's hair. When using shampoo, I reduce the amount to avoid washing machine foam overflow. Merino is not suitable for a dryer, so I dry it flat on a rack, to avoid the weight of water stretching and deforming the clothes when hanging it on a hanger.
+
+
 ## Drink
 
-Water, milk, and Juice.
+Water, milk (cow and soy), and Juice.
 I seldom drink coffee or tea, and almost never drink alcohol.
 However, I do like drinking chocolate.
 

@@ -112,7 +112,19 @@
     from = "/dapi/not-a-blog/"
     to = "/thoughts/blog/"
     status = 301
-    force = true    
+    force = true
+
+[[redirects]]
+    from = "/dapi/packaging/"
+    to = "/uses/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dapi/wash-clothes/"
+    to = "/uses/"
+    status = 301
+    force = true
 
 [[redirects]]
     from = "/dapi/windows-handbook/"
