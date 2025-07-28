@@ -121,6 +121,12 @@
     force = true
 
 [[redirects]]
+    from = "/dapi/redman/"
+    to = "/lang/redman/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/dapi/wash-clothes/"
     to = "/uses/"
     status = 301

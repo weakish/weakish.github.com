@@ -1,4 +1,0 @@
-Red Barbarians
-===============
-
-In Hirose Tanso's "Seeing Off Someone Taking Office in Nagasaki" (written in Bunka 5-6 [1808-1809]), there is a line "The intentions of the red barbarians are hard to fathom," with the author's note: "Recently the red people have applied for trade." Okamura Shigeru's annotation states that "red barbarians" refers to Russians, and this line refers to the event in the ninth month of Bunka 1 (1804) when a Russian ship entered Nagasaki and the Russian envoy Rezanov applied for trade. (From Okamura Shigeru's work, translated by Yu Weici, "Selected Annotations on Edo Chinese Poetry," in Okamura Shigeru Complete Works Volume 8, "Selected Commentaries on the Correct Meaning and Annotations of the Book of Songs (Plus Two Other Works)," pp. 526-527, Shanghai: Shanghai Ancient Books Publishing House, June 2009, ISBN 978-7-5325-5110-1)
