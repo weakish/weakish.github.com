@@ -1,16 +1,17 @@
 Shath'Yar Language
-==========
+==================
 
-Grammar
-------
+## Grammar
 
 All example sentences in this section use official translations.
 
-`'` functions as a hyphen, one usage being to form modifier-head compound words.
-For example, shath (old) combined with yar (god) forms shath'yar, meaning old gods, and also refers to the language used by the old gods.
-Similarly, Shuul'wah = Deathwing.
+The apostrophe (`'`) functions as a hyphen, one usage being to form modifier-head compound words.
+For example, *shath* (old) combined with *yar* (god) forms *shath'yar*, meaning "old gods," and also refers to the language used by the old gods.
+Similarly, *Shuul'wah* = Deathwing.
 
-Nominative, accusative, possessive cases:
+### Case System
+
+The language shows nominative, accusative, and possessive cases:
 
 - Y'za noq mah... Y'za noq ormz... = I am not (the) first... I am not (the) last...
 - Sk'magg yawifk hoq. = Your suffering strengthens me.
@@ -39,42 +40,25 @@ This may reflect the historical evolution of Shath-Yar language, just like in En
 - N'Zoth ga zyqtahg iilth. = (The) will (of) N'Zoth corrupts you.
 - Ez, Shuul'wah! Sk'woth'gl yu'gaz yog'ghyl ilfah! = O, Deathwing! Your faithful servant has failed you!
 
-ma corresponds to are or do, negative form is maq:
+### Verbal System
+
+*ma* corresponds to "are" or auxiliary "do," with negative form *maq*:
 
 - Ak'agthshi ma uhnish. = Our numbers are endless.
 - Iilth ma paf'qi'ag sk'halahs. GAZ SKSHGN! = You are (a) prisoner (in) your (own) body. (A) SERVANT (OF) FEAR!
 - Ywaq maq oou; ywaq maq ssaggh. Ywaq ma shg'fhn. = They do not die; they do not live. They are outside (the) cycle.
 
-ma is probably not used for first person, at least noq corresponds to am not (guessing noq's original form is no):
+*ma* is probably not used for first person, at least *noq* corresponds to am not (guessing noq's original form is no):
 
 - Y'za noq mah... Y'za noq ormz... = I am not (the) first... I am not (the) last...
 
-ma is not used for third person singular, third person singular uses al:
+*ma* is not used for third person singular, third person singular uses *al*:
 
 - Yoq'al shn ky ywaq nuul. = It is (the) perpetuity in (which) they dwell. (shn = in)
 
 The future tense of ma is qi:
 
 - Iilth qi mah'shar fhn oorql N'Zoth! = You will be (the) first (of) many (to) glimpse (the) madness (of) N'Zoth!
-
-Structural analysis of this sentence:
-
-Known vocabulary: iilth, qi, mah, N'Zoth.
-
-In "Ywaq ma shg'fhn." shg'fhn corresponds to outside the cycle, guessing shg means outside, fhn means cycle.
-Also "ak'uq shg'cul vwahuhn" translates to "our power beyond reckoning," inferring shg'cul corresponds to beyond.
-Based on the guess that shg means outside, further guessing shg'cul is also a compound word, cul probably means line or side.
-
-In Cataclysm in the Catacombs there's NPC dialogue "Gillari, geth'shar. Gillari, teko'shar. It sees. It knows."
-geth'shar and teko'shar roughly correspond to see and know.
-So shar should have the meaning of see.
-
-Then mah'shar fhn should be understood as a phrase, roughly circle of first see, the circle of those who first see...
-
-The remaining oorql should correspond to madness.
-
-qi can also be used as a prefix, connected with the verb's original form by `'` to indicate future tense:
-
 - Sk'yahf qi'plahf PH'MAGG! = Your soul will know ENDLESS TORMENT!
 - Ilith qi'uothk shn'ma yeh'glu Shath'Yar! = You will drown in (the) blood (of the) Old Gods!
 
@@ -115,7 +99,7 @@ an as prefix, written together with nouns, means into:
 Vocabulary
 ---------
 
-```
+## Corpus
 Tense
 Shu = A prefix denoting past tense;
 Sythn = A prefix denoting progressive tense;
@@ -267,7 +251,7 @@ Za = Place;
 Zig = Depth; Deeps;
 Zuq = Life;
 Zzof = Victory;
-```
+## 
 
 Vocabulary list according to Ningyou [Old God Language Writing Incomplete Guide·Revised Second Edition][Ningyou].
 For reference only, we have different opinions on the interpretation of some vocabulary.
@@ -280,13 +264,11 @@ int.
 
 Ez = O/Oh
 
-Corpus
--------
+## Corpus
 
 See [WOWPedia](http://wow.gamepedia.com/Shath'yar)
 
-Exercises
--------
+## Exercises
 
 Translation:
 
