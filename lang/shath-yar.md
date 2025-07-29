@@ -292,7 +292,7 @@ For example, *Ez* means *O* or *Oh*.
 
 See [WOWPedia](http://wow.gamepedia.com/Shath'yar)
 
-## Exercises
+## Quiz
 
 Translate the following sentences.
 
@@ -341,7 +341,7 @@ The alliteration of the original text is not preserved.
 
 Similarly, work around with unknown vocabulary.
 
-> Agth uq eqnizz ilfah.
+> Uq agth eqnizz ilfah.
 
-This literally translates to "Shall (the) power drive you."
+This literally translates to "Power shall drive you."
 The closest translation I can think of.
