@@ -133,6 +133,12 @@
     force = true
 
 [[redirects]]
+    from = "/dapi/shath-yar/"
+    to = "/lang/shath-yar/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/dapi/shuoba-xizang/"
     to = "/zk/Register/NingKen2013/"
     status = 301
