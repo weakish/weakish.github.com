@@ -103,6 +103,12 @@
     force = true
 
 [[redirects]]
+    from = "/dapi/bole/"
+    to = "/thoughts/hakuraku/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/dapi/no-blog/"
     to = "/thoughts/blog/"
     status = 301
