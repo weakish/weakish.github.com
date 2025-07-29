@@ -1,121 +1,119 @@
-# 《铃丰的恋物语与剑道社》「用感觉来写」的文学追求：以语法特征分析为中心
+# "Lingfeng's Love Story and Kendo Club": The Literary Pursuit of "Writing with Feeling" - A Grammar-Centered Analysis
 
-摘要
+Abstract
 ----
 
-本文以初音《铃丰的恋物语与剑道社》《简介》、《序章》《第一话》语法特征分析为基础，
-揭示了「感觉」、「你」特殊用法背后「用感觉来写」的文学追求。
+This paper analyzes the grammatical features of Hatsune's "Lingfeng's Love Story and Kendo Club" in the "Introduction," "Prologue," and "Chapter One," revealing the literary pursuit of "writing with feeling" behind the special usage of "feeling" (感觉) and "you" (你).
 
-《简介》
+Introduction
 ------
 
-> 铃丰是个剑道社的社长，
-> 他家里面还有个妹妹，是天依，你是妹妹是个厨师，
+> Lingfeng is the president of the kendo club,
+> He also has a younger sister at home, who is Tianyi, you are the sister and a chef,
 
-用「你」指代前面提及的人物，视为「我」对指代人物说的话，即「天依，你是妹妹，是个厨师」。这里「我」是作者。「天依是妹妹是个厨师」只是平常的陈述，而「你是妹妹是个厨师」，突出了「妹妹」、「厨师」是作者的设定，同时给人作者正在进行设定的感觉。这种用法体现了强烈的虚构色彩，读者仿佛在现场亲历作者给出人设的场景。正如作者反驳读者评论「恕我直言，这语言障碍症不轻啊。」所言「我是写文学作品的」。
+Using "you" (你) to refer to previously mentioned characters, treating it as words the "I" (author) says to the referenced character, namely "Tianyi, you are the sister and a chef." Here "I" is the author. "Tianyi is the sister and a chef" is just ordinary narration, while "you are the sister and a chef" emphasizes that "sister" and "chef" are the author's character settings, while giving the feeling that the author is actively creating these settings. This usage manifests strong fictional coloring, making readers feel as if they are witnessing the author assigning character traits in real time. As the author countered a reader's comment "Frankly speaking, this language disorder is quite severe" by saying "I am writing literary works."
 
-注：「有个妹妹，是天依」用「是」分隔同位语。类似地，《第一话》「天气是阳光明媚」，分隔主语、谓语。（与本文主题无关，为帮助理解引文的说明，以「注：」标识。）
+Note: "has a younger sister, who is Tianyi" uses "is" (是) to separate appositive elements. Similarly, in "Chapter One," "the weather is sunny and bright" separates subject and predicate. (This explanation marked with "Note:" helps understand quotations but is unrelated to the main topic.)
 
-> 铃丰社团四个成员，是小林、小海、小冰、灰哥是剑道社副社长，你一起打进比赛朋友吗。
+> Lingfeng has four club members: Xiaolin, Xiaohai, Xiaobing, and Brother Hui who is the vice president of the kendo club, are you friends who competed together in the tournament?
 
-「你」这里指代「铃丰」，凸显了作者给主角设定了一个朋友。
+Here "you" (你) refers to "Lingfeng," highlighting that the author has given the protagonist a friend.
 
-注：这里的「是」仍然是分隔同位语「灰哥」和「剑道社副社长」。「吗」为语气词，不表疑问，为陈述语气。
+Note: The "is" (是) here still separates the appositive "Brother Hui" and "vice president of the kendo club." The "ma" (吗) is a modal particle that doesn't indicate a question but rather declarative mood.
 
-> 铃丰在学校里面喜欢女同学，你叫未来，是在班上喜欢的。
+> Lingfeng likes a female classmate at school, you are called Mirai, whom he likes in his class.
 
-这里「你」指代女同学，「是在班上喜欢的」补充说明「在学校」。
-注意这里「未来」用了「你」，而前一句没有用「你」。
-「铃丰，你在学校里面喜欢女同学」，会突出铃丰喜欢女同学是作者设定，
-而作者并不想突出这一点，所以没用「你」。
-也就是说，虽然作者喜欢用「你」突出虚构性，
-但是铃丰作为第一主角，作者将自己代入了，如作者本人所说「铃丰感觉，就是我的感觉」。
-因此不希望铃丰的感情是虚构的。
-对比前文天依、灰哥，可见妹妹、朋友只是设定，并不是作者最关心的。
+Here "you" (你) refers to the female classmate, and "whom he likes in his class" supplements the explanation of "at school."
+Note that here "Mirai" uses "you," while the previous sentence didn't use "you."
+"Lingfeng, you like a female classmate at school" would emphasize that Lingfeng liking female classmates is the author's setting,
+but the author doesn't want to emphasize this point, so "you" isn't used.
+In other words, although the author likes using "you" to highlight fictionality,
+since Lingfeng is the main protagonist, the author has projected himself into the character, as the author himself said "Lingfeng's feelings are my feelings."
+Therefore, he doesn't want Lingfeng's emotions to feel fictional.
+Comparing with the previous mentions of Tianyi and Brother Hui, we can see that sister and friend are just settings, not what the author cares most about.
 
 
-第一话
+Chapter One
 -----
 
-> ... 未来感觉大家好想和我一起坐“救命啊，可以不要太多一起坐”，
+> ... Mirai felt everyone seemed to want to sit with me "Help me, can we not have so many people sitting together,"
 
 
-「感觉」引出主语的心理活动。引号用于标识心理活动中的内心独白。
+"Feeling" (感觉) introduces the subject's psychological activity. Quotation marks are used to identify inner monologue within psychological activity.
 
-注：「未来」为女主角人名。「救命啊，可以不要太多一起坐」体现了异于通常语法的省略。
+Note: "Mirai" (未来) is the female protagonist's name. "Help me, can we not have so many people sitting together" demonstrates ellipsis that differs from usual grammar.
 
-> 她感觉感觉看到男生“真的好帅气”“老师你叫什么名字”，
+> She felt (felt) seeing a male student "really so handsome" "teacher what is your name,"
 
-第一个「感觉」引出主语的心理活动，第二个「感觉」强调是主观感觉。
-表面重复，其实不重复。
+The first "feeling" (感觉) introduces the subject's psychological activity, the second "feeling" (感觉) emphasizes it is a subjective feeling.
+It appears repetitive on the surface, but actually isn't repetitive.
 
-这里的「你」指代看到的男生（实为男主），而不是老师。
-这里「（帅气男生）你叫什么名字」中的「我」不是作者本人，而是女主「未来」。
-女主实际会说「老师他叫什么名字，以免老师误以为是问老师自己的名字，
-但是在文本是写为「你」，这一语法体现了女主虽然表面是问老师，实际心里是在和男主「对话」。
+Here "you" (你) refers to the male student she sees (actually the male protagonist), not the teacher.
+Here in "(handsome male student) what is your name," the "I" is not the author himself, but the female protagonist "Mirai."
+The female protagonist would actually say "teacher, what is his name" to avoid the teacher mistaking that she's asking about the teacher's own name,
+but in the text it's written as "you," this grammar reflects that although the female protagonist appears to be asking the teacher on the surface, she's actually having a "dialogue" with the male protagonist in her heart.
 
-这两个语法特征都是突出心理活动的。正如作者本人所说「我是把心理面，全部写出来」。
+These two grammatical features both highlight psychological activity. As the author himself said "I write out all the psychological aspects."
 
-当然，还有一种可能成立的解释，女主实际也说「老师你叫什么名字」，
-在现实中可能导致误解，但因为女主和老师都是作者虚构的人物，当然知道对方在说什么。
-用「你」指代男主，仍体现女主心里是在和男主「对话」。
+Of course, there's another possible valid explanation: the female protagonist actually also says "teacher, what is your name,"
+which might cause misunderstanding in reality, but since both the female protagonist and teacher are fictional characters created by the author, they naturally know what the other is saying.
+Using "you" to refer to the male protagonist still reflects that the female protagonist is having a "dialogue" with the male protagonist in her heart.
 
-> 老师感觉“你说是谁”，
+> The teacher felt "who are you talking about,"
 
-这里的引号标识的是说出来的话，前面的「感觉」，表明这话正是老师心里所想，
-换言之，是说出来的内心独白。
-老师作主语，与未来对话，从老师的角度，当然用「你」。
-这种一致性说明老师说出来的话和其内心话语是一致的。
+Here the quotation marks identify spoken words, and the preceding "feeling" (感觉) indicates this is exactly what the teacher thinks,
+in other words, it's spoken inner monologue.
+With the teacher as subject, in dialogue with Mirai, naturally "you" is used from the teacher's perspective.
+This consistency shows that what the teacher says aloud and his inner speech are consistent.
 
-> 未来感觉不知道我说什么“我指给你看”，就指了过去，老师感觉看到未来手指头，就知道是谁
+> Mirai felt she didn't know what I was saying "I'll point it out for you," so she pointed over, the teacher felt seeing Mirai's finger, he knew who it was
 
-这里的「感觉」突出「看到未来手指头，就知道是谁」是老师的想法
+Here "feeling" (感觉) emphasizes that "seeing Mirai's finger, he knew who it was" is the teacher's thought
 
-> 老师感觉“是不是好想铃丰坐在一起”，未来感觉“没有啊，我只是想知道你的名字”
-> 老师感觉看到好想没什么位子，就说道：“不要啊，你真的帅了”，
+> The teacher felt "do you really want to sit together with Lingfeng," Mirai felt "no, I just want to know your name"
+> The teacher felt seeing there really weren't many seats, so he said: "No way, you're really handsome,"
 
-这里的「你」仍指男主，表明老师也真心觉得男主帅，表面对女主说，心里是对男主说。
+Here "you" (你) still refers to the male protagonist, indicating that the teacher also genuinely thinks the male protagonist is handsome, speaking to the female protagonist on the surface but speaking to the male protagonist in his heart.
 
-注：「不要啊」省略「不想和铃丰坐在一起」。
+Note: "No way" (不要啊) omits "don't want to sit together with Lingfeng."
 
-> ... 未来感觉想写告白，因为我想在舞台上和铃木告白，
-> 你写出歌名，还在继续写歌词了。
+> ... Mirai felt like writing a love confession, because I want to confess to Suzuki on stage,
+> you write out the song title, and continue writing lyrics.
 
-这里「你」强调作者在进行设定。
-上一句用「我」，突出告白是未来自己的意愿（不想在此处突出女主喜欢男主是作者设定），
-写歌由于和人设密切相关，所以用「你」。
+Here "you" (你) emphasizes the author is making character settings.
+The previous sentence uses "I" to highlight that the confession is Mirai's own will (not wanting to emphasize here that the female protagonist liking the male protagonist is the author's setting),
+since songwriting is closely related to character design, "you" is used.
 
-同类的例子有《序章》第一句话：
+Similar examples include the first sentence of the "Prologue":
 
-> 铃丰感觉“我叫铃丰，是高一学生，也是学校里面的老同学”
-> 铃丰感觉没有一个在学校的女同学知道你是肌肉的身体和台湾的脸型，
-> 在你们女生面前，我就是一个男神“真的好帅气”，也不知道有多少女同学喜欢上我，
+> Lingfeng felt "My name is Lingfeng, I'm a first-year student, and also an old classmate at school"
+> Lingfeng felt that no female classmate at school knows you have a muscular body and Taiwanese facial features,
+> in front of you girls, I am a male god "really so handsome," and I don't know how many female classmates have fallen for me,
 
-这里肌肉身体、台湾脸型，用「你」突出是人设。
-「在你们女生面前，我就是一个男神」，和「不知道有多少女同学喜欢上我」同样是不想突出男神是作者设定。
-「高一学生，也是学校里面的老同学」本来是设定，但因为前面是「我叫铃丰」，也连带不用「你」了，
-这样也更像内心独白的自我介绍。姓名和个人密切相关，例如「张三」给人虚构的感觉，因此不用「你」。
+Here muscular body and Taiwanese facial features use "you" to highlight they are character settings.
+"In front of you girls, I am a male god" and "don't know how many female classmates have fallen for me" similarly don't want to highlight that being a male god is the author's setting.
+"First-year student, and also an old classmate at school" was originally a setting, but because it follows "My name is Lingfeng," it also doesn't use "you,"
+making it more like inner monologue self-introduction. Names are closely related to individuals, for example "Zhang San" gives a fictional feeling, so "you" isn't used.
 
-如前所述，不想用「你」突出虚构性是为了避免影响代入性。
-实际上，这一语法也起到了区分可代入部分和难代入部分的作用。
-很多男性读者会代入「男神」，「不知道有多少女同学喜欢上我」，较少代入「肌肉身体」，很少代入「台湾脸型」。
+As mentioned before, not wanting to use "you" to highlight fictionality is to avoid affecting immersion.
+Actually, this grammar also serves to distinguish immersible parts from hard-to-immerse parts.
+Many male readers would immerse themselves in "male god," "don't know how many female classmates have fallen for me," fewer would immerse in "muscular body," and very few in "Taiwanese facial features."
 
 
-结论
+Conclusion
 ----
 
-《铃丰的恋物语与剑道社》独特的语法，很多只是作者的习惯，例如作者在评论（接近日常语言）中说「在学校同学，对我说不喜欢话」，一般习惯在「在学校」后断句，作者在「同学」后断句，说明作者习惯上认为主语和谓语间隔较远，作品中用「是」区隔主语、谓语正体现作者这一习惯。
+Many of the unique grammatical features in "Lingfeng's Love Story and Kendo Club" are just the author's habits, for example the author says in comments (close to everyday language) "classmates at school, told me they don't like to talk," where normal habit would pause after "at school," but the author pauses after "classmates," showing the author habitually considers the subject and predicate to be far apart, and using "is" (是) to separate subject and predicate in the work reflects this habit of the author.
 
-但用「感觉」引出心理活动，用「你」展现人物的内心话语，则体现了作者对「心理面」描写的注重。
-用「你」体现人设的虚构性，起到区分可代入与难以代入成分的作用，可视为对读者「心理面」的描写。
+But using "feeling" (感觉) to introduce psychological activity, using "you" (你) to show characters' inner speech, reflects the author's emphasis on describing the "psychological aspects."
+Using "you" to reflect the fictionality of character settings, serving to distinguish immersible from hard-to-immerse components, can be seen as describing readers' "psychological aspects."
 
-作者在回复《铃丰的恋物语与剑道社》读者评论时提出了对日本轻小说的文学批评：
+The author proposed literary criticism of Japanese light novels when replying to reader comments on "Lingfeng's Love Story and Kendo Club":
 
-> 我自己一开始看日本轻小说，什么看的吗，
-> 用了三种方法，第一个看到，第二个想到，第三个是感觉。
-> 我用三种方法去看，发现日本轻小说，是用感觉来写的轻小说的。
+> When I first started reading Japanese light novels, what did I read,
+> I used three methods, the first was seeing, the second was thinking, the third was feeling.
+> Using these three methods to read, I discovered that Japanese light novels are light novels written with feeling.
 
-姑且不论这一批评观是否合理，至少能说明「用感觉来写」是作者的文学创作追求，「用感觉来读」是作者认可的阅读方法。
+Regardless of whether this critical view is reasonable, it at least shows that "writing with feeling" is the author's literary creative pursuit, and "reading with feeling" is the reading method the author endorses.
 
-用「感觉」引出心理活动，用「你」展现人物的内心话语，注重对人物「心理面」的描写，体现了作者「用感觉来写」的文学创作追求；用「你」体现人设的虚构性，起到区分可代入与难以代入成分的作用，可视为对读者「心理面」的描写，是作者促使读者「用感觉来读」文学创作尝试，与「用感觉来写」相呼应。
-
+Using "feeling" (感觉) to introduce psychological activity, using "you" (你) to show characters' inner speech, emphasizing description of characters' "psychological aspects," reflects the author's literary creative pursuit of "writing with feeling"; using "you" to reflect the fictionality of character settings, serving to distinguish immersible from hard-to-immerse components, can be seen as describing readers' "psychological aspects," which is the author's literary creative attempt to encourage readers to "read with feeling," echoing "writing with feeling."

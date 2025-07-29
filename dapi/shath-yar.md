@@ -1,118 +1,118 @@
-Shath'Yar 语
+Shath'Yar Language
 ==========
 
-语法
+Grammar
 ------
 
-本节所有例句采用官方翻译。
+All example sentences in this section use official translations.
 
-`'`相当于连字符，其中一个用法是构成偏正结构的复合词。
-例如shath(old)加上yar(god)构成shath'yar，意为old gods，也指old gods使用的语言。
-类似地，Shuul'wah = Deathwing.
+`'` functions as a hyphen, one usage being to form modifier-head compound words.
+For example, shath (old) combined with yar (god) forms shath'yar, meaning old gods, and also refers to the language used by the old gods.
+Similarly, Shuul'wah = Deathwing.
 
-主格、宾格、所有格：
+Nominative, accusative, possessive cases:
 
 - Y'za noq mah... Y'za noq ormz... = I am not (the) first... I am not (the) last...
 - Sk'magg yawifk hoq. = Your suffering strengthens me.
 - Uulwi ifis halahs gag erh'ongg w'ssh. = (The) shadow (of) my corpse will choke (this) land for all eternity.
 
-类似英语，第二人称的主格和宾格同形（iilth）：
+Like English, the second person nominative and accusative have the same form (iilth):
 
 - Iilth ma paf'qi'ag sk'halahs. =  You are a prisoner (in) your own body.
 - N'Zoth ga zyqtahg iilth. = The will of N'Zoth corrupts you.
 
-作主语时，所有格和名词间用`'`连接，作宾语时所有格和名词直接相连：
+When used as subject, possessive and noun are connected with `'`, when used as object the possessive and noun are directly connected:
 
 - Sk'shgn eqnizz hoq. = Your fear drives me.
 - Ywaq puul skshgn. = They drink your fear.
 
-第一人称复数的主格和所有格、第一人称复数和第二人称的所有格很齐整：
+The first person plural nominative and possessive, and the possessive forms of first person plural and second person are quite regular:
 
 - Ag'THYZAK agthu. = We RECLAIM (this) world!
-- Ak'agthshi ma uhnish. = Our numbers are endles.
+- Ak'agthshi ma uhnish. = Our numbers are endless.
 - Sk'uuyat guulphg hoq. = Your agony sustains me.
 
-但第二人称的主格为iilth，宾格为ilfah（或原形）。
-这可能体现Shath-Yar语的历史演变，就像英语里第二人称主格、宾格原本不同（thou/ye, thee/you)，后来统一。
+But the second person nominative is iilth, accusative is ilfah (or original form).
+This may reflect the historical evolution of Shath-Yar language, just like in English the second person nominative and accusative were originally different (thou/ye, thee/you), but later unified.
 
 - Iilth ma paf'qi'ag sk'halahs. GAZ SKSHGN! = You are a prisoner in your own body. A SERVANT OF FEAR!
 - N'Zoth ga zyqtahg iilth. = (The) will (of) N'Zoth corrupts you.
 - Ez, Shuul'wah! Sk'woth'gl yu'gaz yog'ghyl ilfah! = O, Deathwing! Your faithful servant has failed you!
 
-ma相当于are或do，否定形态为maq:
+ma corresponds to are or do, negative form is maq:
 
-- Ak'agthshi ma uhnish. = Our numbers are endles.
+- Ak'agthshi ma uhnish. = Our numbers are endless.
 - Iilth ma paf'qi'ag sk'halahs. GAZ SKSHGN! = You are (a) prisoner (in) your (own) body. (A) SERVANT (OF) FEAR!
 - Ywaq maq oou; ywaq maq ssaggh. Ywaq ma shg'fhn. = They do not die; they do not live. They are outside (the) cycle.
 
-ma可能不用于第一人称，至少noq相当于am not（猜想noq的原形为no）：
+ma is probably not used for first person, at least noq corresponds to am not (guessing noq's original form is no):
 
 - Y'za noq mah... Y'za noq ormz... = I am not (the) first... I am not (the) last...
 
-ma不用于第三人称单数，第三人称单数用al:
+ma is not used for third person singular, third person singular uses al:
 
-- Yoq'al shn ky ywaq nuul. = It is (the) perpetuity in (which) they dwell. (sha = in)
+- Yoq'al shn ky ywaq nuul. = It is (the) perpetuity in (which) they dwell. (shn = in)
 
-ma的将来时为qi：
+The future tense of ma is qi:
 
 - Iilth qi mah'shar fhn oorql N'Zoth! = You will be (the) first (of) many (to) glimpse (the) madness (of) N'Zoth!
 
-本句的结构分析：
+Structural analysis of this sentence:
 
-已知词汇：iilth, qi, mah, N'Zoth.
+Known vocabulary: iilth, qi, mah, N'Zoth.
 
-「Ywaq ma shg'fhn. 」中shg'fhn对应outside the cycle，猜想shg意为outside，fhn意为cycle.
-又「ak'uq shg'cul vwahuhn」翻译为「our power beyond reckoning」，推断shg'cul对应beyond.
-基于shg意为outside的猜想，进一步猜想shg'cul也是合成词，cul大概是line或side的意思。
+In "Ywaq ma shg'fhn." shg'fhn corresponds to outside the cycle, guessing shg means outside, fhn means cycle.
+Also "ak'uq shg'cul vwahuhn" translates to "our power beyond reckoning," inferring shg'cul corresponds to beyond.
+Based on the guess that shg means outside, further guessing shg'cul is also a compound word, cul probably means line or side.
 
-Cataclysm in the Catacombs中有NPC台词「Gillari, geth'shar. Gillari, teko'shar. It sees. It knows.
-geth'shar和teko'shar大约对应see和know.
-那么shar应该有see的意思。
+In Cataclysm in the Catacombs there's NPC dialogue "Gillari, geth'shar. Gillari, teko'shar. It sees. It knows."
+geth'shar and teko'shar roughly correspond to see and know.
+So shar should have the meaning of see.
 
-那么mah'shar fhn就应该作为一个词组理解，大概是circle of first see，最早见到...的圈子。
+Then mah'shar fhn should be understood as a phrase, roughly circle of first see, the circle of those who first see...
 
-最后剩下的oorql应该对应madness.
+The remaining oorql should correspond to madness.
 
-qi还可以作为前缀，以`'`与动词原形连接，表示将来时：
+qi can also be used as a prefix, connected with the verb's original form by `'` to indicate future tense:
 
 - Sk'yahf qi'plahf PH'MAGG! = Your soul will know ENDLESS TORMENT!
 - Ilith qi'uothk shn'ma yeh'glu Shath'Yar! = You will drown in (the) blood (of the) Old Gods!
 
-前面已经提到shn为in，这里的shn'ma大概衍生自sha，意思相近，可能是underneath.
+We already mentioned shn means in, shn'ma here probably derives from sha, with similar meaning, possibly underneath.
 
-也可以用gag表示将来时：
+gag can also be used to express future tense:
 
 - H'iwn iggksh Phquathi gag OOU KAAXTH SHUUL! = All (who) oppose the Destroyer will DIE A THOUSAND DEATHS!
 
-gag的名词形态为ga:
+The noun form of gag is ga:
 
 N'Zoth ga zyqtahg iilth. = The will of N'Zoth corrupts you.
 
-agth意为shall:
+agth means shall:
 
 - Sk'shuul agth vorzz N'Zoth naggwa'fssh. = Your deaths shall sing of N'Zoth's unending glory.
 - Iilth vwah, uhn'agth fhssh za. = Where one falls, many shall take its place.
 
-第二个例句直译为：You fall, many shall take place.
+The second example sentence literally translates to: You fall, many shall take place.
 
-sythn表示进行时：
+sythn indicates progressive tense:
 
 - Iilth sythn aqev... aqev... aqev... = You are going mad... mad... mad...
 - Yeh'glu N'Zoth okom hoq... Y'za sythn oou... = (The) blood (of) N'Zoth runs through me... I cannot die...
 
-第二个例句中，Y'za sythn oou直译为I am dying.
-不死族不断腐烂，不断走向死亡，可以说是不死，也可以说是正在死。
+In the second example, Y'za sythn oou literally translates to I am dying.
+Undead constantly decay, constantly approaching death, can be said to be undying, or can be said to be dying.
 
-疑问句和英语一样，将动词提前：
+Questions are like English, moving the verb forward:
 
 - Al'ksh syq iir awan? = Is this real or (an) illusion?
 
-an作前缀，与名词连写，表示into:
+an as prefix, written together with nouns, means into:
 
 - Gul'kafh an'shel. = Gaze into (the) void.
 - Gul'kafh an'qov N'Zoth. = Gaze into (the) heart (of) N'Zoth.
 
-词汇表
+Vocabulary
 ---------
 
 ```
@@ -232,7 +232,7 @@ Or = Hundred;
 Ormz = The last;
 Paf = Prisoner;
 Paf'qi'ag = One who will be our prisoner;
-Pahg = Kindom;
+Pahg = Kingdom;
 Phquati = Destroyer;
 Puul = Drink;
 Qen = Spiral;
@@ -269,26 +269,26 @@ Zuq = Life;
 Zzof = Victory;
 ```
 
-词汇表据 Ningyou [古神语写作不完全指北·修订第二版][Ningyou].
-仅作参考，部分词汇的释义我们有不同意见。
+Vocabulary list according to Ningyou [Old God Language Writing Incomplete Guide·Revised Second Edition][Ningyou].
+For reference only, we have different opinions on the interpretation of some vocabulary.
 
 [Ningyou]: http://bbs.nga.cn/read.php?tid=10021411
 
-### 增补
+### Supplement
 
 int.
 
 Ez = O/Oh
 
-语料
+Corpus
 -------
 
-见 [WOWPedia](http://wow.gamepedia.com/Shath'yar)
+See [WOWPedia](http://wow.gamepedia.com/Shath'yar)
 
-习题
+Exercises
 -------
 
-翻译：
+Translation:
 
 Q1:
 
@@ -310,19 +310,19 @@ Q4:
 
 > Hello world!
 
-A1: 这些词汇未知fire、loin、sin, 可用近义词代替：fire/fssh (glory), loin/qornaus (endless hunger), sin/uull(darkness).
+A1: These vocabulary are unknown: fire, loin, sin, can use synonyms instead: fire/fssh (glory), loin/qornaus (endless hunger), sin/uull(darkness).
 
     Razzqi ifis zuq, fssh ifis qornaus. Ifis uull. Ifis yahf.
 
-    当然原文的头韵就没法保留了。
+    Of course the alliteration of the original text cannot be preserved.
 
-A2: 同样，用近义词替换未知词汇。
+A2: Similarly, use synonyms to replace unknown vocabulary.
 
     Agth uq eqnizz ilfah.
 
-    也就是Shall (the) power drive you. 这个语义和原文其实有一段距离，不过我想不到更好的翻译了。
+    That is, Shall (the) power drive you. The semantics are actually quite distant from the original text, but I can't think of a better translation.
 
-A3: soon 未知，翻译同义句 see you again.
+A3: soon is unknown, translate the synonymous sentence see you again.
 
     Kyth ilfah ye.
 
