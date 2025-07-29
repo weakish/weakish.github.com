@@ -127,6 +127,12 @@
     force = true
 
 [[redirects]]
+    from = "/dapi/shuoba-xizang/"
+    to = "/zk/Register/NingKen2013/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/dapi/wash-clothes/"
     to = "/uses/"
     status = 301
