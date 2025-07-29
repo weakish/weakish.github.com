@@ -21,3 +21,11 @@ SSD 的一大好处就是插 USB 的时候可以把机器调整到一个便于�
 布歌东京也卖蛋糕和饼干了。原先不是号称只做布丁的么？
 
 -- [2017-09-05 15:48](http://fanfou.com/statuses/Lyxrc2W3pFU)
+
+二零零幾年淘寶早期的時候，cn的大量網站都是淘寶的彈窗廣告，十分討厭。
+過了幾年沒有了。現在支付寶對linux、mac os x的支持度也比幾年前好多了。
+所以我有一個錯覺：做大了，多少會守一點規矩。現在看來這個真是錯覺。:-()
+
+-- [Sep 16, 2012][2012-09-16] on Aliyun OS
+
+[2012-09-16]: https://plus.google.com/+JakukyoFriel/posts/JPTTkp54nZv

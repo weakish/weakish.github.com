@@ -12,14 +12,6 @@
 
     江戶年間，日人重載了「赤狄」一語（原謂春秋時狄人一支）
 
-- [稻粱謀](daoliangmou.md)
-
-    辨「稻粱謀」、「餬口」二語
-
-- [跋春秋學史](moshou.md)
-
-    徐彥等對《公羊墨守》「墨守」一詞的誤解
-
 - [跋貴妃的紅汗](bidouxiangzao.md)
 
     釋「香藻」
@@ -72,15 +64,6 @@
 ## 詩箋
 
 - [楚风儿](chufenger.md)
-
-## 算器
-
-- [AI](ai.md)
-- [少写些 HTML](avoid-html.md)
-- [Flutter试玩](flutter.md)
-- [编程入门路线](learn-programming.md)
-- [这里并不是 blog](not-a-blog.md)
-- [Windows 使用手冊](windows-handbook.md)
 
 ## 文藝
 

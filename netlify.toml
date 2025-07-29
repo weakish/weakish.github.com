@@ -91,6 +91,18 @@
     force = true
 
 [[redirects]]
+    from = "/dapi/daoliangmou/"
+    to = "/lang/rice-and-grain/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dapi/learn-programming/"
+    to = "/thoughts/learn-programming/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/dapi/bole/"
     to = "/thoughts/hakuraku/"
     status = 301
@@ -98,7 +110,49 @@
 
 [[redirects]]
     from = "/dapi/no-blog/"
-    to = "/dapi/not-a-blog/"
+    to = "/thoughts/blog/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dapi/not-a-blog/"
+    to = "/thoughts/blog/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dapi/packaging/"
+    to = "/uses/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dapi/redman/"
+    to = "/lang/redman/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dapi/shuoba-xizang/"
+    to = "/zk/Register/NingKen2013/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dapi/wash-clothes/"
+    to = "/uses/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dapi/windows-handbook/"
+    to = "/uses/windows/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/dapi/zhuzhu/"
+    to = "/dapi/log/"
     status = 301
     force = true
 
