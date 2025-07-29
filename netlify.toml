@@ -162,8 +162,6 @@
     status = 301
     force = true
 
-[[redirects]]
-    from = "/teapot"
-    to = "https://teapot.onrender.com"
-    status = 200
-    force = true
+[[edge_functions]]
+    function = "teapot"
+    path = "/teapot"
