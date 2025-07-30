@@ -46,10 +46,16 @@ Also, it has first class support for GitHub Copilot which I used a lot.
 Currently I am on its Pro plan but GitHub does not bill me for it (`SKU: free_engaged_oss`).
 
 Some of my friends are using [Cursor][] but I have not tried it yet.
-I might try it and [Windsurf][] in future.
+I might try it, [Windsurf][] and [Junie][] in future.
 
 [Cursor]: https://www.cursor.com
 [Windsurf]: https://windsurf.com/editor
+[Junie]: https://www.jetbrains.com/junie/
+
+I am also testing the agent mode of GitHub Copilot by assigning issues to Copilot.
+I might try [Devin][] in future.
+
+[Devin]: https://devin.ai
 
 ## Terminal
 
