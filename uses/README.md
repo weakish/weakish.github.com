@@ -109,10 +109,15 @@ On macOS, I use [PaperWM.spoon][paperwm], a tiled scrollable window manager.
 [WeTransfer]: https://wetransfer.com
 [SwissTransfer]: https://www.swisstransfer.com
 
-- Backup files: iCloud for my iPhone and iPad, Time machine and [Backblaze][] for my MacBook Pro, and [borg][] for Linux.
+- Backup files: iCloud for my iPhone and iPad, Time machine and [Backblaze][] [^bz] for my MacBook Pro, and [borg][] for Linux.
 
 [Backblaze]: https://secure.backblaze.com/r/04svpb "Backblaze referral link, use this link to get a free month Backblaze for you and me"
 [borg]: borg.md "Borg Tutorial"
+
+[^bz]: Backblaze usually works out of the box and I can just let it run in the background. But occasionally it is slow to pick up new files for several hours and I need to [manually trigger a rescan][bzhelp]. If even this does not work, I need to [inspect its log file][bz-log]. Be aware, Backblaze keeps the log of all file history and stores that log file on the internal drive (unrelocatable). Therefore if there is a lot of file renaming and movements, Backblaze may occupy a lot of internal disk space during years of usage. 
+
+[bzhelp]: https://www.backblaze.com/computer-backup/docs/resolve-delays-finding-external-drives-or-new-files
+[bz-log]: https://www.reddit.com/r/backblaze/comments/191gqt2/comment/kgwz6nn/
 
 ## Camera
 
