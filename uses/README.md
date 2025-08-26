@@ -178,6 +178,11 @@ I chose clothes based on the following principles:
 4. Speed drying materials like AIRism for intense activities.
 5. Prefer Merino to HEATTECH. I feel the HEATTECH is not so good for warmth but it is very uncomfortable, while Merino is lightweight and breathable. I chose machine-washable Merino clothes, which can be washed inside a mesh bag or pillowcase in the gentle mode of a washing machine with pH-neutral detergent. When traveling, sometimes I use shampoo instead since Merino is basically sheep's hair. When using shampoo, I reduce the amount to avoid washing machine foam overflow. Merino is not suitable for a dryer, so I dry it flat on a rack, to avoid the weight of water stretching and deforming the clothes when hanging it on a hanger.
 
+## Wallet
+
+[Muji Travel Wallet (Orange)][muji-travel-wallet] is a compact wallet which fits in my pants pocket well.
+
+[muji-travel-wallet]: https://uk.muji.eu/products/travel-wallet-18644 "Muji Travel Wallet Product Page"
 
 ## Drink
 
