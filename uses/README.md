@@ -178,11 +178,67 @@ I chose clothes based on the following principles:
 4. Speed drying materials like AIRism for intense activities.
 5. Prefer Merino to HEATTECH. I feel the HEATTECH is not so good for warmth but it is very uncomfortable, while Merino is lightweight and breathable. I chose machine-washable Merino clothes, which can be washed inside a mesh bag or pillowcase in the gentle mode of a washing machine with pH-neutral detergent. When traveling, sometimes I use shampoo instead since Merino is basically sheep's hair. When using shampoo, I reduce the amount to avoid washing machine foam overflow. Merino is not suitable for a dryer, so I dry it flat on a rack, to avoid the weight of water stretching and deforming the clothes when hanging it on a hanger.
 
-## Wallet
+## EDC
 
-[Muji Travel Wallet (Orange)][muji-travel-wallet] is a compact wallet which fits in my pants pocket well.
+- [Muji Travel Wallet (Orange)][muji-travel-wallet]
+
+    a compact wallet fitting in my pants pocket well
 
 [muji-travel-wallet]: https://uk.muji.eu/products/travel-wallet-18644 "Muji Travel Wallet Product Page"
+
+
+## Go Bag
+
+I still don't have a go bag but I am planning to prepare one:
+
+- [ ] emergency information card
+
+- [x] Muji Mini Sacoche (Navy Blue)
+
+    Passport, credit cards, cash, etc.
+
+- [x] medical masks
+
+- [x] tissues
+
+- [ ] wet wipes
+
+- [ ] whistle
+
+- [x] flashlight
+
+    I got a hand crank one. Never need to worry about batteries and fun to use. The downside is it is a little bit bulky. Flashlights using AA batteries are more compact.
+
+- [ ] radio
+
+- [ ] [Panasonic BQ-CC87][bq-cc87]
+
+    DC 5V USB output from any four AA batteries and DC 5V USB input to charge eneloop AA/AAA batteries.
+
+- [ ] red light LED headlamp
+
+- [ ] zipper bags incase of flooding
+
+- [ ] toothbrush and toothpaste
+
+- [ ] teeth wipes and large body wipes in case of no water
+
+- [ ] garbage bags with handles
+
+    Can also be used to carry things.
+
+- [x] rain coat
+
+- [ ] protein bars
+
+- [ ] jelly energy drink
+
+- [ ] [味の素KKおかゆ][instant-porridge]
+
+    Instant porridge edible without heating.
+
+[bq-cc87]: https://www.panasonic.com/global/energy/products/eneloop/en/lineup/charger-bq-cc87.html "Panasonic BQ-CC87 Product Page"
+[instant-porridge]: https://www.ajinomoto.co.jp/okayu/products/ "味の素KKおかゆ Product Page"
 
 ## Drink
 
