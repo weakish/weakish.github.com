@@ -189,6 +189,8 @@ I chose clothes based on the following principles:
 Water, milk (cow and soy), and Juice.
 I seldom drink coffee or tea, and almost never drink alcohol.
 However, I do like drinking chocolate.
+I am thinking of getting a Revomax bottle for take away at the cafe to reduce one time plastic waste.
+I like its one-handed instant opening and closing lid.
 
 This page is inspired by [uses.tech].
 
