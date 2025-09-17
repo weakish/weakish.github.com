@@ -19,7 +19,7 @@ In V, during one scene of Jack's phone call, a signboard for Hong Kong Park appe
 
 When Jack arrives at his alma mater, the guard (cast by Jam Tsang) asks his purpose and requests ID and LeaveHomeSafe (a mobile app used in Hong Kong for COVID-19 contact tracing and venue check-in). In Y, there is a shot of the guard watching Jack warily; in V there is no frontal shot of the guard, and removing the facial expression reduces the tension. V then adds a scene where another staff member, Mr. Fai (輝叔, cast by Shet Ming Lau), recognizes Jack, pulls down his mask, and chats casually, further softening the relationship between Jack and the school. In the small talk, Mr. Fai asks about Jack’s situation; after a brief pause, Jack says he’s emigrating to the UK, and Mr. Fai says he’s moving to Vancouver to reunite with his children. This matches Jack later telling Mr. Wong (黃 Sir, cast by Peter Au) that he will go to Vancouver, highlighting that both the UK and Vancouver are cover stories because he doesn’t want to tell others he’s about to be imprisoned. Although scenes of Mr. Fai are cut in Y, Mr. Fai cast by Shet Ming Lau still remains in the credit list of Y.
 
-After the alma mater scenes, Y uses the Old Supreme Court Building as a transition, which is symbolic and, for viewers familiar with Hong Kong, also a location hint. V removes this transition, likely to avoid repetition, because the Old Supreme Court Building appears again later as a transition between Jack walking on the street and Olivia walking on the street.
+After the alma mater scenes, Y uses the Old Supreme Court Building (housed the former Supreme Court from 1912 to 1983 and the Legislative Council from 1985 to 2011) as a transition, which is symbolic and, for viewers familiar with Hong Kong, also a location hint. V removes this transition, likely to avoid repetition, because the Old Supreme Court Building appears again later as a transition between Jack walking on the street and Olivia walking on the street.
 
 In Y, after Olivia’s walking-on-the-street scene, a Hong Kong nightscape is used as a transition before Jack sees Olivia; V removes the nightscape, trims Olivia’s walking, and drops the close-up of her face wearing a mask, likely because V already showed her face wearing a mask in the opening.
 
@@ -29,7 +29,7 @@ In the conversation where Olivia says someone asked whether she was afraid to go
 
 After Jack and Olivia depart at the Central station, Jack continues wandering alone. Suddenly some sound similar to gunshots (it is not clear whether this is some similar sound like firecrackers or merely an auditory hallucination) triggers his PTSD. In the scenes of him running and hiding, V adds a flashback of the scene of Jack recalling Olivia shouting "They're coming! Run!", to make it clearer this is a PTSD related to 2019 protests.
 
-At the end of Y, they board the minibus to report to the police station and walk along the aisle between seats. V adds shots of them seated and the bus in motion, ending on the roadside lights and the Old Supreme Court Building lit up as the bus passes, suggesting they are ultimately heading toward a bright future of judicial justice.
+At the end of Y, they board the minibus to report to the police station and walk along the aisle between seats. V adds shots of them seated and the bus in motion, ending on the roadside lights and the Old Supreme Court Building lit up as the bus passes, suggesting they are ultimately heading toward a bright future of justice.
 
 Overall, V is more polished, warmer, and softer than Y.
 
