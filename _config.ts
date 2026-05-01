@@ -8,7 +8,7 @@ import remark from "lume/plugins/remark.ts";
 import resolve_urls from "lume/plugins/resolve_urls.ts";
 import rehypeStarryNight from "https://cdn.jsdelivr.net/npm/rehype-starry-night@2.2.0/+esm";
 import { all } from "https://cdn.jsdelivr.net/npm/@wooorm/starry-night@3.6.0/+esm";
-import rehypeExtractExcerpt from "https://esm.sh/rehype-extract-excerpt@0.3.1"
+import rehypeExtractExcerpt from "https://esm.sh/rehype-extract-excerpt@0.3.1";
 import rehypePicture from "https://esm.sh/rehype-picture@5.0.0";
 import rehypeImgSize from "https://esm.sh/rehype-img-size@1.0.1";
 import purgecss from "lume/plugins/purgecss.ts";
@@ -34,7 +34,8 @@ site.preprocess([".html"], (pages) => {
     // See also:
     // lumeland/lume#667
     // https://stackoverflow.com/questions/2390199/finding-the-date-time-a-file-was-first-added-to-a-git-repository#comment118580024_25633731
-    page.data.date = getGitDate("created", entry.src) ?? getGitDate("modified", entry.src);
+    page.data.date = getGitDate("created", entry.src) ??
+      getGitDate("modified", entry.src);
   }
 });
 
@@ -46,23 +47,31 @@ site.use(transformImages());
 site.add([".png", ".jpg"]);
 site.use(remark({
   remarkPlugins: [
-    customWikiLinks
+    customWikiLinks,
   ],
   rehypePlugins: [[
-    rehypeStarryNight, {
-      grammars: all 
-    }], [
-    rehypeImgSize, { 
-      dir: "." 
-    }], [
-    rehypeExtractExcerpt, {
+    rehypeStarryNight,
+    {
+      grammars: all,
+    },
+  ], [
+    rehypeImgSize,
+    {
+      dir: ".",
+    },
+  ], [
+    rehypeExtractExcerpt,
+    {
       name: "title",
       tagName: "h1",
-    }], [
-    rehypePicture, {
+    },
+  ], [
+    rehypePicture,
+    {
       jpg: { avif: "image/avif" },
       png: { avif: "image/avif" },
-    }]],
+    },
+  ]],
 }));
 site.use(resolve_urls());
 
@@ -71,6 +80,7 @@ site.use(purgecss());
 
 site.copy("LICENSE");
 site.copy("humans.txt");
+site.copy("llms.txt");
 site.copy("404.html");
 site.use(sitemap({
   lastmod: "=lastmod",
@@ -81,7 +91,7 @@ const feedOptions = {
   items: {
     updated: "=lastmod",
   },
-}
+};
 site.use(feed({
   ...feedOptions,
   info: {
@@ -98,7 +108,8 @@ site.use(feed({
     subtitle: "All posts from mmap.page",
   },
   output: "/feed.json", /* jsonfeed.org uses feed.json */
-  limit: Number.MAX_SAFE_INTEGER, /* number of items in a feed is unlimited according to json feed spec */
-}))
+  limit: Number
+    .MAX_SAFE_INTEGER, /* number of items in a feed is unlimited according to json feed spec */
+}));
 
 export default site;
