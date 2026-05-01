@@ -1,24 +1,26 @@
-# An Opinionated Guide to ESLint
+# An Opinionated Guide to ESLint/Oxlint
 
 [ESLint] is a powerful and versatile tool.
-I myself only use eslint for problems coming from JavaScript design.
-Thus, I can have a short rule list.
+I myself only used ESLint for problems coming from JavaScript design and kept the rule list short.
+Later I switched to [Oxlint], the high-performance successor of ESLint.
 
-[eslint]: https://eslint.org/
+[ESLint]: https://eslint.org/
+[Oxlint]: https://oxc.rs/docs/guide/usage/linter.html
 
 ## No Formatting Rule
 
-Use [deno fmt] or [prettier] instead.
+[Oxfmt], [Biome], [deno fmt] (dprint), or [prettier] can be used without any configuration for code formatting.
+No need to specify ESLint rules for code formatting. 
 
-I use `deno fmt` or prettier with its default options,
-without any configuration.
-
+[Oxfmt]: https://oxc.rs/docs/guide/usage/formatter.html
+[Biome]: https://biomejs.dev/
 [deno fmt]: https://deno.land/manual/tools/formatter
 [prettier]: https://prettier.io/
 
-`deno fmt` is faster, while prettier supports more formats.
+Oxfmt, Biome, and dprint are faster, while prettier supports more formats.
+And any of them is much faster than ESLint.
 
-Prettier also helps on some non-formatting lint rules.
+Formatters can also help on some non-formatting lint rules.
 For example, eslint's `curly` rule helps to avoid misleading code:
 
 ```js
@@ -50,62 +52,50 @@ The Python community favors `snake_case`:
 However, mixedCase is prevailing in the JavaScript/TypeScript community.
 Thus, I use mixedCase for exported names.
 
+Among those formatters, I use Oxfmt since I already used Oxlint for linting.
+
 ## TypeScript Can Detect Lots of Errors
 
-TypeScript can detect a lot of problems, and it is usually faster.
+TypeScript can detect a lot of problems, usually faster than ESLint.
 
-For example, the `array-callback-return` rule is unnecessary,
+For example, the `array-callback-return` rule of ESLint is unnecessary,
 because if I accidentally forget to write `return` statement in array mapping function,
 it tends to trigger a type error.
 `eqeqeq` is another example of an unnecessary rule,
 since TypeScript complains when you are comparing two values of different types.
 
-TypeScript also has other helpful checks like `noFallthroughCasesInSwitch`.
-
-So just extend one of strictest [tsconfig base].
-
-[tsconfig base]: https://github.com/tsconfig/bases
+TypeScript also has other helpful checks like `noFallthroughCasesInSwitch` which can be enabled via `tsconfig.json`.
 
 ## Only Include Obvious Rules
 
 Do not include rules such as `no-new-object` and `no-nested-ternary`,
 which are merely personal choice of programming style.
 
-So here is the five ESLint rules I use:
+The four Oxlint rules I use:
 
-```js
+```jsonc
+// .oxlintrc.json
 {
-"parser": "@typescript-eslint/parser",
-"plugins": ["@typescript-eslint"],
-"rules": {
-    "prefer-arrow-callback": "error", // avoid the evil `this`
+  "rules": {
     "no-multi-assign": "error", // no `a = b = c = 1`
     "no-var": "error", // use `const` and `let` instead of `var`
     "prefer-const": "error", // use `const` when there is no reassignment
-    "no-param-reassign": "error", // use nonreassignable function parameters
-}
+    "no-param-reassign": "error" // use nonreassignable function parameters
+  }
 }
 ```
 
-Note that the default ESLint configuration file generated via `@eslint/config`
-includes a lot of recommended rules (`extends`).
-I do not use `npm init @eslint/config` and add dependencies by hand:
+When I was using ESLint, I also used an additional rule `prefer-arrow-callback` to avoid the evil `this` in JavaScript.
+Unfortunately, Oxlint (up to 1.62.0) does not support this rule yet.
 
-```sh
-ni -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
-```
+Oxlint supports TypeScript out of the box, so I do not need to add `"parser": "@typescript-eslint/parser"` as I did in ESLint.
+Also, Oxlint still uses the legacy configuration format of ESLint, which I prefer over the new flat configuration format of recent versions of ESLint.
 
 ## Alternatives
 
-[Biome] and [quick-lint-ls] are faster alternatives to ESLint.
-Biome currently only has [partial support for Svelte and Astro][biome-docs],
-and quick-lint-ls before 3.0 does not support TypeScript.
-Therefore, I still use ESLint.
-However, since [quick-lint-ls 3.0 introduces TypeScript support][quick-lint-ts],
-I plan to try it in future.
-Also, Deno 2.0 introduces compatibility with Node.js and npm, so I also plan to try `deno lint` on non Deno projects.
+As mentioned above, I only use a minimal set of rules in ESLint/Oxlint.
+If you prefer to use linter to catch common programming errors, you can consider Biome or [quick-lint-ls], which are [faster][quick-lint-js-blog] than ESLint and have built-in support for TypeScript.
 
-[Biome]: https://biomejs.dev/
-[biome-docs]: https://biomejs.dev/internals/language-support/
 [quick-lint-ls]: https://quick-lint-js.com/
-[quick-lint-ts]: https://quick-lint-js.com/blog/version-3.0/
+[quick-lint-js-blog]: https://quick-lint-js.com/blog/why-another-javascript-linter/
+
