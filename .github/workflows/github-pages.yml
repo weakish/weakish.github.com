@@ -21,7 +21,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # DO NOT remove fetch-depth: 0 to "optimize" CI time.
+      # The site uses getGitDate() to extract page dates from git history.
+      # Without full history, all items in RSS feed and sitemap get the same pubDate (build date).
+      # See: https://github.com/weakish/weakish.github.com/issues/32
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
