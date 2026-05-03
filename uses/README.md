@@ -40,21 +40,19 @@ If not, you can figure it out via the source code of this site.
 
 ## Editor
 
-I mainly use VSCode since it is a popular choice for a lot of languages and frameworks.
-Also, it has first class support for GitHub Copilot which I used a lot.
-Currently I am on its Pro plan but GitHub does not bill me for it (`SKU: free_engaged_oss`).
+I mostly use [Cursor][], more and more as a browser than an editor since AI agents are getting smarter and smarter.
+I may try [Windsurf][] in future.
 
-Some of my friends are using [Cursor][] but I have not tried it yet.
-I might try it, [Windsurf][] and [Junie][] in future.
+## Agent
+
+I use [OpenCode] since it is open source and model agnostic.
+I may try [Devin][] and [Junie][] in future.
 
 [Cursor]: https://www.cursor.com
 [Windsurf]: https://windsurf.com/editor
-[Junie]: https://www.jetbrains.com/junie/
-
-I am also testing the agent mode of GitHub Copilot by assigning issues to Copilot.
-I might try [Devin][] in future.
-
+[OpenCode]: https://opencode.ai
 [Devin]: https://devin.ai
+[Junie]: https://www.jetbrains.com/junie/
 
 ## Terminal
 
