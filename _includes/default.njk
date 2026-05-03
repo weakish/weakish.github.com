@@ -114,10 +114,21 @@ site:
         and feedback is
         <a href="https://github.com/{{ site.repo }}/issues">welcome</a>.
       </p>
+      {% if siteHostname == "weakish.github.io" %}
+      <p>
+        This is a mirror. If you can use HTTPS, please visit the canonical site at
+        <a href="https://mmap.page">mmap.page</a>.
+      </p>
+      <p>
+        Powered by <a href="https://lume.land" title="static site generator">lume</a>
+        and mirrored on <a href="https://pages.github.com">GitHub Pages</a>.
+      </p>
+      {% else %}
       <p>
         Powered by <a href="https://lume.land" title="static site generator">lume</a>
         and hosted on <a href="https://www.netlify.com">Netlify</a>.
       </p>
+      {% endif %}
     </footer>
   </body>
 </html>

@@ -1,3 +1,8 @@
+# Netlify-only features (graceful degradation on GitHub Pages):
+# - [[redirects]] → GH Pages uses static meta-refresh HTML stubs at source paths
+# - [[headers]] → GH Pages cannot set custom headers; browsers handle Content-Type for .txt files automatically
+# - [[edge_functions]] /teapot → GH Pages uses static teapot/index.html returning equivalent content
+
 [build]
   publish = "_site"
   command = "deno upgrade && deno task build"

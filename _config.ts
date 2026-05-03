@@ -21,13 +21,16 @@ import GeminiEngine from "./gemini.ts";
 import { customWikiLinks } from "./custom-wiki-links.ts";
 
 const site = lume({
-  location: new URL("https://mmap.page"),
+  location: new URL(Deno.env.get("MIRROR_LOCATION") ?? "https://mmap.page"),
 });
+
+const siteHostname = site.options.location.hostname;
 
 site.loadPages([".gmi"], { loader: textLoader, engine: new GeminiEngine() });
 
 site.preprocess([".html"], (pages) => {
   for (const page of pages) {
+    page.data.siteHostname = siteHostname;
     const { entry } = page.src;
     page.data.lastmod = getGitDate("modified", entry.src);
     // `git log --diff-filter=A --follow` yields no output for files where the latest commit had a merge conflict.
@@ -81,7 +84,35 @@ site.use(purgecss());
 site.copy("LICENSE");
 site.copy("humans.txt");
 site.copy("llms.txt");
-site.copy("404.html");
+if (Deno.env.get("MIRROR_LOCATION")) {
+  site.copy("404-github.html", "404.html");
+} else {
+  site.copy("404-netlify.html", "404.html");
+}
+site.copy("teapot");
+site.copy("dive-into/android");
+site.copy("dive-into/base64");
+site.copy("uses/lume");
+site.copy("uses/obsidian");
+site.copy("fun/exodia");
+site.copy("StutteringTalkaholic");
+site.copy("dapi/ai");
+site.copy("dapi/avoid-html");
+site.copy("dapi/daoliangmou");
+site.copy("dapi/learn-programming");
+site.copy("dapi/bole");
+site.copy("dapi/no-blog");
+site.copy("dapi/not-a-blog");
+site.copy("dapi/packaging");
+site.copy("dapi/redman");
+site.copy("dapi/shath-yar");
+site.copy("dapi/shuoba-xizang");
+site.copy("dapi/wash-clothes");
+site.copy("dapi/windows-handbook");
+site.copy("dapi/zhuzhu");
+site.copy("fun/heart");
+site.copy("StutteringTalkaholic/hardening");
+site.copy("StutteringTalkaholic/ruby");
 site.use(sitemap({
   lastmod: "=lastmod",
 }));
