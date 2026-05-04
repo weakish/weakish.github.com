@@ -25,11 +25,11 @@ Deno.test("Inline text around link stays on same line", () => {
   const html = marked.parse(markdown) as string;
   const gemtext = htmlToGemtext(html);
 
-  // In Gemtext, links are on their own line
-  // "See" and "for details" should be on separate lines from the link
+  // In Gemtext, links are on their own line after an empty line
+  // "See" and "for details" should be on the same line as "this page"
   const lines = gemtext.split("\n");
 
-  // Should have 3 lines: "See", "=> /foo this page", "for details"
+  // Should have 3 lines: text, empty line, link
   if (lines.length !== 3) {
     throw new Error(
       `Expected 3 lines, got ${lines.length} in:\n${gemtext}`,
@@ -37,14 +37,14 @@ Deno.test("Inline text around link stays on same line", () => {
   }
 
   // Check line contents
-  if (!lines[0].includes("See")) {
-    throw new Error(`Expected first line to contain "See" in:\n${gemtext}`);
+  if (!lines[0].includes("See this page for details")) {
+    throw new Error(`Expected first line to contain "See this page for details" in:\n${gemtext}`);
   }
-  if (!lines[1].includes("=> /foo this page")) {
-    throw new Error(`Expected second line to be link in:\n${gemtext}`);
+  if (lines[1] !== "") {
+    throw new Error(`Expected second line to be empty in:\n${gemtext}`);
   }
-  if (!lines[2].includes("for details")) {
-    throw new Error(`Expected third line to contain "for details" in:\n${gemtext}`);
+  if (!lines[2].includes("=> /foo this page")) {
+    throw new Error(`Expected third line to be link in:\n${gemtext}`);
   }
 });
 

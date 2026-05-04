@@ -11,6 +11,8 @@ export function htmlToGemtext(html: string): string {
   const lines: string[] = [];
   let currentLine = "";
   let inPreformat = false;
+  let inParagraph = false;
+  let pendingLinks: Array<{href: string, text: string}> = [];
 
   function flushLine(): void {
     const trimmed = currentLine.trim();
@@ -72,10 +74,15 @@ export function htmlToGemtext(html: string): string {
         lines.push(`### ${getInnerText(node)}`);
         break;
       case "a":
-        flushLine();
         const href = node.properties?.href || "";
         const text = getInnerText(node);
-        lines.push(`=> ${href} ${text}`);
+        if (inParagraph) {
+          currentLine += text;
+          pendingLinks.push({href, text});
+        } else {
+          flushLine();
+          lines.push(`=> ${href} ${text}`);
+        }
         break;
       case "img":
         flushLine();
@@ -113,11 +120,21 @@ export function htmlToGemtext(html: string): string {
         }
         break;
       case "p":
+        inParagraph = true;
         flushLine();
         if (node.children) {
           node.children.forEach(processNode);
         }
         flushLine();
+        // Output pending links after paragraph
+        if (pendingLinks.length > 0) {
+          lines.push("");
+        }
+        pendingLinks.forEach((link) => {
+          lines.push(`=> ${link.href} ${link.text}`);
+        });
+        pendingLinks = [];
+        inParagraph = false;
         lines.push("");
         break;
       case "br":
