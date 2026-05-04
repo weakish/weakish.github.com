@@ -186,19 +186,14 @@ site.addEventListener("afterBuild", async () => {
       continue;
     }
 
-    // Convert to Gemtext
-    let gemtext: string;
-    
     // Check if content is HTML (contains HTML tags)
-    if (content.includes("<") && content.includes(">")) {
-      // HTML content - convert using htmlToGemtext
-      gemtext = htmlToGemtext(content);
-    } else {
-      // Assume Markdown content - convert to HTML first, then to Gemtext
-      const { buffer } = await import("https://esm.sh/dioscuri@1.3.0");
-      const html = buffer(content);
-      gemtext = htmlToGemtext(html);
+    if (!content.includes("<") || !content.includes(">")) {
+      console.log(`Skipping non-HTML content for ${url}`);
+      continue;
     }
+
+    // Convert HTML to Gemtext
+    const gemtext = htmlToGemtext(content);
     
     const gmiPath = dest + gmiUrl;
 
