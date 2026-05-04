@@ -14,7 +14,7 @@ There is no syntax for escaping special markers. In other words, it assumes no n
 
 => https://geminiprotocol.net/docs/gemtext-specification.gmi gemtext specification
 
-```
+```ebnf
 gemtext-document = 1*gemtext-line
 gemtext-line     = text-line / link-line / preformat-toggle
 gemtext-line     =/ heading / list-item / quote-line
