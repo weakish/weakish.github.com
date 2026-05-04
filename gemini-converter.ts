@@ -9,34 +9,38 @@ export function htmlToGemtext(html: string): string {
   const nodeToConvert = mainContent || tree;
 
   const lines: string[] = [];
+  let currentLine = "";
   let inPreformat = false;
 
+  function flushLine(): void {
+    const trimmed = currentLine.trim();
+    if (trimmed) {
+      lines.push(trimmed);
+    }
+    currentLine = "";
+  }
+
   function processNode(node: any): void {
-    if (node.type === "text") {
-      const text = node.value;
-      if (inPreformat) {
-        lines.push(text);
-      } else {
-        const trimmed = text.trim();
-        if (trimmed) {
-          lines.push(trimmed);
-        }
+    if (inPreformat) {
+      if (node.type === "text") {
+        lines.push(node.value);
+      } else if (node.tagName === "pre") {
+        // End of preformat
+        lines.push("```");
+        inPreformat = false;
       }
+      return;
+    }
+
+    if (node.type === "text") {
+      currentLine += node.value;
       return;
     }
 
     if (node.tagName === "pre") {
+      flushLine();
       lines.push("```");
       inPreformat = true;
-      if (node.children) {
-        node.children.forEach(processNode);
-      }
-      lines.push("```");
-      inPreformat = false;
-      return;
-    }
-
-    if (inPreformat) {
       if (node.children) {
         node.children.forEach(processNode);
       }
@@ -45,36 +49,44 @@ export function htmlToGemtext(html: string): string {
 
     switch (node.tagName) {
       case "h1":
+        flushLine();
         lines.push(`# ${getInnerText(node)}`);
         break;
       case "h2":
+        flushLine();
         lines.push(`## ${getInnerText(node)}`);
         break;
       case "h3":
+        flushLine();
         lines.push(`### ${getInnerText(node)}`);
         break;
       case "h4":
       case "h5":
       case "h6":
+        flushLine();
         lines.push(`### ${getInnerText(node)}`);
         break;
       case "a":
+        flushLine();
         const href = node.properties?.href || "";
         const text = getInnerText(node);
         lines.push(`=> ${href} ${text}`);
         break;
       case "img":
+        flushLine();
         const src = node.properties?.src || "";
         const alt = node.properties?.alt || "";
         lines.push(`=> ${src} ${alt}`);
         break;
       case "blockquote":
+        flushLine();
         const quoteText = getInnerText(node);
         quoteText.split("\n").forEach((line: string) => {
           lines.push(`> ${line}`);
         });
         break;
       case "ul":
+        flushLine();
         if (node.children) {
           node.children.forEach((li: any) => {
             if (li.tagName === "li") {
@@ -84,18 +96,19 @@ export function htmlToGemtext(html: string): string {
         }
         break;
       case "p":
-        if (lines.length > 0 && lines[lines.length - 1] !== "") {
-          lines.push("");
-        }
+        flushLine();
         if (node.children) {
           node.children.forEach(processNode);
         }
+        flushLine();
         lines.push("");
         break;
       case "br":
+        flushLine();
         lines.push("");
         break;
       default:
+        // For inline elements, just process children (text will be appended to currentLine)
         if (node.children) {
           node.children.forEach(processNode);
         }
@@ -142,6 +155,7 @@ export function htmlToGemtext(html: string): string {
   if (nodeToConvert.children) {
     nodeToConvert.children.forEach(processNode);
   }
+  flushLine();
 
   return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim();
 }
