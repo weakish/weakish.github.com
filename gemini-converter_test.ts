@@ -159,3 +159,55 @@ Deno.test("Code block converts to preformatted text", () => {
     );
   }
 });
+
+Deno.test("Code block preserves indentation and newlines", () => {
+  const markdown =
+    "```python\ndef hello():\n    print('Hello, World!')\n    return True\n\nprint(hello())\n```";
+  const html = marked.parse(markdown) as string;
+  const gemtext = htmlToGemtext(html);
+
+  const lines = gemtext.split("\n");
+
+  // Check opening and closing ```
+  const backtickLines = lines.filter((line) => line === "```");
+  if (backtickLines.length !== 2) {
+    throw new Error(
+      `Expected 2 backtick lines, got ${backtickLines.length} in:\n${gemtext}`,
+    );
+  }
+
+  // Check indentation is preserved (4 spaces before print)
+  const hasIndentedPrint = lines.some((line) =>
+    line.startsWith("    print('Hello, World!')")
+  );
+  if (!hasIndentedPrint) {
+    throw new Error(
+      `Expected indented print not found in:\n${gemtext}`,
+    );
+  }
+
+  // Check blank line is preserved
+  const hasBlankLine = lines.some((line) => line === "");
+  if (!hasBlankLine) {
+    throw new Error(
+      `Expected blank line not preserved in:\n${gemtext}`,
+    );
+  }
+
+  // Check multiple lines are preserved
+  if (!gemtext.includes("def hello():")) {
+    throw new Error(
+      `Expected 'def hello():' not found in:\n${gemtext}`,
+    );
+  }
+  if (!gemtext.includes("return True")) {
+    throw new Error(
+      `Expected 'return True' not found in:\n${gemtext}`,
+    );
+  }
+  if (!gemtext.includes("print(hello())")) {
+    throw new Error(
+      `Expected 'print(hello())' not found in:\n${gemtext}`,
+    );
+  }
+});
