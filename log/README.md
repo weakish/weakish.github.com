@@ -1268,6 +1268,8 @@ fun start(): String = "OK"
 
 Hmm, stupid auto answer detection system. And I wonder why introduce learners the special single expression function in the very beginning, before the normal and more common used function with block body? A lot of functions are hard, if not impossible, to declare as a single expression function. Besides, learners familiar with other programming languages will pick up the normal function with block body syntax almost immediately. Why burden their progress insanely?
 
+See [comments](comments.md).
+
 
 
 Date: <a id="1555778252" href="#1555778252">1555778252</a>
