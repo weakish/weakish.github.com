@@ -12,7 +12,7 @@ export function htmlToGemtext(html: string): string {
   let currentLine = "";
   let inPreformat = false;
   let inParagraph = false;
-  let pendingLinks: Array<{href: string, text: string}> = [];
+  let pendingLinks: Array<{ href: string; text: string }> = [];
 
   function flushLine(): void {
     const trimmed = currentLine.trim();
@@ -22,7 +22,15 @@ export function htmlToGemtext(html: string): string {
     currentLine = "";
   }
 
-  const skipTags = ["script", "style", "head", "nav", "footer", "header", "aside"];
+  const skipTags = [
+    "script",
+    "style",
+    "head",
+    "nav",
+    "footer",
+    "header",
+    "aside",
+  ];
 
   function processNode(node: any): void {
     if (node.type === "text") {
@@ -87,7 +95,7 @@ export function htmlToGemtext(html: string): string {
         const text = getInnerText(node);
         if (inParagraph) {
           currentLine += text;
-          pendingLinks.push({href, text});
+          pendingLinks.push({ href, text });
         } else {
           flushLine();
           lines.push(`=> ${href} ${text}`);
@@ -138,7 +146,7 @@ export function htmlToGemtext(html: string): string {
             if (li.tagName === "li") {
               // Process li children manually to extract text and links
               let itemText = "";
-              const itemLinks: Array<{href: string, text: string}> = [];
+              const itemLinks: Array<{ href: string; text: string }> = [];
 
               function processLiNode(node: any): void {
                 if (node.type === "text") {
@@ -147,7 +155,7 @@ export function htmlToGemtext(html: string): string {
                   const href = node.properties?.href || "";
                   const text = getInnerText(node);
                   itemText += text;
-                  itemLinks.push({href, text});
+                  itemLinks.push({ href, text });
                 } else if (node.children) {
                   node.children.forEach(processLiNode);
                 }
@@ -179,7 +187,7 @@ export function htmlToGemtext(html: string): string {
             if (li.tagName === "li") {
               // Process li children manually to extract text and links
               let itemText = "";
-              const itemLinks: Array<{href: string, text: string}> = [];
+              const itemLinks: Array<{ href: string; text: string }> = [];
 
               function processLiNode(node: any): void {
                 if (node.type === "text") {
@@ -188,7 +196,7 @@ export function htmlToGemtext(html: string): string {
                   const href = node.properties?.href || "";
                   const text = getInnerText(node);
                   itemText += text;
-                  itemLinks.push({href, text});
+                  itemLinks.push({ href, text });
                 } else if (node.children) {
                   node.children.forEach(processLiNode);
                 }
@@ -256,20 +264,22 @@ export function htmlToGemtext(html: string): string {
 
   function findMainContent(node: any): any {
     if (!node) return null;
-    
+
     // Check if this node is the main content container
     if (node.type === "element") {
       const cls = node.properties?.className || "";
       const tag = node.tagName;
-      
+
       // Look for common main content indicators
-      if (tag === "main" || tag === "article" || 
-          cls.includes("markdown-body") || cls.includes("content") ||
-          cls.includes("post-content")) {
+      if (
+        tag === "main" || tag === "article" ||
+        cls.includes("markdown-body") || cls.includes("content") ||
+        cls.includes("post-content")
+      ) {
         return node;
       }
     }
-    
+
     // Recursively search children
     if (node.children) {
       for (const child of node.children) {
@@ -277,7 +287,7 @@ export function htmlToGemtext(html: string): string {
         if (found) return found;
       }
     }
-    
+
     return null;
   }
 

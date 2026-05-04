@@ -38,7 +38,9 @@ Deno.test("Inline text around link stays on same line", () => {
 
   // Check line contents
   if (!lines[0].includes("See this page for details")) {
-    throw new Error(`Expected first line to contain "See this page for details" in:\n${gemtext}`);
+    throw new Error(
+      `Expected first line to contain "See this page for details" in:\n${gemtext}`,
+    );
   }
   if (lines[1] !== "") {
     throw new Error(`Expected second line to be empty in:\n${gemtext}`);
@@ -83,8 +85,12 @@ Deno.test("Inline links in unordered list", () => {
   const lines = gemtext.split("\n");
 
   // Should have list item with text and link line
-  const hasListItem = lines.some((line) => line.startsWith("* See this page for details"));
-  const hasLinkLine = lines.some((line) => line.startsWith("=> /foo this page"));
+  const hasListItem = lines.some((line) =>
+    line.startsWith("* See this page for details")
+  );
+  const hasLinkLine = lines.some((line) =>
+    line.startsWith("=> /foo this page")
+  );
 
   if (!hasListItem) {
     throw new Error(

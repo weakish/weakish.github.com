@@ -32,7 +32,10 @@ async function cleanGmiFiles(dir: string): Promise<void> {
 }
 
 // Generate .gmi file from HTML file
-async function generateGmiFromHtml(htmlPath: string, gmiPath: string): Promise<void> {
+async function generateGmiFromHtml(
+  htmlPath: string,
+  gmiPath: string,
+): Promise<void> {
   try {
     const html = await Deno.readTextFile(htmlPath);
     const gemtext = htmlToGemtext(html);
