@@ -175,24 +175,17 @@ site.addEventListener("afterBuild", async () => {
       continue;
     }
 
-    // Skip .gmi files to avoid infinite loop
+    // Skip .gmi files in destination to avoid infinite loop
     if (url.endsWith(".gmi")) {
       continue;
     }
 
-    // Skip pages generated from .gmi source (Gemtext-to-HTML)
+    // Get the source info
     const src = page.src;
-    if (src?.ext === ".gmi") {
-      continue;
-    }
+    const srcExt = src?.ext;
 
-    // Get the rendered HTML content
+    // Get the rendered content
     const content = page.content;
-    
-    if (!content || typeof content !== "string") {
-      console.log(`No content for ${url}`);
-      continue;
-    }
 
     // Generate .gmi URL based on URL pattern
     let gmiUrl: string;
@@ -204,15 +197,28 @@ site.addEventListener("afterBuild", async () => {
       continue;
     }
 
-    // Check if content is HTML (contains HTML tags)
-    if (!content.includes("<") || !content.includes(">")) {
-      console.log(`Skipping non-HTML content for ${url}`);
-      continue;
+    // Convert to Gemtext
+    let gemtext: string;
+
+    if (srcExt === ".gmi") {
+      // Source is already Gemtext, use it directly
+      gemtext = src?.content || "";
+    } else {
+      // Source is HTML/Markdown, convert rendered HTML to Gemtext
+      if (!content || typeof content !== "string") {
+        console.log(`No content for ${url}`);
+        continue;
+      }
+
+      // Check if content is HTML
+      if (!content.includes("<") || !content.includes(">")) {
+        console.log(`Skipping non-HTML content for ${url}`);
+        continue;
+      }
+
+      gemtext = htmlToGemtext(content);
     }
 
-    // Convert HTML to Gemtext
-    const gemtext = htmlToGemtext(content);
-    
     const gmiPath = dest + gmiUrl;
 
     try {
