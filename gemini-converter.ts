@@ -50,12 +50,6 @@ export function htmlToGemtext(html: string): string {
       return;
     }
 
-    if (inPreformat) {
-      // This should never be reached since text nodes are handled above
-      // and only <pre> sets inPreformat
-      return;
-    }
-
     switch (node.tagName) {
       case "h1":
         flushLine();

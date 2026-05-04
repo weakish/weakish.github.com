@@ -124,3 +124,38 @@ Deno.test("Inline links in blockquote", () => {
     );
   }
 });
+
+Deno.test("Code block converts to preformatted text", () => {
+  const markdown = "```js\nconst x = 1;\nconsole.log(x);\n```";
+  const html = marked.parse(markdown) as string;
+  const gemtext = htmlToGemtext(html);
+
+  const lines = gemtext.split("\n");
+
+  // Should have opening and closing ```
+  const hasOpening = lines.some((line) => line === "```");
+  const hasClosing = lines.filter((line) => line === "```").length === 2;
+
+  if (!hasOpening) {
+    throw new Error(
+      `Expected opening \`\`\`\` not found in:\n${gemtext}`,
+    );
+  }
+  if (!hasClosing) {
+    throw new Error(
+      `Expected closing \`\`\`\` not found in:\n${gemtext}`,
+    );
+  }
+
+  // Check code content is preserved
+  if (!gemtext.includes("const x = 1;")) {
+    throw new Error(
+      `Expected code content not found in:\n${gemtext}`,
+    );
+  }
+  if (!gemtext.includes("console.log(x);")) {
+    throw new Error(
+      `Expected code content not found in:\n${gemtext}`,
+    );
+  }
+});
