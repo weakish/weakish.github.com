@@ -51,12 +51,8 @@ export function htmlToGemtext(html: string): string {
     }
 
     if (inPreformat) {
-      if (node.type === "text") {
-        lines.push(node.value);
-      } else if (node.children) {
-        // Process children to find text nodes (e.g., <code> inside <pre>)
-        node.children.forEach(processNode);
-      }
+      // This should never be reached since text nodes are handled above
+      // and only <pre> sets inPreformat
       return;
     }
 
