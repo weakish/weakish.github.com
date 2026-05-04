@@ -21,19 +21,12 @@ export function htmlToGemtext(html: string): string {
   }
 
   function processNode(node: any): void {
-    if (inPreformat) {
-      if (node.type === "text") {
-        lines.push(node.value);
-      } else if (node.tagName === "pre") {
-        // End of preformat
-        lines.push("```");
-        inPreformat = false;
-      }
-      return;
-    }
-
     if (node.type === "text") {
-      currentLine += node.value;
+      if (inPreformat) {
+        lines.push(node.value);
+      } else {
+        currentLine += node.value;
+      }
       return;
     }
 
@@ -42,6 +35,18 @@ export function htmlToGemtext(html: string): string {
       lines.push("```");
       inPreformat = true;
       if (node.children) {
+        node.children.forEach(processNode);
+      }
+      lines.push("```");
+      inPreformat = false;
+      return;
+    }
+
+    if (inPreformat) {
+      if (node.type === "text") {
+        lines.push(node.value);
+      } else if (node.children) {
+        // Process children to find text nodes (e.g., <code> inside <pre>)
         node.children.forEach(processNode);
       }
       return;
