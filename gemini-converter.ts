@@ -43,7 +43,20 @@ export function htmlToGemtext(html: string): string {
       lines.push("```");
       inPreformat = true;
       if (node.children) {
-        node.children.forEach(processNode);
+        // Collect all text content inside pre block
+        let preText = "";
+        function collectText(n: any): void {
+          if (n.type === "text") {
+            preText += n.value;
+          } else if (n.children) {
+            n.children.forEach(collectText);
+          }
+        }
+        node.children.forEach(collectText);
+        // Split by newlines and push each line
+        preText.split("\n").forEach((line: string) => {
+          lines.push(line);
+        });
       }
       lines.push("```");
       inPreformat = false;
