@@ -5,10 +5,23 @@ Gemini is a protocol "in between Gopher and the web"*, but for me, Gopher is mor
 => https://geminiprotocol.net/history/ * History of Project Gemini
 => https://daniel.haxx.se/blog/2023/05/28/the-gemini-protocol-seen-by-this-http-client-person/ + Daniel Stenberg (author of curl) on the Gemini protocol
 => https://github.com/kr1sp1n/awesome-gemini # Awesome Gemini
+=> https://geminiprotocol.net/docs/protocol-specification.gmi # Gemini Network Protocol Specification
 
 ## Gemini Text
 
 If Gemini is to HTTP, then Gemini text is to HTML. It's a line-oriented minimalistic hypertext markup language inspired by Markdown and gophermaps. It has link lines and preformatted text lines. Optionally, it supports three levels of headings, unsorted lists, and quote lines.
 There is no syntax for escaping special markers. In other words, it assumes no normal text line will starts with =>, ```, *, #, or >. And no lines in preformatted text block will start with ```.
 
-=> https://geminiprotocol.net/docs/specification.gmi Gemini Speculative Specification
+=> https://geminiprotocol.net/docs/gemtext-specification.gmi gemtext specification
+
+```ebnf
+gemtext-document = 1*gemtext-line
+gemtext-line     = text-line / link-line / preformat-toggle
+gemtext-line     =/ heading / list-item / quote-line
+link-line        = "=>" *WSP URI-reference [1*WSP 1*(SP / VCHAR)] *WSP CRLF
+heading          = ( "#" / "##" / "###" ) text-line
+list-item        = "*" SP text-line
+quote-line       = ">" text-line
+preformat-toggle = "```" text-line
+text-line        = *(WSP / VCHAR) CRLF
+```
