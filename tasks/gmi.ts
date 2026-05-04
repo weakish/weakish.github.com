@@ -66,7 +66,15 @@ async function processHtmlFiles(dir: string): Promise<void> {
         gmiPath = fullPath.replace(/\.html$/, ".gmi");
       }
 
+      // Generate .gmi file
       await generateGmiFromHtml(fullPath, gmiPath);
+
+      // Delete HTML file (output Gemtext only)
+      try {
+        await Deno.remove(fullPath);
+      } catch (err) {
+        console.error(`Failed to delete ${fullPath}:`, err);
+      }
     }
   }
 }
