@@ -180,14 +180,14 @@ site.addEventListener("afterBuild", async () => {
       continue;
     }
 
-    // Get the content - try page.content (rendered HTML) first
-    let content = page.content;
-    
-    if (!content || typeof content !== "string") {
-      // Try src.content (source content)
-      const src = page.src;
-      content = src?.content;
+    // Skip pages generated from .gmi source (Gemtext-to-HTML)
+    const src = page.src;
+    if (src?.ext === ".gmi") {
+      continue;
     }
+
+    // Get the rendered HTML content
+    const content = page.content;
     
     if (!content || typeof content !== "string") {
       console.log(`No content for ${url}`);
