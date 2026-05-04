@@ -19,6 +19,7 @@ import transformImages from "lume/plugins/transform_images.ts";
 import textLoader from "lume/core/loaders/text.ts";
 import GeminiEngine from "./gemini.ts";
 import { customWikiLinks } from "./custom-wiki-links.ts";
+import { htmlToGemtext } from "./gemini-converter.ts";
 
 const site = lume({
   location: new URL(Deno.env.get("MIRROR_LOCATION") ?? "https://mmap.page"),
@@ -142,5 +143,75 @@ site.use(feed({
   limit: Number
     .MAX_SAFE_INTEGER, /* number of items in a feed is unlimited according to json feed spec */
 }));
+
+site.addEventListener("afterBuild", async () => {
+  console.log("afterBuild event fired");
+  const dest = site.options.dest;
+  let pageCount = 0;
+  let gmiCount = 0;
+
+  for (const page of site.pages) {
+    pageCount++;
+    const url = page.data.url;
+    if (!url || url.startsWith("/zk/")) {
+      continue;
+    }
+
+    // Skip .gmi files to avoid infinite loop
+    if (url.endsWith(".gmi")) {
+      continue;
+    }
+
+    // Get the content - try page.content (rendered HTML) first
+    let content = page.content;
+    
+    if (!content || typeof content !== "string") {
+      // Try src.content (source content)
+      const src = page.src;
+      content = src?.content;
+    }
+    
+    if (!content || typeof content !== "string") {
+      console.log(`No content for ${url}`);
+      continue;
+    }
+
+    // Generate .gmi URL based on URL pattern
+    let gmiUrl: string;
+    if (url.endsWith("/")) {
+      gmiUrl = url + "index.gmi";
+    } else if (url.endsWith(".html")) {
+      gmiUrl = url.replace(/\.html$/, ".gmi");
+    } else {
+      continue;
+    }
+
+    // Convert to Gemtext
+    let gemtext: string;
+    
+    // Check if content is HTML (contains HTML tags)
+    if (content.includes("<") && content.includes(">")) {
+      // HTML content - convert using htmlToGemtext
+      gemtext = htmlToGemtext(content);
+    } else {
+      // Assume Markdown content - convert to HTML first, then to Gemtext
+      const { buffer } = await import("https://esm.sh/dioscuri@1.3.0");
+      const html = buffer(content);
+      gemtext = htmlToGemtext(html);
+    }
+    
+    const gmiPath = dest + gmiUrl;
+
+    try {
+      const dir = gmiPath.substring(0, gmiPath.lastIndexOf("/"));
+      await Deno.mkdir(dir, { recursive: true });
+      await Deno.writeTextFile(gmiPath, gemtext);
+      gmiCount++;
+    } catch (err) {
+      console.error(`Failed to write ${gmiPath}:`, err);
+    }
+  }
+  console.log(`Processed ${pageCount} pages, generated ${gmiCount} .gmi files`);
+});
 
 export default site;
