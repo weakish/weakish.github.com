@@ -22,6 +22,8 @@ export function htmlToGemtext(html: string): string {
     currentLine = "";
   }
 
+  const skipTags = ["script", "style", "head", "nav", "footer", "header", "aside"];
+
   function processNode(node: any): void {
     if (node.type === "text") {
       if (inPreformat) {
@@ -29,6 +31,10 @@ export function htmlToGemtext(html: string): string {
       } else {
         currentLine += node.value;
       }
+      return;
+    }
+
+    if (skipTags.includes(node.tagName)) {
       return;
     }
 
