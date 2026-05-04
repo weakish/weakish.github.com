@@ -217,3 +217,30 @@ Deno.test("Code block preserves indentation and newlines", () => {
     );
   }
 });
+
+Deno.test("h4, h5, h6 treated as normal text", () => {
+  const markdown = "## Heading 2\n#### Heading 4\n##### Heading 5\n###### Heading 6\nNormal text";
+  const html = marked.parse(markdown) as string;
+  const gemtext = htmlToGemtext(html);
+
+  // h2 should be converted to ## 
+  if (!gemtext.includes("## Heading 2")) {
+    throw new Error(
+      `Expected "## Heading 2" not found in:\n${gemtext}`,
+    );
+  }
+
+  // h4, h5, h6 should be treated as normal text (no ### prefix)
+  if (gemtext.includes("### Heading 4") || gemtext.includes("### Heading 5") || gemtext.includes("### Heading 6")) {
+    throw new Error(
+      `h4/h5/h6 should not be converted to ### but treated as normal text in:\n${gemtext}`,
+    );
+  }
+
+  // h4, h5, h6 should appear as regular text
+  if (!gemtext.includes("Heading 4") || !gemtext.includes("Heading 5") || !gemtext.includes("Heading 6")) {
+    throw new Error(
+      `Expected h4/h5/h6 text content in:\n${gemtext}`,
+    );
+  }
+});
