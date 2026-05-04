@@ -84,12 +84,6 @@ export function htmlToGemtext(html: string): string {
         flushLine();
         lines.push(`### ${getInnerText(node)}`);
         break;
-      case "h4":
-      case "h5":
-      case "h6":
-        flushLine();
-        lines.push(`### ${getInnerText(node)}`);
-        break;
       case "a":
         const href = node.properties?.href || "";
         const text = getInnerText(node);
