@@ -74,3 +74,53 @@ Deno.test("Multiple links in paragraph", () => {
     );
   }
 });
+
+Deno.test("Inline links in unordered list", () => {
+  const markdown = "- See [this page](/foo) for details";
+  const html = marked.parse(markdown) as string;
+  const gemtext = htmlToGemtext(html);
+
+  const lines = gemtext.split("\n");
+
+  // Should have list item with text and link line
+  const hasListItem = lines.some((line) => line.startsWith("* See this page for details"));
+  const hasLinkLine = lines.some((line) => line.startsWith("=> /foo this page"));
+
+  if (!hasListItem) {
+    throw new Error(
+      `Expected list item "See this page for details" not found in:\n${gemtext}`,
+    );
+  }
+  if (!hasLinkLine) {
+    throw new Error(
+      `Expected link line after list item not found in:\n${gemtext}`,
+    );
+  }
+});
+
+Deno.test("Inline links in blockquote", () => {
+  const markdown = "> See [this page](/foo) for details";
+  const html = marked.parse(markdown) as string;
+  const gemtext = htmlToGemtext(html);
+
+  const lines = gemtext.split("\n");
+
+  // Should have quote lines with text and link
+  const hasQuoteLine = lines.some((line) =>
+    line.startsWith("> ") && line.includes("See this page for details")
+  );
+  const hasQuoteLinkLine = lines.some((line) =>
+    line.startsWith("> ") && line.includes("=> /foo this page")
+  );
+
+  if (!hasQuoteLine) {
+    throw new Error(
+      `Expected quote line with text not found in:\n${gemtext}`,
+    );
+  }
+  if (!hasQuoteLinkLine) {
+    throw new Error(
+      `Expected quote line with link not found in:\n${gemtext}`,
+    );
+  }
+});

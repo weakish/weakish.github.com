@@ -8,7 +8,7 @@ export function htmlToGemtext(html: string): string {
   const mainContent = findMainContent(tree);
   const nodeToConvert = mainContent || tree;
 
-  const lines: string[] = [];
+  let lines: string[] = [];
   let currentLine = "";
   let inPreformat = false;
   let inParagraph = false;
@@ -98,17 +98,72 @@ export function htmlToGemtext(html: string): string {
         break;
       case "blockquote":
         flushLine();
-        const quoteText = getInnerText(node);
-        quoteText.split("\n").forEach((line: string) => {
-          lines.push(`> ${line}`);
-        });
+        // Save current state
+        const savedLines = lines;
+        const savedCurrentLine = currentLine;
+        const savedPendingLinks = pendingLinks;
+        const savedInParagraph = inParagraph;
+
+        // Reset for blockquote processing
+        lines = [];
+        currentLine = "";
+        pendingLinks = [];
+        inParagraph = false;
+
+        // Process children
+        if (node.children) {
+          node.children.forEach(processNode);
+        }
+        flushLine();
+
+        // Prefix all lines with "> "
+        const quotedLines = lines.map((line) => `> ${line}`);
+
+        // Restore state
+        lines = savedLines;
+        currentLine = savedCurrentLine;
+        pendingLinks = savedPendingLinks;
+        inParagraph = savedInParagraph;
+
+        // Push quoted lines to main lines
+        quotedLines.forEach((line) => lines.push(line));
         break;
       case "ul":
         flushLine();
         if (node.children) {
           node.children.forEach((li: any) => {
             if (li.tagName === "li") {
-              lines.push(`* ${getInnerText(li)}`);
+              // Process li children manually to extract text and links
+              let itemText = "";
+              const itemLinks: Array<{href: string, text: string}> = [];
+
+              function processLiNode(node: any): void {
+                if (node.type === "text") {
+                  itemText += node.value;
+                } else if (node.tagName === "a") {
+                  const href = node.properties?.href || "";
+                  const text = getInnerText(node);
+                  itemText += text;
+                  itemLinks.push({href, text});
+                } else if (node.children) {
+                  node.children.forEach(processLiNode);
+                }
+              }
+
+              if (li.children) {
+                li.children.forEach(processLiNode);
+              }
+
+              // Output list item
+              const trimmed = itemText.trim();
+              if (trimmed) {
+                lines.push(`* ${trimmed}`);
+              }
+
+              // Output links
+              itemLinks.forEach((link) => {
+                lines.push(`=> ${link.href} ${link.text}`);
+              });
             }
           });
         }
@@ -119,7 +174,38 @@ export function htmlToGemtext(html: string): string {
           let index = 1;
           node.children.forEach((li: any) => {
             if (li.tagName === "li") {
-              lines.push(`${index}. ${getInnerText(li)}`);
+              // Process li children manually to extract text and links
+              let itemText = "";
+              const itemLinks: Array<{href: string, text: string}> = [];
+
+              function processLiNode(node: any): void {
+                if (node.type === "text") {
+                  itemText += node.value;
+                } else if (node.tagName === "a") {
+                  const href = node.properties?.href || "";
+                  const text = getInnerText(node);
+                  itemText += text;
+                  itemLinks.push({href, text});
+                } else if (node.children) {
+                  node.children.forEach(processLiNode);
+                }
+              }
+
+              if (li.children) {
+                li.children.forEach(processLiNode);
+              }
+
+              // Output numbered item
+              const trimmed = itemText.trim();
+              if (trimmed) {
+                lines.push(`${index}. ${trimmed}`);
+              }
+
+              // Output links
+              itemLinks.forEach((link) => {
+                lines.push(`=> ${link.href} ${link.text}`);
+              });
+
               index++;
             }
           });
