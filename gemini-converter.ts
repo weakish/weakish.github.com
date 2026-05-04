@@ -95,6 +95,18 @@ export function htmlToGemtext(html: string): string {
           });
         }
         break;
+      case "ol":
+        flushLine();
+        if (node.children) {
+          let index = 1;
+          node.children.forEach((li: any) => {
+            if (li.tagName === "li") {
+              lines.push(`${index}. ${getInnerText(li)}`);
+              index++;
+            }
+          });
+        }
+        break;
       case "p":
         flushLine();
         if (node.children) {
