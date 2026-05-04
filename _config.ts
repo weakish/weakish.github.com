@@ -147,6 +147,24 @@ site.use(feed({
 site.addEventListener("afterBuild", async () => {
   console.log("afterBuild event fired");
   const dest = site.options.dest;
+
+  // Clean up all existing .gmi files to prevent stale files
+  try {
+    const deleteGmiFiles = async (dir: string) => {
+      for await (const entry of Deno.readDir(dir)) {
+        const fullPath = `${dir}/${entry.name}`;
+        if (entry.isFile && entry.name.endsWith(".gmi")) {
+          await Deno.remove(fullPath);
+        } else if (entry.isDirectory) {
+          await deleteGmiFiles(fullPath);
+        }
+      }
+    };
+    await deleteGmiFiles(dest);
+  } catch (err) {
+    console.error("Failed to clean up .gmi files:", err);
+  }
+
   let pageCount = 0;
   let gmiCount = 0;
 
