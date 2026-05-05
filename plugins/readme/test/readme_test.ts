@@ -1,5 +1,6 @@
 import { assertEquals, assertThrows } from "https://deno.land/std@0.201.0/assert/mod.ts";
-import readme, { defaults } from "../readme.ts";
+import readme, { defaults, findHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded } from "../readme.ts";
+import type Site from "lume/core/site.ts";
 
 Deno.test("readme plugin - default options", () => {
   assertEquals(defaults.homepage, ["README"]);
@@ -17,98 +18,179 @@ Deno.test("readme plugin - throws on both exclude and include", () => {
   );
 });
 
-Deno.test("readme plugin - transforms README URLs (srcPath is extension-less)", () => {
+Deno.test("findHomepageMatch - matches README", () => {
+  assertEquals(findHomepageMatch("/docs/README", ["README"]), "README");
+  assertEquals(findHomepageMatch("/README", ["README"]), "README");
+});
+
+Deno.test("findHomepageMatch - case insensitive", () => {
+  assertEquals(findHomepageMatch("/docs/Readme", ["README"]), "README");
+  assertEquals(findHomepageMatch("/docs/readme", ["README"]), "README");
+});
+
+Deno.test("findHomepageMatch - returns null for no match", () => {
+  assertEquals(findHomepageMatch("/docs/about", ["README"]), null);
+  assertEquals(findHomepageMatch("/docs/index", ["README"]), null);
+});
+
+Deno.test("findHomepageMatch - ordered array first match wins", () => {
+  assertEquals(findHomepageMatch("/docs/home", ["home", "README"]), "home");
+  assertEquals(findHomepageMatch("/docs/README", ["home", "README"]), "README");
+});
+
+Deno.test("getBasename - extracts last segment", () => {
+  assertEquals(getBasename("/docs/README"), "README");
+  assertEquals(getBasename("/README"), "README");
+  assertEquals(getBasename("README"), "README");
+});
+
+Deno.test("getDirPath - strips last segment", () => {
+  assertEquals(getDirPath("/docs/getting-started/README"), "/docs/getting-started/");
+  assertEquals(getDirPath("/README"), "/");
+  assertEquals(getDirPath("/zk/README"), "/zk/");
+});
+
+Deno.test("getDirPath - handles directory names containing homepage pattern", () => {
+  assertEquals(getDirPath("/README-docs/readme"), "/README-docs/");
+  assertEquals(getDirPath("/docs/README-helper/readme"), "/docs/README-helper/");
+  assertEquals(getDirPath("/README/foo/readme"), "/README/foo/");
+});
+
+Deno.test("buildUrl - pretty URLs", () => {
+  assertEquals(buildUrl("/docs/", true), "/docs/");
+  assertEquals(buildUrl("/docs", true), "/docs/");
+  assertEquals(buildUrl("/", true), "/");
+});
+
+Deno.test("buildUrl - non-pretty URLs", () => {
+  assertEquals(buildUrl("/docs/", false), "/docs/index.html");
+  assertEquals(buildUrl("/docs", false), "/docs/index.html");
+  assertEquals(buildUrl("/", false), "/index.html");
+});
+
+Deno.test("isExcluded - exclude paths", () => {
+  assertEquals(isExcluded("/docs/README", { exclude: ["/docs/"] }), true);
+  assertEquals(isExcluded("/guides/README", { exclude: ["/docs/"] }), false);
+});
+
+Deno.test("isExcluded - include paths", () => {
+  assertEquals(isExcluded("/docs/README", { include: ["/docs/"] }), false);
+  assertEquals(isExcluded("/guides/README", { include: ["/docs/"] }), true);
+});
+
+Deno.test("isExcluded - no rules", () => {
+  assertEquals(isExcluded("/docs/README", {}), false);
+});
+
+Deno.test("readme plugin - transforms README URLs via preprocess", () => {
+  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
+  const site = createMockSite({
+    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
+  });
+  const plugin = readme();
+  plugin(site as unknown as Site);
+
   const pages = createMockPages([
     { srcPath: "/docs/getting-started/README", url: "/docs/getting-started/README/" },
     { srcPath: "/README", url: "/README/" },
     { srcPath: "/zk/README", url: "/zk/README/" },
   ]);
 
-  applyReadmeTransform(pages, { prettyUrls: true });
+  capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/docs/getting-started/");
   assertEquals(pages[1].data.url, "/");
   assertEquals(pages[2].data.url, "/zk/");
 });
 
-Deno.test("readme plugin - case insensitive match", () => {
+Deno.test("readme plugin - preserves explicit URLs", () => {
+  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
+  const site = createMockSite({
+    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
+  });
+  const plugin = readme();
+  plugin(site as unknown as Site);
+
   const pages = createMockPages([
-    { srcPath: "/docs/Readme", url: "/docs/Readme/" },
-    { srcPath: "/docs/readme", url: "/docs/readme/" },
+    { srcPath: "/docs/custom/README", url: "/my-custom-path/" },
   ]);
 
-  applyReadmeTransform(pages, { prettyUrls: true });
+  capturedFn!(pages);
 
-  assertEquals(pages[0].data.url, "/docs/");
-  assertEquals(pages[1].data.url, "/docs/");
+  assertEquals(pages[0].data.url, "/my-custom-path/");
 });
 
-Deno.test("readme plugin - excludes paths", () => {
+Deno.test("readme plugin - excludes paths via preprocess", () => {
+  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
+  const site = createMockSite({
+    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
+  });
+  const plugin = readme({ exclude: ["/docs/"] });
+  plugin(site as unknown as Site);
+
   const pages = createMockPages([
     { srcPath: "/docs/README", url: "/docs/README/" },
     { srcPath: "/guides/README", url: "/guides/README/" },
   ]);
 
-  applyReadmeTransform(pages, { exclude: ["/docs/"] });
+  capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/docs/README/");
   assertEquals(pages[1].data.url, "/guides/");
 });
 
-Deno.test("readme plugin - includes only specified paths", () => {
+Deno.test("readme plugin - includes only specified paths via preprocess", () => {
+  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
+  const site = createMockSite({
+    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
+  });
+  const plugin = readme({ include: ["/docs/"] });
+  plugin(site as unknown as Site);
+
   const pages = createMockPages([
     { srcPath: "/docs/README", url: "/docs/README/" },
     { srcPath: "/guides/README", url: "/guides/README/" },
   ]);
 
-  applyReadmeTransform(pages, { include: ["/docs/"] });
+  capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/docs/");
   assertEquals(pages[1].data.url, "/guides/README/");
 });
 
-Deno.test("readme plugin - pretty URLs disabled", () => {
+Deno.test("readme plugin - pretty URLs disabled via preprocess", () => {
+  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
+  const site = createMockSite({
+    prettyUrls: false,
+    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
+  });
+  const plugin = readme();
+  plugin(site as unknown as Site);
+
   const pages = createMockPages([
-    { srcPath: "/docs/README", url: "/docs/README/" },
+    { srcPath: "/docs/README", url: "/docs/README/index.html" },
   ]);
 
-  applyReadmeTransform(pages, { prettyUrls: false });
+  capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/docs/index.html");
 });
 
-Deno.test("readme plugin - custom homepage array", () => {
-  const pages = createMockPages([
-    { srcPath: "/docs/home", url: "/docs/home/" },
-    { srcPath: "/docs/README", url: "/docs/README/" },
-  ]);
+Deno.test("readme plugin - directory name containing homepage pattern via preprocess", () => {
+  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
+  const site = createMockSite({
+    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
+  });
+  const plugin = readme();
+  plugin(site as unknown as Site);
 
-  applyReadmeTransform(pages, { homepage: ["home"] });
-
-  assertEquals(pages[0].data.url, "/docs/");
-  assertEquals(pages[1].data.url, "/docs/README/");
-});
-
-Deno.test("readme plugin - ordered array first match wins", () => {
-  const pages = createMockPages([
-    { srcPath: "/docs/README", url: "/docs/README/" },
-    { srcPath: "/docs/HOME", url: "/docs/HOME/" },
-  ]);
-
-  applyReadmeTransform(pages, { homepage: ["HOME", "README"] });
-
-  assertEquals(pages[0].data.url, "/docs/");
-  assertEquals(pages[1].data.url, "/docs/");
-});
-
-Deno.test("readme plugin - directory name containing homepage pattern", () => {
   const pages = createMockPages([
     { srcPath: "/README-docs/readme", url: "/README-docs/readme/" },
     { srcPath: "/docs/README-helper/readme", url: "/docs/README-helper/readme/" },
     { srcPath: "/README/foo/readme", url: "/README/foo/readme/" },
   ]);
 
-  applyReadmeTransform(pages, { prettyUrls: true });
+  capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/README-docs/");
   assertEquals(pages[1].data.url, "/docs/README-helper/");
@@ -127,69 +209,18 @@ function createMockPages(pagesData: { srcPath: string; url: string }[]): PageMoc
   }));
 }
 
-function applyReadmeTransform(
-  pages: PageMock[],
-  options: { prettyUrls?: boolean; homepage?: string[]; exclude?: string[]; include?: string[] } = {},
-) {
-  const {
-    prettyUrls = true,
-    homepage = ["README"],
-    exclude = [],
-    include = [],
-  } = options;
-
-  for (const page of pages) {
-    const srcPath = page.src.path;
-    const match = findHomepageMatch(srcPath, homepage);
-    if (!match) continue;
-
-    if (include.length > 0 && !include.some((inc) => {
-      const pagePath = srcPath.startsWith("/") ? srcPath : "/" + srcPath;
-      return pagePath.startsWith(inc);
-    })) continue;
-    if (exclude.length > 0) {
-      const pagePath = srcPath.startsWith("/") ? srcPath : "/" + srcPath;
-      if (exclude.some((exc) => pagePath.startsWith(exc))) continue;
-    }
-
-    const dirPath = getDirPath(srcPath);
-    const newUrl = buildUrl(dirPath, prettyUrls);
-
-    if (page.data.url === newUrl) continue;
-
-    page.data.url = newUrl;
-    page.data.basename = "";
-  }
-}
-
-function findHomepageMatch(srcPath: string, homepage: string[]): string | null {
-  const basename = getBasename(srcPath);
-  const lowerBasename = basename.toLowerCase();
-
-  for (const entry of homepage) {
-    if (lowerBasename === entry.toLowerCase()) {
-      return entry;
-    }
-  }
-
-  return null;
-}
-
-function getBasename(srcPath: string): string {
-  const segments = srcPath.split("/").filter(Boolean);
-  return segments[segments.length - 1] || srcPath;
-}
-
-function getDirPath(srcPath: string): string {
-  const lastSlash = srcPath.lastIndexOf("/");
-  if (lastSlash === -1) return "/";
-  const dirPath = srcPath.slice(0, lastSlash);
-  return dirPath === "" ? "/" : dirPath;
-}
-
-function buildUrl(dirPath: string, prettyUrls: boolean): string {
-  if (prettyUrls) {
-    return dirPath.endsWith("/") ? dirPath : dirPath + "/";
-  }
-  return dirPath.endsWith("/") ? dirPath + "index.html" : dirPath + "/index.html";
+function createMockSite(config: {
+  prettyUrls?: boolean;
+  preprocessFn?: (fn: (...args: unknown[]) => void) => void;
+} = {}) {
+  return {
+    options: {
+      prettyUrls: true,
+      ...config,
+    },
+    preprocess(...args: unknown[]) {
+      const fn = typeof args[0] === "function" ? args[0] : args[1];
+      config.preprocessFn?.(fn as (...args: unknown[]) => void);
+    },
+  };
 }
