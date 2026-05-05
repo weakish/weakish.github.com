@@ -104,7 +104,7 @@ export function getDirPath(srcPath: string): string {
   const lastSlash = srcPath.lastIndexOf("/");
   if (lastSlash === -1) return "/";
   const dirPath = srcPath.slice(0, lastSlash);
-  return dirPath === "" ? "/" : dirPath;
+  return dirPath === "" ? "/" : dirPath + "/";
 }
 
 export function buildUrl(dirPath: string, prettyUrls: boolean): string {
