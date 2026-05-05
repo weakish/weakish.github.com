@@ -55,7 +55,7 @@ export function readme(userOptions?: Options) {
         const dirPath = getDirPath(srcPath);
         const newUrl = buildUrl(dirPath, site.options.prettyUrls);
 
-        if (hasExplicitUrl(page, getBasename(srcPath))) return;
+        if (hasExplicitUrl(page, srcPath, site.options.prettyUrls)) return;
 
         page.data.url = newUrl;
         page.data.basename = "";
@@ -130,25 +130,18 @@ export function buildUrl(dirPath: string, prettyUrls: boolean): string {
   return dirPath.endsWith("/") ? dirPath + "index.html" : dirPath + "/index.html";
 }
 
-export function hasExplicitUrl(page: Page, basename: string): boolean {
+export function computeAutoUrl(srcPath: string, prettyUrls: boolean): string {
+  if (prettyUrls) {
+    return srcPath.startsWith("/") ? srcPath + "/" : "/" + srcPath + "/";
+  }
+  const path = srcPath.startsWith("/") ? srcPath : "/" + srcPath;
+  return path + ".html";
+}
+
+export function hasExplicitUrl(page: Page, srcPath: string, prettyUrls: boolean): boolean {
   const url = page.data.url;
-  const base = basename.toLowerCase();
-
-  // Handle pretty URL: /path/to/README/
-  if (url.endsWith("/")) {
-    const withoutTrailingSlash = url.slice(0, -1);
-    const lastSegment = withoutTrailingSlash.slice(withoutTrailingSlash.lastIndexOf("/") + 1);
-    if (lastSegment.toLowerCase() === base) return false;
-  }
-
-  // Handle non-pretty URL: /path/to/README.html
-  if (url.endsWith(".html")) {
-    const withoutHtml = url.slice(0, -5);
-    const lastSegment = withoutHtml.slice(withoutHtml.lastIndexOf("/") + 1);
-    if (lastSegment.toLowerCase() === base) return false;
-  }
-
-  return true;
+  const autoUrl = computeAutoUrl(srcPath, prettyUrls);
+  return url.toLowerCase() !== autoUrl.toLowerCase();
 }
 
 export default readme;
