@@ -25,16 +25,8 @@ README as Index
 
 Jekyll supports using README.md as the index page.
 Lume does not support this out of the box,
-but this feature can be implemented easily with a configuration function:
-
-    // README.md -> index.html
-    export function url(page: Lume.Page) {
-        if (page.src.path.endsWith("README")) {
-            return page.src.path.replace("README", "index") + ".html";
-        } else {
-            return;
-        }
-    }
+but a Lume plugin has been implemented to handle this.
+The plugin is available at `plugins/readme/`.
 
 Wiki Links
 ----------
