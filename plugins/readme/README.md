@@ -71,6 +71,13 @@ site.use(readme({
 | `exclude` | `string[]` | `[]` | Paths to skip (must start and end with `/`) |
 | `include` | `string[]` | `[]` | Paths to process exclusively (must start and end with `/`) |
 
+## Plugin ordering
+
+Register this plugin **before** any other plugins that modify page URLs
+(e.g., `slugify_urls`). The plugin detects explicit user-set URLs by
+comparing against Lume's auto-generated default; if another preprocessor
+modifies the URL first, this detection may fail.
+
 ## Behavior
 
 - **Pretty URLs enabled (default)**: `README.md` → `/path/to/`
