@@ -1,5 +1,6 @@
 import { assertEquals, assertThrows } from "https://deno.land/std@0.201.0/assert/mod.ts";
-import readme, { defaults, findHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded, computeAutoUrl } from "../readme.ts";
+import readme, { defaults, findHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded } from "../readme.ts";
+import type { Page } from "lume/core/file.ts";
 import type Site from "lume/core/site.ts";
 
 Deno.test("readme plugin - default options", () => {
@@ -82,14 +83,24 @@ Deno.test("isExcluded - no rules", () => {
   assertEquals(isExcluded("/docs/README", {}), false);
 });
 
-Deno.test("computeAutoUrl - pretty URLs", () => {
-  assertEquals(computeAutoUrl("/docs/README", true), "/docs/README/");
-  assertEquals(computeAutoUrl("/README", true), "/README/");
+Deno.test("isExcluded - auto-corrects missing leading slash", () => {
+  assertEquals(isExcluded("/docs/README", { exclude: ["docs/"] }), true);
+  assertEquals(isExcluded("/docs/README", { include: ["docs/"] }), false);
 });
 
-Deno.test("computeAutoUrl - non-pretty URLs", () => {
-  assertEquals(computeAutoUrl("/docs/README", false), "/docs/README.html");
-  assertEquals(computeAutoUrl("/README", false), "/README.html");
+Deno.test("isExcluded - auto-corrects missing trailing slash", () => {
+  assertEquals(isExcluded("/docs/README", { exclude: ["/docs"] }), true);
+  assertEquals(isExcluded("/docs/README", { include: ["/docs"] }), false);
+});
+
+Deno.test("isExcluded - auto-corrects missing both slashes", () => {
+  assertEquals(isExcluded("/docs/README", { exclude: ["docs"] }), true);
+  assertEquals(isExcluded("/docs/README", { include: ["docs"] }), false);
+});
+
+Deno.test("isExcluded - corrected path doesn't match partial directories", () => {
+  assertEquals(isExcluded("/docs-extra/README", { exclude: ["docs"] }), false);
+  assertEquals(isExcluded("/docs-extra/README", { include: ["docs"] }), true);
 });
 
 Deno.test("readme plugin - transforms README URLs via preprocess", () => {

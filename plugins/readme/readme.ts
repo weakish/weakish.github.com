@@ -55,8 +55,7 @@ export function readme(userOptions?: Options) {
         const dirPath = getDirPath(srcPath);
         const newUrl = buildUrl(dirPath, site.options.prettyUrls);
 
-        const autoUrl = computeAutoUrl(srcPath, site.options.prettyUrls);
-        if (page.data.url !== autoUrl) return;
+        if (hasExplicitUrl(page, getBasename(srcPath))) return;
 
         page.data.url = newUrl;
         page.data.basename = "";
@@ -90,14 +89,31 @@ export function isExcluded(srcPath: string, options: Options): boolean {
   const pagePath = srcPath.startsWith("/") ? srcPath : "/" + srcPath;
 
   if (options.include && options.include.length > 0) {
-    return !options.include.some((inc) => pagePath.startsWith(inc));
+    return !options.include.some((inc) => {
+      const normalized = normalizePath(inc);
+      return pagePath.startsWith(normalized);
+    });
   }
 
   if (options.exclude && options.exclude.length > 0) {
-    return options.exclude.some((exc) => pagePath.startsWith(exc));
+    return options.exclude.some((exc) => {
+      const normalized = normalizePath(exc);
+      return pagePath.startsWith(normalized);
+    });
   }
 
   return false;
+}
+
+function normalizePath(path: string): string {
+  let normalized = path;
+  if (!normalized.startsWith("/")) {
+    normalized = "/" + normalized;
+  }
+  if (!normalized.endsWith("/")) {
+    normalized = normalized + "/";
+  }
+  return normalized;
 }
 
 export function getDirPath(srcPath: string): string {
@@ -114,11 +130,10 @@ export function buildUrl(dirPath: string, prettyUrls: boolean): string {
   return dirPath.endsWith("/") ? dirPath + "index.html" : dirPath + "/index.html";
 }
 
-export function computeAutoUrl(srcPath: string, prettyUrls: boolean): string {
-  if (prettyUrls) {
-    return srcPath.endsWith("/") ? srcPath : srcPath + "/";
-  }
-  return srcPath.endsWith("/") ? srcPath.slice(0, -1) + ".html" : srcPath + ".html";
+function hasExplicitUrl(page: Page, basename: string): boolean {
+  const url = page.data.url.toLowerCase();
+  const base = basename.toLowerCase();
+  return !url.endsWith(base + "/") && !url.endsWith(base + ".html");
 }
 
 export default readme;
