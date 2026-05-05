@@ -130,6 +130,15 @@ export function buildUrl(dirPath: string, prettyUrls: boolean): string {
   return dirPath.endsWith("/") ? dirPath + "index.html" : dirPath + "/index.html";
 }
 
+/**
+ * Computes what Lume's default auto-generated URL would be for a given source path.
+ * This is used by `hasExplicitUrl` to detect whether a user has overridden the
+ * default URL in front matter or via _data files.
+ *
+ * Note: this approach assumes no other preprocessor has modified page.data.url
+ * before this plugin runs. If using plugins like slugify_urls that transform URLs,
+ * register this plugin BEFORE them in your _config.ts.
+ */
 export function computeAutoUrl(srcPath: string, prettyUrls: boolean): string {
   if (prettyUrls) {
     return srcPath.startsWith("/") ? srcPath + "/" : "/" + srcPath + "/";
@@ -138,6 +147,14 @@ export function computeAutoUrl(srcPath: string, prettyUrls: boolean): string {
   return path + ".html";
 }
 
+/**
+ * Returns true if the page's URL was explicitly set by the user (via front matter,
+ * _data files, or URL functions), false if it's Lume's auto-generated default.
+ *
+ * Detection works by comparing against the expected auto-generated URL from
+ * computeAutoUrl. This correctly handles _data inheritance, all front matter
+ * formats (YAML/JSON/TOML), and URL functions.
+ */
 export function hasExplicitUrl(page: Page, srcPath: string, prettyUrls: boolean): boolean {
   const url = page.data.url;
   const autoUrl = computeAutoUrl(srcPath, prettyUrls);
