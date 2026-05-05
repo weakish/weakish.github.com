@@ -58,7 +58,6 @@ export function readme(userOptions?: Options) {
         if (hasExplicitUrl(page, srcPath, site.options.prettyUrls)) return;
 
         page.data.url = newUrl;
-        page.data.basename = "";
       });
     });
   };
