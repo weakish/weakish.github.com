@@ -79,8 +79,12 @@ site.use(remark({
 site.use(resolve_urls());
 site.use(readme());
 
+site.ignore((path) => path.startsWith("/plugins/"));
+
 site.use(favicon());
 site.use(purgecss());
+
+site.ignore("plugins/");
 
 site.copy("LICENSE");
 site.copy("humans.txt");
