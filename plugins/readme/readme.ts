@@ -130,10 +130,25 @@ export function buildUrl(dirPath: string, prettyUrls: boolean): string {
   return dirPath.endsWith("/") ? dirPath + "index.html" : dirPath + "/index.html";
 }
 
-function hasExplicitUrl(page: Page, basename: string): boolean {
-  const url = page.data.url.toLowerCase();
+export function hasExplicitUrl(page: Page, basename: string): boolean {
+  const url = page.data.url;
   const base = basename.toLowerCase();
-  return !url.endsWith(base + "/") && !url.endsWith(base + ".html");
+
+  // Handle pretty URL: /path/to/README/
+  if (url.endsWith("/")) {
+    const withoutTrailingSlash = url.slice(0, -1);
+    const lastSegment = withoutTrailingSlash.slice(withoutTrailingSlash.lastIndexOf("/") + 1);
+    if (lastSegment.toLowerCase() === base) return false;
+  }
+
+  // Handle non-pretty URL: /path/to/README.html
+  if (url.endsWith(".html")) {
+    const withoutHtml = url.slice(0, -5);
+    const lastSegment = withoutHtml.slice(withoutHtml.lastIndexOf("/") + 1);
+    if (lastSegment.toLowerCase() === base) return false;
+  }
+
+  return true;
 }
 
 export default readme;

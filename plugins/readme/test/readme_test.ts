@@ -1,5 +1,5 @@
 import { assertEquals, assertThrows } from "https://deno.land/std@0.201.0/assert/mod.ts";
-import readme, { defaults, findHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded } from "../readme.ts";
+import readme, { defaults, findHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded, hasExplicitUrl } from "../readme.ts";
 import type { Page } from "lume/core/file.ts";
 import type Site from "lume/core/site.ts";
 
@@ -103,6 +103,36 @@ Deno.test("isExcluded - corrected path doesn't match partial directories", () =>
   assertEquals(isExcluded("/docs-extra/README", { include: ["docs"] }), true);
 });
 
+Deno.test("hasExplicitUrl - auto-generated pretty URL", () => {
+  const page = { data: { url: "/docs/README/" } } as Page;
+  assertEquals(hasExplicitUrl(page, "README"), false);
+});
+
+Deno.test("hasExplicitUrl - auto-generated non-pretty URL", () => {
+  const page = { data: { url: "/docs/README.html" } } as Page;
+  assertEquals(hasExplicitUrl(page, "README"), false);
+});
+
+Deno.test("hasExplicitUrl - root auto-generated URL", () => {
+  const page = { data: { url: "/README/" } } as Page;
+  assertEquals(hasExplicitUrl(page, "README"), false);
+});
+
+Deno.test("hasExplicitUrl - explicit URL not matching basename", () => {
+  const page = { data: { url: "/my-custom/" } } as Page;
+  assertEquals(hasExplicitUrl(page, "README"), true);
+});
+
+Deno.test("hasExplicitUrl - URL containing basename as substring", () => {
+  const page = { data: { url: "/docs-readme/" } } as Page;
+  assertEquals(hasExplicitUrl(page, "README"), true);
+});
+
+Deno.test("hasExplicitUrl - case insensitive for auto-generated", () => {
+  const page = { data: { url: "/docs/Readme/" } } as Page;
+  assertEquals(hasExplicitUrl(page, "README"), false);
+});
+
 Deno.test("readme plugin - transforms README URLs via preprocess", () => {
   let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
   const site = createMockSite({
@@ -139,6 +169,41 @@ Deno.test("readme plugin - preserves explicit URLs", () => {
   capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/my-custom-path/");
+});
+
+Deno.test("readme plugin - preserves URLs containing basename as substring", () => {
+  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
+  const site = createMockSite({
+    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
+  });
+  const plugin = readme();
+  plugin(site as unknown as Site);
+
+  const pages = createMockPages([
+    { srcPath: "/docs/README", url: "/docs-readme/" },
+  ]);
+
+  capturedFn!(pages);
+
+  assertEquals(pages[0].data.url, "/docs-readme/");
+});
+
+Deno.test("readme plugin - preserves explicit non-pretty URLs", () => {
+  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
+  const site = createMockSite({
+    prettyUrls: false,
+    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
+  });
+  const plugin = readme();
+  plugin(site as unknown as Site);
+
+  const pages = createMockPages([
+    { srcPath: "/docs/custom/README", url: "/my-custom.html" },
+  ]);
+
+  capturedFn!(pages);
+
+  assertEquals(pages[0].data.url, "/my-custom.html");
 });
 
 Deno.test("readme plugin - excludes paths via preprocess", () => {
