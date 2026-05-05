@@ -89,12 +89,12 @@ export function getBasename(srcPath: string): string {
 export function isExcluded(srcPath: string, options: Options): boolean {
   const pagePath = srcPath.startsWith("/") ? srcPath : "/" + srcPath;
 
-  if (options.include!.length > 0) {
-    return !options.include!.some((inc) => pagePath.startsWith(inc));
+  if (options.include && options.include.length > 0) {
+    return !options.include.some((inc) => pagePath.startsWith(inc));
   }
 
-  if (options.exclude!.length > 0) {
-    return options.exclude!.some((exc) => pagePath.startsWith(exc));
+  if (options.exclude && options.exclude.length > 0) {
+    return options.exclude.some((exc) => pagePath.startsWith(exc));
   }
 
   return false;
