@@ -64,22 +64,6 @@ export function readme(userOptions?: Options) {
   };
 }
 
-export function findHomepageMatch(
-  srcPath: string,
-  homepage: string[],
-): string | null {
-  const basename = getBasename(srcPath);
-  const lowerBasename = basename.toLowerCase();
-
-  for (const entry of homepage) {
-    if (lowerBasename === entry.toLowerCase()) {
-      return entry;
-    }
-  }
-
-  return null;
-}
-
 export function isHomepageMatch(srcPath: string, homepage: string[]): boolean {
   const basename = getBasename(srcPath);
   const lowerBasename = basename.toLowerCase();

@@ -1,5 +1,5 @@
 import { assertEquals, assertThrows } from "https://deno.land/std@0.201.0/assert/mod.ts";
-import readme, { defaults, findHomepageMatch, isHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded, hasExplicitUrl, computeAutoUrl } from "../readme.ts";
+import readme, { defaults, isHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded, hasExplicitUrl, computeAutoUrl } from "../readme.ts";
 import type { Page } from "lume/core/file.ts";
 import type Site from "lume/core/site.ts";
 
@@ -17,26 +17,6 @@ Deno.test("readme plugin - throws on both exclude and include", () => {
     Error,
     "`exclude` and `include` options cannot be used together",
   );
-});
-
-Deno.test("findHomepageMatch - matches README", () => {
-  assertEquals(findHomepageMatch("/docs/README", ["README"]), "README");
-  assertEquals(findHomepageMatch("/README", ["README"]), "README");
-});
-
-Deno.test("findHomepageMatch - case insensitive", () => {
-  assertEquals(findHomepageMatch("/docs/Readme", ["README"]), "README");
-  assertEquals(findHomepageMatch("/docs/readme", ["README"]), "README");
-});
-
-Deno.test("findHomepageMatch - returns null for no match", () => {
-  assertEquals(findHomepageMatch("/docs/about", ["README"]), null);
-  assertEquals(findHomepageMatch("/docs/index", ["README"]), null);
-});
-
-Deno.test("findHomepageMatch - ordered array first match wins", () => {
-  assertEquals(findHomepageMatch("/docs/home", ["home", "README"]), "home");
-  assertEquals(findHomepageMatch("/docs/README", ["home", "README"]), "README");
 });
 
 Deno.test("isHomepageMatch - matches README", () => {
