@@ -55,7 +55,8 @@ export function readme(userOptions?: Options) {
         const dirPath = getDirPath(srcPath);
         const newUrl = buildUrl(dirPath, site.options.prettyUrls);
 
-        if (page.data.url === newUrl) return;
+        const autoUrl = buildUrl(srcPath, site.options.prettyUrls);
+        if (page.data.url !== autoUrl) return;
 
         page.data.url = newUrl;
         page.data.basename = "";
