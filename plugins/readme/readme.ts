@@ -55,7 +55,7 @@ export function readme(userOptions?: Options) {
         const dirPath = getDirPath(srcPath);
         const newUrl = buildUrl(dirPath, site.options.prettyUrls);
 
-        const autoUrl = buildUrl(srcPath, site.options.prettyUrls);
+        const autoUrl = computeAutoUrl(srcPath, site.options.prettyUrls);
         if (page.data.url !== autoUrl) return;
 
         page.data.url = newUrl;
@@ -112,6 +112,13 @@ export function buildUrl(dirPath: string, prettyUrls: boolean): string {
     return dirPath.endsWith("/") ? dirPath : dirPath + "/";
   }
   return dirPath.endsWith("/") ? dirPath + "index.html" : dirPath + "/index.html";
+}
+
+export function computeAutoUrl(srcPath: string, prettyUrls: boolean): string {
+  if (prettyUrls) {
+    return srcPath.endsWith("/") ? srcPath : srcPath + "/";
+  }
+  return srcPath.endsWith("/") ? srcPath.slice(0, -1) + ".html" : srcPath + ".html";
 }
 
 export default readme;

@@ -1,5 +1,5 @@
 import { assertEquals, assertThrows } from "https://deno.land/std@0.201.0/assert/mod.ts";
-import readme, { defaults, findHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded } from "../readme.ts";
+import readme, { defaults, findHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded, computeAutoUrl } from "../readme.ts";
 import type Site from "lume/core/site.ts";
 
 Deno.test("readme plugin - default options", () => {
@@ -80,6 +80,16 @@ Deno.test("isExcluded - include paths", () => {
 
 Deno.test("isExcluded - no rules", () => {
   assertEquals(isExcluded("/docs/README", {}), false);
+});
+
+Deno.test("computeAutoUrl - pretty URLs", () => {
+  assertEquals(computeAutoUrl("/docs/README", true), "/docs/README/");
+  assertEquals(computeAutoUrl("/README", true), "/README/");
+});
+
+Deno.test("computeAutoUrl - non-pretty URLs", () => {
+  assertEquals(computeAutoUrl("/docs/README", false), "/docs/README.html");
+  assertEquals(computeAutoUrl("/README", false), "/README.html");
 });
 
 Deno.test("readme plugin - transforms README URLs via preprocess", () => {
@@ -168,7 +178,7 @@ Deno.test("readme plugin - pretty URLs disabled via preprocess", () => {
   plugin(site as unknown as Site);
 
   const pages = createMockPages([
-    { srcPath: "/docs/README", url: "/docs/README/index.html" },
+    { srcPath: "/docs/README", url: "/docs/README.html" },
   ]);
 
   capturedFn!(pages);
@@ -213,14 +223,15 @@ function createMockSite(config: {
   prettyUrls?: boolean;
   preprocessFn?: (fn: (...args: unknown[]) => void) => void;
 } = {}) {
+  const { prettyUrls, preprocessFn } = config;
   return {
     options: {
       prettyUrls: true,
-      ...config,
+      ...prettyUrls !== undefined && { prettyUrls },
     },
     preprocess(...args: unknown[]) {
       const fn = typeof args[0] === "function" ? args[0] : args[1];
-      config.preprocessFn?.(fn as (...args: unknown[]) => void);
+      preprocessFn?.(fn as (...args: unknown[]) => void);
     },
   };
 }
