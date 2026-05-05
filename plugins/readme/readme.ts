@@ -46,9 +46,6 @@ export function readme(userOptions?: Options) {
   return (site: Site) => {
     site.preprocess(function processReadme(pages: Page[]) {
       pages.forEach((page: Page) => {
-        if (page.data._readmeProcessed) return;
-        page.data._readmeProcessed = true;
-
         const srcPath = page.src.path;
         const match = findHomepageMatch(srcPath, options.homepage!);
         if (!match) return;
