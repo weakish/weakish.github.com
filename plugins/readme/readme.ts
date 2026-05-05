@@ -5,9 +5,10 @@ import type Site from "lume/core/site.ts";
 
 export interface Options {
   /**
-   * An ordered array of homepage filenames to transform (case insensitive).
-   * The first match wins and determines what is stripped from the path.
-   * @default ["readme.md", "readme.txt", "README"]
+   * An ordered array of homepage basenames to transform (case insensitive).
+   * Do not include file extensions — `srcPath` is extension-less.
+   * The first match wins.
+   * @default ["README"]
    */
   homepage?: string[];
 
@@ -28,7 +29,7 @@ export interface Options {
 }
 
 export const defaults: Options = {
-  homepage: ["readme.md", "readme.txt", "README"],
+  homepage: ["README"],
   exclude: [],
   include: [],
 };

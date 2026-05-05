@@ -28,16 +28,17 @@ import readme from "./plugins/readme/mod.ts";
 site.use(readme());
 ```
 
-### Custom homepage filenames
+### Custom homepage basenames
 
-Specify a custom ordered array of filenames to transform:
+Specify a custom ordered array of basenames to transform:
 
 ```ts
 site.use(readme({
-  homepage: ["home.md", "index.md", "README"],
+  homepage: ["home", "index", "README"],
 }));
 ```
 
+Do not include file extensions — Lume's `srcPath` is extension-less.
 The first match in the array wins. Matching is case insensitive.
 
 ### Exclude paths
@@ -66,7 +67,7 @@ site.use(readme({
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| `homepage` | `string[]` | `["readme.md", "readme.txt", "README"]` | Ordered array of homepage filenames (case insensitive) |
+| `homepage` | `string[]` | `["README"]` | Ordered array of homepage basenames (case insensitive, no extensions) |
 | `exclude` | `string[]` | `[]` | Paths to skip (must start and end with `/`) |
 | `include` | `string[]` | `[]` | Paths to process exclusively (must start and end with `/`) |
 

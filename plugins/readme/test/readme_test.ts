@@ -2,7 +2,7 @@ import { assertEquals, assertThrows } from "https://deno.land/std@0.201.0/assert
 import readme, { defaults } from "../readme.ts";
 
 Deno.test("readme plugin - default options", () => {
-  assertEquals(defaults.homepage, ["readme.md", "readme.txt", "README"]);
+  assertEquals(defaults.homepage, ["README"]);
   assertEquals(defaults.exclude, []);
   assertEquals(defaults.include, []);
 });
@@ -17,7 +17,7 @@ Deno.test("readme plugin - throws on both exclude and include", () => {
   );
 });
 
-Deno.test("readme plugin - transforms README URLs", () => {
+Deno.test("readme plugin - transforms README URLs (srcPath is extension-less)", () => {
   const pages = createMockPages([
     { srcPath: "/docs/getting-started/README", url: "/docs/getting-started/README/" },
     { srcPath: "/README", url: "/README/" },
@@ -31,22 +31,10 @@ Deno.test("readme plugin - transforms README URLs", () => {
   assertEquals(pages[2].data.url, "/zk/");
 });
 
-Deno.test("readme plugin - transforms README.md URLs", () => {
-  const pages = createMockPages([
-    { srcPath: "/docs/README.md", url: "/docs/README.md/" },
-    { srcPath: "/README.md", url: "/README.md/" },
-  ]);
-
-  applyReadmeTransform(pages, { prettyUrls: true });
-
-  assertEquals(pages[0].data.url, "/docs/");
-  assertEquals(pages[1].data.url, "/");
-});
-
 Deno.test("readme plugin - case insensitive match", () => {
   const pages = createMockPages([
-    { srcPath: "/docs/Readme.md", url: "/docs/Readme.md/" },
-    { srcPath: "/docs/readme.MD", url: "/docs/readme.MD/" },
+    { srcPath: "/docs/Readme", url: "/docs/Readme/" },
+    { srcPath: "/docs/readme", url: "/docs/readme/" },
   ]);
 
   applyReadmeTransform(pages, { prettyUrls: true });
@@ -104,11 +92,13 @@ Deno.test("readme plugin - custom homepage array", () => {
 Deno.test("readme plugin - ordered array first match wins", () => {
   const pages = createMockPages([
     { srcPath: "/docs/README", url: "/docs/README/" },
+    { srcPath: "/docs/HOME", url: "/docs/HOME/" },
   ]);
 
-  applyReadmeTransform(pages, { homepage: ["README.md", "README"] });
+  applyReadmeTransform(pages, { homepage: ["HOME", "README"] });
 
   assertEquals(pages[0].data.url, "/docs/");
+  assertEquals(pages[1].data.url, "/docs/");
 });
 
 Deno.test("readme plugin - skips non-matching source paths", () => {
@@ -141,7 +131,7 @@ function applyReadmeTransform(
 ) {
   const {
     prettyUrls = true,
-    homepage = ["readme.md", "readme.txt", "README"],
+    homepage = ["README"],
     exclude = [],
     include = [],
   } = options;
