@@ -1,5 +1,5 @@
 import { assertEquals, assertThrows } from "https://deno.land/std@0.201.0/assert/mod.ts";
-import readme, { defaults, findHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded, hasExplicitUrl, computeAutoUrl } from "../readme.ts";
+import readme, { defaults, findHomepageMatch, isHomepageMatch, getBasename, getDirPath, buildUrl, isExcluded, hasExplicitUrl, computeAutoUrl } from "../readme.ts";
 import type { Page } from "lume/core/file.ts";
 import type Site from "lume/core/site.ts";
 
@@ -37,6 +37,21 @@ Deno.test("findHomepageMatch - returns null for no match", () => {
 Deno.test("findHomepageMatch - ordered array first match wins", () => {
   assertEquals(findHomepageMatch("/docs/home", ["home", "README"]), "home");
   assertEquals(findHomepageMatch("/docs/README", ["home", "README"]), "README");
+});
+
+Deno.test("isHomepageMatch - matches README", () => {
+  assertEquals(isHomepageMatch("/docs/README", ["README"]), true);
+  assertEquals(isHomepageMatch("/README", ["README"]), true);
+});
+
+Deno.test("isHomepageMatch - case insensitive", () => {
+  assertEquals(isHomepageMatch("/docs/Readme", ["README"]), true);
+  assertEquals(isHomepageMatch("/docs/readme", ["README"]), true);
+});
+
+Deno.test("isHomepageMatch - returns false for no match", () => {
+  assertEquals(isHomepageMatch("/docs/about", ["README"]), false);
+  assertEquals(isHomepageMatch("/docs/index", ["README"]), false);
 });
 
 Deno.test("getBasename - extracts last segment", () => {
@@ -164,20 +179,11 @@ Deno.test("computeAutoUrl - non-pretty URLs", () => {
 });
 
 Deno.test("readme plugin - transforms README URLs via preprocess", () => {
-  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
-  const site = createMockSite({
-    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
-  });
-  const plugin = readme();
-  plugin(site as unknown as Site);
-
-  const pages = createMockPages([
+  const pages = runPlugin([
     { srcPath: "/docs/getting-started/README", url: "/docs/getting-started/README/" },
     { srcPath: "/README", url: "/README/" },
     { srcPath: "/zk/README", url: "/zk/README/" },
   ]);
-
-  capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/docs/getting-started/");
   assertEquals(pages[1].data.url, "/");
@@ -185,70 +191,35 @@ Deno.test("readme plugin - transforms README URLs via preprocess", () => {
 });
 
 Deno.test("readme plugin - preserves explicit URLs", () => {
-  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
-  const site = createMockSite({
-    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
-  });
-  const plugin = readme();
-  plugin(site as unknown as Site);
-
-  const pages = createMockPages([
+  const pages = runPlugin([
     { srcPath: "/docs/custom/README", url: "/my-custom-path/" },
   ]);
-
-  capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/my-custom-path/");
 });
 
 Deno.test("readme plugin - preserves URLs containing basename as substring", () => {
-  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
-  const site = createMockSite({
-    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
-  });
-  const plugin = readme();
-  plugin(site as unknown as Site);
-
-  const pages = createMockPages([
+  const pages = runPlugin([
     { srcPath: "/docs/README", url: "/docs-readme/" },
   ]);
-
-  capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/docs-readme/");
 });
 
 Deno.test("readme plugin - preserves explicit non-pretty URLs", () => {
-  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
-  const site = createMockSite({
-    prettyUrls: false,
-    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
-  });
-  const plugin = readme();
-  plugin(site as unknown as Site);
-
-  const pages = createMockPages([
-    { srcPath: "/docs/custom/README", url: "/my-custom.html" },
-  ]);
-
-  capturedFn!(pages);
+  const pages = runPlugin(
+    [{ srcPath: "/docs/custom/README", url: "/my-custom.html" }],
+    undefined,
+    { prettyUrls: false },
+  );
 
   assertEquals(pages[0].data.url, "/my-custom.html");
 });
 
 Deno.test("readme plugin - preserves explicit URL with basename in different path", () => {
-  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
-  const site = createMockSite({
-    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
-  });
-  const plugin = readme();
-  plugin(site as unknown as Site);
-
-  const pages = createMockPages([
+  const pages = runPlugin([
     { srcPath: "/foo/README", url: "/something/README/" },
   ]);
-
-  capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/something/README/");
 });
@@ -272,76 +243,41 @@ Deno.test("readme plugin - preserves url: false", () => {
 });
 
 Deno.test("readme plugin - excludes paths via preprocess", () => {
-  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
-  const site = createMockSite({
-    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
-  });
-  const plugin = readme({ exclude: ["/docs/"] });
-  plugin(site as unknown as Site);
-
-  const pages = createMockPages([
+  const pages = runPlugin([
     { srcPath: "/docs/README", url: "/docs/README/" },
     { srcPath: "/guides/README", url: "/guides/README/" },
-  ]);
-
-  capturedFn!(pages);
+  ], { exclude: ["/docs/"] });
 
   assertEquals(pages[0].data.url, "/docs/README/");
   assertEquals(pages[1].data.url, "/guides/");
 });
 
 Deno.test("readme plugin - includes only specified paths via preprocess", () => {
-  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
-  const site = createMockSite({
-    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
-  });
-  const plugin = readme({ include: ["/docs/"] });
-  plugin(site as unknown as Site);
-
-  const pages = createMockPages([
+  const pages = runPlugin([
     { srcPath: "/docs/README", url: "/docs/README/" },
     { srcPath: "/guides/README", url: "/guides/README/" },
-  ]);
-
-  capturedFn!(pages);
+  ], { include: ["/docs/"] });
 
   assertEquals(pages[0].data.url, "/docs/");
   assertEquals(pages[1].data.url, "/guides/README/");
 });
 
 Deno.test("readme plugin - pretty URLs disabled via preprocess", () => {
-  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
-  const site = createMockSite({
-    prettyUrls: false,
-    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
-  });
-  const plugin = readme();
-  plugin(site as unknown as Site);
-
-  const pages = createMockPages([
-    { srcPath: "/docs/README", url: "/docs/README.html" },
-  ]);
-
-  capturedFn!(pages);
+  const pages = runPlugin(
+    [{ srcPath: "/docs/README", url: "/docs/README.html" }],
+    undefined,
+    { prettyUrls: false },
+  );
 
   assertEquals(pages[0].data.url, "/docs/index.html");
 });
 
 Deno.test("readme plugin - directory name containing homepage pattern via preprocess", () => {
-  let capturedFn: (pages: { src: { path: string }; data: { url: string; basename?: string } }[]) => void;
-  const site = createMockSite({
-    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
-  });
-  const plugin = readme();
-  plugin(site as unknown as Site);
-
-  const pages = createMockPages([
+  const pages = runPlugin([
     { srcPath: "/README-docs/readme", url: "/README-docs/readme/" },
     { srcPath: "/docs/README-helper/readme", url: "/docs/README-helper/readme/" },
     { srcPath: "/README/foo/readme", url: "/README/foo/readme/" },
   ]);
-
-  capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/README-docs/");
   assertEquals(pages[1].data.url, "/docs/README-helper/");
@@ -375,4 +311,24 @@ function createMockSite(config: {
       preprocessFn?.(fn as (...args: unknown[]) => void);
     },
   };
+}
+
+type PageData = { srcPath: string; url: string };
+
+function runPlugin(
+  pagesData: PageData[],
+  pluginOptions?: Parameters<typeof readme>[0],
+  siteConfig?: Parameters<typeof createMockSite>[0],
+): PageMock[] {
+  let capturedFn: (pages: PageMock[]) => void;
+  const site = createMockSite({
+    ...siteConfig,
+    preprocessFn: (fn) => { capturedFn = fn as (pages: PageMock[]) => void; },
+  });
+  const plugin = readme(pluginOptions);
+  plugin(site as unknown as Site);
+
+  const pages = createMockPages(pagesData);
+  capturedFn!(pages);
+  return pages;
 }

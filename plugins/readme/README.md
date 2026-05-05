@@ -1,6 +1,6 @@
-# lume-plugin-readme
+# readme
 
-A Lume plugin that transforms URLs of homepage files (like `README.md`) to clean directory URLs, enabling GitHub Pages-style documentation sites.
+A Lume plugin that uses `README.md` or specified page as homepage of the website, as on GitHub Pages and docsify.
 
 ## Problem
 
@@ -67,7 +67,7 @@ site.use(readme({
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| `homepage` | `string[]` | `["README"]` | Ordered array of homepage basenames (case insensitive, no extensions) |
+| `homepage` | `string[]` | `["README"]` | Ordered array of homepage basenames (case insensitive, no extensions, first match wins) |
 | `exclude` | `string[]` | `[]` | Paths to skip (must start and end with `/`) |
 | `include` | `string[]` | `[]` | Paths to process exclusively (must start and end with `/`) |
 

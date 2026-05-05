@@ -15,6 +15,7 @@ export interface Options {
   /**
    * Paths to exclude from transformation.
    * Paths must start with "/" and end with "/".
+   * Cannot be used together with `include`.
    * @default []
    */
   exclude?: string[];
@@ -47,15 +48,15 @@ export function readme(userOptions?: Options) {
     site.preprocess(function processReadme(pages: Page[]) {
       pages.forEach((page: Page) => {
         const srcPath = page.src.path;
-        const match = findHomepageMatch(srcPath, options.homepage!);
-        if (!match) return;
+
+        if (!isHomepageMatch(srcPath, options.homepage!)) return;
 
         if (isExcluded(srcPath, options)) return;
 
+        if (hasExplicitUrl(page, srcPath, site.options.prettyUrls)) return;
+
         const dirPath = getDirPath(srcPath);
         const newUrl = buildUrl(dirPath, site.options.prettyUrls);
-
-        if (hasExplicitUrl(page, srcPath, site.options.prettyUrls)) return;
 
         page.data.url = newUrl;
       });
@@ -77,6 +78,13 @@ export function findHomepageMatch(
   }
 
   return null;
+}
+
+export function isHomepageMatch(srcPath: string, homepage: string[]): boolean {
+  const basename = getBasename(srcPath);
+  const lowerBasename = basename.toLowerCase();
+
+  return homepage.some((entry) => lowerBasename === entry.toLowerCase());
 }
 
 export function getBasename(srcPath: string): string {
