@@ -19,6 +19,7 @@ import transformImages from "lume/plugins/transform_images.ts";
 import textLoader from "lume/core/loaders/text.ts";
 import GeminiEngine from "./gemini.ts";
 import { customWikiLinks } from "./custom-wiki-links.ts";
+import readme from "./plugins/readme/mod.ts";
 const site = lume({
   location: new URL(Deno.env.get("MIRROR_LOCATION") ?? "https://mmap.page"),
 });
@@ -76,6 +77,7 @@ site.use(remark({
   ]],
 }));
 site.use(resolve_urls());
+site.use(readme());
 
 site.use(favicon());
 site.use(purgecss());

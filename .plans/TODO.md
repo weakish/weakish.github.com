@@ -10,7 +10,7 @@ Based on analysis of `_config.ts` and related custom files.
 | High | **Movie Page** - JSX page component for displaying movie data | ~80 lines | `movies/page.page.ts`, `_includes/movie.page.tsx` |
 | Medium | **Gemini Engine** - custom engine for `.gmi` file rendering | ~30 lines | `gemini.ts` |
 | Medium | **HTML→Gemtext** - post-build converter to generate Gemini format | ~300 lines | `gemini-converter.ts` |
-| Low | **README→Index** - URL transformer `README.md` → `index.html` | ~10 lines | `_data.ts` |
+| High | **README→Index** (`readme`) - URL transformer `README.md` → directory URL | ~100 lines | `readme.ts`, `mod.ts` ✅ Implemented |
 
 ## Plugin Details
 
@@ -40,8 +40,21 @@ Post-build script that:
 - Skips certain directories (e.g., `zk/`)
 - Deletes original HTML files
 
-### 5. README→Index URL Transformer (Low Priority)
-In `_data.ts` - transforms `README.md` paths to `index.html`
+### 5. README→Index Plugin (Completed ✅)
+
+Plugin files:
+- `readme.ts` - Core plugin implementation
+- `mod.ts` - Entry point with exports
+- `test/readme_test.ts` - Test suite
+- `readme-plugin-README.md` - Documentation
+
+Features implemented:
+- Uses `site.preprocess()` approach (as per plan)
+- Configurable `target` (default: `README`)
+- `exclude` and `include` options (mutually exclusive)
+- Preserves explicit URLs set in front matter
+- Supports both pretty URLs and non-pretty URLs
+- Sets `basename` to empty for clean URLs
 
 ---
 
