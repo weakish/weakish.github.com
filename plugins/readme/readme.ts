@@ -156,8 +156,14 @@ export function computeAutoUrl(srcPath: string, prettyUrls: boolean): string {
  * formats (YAML/JSON/TOML), and URL functions.
  */
 export function hasExplicitUrl(page: Page, srcPath: string, prettyUrls: boolean): boolean {
-  const url = page.data.url;
+  const url = page.data.url as string | boolean | Function | undefined;
   const autoUrl = computeAutoUrl(srcPath, prettyUrls);
+
+  if (url === undefined) return false;
+  if (url === false) return true;
+  if (typeof url === "function") return true;
+  if (typeof url !== "string") return true;
+
   return url.toLowerCase() !== autoUrl.toLowerCase();
 }
 

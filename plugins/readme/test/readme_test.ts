@@ -133,6 +133,21 @@ Deno.test("hasExplicitUrl - explicit URL with basename but different path", () =
   assertEquals(hasExplicitUrl(page, "/foo/README", true), true);
 });
 
+Deno.test("hasExplicitUrl - url set to false", () => {
+  const page = { data: { url: false } } as unknown as Page;
+  assertEquals(hasExplicitUrl(page, "/docs/README", true), true);
+});
+
+Deno.test("hasExplicitUrl - url is a function", () => {
+  const page = { data: { url: () => "/custom/" } } as unknown as Page;
+  assertEquals(hasExplicitUrl(page, "/docs/README", true), true);
+});
+
+Deno.test("hasExplicitUrl - url is undefined", () => {
+  const page = { data: {} } as Page;
+  assertEquals(hasExplicitUrl(page, "/docs/README", true), false);
+});
+
 Deno.test("hasExplicitUrl - case insensitive for auto-generated", () => {
   const page = { data: { url: "/docs/Readme/" } } as Page;
   assertEquals(hasExplicitUrl(page, "/docs/README", true), false);
@@ -236,6 +251,24 @@ Deno.test("readme plugin - preserves explicit URL with basename in different pat
   capturedFn!(pages);
 
   assertEquals(pages[0].data.url, "/something/README/");
+});
+
+Deno.test("readme plugin - preserves url: false", () => {
+  let capturedFn: (pages: { src: { path: string }; data: { url: unknown; basename?: string } }[]) => void;
+  const site = createMockSite({
+    preprocessFn: (fn) => { capturedFn = fn as typeof capturedFn; },
+  });
+  const plugin = readme();
+  plugin(site as unknown as Site);
+
+  const pages = [{
+    src: { path: "/docs/README" },
+    data: { url: false },
+  }];
+
+  capturedFn!(pages);
+
+  assertEquals(pages[0].data.url, false);
 });
 
 Deno.test("readme plugin - excludes paths via preprocess", () => {
