@@ -55,7 +55,7 @@ export function readme(userOptions?: Options) {
 
         if (isExcluded(srcPath, options)) return;
 
-        const dirPath = getDirPath(srcPath, match);
+        const dirPath = getDirPath(srcPath);
         const newUrl = buildUrl(dirPath, site.options.prettyUrls);
 
         if (page.data.url === newUrl) return;
@@ -102,15 +102,11 @@ function isExcluded(srcPath: string, options: Options): boolean {
   return false;
 }
 
-function getDirPath(srcPath: string, match: string): string {
-  const targetWithSlash = "/" + match;
-  const lastSlash = srcPath.lastIndexOf(targetWithSlash);
-  if (lastSlash === -1) {
-    const withoutTarget = srcPath.slice(0, -match.length);
-    return withoutTarget.endsWith("/") ? withoutTarget : withoutTarget + "/";
-  }
+function getDirPath(srcPath: string): string {
+  const lastSlash = srcPath.lastIndexOf("/");
+  if (lastSlash === -1) return "/";
   const dirPath = srcPath.slice(0, lastSlash);
-  return dirPath.endsWith("/") ? dirPath : dirPath + "/";
+  return dirPath === "" ? "/" : dirPath;
 }
 
 function buildUrl(dirPath: string, prettyUrls: boolean): string {

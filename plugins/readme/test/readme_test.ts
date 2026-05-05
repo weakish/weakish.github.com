@@ -101,16 +101,18 @@ Deno.test("readme plugin - ordered array first match wins", () => {
   assertEquals(pages[1].data.url, "/docs/");
 });
 
-Deno.test("readme plugin - skips non-matching source paths", () => {
+Deno.test("readme plugin - directory name containing homepage pattern", () => {
   const pages = createMockPages([
-    { srcPath: "/docs/about", url: "/docs/about/" },
-    { srcPath: "/docs/index.html", url: "/docs/index.html/" },
+    { srcPath: "/README-docs/readme", url: "/README-docs/readme/" },
+    { srcPath: "/docs/README-helper/readme", url: "/docs/README-helper/readme/" },
+    { srcPath: "/README/foo/readme", url: "/README/foo/readme/" },
   ]);
 
-  applyReadmeTransform(pages);
+  applyReadmeTransform(pages, { prettyUrls: true });
 
-  assertEquals(pages[0].data.url, "/docs/about/");
-  assertEquals(pages[1].data.url, "/docs/index.html/");
+  assertEquals(pages[0].data.url, "/README-docs/");
+  assertEquals(pages[1].data.url, "/docs/README-helper/");
+  assertEquals(pages[2].data.url, "/README/foo/");
 });
 
 interface PageMock {
@@ -150,7 +152,7 @@ function applyReadmeTransform(
       if (exclude.some((exc) => pagePath.startsWith(exc))) continue;
     }
 
-    const dirPath = getDirPath(srcPath, match);
+    const dirPath = getDirPath(srcPath);
     const newUrl = buildUrl(dirPath, prettyUrls);
 
     if (page.data.url === newUrl) continue;
@@ -178,15 +180,11 @@ function getBasename(srcPath: string): string {
   return segments[segments.length - 1] || srcPath;
 }
 
-function getDirPath(srcPath: string, match: string): string {
-  const targetWithSlash = "/" + match;
-  const lastSlash = srcPath.lastIndexOf(targetWithSlash);
-  if (lastSlash === -1) {
-    const withoutTarget = srcPath.slice(0, -match.length);
-    return withoutTarget.endsWith("/") ? withoutTarget : withoutTarget + "/";
-  }
+function getDirPath(srcPath: string): string {
+  const lastSlash = srcPath.lastIndexOf("/");
+  if (lastSlash === -1) return "/";
   const dirPath = srcPath.slice(0, lastSlash);
-  return dirPath.endsWith("/") ? dirPath : dirPath + "/";
+  return dirPath === "" ? "/" : dirPath;
 }
 
 function buildUrl(dirPath: string, prettyUrls: boolean): string {
