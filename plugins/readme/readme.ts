@@ -65,7 +65,7 @@ export function readme(userOptions?: Options) {
   };
 }
 
-function findHomepageMatch(
+export function findHomepageMatch(
   srcPath: string,
   homepage: string[],
 ): string | null {
@@ -81,12 +81,12 @@ function findHomepageMatch(
   return null;
 }
 
-function getBasename(srcPath: string): string {
+export function getBasename(srcPath: string): string {
   const segments = srcPath.split("/").filter(Boolean);
   return segments[segments.length - 1] || srcPath;
 }
 
-function isExcluded(srcPath: string, options: Options): boolean {
+export function isExcluded(srcPath: string, options: Options): boolean {
   const pagePath = srcPath.startsWith("/") ? srcPath : "/" + srcPath;
 
   if (options.include!.length > 0) {
@@ -100,14 +100,14 @@ function isExcluded(srcPath: string, options: Options): boolean {
   return false;
 }
 
-function getDirPath(srcPath: string): string {
+export function getDirPath(srcPath: string): string {
   const lastSlash = srcPath.lastIndexOf("/");
   if (lastSlash === -1) return "/";
   const dirPath = srcPath.slice(0, lastSlash);
   return dirPath === "" ? "/" : dirPath;
 }
 
-function buildUrl(dirPath: string, prettyUrls: boolean): string {
+export function buildUrl(dirPath: string, prettyUrls: boolean): string {
   if (prettyUrls) {
     return dirPath.endsWith("/") ? dirPath : dirPath + "/";
   }
