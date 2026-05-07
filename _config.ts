@@ -10,6 +10,7 @@ import rehypeStarryNight from "https://cdn.jsdelivr.net/npm/rehype-starry-night@
 import { all } from "https://cdn.jsdelivr.net/npm/@wooorm/starry-night@3.6.0/+esm";
 import rehypeExtractExcerpt from "https://esm.sh/rehype-extract-excerpt@0.3.1";
 import rehypePicture from "https://esm.sh/rehype-picture@5.0.0";
+import { remarkHighlightMark } from "https://esm.sh/remark-highlight-mark@1.4.0";
 import rehypeImgSize from "https://esm.sh/rehype-img-size@1.0.1";
 import purgecss from "lume/plugins/purgecss.ts";
 import sitemap from "lume/plugins/sitemap.ts";
@@ -51,6 +52,7 @@ site.add([".png", ".jpg"]);
 site.use(remark({
   remarkPlugins: [
     customWikiLinks,
+    remarkHighlightMark,
   ],
   rehypePlugins: [[
     rehypeStarryNight,
