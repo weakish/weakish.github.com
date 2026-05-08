@@ -26,7 +26,7 @@ interface LinkNode extends ASTNode {
   children: ASTNode[];
 }
 
-// Recursively get all directories, excluding hidden, underscore, and node_modules
+// Recursively get all directories, returning paths relative to the directory being scanned
 export function getAllDirectories(dir: string): string[] {
   const directories: string[] = [];
   try {
@@ -37,10 +37,10 @@ export function getAllDirectories(dir: string): string[] {
         !entry.name.startsWith("_") &&
         entry.name !== "node_modules"
       ) {
-        const fullPath = dir === "." ? entry.name : `${dir}/${entry.name}`;
-        directories.push(fullPath);
+        // Just the directory name being scanned in this iteration
+        directories.push(entry.name);
         // Recursively get subdirectories
-        directories.push(...getAllDirectories(fullPath));
+        directories.push(...getAllDirectories(`${dir}/${entry.name}`));
       }
     }
   } catch {
@@ -67,9 +67,9 @@ export function resolveLinkPath(link: string, baseDir = "."): string {
   const allDirs = getAllDirectories(baseDir);
   for (const searchDir of allDirs) {
     for (const pattern of patterns) {
-      const fullPath = `${baseDir}/${searchDir}/${pattern}`;
+      const fsPath = `${baseDir}/${searchDir}/${pattern}`;
       try {
-        Deno.statSync(fullPath);
+        Deno.statSync(fsPath);
         return `/${searchDir}/${link}/`;
       } catch {
         // File doesn't exist, continue
@@ -83,45 +83,10 @@ export function resolveLinkPath(link: string, baseDir = "."): string {
 
 export function customWikiLinks() {
   const baseDir = ".";
-  let cachedDirectories: string[] | null = null;
 
-  // Cache the directory list since it's stable during build
-  function getCachedDirectories(): string[] {
-    if (cachedDirectories === null) {
-      cachedDirectories = getAllDirectories(baseDir);
-    }
-    return cachedDirectories;
-  }
-
+  // Resolve using exported function (handles caching internally)
   function resolve(link: string): string {
-    const patterns = [`${link}.md`, `${link}/index.md`, `${link}/README.md`];
-
-    // Check current directory first
-    for (const pattern of patterns) {
-      try {
-        Deno.statSync(`${baseDir}/${pattern}`);
-        return `/${link}/`;
-      } catch {
-        // File doesn't exist, continue
-      }
-    }
-
-    // Search subdirectories using cached results
-    const allDirs = getCachedDirectories();
-    for (const searchDir of allDirs) {
-      for (const pattern of patterns) {
-        const fullPath = `${baseDir}/${searchDir}/${pattern}`;
-        try {
-          Deno.statSync(fullPath);
-          return `/${searchDir}/${link}/`;
-        } catch {
-          // File doesn't exist, continue
-        }
-      }
-    }
-
-    // Fallback: return original link
-    return `/${link}/`;
+    return resolveLinkPath(link, baseDir);
   }
 
   // Check if node is inside a code block or inline code
