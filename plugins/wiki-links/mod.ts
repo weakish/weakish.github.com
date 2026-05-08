@@ -85,7 +85,7 @@ export function resolveLinkPath(link: string, baseDir = "."): string {
         Deno.statSync(`${fsPath}/${pattern}`);
         // Strip leading ./ (for "." baseDir) or baseDir prefix for URL
         const urlPath = searchDir.replace(/^\.\//, "").replace(/^.+?\//, "");
-        return `/${urlPath}/${link}/`;
+        return `/${urlPath}/`;
       } catch {
         // File doesn't exist, continue
       }

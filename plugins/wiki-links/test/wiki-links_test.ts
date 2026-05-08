@@ -2,7 +2,7 @@ import {
   assertEquals,
   assertExists,
 } from "https://deno.land/std@0.201.0/assert/mod.ts";
-import { customWikiLinks } from "../mod.ts";
+import { clearDirectoryCache, customWikiLinks } from "../mod.ts";
 
 interface ASTNode {
   type: string;
@@ -46,6 +46,7 @@ function createInlineCode(value: string): ASTNode {
 }
 
 function runPlugin(node: ASTNode): ASTNode {
+  clearDirectoryCache();
   const transformer = customWikiLinks();
   transformer(node);
   return node;
@@ -413,14 +414,16 @@ Deno.test("wiki-links - wiki link with slashes in target", () => {
 });
 
 Deno.test("wiki-links - consecutive wiki links", () => {
-  const node = createParagraph([createTextNode("[[a]][[b]][[c]]")]);
+  const node = createParagraph([
+    createTextNode("[[test-x]][[test-y]][[test-z]]"),
+  ]);
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
   assertEquals(para.children.length, 3);
-  assertEquals((para.children[0] as LinkNode).url, "/a/");
-  assertEquals((para.children[1] as LinkNode).url, "/b/");
-  assertEquals((para.children[2] as LinkNode).url, "/c/");
+  assertEquals((para.children[0] as LinkNode).url, "/test-x/");
+  assertEquals((para.children[1] as LinkNode).url, "/test-y/");
+  assertEquals((para.children[2] as LinkNode).url, "/test-z/");
 });
 
 Deno.test("wiki-links - mixed content with wiki links and markdown", () => {

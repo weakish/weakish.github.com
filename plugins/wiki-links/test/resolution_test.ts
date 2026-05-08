@@ -58,15 +58,28 @@ Deno.test("resolveLinkPath - falls back when not found", () => {
 });
 
 Deno.test("getAllDirectories - returns directories (order is filesystem-dependent)", () => {
-  // Test with the actual project structure which has multiple directories
   clearDirectoryCache();
 
-  // Use a temporary directory that's guaranteed to exist
-  console.log("CWD:", Deno.cwd());
   const dirs = getAllDirectories(".");
-  console.log("dirs for '.':", dirs.slice(0, 5)); // Debug
-
-  // Should find multiple directories (the actual count depends on project structure)
-  // Just verify we get some directories and they include known ones
   assertEquals(dirs.length > 0, true, "Should find directories");
+});
+
+Deno.test("resolveLinkPath - non-deterministic with duplicate filenames", () => {
+  const testDir = "test-wiki-links-dup-" + Date.now();
+  try {
+    clearDirectoryCache();
+    Deno.mkdirSync(`${testDir}/subdir1`, { recursive: true });
+    Deno.mkdirSync(`${testDir}/subdir2`, { recursive: true });
+    Deno.writeTextFileSync(`${testDir}/subdir1/about.md`, "# About 1");
+    Deno.writeTextFileSync(`${testDir}/subdir2/about.md`, "# About 2");
+
+    const result = resolveLinkPath("about", testDir);
+    const valid = result === "/subdir1/" || result === "/subdir2/";
+    assertEquals(valid, true, "Should resolve to one of subdirectories");
+  } finally {
+    clearDirectoryCache();
+    try {
+      Deno.removeSync(testDir, { recursive: true });
+    } catch {}
+  }
 });
