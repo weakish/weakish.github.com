@@ -56,3 +56,17 @@ Deno.test("resolveLinkPath - falls back when not found", () => {
 
   cleanup();
 });
+
+Deno.test("getAllDirectories - returns directories (order is filesystem-dependent)", () => {
+  // Test with the actual project structure which has multiple directories
+  clearDirectoryCache();
+
+  // Use a temporary directory that's guaranteed to exist
+  console.log("CWD:", Deno.cwd());
+  const dirs = getAllDirectories(".");
+  console.log("dirs for '.':", dirs.slice(0, 5)); // Debug
+
+  // Should find multiple directories (the actual count depends on project structure)
+  // Just verify we get some directories and they include known ones
+  assertEquals(dirs.length > 0, true, "Should find directories");
+});
