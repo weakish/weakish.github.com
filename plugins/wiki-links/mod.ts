@@ -26,7 +26,7 @@ interface LinkNode extends ASTNode {
   children: ASTNode[];
 }
 
-// Recursively get all directories, returning paths relative to the directory being scanned
+// Recursively get all directories, returning paths relative to the initial baseDir
 export function getAllDirectories(dir: string): string[] {
   const directories: string[] = [];
   try {
@@ -37,10 +37,10 @@ export function getAllDirectories(dir: string): string[] {
         !entry.name.startsWith("_") &&
         entry.name !== "node_modules"
       ) {
-        // Just the directory name being scanned in this iteration
-        directories.push(entry.name);
+        const fullPath = `${dir}/${entry.name}`;
+        directories.push(fullPath);
         // Recursively get subdirectories
-        directories.push(...getAllDirectories(`${dir}/${entry.name}`));
+        directories.push(...getAllDirectories(fullPath));
       }
     }
   } catch {
@@ -67,10 +67,12 @@ export function resolveLinkPath(link: string, baseDir = "."): string {
   const allDirs = getAllDirectories(baseDir);
   for (const searchDir of allDirs) {
     for (const pattern of patterns) {
-      const fsPath = `${baseDir}/${searchDir}/${pattern}`;
+      const fsPath = searchDir;
       try {
-        Deno.statSync(fsPath);
-        return `/${searchDir}/${link}/`;
+        Deno.statSync(`${fsPath}/${pattern}`);
+        // Strip leading ./ from baseDir for URL
+        const urlPath = searchDir.replace(/^\.\//, "");
+        return `/${urlPath}/${link}/`;
       } catch {
         // File doesn't exist, continue
       }
