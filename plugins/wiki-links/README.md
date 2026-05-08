@@ -32,15 +32,16 @@ site.use(remark({
 
 ## Link Resolution
 
-The plugin resolves links by checking for files in this order:
+The plugin searches for target files in this order:
 
-1. `${link}.md`
-2. `${link}/index.md`
-3. `${link}/README.md`
+1. `${link}.md` in the current directory
+2. `${link}/index.md` in the current directory
+3. `${link}/README.md` in the current directory
+4. If not found locally, recursively searches all subdirectories
+
+Directories starting with `.` or `_` are ignored during the search.
 
 If a file is found in a subdirectory (e.g., `docs/getting-started.md`), the link is resolved to `/docs/getting-started/`.
-
-Directories starting with `.` or `_` are ignored.
 
 ## Examples
 

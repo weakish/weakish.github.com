@@ -28,7 +28,6 @@ interface LinkNode extends ASTNode {
 
 export function customWikiLinks() {
   const baseDir = ".";
-  
   // Cache the directory list since it's stable during build
   let cachedDirectories: string[] | null = null;
   

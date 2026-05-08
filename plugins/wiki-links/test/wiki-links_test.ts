@@ -286,7 +286,8 @@ Deno.test("wiki-links - handles missing heading gracefully", () => {
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
-  assertEquals(para.children.length, 1);
+  const textNode = para.children[0] as TextNode;
+  assertEquals(textNode.value, "See [[docs#]] for more");
 });
 
 Deno.test("wiki-links - heading with special characters", () => {
@@ -358,14 +359,14 @@ Deno.test("wiki-links - non-text node is unchanged", () => {
   assertEquals((node as { value: string }).value, "Heading");
 });
 
-Deno.test("wiki-links - wiki link with unicode characters", () => {
-  const node = createParagraph([createTextNode("See [[文档]]")]);
+Deno.test("wiki-links - wiki link with emoji", () => {
+  const node = createParagraph([createTextNode("See [[🎯]]")]);
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
   const linkNode = para.children[1] as LinkNode;
-  assertEquals(linkNode.url, "/文档/");
-  assertEquals(linkNode.children[0].value, "文档");
+  assertEquals(linkNode.url, "/🎯/");
+  assertEquals(linkNode.children[0].value, "🎯");
 });
 
 Deno.test("wiki-links - wiki link with numbers", () => {
