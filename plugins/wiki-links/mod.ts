@@ -170,7 +170,7 @@ export function customWikiLinks() {
     }
   }
 
-    
+     
   function processNode(node: ASTNode, parent: ASTNode | null = null): void {
     // Set parent reference for context checking
     node.parent = parent;
