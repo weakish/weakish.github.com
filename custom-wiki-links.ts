@@ -12,7 +12,6 @@ interface ASTNode {
     hName?: string;
   };
   _wikiLinksReplacement?: ASTNode[];
-  _highlightReplacement?: ASTNode[];
 }
 
 interface TextNode extends ASTNode {
@@ -171,68 +170,13 @@ export function customWikiLinks() {
     }
   }
 
-  function processHighlights(node: ASTNode): void {
-    if (node.type === 'text' && typeof node.value === 'string' && !isInCodeContext(node)) {
-      const highlightRegex = /==([^=]+)==/g;
-      const matches = [...node.value.matchAll(highlightRegex)];
-      
-      if (matches.length > 0) {
-        const newNodes: ASTNode[] = [];
-        let lastIndex = 0;
-        
-        for (const match of matches) {
-          const fullMatch = match[0];
-          const highlightText = match[1];
-          const matchIndex = match.index!;
-          
-          // Add text before the highlight
-          if (matchIndex > lastIndex) {
-            newNodes.push({
-              type: 'text',
-              value: node.value.slice(lastIndex, matchIndex)
-            });
-          }
-          
-          // Add the highlight (using mark element)
-          newNodes.push({
-            type: 'emphasis', // Using emphasis for now as remark doesn't have native mark support
-            data: {
-              hName: 'mark'
-            },
-            children: [{
-              type: 'text',
-              value: highlightText
-            }]
-          });
-          
-          lastIndex = matchIndex + fullMatch.length;
-        }
-        
-        // Add remaining text
-        if (lastIndex < node.value.length) {
-          newNodes.push({
-            type: 'text',
-            value: node.value.slice(lastIndex)
-          });
-        }
-        
-        // Mark this node for replacement
-        node._highlightReplacement = newNodes;
-      }
-    }
-  }
-
+    
   function processNode(node: ASTNode, parent: ASTNode | null = null): void {
     // Set parent reference for context checking
     node.parent = parent;
     
     // Process wiki links first
     processWikiLinks(node);
-    
-    // Process highlights second (only if no wiki link replacement)
-    if (!node._wikiLinksReplacement) {
-      processHighlights(node);
-    }
     
     // Process children
     if (node.children) {
@@ -246,9 +190,6 @@ export function customWikiLinks() {
         if (child._wikiLinksReplacement) {
           node.children.splice(i, 1, ...child._wikiLinksReplacement);
           delete child._wikiLinksReplacement;
-        } else if (child._highlightReplacement) {
-          node.children.splice(i, 1, ...child._highlightReplacement);
-          delete child._highlightReplacement;
         }
       }
     }
