@@ -60,3 +60,13 @@ is resolved to `/docs/getting-started/`.
 
 Currently, the plugin uses the current working directory as the base for file
 resolution.
+
+## Known Limitations
+
+- **Nested brackets**: `[[outer [[nested]] link]]` produces a URL with raw
+  brackets (`/outer [[nested/`) which is technically invalid. Avoid nested wiki
+  link syntax in your content.
+- **Special characters in headings**: Heading anchors are lowercased and spaces
+  are replaced with hyphens (e.g., `#Getting Started` → `#getting-started`).
+- **No URL encoding**: The resulting URLs are not percent-encoded. Brackets and
+  other special characters in URLs may cause issues in some contexts.

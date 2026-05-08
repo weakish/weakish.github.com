@@ -191,6 +191,9 @@ Deno.test("wiki-links - wiki link with spaces in heading", () => {
 });
 
 Deno.test("wiki-links - handles nested brackets in link text", () => {
+  // Unsupported edge case: nested [[ produces URLs with raw brackets like
+  // "/outer [[nested/" which are technically invalid. Real content should not
+  // have nested wiki link syntax.
   const node = createParagraph([createTextNode("[[outer [[nested]] link]]")]);
   runPlugin(node);
 
