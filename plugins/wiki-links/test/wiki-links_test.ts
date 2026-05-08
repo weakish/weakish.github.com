@@ -256,22 +256,6 @@ Deno.test("wiki-links - code block avoidance", () => {
   assertEquals(linkNode.url, "/about/");
 });
 
-Deno.test("wiki-links - code block avoidance via parent chain", () => {
-  const textInCode = createTextNode("[[internal]] link in code");
-  const codeWrapper = { type: "code", children: [textInCode] };
-  const root = { type: "root", children: [codeWrapper] };
-  (textInCode as ASTNode).parent = codeWrapper as ASTNode;
-  (codeWrapper as ASTNode).parent = root as ASTNode;
-
-  runPlugin(root as ASTNode);
-
-  const codeNode = codeWrapper as { children: ASTNode[] };
-  assertEquals(codeNode.children.length, 1);
-  const textNode = codeNode.children[0] as { type: string; value?: string };
-  assertEquals(textNode.type, "text");
-  assertEquals(textNode.value, "[[internal]] link in code");
-});
-
 Deno.test("wiki-links - inline code avoidance", () => {
   const inlineCode = createInlineCode("[[internal]]");
   const children: ASTNode[] = [

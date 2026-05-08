@@ -100,24 +100,9 @@ export function customWikiLinks() {
     return resolveLinkPath(link, baseDir);
   }
 
-  // Check if node is inside a code block or inline code
-  function isInCodeContext(node: ASTNode): boolean {
-    let parent = node.parent;
-    while (parent) {
-      if (parent.type === "code" || parent.type === "inlineCode") {
-        return true;
-      }
-      parent = parent.parent;
-    }
-    return false;
-  }
-
   // Process wiki links in a text node
   function processWikiLinks(node: ASTNode): void {
-    if (
-      node.type === "text" && typeof node.value === "string" &&
-      !isInCodeContext(node)
-    ) {
+    if (node.type === "text" && typeof node.value === "string") {
       // Wiki link regex supports: [[link]], [[link|text]], [[link#heading]], [[link#heading|text]]
       const wikiLinkRegex = /\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]/g;
       const matches = [...node.value.matchAll(wikiLinkRegex)];
