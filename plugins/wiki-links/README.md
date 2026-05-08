@@ -70,3 +70,7 @@ resolution.
   are replaced with hyphens (e.g., `#Getting Started` → `#getting-started`).
 - **No URL encoding**: The resulting URLs are not percent-encoded. Brackets and
   other special characters in URLs may cause issues in some contexts.
+- **Duplicate filenames**: If multiple directories contain a file with the same
+  name (e.g., `docs/bar.md` and `blog/bar.md`), the resolved URL depends on
+  filesystem iteration order, which is not guaranteed to be deterministic. Avoid
+  having duplicate filenames across subdirectories.

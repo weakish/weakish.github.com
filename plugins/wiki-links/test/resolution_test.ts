@@ -5,7 +5,7 @@ import {
   resolveLinkPath,
 } from "../mod.ts";
 
-const testDir = ".test-wiki-links-resolve";
+const testDir = "test-wiki-links-resolve";
 
 function cleanup(): void {
   clearDirectoryCache();
