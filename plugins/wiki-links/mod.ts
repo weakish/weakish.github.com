@@ -26,6 +26,7 @@ interface LinkNode extends ASTNode {
   children: ASTNode[];
 }
 
+// Recursively get all directories, excluding hidden, underscore, and node_modules
 export function getAllDirectories(dir: string): string[] {
   const directories: string[] = [];
   try {
@@ -38,23 +39,31 @@ export function getAllDirectories(dir: string): string[] {
       ) {
         const fullPath = dir === "." ? entry.name : `${dir}/${entry.name}`;
         directories.push(fullPath);
+        // Recursively get subdirectories
         directories.push(...getAllDirectories(fullPath));
       }
     }
-  } catch {}
+  } catch {
+    // If directory doesn't exist or can't be read, continue
+  }
   return directories;
 }
 
+// Resolve wiki link to URL path, searching for .md, index.md, or README.md
 export function resolveLinkPath(link: string, baseDir = "."): string {
   const patterns = [`${link}.md`, `${link}/index.md`, `${link}/README.md`];
 
+  // Check current directory first
   for (const pattern of patterns) {
     try {
       Deno.statSync(`${baseDir}/${pattern}`);
       return `/${link}/`;
-    } catch {}
+    } catch {
+      // File doesn't exist, continue
+    }
   }
 
+  // Search subdirectories
   const allDirs = getAllDirectories(baseDir);
   for (const searchDir of allDirs) {
     for (const pattern of patterns) {
@@ -62,10 +71,13 @@ export function resolveLinkPath(link: string, baseDir = "."): string {
       try {
         Deno.statSync(fullPath);
         return `/${searchDir}/${link}/`;
-      } catch {}
+      } catch {
+        // File doesn't exist, continue
+      }
     }
   }
 
+  // Fallback: return original link
   return `/${link}/`;
 }
 
@@ -73,6 +85,7 @@ export function customWikiLinks() {
   const baseDir = ".";
   let cachedDirectories: string[] | null = null;
 
+  // Cache the directory list since it's stable during build
   function getCachedDirectories(): string[] {
     if (cachedDirectories === null) {
       cachedDirectories = getAllDirectories(baseDir);
@@ -83,13 +96,17 @@ export function customWikiLinks() {
   function resolve(link: string): string {
     const patterns = [`${link}.md`, `${link}/index.md`, `${link}/README.md`];
 
+    // Check current directory first
     for (const pattern of patterns) {
       try {
         Deno.statSync(`${baseDir}/${pattern}`);
         return `/${link}/`;
-      } catch {}
+      } catch {
+        // File doesn't exist, continue
+      }
     }
 
+    // Search subdirectories using cached results
     const allDirs = getCachedDirectories();
     for (const searchDir of allDirs) {
       for (const pattern of patterns) {
@@ -97,13 +114,17 @@ export function customWikiLinks() {
         try {
           Deno.statSync(fullPath);
           return `/${searchDir}/${link}/`;
-        } catch {}
+        } catch {
+          // File doesn't exist, continue
+        }
       }
     }
 
+    // Fallback: return original link
     return `/${link}/`;
   }
 
+  // Check if node is inside a code block or inline code
   function isInCodeContext(node: ASTNode): boolean {
     let parent = node.parent;
     while (parent) {
@@ -115,11 +136,13 @@ export function customWikiLinks() {
     return false;
   }
 
+  // Process wiki links in a text node
   function processWikiLinks(node: ASTNode): void {
     if (
       node.type === "text" && typeof node.value === "string" &&
       !isInCodeContext(node)
     ) {
+      // Wiki link regex supports: [[link]], [[link|text]], [[link#heading]], [[link#heading|text]]
       const wikiLinkRegex = /\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]/g;
       const matches = [...node.value.matchAll(wikiLinkRegex)];
 
@@ -134,6 +157,7 @@ export function customWikiLinks() {
           const customText = match[3];
           const matchIndex = match.index!;
 
+          // Add text before the link
           if (matchIndex > lastIndex) {
             newNodes.push({
               type: "text",
@@ -141,13 +165,17 @@ export function customWikiLinks() {
             });
           }
 
+          // Determine display text
           let displayText = customText || linkTarget;
 
+          // Build resolved URL
           let resolvedPath = resolve(linkTarget);
           if (heading) {
+            // Add heading anchor
             resolvedPath += `#${heading.toLowerCase().replace(/\s+/g, "-")}`;
           }
 
+          // Create link node
           const linkNode: LinkNode = {
             type: "link",
             url: resolvedPath,
@@ -162,6 +190,7 @@ export function customWikiLinks() {
           lastIndex = matchIndex + fullMatch.length;
         }
 
+        // Add remaining text
         if (lastIndex < node.value.length) {
           newNodes.push({
             type: "text",
@@ -169,11 +198,13 @@ export function customWikiLinks() {
           });
         }
 
+        // Mark for replacement
         node._wikiLinksReplacement = newNodes;
       }
     }
   }
 
+  // Recursively process AST nodes
   function processNode(node: ASTNode, parent: ASTNode | null = null): void {
     node.parent = parent;
     processWikiLinks(node);
@@ -183,6 +214,7 @@ export function customWikiLinks() {
         processNode(child, node);
       }
 
+      // Replace nodes marked for replacement
       for (let i = node.children.length - 1; i >= 0; i--) {
         const child = node.children[i];
         if (child._wikiLinksReplacement) {
