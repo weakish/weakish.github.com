@@ -5,7 +5,7 @@ interface ASTNode {
   type: string;
   value?: string;
   children?: ASTNode[];
-  parent?: ASTNode;
+  parent?: ASTNode | null;
   url?: string;
   title?: string | null;
   data?: {

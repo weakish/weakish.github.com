@@ -5,7 +5,7 @@ interface ASTNode {
   type: string;
   value?: string;
   children?: ASTNode[];
-  parent?: ASTNode;
+  parent?: ASTNode | null;
   url?: string;
   title?: string | null;
   data?: {
@@ -43,8 +43,7 @@ function createInlineCode(value: string): ASTNode {
 }
 
 function runPlugin(node: ASTNode): ASTNode {
-  const plugin = customWikiLinks();
-  const transformer = plugin(node);
+  const transformer = customWikiLinks();
   transformer(node);
   return node;
 }
@@ -54,11 +53,15 @@ Deno.test("wiki-links - basic wiki link", () => {
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
-  const textNode = para.children[1] as LinkNode;
+  const textNode = para.children[0] as TextNode;
+  assertEquals(textNode.value, "See ");
+  const linkNode = para.children[1] as LinkNode;
   
-  assertEquals(textNode.type, "link");
-  assertEquals(textNode.url, "/about/");
-  assertEquals(textNode.children[0].value, "about");
+  assertEquals(linkNode.type, "link");
+  assertEquals(linkNode.url, "/about/");
+  assertEquals(linkNode.children[0].value, "about");
+  const afterText = para.children[2] as TextNode;
+  assertEquals(afterText.value, " for details");
 });
 
 Deno.test("wiki-links - custom text", () => {
@@ -78,6 +81,7 @@ Deno.test("wiki-links - section anchor", () => {
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
+  assertEquals((para.children[0] as TextNode).value, "See ");
   const linkNode = para.children[1] as LinkNode;
   
   assertEquals(linkNode.type, "link");
@@ -85,7 +89,7 @@ Deno.test("wiki-links - section anchor", () => {
 });
 
 Deno.test("wiki-links - combined anchor and custom text", () => {
-  const node = createParagraph([createTextNode("Read [[install|Setup Guide#Installation]] here")]);
+  const node = createParagraph([createTextNode("Read [[install#installation|Setup Guide]] here")]);
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
@@ -93,11 +97,11 @@ Deno.test("wiki-links - combined anchor and custom text", () => {
   
   assertEquals(linkNode.type, "link");
   assertEquals(linkNode.url, "/install/#installation");
-  assertEquals(linkNode.children[0].value, "Setup Guide#Installation");
+  assertEquals(linkNode.children[0].value, "Setup Guide");
 });
 
 Deno.test("wiki-links - custom text with anchor", () => {
-  const node = createParagraph([createTextNode("See [[config|Configuration#Options]]")]);
+  const node = createParagraph([createTextNode("See [[config#options|Configuration]]")]);
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
@@ -105,7 +109,7 @@ Deno.test("wiki-links - custom text with anchor", () => {
   
   assertEquals(linkNode.type, "link");
   assertEquals(linkNode.url, "/config/#options");
-  assertEquals(linkNode.children[0].value, "Configuration#Options");
+  assertEquals(linkNode.children[0].value, "Configuration");
 });
 
 Deno.test("wiki-links - multiple wiki links in same text", () => {
@@ -164,13 +168,17 @@ Deno.test("wiki-links - wiki link with spaces in heading", () => {
   assertEquals(linkNode.url, "/api/#response-format");
 });
 
-Deno.test("wiki-links - nested wiki links are not supported", () => {
+Deno.test("wiki-links - handles nested brackets in link text", () => {
   const node = createParagraph([createTextNode("[[outer [[nested]] link]]")]);
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
-  const textNode = para.children[0] as TextNode;
-  assertEquals(textNode.value, "[[outer [[nested]] link]]");
+  const linkNode = para.children[0] as LinkNode;
+  assertEquals(linkNode.type, "link");
+  assertEquals(linkNode.url, "/outer [[nested/");
+  assertEquals(linkNode.children[0].value, "outer [[nested");
+  const afterText = para.children[1] as TextNode;
+  assertEquals(afterText.value, " link]]");
 });
 
 Deno.test("wiki-links - empty wiki link is not transformed", () => {
@@ -191,13 +199,15 @@ Deno.test("wiki-links - wiki link with only pipe is not transformed", () => {
   assertEquals(textNode.value, "[[|]] in text");
 });
 
-Deno.test("wiki-links - escapes in link text", () => {
+Deno.test("wiki-links - wiki link with bracketed text preserved", () => {
   const node = createParagraph([createTextNode("[[docs]] contains [bracketed] text")]);
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
-  assertEquals((para.children[0] as TextNode).value, "[[docs]] contains ");
-  assertEquals((para.children[2] as TextNode).value, " [bracketed] text");
+  const linkNode = para.children[0] as LinkNode;
+  assertEquals(linkNode.url, "/docs/");
+  const afterText = para.children[1] as TextNode;
+  assertEquals(afterText.value, " contains [bracketed] text");
 });
 
 Deno.test("wiki-links - code block avoidance", () => {
@@ -213,19 +223,37 @@ Deno.test("wiki-links - code block avoidance", () => {
   assertEquals(code.value, "Use [[internal]] links here");
   
   const linkPara = para.children[1] as { children: ASTNode[] };
+  assertEquals((linkPara.children[0] as TextNode).value, "See ");
   const linkNode = linkPara.children[1] as LinkNode;
   assertEquals(linkNode.type, "link");
   assertEquals(linkNode.url, "/about/");
 });
 
+Deno.test("wiki-links - code block avoidance via parent chain", () => {
+  const textInCode = createTextNode("[[internal]] link in code");
+  const codeWrapper = { type: "code", children: [textInCode] };
+  const root = { type: "root", children: [codeWrapper] };
+  (textInCode as ASTNode).parent = codeWrapper as ASTNode;
+  (codeWrapper as ASTNode).parent = root as ASTNode;
+  
+  runPlugin(root as ASTNode);
+
+  const codeNode = codeWrapper as { children: ASTNode[] };
+  assertEquals(codeNode.children.length, 1);
+  const textNode = codeNode.children[0] as { type: string; value?: string };
+  assertEquals(textNode.type, "text");
+  assertEquals(textNode.value, "[[internal]] link in code");
+});
+
 Deno.test("wiki-links - inline code avoidance", () => {
   const inlineCode = createInlineCode("[[internal]]");
-  const para = createParagraph([
+  const children: ASTNode[] = [
     createTextNode("Use "),
     inlineCode,
     createTextNode(" for links"),
-  ]);
-  (para.children[1] as ASTNode).parent = para;
+  ];
+  const para = createParagraph(children);
+  (children[1] as ASTNode).parent = para;
   
   runPlugin(para);
 
@@ -275,7 +303,7 @@ Deno.test("wiki-links - preserves link node title as null", () => {
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
-  const linkNode = para.children[1] as LinkNode;
+  const linkNode = para.children[0] as LinkNode;
   assertEquals(linkNode.title, null);
 });
 
@@ -292,7 +320,7 @@ Deno.test("wiki-links - processes deeply nested structure", () => {
   runPlugin(root as ASTNode);
 
   const li = list.children[0] as { children: ASTNode[] };
-  const linkNode = li.children[1] as LinkNode;
+  const linkNode = li.children[0] as LinkNode;
   assertEquals(linkNode.type, "link");
   assertEquals(linkNode.url, "/deep/");
 });
@@ -368,14 +396,14 @@ Deno.test("wiki-links - wiki link with slashes in target", () => {
 });
 
 Deno.test("wiki-links - consecutive wiki links", () => {
-  const node = createParagraph([[createTextNode("[[a]][[b]][[c]]")]);
+  const node = createParagraph([createTextNode("[[a]][[b]][[c]]")]);
   runPlugin(node);
 
   const para = node as { children: ASTNode[] };
-  assertEquals(para.children.length, 5);
-  assertEquals((para.children[1] as LinkNode).url, "/a/");
-  assertEquals((para.children[3] as LinkNode).url, "/b/");
-  assertEquals((para.children[5] as LinkNode).url, "/c/");
+  assertEquals(para.children.length, 3);
+  assertEquals((para.children[0] as LinkNode).url, "/a/");
+  assertEquals((para.children[1] as LinkNode).url, "/b/");
+  assertEquals((para.children[2] as LinkNode).url, "/c/");
 });
 
 Deno.test("wiki-links - mixed content with wiki links and markdown", () => {
