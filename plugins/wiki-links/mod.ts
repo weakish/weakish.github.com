@@ -26,30 +26,50 @@ interface LinkNode extends ASTNode {
   children: ASTNode[];
 }
 
+export function getAllDirectories(dir: string): string[] {
+  const directories: string[] = [];
+  try {
+    for (const entry of Deno.readDirSync(dir)) {
+      if (entry.isDirectory && 
+          !entry.name.startsWith('.') && 
+          !entry.name.startsWith('_') && 
+          entry.name !== 'node_modules') {
+        const fullPath = dir === '.' ? entry.name : `${dir}/${entry.name}`;
+        directories.push(fullPath);
+        directories.push(...getAllDirectories(fullPath));
+      }
+    }
+  } catch {}
+  return directories;
+}
+
+export function resolveLinkPath(link: string, baseDir = "."): string {
+  const patterns = [`${link}.md`, `${link}/index.md`, `${link}/README.md`];
+  
+  for (const pattern of patterns) {
+    try {
+      Deno.statSync(`${baseDir}/${pattern}`);
+      return `/${link}/`;
+    } catch {}
+  }
+  
+  const allDirs = getAllDirectories(baseDir);
+  for (const searchDir of allDirs) {
+    for (const pattern of patterns) {
+      const fullPath = `${baseDir}/${searchDir}/${pattern}`;
+      try {
+        Deno.statSync(fullPath);
+        return `/${searchDir}/${link}/`;
+      } catch {}
+    }
+  }
+  
+  return `/${link}/`;
+}
+
 export function customWikiLinks() {
   const baseDir = ".";
-  // Cache the directory list since it's stable during build
   let cachedDirectories: string[] | null = null;
-  
-  function getAllDirectories(dir: string): string[] {
-    const directories: string[] = [];
-    try {
-      for (const entry of Deno.readDirSync(dir)) {
-        if (entry.isDirectory && 
-            !entry.name.startsWith('.') && 
-            !entry.name.startsWith('_') && 
-            entry.name !== 'node_modules') {
-          const fullPath = dir === '.' ? entry.name : `${dir}/${entry.name}`;
-          directories.push(fullPath);
-          // Recursively get subdirectories
-          directories.push(...getAllDirectories(fullPath));
-        }
-      }
-    } catch {
-      // If directory doesn't exist or can't be read, continue
-    }
-    return directories;
-  }
   
   function getCachedDirectories(): string[] {
     if (cachedDirectories === null) {
@@ -58,21 +78,16 @@ export function customWikiLinks() {
     return cachedDirectories;
   }
   
-  function resolveLinkPath(link: string): string {
-    // First, check if the link exists in the current directory
+  function resolve(link: string): string {
     const patterns = [`${link}.md`, `${link}/index.md`, `${link}/README.md`];
     
-    // Check in current directory first
     for (const pattern of patterns) {
       try {
         Deno.statSync(`${baseDir}/${pattern}`);
         return `/${link}/`;
-      } catch {
-        // File doesn't exist, continue
-      }
+      } catch {}
     }
     
-    // Search recursively in all directories using cached results
     const allDirs = getCachedDirectories();
     for (const searchDir of allDirs) {
       for (const pattern of patterns) {
@@ -80,19 +95,14 @@ export function customWikiLinks() {
         try {
           Deno.statSync(fullPath);
           return `/${searchDir}/${link}/`;
-        } catch {
-          // File doesn't exist, continue to next pattern/directory
-        }
+        } catch {}
       }
     }
     
-    // If not found, return the original link (fallback)
     return `/${link}/`;
   }
 
   function isInCodeContext(node: ASTNode): boolean {
-    // Check if we're inside a code block or inline code
-    // Since we're setting parent references in processNode, this should work
     let parent = node.parent;
     while (parent) {
       if (parent.type === 'code' || parent.type === 'inlineCode') {
@@ -105,24 +115,20 @@ export function customWikiLinks() {
 
   function processWikiLinks(node: ASTNode): void {
     if (node.type === 'text' && typeof node.value === 'string' && !isInCodeContext(node)) {
-      // Advanced wiki link regex that supports:
-      // [[link]], [[link|text]], [[link#heading]], [[link#heading|text]]
       const wikiLinkRegex = /\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|([^\]]+))?\]\]/g;
       const matches = [...node.value.matchAll(wikiLinkRegex)];
       
       if (matches.length > 0) {
-        // We need to replace this text node with multiple nodes
         const newNodes: ASTNode[] = [];
         let lastIndex = 0;
         
         for (const match of matches) {
           const fullMatch = match[0];
-          const linkTarget = match[1];  // The actual link target
-          const heading = match[2];     // Optional heading
-          const customText = match[3];  // Optional custom text
+          const linkTarget = match[1];
+          const heading = match[2];
+          const customText = match[3];
           const matchIndex = match.index!;
           
-          // Add text before the link
           if (matchIndex > lastIndex) {
             newNodes.push({
               type: 'text',
@@ -130,17 +136,13 @@ export function customWikiLinks() {
             });
           }
           
-          // Determine the display text
           let displayText = customText || linkTarget;
           
-          // Build the URL
-          let resolvedPath = resolveLinkPath(linkTarget);
+          let resolvedPath = resolve(linkTarget);
           if (heading) {
-            // Add heading anchor
             resolvedPath += `#${heading.toLowerCase().replace(/\s+/g, '-')}`;
           }
           
-          // Add the link
           const linkNode: LinkNode = {
             type: 'link',
             url: resolvedPath,
@@ -155,7 +157,6 @@ export function customWikiLinks() {
           lastIndex = matchIndex + fullMatch.length;
         }
         
-        // Add remaining text
         if (lastIndex < node.value.length) {
           newNodes.push({
             type: 'text',
@@ -163,27 +164,20 @@ export function customWikiLinks() {
           });
         }
         
-        // Mark this node for replacement
         node._wikiLinksReplacement = newNodes;
       }
     }
   }
 
-     
   function processNode(node: ASTNode, parent: ASTNode | null = null): void {
-    // Set parent reference for context checking
     node.parent = parent;
-    
-    // Process wiki links first
     processWikiLinks(node);
     
-    // Process children
     if (node.children) {
       for (const child of node.children) {
         processNode(child, node);
       }
       
-      // Replace nodes that were marked for replacement
       for (let i = node.children.length - 1; i >= 0; i--) {
         const child = node.children[i];
         if (child._wikiLinksReplacement) {
