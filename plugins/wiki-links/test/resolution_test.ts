@@ -3,6 +3,6 @@ import { getAllDirectories } from "../mod.ts";
 
 Deno.test("getAllDirectories - returns empty for non-existent directory", () => {
   const result = getAllDirectories("/non/existent/path");
-  
+
   assertEquals(result.length, 0);
 });
