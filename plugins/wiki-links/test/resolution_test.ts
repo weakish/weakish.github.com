@@ -74,8 +74,8 @@ Deno.test("resolveLinkPath - non-deterministic with duplicate filenames", () => 
     Deno.writeTextFileSync(`${testDir}/subdir2/about.md`, "# About 2");
 
     const result = resolveLinkPath("about", testDir);
-    const valid = result === "/subdir1/" || result === "/subdir2/";
-    assertEquals(valid, true, "Should resolve to one of subdirectories");
+    const valid = result === "/subdir1/about/" || result === "/subdir2/about/";
+    assertEquals(valid, true, "Should resolve to one of subdirectories with link name");
   } finally {
     clearDirectoryCache();
     try {
