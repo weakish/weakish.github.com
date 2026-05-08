@@ -16,6 +16,9 @@ proper URLs based on the file structure.
 - **Combined**: `[[link#heading|text]]` → `<a href="/link/#heading">text</a>`
 - **Automatic path resolution**: Automatically finds `.md`, `index.md`, or
   `README.md` files
+- **Recursive subdirectory search**: If not found in the current directory,
+  recursively searches all subdirectories (ignoring `.` and `_` prefixed
+  directories)
 - **Code block avoidance**: Does not transform links inside code blocks or
   inline code
 
