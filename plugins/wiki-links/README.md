@@ -74,3 +74,8 @@ resolution.
   name (e.g., `docs/bar.md` and `blog/bar.md`), the resolved URL depends on
   filesystem iteration order, which is not guaranteed to be deterministic. Avoid
   having duplicate filenames across subdirectories.
+- **Performance**: `resolveLinkPath` performs multiple synchronous `Deno.statSync`
+  calls for each wiki link — up to 3 patterns checked in the root directory, then
+  potentially 3 × N for each of N cached directories. A file existence cache
+  (built once at startup by scanning all .md files) would be more efficient and
+  eliminate the per-link I/O entirely.
