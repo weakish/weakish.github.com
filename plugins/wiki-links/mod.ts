@@ -49,6 +49,9 @@ export function getAllDirectories(dir: string): string[] {
   return directories;
 }
 
+// Cache for directory listings
+const directoryCache = new Map<string, string[]>();
+
 // Resolve wiki link to URL path, searching for .md, index.md, or README.md
 export function resolveLinkPath(link: string, baseDir = "."): string {
   const patterns = [`${link}.md`, `${link}/index.md`, `${link}/README.md`];
@@ -63,8 +66,14 @@ export function resolveLinkPath(link: string, baseDir = "."): string {
     }
   }
 
+  // Get cached directories for this baseDir
+  let allDirs = directoryCache.get(baseDir);
+  if (allDirs === undefined) {
+    allDirs = getAllDirectories(baseDir);
+    directoryCache.set(baseDir, allDirs);
+  }
+
   // Search subdirectories
-  const allDirs = getAllDirectories(baseDir);
   for (const searchDir of allDirs) {
     for (const pattern of patterns) {
       const fsPath = searchDir;
