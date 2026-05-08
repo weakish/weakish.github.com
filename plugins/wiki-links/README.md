@@ -79,3 +79,8 @@ resolution.
   potentially 3 × N for each of N cached directories. A file existence cache
   (built once at startup by scanning all .md files) would be more efficient and
   eliminate the per-link I/O entirely.
+- **Directory cache persistence**: The `directoryCache` is a module-level Map that
+  persists for the lifetime of the process. In long-running processes (e.g., watch
+  mode), the cache would never be invalidated unless `clearDirectoryCache()` is
+  explicitly called. This could lead to stale directory listings if the file
+  structure changes during runtime.
