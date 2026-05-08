@@ -52,6 +52,10 @@ export function getAllDirectories(dir: string): string[] {
 // Cache for directory listings
 const directoryCache = new Map<string, string[]>();
 
+export function clearDirectoryCache(): void {
+  directoryCache.clear();
+}
+
 // Resolve wiki link to URL path, searching for .md, index.md, or README.md
 export function resolveLinkPath(link: string, baseDir = "."): string {
   const patterns = [`${link}.md`, `${link}/index.md`, `${link}/README.md`];
@@ -79,8 +83,8 @@ export function resolveLinkPath(link: string, baseDir = "."): string {
       const fsPath = searchDir;
       try {
         Deno.statSync(`${fsPath}/${pattern}`);
-        // Strip leading ./ from baseDir for URL
-        const urlPath = searchDir.replace(/^\.\//, "");
+        // Strip leading ./ (for "." baseDir) or baseDir prefix for URL
+        const urlPath = searchDir.replace(/^\.\//, "").replace(/^.+?\//, "");
         return `/${urlPath}/${link}/`;
       } catch {
         // File doesn't exist, continue
