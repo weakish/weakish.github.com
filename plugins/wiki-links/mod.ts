@@ -77,17 +77,19 @@ export function resolveLinkPath(link: string, baseDir = "."): string {
     directoryCache.set(baseDir, allDirs);
   }
 
-   // Search subdirectories
-   for (const searchDir of allDirs) {
-     for (const pattern of patterns) {
-       try {
-         Deno.statSync(`${searchDir}/${pattern}`);
+  // Search subdirectories
+  for (const searchDir of allDirs) {
+    for (const pattern of patterns) {
+      try {
+        Deno.statSync(`${searchDir}/${pattern}`);
         // Strip leading ./ (for "." baseDir) or baseDir prefix for URL
         let urlPath;
         if (baseDir === ".") {
           urlPath = searchDir.replace(/^\.\//, "");
         } else {
-          urlPath = searchDir.startsWith(baseDir + "/") ? searchDir.slice(baseDir.length + 1) : searchDir;
+          urlPath = searchDir.startsWith(baseDir + "/")
+            ? searchDir.slice(baseDir.length + 1)
+            : searchDir;
         }
         return `/${urlPath}/${link}/`;
       } catch {
