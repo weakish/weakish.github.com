@@ -33,14 +33,18 @@ Wiki Links
 
 One thing I like about Obsidian is the wiki-link syntax.
 The bracketed link syntax reminds me of my good old days using ikiwiki.
-I use the `remark-obsidian` npm package for wiki-link syntax here.
+I use a custom plugin at `plugins/wiki-links/` for wiki-link syntax here.
 
-TODO:
-Obsidian lets you link to any page by its name,
-regardless of which directory the file is in.
-This search-to-link feature has not been implemented here yet.
+The plugin supports:
 
-Also, `remark-obsidian` adds support for highlighted text and callouts.
+- Basic wiki links: `[[link]]`
+- Custom display text: `[[link|text]]`
+- Section anchors: `[[link#heading]]`
+- Automatic path resolution (`.md`, `index.md`, `README.md`)
+- Recursive subdirectory search: links resolve to pages in any directory
+- Code block avoidance: wiki links inside code blocks are not transformed
+
+Also, highlighted text (`==text==`) is handled by the `remark-highlight-mark` plugin.
 
 I seldom use highlighted text
 but I think it might be useful
