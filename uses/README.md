@@ -41,18 +41,20 @@ If not, you can figure it out via the source code of this site.
 ## Editor
 
 I mostly use [Cursor][], more and more as a browser than an editor since AI agents are getting smarter and smarter.
-I may try [Windsurf][] in future.
+I may try [Windsurf][] and [Zed][] in future.
 
 ## Agent
 
 I use [OpenCode] since it is open source and model agnostic.
-I may try [Devin][] and [Junie][] in future.
+I may try [Devin][], [Jules][] and [Junie][] in future.
 
 [Cursor]: https://www.cursor.com
 [Windsurf]: https://windsurf.com/editor
+[Zed]: https://zed.dev/
 [OpenCode]: https://opencode.ai
 [Devin]: https://devin.ai
 [Junie]: https://www.jetbrains.com/junie/
+[Jules]: https://jules.google.com/
 
 ## Terminal
 
