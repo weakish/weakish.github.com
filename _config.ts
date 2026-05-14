@@ -20,7 +20,7 @@ import transformImages from "lume/plugins/transform_images.ts";
 import textLoader from "lume/core/loaders/text.ts";
 import GeminiEngine from "./gemini.ts";
 import { customWikiLinks } from "./plugins/wiki-links/mod.ts";
-import readme from "./plugins/readme/mod.ts";
+import readme from "https://deno.land/x/lume_readme@0.0.0/mod.ts";
 const site = lume({
   location: new URL(Deno.env.get("MIRROR_LOCATION") ?? "https://mmap.page"),
 });
