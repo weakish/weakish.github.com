@@ -26,7 +26,7 @@ README as Index
 Jekyll supports using README.md as the index page.
 Lume does not support this out of the box,
 but a Lume plugin has been implemented to handle this.
-The plugin is available at `plugins/readme/`.
+The plugin is available at https://deno.land/x/lume_readme
 
 Wiki Links
 ----------
@@ -102,4 +102,3 @@ which is consistent with Stack Overflow practice.
 [lowdown(5)]: https://manpages.ubuntu.com/manpages/jammy/man5/lowdown.5.html
 [so-tag]: https://stackoverflow.com/help/tagging
 [meta-tags]: https://stackoverflow.blog/2010/08/07/the-death-of-meta-tags/
-
