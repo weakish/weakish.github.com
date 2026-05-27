@@ -118,6 +118,10 @@ On macOS, I use [PaperWM.spoon][paperwm], a tiled scrollable window manager.
 [bzhelp]: https://www.backblaze.com/computer-backup/docs/resolve-delays-finding-external-drives-or-new-files
 [bz-log]: https://www.reddit.com/r/backblaze/comments/191gqt2/comment/kgwz6nn/
 
+- eSim: [Saily][] from NordVPN.
+
+[Saily]: https://saily.com/chowting "chowting is an 15% off coupon code I found online which I used to register my Saily account"
+
 ## Camera
 
 - Olympus Pen D3
@@ -241,7 +245,7 @@ I still don't have a go bag but I am planning to prepare one:
 
 ## Drink
 
-Water, milk (cow and soy), and Juice.
+Water, milk (cow and soy), and juice.
 I seldom drink coffee or tea, and almost never drink alcohol.
 However, I do like drinking chocolate.
 I am thinking of getting a Revomax bottle for take away at the cafe to reduce one time plastic waste.
