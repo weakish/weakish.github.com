@@ -18,6 +18,8 @@
 | 💩    | `:poop:` | dirty            |
 | 🥚    | `:egg:`  | Easter eggs      |
 
+See [[AGENTS]] for configuration details.
+
 ## Features
 
 - Only 13 types.
