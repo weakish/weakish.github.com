@@ -47,3 +47,31 @@ Examples:
 - `:fire:` is for removing a feature / API surface, not only deleting files
 - `:poop:` marks dirty hacks or workarounds that may need cleanup later
 - Do not invent other gitmoji codes (including those from the full gitmoji.dev catalogue) for this repo
+
+## AI attribution
+
+When an AI tool materially helps with a commit, add an `Assisted-by` line in the commit message body (after the subject line). This follows the [Linux kernel AI coding assistants guidance](https://docs.kernel.org/process/coding-assistants.html).
+
+### Format
+
+```
+Assisted-by: AGENT_NAME:MODEL_VERSION [TOOL1] [TOOL2]
+```
+
+- `AGENT_NAME` — the AI tool or framework (e.g. `Cursor`, `Claude Code`, `Copilot`)
+- `MODEL_VERSION` — the specific model used (e.g. `gpt-5.6`)
+- `[TOOL1] [TOOL2]` — optional specialized analysis tools only (e.g. `coccinelle`, `sparse`, `clang-tidy`)
+
+Do not list basic development tools (git, compilers, make, editors).
+
+### Example
+
+```
+:bug: fix wiki link resolution for subdirectories
+
+Assisted-by: Cursor:cursor-grok-4.5
+```
+
+### Notes
+
+- The human author is responsible for reviewing all AI-assisted changes before pushing commits or creating pull requests.
