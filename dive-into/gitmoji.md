@@ -1,4 +1,4 @@
-# Selected Gitmojis
+# 13 Short Gitmojis
 
 ## Summary
 
@@ -66,7 +66,7 @@ See [[AGENTS]] for configuration details.
     Test only changes thus are most likely to improve test coverage, aiming at 100% branch coverage.
     Therefore, I replace `:mag:` with `:100:`.
 
-    Any tools supporting this selected gitmoji set
+    Any tools supporting 13 Short Gitmojis
     should treat `:mag:` as an alias of `:100:`,
     to maintain backward compatibility.
 

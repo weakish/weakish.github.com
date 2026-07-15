@@ -46,7 +46,7 @@ Some random pages with syntax highlighting:
 - [An Opinionated Guide to ESLint/Oxlint](dive-into/eslint.md)
 - [Write Makefile Compatible with Both GNU make and BSD make](dive-into/make.md)
 - Neovim [code completion](vim/completion.md) and [spell checking](vim/spell.md)
-- [Selected Gitmojis](dive-into/gitmoji.md)
+- [13 Short Gitmojis](dive-into/gitmoji.md)
 - [History of HTML through Linux/BSD Websites](web/html-history.md)
 - [Build a Micro Static Site With GitHub Pages](dive-into/gh-pages.md)
 - [RarCrack Basic Guide](dive-into/rarcrack.md)

@@ -2,7 +2,7 @@
 
 ## Git commit messages
 
-Use this repo’s selected gitmoji set. Prefer the emoji **code** (e.g. `:bug:`) over the emoji glyph so messages stay readable in plain text.
+Use [13 Short Gitmojis](https://mmap.page/dive-into/gitmoji/). Prefer the emoji **code** (e.g. `:bug:`) over the emoji glyph so messages stay readable in plain text.
 
 ### Format
 
