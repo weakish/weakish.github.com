@@ -59,7 +59,7 @@ Assisted-by: AGENT_NAME:MODEL_VERSION [TOOL1] [TOOL2]
 ```
 
 - `AGENT_NAME` — the AI tool or framework (e.g. `Cursor`, `Claude Code`, `Copilot`)
-- `MODEL_VERSION` — the specific model used (e.g. `gpt-5.6`)
+- `MODEL_VERSION` — the specific model used for **this** commit (e.g. `gpt-5.6`, `cursor-grok-4.5`); take it from the current session identity, never from a previous commit
 - `[TOOL1] [TOOL2]` — optional specialized analysis tools only (e.g. `coccinelle`, `sparse`, `clang-tidy`)
 
 Do not list basic development tools (git, compilers, make, editors).
@@ -74,4 +74,6 @@ Assisted-by: Cursor:cursor-grok-4.5
 
 ### Notes
 
+- Always write `Assisted-by` for **this** commit from the agent/model that materially helped. Do **not** copy an `Assisted-by` line from `git log`, prior commits, or commit-message examples — those often name a different model.
+- `MODEL_VERSION` must match the model that produced the changes (e.g. the model named in the current chat / system identity), not whatever appeared last in history.
 - The human author is responsible for reviewing all AI-assisted changes before pushing commits or creating pull requests.
