@@ -3,7 +3,8 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
     "build": "deno task lume",
     "serve": "deno task lume -s",
-    "gmi": "deno run -A tasks/gmi.ts"
+    "gmi": "deno run -A tasks/gmi.ts",
+    "check": "deno fmt && deno check _data.ts zk/_data.ts gemini-converter.ts tasks/gmi.ts plugins/wiki-links/mod.ts netlify/edge-functions/teapot.ts movies/page.page.ts"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
@@ -20,7 +21,17 @@
     "temporal",
     "fmt-component"
   ],
+  "fmt": {
+    "include": [
+      "**/*.ts",
+      "**/*.tsx"
+    ]
+  },
   "lint": {
+    "include": [
+      "**/*.ts",
+      "**/*.tsx"
+    ],
     "plugins": [
       "https://deno.land/x/lume@v3.0.4/lint.ts"
     ]

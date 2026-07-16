@@ -19,6 +19,11 @@
 - Never remove or downgrade code to fix type errors from outdated deps; bump the URL import or Lume version in `deno.json` instead.
 - Prefer erasable TypeScript: no parameter properties, `enum`, `namespace`/`module`, `import =`, `export =`, or other constructs needing emit transforms. Use explicit fields with constructor assignments.
 
+## Commands
+
+- After TypeScript/plugin changes (not content/docs): `deno task check` (full output, no tail). Also `deno check` any other `.ts`/`.tsx` files you changed that the task does not cover. Fix all errors before committing. Does not run tests.
+- If you create or modify a test file, run it and iterate until it passes, e.g. `deno test -A gemini-converter_test.ts`.
+
 ## Agent skills
 
 Project skills live under `.agents/skills/`. Each skill is a directory with a `SKILL.md` file (YAML frontmatter + workflow) and optional `scripts/`.
