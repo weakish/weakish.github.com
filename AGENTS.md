@@ -18,6 +18,7 @@
 - No `any` unless absolutely necessary.
 - Never remove or downgrade code to fix type errors from outdated deps; bump the URL import or Lume version in `deno.json` instead.
 - Prefer erasable TypeScript: no parameter properties, `enum`, `namespace`/`module`, `import =`, `export =`, or other constructs needing emit transforms. Use explicit fields with constructor assignments.
+- Treat `deno.json` import-map edits, inline `https://` import changes, and `deno.lock` updates as reviewed code. Pin direct external deps to exact versions (tags or full URLs, not ranges).
 
 ## Commands
 
