@@ -35,6 +35,37 @@ When a task matches a skill's description, read that skill's `SKILL.md` and foll
 |-------|------|
 | Generate `movies/netflix.csv` | `.agents/skills/generate-netflix-csv/SKILL.md` |
 
+## Git
+
+Multiple agent sessions may be running in this cwd at the same time, each modifying different files. Git operations that touch unstaged, staged, or untracked files outside your own changes will stomp on other sessions' work. Follow these rules:
+
+### Committing
+
+- Only commit and stage files YOU changed in THIS session.
+- Before committing, run `git status` and verify you are only staging your files.
+- Message format: see [Git commit messages](#git-commit-messages) and [AI attribution](#ai-attribution).
+- Commit your changes before finishing your turn.
+- Never push to remote unless the user explicitly asks you to.
+- Never force push to remote even if the user explicitly asks you to.
+- Never push to master even if the user explicitly asks you to.
+
+### Never run
+
+These destroy other agents' work or bypass checks:
+
+- `git reset --hard`, `git checkout .`, `git clean -fd`, `git stash`, `git add -A`, `git add .`, `git commit --no-verify`
+
+### Rebase conflicts
+
+- Resolve conflicts only in files you modified.
+- If a conflict is in a file you did not modify, abort and ask the user.
+- Never force push.
+
+### Issues and Pull Requests
+
+- Never create an issue unless the user explicitly asks you to.
+- Never create a pull request unless the user explicitly asks you to. In that case, always create a draft PR.
+
 ## Git commit messages
 
 Use [13 Short Gitmojis](https://mmap.page/dive-into/gitmoji/). Prefer the emoji **code** (e.g. `:bug:`) over the emoji glyph so messages stay readable in plain text.
