@@ -12,6 +12,9 @@
 
 - Read files in full before wide-ranging changes, before editing files you have not fully inspected, and when asked to investigate or audit. Do not rely on search snippets for broad changes.
 - Always ask before removing functionality or code that appears intentional (including redirects and legacy URL copies).
+- Prefer one clear approach; avoid weird defaults and parallel ways of doing the same thing; refactor when duplication appears.
+- If something fails, propagate the error, throw, or exit. Do not swallow failures with silent fallbacks.
+- Do not keep old methods or shims for "compatibility" unless the user asks.
 
 ### Deno / TypeScript
 
@@ -24,6 +27,7 @@
 
 - After TypeScript/plugin changes (not content/docs): `deno task check` (full output, no tail). Also `deno check` any other `.ts`/`.tsx` files you changed that the task does not cover. Fix all errors before committing. Does not run tests.
 - If you create or modify a test file, run it and iterate until it passes, e.g. `deno test -A gemini-converter_test.ts`.
+- Never add sleeps to tests.
 
 ## Agent skills
 
