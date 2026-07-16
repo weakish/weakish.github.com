@@ -24,14 +24,14 @@ Helpers live under `scripts/` as Deno/TypeScript (same `@std/csv` import as `_in
 
 ```bash
 # stdout (read-only)
-deno run --allow-read=movies,.cursor/skills/generate-netflix-csv/scripts \
-  .cursor/skills/generate-netflix-csv/scripts/collapse_history.ts \
+deno run --allow-read=movies,.agents/skills/generate-netflix-csv/scripts \
+  .agents/skills/generate-netflix-csv/scripts/collapse_history.ts \
   movies/NetflixViewingHistory.csv
 
 # write JSON via -o
-deno run --allow-read=movies,.cursor/skills/generate-netflix-csv/scripts \
+deno run --allow-read=movies,.agents/skills/generate-netflix-csv/scripts \
   --allow-write=works.json \
-  .cursor/skills/generate-netflix-csv/scripts/collapse_history.ts \
+  .agents/skills/generate-netflix-csv/scripts/collapse_history.ts \
   movies/NetflixViewingHistory.csv -o works.json
 ```
 
@@ -82,12 +82,12 @@ Progress:
 Run (from repo root):
 
 ```bash
-deno run --allow-read=movies,.cursor/skills/generate-netflix-csv/scripts \
-  .cursor/skills/generate-netflix-csv/scripts/collapse_history.ts \
+deno run --allow-read=movies,.agents/skills/generate-netflix-csv/scripts \
+  .agents/skills/generate-netflix-csv/scripts/collapse_history.ts \
   movies/NetflixViewingHistory.csv
 ```
 
-Use this script — do not re-invent collapse rules. If a new title needs an exception, edit `KEEP_FULL`, `EPISODE_TO_SERIES`, or `RENAME` in `scripts/collapse_history.ts`, then re-run.
+Use this script — do not re-invent collapse rules. If a new title needs an exception, edit `KEEP_FULL`, `EPISODE_TO_SERIES`, or `RENAME` in `.agents/skills/generate-netflix-csv/scripts/collapse_history.ts`, then re-run.
 
 ### 2. Reuse curated rows
 
@@ -122,8 +122,8 @@ Write `movies/netflix.csv` with proper CSV quoting (e.g. Deno `@std/csv` or manu
 ### 5. Validate
 
 ```bash
-deno run --allow-read=movies,.cursor/skills/generate-netflix-csv/scripts \
-  .cursor/skills/generate-netflix-csv/scripts/validate_netflix_csv.ts
+deno run --allow-read=movies,.agents/skills/generate-netflix-csv/scripts \
+  .agents/skills/generate-netflix-csv/scripts/validate_netflix_csv.ts
 ```
 
 Fix until it prints `OK`. Blank `wikidata` is allowed; blank `url` / `id` / `year` is not.

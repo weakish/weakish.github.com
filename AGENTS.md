@@ -1,5 +1,15 @@
 # Agent instructions
 
+## Agent skills
+
+Project skills live under `.agents/skills/`. Each skill is a directory with a `SKILL.md` file (YAML frontmatter + workflow) and optional `scripts/`.
+
+When a task matches a skill's description, read that skill's `SKILL.md` and follow it. Current skills:
+
+| Skill | Path |
+|-------|------|
+| Generate `movies/netflix.csv` | `.agents/skills/generate-netflix-csv/SKILL.md` |
+
 ## Git commit messages
 
 Use [13 Short Gitmojis](https://mmap.page/dive-into/gitmoji/). Prefer the emoji **code** (e.g. `:bug:`) over the emoji glyph so messages stay readable in plain text.
