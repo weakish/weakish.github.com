@@ -23,9 +23,16 @@ Repo paths (from repository root):
 Helpers live under `scripts/` as Deno/TypeScript (same `@std/csv` import as `_includes/movie.page.tsx`). Run from repo root with explicit read permissions; add `--allow-write` only when using `-o` / `--output`:
 
 ```bash
+# stdout (read-only)
 deno run --allow-read=movies,.cursor/skills/generate-netflix-csv/scripts \
   .cursor/skills/generate-netflix-csv/scripts/collapse_history.ts \
   movies/NetflixViewingHistory.csv
+
+# write JSON via -o
+deno run --allow-read=movies,.cursor/skills/generate-netflix-csv/scripts \
+  --allow-write=works.json \
+  .cursor/skills/generate-netflix-csv/scripts/collapse_history.ts \
+  movies/NetflixViewingHistory.csv -o works.json
 ```
 
 No network permission is required for collapse or validate.
