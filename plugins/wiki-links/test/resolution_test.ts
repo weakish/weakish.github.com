@@ -75,7 +75,11 @@ Deno.test("resolveLinkPath - non-deterministic with duplicate filenames", () => 
 
     const result = resolveLinkPath("about", testDir);
     const valid = result === "/subdir1/about/" || result === "/subdir2/about/";
-    assertEquals(valid, true, "Should resolve to one of subdirectories with link name");
+    assertEquals(
+      valid,
+      true,
+      "Should resolve to one of subdirectories with link name",
+    );
   } finally {
     clearDirectoryCache();
     try {
@@ -91,7 +95,10 @@ Deno.test("resolveLinkPath - finds .md file in subdirectory", () => {
   try {
     clearDirectoryCache();
     Deno.mkdirSync(`${testDir}/docs`, { recursive: true });
-    Deno.writeTextFileSync(`${testDir}/docs/getting-started.md`, "# Getting Started");
+    Deno.writeTextFileSync(
+      `${testDir}/docs/getting-started.md`,
+      "# Getting Started",
+    );
 
     const result = resolveLinkPath("getting-started", testDir);
     assertEquals(result, "/docs/getting-started/");
@@ -108,7 +115,10 @@ Deno.test("resolveLinkPath - finds index.md in subdirectory", () => {
   try {
     clearDirectoryCache();
     Deno.mkdirSync(`${testDir}/guides/install`, { recursive: true });
-    Deno.writeTextFileSync(`${testDir}/guides/install/index.md`, "# Install Guide");
+    Deno.writeTextFileSync(
+      `${testDir}/guides/install/index.md`,
+      "# Install Guide",
+    );
 
     const result = resolveLinkPath("install", testDir);
     assertEquals(result, "/guides/install/");
@@ -125,7 +135,10 @@ Deno.test("resolveLinkPath - finds README.md in nested subdirectory", () => {
   try {
     clearDirectoryCache();
     Deno.mkdirSync(`${testDir}/projects/old`, { recursive: true });
-    Deno.writeTextFileSync(`${testDir}/projects/old/README.md`, "# Old Project");
+    Deno.writeTextFileSync(
+      `${testDir}/projects/old/README.md`,
+      "# Old Project",
+    );
 
     const result = resolveLinkPath("old", testDir);
     assertEquals(result, "/projects/old/");
