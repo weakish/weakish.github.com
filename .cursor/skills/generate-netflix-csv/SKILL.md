@@ -18,11 +18,17 @@ Repo paths (from repository root):
 | `movies/netflix.csv` | Curated output |
 | `movies/ratings.csv` | OMDb numeric ids (no `m` prefix) — reuse when titles match |
 
-## Why Python helpers (not Deno/TypeScript)
+## Helper scripts (Deno/TypeScript)
 
-This site is Deno/TS, but the skill helpers under `scripts/` stay in Python because the collapse/validate workflow was first prototyped in ad-hoc Python while building `netflix.csv`, and the stdlib covers CSV/JSON with no extra deps. Keep them in Python unless rewriting the helpers is an explicit goal.
+Helpers live under `scripts/` as Deno/TypeScript (same `@std/csv` import as `_includes/movie.page.tsx`). Run from repo root with explicit read permissions; add `--allow-write` only when using `-o` / `--output`:
 
-TODO: Rewrite the helper scripts in Deno/TypeScript for stack consistency and to use Deno’s permission sandbox (e.g. read-only access to `movies/*.csv`, no network).
+```bash
+deno run --allow-read=movies,.cursor/skills/generate-netflix-csv/scripts \
+  .cursor/skills/generate-netflix-csv/scripts/collapse_history.ts \
+  movies/NetflixViewingHistory.csv
+```
+
+No network permission is required for collapse or validate.
 
 ## Output schema
 
@@ -69,11 +75,12 @@ Progress:
 Run (from repo root):
 
 ```bash
-python3 .cursor/skills/generate-netflix-csv/scripts/collapse_history.py \
+deno run --allow-read=movies,.cursor/skills/generate-netflix-csv/scripts \
+  .cursor/skills/generate-netflix-csv/scripts/collapse_history.ts \
   movies/NetflixViewingHistory.csv
 ```
 
-Use this script — do not re-invent collapse rules. If a new title needs an exception, edit `KEEP_FULL`, `EPISODE_TO_SERIES`, or `RENAME` in that script, then re-run.
+Use this script — do not re-invent collapse rules. If a new title needs an exception, edit `KEEP_FULL`, `EPISODE_TO_SERIES`, or `RENAME` in `scripts/collapse_history.ts`, then re-run.
 
 ### 2. Reuse curated rows
 
@@ -103,12 +110,13 @@ For each collapsed title:
 
 ### 4. Write CSV
 
-Write `movies/netflix.csv` with Python `csv` module (proper quoting). One row per collapsed work. UTF-8, `\n` line endings.
+Write `movies/netflix.csv` with proper CSV quoting (e.g. Deno `@std/csv` or manual). One row per collapsed work. UTF-8, `\n` line endings.
 
 ### 5. Validate
 
 ```bash
-python3 .cursor/skills/generate-netflix-csv/scripts/validate_netflix_csv.py
+deno run --allow-read=movies,.cursor/skills/generate-netflix-csv/scripts \
+  .cursor/skills/generate-netflix-csv/scripts/validate_netflix_csv.ts
 ```
 
 Fix until it prints `OK`. Blank `wikidata` is allowed; blank `url` / `id` / `year` is not.
