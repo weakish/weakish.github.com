@@ -6,8 +6,8 @@ import jsx from "lume/plugins/jsx.ts";
 import pagefind from "lume/plugins/pagefind.ts";
 import remark from "lume/plugins/remark.ts";
 import resolve_urls from "lume/plugins/resolve_urls.ts";
-import rehypeStarryNight from "https://cdn.jsdelivr.net/npm/rehype-starry-night@2.2.0/+esm";
-import { all } from "https://cdn.jsdelivr.net/npm/@wooorm/starry-night@3.6.0/+esm";
+import rehypeStarryNight from "https://esm.sh/rehype-starry-night@2.2.0?target=es2022";
+import { all } from "https://esm.sh/@wooorm/starry-night@3.10.0?target=es2022";
 import rehypeExtractExcerpt from "https://esm.sh/rehype-extract-excerpt@0.3.1";
 import rehypePicture from "https://esm.sh/rehype-picture@5.0.0";
 import { remarkHighlightMark } from "https://esm.sh/remark-highlight-mark@1.4.0";
@@ -33,13 +33,19 @@ site.preprocess([".html"], (pages) => {
   for (const page of pages) {
     page.data.siteHostname = siteHostname;
     const { entry } = page.src;
-    page.data.lastmod = getGitDate("modified", entry.src);
+    if (!entry) continue;
+    const modified = getGitDate("modified", entry.src);
+    if (modified) {
+      page.data.lastmod = modified;
+    }
     // `git log --diff-filter=A --follow` yields no output for files where the latest commit had a merge conflict.
     // See also:
     // lumeland/lume#667
     // https://stackoverflow.com/questions/2390199/finding-the-date-time-a-file-was-first-added-to-a-git-repository#comment118580024_25633731
-    page.data.date = getGitDate("created", entry.src) ??
-      getGitDate("modified", entry.src);
+    const created = getGitDate("created", entry.src) ?? modified;
+    if (created) {
+      page.data.date = created;
+    }
   }
 });
 
@@ -119,7 +125,9 @@ site.copy("fun/heart");
 site.copy("StutteringTalkaholic/hardening");
 site.copy("StutteringTalkaholic/ruby");
 site.use(sitemap({
-  lastmod: "=lastmod",
+  items: {
+    lastmod: "=lastmod",
+  },
 }));
 
 const feedOptions = {
