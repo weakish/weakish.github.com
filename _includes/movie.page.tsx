@@ -14,6 +14,15 @@ interface MovieNote extends Lume.Data {
   note: string;
 }
 
+interface NetflixRow {
+  id: string;
+  title: string;
+  year: string;
+  date: string;
+  wikidata: string;
+  url: string;
+}
+
 interface Notes {
   [key: number]: string;
 }
@@ -45,6 +54,15 @@ const movieNotes = parse(
     strip: true,
   },
 ) as MovieNote[];
+
+const netflix = parse(
+  Deno.readTextFileSync("movies/netflix.csv"),
+  {
+    skipFirstRow: true,
+    strip: true,
+    columns: ["id", "title", "year", "date", "wikidata", "url"],
+  },
+) as NetflixRow[];
 
 const notes: Notes = {};
 for (const { id, note } of movieNotes) {
@@ -92,5 +110,15 @@ export default (data: Lume.Data) => (
     <small>
       0 means I have not watched and do not want to watch the movie.
     </small>
+    <details>
+      <summary>Recently watched on Netflix</summary>
+      <ul>
+        {netflix.map(({ title, year, url }) => (
+          <li key={url}>
+            <a href={url}>{title}</a>, {year}
+          </li>
+        ))}
+      </ul>
+    </details>
   </>
 );
