@@ -87,7 +87,7 @@ site.use(remark({
 site.use(resolve_urls());
 site.use(readme());
 
-site.ignore((path) => path.startsWith("/plugins/"));
+site.ignore((path) => path.startsWith("/plugins/") || path.endsWith(".canvas.tsx"));
 
 site.use(favicon());
 site.use(purgecss());
