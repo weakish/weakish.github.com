@@ -6,6 +6,19 @@
 - Technical prose only, be direct
 - When responding to user feedback or an analysis, explicitly say whether you agree or disagree before saying what you changed.
 
+## Code quality
+
+### General
+
+- Read files in full before wide-ranging changes, before editing files you have not fully inspected, and when asked to investigate or audit. Do not rely on search snippets for broad changes.
+- Always ask before removing functionality or code that appears intentional (including redirects and legacy URL copies).
+
+### Deno / TypeScript
+
+- No `any` unless absolutely necessary.
+- Never remove or downgrade code to fix type errors from outdated deps; bump the URL import or Lume version in `deno.json` instead.
+- Prefer erasable TypeScript: no parameter properties, `enum`, `namespace`/`module`, `import =`, `export =`, or other constructs needing emit transforms. Use explicit fields with constructor assignments.
+
 ## Agent skills
 
 Project skills live under `.agents/skills/`. Each skill is a directory with a `SKILL.md` file (YAML frontmatter + workflow) and optional `scripts/`.
