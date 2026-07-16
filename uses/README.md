@@ -46,7 +46,7 @@ I previously used [OpenCode] because it is open source and model agnostic.
 Currently I mostly use the Cursor agent.
 I may try [Devin][], [Jules][] and [Junie][] in future.
 
-[Cursor]: https://www.cursor.com
+[Cursor]: cursor.md "Cursor models overview"
 [OpenCode]: https://opencode.ai
 [Devin]: https://devin.ai
 [Junie]: https://www.jetbrains.com/junie/
