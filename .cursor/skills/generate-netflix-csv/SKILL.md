@@ -1,0 +1,131 @@
+---
+name: generate-netflix-csv
+description: >-
+  Build or refresh movies/netflix.csv from NetflixViewingHistory.csv: collapse
+  episodes to works, resolve OMDb/IMDb/TMDB ids, Wikidata Q-ids, and Netflix
+  title URLs. Use when generating, updating, or validating netflix.csv, or when
+  the user mentions Netflix viewing history, NetflixViewingHistory.csv, or
+  movies/netflix.csv.
+---
+
+# Generate netflix.csv
+
+Repo paths (from repository root):
+
+| File | Role |
+|------|------|
+| `movies/NetflixViewingHistory.csv` | Netflix export (`Title,Date`; dates `M/D/YY`) |
+| `movies/netflix.csv` | Curated output |
+| `movies/ratings.csv` | OMDb numeric ids (no `m` prefix) — reuse when titles match |
+
+## Why Python helpers (not Deno/TypeScript)
+
+This site is Deno/TS, but the skill helpers under `scripts/` stay in Python because the collapse/validate workflow was first prototyped in ad-hoc Python while building `netflix.csv`, and the stdlib covers CSV/JSON with no extra deps. Keep them in Python unless rewriting the helpers is an explicit goal.
+
+TODO: Rewrite the helper scripts in Deno/TypeScript for stack consistency and to use Deno’s permission sandbox (e.g. read-only access to `movies/*.csv`, no network).
+
+## Output schema
+
+Header (exact order):
+
+```csv
+id,title,year,date,wikidata,url
+```
+
+Example:
+
+```csv
+m300581,"Lorena, Light-Footed Woman",2019,2025-06-06,Q78191654,https://www.netflix.com/title/80244683
+```
+
+| Column | Rule |
+|--------|------|
+| `id` | Prefer [omdb.org](https://www.omdb.org) as `m` + digits (e.g. `m300581`). Else IMDb `tt…`. Else TMDB bare digits (e.g. `660978`). |
+| `title` | Collapsed work title (see collapse script). Keep Netflix language tags like `(Tamil)` when present in history. |
+| `year` | Film release year, or series premiere / first-release year. |
+| `date` | Latest watch date from history, ISO `YYYY-MM-DD`. |
+| `wikidata` | Item Q-id when known (e.g. `Q78191654`). May be blank. |
+| `url` | Always `https://www.netflix.com/title/{netflixId}`. **Required** — every history-derived work was on Netflix. |
+
+Sort rows by `date` descending.
+
+When copying an OMDb id from `ratings.csv`, **add** the `m` prefix for `netflix.csv` (`300581` → `m300581`). Do not change `ratings.csv`.
+
+## Workflow
+
+Copy and track:
+
+```
+Progress:
+- [ ] 1. Collapse history → works
+- [ ] 2. Reuse existing netflix.csv / ratings.csv metadata
+- [ ] 3. Resolve missing id / year / wikidata / url
+- [ ] 4. Write movies/netflix.csv
+- [ ] 5. Validate
+```
+
+### 1. Collapse history
+
+Run (from repo root):
+
+```bash
+python3 .cursor/skills/generate-netflix-csv/scripts/collapse_history.py \
+  movies/NetflixViewingHistory.csv
+```
+
+Use this script — do not re-invent collapse rules. If a new title needs an exception, edit `KEEP_FULL`, `EPISODE_TO_SERIES`, or `RENAME` in that script, then re-run.
+
+### 2. Reuse curated rows
+
+For each collapsed title:
+
+1. If `movies/netflix.csv` already has that title, keep `id`, `year`, `wikidata`, `url` unless the user asked to fix a wrong mapping.
+2. Else if `movies/ratings.csv` matches the title, take its numeric OMDb `id` → `m{id}` and `year`; still look up `wikidata` + Netflix `url`.
+3. Always refresh `date` from the latest history date for that work.
+
+### 3. Resolve missing metadata
+
+**id + year** (in order):
+
+1. Wikidata search → claims `P345` (IMDb), `P3302` (OMDb numeric if present), publication date for year.
+2. IMDb suggestion API: `https://v2.sg.media-imdb.com/suggestion/{first_letter}/{urlencoded_title}.json`
+3. omdb.org / web search for numeric OMDb id when the title exists there.
+4. TMDB search only if neither OMDb nor IMDb has an entry → bare numeric id.
+5. Disambiguate by language tag, cast, and **what Netflix actually streams**. Prefer the remake/edition on Netflix over an older film that shares the title (e.g. `Kushi (Tamil)` → 2023 remake, not 2000).
+
+**wikidata**: Q-id of the same work. Leave blank if none exists.
+
+**url** (Netflix title page):
+
+1. Wikidata `P1874` (Netflix ID) → `https://www.netflix.com/title/{P1874}`.
+2. Else web search / uNoGS / Netflix title pages. Confirm the page matches the work (not a same-name neighbor like Dark Desire vs The Desire).
+3. Never leave `url` blank for a history-derived row.
+
+### 4. Write CSV
+
+Write `movies/netflix.csv` with Python `csv` module (proper quoting). One row per collapsed work. UTF-8, `\n` line endings.
+
+### 5. Validate
+
+```bash
+python3 .cursor/skills/generate-netflix-csv/scripts/validate_netflix_csv.py
+```
+
+Fix until it prints `OK`. Blank `wikidata` is allowed; blank `url` / `id` / `year` is not.
+
+## Incremental updates
+
+When the user drops a new `NetflixViewingHistory.csv`:
+
+1. Collapse and diff titles against current `netflix.csv`.
+2. Update `date` for titles that already exist.
+3. Look up metadata only for **new** titles (and any the user flagged as wrong).
+4. Re-sort by date desc and validate.
+
+## Common pitfalls
+
+- Collapsing film subtitles at the first colon (`John Wick: Chapter 2` must stay whole → `KEEP_FULL`).
+- Using bare OMDb digits in `netflix.csv` (must be `m…`).
+- Mapping a Netflix watch to a non-Netflix edition of the same name.
+- Confusing similarly named Netflix titles (verify `url` against plot/cast).
+- Forgetting to bump `date` when history is re-exported.
