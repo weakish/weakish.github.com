@@ -20,31 +20,31 @@ interface Notes {
 
 import { parse } from "https://deno.land/std@0.201.0/csv/mod.ts";
 
-const watchedMovies: MoviePageData[] = parse(
+const watchedMovies = parse(
   Deno.readTextFileSync("movies/ratings.csv"),
   {
     skipFirstRow: true,
     strip: true,
   },
-);
+) as MoviePageData[];
 
-const otherMovies: MoviePageData[] = parse(
+const otherMovies = parse(
   Deno.readTextFileSync("movies/movies.csv"),
   {
     skipFirstRow: true,
     strip: true,
   },
-);
+) as MoviePageData[];
 
 const movies: MoviePageData[] = watchedMovies.concat(otherMovies);
 
-const movieNotes: MovieNote[] = parse(
+const movieNotes = parse(
   Deno.readTextFileSync("movies/notes.csv"),
   {
     skipFirstRow: true,
     strip: true,
   },
-);
+) as MovieNote[];
 
 const notes: Notes = {};
 for (const { id, note } of movieNotes) {
@@ -53,7 +53,7 @@ for (const { id, note } of movieNotes) {
 
 export const layout = "default.njk";
 
-export default (data) => (
+export default (data: Lume.Data) => (
   <>
     <h1>{data.title}</h1>
     <table>

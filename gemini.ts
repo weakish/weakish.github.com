@@ -18,7 +18,10 @@ export default class GeminiEngine implements Engine {
   ) {
     const html = buffer(content);
 
-    const result = await unified()
+    // Plugins come from different bundles and have incompatible unified types.
+    // deno-lint-ignore no-explicit-any
+    const processor = unified() as any;
+    const result = await processor
       .use(rehypeParse, { fragment: true })
       .use(rehypeStarryNight, { grammars: all })
       .use(rehypeStringify)
