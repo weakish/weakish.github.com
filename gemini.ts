@@ -11,7 +11,11 @@ export default class GeminiEngine implements Engine {
     return this.renderComponent(content, data, filename);
   }
 
-  async renderComponent(content: string, _data?: Record<string, unknown>, _filename?: string) {
+  async renderComponent(
+    content: string,
+    _data?: Record<string, unknown>,
+    _filename?: string,
+  ) {
     const html = buffer(content);
 
     const result = await unified()
