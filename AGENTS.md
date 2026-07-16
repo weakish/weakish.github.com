@@ -1,5 +1,11 @@
 # Agent instructions
 
+## Conversational style
+
+- Keep answers short and concise
+- Technical prose only, be direct
+- When responding to user feedback or an analysis, explicitly say whether you agree or disagree before saying what you changed.
+
 ## Agent skills
 
 Project skills live under `.agents/skills/`. Each skill is a directory with a `SKILL.md` file (YAML frontmatter + workflow) and optional `scripts/`.
