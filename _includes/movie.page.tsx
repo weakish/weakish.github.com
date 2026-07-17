@@ -20,7 +20,7 @@ interface NetflixRow {
   year: string;
   date: string;
   wikidata: string;
-  url: string;
+  netflix: string;
 }
 
 interface Notes {
@@ -68,7 +68,7 @@ const netflix = parse(
   {
     skipFirstRow: true,
     strip: true,
-    columns: ["id", "title", "year", "date", "wikidata", "url"],
+    columns: ["id", "title", "year", "date", "wikidata", "netflix"],
   },
 ) as NetflixRow[];
 
@@ -130,9 +130,11 @@ export default (data: Lume.Data) => (
     <details>
       <summary>Recently watched on Netflix</summary>
       <ul>
-        {netflixOnly.map(({ title, year, url }) => (
-          <li key={url}>
-            <a href={url}>{title}</a>, {year}
+        {netflixOnly.map(({ title, year, netflix }) => (
+          <li key={netflix}>
+            <a href={`https://www.netflix.com/title/${netflix}`}>{title}</a>,
+            {" "}
+            {year}
           </li>
         ))}
       </ul>

@@ -3,10 +3,10 @@
 import { parse } from "https://deno.land/std@0.201.0/csv/mod.ts";
 import { collapse, type HistoryRow } from "./collapse_history.ts";
 
-const COLUMNS = ["id", "title", "year", "date", "wikidata", "url"] as const;
+const COLUMNS = ["id", "title", "year", "date", "wikidata", "netflix"] as const;
 
 const ID_RE = /^(tt\d+|m\d+|\d+)$/;
-const URL_RE = /^https:\/\/www\.netflix\.com\/title\/\d+$/;
+const NETFLIX_RE = /^\d+$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const YEAR_RE = /^\d{4}$/;
 const QID_RE = /^Q\d+$/;
@@ -17,7 +17,7 @@ export interface NetflixRow {
   year: string;
   date: string;
   wikidata: string;
-  url: string;
+  netflix: string;
 }
 
 async function loadCsv(path: string): Promise<Record<string, string>[]> {
@@ -69,7 +69,7 @@ export function validate(
     const year = r.year ?? "";
     const date = r.date ?? "";
     const wd = r.wikidata ?? "";
-    const url = r.url ?? "";
+    const netflixId = r.netflix ?? "";
 
     if (!ID_RE.test(id)) errors.push(`L${line} '${title}': bad id '${id}'`);
     if (year && !YEAR_RE.test(year)) {
@@ -83,8 +83,8 @@ export function validate(
     if (wd && !QID_RE.test(wd)) {
       errors.push(`L${line} '${title}': bad wikidata '${wd}'`);
     }
-    if (!URL_RE.test(url)) {
-      errors.push(`L${line} '${title}': bad/missing url '${url}'`);
+    if (!NETFLIX_RE.test(netflixId)) {
+      errors.push(`L${line} '${title}': bad/missing netflix '${netflixId}'`);
     }
   }
 
