@@ -46,6 +46,12 @@ export function validate(
     errors.push("duplicate titles in netflix.csv");
   }
 
+  const gotNetflixIds = netflixRows.map((r) => r.netflix ?? "");
+  const netflixIdSet = new Set(gotNetflixIds);
+  if (gotNetflixIds.length !== netflixIdSet.size) {
+    errors.push("duplicate netflix ids in netflix.csv");
+  }
+
   const missing = [...new Set(Object.keys(want))].filter((t) => !gotSet.has(t)).sort();
   const extra = [...gotSet].filter((t) => !(t in want)).sort();
   if (missing.length) {

@@ -94,7 +94,7 @@ Use this script — do not re-invent collapse rules. If a new title needs an exc
 For each collapsed title:
 
 1. If `movies/netflix.csv` already has that title, keep `id`, `year`, `wikidata`, `netflix` unless the user asked to fix a wrong mapping.
-2. Else if `movies/ratings.csv` matches the title, take its numeric OMDb `id` → `m{id}` and `year`; still look up `wikidata` + Netflix `netflix` id.
+2. Else if `movies/ratings.csv` matches the title, take its numeric OMDb `id` → `m{id}` and `year`; still look up Wikidata Q-id + Netflix title id.
 3. Always refresh `date` from the latest history date for that work.
 
 ### 3. Resolve missing metadata

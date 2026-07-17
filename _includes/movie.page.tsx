@@ -132,9 +132,8 @@ export default (data: Lume.Data) => (
       <ul>
         {netflixOnly.map(({ title, year, netflix }) => (
           <li key={netflix}>
-            <a href={`https://www.netflix.com/title/${netflix}`}>{title}</a>,
-            {" "}
-            {year}
+            <a href={`https://www.netflix.com/title/${netflix}`}>{title}</a>
+            {`, ${year}`}
           </li>
         ))}
       </ul>
