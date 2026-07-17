@@ -34,7 +34,7 @@
 - `deno task check` — verify only (`deno fmt --check` then `deno check`); does not modify files.
 - `deno task fmt` — apply formatting fixes.
 - Both use `**/*.ts **/*.tsx` globs so `.agents/` skill scripts are included; bare `deno fmt` without globs skips dot-directories and can touch or panic on wiki markdown.
-- Do not run bare `deno fmt` on the repo root; use `deno task fmt` or pass the same globs.
+- Do not run bare `deno fmt` / `deno check` (or shell-expanded globs); use `deno task fmt` / `deno task check` only.
 
 ## Agent skills
 
