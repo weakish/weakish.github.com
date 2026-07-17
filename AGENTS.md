@@ -25,7 +25,7 @@
 
 ## Commands
 
-- After TypeScript/plugin changes (not content/docs): `deno task check` (full output, no tail). Fix all errors before committing; run `deno fmt` to fix formatting. Does not run tests.
+- After TypeScript/plugin changes (not content/docs): `deno task check` (full output, no tail). Fix all errors before committing; run `deno task fmt` to fix formatting. Does not run tests.
 - If you create or modify a test file, run it and iterate until it passes, e.g. `deno test -A gemini-converter_test.ts`.
 - Never add sleeps to tests.
 

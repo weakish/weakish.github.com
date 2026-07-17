@@ -4,6 +4,7 @@
     "build": "deno task lume",
     "serve": "deno task lume -s",
     "gmi": "deno run -A tasks/gmi.ts",
+    "fmt": "deno fmt **/*.ts **/*.tsx",
     "check": "deno fmt --check **/*.ts **/*.tsx && deno check **/*.ts **/*.tsx"
   },
   "compilerOptions": {
@@ -21,17 +22,7 @@
     "temporal",
     "fmt-component"
   ],
-  "fmt": {
-    "include": [
-      "**/*.ts",
-      "**/*.tsx"
-    ]
-  },
   "lint": {
-    "include": [
-      "**/*.ts",
-      "**/*.tsx"
-    ],
     "plugins": [
       "https://deno.land/x/lume@v3.0.4/lint.ts"
     ]
