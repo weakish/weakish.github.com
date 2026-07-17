@@ -104,9 +104,51 @@ keyword / section indexes) is intentional for this demo site.
 
 ### P2 — Hardening
 
-- [ ] Fix `movie.page.tsx` types
+- [ ] Fix `movie.page.tsx` types (details below)
 - [ ] Warn on unresolved wiki links
 - [ ] Per-page `lang` for CJK; typo pass
+
+---
+
+## Issue: `movie.page.tsx` types vs CSV runtime
+
+**Where:** `_includes/movie.page.tsx`  
+**Severity:** Medium (type-safety / maintainability; page renders today)
+
+### Claimed types
+
+`MoviePageData` declares `id` / `year` / `vote` as numbers and a required
+`note: string`. The default export is untyped (`(data) => …` → implicit `any`).
+
+### Runtime reality
+
+`parse()` from `deno.land/std@0.201.0/csv` returns **string-valued** objects
+unless you convert columns yourself. Annotated assignments like
+`const watchedMovies: MoviePageData[] = parse(...)` only silence the type
+checker; at runtime rows look like
+`{ id: "294607", year: "2026", vote: "6", ... }`.
+
+### Unused `note` on `MoviePageData`
+
+Notes are not columns on `ratings.csv` / `movies.csv`. They live in
+`movies/notes.csv` (`id,note`) and are merged into a separate `notes` map,
+then used as `notes[id]` in the template. The `note` field on `MoviePageData`
+is never populated — dead interface surface.
+
+### Why it still “works”
+
+The JSX mostly prints values. Strings display fine as year/vote. `id in notes`
+works because both sides are CSV strings. Failure modes show up later: numeric
+comparisons (`vote > 7`), sorting, or `?? 0` not covering empty-string votes.
+
+### Fix options
+
+1. **Honest types** — type CSV rows as strings; `notes` as
+   `Record<string, string>`; drop unused `note` from `MoviePageData`.
+2. **Convert after parse** — map rows to real numbers, then type the converted
+   objects as numbers.
+
+Also type the layout default export as `Lume.Data` (or a narrow props type).
 
 ---
 
