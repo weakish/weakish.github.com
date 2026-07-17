@@ -77,3 +77,20 @@ Assisted-by: Cursor:cursor-grok-4.5
 - Always write `Assisted-by` for **this** commit from the agent/model that materially helped. Do **not** copy an `Assisted-by` line from `git log`, prior commits, or commit-message examples — those often name a different model.
 - `MODEL_VERSION` must match the model that produced the changes (e.g. the model named in the current chat / system identity), not whatever appeared last in history.
 - The human author is responsible for reviewing all AI-assisted changes before pushing commits or creating pull requests.
+
+## Cursor Cloud specific instructions
+
+This is a single [Deno](https://deno.land) + [Lume](https://lume.land) static site. There is no `package.json`; the runtime is Deno and all tasks live in `deno.json` (`build`, `serve`, `gmi`). Deno is preinstalled at `~/.deno/bin` — add it to `PATH` if a shell doesn't pick it up (`export PATH="$HOME/.deno/bin:$PATH"`). Dependencies are URL/npm imports resolved and cached by Deno on first run; there is no separate install step.
+
+Standard commands (see `deno.json` and `.github/workflows/deno.yml`):
+
+- Build: `deno task build` (outputs to `_site/`)
+- Test: `deno test -A`
+- Lint: `deno lint` — reports **pre-existing** `no-explicit-any` violations; CI only runs `deno test -A` and `deno task build`, not lint.
+- Gemini/Gemtext build (optional): `deno task gmi`
+
+Running the dev server:
+
+- `deno task serve` builds the site and serves it at `http://localhost:3000/`. Serve mode binds `localhost`, **not** the `location` in `_config.ts` (`https://mmap.page`) — that `location` only affects generated/canonical URLs (feeds, sitemap), not the local server. No `--hostname`/`--port` override is needed. Use `127.0.0.1`/`localhost` in `curl`.
+- Non-obvious gotcha: launching `deno task serve` inside an **interactive terminal / tmux pane (a TTY)** has intermittently hung during startup in this VM — the build finishes but the server never opens a port and **no error is printed**. Run it non-interactively instead (let the agent Shell tool background it, or redirect output to a file). `--hostname`/`--port` flags do **not** reliably avoid the hang.
+- Why it's silent: Lume runs the serve build in a Web Worker (`cli/build_worker.ts`) that fires the async build without a `.catch` and installs no `unhandledrejection` handler, so any serve-time error surfaces as a silent hang rather than a message.
