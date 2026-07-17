@@ -49,7 +49,7 @@ export function validate(
   const gotNetflixIds = netflixRows.map((r) => r.netflix ?? "");
   const netflixIdSet = new Set(gotNetflixIds);
   if (gotNetflixIds.length !== netflixIdSet.size) {
-    errors.push("duplicate netflix ids in netflix.csv");
+    errors.push("duplicate Netflix title ids in netflix.csv");
   }
 
   const missing = [...new Set(Object.keys(want))].filter((t) => !gotSet.has(t)).sort();
@@ -90,7 +90,7 @@ export function validate(
       errors.push(`L${line} '${title}': bad wikidata '${wd}'`);
     }
     if (!NETFLIX_RE.test(netflixId)) {
-      errors.push(`L${line} '${title}': bad/missing netflix '${netflixId}'`);
+      errors.push(`L${line} '${title}': bad/missing Netflix title id '${netflixId}'`);
     }
   }
 

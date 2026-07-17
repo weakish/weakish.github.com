@@ -72,7 +72,7 @@ Copy and track:
 Progress:
 - [ ] 1. Collapse history → works
 - [ ] 2. Reuse existing netflix.csv / ratings.csv metadata
-- [ ] 3. Resolve missing id / year / wikidata / netflix
+- [ ] 3. Resolve missing id / year / wikidata / Netflix title id
 - [ ] 4. Write movies/netflix.csv
 - [ ] 5. Validate
 ```
@@ -109,11 +109,11 @@ For each collapsed title:
 
 **wikidata**: Q-id of the same work. Leave blank if none exists.
 
-**netflix** (Netflix title id):
+**Netflix title id** (`netflix` column):
 
 1. Wikidata `P1874` (Netflix ID).
 2. Else web search / uNoGS / Netflix title pages. Confirm the page matches the work (not a same-name neighbor like Dark Desire vs The Desire).
-3. Never leave `netflix` blank for a history-derived row.
+3. Never leave the column blank for a history-derived row.
 
 ### 4. Write CSV
 
@@ -126,7 +126,7 @@ deno run --allow-read=movies,.agents/skills/generate-netflix-csv/scripts \
   .agents/skills/generate-netflix-csv/scripts/validate_netflix_csv.ts
 ```
 
-Fix until it prints `OK`. Blank `wikidata` is allowed; blank `netflix` / `id` / `year` is not.
+Fix until it prints `OK`. Blank `wikidata` is allowed; `id`, `year`, and `netflix` are required.
 
 ## Incremental updates
 
@@ -142,5 +142,5 @@ When the user drops a new `NetflixViewingHistory.csv`:
 - Collapsing film subtitles at the first colon (`John Wick: Chapter 2` must stay whole → `KEEP_FULL`).
 - Using bare OMDb digits in `netflix.csv` (must be `m…`).
 - Mapping a Netflix watch to a non-Netflix edition of the same name.
-- Confusing similarly named Netflix titles (verify `netflix` id against plot/cast).
+- Confusing similarly named Netflix titles (verify the title id against plot/cast).
 - Forgetting to bump `date` when history is re-exported.
