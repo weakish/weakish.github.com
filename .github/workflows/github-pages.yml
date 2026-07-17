@@ -31,6 +31,7 @@ jobs:
       - uses: denoland/setup-deno@v2
         with:
           deno-version: lts
+      - run: deno ci
       - run: deno task build
       - uses: actions/upload-pages-artifact@v3
         with:

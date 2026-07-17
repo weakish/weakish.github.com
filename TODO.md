@@ -6,15 +6,16 @@ Code + content review of the Lume 3 / Deno static site · July 2026
 
 Distinctive material (uses, dapi scholarship, zk, dive-into, film logs) sits
 alongside intentional demo framing: this site experiments with Lume and AI
-capacities, so a sandbox-style homepage and a public `AGENTS.md` are features,
-not bugs. Remaining work is mostly discoverability, ops hardening, and shipping
-orphaned `film/` data.
+capacities, so a sandbox-style homepage, a public `AGENTS.md`, and sparse
+discoverability (no global nav, feeds omit zettels, no keyword indexes) are
+features, not bugs. Remaining work is ops hardening, a few code fixes, and
+shipping orphaned `film/` data.
 
 | Metric | Count |
 |--------|------:|
 | Markdown pages | ~170 |
 | Open high findings | 0 |
-| Medium findings | 5 |
+| Medium findings | 4 |
 | Test files | 3 |
 
 ## Architecture
@@ -43,11 +44,11 @@ degradation
 | Severity | Area | Issue | Where | Status |
 |----------|------|-------|-------|--------|
 | High | CI | Test workflow pinned Deno v1.x (EOL) while Lume 3 wants Deno 2 | `.github/workflows/deno.yml` | Done — both workflows use `deno-version: lts` |
-| Medium | Ops | `deno.lock` gitignored + `deno upgrade` on every Netlify build | `.gitignore`, `netlify.toml` | Open |
+| Medium | Ops | `deno.lock` gitignored + unbounded `deno upgrade` on Netlify | `.gitignore`, `netlify.toml` | Done — lock committed; Netlify uses `deno upgrade lts` |
 | Medium | Content | Homepage frames site as demos / AI sandbox | `README.md` | Intentional — demo of Lume + AI capacities |
 | Medium | Content | `AGENTS.md` ships as a public page | `_site/AGENTS/` | Intentional — same demo purpose |
 | Medium | Content | `film/` data never builds | `film/` | Open — see plan below |
-| Medium | Discoverability | No global nav; zk/thoughts/coding-style/etc. absent from homepage | `_includes/default.njk`, `README.md` | Open (homepage omission intentional; nav still useful) |
+| Medium | Discoverability | No global nav; zk/thoughts/coding-style/etc. absent from homepage | `_includes/default.njk`, `README.md` | Intentional — sparse discovery fits the demo site |
 | Medium | Code | Movies CSV typed as numbers but parse returns strings; `note` unused | `_includes/movie.page.tsx` | Open |
 | Medium | Code | Wiki-link resolver: non-deterministic dupes, silent fallback | `plugins/wiki-links/mod.ts` | Open |
 | Medium | Tests | Converter tests use marked HTML, not production remark pipeline | `gemini-converter_test.ts` | Open |
@@ -81,8 +82,6 @@ StutteringTalkaholic (legacy redirects)
 
 ### Content gaps
 
-- No section menu; many dirs only via sitemap/search
-- Feeds hide zettels; no keyword index (`humans.txt` TODO)
 - Thin hubs: java, python, vim; missing READMEs on several dirs
 - Typos in older log/search pages; `typescrit-slogan` filename
 - `removal:` pages linger; AI provenance noted unevenly
@@ -93,20 +92,18 @@ StutteringTalkaholic (legacy redirects)
 ### P0 — Fix & ship
 
 - [x] Pin CI to Deno 2 LTS (`deno.yml` + `github-pages.yml`)
+- [x] Commit `deno.lock`; pin Netlify to `deno upgrade lts` (build image is still Deno 1.x)
 - [ ] Ship `film/` (plan below)
 - ~~Exclude `AGENTS.md` from build~~ — intentional
 - ~~Rewrite homepage as real landing TOC~~ — intentional demo framing
 
 ### P1 — Discoverability
 
-- [ ] Footer/nav linking all sections (including `film/` once shipped)
-- [ ] zk feed or include zettels
-- [ ] Keyword index for `zk/`
-- [ ] Indexes for lang/web/vim/…
+~~No change planned.~~ Sparse discovery (no global nav, feeds omit zettels, no
+keyword / section indexes) is intentional for this demo site.
 
 ### P2 — Hardening
 
-- [ ] Commit `deno.lock`; drop `deno upgrade`
 - [ ] Fix `movie.page.tsx` types
 - [ ] Warn on unresolved wiki links
 - [ ] Per-page `lang` for CJK; typo pass
@@ -154,9 +151,10 @@ truth (no Markdown duplication).
    - roll header (name, camera, ISO, pull/push, roll note/date)
    - frame table: #, date, aperture, shutter, distance, lens, note, location
    - for GPS locations, a text lat/lon (and optional OSM link); for strings, show as-is
-4. **Discoverability** — link `/film/` from homepage sandbox list and/or
-   footer once nav work lands; include in sitemap via normal page pipeline
-   (`type=article` or a dedicated `type=film` if feeds should exclude them).
+4. **Discoverability** — optional link to `/film/` from the homepage sandbox
+   list; include in sitemap via the normal page pipeline (`type=article` or a
+   dedicated `type=film` if feeds should exclude them). No global nav/footer
+   work planned.
 5. **Optional polish** — sort frames numerically; normalize empty notes;
    add a short `film/README.md` explaining the logging format.
 
@@ -168,7 +166,6 @@ truth (no Markdown duplication).
 | `film/rolls.page.ts` (or similar) | New — one page per JSON roll |
 | `_includes/film.page.tsx` | New — JSX roll layout |
 | `README.md` | Optional — one link under random pages |
-| `_includes/default.njk` | Later — footer/nav link (P1) |
 
 ### Out of scope (for this ship)
 
@@ -185,5 +182,5 @@ truth (no Markdown duplication).
 ---
 
 Sampled sections rather than every page. Working tree was clean on branch
-`review` at initial review time; CI Deno pin and `humans.txt` hosting notes
-landed afterward.
+`review` at initial review time; CI Deno LTS pin, `humans.txt` hosting notes,
+and committed `deno.lock` landed afterward.
