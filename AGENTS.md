@@ -89,7 +89,8 @@ Standard commands (see `deno.json` and `.github/workflows/deno.yml`):
 - Lint: `deno lint` — reports **pre-existing** `no-explicit-any` violations; CI only runs `deno test -A` and `deno task build`, not lint.
 - Gemini/Gemtext build (optional): `deno task gmi`
 
-Non-obvious gotcha — running the dev server:
+Running the dev server:
 
-- `deno task serve` (i.e. `lume -s`) derives the local server host/port from the `location` in `_config.ts` (`https://mmap.page`, so hostname `mmap.page` port `443`). In the cloud VM that address is not bindable, so `Deno.serve` throws `AddrNotAvailable (os error 99)`. The serve build worker swallows this as a silent unhandled rejection, so **there is no error message — the process just hangs and never opens a port.**
-- Fix: always override the bind address, e.g. `deno task lume -s --hostname 0.0.0.0 --port 3000` (or `--location http://localhost:3000/`). Then the site is reachable at `http://localhost:3000/`. Use `127.0.0.1`/`localhost` in `curl`; `0.0.0.0` is only the bind address.
+- `deno task serve` builds the site and serves it at `http://localhost:3000/`. Serve mode binds `localhost`, **not** the `location` in `_config.ts` (`https://mmap.page`) — that `location` only affects generated/canonical URLs (feeds, sitemap), not the local server. No `--hostname`/`--port` override is needed. Use `127.0.0.1`/`localhost` in `curl`.
+- Non-obvious gotcha: launching `deno task serve` inside an **interactive terminal / tmux pane (a TTY)** has intermittently hung during startup in this VM — the build finishes but the server never opens a port and **no error is printed**. Run it non-interactively instead (let the agent Shell tool background it, or redirect output to a file). `--hostname`/`--port` flags do **not** reliably avoid the hang.
+- Why it's silent: Lume runs the serve build in a Web Worker (`cli/build_worker.ts`) that fires the async build without a `.catch` and installs no `unhandledrejection` handler, so any serve-time error surfaces as a silent hang rather than a message.
