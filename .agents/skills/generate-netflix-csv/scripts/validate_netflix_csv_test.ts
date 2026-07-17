@@ -1,6 +1,6 @@
 import { assertEquals } from "https://deno.land/std@0.201.0/assert/mod.ts";
 import type { HistoryRow } from "./collapse_history.ts";
-import { validate, type NetflixRow } from "./validate_netflix_csv.ts";
+import { type NetflixRow, validate } from "./validate_netflix_csv.ts";
 
 function row(
   title: string,

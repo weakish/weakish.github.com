@@ -1,8 +1,8 @@
 import { assertEquals } from "https://deno.land/std@0.201.0/assert/mod.ts";
 import {
   collapse,
-  parseDate,
   type HistoryRow,
+  parseDate,
   watchBounds,
 } from "./collapse_history.ts";
 

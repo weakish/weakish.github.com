@@ -43,17 +43,21 @@ export const RENAME: Record<string, string> = {
 export function parseDate(d: string): string {
   const [month, day, year] = d.split("/").map((s) => Number.parseInt(s, 10));
   const fullYear = year >= 69 ? 1900 + year : 2000 + year;
-  return `${fullYear}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  return `${fullYear}-${String(month).padStart(2, "0")}-${
+    String(day).padStart(2, "0")
+  }`;
 }
 
 export function stripEpisode(t: string): string {
   if (t in EPISODE_TO_SERIES) return EPISODE_TO_SERIES[t];
   if (KEEP_FULL.has(t)) return t;
-  for (const pat of [
-    /: Season \d+:.*$/,
-    /: Limited Series:.*$/,
-    /: Episode \d+.*$/,
-  ]) {
+  for (
+    const pat of [
+      /: Season \d+:.*$/,
+      /: Limited Series:.*$/,
+      /: Episode \d+.*$/,
+    ]
+  ) {
     const nt = t.replace(pat, "");
     if (nt !== t) return nt;
   }
@@ -116,18 +120,19 @@ export function watchBounds(rows: HistoryRow[]): Map<string, WatchBounds> {
 
 export function collapse(rows: HistoryRow[]): Work[] {
   const works: Work[] = [];
-  for (const [title, rs] of groupByWork(rows)) {
-    const dates = rs.map((r) => parseDate(r.Date)).sort();
-    works.push({ title, date: dates[0]! });
+  for (const [title, { min }] of watchBounds(rows)) {
+    works.push({ title, date: min });
   }
   works.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
   return works;
 }
 
 function usage(): void {
-  console.error(`Usage: deno run collapse_history.ts [history.csv] [-o output.json] [--titles-only]
+  console.error(
+    `Usage: deno run collapse_history.ts [history.csv] [-o output.json] [--titles-only]
 
-Collapse NetflixViewingHistory.csv to distinct works with first watch dates.`);
+Collapse NetflixViewingHistory.csv to distinct works with first watch dates.`,
+  );
 }
 
 function parseCli(args: string[]) {
@@ -158,7 +163,10 @@ function parseCli(args: string[]) {
 async function main(args: string[]): Promise<number> {
   const { history, output, titlesOnly } = parseCli(args);
   const text = await Deno.readTextFile(history);
-  const rows = parse(text, { skipFirstRow: true, strip: true }) as HistoryRow[];
+  const rows = parse(text, {
+    skipFirstRow: true,
+    strip: true,
+  }) as unknown as HistoryRow[];
   const works = collapse(rows);
 
   const body = titlesOnly

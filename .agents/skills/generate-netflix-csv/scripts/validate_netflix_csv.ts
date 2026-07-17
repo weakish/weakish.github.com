@@ -1,7 +1,7 @@
 /** Validate movies/netflix.csv against NetflixViewingHistory.csv and schema rules. */
 
 import { parse } from "https://deno.land/std@0.201.0/csv/mod.ts";
-import { collapse, type HistoryRow, watchBounds } from "./collapse_history.ts";
+import { type HistoryRow, watchBounds } from "./collapse_history.ts";
 
 const COLUMNS = ["id", "title", "year", "date", "wikidata", "netflix"] as const;
 
@@ -22,7 +22,10 @@ export interface NetflixRow {
 
 async function loadCsv(path: string): Promise<Record<string, string>[]> {
   const text = await Deno.readTextFile(path);
-  return parse(text, { skipFirstRow: true, strip: true }) as Record<string, string>[];
+  return parse(text, { skipFirstRow: true, strip: true }) as Record<
+    string,
+    string
+  >[];
 }
 
 export function validate(
@@ -37,9 +40,8 @@ export function validate(
     errors.push(`columns want ${[...COLUMNS]}, got ${fields}`);
   }
 
-  const works = collapse(historyRows);
-  const want = Object.fromEntries(works.map((w) => [w.title, w.date]));
   const bounds = watchBounds(historyRows);
+  const wantTitles = new Set(bounds.keys());
   const gotTitles = netflixRows.map((r) => r.title);
   const gotSet = new Set(gotTitles);
 
@@ -53,8 +55,8 @@ export function validate(
     errors.push("duplicate Netflix title ids in netflix.csv");
   }
 
-  const missing = [...new Set(Object.keys(want))].filter((t) => !gotSet.has(t)).sort();
-  const extra = [...gotSet].filter((t) => !(t in want)).sort();
+  const missing = [...wantTitles].filter((t) => !gotSet.has(t)).sort();
+  const extra = [...gotSet].filter((t) => !wantTitles.has(t)).sort();
   if (missing.length) {
     errors.push(`missing titles (${missing.length}): ${missing.slice(0, 5)}`);
   }
@@ -83,16 +85,22 @@ export function validate(
       errors.push(`L${line} '${title}': bad year '${year}'`);
     }
     if (!year) errors.push(`L${line} '${title}': blank year`);
-    if (!DATE_RE.test(date)) errors.push(`L${line} '${title}': bad date '${date}'`);
+    if (!DATE_RE.test(date)) {
+      errors.push(`L${line} '${title}': bad date '${date}'`);
+    }
     const range = bounds.get(title);
     if (range && date > range.max) {
-      errors.push(`L${line} '${title}': date ${date} after last history watch ${range.max}`);
+      errors.push(
+        `L${line} '${title}': date ${date} after last history watch ${range.max}`,
+      );
     }
     if (wd && !QID_RE.test(wd)) {
       errors.push(`L${line} '${title}': bad wikidata '${wd}'`);
     }
     if (!NETFLIX_RE.test(netflixId)) {
-      errors.push(`L${line} '${title}': bad/missing Netflix title id '${netflixId}'`);
+      errors.push(
+        `L${line} '${title}': bad/missing Netflix title id '${netflixId}'`,
+      );
     }
   }
 
@@ -100,9 +108,11 @@ export function validate(
 }
 
 function usage(): void {
-  console.error(`Usage: deno run validate_netflix_csv.ts [--netflix path] [--history path]
+  console.error(
+    `Usage: deno run validate_netflix_csv.ts [--netflix path] [--history path]
 
-Validate movies/netflix.csv against collapsed Netflix viewing history.`);
+Validate movies/netflix.csv against collapsed Netflix viewing history.`,
+  );
 }
 
 function parseCli(args: string[]) {
@@ -130,8 +140,8 @@ function parseCli(args: string[]) {
 
 async function main(args: string[]): Promise<number> {
   const { netflix, history } = parseCli(args);
-  const netflixRows = await loadCsv(netflix) as NetflixRow[];
-  const historyRows = await loadCsv(history) as HistoryRow[];
+  const netflixRows = await loadCsv(netflix) as unknown as NetflixRow[];
+  const historyRows = await loadCsv(history) as unknown as HistoryRow[];
 
   const errors = validate(netflixRows, historyRows);
   if (errors.length) {
