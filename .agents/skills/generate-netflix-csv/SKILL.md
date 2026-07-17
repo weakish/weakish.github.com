@@ -109,13 +109,13 @@ For each collapsed title:
    - **Language tag** = edition marker in the Netflix export `Title` (e.g. `(Tamil)`, `(Hindi)`, or subtitles like `Tamil Extended Cut`). Not a locale code or audio-track field. For South Asian titles, treat it as a distinct language edition, often re-filmed—not just a dub.
    - Example: `Kushi (Tamil)` → Netflix title id `81728992` streams the 2023 Tamil edition (`tt15380630`), not the unrelated 2000 film—because that is what Netflix listed, not because it is newer.
 
-**wikidata**: Q-id of the same work. Leave blank if none exists.
-
-**Netflix title id** (`netflix` column):
+**Netflix title id** (`netflix` column) — lock this **before** matching OMDb/IMDb/Wikidata:
 
 1. Wikidata `P1874` (Netflix ID).
 2. Else web search / uNoGS / Netflix title pages. Confirm the page matches the work (not a same-name neighbor like Dark Desire vs The Desire). Use this page to disambiguate same-title editions (see **id + year** above).
 3. Never leave the column blank for a history-derived row.
+
+**wikidata**: Q-id of the same Netflix edition. Leave blank if none exists.
 
 ### 4. Write CSV
 
