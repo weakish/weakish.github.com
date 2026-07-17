@@ -29,6 +29,13 @@
 - If you create or modify a test file, run it and iterate until it passes, e.g. `deno test -A gemini-converter_test.ts`.
 - Never add sleeps to tests.
 
+### Deno tasks
+
+- `deno task check` — verify only (`deno fmt --check` then `deno check`); does not modify files.
+- `deno task fmt` — apply formatting fixes.
+- Both use `**/*.ts **/*.tsx` globs so `.agents/` skill scripts are included; bare `deno fmt` without globs skips dot-directories and can touch or panic on wiki markdown.
+- Do not run bare `deno fmt` on the repo root; use `deno task fmt` or pass the same globs.
+
 ## Agent skills
 
 Project skills live under `.agents/skills/`. Each skill is a directory with a `SKILL.md` file (YAML frontmatter + workflow) and optional `scripts/`.
@@ -84,6 +91,13 @@ Use [13 Short Gitmojis](https://mmap.page/dive-into/gitmoji/). Prefer the emoji 
 - `scope` — optional
 - `<summary>` — short description; imperative mood preferred
 - Keep the first line under **50 characters** when practical
+
+### Body
+
+- After the subject, add 1–3 lines when motivation is not obvious from the diff.
+- Explain the problem or trigger, not a file list.
+- Do not duplicate [AGENTS.md](#commands); for toolchain changes, a one-line pointer is enough (e.g. "See AGENTS.md Commands").
+- Put `Assisted-by` after the body (see [AI attribution](#ai-attribution)).
 
 Examples:
 
