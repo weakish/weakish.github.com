@@ -2,10 +2,14 @@
 # - [[redirects]] → GH Pages uses static meta-refresh HTML stubs at source paths
 # - [[headers]] → GH Pages cannot set custom headers; browsers handle Content-Type for .txt files automatically
 # - [[edge_functions]] /teapot → GH Pages uses static teapot/index.html returning equivalent content
+#
+# Netlify's build image still ships Deno 1.x. Upgrade to the LTS channel (same as
+# CI) before building so the committed deno.lock is usable. Do not use bare
+# `deno upgrade` (tracks latest stable and drifts every deploy).
 
 [build]
   publish = "_site"
-  command = "deno upgrade && deno task build"
+  command = "deno upgrade lts && deno task build"
 
 [[headers]]
     for = "/LICENSE"

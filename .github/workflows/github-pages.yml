@@ -30,7 +30,8 @@ jobs:
           fetch-depth: 0
       - uses: denoland/setup-deno@v2
         with:
-          deno-version: v2.x
+          deno-version: lts
+      - run: deno ci
       - run: deno task build
       - uses: actions/upload-pages-artifact@v3
         with:
