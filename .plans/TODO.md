@@ -71,6 +71,23 @@ Features implemented:
 
 Discovered while setting up the Cursor Cloud dev environment (Deno 2.9.3, Lume v3.0.4).
 
+## Reproduction environment
+
+| Component | Version / value |
+|-----------|-----------------|
+| Host | Cursor Cloud VM (Docker container inside a Firecracker microVM) |
+| OS | Ubuntu 24.04.4 LTS (x86_64) |
+| Kernel | `6.12.94+` |
+| CPU / RAM | 4 vCPU (Intel Xeon) / ~15 GiB |
+| Deno | 2.9.3 (stable, x86_64-unknown-linux-gnu) |
+| Lume | v3.0.4 (`deno.json` import map) |
+| tmux | 3.5a (interactive pane = pty; where the serve hang reproduces) |
+| Desktop (for GUI/VNC) | XFCE 4 on `Xtigervnc`, `DISPLAY=:1`, 1920x1200 |
+
+Notes for reproduction:
+- The non-TTY runner used by the Cursor agent Shell tool reports `TERM=dumb`; serve **works** there. The hang shows up when serve is launched inside a tmux pane (proper pty, `TERM=tmux-256color`/`screen-256color`).
+- No `package.json`; deps are Deno URL/npm imports cached on first run. Warm the cache with `deno cache _config.ts gemini.ts gemini-converter.ts tasks/gmi.ts`.
+
 ## 1. Lume serve worker swallows errors (silent hang)
 
 **Symptom:** When `deno task serve` fails at build/serve time, it produces **no error message** — the process just hangs and never opens a port.
