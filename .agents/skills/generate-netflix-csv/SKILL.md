@@ -54,7 +54,7 @@ m300581,"Lorena, Light-Footed Woman",2019,2025-06-06,Q78191654,80244683
 | Column | Rule |
 |--------|------|
 | `id` | Prefer [omdb.org](https://www.omdb.org) as `m` + digits (e.g. `m300581`). Else IMDb `tt…`. Else TMDB bare digits (e.g. `660978`). |
-| `title` | Collapsed work title (see collapse script). Keep Netflix language tags like `(Tamil)` when present in history. |
+| `title` | Collapsed work title (see collapse script). Keep Netflix **language tags**—parenthetical edition markers like `(Tamil)` / `(Hindi)` from the export `Title`—verbatim when present in history. |
 | `year` | Film release year, or series premiere / first-release year. |
 | `date` | First watch date from history, ISO `YYYY-MM-DD` (oldest date for that collapsed work). |
 | `wikidata` | Item Q-id when known (e.g. `Q78191654`). May be blank. |
@@ -100,18 +100,21 @@ For each collapsed title:
 
 **id + year** (in order):
 
-1. Wikidata search → claims `P345` (IMDb), `P3302` (OMDb numeric if present), publication date for year.
-2. IMDb suggestion API: `https://v2.sg.media-imdb.com/suggestion/{first_letter}/{urlencoded_title}.json`
-3. omdb.org / web search for numeric OMDb id when the title exists there.
-4. TMDB search only if neither OMDb nor IMDb has an entry → bare numeric id.
-5. Disambiguate by language tag, cast, and **what Netflix actually streams**. Prefer the remake/edition on Netflix over an older film that shares the title (e.g. `Kushi (Tamil)` → 2023 remake, not 2000).
+1. Resolve the **Netflix title id** first (`netflix` column / Wikidata `P1874` / `netflix.com/title/…`). The Netflix page is the source of truth for which edition was watched.
+2. Wikidata search → claims `P345` (IMDb), `P3302` (OMDb numeric if present), publication date for year. Prefer the item linked to that Netflix edition.
+3. IMDb suggestion API: `https://v2.sg.media-imdb.com/suggestion/{first_letter}/{urlencoded_title}.json`
+4. omdb.org / web search for numeric OMDb id when the title exists there.
+5. TMDB search only if neither OMDb nor IMDb has an entry → bare numeric id.
+6. Disambiguate same-name works using the Netflix title page, then **language tag**, cast, plot, and year. Pick the OMDb/IMDb/Wikidata entry for the edition **on Netflix (or that was on Netflix when watched)**—not the newest remake by default.
+   - **Language tag** = edition marker in the Netflix export `Title` (e.g. `(Tamil)`, `(Hindi)`, or subtitles like `Tamil Extended Cut`). Not a locale code or audio-track field. For South Asian titles, treat it as a distinct language edition, often re-filmed—not just a dub.
+   - Example: `Kushi (Tamil)` → Netflix title id `81728992` streams the 2023 Tamil edition (`tt15380630`), not the unrelated 2000 film—because that is what Netflix listed, not because it is newer.
 
 **wikidata**: Q-id of the same work. Leave blank if none exists.
 
 **Netflix title id** (`netflix` column):
 
 1. Wikidata `P1874` (Netflix ID).
-2. Else web search / uNoGS / Netflix title pages. Confirm the page matches the work (not a same-name neighbor like Dark Desire vs The Desire).
+2. Else web search / uNoGS / Netflix title pages. Confirm the page matches the work (not a same-name neighbor like Dark Desire vs The Desire). Use this page to disambiguate same-title editions (see **id + year** above).
 3. Never leave the column blank for a history-derived row.
 
 ### 4. Write CSV
@@ -140,7 +143,7 @@ When the user drops a new `NetflixViewingHistory.csv`:
 
 - Collapsing film subtitles at the first colon (`John Wick: Chapter 2` must stay whole → `KEEP_FULL`).
 - Using bare OMDb digits in `netflix.csv` (must be `m…`).
-- Mapping a Netflix watch to a non-Netflix edition of the same name.
+- Mapping a Netflix watch to an edition Netflix did not stream for that title id (e.g. a remake or another language version not on that Netflix page).
 - Confusing similarly named Netflix titles (verify the title id against plot/cast).
 - Overwriting an existing row's `date` on re-export (first watch must stay).
 - Forgetting to re-sort by `date` desc after adding new titles.
