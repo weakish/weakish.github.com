@@ -4,7 +4,7 @@
     "build": "deno task lume",
     "serve": "deno task lume -s",
     "gmi": "deno run -A tasks/gmi.ts",
-    "check": "deno fmt && deno check **/*.ts **/*.tsx"
+    "check": "deno fmt **/*.ts **/*.tsx && deno check **/*.ts **/*.tsx"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
