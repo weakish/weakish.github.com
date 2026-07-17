@@ -1,7 +1,7 @@
 /** Validate movies/netflix.csv against NetflixViewingHistory.csv and schema rules. */
 
 import { parse } from "https://deno.land/std@0.201.0/csv/mod.ts";
-import { collapse, type HistoryRow } from "./collapse_history.ts";
+import { collapse, type HistoryRow, watchBounds } from "./collapse_history.ts";
 
 const COLUMNS = ["id", "title", "year", "date", "wikidata", "netflix"] as const;
 
@@ -39,6 +39,7 @@ export function validate(
 
   const works = collapse(historyRows);
   const want = Object.fromEntries(works.map((w) => [w.title, w.date]));
+  const bounds = watchBounds(historyRows);
   const gotTitles = netflixRows.map((r) => r.title);
   const gotSet = new Set(gotTitles);
 
@@ -83,8 +84,9 @@ export function validate(
     }
     if (!year) errors.push(`L${line} '${title}': blank year`);
     if (!DATE_RE.test(date)) errors.push(`L${line} '${title}': bad date '${date}'`);
-    if (title in want && date !== want[title]) {
-      errors.push(`L${line} '${title}': date ${date} != history first watch ${want[title]}`);
+    const range = bounds.get(title);
+    if (range && date > range.max) {
+      errors.push(`L${line} '${title}': date ${date} after last history watch ${range.max}`);
     }
     if (wd && !QID_RE.test(wd)) {
       errors.push(`L${line} '${title}': bad wikidata '${wd}'`);

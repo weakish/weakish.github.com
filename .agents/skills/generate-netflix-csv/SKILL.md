@@ -94,8 +94,7 @@ Use this script — do not re-invent collapse rules. If a new title needs an exc
 For each collapsed title:
 
 1. If `movies/netflix.csv` already has that title, keep `id`, `year`, `date`, `wikidata`, `netflix` unless the user asked to fix a wrong mapping.
-2. Else if `movies/ratings.csv` matches the title, take its numeric OMDb `id` → `m{id}` and `year`; still look up Wikidata Q-id + Netflix title id; set `date` from the collapsed first-watch date.
-3. For **new** titles only, set `date` from the collapsed first-watch date (oldest history row for that work).
+2. Else (title not yet in `netflix.csv`): reuse `ratings.csv` `id` and `year` when the title matches (`m{id}`); look up Wikidata Q-id and Netflix title id; set `date` from the collapsed first-watch date.
 
 ### 3. Resolve missing metadata
 
@@ -126,7 +125,7 @@ deno run --allow-read=movies,.agents/skills/generate-netflix-csv/scripts \
   .agents/skills/generate-netflix-csv/scripts/validate_netflix_csv.ts
 ```
 
-Fix until it prints `OK`. Blank `wikidata` is allowed; `id`, `year`, and `netflix` are required.
+Fix until it prints `OK`. Blank `wikidata` is allowed; `id`, `year`, and `netflix` are required. Each `date` must not be after the last watch in the current history export; preserved first-watch dates older than that export's minimum are allowed.
 
 ## Incremental updates
 

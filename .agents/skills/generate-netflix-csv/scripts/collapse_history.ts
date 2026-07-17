@@ -60,7 +60,13 @@ export function stripEpisode(t: string): string {
   return t;
 }
 
-export function collapse(rows: HistoryRow[]): Work[] {
+export interface WatchBounds {
+  min: string;
+  max: string;
+}
+
+/** Group history rows by collapsed work title (shared by collapse and validation). */
+export function groupByWork(rows: HistoryRow[]): Map<string, HistoryRow[]> {
   const groups = new Map<string, HistoryRow[]>();
   for (const r of rows) {
     const key = stripEpisode(r.Title);
@@ -96,8 +102,21 @@ export function collapse(rows: HistoryRow[]): Work[] {
     final.set(key, list);
   }
 
+  return final;
+}
+
+export function watchBounds(rows: HistoryRow[]): Map<string, WatchBounds> {
+  const bounds = new Map<string, WatchBounds>();
+  for (const [title, rs] of groupByWork(rows)) {
+    const dates = rs.map((r) => parseDate(r.Date)).sort();
+    bounds.set(title, { min: dates[0]!, max: dates.at(-1)! });
+  }
+  return bounds;
+}
+
+export function collapse(rows: HistoryRow[]): Work[] {
   const works: Work[] = [];
-  for (const [title, rs] of final) {
+  for (const [title, rs] of groupByWork(rows)) {
     const dates = rs.map((r) => parseDate(r.Date)).sort();
     works.push({ title, date: dates[0]! });
   }
