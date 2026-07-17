@@ -56,7 +56,7 @@ m300581,"Lorena, Light-Footed Woman",2019,2025-06-06,Q78191654,80244683
 | `id` | Prefer [omdb.org](https://www.omdb.org) as `m` + digits (e.g. `m300581`). Else IMDb `tt…`. Else TMDB bare digits (e.g. `660978`). |
 | `title` | Collapsed work title (see collapse script). Keep Netflix language tags like `(Tamil)` when present in history. |
 | `year` | Film release year, or series premiere / first-release year. |
-| `date` | Latest watch date from history, ISO `YYYY-MM-DD`. |
+| `date` | First watch date from history, ISO `YYYY-MM-DD` (oldest date for that collapsed work). |
 | `wikidata` | Item Q-id when known (e.g. `Q78191654`). May be blank. |
 | `netflix` | Bare numeric Netflix title id (e.g. `80244683`). **Required** — every history-derived work was on Netflix. |
 
@@ -93,9 +93,9 @@ Use this script — do not re-invent collapse rules. If a new title needs an exc
 
 For each collapsed title:
 
-1. If `movies/netflix.csv` already has that title, keep `id`, `year`, `wikidata`, `netflix` unless the user asked to fix a wrong mapping.
-2. Else if `movies/ratings.csv` matches the title, take its numeric OMDb `id` → `m{id}` and `year`; still look up Wikidata Q-id + Netflix title id.
-3. Always refresh `date` from the latest history date for that work.
+1. If `movies/netflix.csv` already has that title, keep `id`, `year`, `date`, `wikidata`, `netflix` unless the user asked to fix a wrong mapping.
+2. Else if `movies/ratings.csv` matches the title, take its numeric OMDb `id` → `m{id}` and `year`; still look up Wikidata Q-id + Netflix title id; set `date` from the collapsed first-watch date.
+3. For **new** titles only, set `date` from the collapsed first-watch date (oldest history row for that work).
 
 ### 3. Resolve missing metadata
 
@@ -133,8 +133,8 @@ Fix until it prints `OK`. Blank `wikidata` is allowed; `id`, `year`, and `netfli
 When the user drops a new `NetflixViewingHistory.csv`:
 
 1. Collapse and diff titles against current `netflix.csv`.
-2. Update `date` for titles that already exist.
-3. Look up metadata only for **new** titles (and any the user flagged as wrong).
+2. Keep `date` for titles that already exist (first watch is stable).
+3. Look up metadata only for **new** titles (and any the user flagged as wrong); set their `date` from the collapsed first-watch date.
 4. Re-sort by date desc and validate.
 
 ## Common pitfalls
@@ -143,4 +143,5 @@ When the user drops a new `NetflixViewingHistory.csv`:
 - Using bare OMDb digits in `netflix.csv` (must be `m…`).
 - Mapping a Netflix watch to a non-Netflix edition of the same name.
 - Confusing similarly named Netflix titles (verify the title id against plot/cast).
-- Forgetting to bump `date` when history is re-exported.
+- Overwriting an existing row's `date` on re-export (first watch must stay).
+- Forgetting to re-sort by `date` desc after adding new titles.

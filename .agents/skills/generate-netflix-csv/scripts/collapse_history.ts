@@ -1,4 +1,4 @@
-/** Collapse NetflixViewingHistory.csv to one work per distinct title + latest watch date. */
+/** Collapse NetflixViewingHistory.csv to one work per distinct title + first watch date. */
 
 import { parse } from "https://deno.land/std@0.201.0/csv/mod.ts";
 
@@ -99,7 +99,7 @@ export function collapse(rows: HistoryRow[]): Work[] {
   const works: Work[] = [];
   for (const [title, rs] of final) {
     const dates = rs.map((r) => parseDate(r.Date)).sort();
-    works.push({ title, date: dates.at(-1)! });
+    works.push({ title, date: dates[0]! });
   }
   works.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
   return works;
@@ -108,7 +108,7 @@ export function collapse(rows: HistoryRow[]): Work[] {
 function usage(): void {
   console.error(`Usage: deno run collapse_history.ts [history.csv] [-o output.json] [--titles-only]
 
-Collapse NetflixViewingHistory.csv to distinct works with latest watch dates.`);
+Collapse NetflixViewingHistory.csv to distinct works with first watch dates.`);
 }
 
 function parseCli(args: string[]) {

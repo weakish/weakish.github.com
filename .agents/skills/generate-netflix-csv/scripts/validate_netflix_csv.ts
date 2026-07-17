@@ -84,7 +84,7 @@ export function validate(
     if (!year) errors.push(`L${line} '${title}': blank year`);
     if (!DATE_RE.test(date)) errors.push(`L${line} '${title}': bad date '${date}'`);
     if (title in want && date !== want[title]) {
-      errors.push(`L${line} '${title}': date ${date} != history latest ${want[title]}`);
+      errors.push(`L${line} '${title}': date ${date} != history first watch ${want[title]}`);
     }
     if (wd && !QID_RE.test(wd)) {
       errors.push(`L${line} '${title}': bad wikidata '${wd}'`);
