@@ -47,6 +47,14 @@ const otherMovies = parse(
 
 const movies: MoviePageData[] = watchedMovies.concat(otherMovies);
 
+const ratedMovies = movies.filter(
+  ({ tag }) => tag !== "watchlist" && tag !== "default",
+);
+const ratedOmdbIds = new Set(ratedMovies.map(({ id }) => id));
+const ratedTitleYears = new Set(
+  ratedMovies.map(({ title, year }) => `${title}\0${String(year)}`),
+);
+
 const movieNotes = parse(
   Deno.readTextFileSync("movies/notes.csv"),
   {
@@ -63,6 +71,16 @@ const netflix = parse(
     columns: ["id", "title", "year", "date", "wikidata", "url"],
   },
 ) as NetflixRow[];
+
+function isInRatedTable({ id, title, year }: NetflixRow): boolean {
+  if (id.startsWith("m")) {
+    const omdbId = Number(id.slice(1));
+    if (ratedOmdbIds.has(omdbId)) return true;
+  }
+  return ratedTitleYears.has(`${title}\0${year}`);
+}
+
+const netflixOnly = netflix.filter((row) => !isInRatedTable(row));
 
 const notes: Notes = {};
 for (const { id, note } of movieNotes) {
@@ -83,8 +101,7 @@ export default (data: Lume.Data) => (
         </tr>
       </thead>
       <tbody>
-        {movies
-          .filter(({ tag }) => tag !== "watchlist" && tag !== "default")
+        {ratedMovies
           .map(({ id, title, year, vote }) => (
             <tr key={id}>
               <td>
@@ -113,7 +130,7 @@ export default (data: Lume.Data) => (
     <details>
       <summary>Recently watched on Netflix</summary>
       <ul>
-        {netflix.map(({ title, year, url }) => (
+        {netflixOnly.map(({ title, year, url }) => (
           <li key={url}>
             <a href={url}>{title}</a>, {year}
           </li>
