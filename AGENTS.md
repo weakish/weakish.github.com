@@ -77,3 +77,19 @@ Assisted-by: Cursor:cursor-grok-4.5
 - Always write `Assisted-by` for **this** commit from the agent/model that materially helped. Do **not** copy an `Assisted-by` line from `git log`, prior commits, or commit-message examples — those often name a different model.
 - `MODEL_VERSION` must match the model that produced the changes (e.g. the model named in the current chat / system identity), not whatever appeared last in history.
 - The human author is responsible for reviewing all AI-assisted changes before pushing commits or creating pull requests.
+
+## Cursor Cloud specific instructions
+
+This is a single [Deno](https://deno.land) + [Lume](https://lume.land) static site. There is no `package.json`; the runtime is Deno and all tasks live in `deno.json` (`build`, `serve`, `gmi`). Deno is preinstalled at `~/.deno/bin` — add it to `PATH` if a shell doesn't pick it up (`export PATH="$HOME/.deno/bin:$PATH"`). Dependencies are URL/npm imports resolved and cached by Deno on first run; there is no separate install step.
+
+Standard commands (see `deno.json` and `.github/workflows/deno.yml`):
+
+- Build: `deno task build` (outputs to `_site/`)
+- Test: `deno test -A`
+- Lint: `deno lint` — reports **pre-existing** `no-explicit-any` violations; CI only runs `deno test -A` and `deno task build`, not lint.
+- Gemini/Gemtext build (optional): `deno task gmi`
+
+Non-obvious gotcha — running the dev server:
+
+- `deno task serve` (i.e. `lume -s`) derives the local server host/port from the `location` in `_config.ts` (`https://mmap.page`, so hostname `mmap.page` port `443`). In the cloud VM that address is not bindable, so `Deno.serve` throws `AddrNotAvailable (os error 99)`. The serve build worker swallows this as a silent unhandled rejection, so **there is no error message — the process just hangs and never opens a port.**
+- Fix: always override the bind address, e.g. `deno task lume -s --hostname 0.0.0.0 --port 3000` (or `--location http://localhost:3000/`). Then the site is reachable at `http://localhost:3000/`. Use `127.0.0.1`/`localhost` in `curl`; `0.0.0.0` is only the bind address.
