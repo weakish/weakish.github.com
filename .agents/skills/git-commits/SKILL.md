@@ -68,7 +68,7 @@ Examples:
 
 ## Commit trailers
 
-This repo keeps per-commit agent history (different models on feature branches) and uses human `Author` for `git blame`. Review depth may be recorded with Linux-style trailers; meanings below are this repo’s contract, not a copy of every kernel trailer rule.
+Trailers record agent help (`Assisted-by` per commit when an agent helped; squash before merge if you prefer). Git `Author` is always the human, for `git blame`. Review depth may be recorded with Linux-style trailers; meanings below are this repo’s contract, not a copy of every kernel trailer rule.
 
 `Acked-by` / `Reviewed-by` are **optional** markers that record which commits a human reviewed.
 
