@@ -147,7 +147,7 @@ function fieldErrorsForNetflixRow(
   const id = row.id;
   const year = row.year;
   const date = row.date;
-  const wd = row.wikidata;
+  const wikidata = row.wikidata;
   const netflixId = row.netflix;
 
   if (title === "") errors.push(`L${line}: blank title`);
@@ -173,9 +173,9 @@ function fieldErrorsForNetflixRow(
       );
     }
   }
-  if (wd && !QID_RE.test(wd)) {
+  if (wikidata && !QID_RE.test(wikidata)) {
     errors.push(
-      `L${line} ${qTitle}: invalid wikidata ${quoteValueInError(wd)}`,
+      `L${line} ${qTitle}: invalid wikidata ${quoteValueInError(wikidata)}`,
     );
   }
   if (netflixId === "") {
