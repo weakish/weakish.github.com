@@ -21,7 +21,7 @@ Keep this file short: many agents inject it into the system prompt. Details that
 
 ## Commands
 
-- After TypeScript/plugin changes (not content/docs): `deno task check` (full output). Fix errors before committing; `deno task fmt` for formatting. Does not run tests.
+- After TypeScript/plugin changes (not content/docs): `deno task check` (full output). Fix errors before committing; `deno task fmt` for formatting.
 - After creating/modifying a test: run it until it passes (e.g. `deno test -A gemini-converter_test.ts`). No sleeps in tests.
 - Use `deno task check` / `deno task fmt` only — never bare `deno fmt` / `deno check` (or shell-expanded globs). Tasks use `**/*.ts **/*.tsx` so `.agents/` skills are included; bare fmt can touch/panic on wiki markdown.
 
