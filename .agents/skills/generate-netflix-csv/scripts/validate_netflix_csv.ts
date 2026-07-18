@@ -40,20 +40,23 @@ function columnMismatchErrors(firstRow: NetflixRow): string[] {
   return [];
 }
 
-function duplicateTitleErrors(netflixRows: NetflixRow[]): string[] {
-  const titles = netflixRows.map((r) => r.title);
-  if (titles.length !== new Set(titles).size) {
-    return ["duplicate titles in netflix.csv"];
-  }
+function duplicateValueErrors(values: string[], message: string): string[] {
+  if (values.length !== new Set(values).size) return [message];
   return [];
 }
 
+function duplicateTitleErrors(netflixRows: NetflixRow[]): string[] {
+  return duplicateValueErrors(
+    netflixRows.map((r) => r.title),
+    "duplicate titles in netflix.csv",
+  );
+}
+
 function duplicateNetflixIdErrors(netflixRows: NetflixRow[]): string[] {
-  const ids = netflixRows.map((r) => r.netflix ?? "");
-  if (ids.length !== new Set(ids).size) {
-    return ["duplicate Netflix title ids in netflix.csv"];
-  }
-  return [];
+  return duplicateValueErrors(
+    netflixRows.map((r) => r.netflix ?? ""),
+    "duplicate Netflix title ids in netflix.csv",
+  );
 }
 
 function titleCoverageErrors(
