@@ -43,71 +43,91 @@ export function validate(
       errors.push(`columns want ${[...COLUMNS]}, got ${fields}`);
     }
   }
-  pushColumnMismatch(netflixRows[0]);
+
+  function pushDuplicateTitles(): void {
+    const titles = netflixRows.map((r) => r.title);
+    if (titles.length !== new Set(titles).size) {
+      errors.push("duplicate titles in netflix.csv");
+    }
+  }
+
+  function pushDuplicateNetflixIds(): void {
+    const ids = netflixRows.map((r) => r.netflix ?? "");
+    if (ids.length !== new Set(ids).size) {
+      errors.push("duplicate Netflix title ids in netflix.csv");
+    }
+  }
+
+  function pushTitleCoverageErrors(
+    wantTitles: Set<string>,
+    gotTitles: Set<string>,
+  ): void {
+    const missing = [...wantTitles].filter((t) => !gotTitles.has(t)).sort();
+    const extra = [...gotTitles].filter((t) => !wantTitles.has(t)).sort();
+    if (missing.length) {
+      errors.push(`missing titles (${missing.length}): ${missing.slice(0, 5)}`);
+    }
+    if (extra.length) {
+      errors.push(`extra titles (${extra.length}): ${extra.slice(0, 5)}`);
+    }
+  }
+
+  function pushUnsortedByDateDescending(): void {
+    const dates = netflixRows.map((r) => r.date ?? "");
+    const sorted = [...dates].sort().reverse();
+    if (dates.join("\0") !== sorted.join("\0")) {
+      errors.push("rows not sorted by date descending");
+    }
+  }
+
+  function pushRowFieldErrors(
+    bounds: ReturnType<typeof watchBounds>,
+  ): void {
+    for (let i = 0; i < netflixRows.length; i++) {
+      const line = i + 2;
+      const r = netflixRows[i];
+      const title = r.title ?? "";
+      const id = r.id ?? "";
+      const year = r.year ?? "";
+      const date = r.date ?? "";
+      const wd = r.wikidata ?? "";
+      const netflixId = r.netflix ?? "";
+
+      if (!ID_RE.test(id)) errors.push(`L${line} '${title}': bad id '${id}'`);
+      if (year && !YEAR_RE.test(year)) {
+        errors.push(`L${line} '${title}': bad year '${year}'`);
+      }
+      if (!year) errors.push(`L${line} '${title}': blank year`);
+      if (!DATE_RE.test(date)) {
+        errors.push(`L${line} '${title}': bad date '${date}'`);
+      }
+      const range = bounds.get(title);
+      if (range && date > range.max) {
+        errors.push(
+          `L${line} '${title}': date ${date} after last history watch ${range.max}`,
+        );
+      }
+      if (wd && !QID_RE.test(wd)) {
+        errors.push(`L${line} '${title}': bad wikidata '${wd}'`);
+      }
+      if (!NETFLIX_RE.test(netflixId)) {
+        errors.push(
+          `L${line} '${title}': bad/missing Netflix title id '${netflixId}'`,
+        );
+      }
+    }
+  }
 
   const bounds = watchBounds(historyRows);
   const wantTitles = new Set(bounds.keys());
-  const gotTitles = netflixRows.map((r) => r.title);
-  const gotSet = new Set(gotTitles);
+  const gotTitles = new Set(netflixRows.map((r) => r.title));
 
-  if (gotTitles.length !== gotSet.size) {
-    errors.push("duplicate titles in netflix.csv");
-  }
-
-  const gotNetflixIds = netflixRows.map((r) => r.netflix ?? "");
-  const netflixIdSet = new Set(gotNetflixIds);
-  if (gotNetflixIds.length !== netflixIdSet.size) {
-    errors.push("duplicate Netflix title ids in netflix.csv");
-  }
-
-  const missing = [...wantTitles].filter((t) => !gotSet.has(t)).sort();
-  const extra = [...gotSet].filter((t) => !wantTitles.has(t)).sort();
-  if (missing.length) {
-    errors.push(`missing titles (${missing.length}): ${missing.slice(0, 5)}`);
-  }
-  if (extra.length) {
-    errors.push(`extra titles (${extra.length}): ${extra.slice(0, 5)}`);
-  }
-
-  const dates = netflixRows.map((r) => r.date ?? "");
-  const sorted = [...dates].sort().reverse();
-  if (dates.join("\0") !== sorted.join("\0")) {
-    errors.push("rows not sorted by date descending");
-  }
-
-  for (let i = 0; i < netflixRows.length; i++) {
-    const line = i + 2;
-    const r = netflixRows[i];
-    const title = r.title ?? "";
-    const id = r.id ?? "";
-    const year = r.year ?? "";
-    const date = r.date ?? "";
-    const wd = r.wikidata ?? "";
-    const netflixId = r.netflix ?? "";
-
-    if (!ID_RE.test(id)) errors.push(`L${line} '${title}': bad id '${id}'`);
-    if (year && !YEAR_RE.test(year)) {
-      errors.push(`L${line} '${title}': bad year '${year}'`);
-    }
-    if (!year) errors.push(`L${line} '${title}': blank year`);
-    if (!DATE_RE.test(date)) {
-      errors.push(`L${line} '${title}': bad date '${date}'`);
-    }
-    const range = bounds.get(title);
-    if (range && date > range.max) {
-      errors.push(
-        `L${line} '${title}': date ${date} after last history watch ${range.max}`,
-      );
-    }
-    if (wd && !QID_RE.test(wd)) {
-      errors.push(`L${line} '${title}': bad wikidata '${wd}'`);
-    }
-    if (!NETFLIX_RE.test(netflixId)) {
-      errors.push(
-        `L${line} '${title}': bad/missing Netflix title id '${netflixId}'`,
-      );
-    }
-  }
+  pushColumnMismatch(netflixRows[0]);
+  pushDuplicateTitles();
+  pushDuplicateNetflixIds();
+  pushTitleCoverageErrors(wantTitles, gotTitles);
+  pushUnsortedByDateDescending();
+  pushRowFieldErrors(bounds);
 
   return errors;
 }
