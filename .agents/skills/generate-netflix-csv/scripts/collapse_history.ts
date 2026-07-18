@@ -133,7 +133,7 @@ export function collapse(rows: HistoryRow[]): Work[] {
   for (const [title, { min }] of watchBounds(rows)) {
     works.push({ title, date: min });
   }
-  works.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  works.sort((a, b) => b.date.localeCompare(a.date));
   return works;
 }
 
