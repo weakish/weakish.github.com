@@ -5,6 +5,7 @@ import { type NetflixRow, validate } from "./validate_netflix_csv.ts";
 function row(
   title: string,
   date: string,
+  netflix = "12345",
 ): NetflixRow {
   return {
     id: "tt1",
@@ -12,7 +13,7 @@ function row(
     year: "2020",
     date,
     wikidata: "",
-    netflix: "12345",
+    netflix,
   };
 }
 
@@ -30,4 +31,37 @@ Deno.test("validate rejects date after last history watch", () => {
   const errors = validate(netflix, history);
   assertEquals(errors.length, 1);
   assertEquals(errors[0]?.includes("after last history watch"), true);
+});
+
+Deno.test("validate does not treat blank netflix ids as duplicates", () => {
+  const history: HistoryRow[] = [
+    { Title: "Foo", Date: "4/6/23" },
+    { Title: "Bar", Date: "5/6/23" },
+  ];
+  const netflix = [
+    row("Foo", "2023-04-06", ""),
+    row("Bar", "2023-05-06", ""),
+  ];
+  const errors = validate(netflix, history);
+  assertEquals(
+    errors.some((e) => e.includes("duplicate Netflix title ids")),
+    false,
+  );
+  assertEquals(
+    errors.filter((e) => e.includes("bad/missing Netflix title id")).length,
+    2,
+  );
+});
+
+Deno.test("validate rejects duplicate netflix title ids", () => {
+  const history: HistoryRow[] = [
+    { Title: "Foo", Date: "4/6/23" },
+    { Title: "Bar", Date: "5/6/23" },
+  ];
+  const netflix = [
+    row("Foo", "2023-04-06", "99999"),
+    row("Bar", "2023-05-06", "99999"),
+  ];
+  const errors = validate(netflix, history);
+  assertEquals(errors.includes("duplicate Netflix title ids in netflix.csv"), true);
 });
