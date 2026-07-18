@@ -185,16 +185,18 @@ Assisted-by: Cursor:cursor-grok-4.5
 - Required on the tip that merges into `master` (e.g. squash tip). A draft PR tip may use `Reviewed-by` instead of `Acked-by` if a full review already happened. May also appear on earlier commits you fully reviewed.
 - Agents must not add `Reviewed-by` unless the user has fully reviewed and asks for the trailer or to prepare the merge tip.
 
-### Example (draft-PR tip after light review)
+### Example (lightly reviewed commit)
 
 ```
-:zzz:deno.json: add fmt task, drop includes
+:memo:netflix-csv: document Y10K and RFC 3339 dates
 
-Assisted-by: Cursor:cursor-grok-4.5
+Four-digit year/date validation is RFC 3339 profile, not full ISO 8601.
+
+Assisted-by: Cursor:composer-2.5
 Acked-by: weakish <weakish@gmail.com>
 ```
 
 ### Notes
 
 - Do not invent other review trailers for light-vs-full depth.
-- Scripts may treat `Acked-by` / `Reviewed-by` on a commit as marking reviewed ranges from that commit forward (or back to the previous review marker); commits with only `Assisted-by` are unreviewed steps.
+- A review trailer certifies **that commit only**. Range aggregation is script-defined (e.g. a marker covers commits since the previous marker); commits with only `Assisted-by` are unreviewed steps.
