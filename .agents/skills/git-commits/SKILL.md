@@ -2,7 +2,7 @@
 name: git-commits
 description: >-
   Repo commit message and trailer contract: 13 Short Gitmojis subjects;
-  Assisted-by; Acked-by / Reviewed-by gates for draft PRs and master;
+  Assisted-by; optional Acked-by / Reviewed-by to record human review;
   Reported-by for user-reported bugs; Suggested-by for human
   ideas and approach.
   Use when committing, writing a commit message, adding review trailers,
@@ -70,16 +70,16 @@ Examples:
 
 ## Commit trailers
 
-This repo keeps per-commit agent history (different models on feature branches) and uses human `Author` for `git blame`. Review depth is recorded with Linux-style trailers; meanings below are this repo’s contract (milestone gates), not a copy of every kernel trailer rule.
+This repo keeps per-commit agent history (different models on feature branches) and uses human `Author` for `git blame`. Review depth may be recorded with Linux-style trailers; meanings below are this repo’s contract, not a copy of every kernel trailer rule.
 
-The gates exist for quality assurance: `master` auto-deploys to production (protect end users), and a draft PR whose code no human has at least lightly reviewed is likely an AI-slop PR that wastes other developers' time.
+`Acked-by` / `Reviewed-by` are **optional** markers that record which commits a human reviewed. They are **not** required for draft PRs or landing on `master`.
 
 Trailer order after the subject/body:
 
 1. `Reported-by` (when the user reported a valid bug this commit fixes)
 2. `Suggested-by` (when a human suggested the idea or approach this commit implements)
 3. `Assisted-by` (when an agent helped)
-4. `Acked-by` / `Reviewed-by` (human review markers, when required)
+4. `Acked-by` / `Reviewed-by` (optional human review markers)
 
 ### Author
 
@@ -107,7 +107,7 @@ Assisted-by: Cursor:cursor-grok-4.5
 ```
 
 - Always write `Assisted-by` for **this** commit from the agent/model that helped. Do **not** copy an `Assisted-by` line from `git log`, prior commits, or examples — those often name a different model.
-- Intermediate commits usually carry only `Assisted-by` (the user may not have bandwidth to review every step). When a human **has** reviewed an intermediate commit, it may also carry `Acked-by` or `Reviewed-by` for that commit.
+- Intermediate commits usually carry only `Assisted-by` (the user may not have bandwidth to review every step). When a human **has** reviewed a commit, it may also carry `Acked-by` or `Reviewed-by` for that commit.
 
 ### Reported-by
 
@@ -146,18 +146,18 @@ Assisted-by: Cursor:cursor-grok-4.5
 
 ### Acked-by (light review)
 
-- Means: a human lightly reviewed **that commit**; LGTM enough to share (draft PR when on the branch tip).
+- Means: a human lightly reviewed **that commit**.
+- Optional — use when you want to record light review; not required for draft PRs or any other milestone.
 - Identity: any human who did the light review (`Acked-by: Name <email>`) — the commit author, the agent's user, or another developer. A self-ack (reviewer = `Author`) is this repo's intentional review-depth attribution, not invalid trailer usage; do not flag it when reviewing commits or polishing messages.
-- Required on the branch tip **before opening a draft PR** (unless the tip already has `Reviewed-by`). May also appear on earlier commits a human lightly reviewed.
-- Agents must not add `Acked-by` on their own judgment; add it only when the user confirms a human did that light check (and names the reviewer) via asking for the trailer or a draft PR.
+- Agents must not add `Acked-by` on their own judgment; add it only when the user confirms a human did that light check (and names the reviewer), or asks for the trailer.
 - Exception: when the user says LGTM (or an equivalent explicit approval) while asking for a commit, treat it as light-review confirmation — add `Acked-by` naming the user without asking, then tell the user the trailer was added. Do not infer acks from weaker signals ("sure, go ahead").
 
 ### Reviewed-by (full review)
 
-- Means: a human fully reviewed **that commit**; same *role* as Linux kernel `Reviewed-by` (ready to land when on the merge tip).
+- Means: a human fully reviewed **that commit**; same *role* as Linux kernel `Reviewed-by`.
+- Optional — use when you want to record full review; not required for `master` merges or draft PRs.
 - Identity: any human who did the full review; may be the commit author (see the `Acked-by` note on self-review).
-- Required on the tip that merges into `master` (e.g. squash tip). A draft PR tip may use `Reviewed-by` instead of `Acked-by` if a full review already happened. May also appear on earlier commits a human fully reviewed.
-- Agents must not add `Reviewed-by` on their own judgment; add it only when the user confirms a human fully reviewed (and names the reviewer) via asking for the trailer or the merge tip.
+- Agents must not add `Reviewed-by` on their own judgment; add it only when the user confirms a human fully reviewed (and names the reviewer), or asks for the trailer.
 
 ### Example (lightly reviewed commit)
 
