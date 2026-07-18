@@ -163,6 +163,7 @@ function rowFieldErrors(
   bounds: WatchBounds,
 ): string[] {
   return netflixRows.flatMap((row, i) =>
+    // CSV line 1 is the header; netflixRows[i] is file line i + 2.
     fieldErrorsForNetflixRow(i + 2, row, bounds)
   );
 }
