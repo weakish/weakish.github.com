@@ -54,7 +54,7 @@ Multiple agent sessions may be running in this cwd at the same time, each modify
 
 - Only commit and stage files YOU changed in THIS session.
 - Before committing, run `git status` and verify you are only staging your files.
-- Message format: see [Git commit messages](#git-commit-messages) and [AI attribution](#ai-attribution).
+- Message format: see [Git commit messages](#git-commit-messages) and [Commit trailers](#commit-trailers).
 - Commit your changes before finishing your turn.
 - Never push to remote unless the user explicitly asks you to.
 - Never force push to remote even if the user explicitly asks you to.
@@ -76,6 +76,8 @@ These destroy other agents' work or bypass checks:
 
 - Never create an issue unless the user explicitly asks you to.
 - Never create a pull request unless the user explicitly asks you to. In that case, always create a draft PR.
+- Before opening a draft PR, the branch tip must carry `Acked-by` or `Reviewed-by` (see [Commit trailers](#commit-trailers)). Add that trailer only when the user has lightly or fully reviewed and asks you to open the PR (or explicitly asks to add the trailer).
+- Never merge to `master`. The human merges; the tip that lands on `master` must carry `Reviewed-by`.
 
 ## Git commit messages
 
@@ -97,7 +99,7 @@ Use [13 Short Gitmojis](https://mmap.page/dive-into/gitmoji/). Prefer the emoji 
 - After the subject, add 1–3 lines when motivation is not obvious from the diff.
 - Explain the problem or trigger, not a file list.
 - Do not duplicate [AGENTS.md](#commands); for toolchain changes, a one-line pointer is enough (e.g. "See AGENTS.md Commands").
-- Put `Assisted-by` after the body (see [AI attribution](#ai-attribution)).
+- Put trailers after the body (see [Commit trailers](#commit-trailers)).
 
 Examples:
 
@@ -132,23 +134,33 @@ Examples:
 - `:poop:` marks dirty hacks or workarounds that may need cleanup later
 - Do not invent other gitmoji codes (including those from the full gitmoji.dev catalogue) for this repo
 
-## AI attribution
+## Commit trailers
 
-When an AI tool materially helps with a commit, add an `Assisted-by` line in the commit message body (after the subject line). This follows the [Linux kernel AI coding assistants guidance](https://docs.kernel.org/process/coding-assistants.html).
+This repo keeps per-commit agent history (different models on feature branches) and uses human `Author` for `git blame`. Review depth is recorded with Linux-style trailers whose **who** is always the human author; meanings below are this repo’s contract (milestone gates), not a copy of every kernel trailer rule.
 
-### Format
+Trailer order after the subject/body:
+
+1. `Assisted-by` (when an agent helped)
+2. `Acked-by` / `Reviewed-by` (human review markers, when required)
+
+### Author
+
+- Git `Author` is always the human. Never set the agent as author (breaks blame and ownership).
+- The human is responsible for what lands on `master`.
+
+### Assisted-by
+
+Required on every commit an AI agent materially helped produce. Follows the [Linux kernel AI coding assistants guidance](https://docs.kernel.org/process/coding-assistants.html).
 
 ```
 Assisted-by: AGENT_NAME:MODEL_VERSION [TOOL1] [TOOL2]
 ```
 
 - `AGENT_NAME` — the AI tool or framework (e.g. `Cursor`, `Claude Code`, `Copilot`)
-- `MODEL_VERSION` — the specific model used for **this** commit (e.g. `gpt-5.6`, `cursor-grok-4.5`); take it from the current session identity, never from a previous commit
+- `MODEL_VERSION` — the model for **this** commit (e.g. `gpt-5.6`, `cursor-grok-4.5`); take it from the current session identity, never from a previous commit
 - `[TOOL1] [TOOL2]` — optional specialized analysis tools only (e.g. `coccinelle`, `sparse`, `clang-tidy`)
 
 Do not list basic development tools (git, compilers, make, editors).
-
-### Example
 
 ```
 :bug: fix wiki link resolution for subdirectories
@@ -156,8 +168,33 @@ Do not list basic development tools (git, compilers, make, editors).
 Assisted-by: Cursor:cursor-grok-4.5
 ```
 
+- Always write `Assisted-by` for **this** commit from the agent/model that helped. Do **not** copy an `Assisted-by` line from `git log`, prior commits, or examples — those often name a different model.
+- Intermediate commits on a branch may have only `Assisted-by` (no `Acked-by` / `Reviewed-by`).
+
+### Acked-by (light review)
+
+- Means: human lightly reviewed the tip; LGTM enough to share (draft PR).
+- Identity: same human as git `Author` (`Acked-by: Name <email>`).
+- Required on the branch tip **before opening a draft PR** (unless the tip already has `Reviewed-by`).
+- Agents must not add `Acked-by` unless the user has done that light check and asks for the trailer or for a draft PR.
+
+### Reviewed-by (full review)
+
+- Means: human fully reviewed the change; same *role* as Linux kernel `Reviewed-by` (ready to land).
+- Identity: same human as git `Author`.
+- Required on the tip that merges into `master` (e.g. squash tip). A draft PR tip may use `Reviewed-by` instead of `Acked-by` if a full review already happened.
+- Agents must not add `Reviewed-by` unless the user has fully reviewed and asks for the trailer or to prepare the merge tip.
+
+### Example (draft-PR tip after light review)
+
+```
+:zzz:deno.json: add fmt task, drop includes
+
+Assisted-by: Cursor:cursor-grok-4.5
+Acked-by: weakish <weakish@gmail.com>
+```
+
 ### Notes
 
-- Always write `Assisted-by` for **this** commit from the agent/model that materially helped. Do **not** copy an `Assisted-by` line from `git log`, prior commits, or commit-message examples — those often name a different model.
-- `MODEL_VERSION` must match the model that produced the changes (e.g. the model named in the current chat / system identity), not whatever appeared last in history.
-- The human author is responsible for reviewing all AI-assisted changes before pushing commits or creating pull requests.
+- Do not invent other review trailers for light-vs-full depth.
+- Scripts may treat `Acked-by` tips as lightly checked ranges and `Reviewed-by` tips as fully reviewed ranges; most middle commits only carry `Assisted-by`.
