@@ -179,6 +179,7 @@ Assisted-by: Cursor:cursor-grok-4.5
 - Identity: any human who did the light review (`Acked-by: Name <email>`) — the commit author, the agent's user, or another developer. A self-ack (reviewer = `Author`) is this repo's intentional review-depth attribution, not invalid trailer usage; do not flag it when reviewing commits or polishing messages.
 - Required on the branch tip **before opening a draft PR** (unless the tip already has `Reviewed-by`). May also appear on earlier commits a human lightly reviewed.
 - Agents must not add `Acked-by` on their own judgment; add it only when the user confirms a human did that light check (and names the reviewer) via asking for the trailer or a draft PR.
+- Exception: when the user says LGTM (or an equivalent explicit approval) while asking for a commit, treat it as light-review confirmation — add `Acked-by` naming the user without asking, then tell the user the trailer was added. Do not infer acks from weaker signals ("sure, go ahead").
 
 ### Reviewed-by (full review)
 
