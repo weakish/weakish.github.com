@@ -114,53 +114,57 @@ function unsortedByDateDescendingErrors(netflixRows: NetflixRow[]): string[] {
   return [];
 }
 
+function fieldErrorsForNetflixRow(
+  line: number,
+  row: NetflixRow,
+  bounds: WatchBounds,
+): string[] {
+  const errors: string[] = [];
+  const title = row.title ?? "";
+  const qTitle = quoteValueInError(title);
+  const id = row.id ?? "";
+  const year = row.year ?? "";
+  const date = row.date ?? "";
+  const wd = row.wikidata ?? "";
+  const netflixId = row.netflix ?? "";
+
+  if (!title) errors.push(`L${line}: blank title`);
+  if (!ID_RE.test(id)) {
+    errors.push(`L${line} ${qTitle}: bad id ${quoteValueInError(id)}`);
+  }
+  if (year && !YEAR_RE.test(year)) {
+    errors.push(`L${line} ${qTitle}: bad year ${quoteValueInError(year)}`);
+  }
+  if (!year) errors.push(`L${line} ${qTitle}: blank year`);
+  if (!DATE_RE.test(date)) {
+    errors.push(`L${line} ${qTitle}: bad date ${quoteValueInError(date)}`);
+  }
+  const range = bounds.get(title);
+  if (range && date > range.max) {
+    errors.push(
+      `L${line} ${qTitle}: date ${date} after last history watch ${range.max}`,
+    );
+  }
+  if (wd && !QID_RE.test(wd)) {
+    errors.push(`L${line} ${qTitle}: bad wikidata ${quoteValueInError(wd)}`);
+  }
+  if (!NETFLIX_RE.test(netflixId)) {
+    errors.push(
+      `L${line} ${qTitle}: bad/missing Netflix title id ${
+        quoteValueInError(netflixId)
+      }`,
+    );
+  }
+  return errors;
+}
+
 function rowFieldErrors(
   netflixRows: NetflixRow[],
   bounds: WatchBounds,
 ): string[] {
-  const errors: string[] = [];
-  for (let i = 0; i < netflixRows.length; i++) {
-    const line = i + 2;
-    const r = netflixRows[i];
-    const title = r.title ?? "";
-    const qTitle = quoteValueInError(title);
-    const id = r.id ?? "";
-    const year = r.year ?? "";
-    const date = r.date ?? "";
-    const wd = r.wikidata ?? "";
-    const netflixId = r.netflix ?? "";
-
-    if (!title) errors.push(`L${line}: blank title`);
-    if (!ID_RE.test(id)) {
-      errors.push(`L${line} ${qTitle}: bad id ${quoteValueInError(id)}`);
-    }
-    if (year && !YEAR_RE.test(year)) {
-      errors.push(`L${line} ${qTitle}: bad year ${quoteValueInError(year)}`);
-    }
-    if (!year) errors.push(`L${line} ${qTitle}: blank year`);
-    if (!DATE_RE.test(date)) {
-      errors.push(`L${line} ${qTitle}: bad date ${quoteValueInError(date)}`);
-    }
-    const range = bounds.get(title);
-    if (range && date > range.max) {
-      errors.push(
-        `L${line} ${qTitle}: date ${date} after last history watch ${range.max}`,
-      );
-    }
-    if (wd && !QID_RE.test(wd)) {
-      errors.push(
-        `L${line} ${qTitle}: bad wikidata ${quoteValueInError(wd)}`,
-      );
-    }
-    if (!NETFLIX_RE.test(netflixId)) {
-      errors.push(
-        `L${line} ${qTitle}: bad/missing Netflix title id ${
-          quoteValueInError(netflixId)
-        }`,
-      );
-    }
-  }
-  return errors;
+  return netflixRows.flatMap((row, i) =>
+    fieldErrorsForNetflixRow(i + 2, row, bounds)
+  );
 }
 
 export function validate(
