@@ -9,7 +9,7 @@ description: >-
 
 # Git commits and trailers
 
-Everyday agent rules live in [AGENTS.md](../../../AGENTS.md). Follow this skill when committing or opening a draft PR.
+Everyday agent rules live in [AGENTS.md](../../../AGENTS.md). **Read this skill before every commit** (AGENTS.md requires it); also when opening a draft PR.
 
 ## Commit messages
 

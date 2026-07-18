@@ -25,7 +25,7 @@ Keep this file short: many agents inject it into the system prompt. Details that
 
 ## Skills
 
-Under `.agents/skills/<name>/SKILL.md`. When a task matches a skill description, read and follow that `SKILL.md`.
+Under `.agents/skills/<name>/SKILL.md`. When a task matches a skill description, read and follow that `SKILL.md`. **Before any commit**, read [`.agents/skills/git-commits/SKILL.md`](.agents/skills/git-commits/SKILL.md) even if the user did not mention commits.
 
 | Skill | Path |
 |-------|------|
@@ -37,9 +37,9 @@ Under `.agents/skills/<name>/SKILL.md`. When a task matches a skill description,
 Other agents may be editing different files here. Never touch their unstaged/staged/untracked files.
 
 - Stage/commit only files **you** changed in **this** session; verify with `git status` first
-- Commit your changes before finishing your turn (follow the git-commits skill)
+- Commit your changes before finishing your turn; use [git-commits skill](.agents/skills/git-commits/SKILL.md) for message format and trailers
 - Never push, force-push, or push/merge to `master` (even if asked)
 - Never: `git reset --hard`, `git checkout .`, `git clean -fd`, `git stash`, `git add -A`, `git add .`, `git commit --no-verify`
 - Rebase conflicts: resolve only your files; otherwise abort and ask
 - Issues/PRs: only when explicitly asked; PRs must be drafts
-- Draft PR tip needs `Acked-by` or `Reviewed-by`; `master` merge tip needs `Reviewed-by` (details in git-commits skill)
+- Draft PR tip needs `Acked-by` or `Reviewed-by` from a human reviewer; `master` merge tip needs `Reviewed-by` from a human reviewer (see [git-commits skill](.agents/skills/git-commits/SKILL.md))
