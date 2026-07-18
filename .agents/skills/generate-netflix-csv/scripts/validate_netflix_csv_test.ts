@@ -120,6 +120,25 @@ Deno.test("validate truncates long missing-title lists with ellipsis", () => {
   );
 });
 
+Deno.test("validate truncates long extra-title lists with ellipsis", () => {
+  const history: HistoryRow[] = [{ Title: "Only", Date: "4/6/23" }];
+  const netflix = [
+    row("Only", "2023-04-06"),
+    row("E0", "2023-04-06"),
+    row("E1", "2023-04-06"),
+    row("E2", "2023-04-06"),
+    row("E3", "2023-04-06"),
+    row("E4", "2023-04-06"),
+    row("E5", "2023-04-06"),
+    row("E6", "2023-04-06"),
+  ];
+  const errors = validate(netflix, history);
+  assertEquals(
+    errors.includes("extra titles (7): 'E0', 'E1', 'E2', 'E3', 'E4', ..."),
+    true,
+  );
+});
+
 Deno.test("validate quotes titles with commas in coverage errors", () => {
   const history: HistoryRow[] = [{ Title: "Foo, Bar", Date: "4/6/23" }];
   const netflix = [row("Other", "2023-04-06")];
