@@ -77,7 +77,7 @@ These destroy other agents' work or bypass checks:
 - Never create an issue unless the user explicitly asks you to.
 - Never create a pull request unless the user explicitly asks you to. In that case, always create a draft PR.
 - Before opening a draft PR, the branch tip must carry `Acked-by` or `Reviewed-by` from a human reviewer (see [Commit trailers](#commit-trailers)). Add that trailer only when the user confirms a human has lightly or fully reviewed and asks you to open the PR (or explicitly asks to add the trailer).
-- Never merge to `master`. The human merges; the tip that lands on `master` must carry `Reviewed-by`.
+- Never merge to `master`. The human merges; the tip that lands on `master` must carry `Reviewed-by` from a human reviewer.
 
 ## Git commit messages
 
@@ -171,7 +171,7 @@ Assisted-by: Cursor:cursor-grok-4.5
 ```
 
 - Always write `Assisted-by` for **this** commit from the agent/model that helped. Do **not** copy an `Assisted-by` line from `git log`, prior commits, or examples — those often name a different model.
-- Intermediate commits usually carry only `Assisted-by` (no bandwidth to review every step). When a human **has** reviewed an intermediate commit, it may also carry `Acked-by` or `Reviewed-by` for that commit.
+- Intermediate commits usually carry only `Assisted-by` (the user may not have bandwidth to review every step). When a human **has** reviewed an intermediate commit, it may also carry `Acked-by` or `Reviewed-by` for that commit.
 
 ### Acked-by (light review)
 
