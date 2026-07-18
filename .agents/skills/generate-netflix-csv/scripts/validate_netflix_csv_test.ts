@@ -115,7 +115,7 @@ Deno.test("validate truncates long missing-title lists with ellipsis", () => {
   const netflix = [row("Only", "2023-04-06")];
   const errors = validate(netflix, history);
   assertEquals(
-    errors.includes("missing titles (6): 'T0', 'T1', 'T2', 'T3', 'T4', ..."),
+    errors.includes('missing titles (6): "T0", "T1", "T2", "T3", "T4", ...'),
     true,
   );
 });
@@ -134,7 +134,7 @@ Deno.test("validate truncates long extra-title lists with ellipsis", () => {
   ];
   const errors = validate(netflix, history);
   assertEquals(
-    errors.includes("extra titles (7): 'E0', 'E1', 'E2', 'E3', 'E4', ..."),
+    errors.includes('extra titles (7): "E0", "E1", "E2", "E3", "E4", ...'),
     true,
   );
   assertEquals(
@@ -148,12 +148,12 @@ Deno.test("validate quotes titles with commas in coverage errors", () => {
   const netflix = [row("Other", "2023-04-06")];
   const errors = validate(netflix, history);
   assertEquals(
-    errors.includes("missing titles (1): 'Foo, Bar'"),
+    errors.includes('missing titles (1): "Foo, Bar"'),
     true,
   );
 });
 
-Deno.test("validate escapes apostrophes in coverage error titles", () => {
+Deno.test("validate double-quotes apostrophe titles in coverage errors", () => {
   const history: HistoryRow[] = [{
     Title: "It's a Wonderful Life",
     Date: "4/6/23",
@@ -161,12 +161,22 @@ Deno.test("validate escapes apostrophes in coverage error titles", () => {
   const netflix = [row("Other", "2023-04-06")];
   const errors = validate(netflix, history);
   assertEquals(
-    errors.includes("missing titles (1): 'It\\'s a Wonderful Life'"),
+    errors.includes('missing titles (1): "It\'s a Wonderful Life"'),
     true,
   );
 });
 
-Deno.test("validate escapes apostrophes in row field errors", () => {
+Deno.test("validate escapes double quotes in coverage error titles", () => {
+  const history: HistoryRow[] = [{ Title: 'He said "hi"', Date: "4/6/23" }];
+  const netflix = [row("Other", "2023-04-06")];
+  const errors = validate(netflix, history);
+  assertEquals(
+    errors.includes('missing titles (1): "He said ""hi"""'),
+    true,
+  );
+});
+
+Deno.test("validate double-quotes apostrophe titles in row field errors", () => {
   const history: HistoryRow[] = [{ Title: "It's", Date: "4/6/23" }];
   const netflix: NetflixRow[] = [{
     id: "bad",
@@ -178,7 +188,7 @@ Deno.test("validate escapes apostrophes in row field errors", () => {
   }];
   const errors = validate(netflix, history);
   assertEquals(
-    errors.some((e) => e.includes("L2 'It\\'s': bad id 'bad'")),
+    errors.some((e) => e.includes('L2 "It\'s": bad id "bad"')),
     true,
   );
 });

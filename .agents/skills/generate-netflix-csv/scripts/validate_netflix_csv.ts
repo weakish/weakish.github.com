@@ -75,7 +75,7 @@ function sortedTitlesIn(titles: Set<string>) {
 }
 
 function quoteValueInError(value: string): string {
-  return `'${value.replaceAll("'", "\\'")}'`;
+  return `"${value.replaceAll('"', '""')}"`;
 }
 
 function titleCoverageListError(
