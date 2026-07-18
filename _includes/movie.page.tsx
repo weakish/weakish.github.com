@@ -80,7 +80,7 @@ function isInRatedTable({ id, title, year }: NetflixRow): boolean {
   return ratedTitleYears.has(`${title}\0${year}`);
 }
 
-const netflixOnly = netflix.filter((row) => !isInRatedTable(row));
+const netflixUnrated = netflix.filter((row) => !isInRatedTable(row));
 
 const notes: Notes = {};
 for (const { id, note } of movieNotes) {
@@ -130,7 +130,7 @@ export default (data: Lume.Data) => (
     <details>
       <summary>Recently watched on Netflix</summary>
       <ul>
-        {netflixOnly.map(({ title, year, netflix }) => (
+        {netflixUnrated.map(({ title, year, netflix }) => (
           <li key={netflix}>
             <a href={`https://www.netflix.com/title/${netflix}`}>{title}</a>
             {`, ${year}`}
