@@ -46,3 +46,4 @@ Other agents may be editing different files here. Never touch their unstaged/sta
 - Issues/PRs: only when explicitly asked; PRs must be drafts
 - Draft PR tip needs `Acked-by` or `Reviewed-by` from a human reviewer; `master` merge tip needs `Reviewed-by` from a human reviewer
 - Bug fixes for user-reported issues: `Reported-by` on the fix commit (see git-commits skill)
+- Changes shaped by a human’s idea or approach: `Suggested-by` on that commit (see git-commits skill)

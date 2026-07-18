@@ -3,8 +3,9 @@ name: git-commits
 description: >-
   Repo commit message and trailer contract: 13 Short Gitmojis subjects;
   Assisted-by; Acked-by / Reviewed-by gates for draft PRs and master;
-  Reported-by credit on user-reported :bug: fixes. Use when committing,
-  writing a commit message, adding review trailers, or opening a draft PR.
+  Reported-by / Suggested-by credit for human bug reports and ideas.
+  Use when committing, writing a commit message, adding review trailers,
+  or opening a draft PR.
 ---
 
 # Git commits and trailers
@@ -75,8 +76,9 @@ The gates exist for quality assurance: `master` auto-deploys to production (prot
 Trailer order after the subject/body:
 
 1. `Reported-by` (when the user reported a valid bug this commit fixes)
-2. `Assisted-by` (when an agent helped)
-3. `Acked-by` / `Reviewed-by` (human review markers, when required)
+2. `Suggested-by` (when a human suggested the idea or approach this commit implements)
+3. `Assisted-by` (when an agent helped)
+4. `Acked-by` / `Reviewed-by` (human review markers, when required)
 
 ### Author
 
@@ -121,6 +123,24 @@ duplicate Netflix title id errors.
 
 Reported-by: weakish <weakish@gmail.com>
 Assisted-by: Cursor:composer-2.5
+```
+
+### Suggested-by
+
+- When a **human** suggested the idea or approach this commit implements, add `Suggested-by: Name <email>`.
+- Use their usual git identity (from `Author`, prior commits, or what they give you in session).
+- Covers design direction, not only bug reports (e.g. “return `string[]`”, “reject blank titles”). Use `Reported-by` for a confirmed bug report; both may appear when a report also drove the approach.
+- Do **not** add it for generic “please fix / please implement” without a substantive suggestion, or when you invented the approach alone.
+- Agents must not add `Suggested-by` naming themselves; credit the human who suggested it.
+
+```
+:art:netflix-csv: validate helpers return errors
+
+Drop shared mutable errors[]; concatenate returned
+string[] slices in validate().
+
+Suggested-by: weakish <weakish@gmail.com>
+Assisted-by: Cursor:cursor-grok-4.5
 ```
 
 ### Acked-by (light review)
