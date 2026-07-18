@@ -40,25 +40,42 @@ function columnMismatchErrors(firstRow: NetflixRow): string[] {
   return [];
 }
 
+declare const nonEmptyStringBrand: unique symbol;
+type NonEmptyString = string & { readonly [nonEmptyStringBrand]: true };
+
+function nonEmptyStrings(values: string[]): NonEmptyString[] {
+  const out: NonEmptyString[] = [];
+  for (const v of values) {
+    if (v !== "") out.push(v as NonEmptyString);
+  }
+  return out;
+}
+
 function duplicateNonEmptyValueErrors(
-  values: string[],
+  values: readonly NonEmptyString[],
   message: string,
 ): string[] {
-  const nonEmpty = values.filter((v) => v !== "");
-  if (nonEmpty.length !== new Set(nonEmpty).size) return [message];
+  for (const v of values) {
+    if (v === "") {
+      throw new Error(
+        "duplicateNonEmptyValueErrors: values must not contain empty strings",
+      );
+    }
+  }
+  if (values.length !== new Set(values).size) return [message];
   return [];
 }
 
 function duplicateTitleErrors(netflixRows: NetflixRow[]): string[] {
   return duplicateNonEmptyValueErrors(
-    netflixRows.map((r) => r.title ?? ""),
+    nonEmptyStrings(netflixRows.map((r) => r.title ?? "")),
     "duplicate titles in netflix.csv",
   );
 }
 
 function duplicateNetflixIdErrors(netflixRows: NetflixRow[]): string[] {
   return duplicateNonEmptyValueErrors(
-    netflixRows.map((r) => r.netflix ?? ""),
+    nonEmptyStrings(netflixRows.map((r) => r.netflix ?? "")),
     "duplicate Netflix title ids in netflix.csv",
   );
 }
