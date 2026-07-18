@@ -55,12 +55,16 @@ m300581,"Lorena, Light-Footed Woman",2019,2025-06-06,Q78191654,80244683
 |--------|------|
 | `id` | Prefer [omdb.org](https://www.omdb.org) as `m` + digits (e.g. `m300581`). Else IMDb `tt…`. Else TMDB bare digits (e.g. `660978`). |
 | `title` | Collapsed work title (see collapse script). Keep Netflix **language tags**—parenthetical edition markers like `(Tamil)` / `(Hindi)` from the export `Title`—verbatim when present in history. |
-| `year` | Film release year, or series premiere / first-release year. |
-| `date` | First watch date from history, ISO `YYYY-MM-DD` (oldest date for that collapsed work). |
+| `year` | Film release year, or series premiere / first-release year. RFC 3339 four-digit year (see [Limits](#limits)). |
+| `date` | First watch date from history, RFC 3339 `full-date` (`YYYY-MM-DD`; oldest date for that collapsed work). Four-digit year (see [Limits](#limits)). |
 | `wikidata` | Item Q-id when known (e.g. `Q78191654`). May be blank. |
 | `netflix` | Bare numeric Netflix title id (e.g. `80244683`). **Required** — every history-derived work was on Netflix. |
 
 Sort rows by `date` descending.
+
+## Limits
+
+**Y10K:** `year` and `date` use RFC 3339’s four-digit-year profile (`YEAR_RE`, `DATE_RE` in `validate_netflix_csv.ts`), not full ISO 8601 extended years (`+010000-01-01`). Years after **9999** fail validation. String sort/compare in the validator assumes fixed-width years. Not a practical issue for Netflix exports or film release years; widening would need longer regexes and parsed-date comparison (not lexicographic strings).
 
 When copying an OMDb id from `ratings.csv`, **add** the `m` prefix for `netflix.csv` (`300581` → `m300581`). Do not change `ratings.csv`.
 
