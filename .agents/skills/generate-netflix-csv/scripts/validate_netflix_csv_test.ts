@@ -75,3 +75,30 @@ Deno.test("validate rejects blank title", () => {
   const errors = validate(netflix, history);
   assertEquals(errors.some((e) => e.includes("blank title")), true);
 });
+
+Deno.test("validate does not treat blank titles as duplicates", () => {
+  const history: HistoryRow[] = [
+    { Title: "Foo", Date: "4/6/23" },
+    { Title: "Bar", Date: "5/6/23" },
+  ];
+  const netflix = [
+    row("", "2023-04-06"),
+    row("", "2023-05-06"),
+  ];
+  const errors = validate(netflix, history);
+  assertEquals(errors.some((e) => e.includes("duplicate titles")), false);
+  assertEquals(errors.filter((e) => e.includes("blank title")).length, 2);
+});
+
+Deno.test("validate rejects duplicate titles", () => {
+  const history: HistoryRow[] = [
+    { Title: "Foo", Date: "4/6/23" },
+    { Title: "Bar", Date: "5/6/23" },
+  ];
+  const netflix = [
+    row("Same", "2023-04-06"),
+    row("Same", "2023-05-06"),
+  ];
+  const errors = validate(netflix, history);
+  assertEquals(errors.includes("duplicate titles in netflix.csv"), true);
+});

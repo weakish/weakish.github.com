@@ -47,7 +47,7 @@ function duplicateValueErrors(values: string[], message: string): string[] {
 
 function duplicateTitleErrors(netflixRows: NetflixRow[]): string[] {
   return duplicateValueErrors(
-    netflixRows.map((r) => r.title),
+    netflixRows.map((r) => r.title ?? "").filter((title) => title !== ""),
     "duplicate titles in netflix.csv",
   );
 }
