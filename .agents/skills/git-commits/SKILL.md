@@ -29,9 +29,8 @@ Use [13 Short Gitmojis](https://mmap.page/dive-into/gitmoji/). Prefer the emoji 
 
 ### Body
 
-- After the subject, add 1–3 lines when motivation is not obvious from the diff.
+- After the subject, add a short body when motivation is not obvious from the diff.
 - Explain the problem or trigger, not a file list.
-- For toolchain changes, a one-line pointer is enough (e.g. "See AGENTS.md Commands").
 - Put trailers after the body.
 
 Examples:
