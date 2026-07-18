@@ -27,6 +27,16 @@ Deno.test("collapseSharedPrefixes leaves a lone colon title unchanged", () => {
   assertEquals(collapseSharedPrefixes(["Foo: Bar"]), new Map());
 });
 
+Deno.test("collapseSharedPrefixes skips KEEP_FULL titles", () => {
+  assertEquals(
+    collapseSharedPrefixes([
+      "John Wick: Chapter 2",
+      "John Wick: Chapter 3 - Parabellum",
+    ]),
+    new Map(),
+  );
+});
+
 Deno.test("collapse uses the only watch date for a single row", () => {
   const rows: HistoryRow[] = [{ Title: "Foo", Date: "4/6/23" }];
   assertEquals(collapse(rows), [{ title: "Foo", date: "2023-04-06" }]);

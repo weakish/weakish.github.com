@@ -71,20 +71,20 @@ export function collapseSharedPrefixes(
   titles: Iterable<string>,
 ): Map<string, string> {
   const candidates = new Map<string, string[]>();
-  for (const t of titles) {
-    if (KEEP_FULL.has(t)) continue;
-    const idx = t.indexOf(": ");
+  for (const title of titles) {
+    if (KEEP_FULL.has(title)) continue;
+    const idx = title.indexOf(": ");
     if (idx === -1) continue;
-    const pref = t.slice(0, idx);
-    const list = candidates.get(pref) ?? [];
-    list.push(t);
-    candidates.set(pref, list);
+    const prefix = title.slice(0, idx);
+    const prefixedTitles = candidates.get(prefix) ?? [];
+    prefixedTitles.push(title);
+    candidates.set(prefix, prefixedTitles);
   }
 
   const collapsed = new Map<string, string>();
-  for (const [pref, ts] of candidates) {
-    if (ts.length >= 2) {
-      for (const t of ts) collapsed.set(t, pref);
+  for (const [prefix, prefixedTitles] of candidates) {
+    if (prefixedTitles.length >= 2) {
+      for (const title of prefixedTitles) collapsed.set(title, prefix);
     }
   }
   return collapsed;
