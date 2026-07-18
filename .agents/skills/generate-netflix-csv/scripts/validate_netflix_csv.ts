@@ -30,16 +30,6 @@ async function loadCsv(path: string): Promise<Record<string, string>[]> {
   >[];
 }
 
-function pushErrorUnlessNetflixCsvColumnsMatch(
-  firstRow: NetflixRow,
-  errors: string[],
-): void {
-  const fields = Object.keys(firstRow);
-  if (fields.join(",") !== COLUMNS.join(",")) {
-    errors.push(`columns want ${[...COLUMNS]}, got ${fields}`);
-  }
-}
-
 export function validate(
   netflixRows: NetflixRow[],
   historyRows: HistoryRow[],
@@ -47,7 +37,13 @@ export function validate(
   const errors: string[] = [];
   if (netflixRows.length === 0) return ["netflix.csv is empty"];
 
-  pushErrorUnlessNetflixCsvColumnsMatch(netflixRows[0], errors);
+  function pushColumnMismatch(firstRow: NetflixRow): void {
+    const fields = Object.keys(firstRow);
+    if (fields.join(",") !== COLUMNS.join(",")) {
+      errors.push(`columns want ${[...COLUMNS]}, got ${fields}`);
+    }
+  }
+  pushColumnMismatch(netflixRows[0]);
 
   const bounds = watchBounds(historyRows);
   const wantTitles = new Set(bounds.keys());
