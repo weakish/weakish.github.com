@@ -103,6 +103,19 @@ Deno.test("validate matches coverage after trimming titles", () => {
   assertEquals(validate(netflix, history), []);
 });
 
+Deno.test("validate matches coverage when history title has whitespace", () => {
+  const history: HistoryRow[] = [{ Title: "  Foo  ", Date: "4/6/23" }];
+  const netflix = [row("Foo", "2023-04-06")];
+  assertEquals(validate(netflix, history), []);
+});
+
+Deno.test("validate applies history watch bounds on trimmed title", () => {
+  const history: HistoryRow[] = [{ Title: "  Foo  ", Date: "4/6/23" }];
+  const netflix = [row("Foo", "2025-01-01")];
+  const errors = validate(netflix, history);
+  assertEquals(errors.some((e) => e.includes("after last history watch")), true);
+});
+
 Deno.test("validate rejects blank id and date", () => {
   const history: HistoryRow[] = [{ Title: "Foo", Date: "4/6/23" }];
   const netflix: NetflixRow[] = [{

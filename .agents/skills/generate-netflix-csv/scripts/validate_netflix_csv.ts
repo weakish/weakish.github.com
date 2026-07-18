@@ -201,7 +201,9 @@ export function validate(
 
   // Trim once so field, duplicate, coverage, and sort checks share values.
   const rows = netflixRows.map(trimNetflixRow);
-  const bounds = watchBounds(historyRows);
+  const bounds = watchBounds(
+    historyRows.map((r) => ({ ...r, Title: trimmedCsvField(r.Title) })),
+  );
   const wantTitles = new Set(bounds.keys());
   const gotTitles = new Set(rows.map((r) => r.title));
 
