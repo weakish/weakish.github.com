@@ -9,6 +9,7 @@ import {
 Deno.test("parseDate converts Netflix export format", () => {
   assertEquals(parseDate("4/6/23"), "2023-04-06");
   assertEquals(parseDate("11/2/24"), "2024-11-02");
+  assertEquals(parseDate("1/1/69"), "2069-01-01");
 });
 
 Deno.test("collapse uses the only watch date for a single row", () => {
