@@ -7,7 +7,8 @@ const COLUMNS = ["id", "title", "year", "date", "wikidata", "netflix"] as const;
 
 const ID_RE = /^(tt\d+|m\d+|\d+)$/;
 const NETFLIX_RE = /^\d+$/;
-// RFC 3339 four-digit-year profile (Y10K): see SKILL.md § Limits.
+// year/date: RFC 3339 four-digit-year profile (not ISO 8601 extended years).
+// Years after 9999 fail these regexes; date sort/compare below is lexicographic.
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const YEAR_RE = /^\d{4}$/;
 const QID_RE = /^Q\d+$/;
