@@ -55,8 +55,8 @@ m300581,"Lorena, Light-Footed Woman",2019,2025-06-06,Q78191654,80244683
 |--------|------|
 | `id` | Prefer [omdb.org](https://www.omdb.org) as `m` + digits (e.g. `m300581`). Else IMDb `tt…`. Else TMDB bare digits (e.g. `660978`). |
 | `title` | Collapsed work title (see collapse script). Keep Netflix **language tags**—parenthetical edition markers like `(Tamil)` / `(Hindi)` from the export `Title`—verbatim when present in history. |
-| `year` | Film release year, or series premiere / first-release year. RFC 3339 four-digit year. |
-| `date` | First watch date from history, RFC 3339 `full-date` (`YYYY-MM-DD`; oldest date for that collapsed work). |
+| `year` | Film release year, or series premiere / first-release year. Gregorian calendar (e.g. `2019`; not Buddhist Era). |
+| `date` | First watch date from history, `YYYY-MM-DD` (oldest date for that collapsed work). |
 | `wikidata` | Item Q-id when known (e.g. `Q78191654`). May be blank. |
 | `netflix` | Bare numeric Netflix title id (e.g. `80244683`). **Required** — every history-derived work was on Netflix. |
 
