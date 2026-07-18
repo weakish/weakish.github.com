@@ -79,7 +79,9 @@ function titleCoverageListError(
   titles: string[],
 ): string[] {
   if (titles.length === 0) return [];
-  return [`${kind} titles (${titles.length}): ${titles.slice(0, 5)}`];
+  const sample = titles.slice(0, 5);
+  const suffix = sample.length < titles.length ? ", ..." : "";
+  return [`${kind} titles (${titles.length}): ${sample}${suffix}`];
 }
 
 function titleCoverageErrors(
