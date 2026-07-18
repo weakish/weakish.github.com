@@ -159,11 +159,15 @@ Deno.test("validate rejects rows not sorted by date descending", () => {
     { Title: "Newer", Date: "1/1/24" },
   ];
   const netflix = [
-    row("Older", "2020-01-01"),
-    row("Newer", "2024-01-01"),
+    row("Older", "2020-01-01", "100"),
+    row("Newer", "2024-01-01", "200"),
   ];
   const errors = validate(netflix, history);
   assertEquals(errors.includes("rows not sorted by date descending"), true);
+  assertEquals(
+    errors.some((e) => e.includes("duplicate Netflix title ids")),
+    false,
+  );
 });
 
 Deno.test("validate double-quotes apostrophe titles in coverage errors", () => {
