@@ -169,20 +169,20 @@ Assisted-by: Cursor:cursor-grok-4.5
 ```
 
 - Always write `Assisted-by` for **this** commit from the agent/model that helped. Do **not** copy an `Assisted-by` line from `git log`, prior commits, or examples — those often name a different model.
-- Intermediate commits usually carry only `Assisted-by` (no bandwidth to review every step). When you **have** reviewed an intermediate commit, it may also carry `Acked-by` or `Reviewed-by` for that commit.
+- Intermediate commits usually carry only `Assisted-by` (the user often has no bandwidth to review every step). When the user **has** reviewed an intermediate commit, it may also carry `Acked-by` or `Reviewed-by` for that commit.
 
 ### Acked-by (light review)
 
 - Means: human lightly reviewed **that commit**; LGTM enough to share (draft PR when on the branch tip).
 - Identity: same human as git `Author` (`Acked-by: Name <email>`).
-- Required on the branch tip **before opening a draft PR** (unless the tip already has `Reviewed-by`). May also appear on earlier commits you lightly reviewed.
+- Required on the branch tip **before opening a draft PR** (unless the tip already has `Reviewed-by`). May also appear on earlier commits the user lightly reviewed.
 - Agents must not add `Acked-by` unless the user has done that light check and asks for the trailer or for a draft PR.
 
 ### Reviewed-by (full review)
 
 - Means: human fully reviewed **that commit**; same *role* as Linux kernel `Reviewed-by` (ready to land when on the merge tip).
 - Identity: same human as git `Author`.
-- Required on the tip that merges into `master` (e.g. squash tip). A draft PR tip may use `Reviewed-by` instead of `Acked-by` if a full review already happened. May also appear on earlier commits you fully reviewed.
+- Required on the tip that merges into `master` (e.g. squash tip). A draft PR tip may use `Reviewed-by` instead of `Acked-by` if a full review already happened. May also appear on earlier commits the user fully reviewed.
 - Agents must not add `Reviewed-by` unless the user has fully reviewed and asks for the trailer or to prepare the merge tip.
 
 ### Example (lightly reviewed commit)
