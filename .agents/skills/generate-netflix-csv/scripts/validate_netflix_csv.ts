@@ -114,22 +114,28 @@ function unsortedByDateDescendingErrors(netflixRows: NetflixRow[]): string[] {
   return [];
 }
 
+function trimmedCsvField(value: string | undefined): string {
+  return (value ?? "").trim();
+}
+
 function fieldErrorsForNetflixRow(
   line: number,
   row: NetflixRow,
   bounds: WatchBounds,
 ): string[] {
   const errors: string[] = [];
-  const title = row.title ?? "";
+  const title = trimmedCsvField(row.title);
   const qTitle = quoteValueInError(title);
-  const id = row.id ?? "";
-  const year = row.year ?? "";
-  const date = row.date ?? "";
-  const wd = row.wikidata ?? "";
-  const netflixId = row.netflix ?? "";
+  const id = trimmedCsvField(row.id);
+  const year = trimmedCsvField(row.year);
+  const date = trimmedCsvField(row.date);
+  const wd = trimmedCsvField(row.wikidata);
+  const netflixId = trimmedCsvField(row.netflix);
 
   if (title === "") errors.push(`L${line}: blank title`);
-  if (!ID_RE.test(id)) {
+  if (id === "") {
+    errors.push(`L${line} ${qTitle}: blank id`);
+  } else if (!ID_RE.test(id)) {
     errors.push(`L${line} ${qTitle}: invalid id ${quoteValueInError(id)}`);
   }
   if (year === "") {
@@ -137,14 +143,17 @@ function fieldErrorsForNetflixRow(
   } else if (!YEAR_RE.test(year)) {
     errors.push(`L${line} ${qTitle}: invalid year ${quoteValueInError(year)}`);
   }
-  if (!DATE_RE.test(date)) {
+  if (date === "") {
+    errors.push(`L${line} ${qTitle}: blank date`);
+  } else if (!DATE_RE.test(date)) {
     errors.push(`L${line} ${qTitle}: invalid date ${quoteValueInError(date)}`);
-  }
-  const range = bounds.get(title);
-  if (range && date > range.max) {
-    errors.push(
-      `L${line} ${qTitle}: date ${date} after last history watch ${range.max}`,
-    );
+  } else {
+    const range = bounds.get(title);
+    if (range && date > range.max) {
+      errors.push(
+        `L${line} ${qTitle}: date ${date} after last history watch ${range.max}`,
+      );
+    }
   }
   if (wd && !QID_RE.test(wd)) {
     errors.push(

@@ -76,6 +76,42 @@ Deno.test("validate rejects blank title", () => {
   assertEquals(errors.some((e) => e.includes("blank title")), true);
 });
 
+Deno.test("validate treats whitespace-only title as blank", () => {
+  const history: HistoryRow[] = [{ Title: "Foo", Date: "4/6/23" }];
+  const netflix = [row("  ", "2023-04-06")];
+  const errors = validate(netflix, history);
+  assertEquals(errors.some((e) => e.includes("blank title")), true);
+});
+
+Deno.test("validate rejects blank id and date", () => {
+  const history: HistoryRow[] = [{ Title: "Foo", Date: "4/6/23" }];
+  const netflix: NetflixRow[] = [{
+    id: "",
+    title: "Foo",
+    year: "2020",
+    date: "",
+    wikidata: "",
+    netflix: "12345",
+  }];
+  const errors = validate(netflix, history);
+  assertEquals(errors.some((e) => e.includes("blank id")), true);
+  assertEquals(errors.some((e) => e.includes("blank date")), true);
+});
+
+Deno.test("validate treats whitespace-only id as blank", () => {
+  const history: HistoryRow[] = [{ Title: "Foo", Date: "4/6/23" }];
+  const netflix: NetflixRow[] = [{
+    id: "  ",
+    title: "Foo",
+    year: "2020",
+    date: "2023-04-06",
+    wikidata: "",
+    netflix: "12345",
+  }];
+  const errors = validate(netflix, history);
+  assertEquals(errors.some((e) => e.includes('L2 "Foo": blank id')), true);
+});
+
 Deno.test("validate does not treat blank titles as duplicates", () => {
   const history: HistoryRow[] = [
     { Title: "Foo", Date: "4/6/23" },
