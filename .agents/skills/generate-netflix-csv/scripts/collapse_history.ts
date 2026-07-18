@@ -59,8 +59,8 @@ export function stripEpisode(t: string): string {
       /: Episode \d+.*$/,
     ]
   ) {
-    const nt = t.replace(stripPattern, "");
-    if (nt !== t) return nt;
+    const stripped = t.replace(stripPattern, "");
+    if (stripped !== t) return stripped;
   }
   return t;
 }
