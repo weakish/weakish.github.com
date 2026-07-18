@@ -32,38 +32,35 @@ async function loadCsv(path: string): Promise<Record<string, string>[]> {
 
 type WatchBounds = ReturnType<typeof watchBounds>;
 
-function pushColumnMismatch(firstRow: NetflixRow, errors: string[]): void {
+function columnMismatchErrors(firstRow: NetflixRow): string[] {
   const fields = Object.keys(firstRow);
   if (fields.join(",") !== COLUMNS.join(",")) {
-    errors.push(`columns want ${[...COLUMNS]}, got ${fields}`);
+    return [`columns want ${[...COLUMNS]}, got ${fields}`];
   }
+  return [];
 }
 
-function pushDuplicateTitles(
-  netflixRows: NetflixRow[],
-  errors: string[],
-): void {
+function duplicateTitleErrors(netflixRows: NetflixRow[]): string[] {
   const titles = netflixRows.map((r) => r.title);
   if (titles.length !== new Set(titles).size) {
-    errors.push("duplicate titles in netflix.csv");
+    return ["duplicate titles in netflix.csv"];
   }
+  return [];
 }
 
-function pushDuplicateNetflixIds(
-  netflixRows: NetflixRow[],
-  errors: string[],
-): void {
+function duplicateNetflixIdErrors(netflixRows: NetflixRow[]): string[] {
   const ids = netflixRows.map((r) => r.netflix ?? "");
   if (ids.length !== new Set(ids).size) {
-    errors.push("duplicate Netflix title ids in netflix.csv");
+    return ["duplicate Netflix title ids in netflix.csv"];
   }
+  return [];
 }
 
-function pushTitleCoverageErrors(
+function titleCoverageErrors(
   wantTitles: Set<string>,
   gotTitles: Set<string>,
-  errors: string[],
-): void {
+): string[] {
+  const errors: string[] = [];
   const missing = [...wantTitles].filter((t) => !gotTitles.has(t)).sort();
   const extra = [...gotTitles].filter((t) => !wantTitles.has(t)).sort();
   if (missing.length) {
@@ -72,24 +69,23 @@ function pushTitleCoverageErrors(
   if (extra.length) {
     errors.push(`extra titles (${extra.length}): ${extra.slice(0, 5)}`);
   }
+  return errors;
 }
 
-function pushUnsortedByDateDescending(
-  netflixRows: NetflixRow[],
-  errors: string[],
-): void {
+function unsortedByDateDescendingErrors(netflixRows: NetflixRow[]): string[] {
   const dates = netflixRows.map((r) => r.date ?? "");
   const sorted = [...dates].sort().reverse();
   if (dates.join("\0") !== sorted.join("\0")) {
-    errors.push("rows not sorted by date descending");
+    return ["rows not sorted by date descending"];
   }
+  return [];
 }
 
-function pushRowFieldErrors(
+function rowFieldErrors(
   netflixRows: NetflixRow[],
   bounds: WatchBounds,
-  errors: string[],
-): void {
+): string[] {
+  const errors: string[] = [];
   for (let i = 0; i < netflixRows.length; i++) {
     const line = i + 2;
     const r = netflixRows[i];
@@ -123,27 +119,27 @@ function pushRowFieldErrors(
       );
     }
   }
+  return errors;
 }
 
 export function validate(
   netflixRows: NetflixRow[],
   historyRows: HistoryRow[],
 ): string[] {
-  const errors: string[] = [];
   if (netflixRows.length === 0) return ["netflix.csv is empty"];
 
   const bounds = watchBounds(historyRows);
   const wantTitles = new Set(bounds.keys());
   const gotTitles = new Set(netflixRows.map((r) => r.title));
 
-  pushColumnMismatch(netflixRows[0], errors);
-  pushDuplicateTitles(netflixRows, errors);
-  pushDuplicateNetflixIds(netflixRows, errors);
-  pushTitleCoverageErrors(wantTitles, gotTitles, errors);
-  pushUnsortedByDateDescending(netflixRows, errors);
-  pushRowFieldErrors(netflixRows, bounds, errors);
-
-  return errors;
+  return [
+    ...columnMismatchErrors(netflixRows[0]),
+    ...duplicateTitleErrors(netflixRows),
+    ...duplicateNetflixIdErrors(netflixRows),
+    ...titleCoverageErrors(wantTitles, gotTitles),
+    ...unsortedByDateDescendingErrors(netflixRows),
+    ...rowFieldErrors(netflixRows, bounds),
+  ];
 }
 
 function usage(): void {
