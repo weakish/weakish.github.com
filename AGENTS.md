@@ -44,6 +44,6 @@ Other agents may be editing different files here. Never touch their unstaged/sta
 - Never: `git reset --hard`, `git checkout .`, `git clean -fd`, `git stash`, `git add -A`, `git add .`, `git commit --no-verify`
 - Rebase conflicts: resolve only your files; otherwise abort and ask
 - Issues/PRs: only when explicitly asked; PRs must be drafts
-- Optional `Acked-by` / `Reviewed-by` record which commits a human reviewed (see git-commits skill); not required for draft PRs or `master`
+- Optional `Acked-by` / `Reviewed-by` record which commits a human reviewed (see git-commits skill)
 - Bug fixes for user-reported issues: `Reported-by` on the fix commit (see git-commits skill)
 - Changes shaped by a human’s idea or approach: `Suggested-by` on that commit (see git-commits skill)

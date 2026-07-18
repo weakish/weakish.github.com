@@ -72,7 +72,7 @@ Examples:
 
 This repo keeps per-commit agent history (different models on feature branches) and uses human `Author` for `git blame`. Review depth may be recorded with Linux-style trailers; meanings below are this repo’s contract, not a copy of every kernel trailer rule.
 
-`Acked-by` / `Reviewed-by` are **optional** markers that record which commits a human reviewed. They are **not** required for draft PRs or landing on `master`.
+`Acked-by` / `Reviewed-by` are **optional** markers that record which commits a human reviewed.
 
 Trailer order after the subject/body:
 
@@ -147,7 +147,7 @@ Assisted-by: Cursor:cursor-grok-4.5
 ### Acked-by (light review)
 
 - Means: a human lightly reviewed **that commit**.
-- Optional — use when you want to record light review; not required for draft PRs or any other milestone.
+- Optional — use when you want to record light review.
 - Identity: any human who did the light review (`Acked-by: Name <email>`) — the commit author, the agent's user, or another developer. A self-ack (reviewer = `Author`) is this repo's intentional review-depth attribution, not invalid trailer usage; do not flag it when reviewing commits or polishing messages.
 - Agents must not add `Acked-by` on their own judgment; add it only when the user confirms a human did that light check (and names the reviewer), or asks for the trailer.
 - Exception: when the user says LGTM (or an equivalent explicit approval) while asking for a commit, treat it as light-review confirmation — add `Acked-by` naming the user without asking, then tell the user the trailer was added. Do not infer acks from weaker signals ("sure, go ahead").
@@ -155,7 +155,7 @@ Assisted-by: Cursor:cursor-grok-4.5
 ### Reviewed-by (full review)
 
 - Means: a human fully reviewed **that commit**; same *role* as Linux kernel `Reviewed-by`.
-- Optional — use when you want to record full review; not required for `master` merges or draft PRs.
+- Optional — use when you want to record full review.
 - Identity: any human who did the full review; may be the commit author (see the `Acked-by` note on self-review).
 - Agents must not add `Reviewed-by` on their own judgment; add it only when the user confirms a human fully reviewed (and names the reviewer), or asks for the trailer.
 
