@@ -41,20 +41,21 @@ function columnMismatchErrors(firstRow: NetflixRow): string[] {
 }
 
 function duplicateValueErrors(values: string[], message: string): string[] {
-  if (values.length !== new Set(values).size) return [message];
+  const nonEmpty = values.filter((v) => v !== "");
+  if (nonEmpty.length !== new Set(nonEmpty).size) return [message];
   return [];
 }
 
 function duplicateTitleErrors(netflixRows: NetflixRow[]): string[] {
   return duplicateValueErrors(
-    netflixRows.map((r) => r.title ?? "").filter((title) => title !== ""),
+    netflixRows.map((r) => r.title ?? ""),
     "duplicate titles in netflix.csv",
   );
 }
 
 function duplicateNetflixIdErrors(netflixRows: NetflixRow[]): string[] {
   return duplicateValueErrors(
-    netflixRows.map((r) => r.netflix ?? "").filter((id) => id !== ""),
+    netflixRows.map((r) => r.netflix ?? ""),
     "duplicate Netflix title ids in netflix.csv",
   );
 }
