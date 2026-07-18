@@ -1,6 +1,7 @@
 import { assertEquals } from "https://deno.land/std@0.201.0/assert/mod.ts";
 import {
   collapse,
+  collapseSharedPrefixes,
   type HistoryRow,
   parseDate,
   watchBounds,
@@ -10,6 +11,20 @@ Deno.test("parseDate converts Netflix export format", () => {
   assertEquals(parseDate("4/6/23"), "2023-04-06");
   assertEquals(parseDate("11/2/24"), "2024-11-02");
   assertEquals(parseDate("1/1/69"), "2069-01-01");
+});
+
+Deno.test("collapseSharedPrefixes merges titles with a shared prefix", () => {
+  assertEquals(
+    collapseSharedPrefixes(["Foo: Bar", "Foo: Baz", "Solo"]),
+    new Map([
+      ["Foo: Bar", "Foo"],
+      ["Foo: Baz", "Foo"],
+    ]),
+  );
+});
+
+Deno.test("collapseSharedPrefixes leaves a lone colon title unchanged", () => {
+  assertEquals(collapseSharedPrefixes(["Foo: Bar"]), new Map());
 });
 
 Deno.test("collapse uses the only watch date for a single row", () => {

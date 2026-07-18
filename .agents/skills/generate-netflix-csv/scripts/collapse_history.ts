@@ -66,23 +66,12 @@ export function stripEpisode(t: string): string {
   return t;
 }
 
-export interface WatchBounds {
-  min: string;
-  max: string;
-}
-
-/** Group history rows by collapsed work title (shared by collapse and validation). */
-export function groupByWork(rows: HistoryRow[]): Map<string, HistoryRow[]> {
-  const groups = new Map<string, HistoryRow[]>();
-  for (const r of rows) {
-    const key = stripEpisode(r.Title);
-    const list = groups.get(key) ?? [];
-    list.push(r);
-    groups.set(key, list);
-  }
-
+/** Collapse titles that share a `": "`-prefix with at least one other title. */
+export function collapseSharedPrefixes(
+  titles: Iterable<string>,
+): Map<string, string> {
   const candidates = new Map<string, string[]>();
-  for (const t of groups.keys()) {
+  for (const t of titles) {
     if (KEEP_FULL.has(t)) continue;
     const idx = t.indexOf(": ");
     if (idx === -1) continue;
@@ -98,6 +87,25 @@ export function groupByWork(rows: HistoryRow[]): Map<string, HistoryRow[]> {
       for (const t of ts) collapsed.set(t, pref);
     }
   }
+  return collapsed;
+}
+
+export interface WatchBounds {
+  min: string;
+  max: string;
+}
+
+/** Group history rows by collapsed work title (shared by collapse and validation). */
+export function groupByWork(rows: HistoryRow[]): Map<string, HistoryRow[]> {
+  const groups = new Map<string, HistoryRow[]>();
+  for (const r of rows) {
+    const key = stripEpisode(r.Title);
+    const list = groups.get(key) ?? [];
+    list.push(r);
+    groups.set(key, list);
+  }
+
+  const collapsed = collapseSharedPrefixes(groups.keys());
 
   const final = new Map<string, HistoryRow[]>();
   for (const [t, rs] of groups) {
