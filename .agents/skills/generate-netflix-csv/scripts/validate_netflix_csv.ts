@@ -128,14 +128,15 @@ function fieldErrorsForNetflixRow(
   const wd = row.wikidata ?? "";
   const netflixId = row.netflix ?? "";
 
-  if (!title) errors.push(`L${line}: blank title`);
+  if (title === "") errors.push(`L${line}: blank title`);
   if (!ID_RE.test(id)) {
     errors.push(`L${line} ${qTitle}: invalid id ${quoteValueInError(id)}`);
   }
-  if (year && !YEAR_RE.test(year)) {
+  if (year === "") {
+    errors.push(`L${line} ${qTitle}: blank year`);
+  } else if (!YEAR_RE.test(year)) {
     errors.push(`L${line} ${qTitle}: invalid year ${quoteValueInError(year)}`);
   }
-  if (!year) errors.push(`L${line} ${qTitle}: blank year`);
   if (!DATE_RE.test(date)) {
     errors.push(`L${line} ${qTitle}: invalid date ${quoteValueInError(date)}`);
   }
@@ -150,7 +151,7 @@ function fieldErrorsForNetflixRow(
       `L${line} ${qTitle}: invalid wikidata ${quoteValueInError(wd)}`,
     );
   }
-  if (!netflixId) {
+  if (netflixId === "") {
     errors.push(`L${line} ${qTitle}: blank Netflix title id`);
   } else if (!NETFLIX_RE.test(netflixId)) {
     errors.push(
