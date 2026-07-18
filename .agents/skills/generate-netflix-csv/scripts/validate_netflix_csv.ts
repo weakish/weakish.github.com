@@ -118,19 +118,30 @@ function trimmedCsvField(value: string | undefined): string {
   return (value ?? "").trim();
 }
 
+function trimNetflixRow(row: NetflixRow): NetflixRow {
+  return {
+    id: trimmedCsvField(row.id),
+    title: trimmedCsvField(row.title),
+    year: trimmedCsvField(row.year),
+    date: trimmedCsvField(row.date),
+    wikidata: trimmedCsvField(row.wikidata),
+    netflix: trimmedCsvField(row.netflix),
+  };
+}
+
 function fieldErrorsForNetflixRow(
   line: number,
   row: NetflixRow,
   bounds: WatchBounds,
 ): string[] {
   const errors: string[] = [];
-  const title = trimmedCsvField(row.title);
+  const title = row.title ?? "";
   const qTitle = quoteValueInError(title);
-  const id = trimmedCsvField(row.id);
-  const year = trimmedCsvField(row.year);
-  const date = trimmedCsvField(row.date);
-  const wd = trimmedCsvField(row.wikidata);
-  const netflixId = trimmedCsvField(row.netflix);
+  const id = row.id ?? "";
+  const year = row.year ?? "";
+  const date = row.date ?? "";
+  const wd = row.wikidata ?? "";
+  const netflixId = row.netflix ?? "";
 
   if (title === "") errors.push(`L${line}: blank title`);
   if (id === "") {
@@ -188,17 +199,19 @@ export function validate(
 ): string[] {
   if (netflixRows.length === 0) return ["netflix.csv is empty"];
 
+  // Trim once so field, duplicate, coverage, and sort checks share values.
+  const rows = netflixRows.map(trimNetflixRow);
   const bounds = watchBounds(historyRows);
   const wantTitles = new Set(bounds.keys());
-  const gotTitles = new Set(netflixRows.map((r) => r.title));
+  const gotTitles = new Set(rows.map((r) => r.title));
 
   return [
-    ...columnMismatchErrors(netflixRows[0]),
-    ...duplicateTitleErrors(netflixRows),
-    ...duplicateNetflixIdErrors(netflixRows),
+    ...columnMismatchErrors(rows[0]),
+    ...duplicateTitleErrors(rows),
+    ...duplicateNetflixIdErrors(rows),
     ...titleCoverageErrors(wantTitles, gotTitles),
-    ...unsortedByDateDescendingErrors(netflixRows),
-    ...rowFieldErrors(netflixRows, bounds),
+    ...unsortedByDateDescendingErrors(rows),
+    ...rowFieldErrors(rows, bounds),
   ];
 }
 
