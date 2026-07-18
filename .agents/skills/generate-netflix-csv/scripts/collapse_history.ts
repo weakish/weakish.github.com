@@ -52,13 +52,13 @@ export function stripEpisode(t: string): string {
   if (t in EPISODE_TO_SERIES) return EPISODE_TO_SERIES[t];
   if (KEEP_FULL.has(t)) return t;
   for (
-    const pat of [
+    const stripPattern of [
       /: Season \d+:.*$/,
       /: Limited Series:.*$/,
       /: Episode \d+.*$/,
     ]
   ) {
-    const nt = t.replace(pat, "");
+    const nt = t.replace(stripPattern, "");
     if (nt !== t) return nt;
   }
   return t;
