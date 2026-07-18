@@ -19,3 +19,11 @@ Thus, I use [F-Droid] (free and open source) and [APKPure] (for apps that are no
 [Vivaldi]: https://vivaldi.com/android/
 
 I also use some preinstalled applications, for example, calculator and Google Photos (with backup & sync turned off since I do not sign in to a Google Account).
+
+## Troubleshooting
+
+### Android cannot connect to an iPhone hotspot
+
+Enable **Maximize Compatibility** in iPhone **Settings → Personal Hotspot** (2.4 GHz; some Android phones cannot see 5 GHz). On Android, turn Wi-Fi off and back on. [Apple help][apple-hotspot].
+
+[apple-hotspot]: https://support.apple.com/en-us/119837

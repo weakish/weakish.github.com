@@ -14,6 +14,15 @@ interface MovieNote extends Lume.Data {
   note: string;
 }
 
+interface NetflixRow {
+  id: string;
+  title: string;
+  year: string;
+  date: string;
+  wikidata: string;
+  netflix: string;
+}
+
 interface Notes {
   [key: number]: string;
 }
@@ -38,6 +47,14 @@ const otherMovies = parse(
 
 const movies: MoviePageData[] = watchedMovies.concat(otherMovies);
 
+const ratedMovies = movies.filter(
+  ({ tag }) => tag !== "watchlist" && tag !== "default",
+);
+const ratedOmdbIds = new Set(ratedMovies.map(({ id }) => id));
+const ratedTitleYears = new Set(
+  ratedMovies.map(({ title, year }) => `${title}\0${String(year)}`),
+);
+
 const movieNotes = parse(
   Deno.readTextFileSync("movies/notes.csv"),
   {
@@ -45,6 +62,25 @@ const movieNotes = parse(
     strip: true,
   },
 ) as MovieNote[];
+
+const netflix = parse(
+  Deno.readTextFileSync("movies/netflix.csv"),
+  {
+    skipFirstRow: true,
+    strip: true,
+    columns: ["id", "title", "year", "date", "wikidata", "netflix"],
+  },
+) as NetflixRow[];
+
+function isInRatedTable({ id, title, year }: NetflixRow): boolean {
+  if (id.startsWith("m")) {
+    const omdbId = Number(id.slice(1));
+    if (ratedOmdbIds.has(omdbId)) return true;
+  }
+  return ratedTitleYears.has(`${title}\0${year}`);
+}
+
+const netflixUnrated = netflix.filter((row) => !isInRatedTable(row));
 
 const notes: Notes = {};
 for (const { id, note } of movieNotes) {
@@ -65,8 +101,7 @@ export default (data: Lume.Data) => (
         </tr>
       </thead>
       <tbody>
-        {movies
-          .filter(({ tag }) => tag !== "watchlist" && tag !== "default")
+        {ratedMovies
           .map(({ id, title, year, vote }) => (
             <tr key={id}>
               <td>
@@ -92,5 +127,16 @@ export default (data: Lume.Data) => (
     <small>
       0 means I have not watched and do not want to watch the movie.
     </small>
+    <details>
+      <summary>Recently watched on Netflix</summary>
+      <ul>
+        {netflixUnrated.map(({ title, year, netflix }) => (
+          <li key={netflix}>
+            <a href={`https://www.netflix.com/title/${netflix}`}>{title}</a>
+            {`, ${year}`}
+          </li>
+        ))}
+      </ul>
+    </details>
   </>
 );

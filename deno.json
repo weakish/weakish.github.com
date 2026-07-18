@@ -3,7 +3,9 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
     "build": "deno task lume",
     "serve": "deno task lume -s",
-    "gmi": "deno run -A tasks/gmi.ts"
+    "gmi": "deno run -A tasks/gmi.ts",
+    "fmt": "deno fmt **/*.ts **/*.tsx",
+    "check": "deno fmt --check **/*.ts **/*.tsx && deno check **/*.ts **/*.tsx"
   },
   "compilerOptions": {
     "jsx": "react-jsx",

@@ -1,79 +1,49 @@
 # Agent instructions
 
-## Git commit messages
+Keep this file short: many agents inject it into the system prompt. Details that are only needed for some tasks live under `.agents/` — read them on demand.
 
-Use [13 Short Gitmojis](https://mmap.page/dive-into/gitmoji/). Prefer the emoji **code** (e.g. `:bug:`) over the emoji glyph so messages stay readable in plain text.
+## Style
 
-### Format
+- Short, direct, technical prose
+- On feedback/analysis: say agree or disagree, then what changed
 
-```
-:<type>:[scope:] <summary>
-```
+## Code quality
 
-- `<type>` — one of the 13 codes below (required)
-- `scope` — optional
-- `<summary>` — short description; imperative mood preferred
-- Keep the first line under **50 characters** when practical
+- Read files in full before broad edits, audits, or changing unread files; do not rely on search snippets
+- Ask before removing intentional behavior (redirects, legacy URL copies, etc.)
+- One clear approach; refactor duplication; no weird parallel defaults
+- Propagate failures (throw/exit); no silent fallbacks; no shims unless asked
+- Write for human review: a human is expected to review agent code. Fewer output tokens save cost, but human readability (including scannability) wins when they conflict.
+- Prefer a small function with a long, descriptive name over a comment that restates what the code does; reserve comments for non-obvious implementation details (formats, limits, platform quirks)
+- TypeScript: no `any` unless necessary; erasable TS only (no parameter properties, `enum`, `namespace`/`module`, `import =` / `export =`)
+- Fix outdated deps by bumping the pinned URL/Lume version in `deno.json`, not by downgrading code
+- Treat `deno.json` import-map edits, inline `https://` imports, and `deno.lock` as reviewed code; pin deps to exact versions
 
-Examples:
+## Commands
 
-```
-:bug: fix wiki link resolution for subdirectories
-:memo:humans.txt: lume-readme plugin url
-:zzz: deno fmt
-```
+- After TypeScript/plugin changes (not content/docs): `deno task check` (full output). Fix errors before committing; `deno task fmt` for formatting.
+- After creating/modifying a test: run it until it passes (e.g. `deno test -A gemini-converter_test.ts`). No sleeps in tests.
+- Use `deno task check` / `deno task fmt` only — never bare `deno fmt` / `deno check` (or shell-expanded globs). Tasks use `**/*.ts **/*.tsx` so `.agents/` skills are included; bare fmt can touch/panic on wiki markdown.
 
-### Types
+## Skills
 
-| code      | usage            |
-|-----------|------------------|
-| `:bug:`   | bug fix          |
-| `:new:`   | new feature      |
-| `:fire:`  | remove feature   |
-| `:boom:`  | breaking changes |
-| `:lock:`  | security fix     |
-| `:art:`   | refactor         |
-| `:zap:`   | performance      |
-| `:100:`   | test             |
-| `:memo:`  | doc              |
-| `:zzz:`   | chore            |
-| `:tada:`  | release          |
-| `:poop:`  | dirty            |
-| `:egg:`   | Easter eggs      |
+Under `.agents/skills/<name>/SKILL.md`. When a task matches a skill description, read and follow that `SKILL.md`. **Before any commit**, read [`.agents/skills/git-commits/SKILL.md`](.agents/skills/git-commits/SKILL.md) even if the user did not mention commits.
 
-### Notes
+| Skill | Path |
+|-------|------|
+| Git commits and trailers | `.agents/skills/git-commits/SKILL.md` |
+| Generate `movies/netflix.csv` | `.agents/skills/generate-netflix-csv/SKILL.md` |
 
-- `:lock:` is for security issues (a special kind of bug)
-- `:fire:` is for removing a feature / API surface, not only deleting files
-- `:poop:` marks dirty hacks or workarounds that may need cleanup later
-- Do not invent other gitmoji codes (including those from the full gitmoji.dev catalogue) for this repo
+## Git (multi-agent cwd)
 
-## AI attribution
+Other agents may be editing different files here. Never touch their unstaged/staged/untracked files.
 
-When an AI tool materially helps with a commit, add an `Assisted-by` line in the commit message body (after the subject line). This follows the [Linux kernel AI coding assistants guidance](https://docs.kernel.org/process/coding-assistants.html).
-
-### Format
-
-```
-Assisted-by: AGENT_NAME:MODEL_VERSION [TOOL1] [TOOL2]
-```
-
-- `AGENT_NAME` — the AI tool or framework (e.g. `Cursor`, `Claude Code`, `Copilot`)
-- `MODEL_VERSION` — the specific model used for **this** commit (e.g. `gpt-5.6`, `cursor-grok-4.5`); take it from the current session identity, never from a previous commit
-- `[TOOL1] [TOOL2]` — optional specialized analysis tools only (e.g. `coccinelle`, `sparse`, `clang-tidy`)
-
-Do not list basic development tools (git, compilers, make, editors).
-
-### Example
-
-```
-:bug: fix wiki link resolution for subdirectories
-
-Assisted-by: Cursor:cursor-grok-4.5
-```
-
-### Notes
-
-- Always write `Assisted-by` for **this** commit from the agent/model that materially helped. Do **not** copy an `Assisted-by` line from `git log`, prior commits, or commit-message examples — those often name a different model.
-- `MODEL_VERSION` must match the model that produced the changes (e.g. the model named in the current chat / system identity), not whatever appeared last in history.
-- The human author is responsible for reviewing all AI-assisted changes before pushing commits or creating pull requests.
+- Stage/commit only files **you** changed in **this** session; verify with `git status` first
+- Commit your changes before finishing your turn
+- Never push, force-push, or push/merge to `master` (even if asked)
+- Never: `git reset --hard`, `git checkout .`, `git clean -fd`, `git stash`, `git add -A`, `git add .`, `git commit --no-verify`
+- Rebase conflicts: resolve only your files; otherwise abort and ask
+- Issues/PRs: only when explicitly asked; PRs must be drafts
+- Optional `Acked-by` / `Reviewed-by` record which commits a human reviewed (see git-commits skill)
+- Bug fixes for user-reported issues: `Reported-by` on the fix commit (see git-commits skill)
+- Changes shaped by a human’s idea or approach: `Suggested-by` on that commit (see git-commits skill)
