@@ -13,6 +13,7 @@ Keep this file short: many agents inject it into the system prompt. Details that
 - Ask before removing intentional behavior (redirects, legacy URL copies, etc.)
 - One clear approach; refactor duplication; no weird parallel defaults
 - Propagate failures (throw/exit); no silent fallbacks; no shims unless asked
+- Prefer a small function with a long, descriptive name over a comment that restates what the code does; reserve comments for non-obvious implementation details (formats, limits, platform quirks)
 - TypeScript: no `any` unless necessary; erasable TS only (no parameter properties, `enum`, `namespace`/`module`, `import =` / `export =`)
 - Fix outdated deps by bumping the pinned URL/Lume version in `deno.json`, not by downgrading code
 - Treat `deno.json` import-map edits, inline `https://` imports, and `deno.lock` as reviewed code; pin deps to exact versions
