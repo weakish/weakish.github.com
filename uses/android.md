@@ -24,16 +24,6 @@ I also use some preinstalled applications, for example, calculator and Google Ph
 
 ### Android cannot connect to an iPhone hotspot
 
-iPhone Personal Hotspot may advertise on 5 GHz by default; some Android phones never see the network or fail to join.
-
-On the iPhone (**Settings → Personal Hotspot**):
-
-1. Turn on **Allow Others to Join**.
-2. On iPhone 12 or later, turn on **Maximize Compatibility** (uses 2.4 GHz). Internet performance and Wi-Fi security may be reduced while it is on.
-3. Stay on that screen until the Android phone connects.
-
-On the Android phone: toggle Wi-Fi off/on, join the network name (SSID) that matches the iPhone’s name, and use the password shown under Personal Hotspot.
-
-See [Apple’s Personal Hotspot help][apple-hotspot].
+Enable **Maximize Compatibility** in iPhone **Settings → Personal Hotspot** (2.4 GHz; some Android phones cannot see 5 GHz). [Apple help][apple-hotspot].
 
 [apple-hotspot]: https://support.apple.com/en-us/119837
