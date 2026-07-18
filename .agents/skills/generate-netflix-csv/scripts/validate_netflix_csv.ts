@@ -142,13 +142,13 @@ function fieldErrorsForNetflixRow(
   bounds: WatchBounds,
 ): string[] {
   const errors: string[] = [];
-  const title = row.title ?? "";
+  const title = row.title;
   const qTitle = quoteValueInError(title);
-  const id = row.id ?? "";
-  const year = row.year ?? "";
-  const date = row.date ?? "";
-  const wd = row.wikidata ?? "";
-  const netflixId = row.netflix ?? "";
+  const id = row.id;
+  const year = row.year;
+  const date = row.date;
+  const wd = row.wikidata;
+  const netflixId = row.netflix;
 
   if (title === "") errors.push(`L${line}: blank title`);
   if (id === "") {
