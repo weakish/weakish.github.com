@@ -114,7 +114,6 @@ Assisted-by: Cursor:cursor-grok-4.5
 - On a `:bug:` fix for a bug the **user** reported and you confirmed valid, add `Reported-by: Name <email>`.
 - Use the reporter’s usual git identity (from `Author`, prior commits, or what they give you in session).
 - Do **not** add it when you found the bug without a user report, or when you disagreed and did not fix it.
-- Agents must not add `Reported-by` naming themselves; credit the human who reported it.
 
 ```
 :bug:netflix-csv: skip blank ids in duplicate check
@@ -132,7 +131,6 @@ Assisted-by: Cursor:composer-2.5
 - Use their usual git identity (from `Author`, prior commits, or what they give you in session).
 - Covers design direction, not only bug reports (e.g. “return `string[]`”, “reject blank titles”). Use `Reported-by` for a confirmed bug report; both may appear when a report also drove the approach.
 - Do **not** add it for generic “please fix / please implement” without a substantive suggestion, or when you invented the approach alone.
-- Agents must not add `Suggested-by` naming themselves; credit the human who suggested it.
 
 ```
 :art:netflix-csv: validate helpers return errors
