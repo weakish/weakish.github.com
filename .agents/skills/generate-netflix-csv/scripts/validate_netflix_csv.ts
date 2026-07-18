@@ -99,6 +99,7 @@ function rowFieldErrors(
     const wd = r.wikidata ?? "";
     const netflixId = r.netflix ?? "";
 
+    if (!title) errors.push(`L${line}: blank title`);
     if (!ID_RE.test(id)) errors.push(`L${line} '${title}': bad id '${id}'`);
     if (year && !YEAR_RE.test(year)) {
       errors.push(`L${line} '${title}': bad year '${year}'`);

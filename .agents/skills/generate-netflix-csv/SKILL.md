@@ -128,7 +128,7 @@ deno run --allow-read=movies,.agents/skills/generate-netflix-csv/scripts \
   .agents/skills/generate-netflix-csv/scripts/validate_netflix_csv.ts
 ```
 
-Fix until it prints `OK`. Blank `wikidata` is allowed; `id`, `year`, and `netflix` are required. Each `date` must not be after the last watch in the current history export; preserved first-watch dates older than that export's minimum are allowed.
+Fix until it prints `OK`. Blank `wikidata` is allowed; `title`, `id`, `year`, and `netflix` are required. Each `date` must not be after the last watch in the current history export; preserved first-watch dates older than that export's minimum are allowed.
 
 ## Incremental updates
 

@@ -63,5 +63,15 @@ Deno.test("validate rejects duplicate netflix title ids", () => {
     row("Bar", "2023-05-06", "99999"),
   ];
   const errors = validate(netflix, history);
-  assertEquals(errors.includes("duplicate Netflix title ids in netflix.csv"), true);
+  assertEquals(
+    errors.includes("duplicate Netflix title ids in netflix.csv"),
+    true,
+  );
+});
+
+Deno.test("validate rejects blank title", () => {
+  const history: HistoryRow[] = [{ Title: "Foo", Date: "4/6/23" }];
+  const netflix = [row("", "2023-04-06")];
+  const errors = validate(netflix, history);
+  assertEquals(errors.some((e) => e.includes("blank title")), true);
 });
