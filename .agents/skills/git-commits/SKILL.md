@@ -2,7 +2,7 @@
 name: git-commits
 description: >-
   Repo commit message and trailer contract: 13 Short Gitmojis subjects,
-  Assisted-by, Acked-by, Reviewed-by gates for draft PRs and master. Use when
+  Assisted-by, Acked-by, Reviewed-by, Reported-by gates for draft PRs and master. Use when
   committing, writing a commit message, adding review trailers, or opening a
   draft PR.
 ---
@@ -74,8 +74,9 @@ The gates exist for quality assurance: `master` auto-deploys to production (prot
 
 Trailer order after the subject/body:
 
-1. `Assisted-by` (when an agent helped)
-2. `Acked-by` / `Reviewed-by` (human review markers, when required)
+1. `Reported-by` (when the user reported a valid bug this commit fixes)
+2. `Assisted-by` (when an agent helped)
+3. `Acked-by` / `Reviewed-by` (human review markers, when required)
 
 ### Author
 
@@ -104,6 +105,23 @@ Assisted-by: Cursor:cursor-grok-4.5
 
 - Always write `Assisted-by` for **this** commit from the agent/model that helped. Do **not** copy an `Assisted-by` line from `git log`, prior commits, or examples — those often name a different model.
 - Intermediate commits usually carry only `Assisted-by` (the user may not have bandwidth to review every step). When a human **has** reviewed an intermediate commit, it may also carry `Acked-by` or `Reviewed-by` for that commit.
+
+### Reported-by
+
+- On a `:bug:` fix for a bug the **user** reported and you confirmed valid, add `Reported-by: Name <email>`.
+- Use the reporter’s usual git identity (from `Author`, prior commits, or what they give you in session).
+- Do **not** add it when you found the bug without a user report, or when you disagreed and did not fix it.
+- Agents must not add `Reported-by` naming themselves; credit the human who reported it.
+
+```
+:bug:netflix-csv: skip blank ids in duplicate check
+
+Blank netflix values mapped to "" and falsely triggered
+duplicate Netflix title id errors.
+
+Reported-by: weakish <weakish@gmail.com>
+Assisted-by: Cursor:composer-2.5
+```
 
 ### Acked-by (light review)
 
