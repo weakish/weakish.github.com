@@ -66,11 +66,12 @@ function duplicateNetflixIdErrors(netflixRows: NetflixRow[]): string[] {
   );
 }
 
-function sortedTitlesOnlyIn(
-  titles: Set<string>,
-  excluding: Set<string>,
-): string[] {
-  return [...titles].filter((t) => !excluding.has(t)).sort();
+function sortedTitlesIn(titles: Set<string>) {
+  return {
+    notIn(excluding: Set<string>): string[] {
+      return [...titles].filter((t) => !excluding.has(t)).sort();
+    },
+  };
 }
 
 function titleCoverageListError(
@@ -88,11 +89,11 @@ function titleCoverageErrors(
   return [
     ...titleCoverageListError(
       "missing",
-      sortedTitlesOnlyIn(wantTitles, gotTitles),
+      sortedTitlesIn(wantTitles).notIn(gotTitles),
     ),
     ...titleCoverageListError(
       "extra",
-      sortedTitlesOnlyIn(gotTitles, wantTitles),
+      sortedTitlesIn(gotTitles).notIn(wantTitles),
     ),
   ];
 }
