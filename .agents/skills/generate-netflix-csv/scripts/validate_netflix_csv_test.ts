@@ -115,7 +115,17 @@ Deno.test("validate truncates long missing-title lists with ellipsis", () => {
   const netflix = [row("Only", "2023-04-06")];
   const errors = validate(netflix, history);
   assertEquals(
-    errors.includes("missing titles (6): T0,T1,T2,T3,T4, ..."),
+    errors.includes("missing titles (6): 'T0', 'T1', 'T2', 'T3', 'T4', ..."),
+    true,
+  );
+});
+
+Deno.test("validate quotes titles with commas in coverage errors", () => {
+  const history: HistoryRow[] = [{ Title: "Foo, Bar", Date: "4/6/23" }];
+  const netflix = [row("Other", "2023-04-06")];
+  const errors = validate(netflix, history);
+  assertEquals(
+    errors.includes("missing titles (1): 'Foo, Bar'"),
     true,
   );
 });

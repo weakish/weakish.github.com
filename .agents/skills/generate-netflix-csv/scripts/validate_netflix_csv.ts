@@ -80,8 +80,9 @@ function titleCoverageListError(
 ): string[] {
   if (titles.length === 0) return [];
   const sample = titles.slice(0, 5);
+  const sampleList = sample.map((t) => `'${t}'`).join(", ");
   const suffix = sample.length < titles.length ? ", ..." : "";
-  return [`${kind} titles (${titles.length}): ${sample}${suffix}`];
+  return [`${kind} titles (${titles.length}): ${sampleList}${suffix}`];
 }
 
 function titleCoverageErrors(
