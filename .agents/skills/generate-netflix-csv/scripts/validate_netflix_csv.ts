@@ -74,8 +74,8 @@ function sortedTitlesIn(titles: Set<string>) {
   };
 }
 
-function quoteTitleInError(title: string): string {
-  return `'${title.replaceAll("'", "\\'")}'`;
+function quoteValueInError(value: string): string {
+  return `'${value.replaceAll("'", "\\'")}'`;
 }
 
 function titleCoverageListError(
@@ -84,7 +84,7 @@ function titleCoverageListError(
 ): string[] {
   if (titles.length === 0) return [];
   const sample = titles.slice(0, 5);
-  const sampleList = sample.map(quoteTitleInError).join(", ");
+  const sampleList = sample.map(quoteValueInError).join(", ");
   const suffix = sample.length < titles.length ? ", ..." : "";
   return [`${kind} titles (${titles.length}): ${sampleList}${suffix}`];
 }
@@ -130,26 +130,46 @@ function rowFieldErrors(
     const netflixId = r.netflix ?? "";
 
     if (!title) errors.push(`L${line}: blank title`);
-    if (!ID_RE.test(id)) errors.push(`L${line} '${title}': bad id '${id}'`);
-    if (year && !YEAR_RE.test(year)) {
-      errors.push(`L${line} '${title}': bad year '${year}'`);
+    if (!ID_RE.test(id)) {
+      errors.push(
+        `L${line} ${quoteValueInError(title)}: bad id ${quoteValueInError(id)}`,
+      );
     }
-    if (!year) errors.push(`L${line} '${title}': blank year`);
+    if (year && !YEAR_RE.test(year)) {
+      errors.push(
+        `L${line} ${quoteValueInError(title)}: bad year ${
+          quoteValueInError(year)
+        }`,
+      );
+    }
+    if (!year) errors.push(`L${line} ${quoteValueInError(title)}: blank year`);
     if (!DATE_RE.test(date)) {
-      errors.push(`L${line} '${title}': bad date '${date}'`);
+      errors.push(
+        `L${line} ${quoteValueInError(title)}: bad date ${
+          quoteValueInError(date)
+        }`,
+      );
     }
     const range = bounds.get(title);
     if (range && date > range.max) {
       errors.push(
-        `L${line} '${title}': date ${date} after last history watch ${range.max}`,
+        `L${line} ${
+          quoteValueInError(title)
+        }: date ${date} after last history watch ${range.max}`,
       );
     }
     if (wd && !QID_RE.test(wd)) {
-      errors.push(`L${line} '${title}': bad wikidata '${wd}'`);
+      errors.push(
+        `L${line} ${quoteValueInError(title)}: bad wikidata ${
+          quoteValueInError(wd)
+        }`,
+      );
     }
     if (!NETFLIX_RE.test(netflixId)) {
       errors.push(
-        `L${line} '${title}': bad/missing Netflix title id '${netflixId}'`,
+        `L${line} ${quoteValueInError(title)}: bad/missing Netflix title id ${
+          quoteValueInError(netflixId)
+        }`,
       );
     }
   }

@@ -165,3 +165,20 @@ Deno.test("validate escapes apostrophes in coverage error titles", () => {
     true,
   );
 });
+
+Deno.test("validate escapes apostrophes in row field errors", () => {
+  const history: HistoryRow[] = [{ Title: "It's", Date: "4/6/23" }];
+  const netflix: NetflixRow[] = [{
+    id: "bad",
+    title: "It's",
+    year: "2020",
+    date: "2023-04-06",
+    wikidata: "",
+    netflix: "12345",
+  }];
+  const errors = validate(netflix, history);
+  assertEquals(
+    errors.some((e) => e.includes("L2 'It\\'s': bad id 'bad'")),
+    true,
+  );
+});
