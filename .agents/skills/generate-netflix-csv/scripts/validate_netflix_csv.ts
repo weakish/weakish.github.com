@@ -265,9 +265,9 @@ async function main(args: string[]): Promise<number> {
     return 1;
   }
 
-  const blankWd = netflixRows.filter((r) => !r.wikidata).length;
-  const msg = blankWd
-    ? `OK ${netflixRows.length} rows (${blankWd} blank wikidata)`
+  const blankWikidataCount = netflixRows.filter((r) => !r.wikidata).length;
+  const msg = blankWikidataCount
+    ? `OK ${netflixRows.length} rows (${blankWikidataCount} blank wikidata)`
     : `OK ${netflixRows.length} rows`;
   console.log(msg);
   return 0;
