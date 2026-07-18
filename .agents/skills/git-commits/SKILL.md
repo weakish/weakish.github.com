@@ -3,7 +3,8 @@ name: git-commits
 description: >-
   Repo commit message and trailer contract: 13 Short Gitmojis subjects;
   Assisted-by; Acked-by / Reviewed-by gates for draft PRs and master;
-  Reported-by / Suggested-by credit for human bug reports and ideas.
+  Reported-by for user-reported bugs; Suggested-by for human
+  ideas and approach.
   Use when committing, writing a commit message, adding review trailers,
   or opening a draft PR.
 ---
