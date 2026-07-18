@@ -54,14 +54,14 @@ function duplicateNonEmptyValueErrors(
 
 function duplicateTitleErrors(netflixRows: NetflixRow[]): string[] {
   return duplicateNonEmptyValueErrors(
-    netflixRows.map((r) => r.title ?? ""),
+    netflixRows.map((r) => r.title),
     "duplicate titles in netflix.csv",
   );
 }
 
 function duplicateNetflixIdErrors(netflixRows: NetflixRow[]): string[] {
   return duplicateNonEmptyValueErrors(
-    netflixRows.map((r) => r.netflix ?? ""),
+    netflixRows.map((r) => r.netflix),
     "duplicate Netflix title ids in netflix.csv",
   );
 }
@@ -107,8 +107,8 @@ function titleCoverageErrors(
 
 function unsortedByDateDescendingErrors(netflixRows: NetflixRow[]): string[] {
   for (let i = 1; i < netflixRows.length; i++) {
-    const prev = netflixRows[i - 1].date ?? "";
-    const curr = netflixRows[i].date ?? "";
+    const prev = netflixRows[i - 1].date;
+    const curr = netflixRows[i].date;
     if (prev < curr) return ["rows not sorted by date descending"];
   }
   return [];
