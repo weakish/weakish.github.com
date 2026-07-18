@@ -113,7 +113,20 @@ Deno.test("validate applies history watch bounds on trimmed title", () => {
   const history: HistoryRow[] = [{ Title: "  Foo  ", Date: "4/6/23" }];
   const netflix = [row("Foo", "2025-01-01")];
   const errors = validate(netflix, history);
-  assertEquals(errors.some((e) => e.includes("after last history watch")), true);
+  assertEquals(
+    errors.some((e) => e.includes("after last history watch")),
+    true,
+  );
+});
+
+Deno.test("validate applies history watch bounds on trimmed date", () => {
+  const history: HistoryRow[] = [{ Title: "Foo", Date: "  4/6/23  " }];
+  const netflix = [row("Foo", "2025-01-01")];
+  const errors = validate(netflix, history);
+  assertEquals(
+    errors.some((e) => e.includes("after last history watch")),
+    true,
+  );
 });
 
 Deno.test("validate rejects blank id and date", () => {

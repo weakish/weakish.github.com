@@ -129,6 +129,13 @@ function trimNetflixRow(row: NetflixRow): NetflixRow {
   };
 }
 
+function trimHistoryRow(row: HistoryRow): HistoryRow {
+  return {
+    Title: trimmedCsvField(row.Title),
+    Date: trimmedCsvField(row.Date),
+  };
+}
+
 function fieldErrorsForNetflixRow(
   line: number,
   row: NetflixRow,
@@ -199,11 +206,9 @@ export function validate(
 ): string[] {
   if (netflixRows.length === 0) return ["netflix.csv is empty"];
 
-  // Trim once so field, duplicate, coverage, and sort checks share values.
+  // Trim once so field, duplicate, coverage, sort, and bounds share values.
   const rows = netflixRows.map(trimNetflixRow);
-  const bounds = watchBounds(
-    historyRows.map((r) => ({ ...r, Title: trimmedCsvField(r.Title) })),
-  );
+  const bounds = watchBounds(historyRows.map(trimHistoryRow));
   const wantTitles = new Set(bounds.keys());
   const gotTitles = new Set(rows.map((r) => r.title));
 
