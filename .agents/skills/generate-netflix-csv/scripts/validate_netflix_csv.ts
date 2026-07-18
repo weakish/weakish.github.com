@@ -66,20 +66,35 @@ function duplicateNetflixIdErrors(netflixRows: NetflixRow[]): string[] {
   );
 }
 
+function sortedTitlesInLeftNotRight(
+  left: Set<string>,
+  right: Set<string>,
+): string[] {
+  return [...left].filter((t) => !right.has(t)).sort();
+}
+
+function titleCoverageListError(
+  kind: "missing" | "extra",
+  titles: string[],
+): string[] {
+  if (titles.length === 0) return [];
+  return [`${kind} titles (${titles.length}): ${titles.slice(0, 5)}`];
+}
+
 function titleCoverageErrors(
   wantTitles: Set<string>,
   gotTitles: Set<string>,
 ): string[] {
-  const errors: string[] = [];
-  const missing = [...wantTitles].filter((t) => !gotTitles.has(t)).sort();
-  const extra = [...gotTitles].filter((t) => !wantTitles.has(t)).sort();
-  if (missing.length) {
-    errors.push(`missing titles (${missing.length}): ${missing.slice(0, 5)}`);
-  }
-  if (extra.length) {
-    errors.push(`extra titles (${extra.length}): ${extra.slice(0, 5)}`);
-  }
-  return errors;
+  return [
+    ...titleCoverageListError(
+      "missing",
+      sortedTitlesInLeftNotRight(wantTitles, gotTitles),
+    ),
+    ...titleCoverageListError(
+      "extra",
+      sortedTitlesInLeftNotRight(gotTitles, wantTitles),
+    ),
+  ];
 }
 
 function unsortedByDateDescendingErrors(netflixRows: NetflixRow[]): string[] {
