@@ -39,7 +39,7 @@ export const RENAME: Record<string, string> = {
   "The Empress of Ayodhaya: The Empress Of Ayodhaya": "The Empress of Ayodhaya",
 };
 
-/** Parse Netflix streaming export `M/D/YY` to ISO `YYYY-MM-DD` (`YY` → 20YY). */
+/** Parse Netflix streaming export `M/D/YY` to ISO `YYYY-MM-DD` (`YY` → 20YY; streaming watches are 21st century). */
 export function parseDate(d: string): string {
   const [month, day, year] = d.split("/").map((s) => Number.parseInt(s, 10));
   const fullYear = 2000 + year;
