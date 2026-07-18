@@ -153,6 +153,19 @@ Deno.test("validate quotes titles with commas in coverage errors", () => {
   );
 });
 
+Deno.test("validate rejects rows not sorted by date descending", () => {
+  const history: HistoryRow[] = [
+    { Title: "Older", Date: "1/1/20" },
+    { Title: "Newer", Date: "1/1/24" },
+  ];
+  const netflix = [
+    row("Older", "2020-01-01"),
+    row("Newer", "2024-01-01"),
+  ];
+  const errors = validate(netflix, history);
+  assertEquals(errors.includes("rows not sorted by date descending"), true);
+});
+
 Deno.test("validate double-quotes apostrophe titles in coverage errors", () => {
   const history: HistoryRow[] = [{
     Title: "It's a Wonderful Life",

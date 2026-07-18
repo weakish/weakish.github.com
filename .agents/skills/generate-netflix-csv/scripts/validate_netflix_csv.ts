@@ -106,10 +106,10 @@ function titleCoverageErrors(
 }
 
 function unsortedByDateDescendingErrors(netflixRows: NetflixRow[]): string[] {
-  const dates = netflixRows.map((r) => r.date ?? "");
-  const sorted = [...dates].sort().reverse();
-  if (dates.join("\0") !== sorted.join("\0")) {
-    return ["rows not sorted by date descending"];
+  for (let i = 1; i < netflixRows.length; i++) {
+    const prev = netflixRows[i - 1].date ?? "";
+    const curr = netflixRows[i].date ?? "";
+    if (prev < curr) return ["rows not sorted by date descending"];
   }
   return [];
 }
