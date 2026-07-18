@@ -89,6 +89,8 @@ deno run --allow-read=movies,.agents/skills/generate-netflix-csv/scripts \
 
 Use this script — do not re-invent collapse rules. If a new title needs an exception, edit `KEEP_FULL`, `EPISODE_TO_SERIES`, or `RENAME` in `.agents/skills/generate-netflix-csv/scripts/collapse_history.ts`, then re-run.
 
+Those hard-coded exception lists do **not** scale as the export grows. When history is large enough that maintaining them is a burden, prefer an alternative approach (e.g. Wikidata lookup for series/episode membership) over ever-longer tables.
+
 ### 2. Reuse curated rows
 
 For each collapsed title:

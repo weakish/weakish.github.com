@@ -12,6 +12,10 @@ export interface Work {
   date: string;
 }
 
+// Exception tables for strip/collapse. Fine for a small curated export; does
+// not scale as NetflixViewingHistory grows — prefer an alternative such as
+// Wikidata lookup (series/episode membership) instead of ever-longer lists.
+
 // Films / special titles whose colon is part of the work name (do not strip).
 export const KEEP_FULL = new Set([
   "The Hunger Games: Mockingjay - Part 2",
