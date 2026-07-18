@@ -30,6 +30,101 @@ async function loadCsv(path: string): Promise<Record<string, string>[]> {
   >[];
 }
 
+type WatchBounds = ReturnType<typeof watchBounds>;
+
+function pushColumnMismatch(firstRow: NetflixRow, errors: string[]): void {
+  const fields = Object.keys(firstRow);
+  if (fields.join(",") !== COLUMNS.join(",")) {
+    errors.push(`columns want ${[...COLUMNS]}, got ${fields}`);
+  }
+}
+
+function pushDuplicateTitles(
+  netflixRows: NetflixRow[],
+  errors: string[],
+): void {
+  const titles = netflixRows.map((r) => r.title);
+  if (titles.length !== new Set(titles).size) {
+    errors.push("duplicate titles in netflix.csv");
+  }
+}
+
+function pushDuplicateNetflixIds(
+  netflixRows: NetflixRow[],
+  errors: string[],
+): void {
+  const ids = netflixRows.map((r) => r.netflix ?? "");
+  if (ids.length !== new Set(ids).size) {
+    errors.push("duplicate Netflix title ids in netflix.csv");
+  }
+}
+
+function pushTitleCoverageErrors(
+  wantTitles: Set<string>,
+  gotTitles: Set<string>,
+  errors: string[],
+): void {
+  const missing = [...wantTitles].filter((t) => !gotTitles.has(t)).sort();
+  const extra = [...gotTitles].filter((t) => !wantTitles.has(t)).sort();
+  if (missing.length) {
+    errors.push(`missing titles (${missing.length}): ${missing.slice(0, 5)}`);
+  }
+  if (extra.length) {
+    errors.push(`extra titles (${extra.length}): ${extra.slice(0, 5)}`);
+  }
+}
+
+function pushUnsortedByDateDescending(
+  netflixRows: NetflixRow[],
+  errors: string[],
+): void {
+  const dates = netflixRows.map((r) => r.date ?? "");
+  const sorted = [...dates].sort().reverse();
+  if (dates.join("\0") !== sorted.join("\0")) {
+    errors.push("rows not sorted by date descending");
+  }
+}
+
+function pushRowFieldErrors(
+  netflixRows: NetflixRow[],
+  bounds: WatchBounds,
+  errors: string[],
+): void {
+  for (let i = 0; i < netflixRows.length; i++) {
+    const line = i + 2;
+    const r = netflixRows[i];
+    const title = r.title ?? "";
+    const id = r.id ?? "";
+    const year = r.year ?? "";
+    const date = r.date ?? "";
+    const wd = r.wikidata ?? "";
+    const netflixId = r.netflix ?? "";
+
+    if (!ID_RE.test(id)) errors.push(`L${line} '${title}': bad id '${id}'`);
+    if (year && !YEAR_RE.test(year)) {
+      errors.push(`L${line} '${title}': bad year '${year}'`);
+    }
+    if (!year) errors.push(`L${line} '${title}': blank year`);
+    if (!DATE_RE.test(date)) {
+      errors.push(`L${line} '${title}': bad date '${date}'`);
+    }
+    const range = bounds.get(title);
+    if (range && date > range.max) {
+      errors.push(
+        `L${line} '${title}': date ${date} after last history watch ${range.max}`,
+      );
+    }
+    if (wd && !QID_RE.test(wd)) {
+      errors.push(`L${line} '${title}': bad wikidata '${wd}'`);
+    }
+    if (!NETFLIX_RE.test(netflixId)) {
+      errors.push(
+        `L${line} '${title}': bad/missing Netflix title id '${netflixId}'`,
+      );
+    }
+  }
+}
+
 export function validate(
   netflixRows: NetflixRow[],
   historyRows: HistoryRow[],
@@ -37,97 +132,16 @@ export function validate(
   const errors: string[] = [];
   if (netflixRows.length === 0) return ["netflix.csv is empty"];
 
-  function pushColumnMismatch(firstRow: NetflixRow): void {
-    const fields = Object.keys(firstRow);
-    if (fields.join(",") !== COLUMNS.join(",")) {
-      errors.push(`columns want ${[...COLUMNS]}, got ${fields}`);
-    }
-  }
-
-  function pushDuplicateTitles(): void {
-    const titles = netflixRows.map((r) => r.title);
-    if (titles.length !== new Set(titles).size) {
-      errors.push("duplicate titles in netflix.csv");
-    }
-  }
-
-  function pushDuplicateNetflixIds(): void {
-    const ids = netflixRows.map((r) => r.netflix ?? "");
-    if (ids.length !== new Set(ids).size) {
-      errors.push("duplicate Netflix title ids in netflix.csv");
-    }
-  }
-
-  function pushTitleCoverageErrors(
-    wantTitles: Set<string>,
-    gotTitles: Set<string>,
-  ): void {
-    const missing = [...wantTitles].filter((t) => !gotTitles.has(t)).sort();
-    const extra = [...gotTitles].filter((t) => !wantTitles.has(t)).sort();
-    if (missing.length) {
-      errors.push(`missing titles (${missing.length}): ${missing.slice(0, 5)}`);
-    }
-    if (extra.length) {
-      errors.push(`extra titles (${extra.length}): ${extra.slice(0, 5)}`);
-    }
-  }
-
-  function pushUnsortedByDateDescending(): void {
-    const dates = netflixRows.map((r) => r.date ?? "");
-    const sorted = [...dates].sort().reverse();
-    if (dates.join("\0") !== sorted.join("\0")) {
-      errors.push("rows not sorted by date descending");
-    }
-  }
-
-  function pushRowFieldErrors(
-    bounds: ReturnType<typeof watchBounds>,
-  ): void {
-    for (let i = 0; i < netflixRows.length; i++) {
-      const line = i + 2;
-      const r = netflixRows[i];
-      const title = r.title ?? "";
-      const id = r.id ?? "";
-      const year = r.year ?? "";
-      const date = r.date ?? "";
-      const wd = r.wikidata ?? "";
-      const netflixId = r.netflix ?? "";
-
-      if (!ID_RE.test(id)) errors.push(`L${line} '${title}': bad id '${id}'`);
-      if (year && !YEAR_RE.test(year)) {
-        errors.push(`L${line} '${title}': bad year '${year}'`);
-      }
-      if (!year) errors.push(`L${line} '${title}': blank year`);
-      if (!DATE_RE.test(date)) {
-        errors.push(`L${line} '${title}': bad date '${date}'`);
-      }
-      const range = bounds.get(title);
-      if (range && date > range.max) {
-        errors.push(
-          `L${line} '${title}': date ${date} after last history watch ${range.max}`,
-        );
-      }
-      if (wd && !QID_RE.test(wd)) {
-        errors.push(`L${line} '${title}': bad wikidata '${wd}'`);
-      }
-      if (!NETFLIX_RE.test(netflixId)) {
-        errors.push(
-          `L${line} '${title}': bad/missing Netflix title id '${netflixId}'`,
-        );
-      }
-    }
-  }
-
   const bounds = watchBounds(historyRows);
   const wantTitles = new Set(bounds.keys());
   const gotTitles = new Set(netflixRows.map((r) => r.title));
 
-  pushColumnMismatch(netflixRows[0]);
-  pushDuplicateTitles();
-  pushDuplicateNetflixIds();
-  pushTitleCoverageErrors(wantTitles, gotTitles);
-  pushUnsortedByDateDescending();
-  pushRowFieldErrors(bounds);
+  pushColumnMismatch(netflixRows[0], errors);
+  pushDuplicateTitles(netflixRows, errors);
+  pushDuplicateNetflixIds(netflixRows, errors);
+  pushTitleCoverageErrors(wantTitles, gotTitles, errors);
+  pushUnsortedByDateDescending(netflixRows, errors);
+  pushRowFieldErrors(netflixRows, bounds, errors);
 
   return errors;
 }
