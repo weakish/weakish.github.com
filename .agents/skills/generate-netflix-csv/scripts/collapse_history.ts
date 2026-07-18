@@ -39,8 +39,9 @@ export const RENAME: Record<string, string> = {
   "The Empress of Ayodhaya: The Empress Of Ayodhaya": "The Empress of Ayodhaya",
 };
 
-/** Parse Netflix streaming export `M/D/YY` to ISO `YYYY-MM-DD` (`YY` → 20YY;
- * streaming-only — not DVD rentals; watches from 2007+). */
+/** Parse Netflix streaming export `M/D/YY` to ISO `YYYY-MM-DD` (`YY` → 20YY)
+ * Netflix started their streaming business from 2007 and the exported watch
+ * history only includes titles streamed. DVD rentals are not included. */
 export function parseDate(d: string): string {
   const [month, day, year] = d.split("/").map((s) => Number.parseInt(s, 10));
   const fullYear = 2000 + year;
