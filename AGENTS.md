@@ -29,6 +29,7 @@ Under `.agents/skills/<name>/SKILL.md`. When a task matches a skill description,
 
 | Skill | Path |
 |-------|------|
+| Git commits and trailers | `.agents/skills/git-commits/SKILL.md` |
 | Generate `movies/netflix.csv` | `.agents/skills/generate-netflix-csv/SKILL.md` |
 
 ## Git (multi-agent cwd)
@@ -36,13 +37,9 @@ Under `.agents/skills/<name>/SKILL.md`. When a task matches a skill description,
 Other agents may be editing different files here. Never touch their unstaged/staged/untracked files.
 
 - Stage/commit only files **you** changed in **this** session; verify with `git status` first
-- Commit your changes before finishing your turn
+- Commit your changes before finishing your turn (follow the git-commits skill)
 - Never push, force-push, or push/merge to `master` (even if asked)
 - Never: `git reset --hard`, `git checkout .`, `git clean -fd`, `git stash`, `git add -A`, `git add .`, `git commit --no-verify`
 - Rebase conflicts: resolve only your files; otherwise abort and ask
 - Issues/PRs: only when explicitly asked; PRs must be drafts
-- Draft PR tip needs `Acked-by` or `Reviewed-by`; `master` merge tip needs `Reviewed-by`. Add those trailers only when the user confirms human review (see below)
-
-## Commits and trailers
-
-When committing, writing a commit message, adding review trailers, or opening a draft PR, read [`.agents/commits.md`](.agents/commits.md) and follow it (gitmoji subjects, `Assisted-by`, `Acked-by` / `Reviewed-by` gates).
+- Draft PR tip needs `Acked-by` or `Reviewed-by`; `master` merge tip needs `Reviewed-by` (details in git-commits skill)

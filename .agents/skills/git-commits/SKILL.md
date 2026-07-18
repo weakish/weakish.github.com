@@ -1,6 +1,15 @@
+---
+name: git-commits
+description: >-
+  Repo commit message and trailer contract: 13 Short Gitmojis subjects,
+  Assisted-by, Acked-by, Reviewed-by gates for draft PRs and master. Use when
+  committing, writing a commit message, adding review trailers, or opening a
+  draft PR.
+---
+
 # Git commits and trailers
 
-Read this when committing, writing a commit message, adding review trailers, or opening a draft PR. Everyday agent rules live in [AGENTS.md](../AGENTS.md).
+Everyday agent rules live in [AGENTS.md](../../../AGENTS.md). Follow this skill when committing or opening a draft PR.
 
 ## Commit messages
 
