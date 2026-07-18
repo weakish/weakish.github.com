@@ -1,10 +1,10 @@
 ---
 name: git-commits
 description: >-
-  Repo commit message and trailer contract: 13 Short Gitmojis subjects,
-  Assisted-by, Acked-by, Reviewed-by, Reported-by gates for draft PRs and master. Use when
-  committing, writing a commit message, adding review trailers, or opening a
-  draft PR.
+  Repo commit message and trailer contract: 13 Short Gitmojis subjects;
+  Assisted-by; Acked-by / Reviewed-by gates for draft PRs and master;
+  Reported-by credit on user-reported :bug: fixes. Use when committing,
+  writing a commit message, adding review trailers, or opening a draft PR.
 ---
 
 # Git commits and trailers
