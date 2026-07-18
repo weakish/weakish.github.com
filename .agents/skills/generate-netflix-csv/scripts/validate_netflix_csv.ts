@@ -74,13 +74,17 @@ function sortedTitlesIn(titles: Set<string>) {
   };
 }
 
+function quoteTitleInError(title: string): string {
+  return `'${title.replaceAll("'", "\\'")}'`;
+}
+
 function titleCoverageListError(
   kind: "missing" | "extra",
   titles: string[],
 ): string[] {
   if (titles.length === 0) return [];
   const sample = titles.slice(0, 5);
-  const sampleList = sample.map((t) => `'${t}'`).join(", ");
+  const sampleList = sample.map(quoteTitleInError).join(", ");
   const suffix = sample.length < titles.length ? ", ..." : "";
   return [`${kind} titles (${titles.length}): ${sampleList}${suffix}`];
 }

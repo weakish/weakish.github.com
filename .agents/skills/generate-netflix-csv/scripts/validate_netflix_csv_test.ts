@@ -148,3 +148,16 @@ Deno.test("validate quotes titles with commas in coverage errors", () => {
     true,
   );
 });
+
+Deno.test("validate escapes apostrophes in coverage error titles", () => {
+  const history: HistoryRow[] = [{
+    Title: "It's a Wonderful Life",
+    Date: "4/6/23",
+  }];
+  const netflix = [row("Other", "2023-04-06")];
+  const errors = validate(netflix, history);
+  assertEquals(
+    errors.includes("missing titles (1): 'It\\'s a Wonderful Life'"),
+    true,
+  );
+});
