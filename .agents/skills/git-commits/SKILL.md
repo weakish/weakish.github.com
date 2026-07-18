@@ -5,13 +5,12 @@ description: >-
   Assisted-by; optional Acked-by / Reviewed-by to record human review;
   Reported-by for user-reported bugs; Suggested-by for human
   ideas and approach.
-  Use when committing, writing a commit message, adding review trailers,
-  or opening a draft PR.
+  Use when committing, writing a commit message, or adding review trailers.
 ---
 
 # Git commits and trailers
 
-Everyday agent rules live in [AGENTS.md](../../../AGENTS.md). **Read this skill before every commit** (AGENTS.md requires it); also when opening a draft PR.
+Everyday agent rules live in [AGENTS.md](../../../AGENTS.md). **Read this skill before every commit** (AGENTS.md requires it).
 
 ## Commit messages
 
