@@ -123,6 +123,7 @@ function rowFieldErrors(
     const line = i + 2;
     const r = netflixRows[i];
     const title = r.title ?? "";
+    const qTitle = quoteValueInError(title);
     const id = r.id ?? "";
     const year = r.year ?? "";
     const date = r.date ?? "";
@@ -131,43 +132,29 @@ function rowFieldErrors(
 
     if (!title) errors.push(`L${line}: blank title`);
     if (!ID_RE.test(id)) {
-      errors.push(
-        `L${line} ${quoteValueInError(title)}: bad id ${quoteValueInError(id)}`,
-      );
+      errors.push(`L${line} ${qTitle}: bad id ${quoteValueInError(id)}`);
     }
     if (year && !YEAR_RE.test(year)) {
-      errors.push(
-        `L${line} ${quoteValueInError(title)}: bad year ${
-          quoteValueInError(year)
-        }`,
-      );
+      errors.push(`L${line} ${qTitle}: bad year ${quoteValueInError(year)}`);
     }
-    if (!year) errors.push(`L${line} ${quoteValueInError(title)}: blank year`);
+    if (!year) errors.push(`L${line} ${qTitle}: blank year`);
     if (!DATE_RE.test(date)) {
-      errors.push(
-        `L${line} ${quoteValueInError(title)}: bad date ${
-          quoteValueInError(date)
-        }`,
-      );
+      errors.push(`L${line} ${qTitle}: bad date ${quoteValueInError(date)}`);
     }
     const range = bounds.get(title);
     if (range && date > range.max) {
       errors.push(
-        `L${line} ${
-          quoteValueInError(title)
-        }: date ${date} after last history watch ${range.max}`,
+        `L${line} ${qTitle}: date ${date} after last history watch ${range.max}`,
       );
     }
     if (wd && !QID_RE.test(wd)) {
       errors.push(
-        `L${line} ${quoteValueInError(title)}: bad wikidata ${
-          quoteValueInError(wd)
-        }`,
+        `L${line} ${qTitle}: bad wikidata ${quoteValueInError(wd)}`,
       );
     }
     if (!NETFLIX_RE.test(netflixId)) {
       errors.push(
-        `L${line} ${quoteValueInError(title)}: bad/missing Netflix title id ${
+        `L${line} ${qTitle}: bad/missing Netflix title id ${
           quoteValueInError(netflixId)
         }`,
       );
