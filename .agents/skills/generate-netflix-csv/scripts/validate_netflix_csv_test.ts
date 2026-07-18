@@ -48,7 +48,7 @@ Deno.test("validate does not treat blank netflix ids as duplicates", () => {
     false,
   );
   assertEquals(
-    errors.filter((e) => e.includes("bad/missing Netflix title id")).length,
+    errors.filter((e) => e.includes("blank Netflix title id")).length,
     2,
   );
 });
@@ -205,7 +205,7 @@ Deno.test("validate double-quotes apostrophe titles in row field errors", () => 
   }];
   const errors = validate(netflix, history);
   assertEquals(
-    errors.some((e) => e.includes('L2 "It\'s": bad id "bad"')),
+    errors.some((e) => e.includes('L2 "It\'s": invalid id "bad"')),
     true,
   );
 });
