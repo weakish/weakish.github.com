@@ -53,6 +53,7 @@ site.use(sri());
 site.use(nunjucks());
 site.use(jsx());
 site.use(pagefind());
+site.use(purgecss());
 site.use(transformImages());
 site.add([".png", ".jpg"]);
 site.use(remark({
@@ -90,7 +91,6 @@ site.use(readme());
 site.ignore((path) => path.startsWith("/plugins/"));
 
 site.use(favicon());
-site.use(purgecss());
 
 site.copy("LICENSE");
 site.copy("humans.txt");

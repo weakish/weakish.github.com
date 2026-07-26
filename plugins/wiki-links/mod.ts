@@ -158,7 +158,7 @@ export function customWikiLinks() {
           }
 
           // Determine display text
-          let displayText = customText || linkTarget;
+          const displayText = customText || linkTarget;
 
           // Build resolved URL
           let resolvedPath = resolve(linkTarget);

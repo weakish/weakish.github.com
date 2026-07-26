@@ -11,7 +11,7 @@ function cleanup(): void {
   clearDirectoryCache();
   try {
     Deno.removeSync(testDir, { recursive: true });
-  } catch {}
+  } catch { /* already removed */ }
 }
 
 Deno.test("resolveLinkPath - finds .md file in current directory", () => {
@@ -79,7 +79,7 @@ Deno.test("resolveLinkPath - prefers lexicographically first duplicate", () => {
     clearDirectoryCache();
     try {
       Deno.removeSync(testDir, { recursive: true });
-    } catch {}
+    } catch { /* already removed */ }
   }
 });
 
@@ -101,7 +101,7 @@ Deno.test("resolveLinkPath - finds .md file in subdirectory", () => {
     clearDirectoryCache();
     try {
       Deno.removeSync(testDir, { recursive: true });
-    } catch {}
+    } catch { /* already removed */ }
   }
 });
 
@@ -121,7 +121,7 @@ Deno.test("resolveLinkPath - finds index.md in subdirectory", () => {
     clearDirectoryCache();
     try {
       Deno.removeSync(testDir, { recursive: true });
-    } catch {}
+    } catch { /* already removed */ }
   }
 });
 
@@ -141,7 +141,7 @@ Deno.test("resolveLinkPath - finds README.md in nested subdirectory", () => {
     clearDirectoryCache();
     try {
       Deno.removeSync(testDir, { recursive: true });
-    } catch {}
+    } catch { /* already removed */ }
   }
 });
 
@@ -159,7 +159,7 @@ Deno.test("resolveLinkPath - searches subdirectories recursively", () => {
     clearDirectoryCache();
     try {
       Deno.removeSync(testDir, { recursive: true });
-    } catch {}
+    } catch { /* already removed */ }
   }
 });
 
@@ -181,7 +181,7 @@ Deno.test("resolveLinkPath - prefers current directory over subdirectory", () =>
     clearDirectoryCache();
     try {
       Deno.removeSync(testDir, { recursive: true });
-    } catch {}
+    } catch { /* already removed */ }
   }
 });
 
@@ -204,7 +204,7 @@ Deno.test("resolveLinkPath - ignores dot-prefixed directories", () => {
     clearDirectoryCache();
     try {
       Deno.removeSync(testDir, { recursive: true });
-    } catch {}
+    } catch { /* already removed */ }
   }
 });
 
@@ -227,6 +227,6 @@ Deno.test("resolveLinkPath - ignores underscore-prefixed directories", () => {
     clearDirectoryCache();
     try {
       Deno.removeSync(testDir, { recursive: true });
-    } catch {}
+    } catch { /* already removed */ }
   }
 });

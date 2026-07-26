@@ -5,7 +5,8 @@
     "serve": "deno task lume -s",
     "gmi": "deno run -A tasks/gmi.ts",
     "fmt": "deno fmt **/*.ts **/*.tsx",
-    "check": "deno fmt --check **/*.ts **/*.tsx && deno check **/*.ts **/*.tsx"
+    "lint": "deno lint **/*.ts **/*.tsx",
+    "check": "deno fmt --check **/*.ts **/*.tsx && deno task lint && deno check **/*.ts **/*.tsx"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
@@ -22,6 +23,9 @@
   "lint": {
     "plugins": [
       "https://deno.land/x/lume@v3.0.4/lint.ts"
-    ]
+    ],
+    "rules": {
+      "exclude": ["no-import-prefix"]
+    }
   }
 }

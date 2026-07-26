@@ -1,8 +1,23 @@
 import { unified } from "https://esm.sh/unified@11.0.5?target=es2022";
 import rehypeParse from "https://esm.sh/rehype-parse@9.0.1?target=es2022";
 
+interface HastNode {
+  type: string;
+  tagName?: string;
+  value?: string;
+  properties?: {
+    href?: string;
+    src?: string;
+    alt?: string;
+    className?: string | string[];
+  };
+  children?: HastNode[];
+}
+
 export function htmlToGemtext(html: string): string {
-  const tree = unified().use(rehypeParse, { fragment: true }).parse(html);
+  const tree = unified().use(rehypeParse, { fragment: true }).parse(
+    html,
+  ) as HastNode;
 
   // Try to find the main content element
   const mainContent = findMainContent(tree);
@@ -32,17 +47,49 @@ export function htmlToGemtext(html: string): string {
     "aside",
   ];
 
-  function processNode(node: any): void {
+  function processListItemChildren(
+    children: HastNode[],
+    itemPrefix: string,
+  ): void {
+    let itemText = "";
+    const itemLinks: Array<{ href: string; text: string }> = [];
+
+    const processLiNode = (node: HastNode): void => {
+      if (node.type === "text") {
+        itemText += node.value ?? "";
+      } else if (node.tagName === "a") {
+        const href = node.properties?.href || "";
+        const text = getInnerText(node);
+        itemText += text;
+        itemLinks.push({ href, text });
+      } else if (node.children) {
+        node.children.forEach(processLiNode);
+      }
+    };
+
+    children.forEach(processLiNode);
+
+    const trimmed = itemText.trim();
+    if (trimmed) {
+      lines.push(`${itemPrefix}${trimmed}`);
+    }
+
+    itemLinks.forEach((link) => {
+      lines.push(`=> ${link.href} ${link.text}`);
+    });
+  }
+
+  function processNode(node: HastNode): void {
     if (node.type === "text") {
       if (inPreformat) {
-        lines.push(node.value);
+        lines.push(node.value ?? "");
       } else {
-        currentLine += node.value;
+        currentLine += node.value ?? "";
       }
       return;
     }
 
-    if (skipTags.includes(node.tagName)) {
+    if (node.tagName && skipTags.includes(node.tagName)) {
       return;
     }
 
@@ -53,13 +100,13 @@ export function htmlToGemtext(html: string): string {
       if (node.children) {
         // Collect all text content inside pre block
         let preText = "";
-        function collectText(n: any): void {
+        const collectText = (n: HastNode): void => {
           if (n.type === "text") {
-            preText += n.value;
+            preText += n.value ?? "";
           } else if (n.children) {
             n.children.forEach(collectText);
           }
-        }
+        };
         node.children.forEach(collectText);
         // Split by newlines and push each line
         preText.split("\n").forEach((line: string) => {
@@ -84,7 +131,7 @@ export function htmlToGemtext(html: string): string {
         flushLine();
         lines.push(`### ${getInnerText(node)}`);
         break;
-      case "a":
+      case "a": {
         const href = node.properties?.href || "";
         const text = getInnerText(node);
         if (inParagraph) {
@@ -95,13 +142,15 @@ export function htmlToGemtext(html: string): string {
           lines.push(`=> ${href} ${text}`);
         }
         break;
-      case "img":
+      }
+      case "img": {
         flushLine();
         const src = node.properties?.src || "";
         const alt = node.properties?.alt || "";
         lines.push(`=> ${src} ${alt}`);
         break;
-      case "blockquote":
+      }
+      case "blockquote": {
         flushLine();
         // Save current state
         const savedLines = lines;
@@ -133,42 +182,13 @@ export function htmlToGemtext(html: string): string {
         // Push quoted lines to main lines
         quotedLines.forEach((line) => lines.push(line));
         break;
+      }
       case "ul":
         flushLine();
         if (node.children) {
-          node.children.forEach((li: any) => {
-            if (li.tagName === "li") {
-              // Process li children manually to extract text and links
-              let itemText = "";
-              const itemLinks: Array<{ href: string; text: string }> = [];
-
-              function processLiNode(node: any): void {
-                if (node.type === "text") {
-                  itemText += node.value;
-                } else if (node.tagName === "a") {
-                  const href = node.properties?.href || "";
-                  const text = getInnerText(node);
-                  itemText += text;
-                  itemLinks.push({ href, text });
-                } else if (node.children) {
-                  node.children.forEach(processLiNode);
-                }
-              }
-
-              if (li.children) {
-                li.children.forEach(processLiNode);
-              }
-
-              // Output list item
-              const trimmed = itemText.trim();
-              if (trimmed) {
-                lines.push(`* ${trimmed}`);
-              }
-
-              // Output links
-              itemLinks.forEach((link) => {
-                lines.push(`=> ${link.href} ${link.text}`);
-              });
+          node.children.forEach((li) => {
+            if (li.tagName === "li" && li.children) {
+              processListItemChildren(li.children, "* ");
             }
           });
         }
@@ -177,40 +197,9 @@ export function htmlToGemtext(html: string): string {
         flushLine();
         if (node.children) {
           let index = 1;
-          node.children.forEach((li: any) => {
-            if (li.tagName === "li") {
-              // Process li children manually to extract text and links
-              let itemText = "";
-              const itemLinks: Array<{ href: string; text: string }> = [];
-
-              function processLiNode(node: any): void {
-                if (node.type === "text") {
-                  itemText += node.value;
-                } else if (node.tagName === "a") {
-                  const href = node.properties?.href || "";
-                  const text = getInnerText(node);
-                  itemText += text;
-                  itemLinks.push({ href, text });
-                } else if (node.children) {
-                  node.children.forEach(processLiNode);
-                }
-              }
-
-              if (li.children) {
-                li.children.forEach(processLiNode);
-              }
-
-              // Output numbered item
-              const trimmed = itemText.trim();
-              if (trimmed) {
-                lines.push(`${index}. ${trimmed}`);
-              }
-
-              // Output links
-              itemLinks.forEach((link) => {
-                lines.push(`=> ${link.href} ${link.text}`);
-              });
-
+          node.children.forEach((li) => {
+            if (li.tagName === "li" && li.children) {
+              processListItemChildren(li.children, `${index}. `);
               index++;
             }
           });
@@ -246,9 +235,9 @@ export function htmlToGemtext(html: string): string {
     }
   }
 
-  function getInnerText(node: any): string {
+  function getInnerText(node: HastNode): string {
     if (node.type === "text") {
-      return node.value;
+      return node.value ?? "";
     }
     if (!node.children) {
       return "";
@@ -256,7 +245,7 @@ export function htmlToGemtext(html: string): string {
     return node.children.map(getInnerText).join("");
   }
 
-  function findMainContent(node: any): any {
+  function findMainContent(node: HastNode | null | undefined): HastNode | null {
     if (!node) return null;
 
     // Check if this node is the main content container

@@ -2903,6 +2903,7 @@
     "https://deno.land/x/lume@v3.0.4/deps/vento.ts": "75b591df43212d319a5b4fc572330fd1ed54d1f4889090b1e94608ccca284bfc",
     "https://deno.land/x/lume@v3.0.4/deps/xml.ts": "9bdab076e6e859b7bfb76a36503674b5f2fb6fa39a5f75f0d2ae3ee2bc9111a2",
     "https://deno.land/x/lume@v3.0.4/deps/yaml.ts": "c39763fe8d32897c6429ea37de02809bced924e2588ba902c95c3b2c2fed1b5d",
+    "https://deno.land/x/lume@v3.0.4/lint.ts": "4b369361e0cff20a8dfd9e3ff8cb642aa805e7532825ea3a5378eb1f80901fc6",
     "https://deno.land/x/lume@v3.0.4/middlewares/not_found.ts": "0f92cd91239444247a1c3dce1bed4e978445687ca76f544a0ccd483a352f761a",
     "https://deno.land/x/lume@v3.0.4/mod.ts": "4ed2edf622df6109304095952f8a02844f5abc2992b6c9886af632b058f1a8f4",
     "https://deno.land/x/lume@v3.0.4/plugins/favicon.ts": "ac2079aab9009ef38231341924b09d422b7e3049c5d220d650b3f74e7089adff",
@@ -2960,9 +2961,14 @@
     "https://deno.land/x/xml@7.0.0/parse.ts": "8ae0d8339f589c29ab203dd7887e06325e2064efedfe9c61e2cd6d907443b664",
     "https://deno.land/x/xml@7.0.0/stringify.ts": "f604d3d88b8bdaff11dbc9d57a6e98fd9b353e3bfbafcaa3f421e6b470ea0e02",
     "https://deno.land/x/xml@7.0.0/wasm_xml_parser/wasm_xml_parser.js": "960229e82be5dfc58d2d4fe47d800034f892f8f13da4492e0a95fee64050fb34",
+<<<<<<< HEAD
     "https://esm.sh/@wooorm/starry-night@3.10.0/es2022/starry-night.mjs": "c6a838c93caad9f5562aa779b3d4905ea68653e03de9d98e40f9a1e4cfc7c3b3",
     "https://esm.sh/@wooorm/starry-night@3.10.0?target=es2022": "2e20c4f71527c9ace951ac0274b9e267abc2abfdc7d9c1ca4ea7af548b2013b6",
     "https://esm.sh/@wooorm/starry-night@^3.0.0?target=es2022": "2e20c4f71527c9ace951ac0274b9e267abc2abfdc7d9c1ca4ea7af548b2013b6",
+||||||| parent of c0b2aa4 (:zzz: add lint to deno task check)
+=======
+    "https://esm.sh/@wooorm/starry-night@3.10.0?target=es2022": "2e20c4f71527c9ace951ac0274b9e267abc2abfdc7d9c1ca4ea7af548b2013b6",
+>>>>>>> c0b2aa4 (:zzz: add lint to deno task check)
     "https://esm.sh/bail@2.0.2/es2022/bail.mjs": "384030255809f49c4056a4876ee94a177253d8f3d77d2f150f097c5ce91f8ec6",
     "https://esm.sh/bail@^2.0.0?target=es2022": "aeb15905750dfe557795ed48b5076bf799228d2577b64e430564c0bd3127f5f4",
     "https://esm.sh/ccount@2.0.1/es2022/ccount.mjs": "7fe48d2ae8ff72ce3162121cac5fa108e5febc672129de4fcbbd5bb11091d8c5",
@@ -3052,8 +3058,13 @@
     "https://esm.sh/rehype-parse@9.0.1?target=es2022": "d9959ae82eeb99e092921b9c509502858c138af401a4f43e9de5214f4f40c569",
     "https://esm.sh/rehype-picture@5.0.0": "9fd4e48ef0d38249151a3ab874f966bf4dbdf69e00d3b93c494e31eea3ad93a3",
     "https://esm.sh/rehype-picture@5.0.0/denonext/rehype-picture.mjs": "300dd1c863090549fa0779cd6ba746c7b24d7dc0e0e13959afc7b63271ac8479",
+<<<<<<< HEAD
     "https://esm.sh/rehype-starry-night@2.2.0/es2022/rehype-starry-night.mjs": "0ae43e04245811be836b22cc7eabb306622a0c2f0a28c1079ee084e211cd280e",
     "https://esm.sh/rehype-starry-night@2.2.0?target=es2022": "79ce4250c1e660f5dea73c743102638b05b4bc500c1ac4a8c0829d30f32a9c65",
+||||||| parent of c0b2aa4 (:zzz: add lint to deno task check)
+=======
+    "https://esm.sh/rehype-starry-night@2.2.0?target=es2022": "79ce4250c1e660f5dea73c743102638b05b4bc500c1ac4a8c0829d30f32a9c65",
+>>>>>>> c0b2aa4 (:zzz: add lint to deno task check)
     "https://esm.sh/rehype-stringify@10.0.1/es2022/rehype-stringify.mjs": "66fae286c0b92ae7513bb734a852a31973a008a48a2b5aa051802628e836f6b3",
     "https://esm.sh/rehype-stringify@10.0.1?target=es2022": "f68c6be11daafedd4d0c7d9aef2db08cbb0b0f152db0c1eba00f488758e50f50",
     "https://esm.sh/remark-highlight-mark@1.4.0": "a8de92bd1b25ac01ac5b255b5f77212f75807347720a868031fbba197984b228",
