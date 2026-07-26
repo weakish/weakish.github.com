@@ -1,16 +1,15 @@
 // "default" means "my media"
 // more info: https://www.omdb.org/en/de/forum_entry/1182
-interface MoviePageData extends Lume.Data {
-  id: number;
+interface MovieCsvRow {
+  id: string;
   title: string;
-  year: number;
-  vote?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
-  tag?: "watchlist" | "ignorelist" | "default";
-  note: string;
+  year: string;
+  vote?: string;
+  tag?: string;
 }
 
-interface MovieNote extends Lume.Data {
-  id: number;
+interface MovieNoteRow {
+  id: string;
   note: string;
 }
 
@@ -23,58 +22,40 @@ interface NetflixRow {
   netflix: string;
 }
 
-interface Notes {
-  [key: number]: string;
-}
-
 import { parse } from "https://deno.land/std@0.201.0/csv/mod.ts";
 
-const watchedMovies = parse(
-  Deno.readTextFileSync("movies/ratings.csv"),
-  {
+function parseCsv<T>(
+  path: string,
+  options: { columns?: string[] } = {},
+): T[] {
+  return parse(Deno.readTextFileSync(path), {
     skipFirstRow: true,
     strip: true,
-  },
-) as MoviePageData[];
+    ...options,
+  }) as unknown as T[];
+}
 
-const otherMovies = parse(
-  Deno.readTextFileSync("movies/movies.csv"),
-  {
-    skipFirstRow: true,
-    strip: true,
-  },
-) as MoviePageData[];
-
-const movies: MoviePageData[] = watchedMovies.concat(otherMovies);
+const watchedMovies = parseCsv<MovieCsvRow>("movies/ratings.csv");
+const otherMovies = parseCsv<MovieCsvRow>("movies/movies.csv");
+const movies: MovieCsvRow[] = watchedMovies.concat(otherMovies);
 
 const ratedMovies = movies.filter(
   ({ tag }) => tag !== "watchlist" && tag !== "default",
 );
 const ratedOmdbIds = new Set(ratedMovies.map(({ id }) => id));
 const ratedTitleYears = new Set(
-  ratedMovies.map(({ title, year }) => `${title}\0${String(year)}`),
+  ratedMovies.map(({ title, year }) => `${title}\0${year}`),
 );
 
-const movieNotes = parse(
-  Deno.readTextFileSync("movies/notes.csv"),
-  {
-    skipFirstRow: true,
-    strip: true,
-  },
-) as MovieNote[];
+const movieNotes = parseCsv<MovieNoteRow>("movies/notes.csv");
 
-const netflix = parse(
-  Deno.readTextFileSync("movies/netflix.csv"),
-  {
-    skipFirstRow: true,
-    strip: true,
-    columns: ["id", "title", "year", "date", "wikidata", "netflix"],
-  },
-) as NetflixRow[];
+const netflix = parseCsv<NetflixRow>("movies/netflix.csv", {
+  columns: ["id", "title", "year", "date", "wikidata", "netflix"],
+});
 
 function isInRatedTable({ id, title, year }: NetflixRow): boolean {
   if (id.startsWith("m")) {
-    const omdbId = Number(id.slice(1));
+    const omdbId = id.slice(1);
     if (ratedOmdbIds.has(omdbId)) return true;
   }
   return ratedTitleYears.has(`${title}\0${year}`);
@@ -82,7 +63,7 @@ function isInRatedTable({ id, title, year }: NetflixRow): boolean {
 
 const netflixUnrated = netflix.filter((row) => !isInRatedTable(row));
 
-const notes: Notes = {};
+const notes: Record<string, string> = {};
 for (const { id, note } of movieNotes) {
   notes[id] = note;
 }
@@ -114,11 +95,11 @@ export default (data: Lume.Data) => (
                 {(id in notes)
                   ? (
                     <details>
-                      <summary>{vote ?? 0}</summary>
+                      <summary>{vote || "0"}</summary>
                       {notes[id]}
                     </details>
                   )
-                  : vote ?? 0}
+                  : vote || "0"}
               </td>
             </tr>
           ))}
