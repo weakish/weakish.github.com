@@ -1,6 +1,6 @@
 /** Collapse NetflixViewingHistory.csv to one work per distinct title + first watch date. */
 
-import { parse } from "https://deno.land/std@0.201.0/csv/mod.ts";
+import { parse } from "@std/csv";
 
 export interface HistoryRow {
   Title: string;

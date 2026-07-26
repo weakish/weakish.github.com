@@ -1,6 +1,6 @@
 /** Validate movies/netflix.csv against NetflixViewingHistory.csv and schema rules. */
 
-import { parse } from "https://deno.land/std@0.201.0/csv/mod.ts";
+import { parse } from "@std/csv";
 import { type HistoryRow, watchBounds } from "./collapse_history.ts";
 
 const COLUMNS = ["id", "title", "year", "date", "wikidata", "netflix"] as const;

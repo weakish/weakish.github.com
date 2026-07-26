@@ -22,7 +22,7 @@ interface NetflixRow {
   netflix: string;
 }
 
-import { parse } from "https://deno.land/std@0.201.0/csv/mod.ts";
+import { parse } from "@std/csv";
 
 function parseCsv<T>(
   path: string,
