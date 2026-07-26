@@ -64,7 +64,7 @@ Deno.test("getAllDirectories - returns directories (order is filesystem-dependen
   assertEquals(dirs.length > 0, true, "Should find directories");
 });
 
-Deno.test("resolveLinkPath - non-deterministic with duplicate filenames", () => {
+Deno.test("resolveLinkPath - prefers lexicographically first duplicate", () => {
   const testDir = "test-wiki-links-dup-" + Date.now();
   try {
     clearDirectoryCache();
@@ -74,12 +74,7 @@ Deno.test("resolveLinkPath - non-deterministic with duplicate filenames", () => 
     Deno.writeTextFileSync(`${testDir}/subdir2/about.md`, "# About 2");
 
     const result = resolveLinkPath("about", testDir);
-    const valid = result === "/subdir1/about/" || result === "/subdir2/about/";
-    assertEquals(
-      valid,
-      true,
-      "Should resolve to one of subdirectories with link name",
-    );
+    assertEquals(result, "/subdir1/about/");
   } finally {
     clearDirectoryCache();
     try {

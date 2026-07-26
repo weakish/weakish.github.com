@@ -56,6 +56,22 @@ export function clearDirectoryCache(): void {
   directoryCache.clear();
 }
 
+function urlForResolvedDir(
+  searchDir: string,
+  link: string,
+  baseDir: string,
+): string {
+  let urlPath;
+  if (baseDir === ".") {
+    urlPath = searchDir.replace(/^\.\//, "");
+  } else {
+    urlPath = searchDir.startsWith(baseDir + "/")
+      ? searchDir.slice(baseDir.length + 1)
+      : searchDir;
+  }
+  return `/${urlPath}/${link}/`;
+}
+
 // Resolve wiki link to URL path, searching for .md, index.md, or README.md
 export function resolveLinkPath(link: string, baseDir = "."): string {
   const patterns = [`${link}.md`, `${link}/index.md`, `${link}/README.md`];
@@ -77,29 +93,34 @@ export function resolveLinkPath(link: string, baseDir = "."): string {
     directoryCache.set(baseDir, allDirs);
   }
 
-  // Search subdirectories
+  // Search subdirectories; collect matches so duplicates can be reported
+  const matches: string[] = [];
   for (const searchDir of allDirs) {
     for (const pattern of patterns) {
       try {
         Deno.statSync(`${searchDir}/${pattern}`);
-        // Strip leading ./ (for "." baseDir) or baseDir prefix for URL
-        let urlPath;
-        if (baseDir === ".") {
-          urlPath = searchDir.replace(/^\.\//, "");
-        } else {
-          urlPath = searchDir.startsWith(baseDir + "/")
-            ? searchDir.slice(baseDir.length + 1)
-            : searchDir;
-        }
-        return `/${urlPath}/${link}/`;
+        matches.push(urlForResolvedDir(searchDir, link, baseDir));
+        break;
       } catch {
         // File doesn't exist, continue
       }
     }
   }
 
-  // Fallback: return original link
-  return `/${link}/`;
+  if (matches.length === 0) {
+    console.warn(`Unresolved wiki link: [[${link}]] (from ${baseDir})`);
+    return `/${link}/`;
+  }
+
+  matches.sort();
+  if (matches.length > 1) {
+    console.warn(
+      `Ambiguous wiki link [[${link}]]: ${matches.join(", ")} (using ${
+        matches[0]
+      })`,
+    );
+  }
+  return matches[0];
 }
 
 export function customWikiLinks() {
