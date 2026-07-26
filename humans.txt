@@ -10,6 +10,27 @@ About
 This is a learning-by-doing project to experiment with Lume and Deno.
 Pull requests are welcome.
 
+Hosting
+-------
+
+The canonical site is at https://mmap.page, hosted on [Netlify][].
+
+A mirror is published at http://weakish.github.io on [GitHub Pages][].
+The mirror build sets the `MIRROR_LOCATION` environment variable so absolute
+URLs in feeds and sitemaps use the mirror location.
+If you can use HTTPS, prefer the canonical site.
+
+Some features work only on Netlify and degrade on the mirror:
+
+- `[[redirects]]` in `netlify.toml` — GitHub Pages uses static HTML stubs
+  with meta refresh at the source paths instead
+- `[[headers]]` — GitHub Pages cannot set custom response headers
+- `[[edge_functions]]` for `/teapot` — GitHub Pages serves a static
+  `teapot/index.html` instead
+
+[Netlify]: https://www.netlify.com/
+[GitHub Pages]: https://pages.github.com/
+
 Why Lume
 --------
 
