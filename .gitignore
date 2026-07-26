@@ -1,7 +1,5 @@
 _site
 
-deno.lock
-
 .obsidian/
 
 **.orig
