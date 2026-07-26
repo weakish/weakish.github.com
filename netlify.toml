@@ -118,6 +118,12 @@
     force = true
 
 [[redirects]]
+    from = "/thoughts/typescrit-slogan/"
+    to = "/thoughts/typescript-slogan/"
+    status = 301
+    force = true
+
+[[redirects]]
     from = "/dapi/no-blog/"
     to = "/thoughts/blog/"
     status = 301

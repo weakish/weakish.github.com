@@ -122,6 +122,7 @@ site.copy("dapi/wash-clothes");
 site.copy("dapi/windows-handbook");
 site.copy("dapi/zhuzhu");
 site.copy("fun/heart");
+site.copy("thoughts/typescrit-slogan");
 site.copy("StutteringTalkaholic/hardening");
 site.copy("StutteringTalkaholic/ruby");
 site.use(sitemap({
