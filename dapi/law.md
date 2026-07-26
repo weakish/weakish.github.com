@@ -1,3 +1,7 @@
+---
+lang: zh-Hans
+---
+
 # An Introduction to Law for Programmers
 
 ## 预备知识和技能

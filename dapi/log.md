@@ -1,3 +1,7 @@
+---
+lang: zh
+---
+
 想到一个 twitter 的翻译，粥粥（zhu⁴ zhu⁴）。【唐】韓愈《雉朝飛操》詩：「隨飛隨啄，群雌粥粥。」
 
 -- [2017-08-19 09:55](http://fanfou.com/statuses/kPaEFHQbnpU)

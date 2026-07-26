@@ -2,6 +2,7 @@
 wnpp:
     type: O
     description: "Chinese labor law is a mess in practice."
+lang: zh-Hans
 ---
 
 # 劳动法

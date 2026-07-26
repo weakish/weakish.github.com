@@ -2,6 +2,7 @@
 wnpp:
     type: O
     description: "May be obsolete."
+lang: zh-Hans
 ---
 
 

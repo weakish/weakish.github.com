@@ -2,6 +2,7 @@
 wnpp:
     type: O
     description: "Not interested in this game anymore."
+lang: zh-Hans
 ---
 
 # 金庸群侠传3古墓版攻略

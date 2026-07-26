@@ -2,6 +2,7 @@
 wnpp:
     type: O
     description: "Not interested in this game anymore."
+lang: zh-Hans
 ---
 
 金庸群侠传 2 加强版作弊教程

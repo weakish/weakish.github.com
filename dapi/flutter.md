@@ -1,5 +1,6 @@
 ---
 removal: obsolete
+lang: zh-Hans
 ---
 
 Flutter试玩
