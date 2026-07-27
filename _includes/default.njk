@@ -36,6 +36,16 @@ site:
         padding: 45px;
       }
 
+      /* github-markdown sets max-width:100%; keep aspect ratio with attributed height */
+      .markdown-body img {
+        height: auto;
+      }
+
+      /* Schedule / note tables: keep poster thumbs compact */
+      .markdown-body table img {
+        max-width: 7.5rem;
+      }
+
       @media(max-width: 767px) {
         .markdown-body {
           padding: 15px;
