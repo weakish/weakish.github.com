@@ -60,6 +60,13 @@ Also, kitty is from Kovid Goyal, the author of [calibre].
 [kitty]: https://sw.kovidgoyal.net/kitty/
 [calibre]: https://github.com/kovidgoyal/calibre
 
+## Linux
+
+As a long time macOS (and Mac OS X) user, I still feel at home on Linux.
+Unfortunately right now I am stuck with macOS as the desktop system, with [Devuan] Excalibur in the VM.
+
+[Devuan]: https://devuan.org/
+
 ## Browser
 
 I use DuckDuckGo browser with the advertisements in DuckDuckGo search engine disabled,
