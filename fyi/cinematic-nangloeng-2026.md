@@ -65,6 +65,5 @@ Listed runtime ≈ 104–110 min ([IMDb](https://www.imdb.com/title/tt0129728/) 
 | Full | [Full (MonoGlobalTV)](https://www.youtube.com/watch?v=qW85GRkHhLg) | 1h 42m 49s. English title; MonoGlobalTV; English synopsis. Matches typical ~103 min cut. Prefer this. |
 | Full | [Full (Thai Comedy)](https://www.youtube.com/watch?v=M7UOktGh5l0) | 1h 42m 49s. Same length (likely same encode); Thai Comedy channel; high views. |
 | Full | [Full (+40s)](https://www.youtube.com/watch?v=7HnZReS9qEo) | 1h 43m 28s. Another full upload (~40s longer — intro/outro or slight different master). |
-| Full | [Full (longer; caution)](https://www.youtube.com/watch?v=dvnPnBy8CdI) | 1h 49m 01s. Longer than listed runtime — possible padding/alternate/mislabeled; treat cautiously. |
 | Trailer | [Thai trailer](https://www.youtube.com/watch?v=QF9ZgasvEHo) | 2m 47s. Thai trailer; cast/director correct. |
 | Trailer | [English trailer](https://www.youtube.com/watch?v=b0Pj_3qknks) | 2m 12s. English-commentary trailer; title year 1996 is wrong (film is 1997). |
