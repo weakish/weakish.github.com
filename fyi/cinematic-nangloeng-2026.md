@@ -13,6 +13,8 @@ Official listing: [Film Archive (FAPOT)](https://www.fapot.or.th/main/news/1132)
 
 Uploads come and go for rights reasons. Durations use `h` / `m` / `s` (e.g. `2m 45s`, `2h 04m 56s`).
 
+Soundtrack links prefer Wikidata, then MusicBrainz, then Internet Archive, then YouTube Music, then other streaming.
+
 <h3 id="the-boat-house">Tue 28 Jul — The Boat House (เรือนแพ, 1961)</h3>
 
 Listed runtime ≈ 125 min ([th.wikipedia](https://th.wikipedia.org/wiki/%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%9E_(%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B9%8C))).
@@ -24,6 +26,14 @@ Listed runtime ≈ 125 min ([th.wikipedia](https://th.wikipedia.org/wiki/%E0%B9%
 | Clip | [Theme song with stills](https://www.youtube.com/watch?v=yits-wxGXGI) | 2m 45s. Theme song (ชรินทร์ นันทนาคร) with film stills — not a narrative clip of the feature. |
 | Theme | [Theme audio (Rose Media)](https://www.youtube.com/watch?v=FLAWqRKlfkE) | 2m 49s. Official audio of the same theme (Rose Media). |
 | Archive newsreel | [Film Archive royal screening](https://www.youtube.com/watch?v=CM2Xt3PxSwY) | 2m 41s. Film Archive Thailand: royal screening of *เรือนแพ*, not the movie. |
+
+Soundtrack:
+
+| Type | Link | Notes |
+| --- | --- | --- |
+| Wikidata | [เรือนแพ (Q16304656)](https://www.wikidata.org/wiki/Q16304656) | Theme song item; sitelink [th.wikipedia เรือนแพ (เพลง)](https://th.wikipedia.org/wiki/%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%9E_(%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%87)). No MusicBrainz recording or Internet Archive audio found for ชรินทร์'s version. |
+| YouTube Music | [เรือนแพ — ชรินทร์ นันทนาคร](https://music.youtube.com/watch?v=FLAWqRKlfkE) | Official audio (Rose Media); same upload as Theme row above. |
+| Streaming | [Apple Music — เรือนแพ](https://music.apple.com/th/album/1179738380?i=1179738398) | Charin Nuntanakorn. Also on [Deezer](https://www.deezer.com/track/136820984). |
 
 Cast ↔ roles ([th.wikipedia](https://th.wikipedia.org/wiki/%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%9E_(%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B9%8C)) / [ThaiContentDB](https://thaicontentdb.com/en/movies/cmesbkt9f01lgwumqjf2mh87i)):
 
@@ -55,6 +65,15 @@ Listed runtime ≈ 137 min ([ThaiContentDB](https://thaicontentdb.com/en/movies/
 | Full | [โทน full (Piak Poster)](https://www.youtube.com/watch?v=TCaevvyJmWE) | 2h 16m 06s (~136 min). Clear synopsis; Piak Poster / Suwann Film / 1970. Prefer this (more views). |
 | Full | [โทน full (reupload)](https://www.youtube.com/watch?v=oWON0giWVaQ) | 2h 16m 29s. Same film, nearly identical length; low-view reupload. |
 | BTS | [35 mm making-of](https://www.youtube.com/watch?v=XPmYfNT5ke4) | 16m 54s. Making-of of the 35 mm shoot (ชุมทางหนังไทย), not a trailer. |
+
+Soundtrack ([th.wikipedia tracklist](https://th.wikipedia.org/wiki/%E0%B9%82%E0%B8%97%E0%B8%99_(%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B9%8C)#%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A): โทน / อย่าบอน — สังข์ทอง; ปิดเทอม / เริงรถไฟ / ชื่นรัก — ดิอิมพอสซิเบิ้ล; plus others). No Wikidata soundtrack item, MusicBrainz OST release, or Internet Archive audio found.
+
+| Type | Link | Notes |
+| --- | --- | --- |
+| MusicBrainz | [The Impossibles](https://musicbrainz.org/artist/3b27c8a0-091c-4eb7-97bb-92be2f8b2533) · [สังข์ทอง สีใส](https://musicbrainz.org/artist/e65b6957-22ea-4741-b508-8cc6e22a617d) | Artist pages only; Tone OST recordings not catalogued on MusicBrainz. |
+| YouTube Music | [ปิดเทอม — ดิอิมพอสซิเบิ้ล](https://music.youtube.com/watch?v=mCeV-YTbp9Q) | Title-sequence song from the film. |
+| YouTube Music | [โทน — สังข์ทอง สีใส](https://music.youtube.com/watch?v=HHds1B8rq0Q) | Title song (fan upload labeled โทน 1970). |
+| Streaming | [Apple Music — ชุด 1 ชื่นรัก เริงรถไฟ](https://music.apple.com/th/album/1391474108) | The Impossible (ดิอิมพอสซิเบิ้ล): includes ปิดเทอม, เริงรถไฟ, ชื่นรัก. สังข์ทอง's โทน not found on Apple. |
 
 Cast ↔ roles ([th.wikipedia](https://th.wikipedia.org/wiki/%E0%B9%82%E0%B8%97%E0%B8%99_(%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B9%8C)) / [ThaiContentDB](https://thaicontentdb.com/en/movies/cmesbp6ov02sfwumqm7ue8ht3)):
 
@@ -91,6 +110,8 @@ No full feature found online as of 2026-07-28.
 | Type | Link | Notes |
 | --- | --- | --- |
 | Clip | [Film Archive promo](https://www.youtube.com/watch?v=o-M8EBNV5Po) | 1m 19s. Film Archive scan/screening promo — not the feature. |
+
+Soundtrack: no dedicated OST release found online for the 1978 remake (Wikidata / MusicBrainz / Internet Archive / YouTube Music / Apple / Deezer). The better-known song วันเพ็ญ ([later cover](https://music.youtube.com/watch?v=fQWYLtReEC4)) belongs to [Wan Phen (1938)](https://thaicontentdb.com/movies/cmesbfsx70067wumqs2je2gt0), not this remake.
 
 Cast ↔ roles from contemporary synopsis pages ([p.1](/fyi/cinematic-nangloeng-2026/wan-phen-synopsis-1.jpg) · [p.2](/fyi/cinematic-nangloeng-2026/wan-phen-synopsis-2.jpg); Thai Movie Posters press write-up):
 
@@ -132,6 +153,13 @@ Listed runtime ≈ 112 min ([IMDb](https://www.imdb.com/title/tt1022547/)). Rele
 | Trailer | [Fan trailer](https://www.youtube.com/watch?v=eHDFkIdfdNQ) | 2m 48s. Fan trailer; title wrongly says (1994); description correctly IDs RS Film’s first theatrical feature. |
 | OST MV | [Title-song MV](https://www.youtube.com/watch?v=0Rk3FfHw6QE) | 4m 00s. Official title-song MV (เต๋า สมชาย / RSMUSIC-X); film footage, not a theatrical trailer. |
 
+Soundtrack: no Wikidata soundtrack item, MusicBrainz release, or Internet Archive audio album found (IA hosts the feature only).
+
+| Type | Link | Notes |
+| --- | --- | --- |
+| YouTube Music | [โลกทั้งใบให้นายคนเดียว — เต๋า สมชาย](https://music.youtube.com/watch?v=0Rk3FfHw6QE) | Official title-song MV (same as OST MV row). MusicBrainz has [สมชาย เข็มกลัด](https://musicbrainz.org/artist/2f0a8e37-0ddd-4098-9fe7-5639e6c24a42) as artist only. |
+| Streaming | [Apple Music — เพลงประกอบภาพยนตร์ โลกทั้งใบให้นายคนเดียว](https://music.apple.com/th/album/1798528506) | Full OST album (RS). Title track also on Deezer / other RS compilations. |
+
 Cast ↔ roles ([th.wikipedia](https://th.wikipedia.org/wiki/%E0%B9%82%E0%B8%A5%E0%B8%81%E0%B8%97%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B9%83%E0%B8%9A%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7)):
 
 | Actor | Role |
@@ -164,6 +192,12 @@ Listed runtime ≈ 104–110 min ([IMDb](https://www.imdb.com/title/tt0129728/) 
 | Full | [Full (+40s)](https://www.youtube.com/watch?v=7HnZReS9qEo) | 1h 43m 28s. Another full upload (~40s longer — intro/outro or slight different master). |
 | Trailer | [Thai trailer](https://www.youtube.com/watch?v=QF9ZgasvEHo) | 2m 47s. Thai trailer; cast/director correct. |
 | Trailer | [English trailer](https://www.youtube.com/watch?v=b0Pj_3qknks) | 2m 12s. English-commentary trailer; title year 1996 is wrong (film is 1997). |
+
+Soundtrack: Wolfpack OST (7 วันที่ฉันเหงา, อย่ามาใกล้ฉัน, แค่คำว่ารัก, สิ่งสุดท้าย, อันธพาล, …). No Wikidata soundtrack item, MusicBrainz release (other “Wolfpack” bands are unrelated), Internet Archive audio, or major-store album under this Thai band.
+
+| Type | Link | Notes |
+| --- | --- | --- |
+| YouTube Music | [Wolfpack OST 2499 (full LP upload)](https://music.youtube.com/watch?v=8JxQeKhtjE4) | Fan long-play of the 1997 OST. Prefer individual tracks if this upload disappears: [7 วันที่ฉันเหงา](https://music.youtube.com/watch?v=pQruRCxYx58), [อันธพาล](https://music.youtube.com/watch?v=gUQjbSBsVRo), [แค่คำว่ารัก](https://music.youtube.com/watch?v=KMKWkzyIj5o). |
 
 Cast ↔ roles ([th.wikipedia](https://th.wikipedia.org/wiki/2499_%E0%B8%AD%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%9E%E0%B8%B2%E0%B8%A5%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87)):
 
