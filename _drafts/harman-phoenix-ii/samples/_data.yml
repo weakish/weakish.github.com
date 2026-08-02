@@ -1,0 +1,3 @@
+transformImages:
+  resize: [960]
+  format: [avif, jpg]
