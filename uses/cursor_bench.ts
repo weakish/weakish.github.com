@@ -12,6 +12,14 @@ export interface CursorBenchRow {
 
 const EFFORTS = ["Extra High", "Medium", "High", "Low", "Max"] as const;
 
+const EFFORT_LINE_ORDER: Record<string, number> = {
+  Low: 0,
+  Medium: 1,
+  High: 2,
+  "Extra High": 3,
+  Max: 4,
+};
+
 export const CURSOR_BENCH_CSV_PATH = new URL(
   "./cursor-bench.csv",
   import.meta.url,
@@ -196,8 +204,17 @@ function uniqueFamiliesInScoreOrder(rows: CursorBenchRow[]): string[] {
     .map(([family]) => family);
 }
 
+function compareFamilyRowsByEffort(
+  a: CursorBenchRow,
+  b: CursorBenchRow,
+): number {
+  const orderA = EFFORT_LINE_ORDER[a.effort] ?? Number.POSITIVE_INFINITY;
+  const orderB = EFFORT_LINE_ORDER[b.effort] ?? Number.POSITIVE_INFINITY;
+  return orderA - orderB || compareUtf16(a.model, b.model);
+}
+
 function polylineForFamily(rows: CursorBenchRow[]): string {
-  const sorted = [...rows].sort((a, b) => a.cost - b.cost);
+  const sorted = [...rows].sort(compareFamilyRowsByEffort);
   return sorted
     .map((row) =>
       `${cursorBenchCostToX(row.cost).toFixed(1)},${
@@ -244,7 +261,8 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
 
   const series = families.map((family) => {
     const color = colorForFamily(familyColors, family);
-    const familyRows = rows.filter((row) => row.family === family);
+    const familyRows = rows.filter((row) => row.family === family)
+      .sort(compareFamilyRowsByEffort);
     const line = familyRows.length > 1
       ? `<polyline fill="none" stroke="${color}" stroke-width="1.5" points="${
         polylineForFamily(familyRows)
@@ -275,7 +293,7 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="${WIDTH}" height="${HEIGHT}" role="img" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#333">
   <title>CursorBench 3.2 score versus average cost per task</title>
-  <desc>Scatter plot of CursorBench 3.2 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected.</desc>
+  <desc>Scatter plot of CursorBench 3.2 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Low, Medium, High, Extra High, then Max. Hover a point for the model name.</desc>
   ${grid}
   <line x1="${PLOT_LEFT}" y1="${PLOT_BOTTOM}" x2="${PLOT_RIGHT}" y2="${PLOT_BOTTOM}" stroke="#333"/>
   <line x1="${PLOT_LEFT}" y1="${PLOT_TOP}" x2="${PLOT_LEFT}" y2="${PLOT_BOTTOM}" stroke="#333"/>

@@ -127,6 +127,31 @@ Deno.test("linear probe throws when the palette is exhausted", () => {
   throw new Error("expected palette exhaustion");
 });
 
+Deno.test("family polyline connects Low then Medium then High", () => {
+  const csv = `model,score_pct,cost,tokens,steps
+Family High,70.0,1.50,80,8
+Family Low,50.0,1.00,80,8
+Family Medium,60.0,3.00,80,8
+`;
+  const svg = renderCursorBenchSvg(parseCursorBenchCsv(csv));
+  const match = svg.match(/<polyline [^>]*points="([^"]+)"/);
+  if (!match) {
+    throw new Error("missing family polyline");
+  }
+  const expected = [
+    `${cursorBenchCostToX(1).toFixed(1)},${cursorBenchScoreToY(50).toFixed(1)}`,
+    `${cursorBenchCostToX(3).toFixed(1)},${cursorBenchScoreToY(60).toFixed(1)}`,
+    `${cursorBenchCostToX(1.5).toFixed(1)},${
+      cursorBenchScoreToY(70).toFixed(1)
+    }`,
+  ].join(" ");
+  if (match[1] !== expected) {
+    throw new Error(
+      `expected effort-order points ${expected}, got ${match[1]}`,
+    );
+  }
+});
+
 Deno.test("parseCursorBenchCsv and SVG cover every row without a family color map", () => {
   const csv = `model,score_pct,cost,tokens,steps
 Alpha Extra High,70.5,2.50,100,10
