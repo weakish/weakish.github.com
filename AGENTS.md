@@ -32,6 +32,7 @@ Under `.agents/skills/<name>/SKILL.md`. When a task matches a skill description,
 | Skill | Path |
 |-------|------|
 | Git commits and trailers | `.agents/skills/git-commits/SKILL.md` |
+| Review one commit | `.agents/skills/review/SKILL.md` |
 | Generate `movies/netflix.csv` | `.agents/skills/generate-netflix-csv/SKILL.md` |
 
 ## Git (multi-agent cwd)
