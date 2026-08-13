@@ -12,6 +12,7 @@ Points from the same model family are connected Low → Medium → High → Extr
 Hover a point for the model name and effort.
 Numbers are from the public leaderboard (pricing snapshot 11 Aug 2026),
 plus Grok 4.5 Low/Medium/High from an earlier 3.2 snapshot (dropped after Grok 4.6).
+Grok 4.5 has an advantage on CursorBench: an earlier snapshot of the Cursor codebase was unintentionally included in training. The exact score impact is unclear.
 
 ![CursorBench 3.2 score versus average cost per task](/uses/cursor-bench.svg)
 
