@@ -4,6 +4,15 @@ Cursor [models and pricing](https://cursor.com/docs/models-and-pricing#model-pri
 Prices are per million tokens. Speed, cost, and intelligence tiers come from the Cursor docs model metadata.
 Release year and knowledge cutoff year come from provider documentation when Cursor does not publish them.
 
+## CursorBench
+
+[CursorBench](https://cursor.com/cursorbench) 3.2 plots correctness against average cost per task.
+Cost decreases toward the right, so the upper-right is higher score at lower cost.
+Points from the same model family are connected across effort levels.
+Numbers are from the public leaderboard (pricing snapshot 11 Aug 2026).
+
+![CursorBench 3.2 score versus average cost per task](/uses/cursor-bench.svg)
+
 | Model ID | Context window | Max context | Provider | Capabilities | Speed | Cost | Intelligence | Release year | Knowledge cutoff year | Input | Cache write | Cache read | Output |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [claude-4-sonnet](https://cursor.com/docs/models/claude-4-sonnet) | 200k | - | Anthropic | Agent, Thinking, Images | medium | medium | high | 2025 | 2025 | $3 | $3.75 | $0.3 | $15 |

@@ -55,7 +55,7 @@ site.use(jsx());
 site.use(pagefind());
 site.use(purgecss());
 site.use(transformImages());
-site.add([".png", ".jpg"]);
+site.add([".png", ".jpg", ".svg"]);
 site.use(remark({
   remarkPlugins: [
     customWikiLinks,
@@ -88,7 +88,9 @@ site.use(remark({
 site.use(resolve_urls());
 site.use(readme());
 
-site.ignore((path) => path.startsWith("/plugins/") || path.endsWith(".canvas.tsx"));
+site.ignore((path) =>
+  path.startsWith("/plugins/") || path.endsWith(".canvas.tsx")
+);
 
 site.use(favicon());
 
