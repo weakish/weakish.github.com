@@ -9,7 +9,8 @@ Release year and knowledge cutoff year come from provider documentation when Cur
 [CursorBench](https://cursor.com/cursorbench) 3.2 plots correctness against average cost per task.
 Cost decreases toward the right, so the upper-right is higher score at lower cost.
 Points from the same model family are connected across effort levels.
-Numbers are from the public leaderboard (pricing snapshot 11 Aug 2026).
+Numbers are from the public leaderboard (pricing snapshot 11 Aug 2026),
+plus Grok 4.5 Low/Medium/High from an earlier 3.2 snapshot (dropped after Grok 4.6).
 
 ![CursorBench 3.2 score versus average cost per task](/uses/cursor-bench.svg)
 
