@@ -1,60 +1,60 @@
-model,score_pct,cost,tokens,steps
-Grok 4.6 Extra High,70.8,2.81,41136,46
-Fable 5 Max,70.5,17.32,103525,72
-Opus 5 Max,70.0,8.23,61838,78
-Grok 4.6 High,69.9,2.34,32449,39
-Opus 5 Extra High,69.3,7.35,54239,72
-Fable 5 Extra High,68.4,11.73,64971,56
-GPT-5.6 Sol Max,67.2,5.69,28320,48
-Grok 4.6 Medium,67.1,1.28,17942,29
-Opus 5 High,66.7,3.91,27932,48
-Grok 4.5 High,66.7,1.51,19521,33
-Fable 5 High,66.5,8.77,43747,48
-Grok 4.5 Medium,65.4,1.54,18914,34
-Fable 5 Medium,65.2,6.80,30366,41
-GPT-5.6 Terra Max,64.9,2.31,32969,47
-GPT-5.6 Sol Extra High,64.5,3.88,19699,38
-Opus 5 Medium,64.3,3.29,23612,44
-GPT-5.6 Sol High,63.5,2.79,13867,32
-Grok 4.5 Low,63.5,1.22,15841,31
-Opus 5 Low,62.8,2.55,18529,37
-Opus 4.8 Max,62.3,5.77,71411,44
-Fable 5 Low,62.1,4.46,18182,31
-Gemini 3.7 Flash High,61.6,1.20,38448,99
-Sonnet 5 Max,61.5,4.30,92882,86
-GPT-5.6 Luna Max,61.1,0.39,87973,61
-Grok 4.6 Low,61.0,0.70,10658,23
-Kimi K3 Max,60.8,2.70,38428,57
-GPT-5.6 Sol Medium,60.0,1.95,9747,27
-Kimi K3 High,59.7,1.89,26846,47
-Opus 4.8 Extra High,59.4,4.50,51121,40
-GPT-5.6 Terra Extra High,59.2,1.15,16089,29
-Gemini 3.7 Flash Medium,59.0,0.95,30953,82
-Sonnet 5 Extra High,58.7,2.77,52871,67
-GPT-5.5 High,58.4,2.05,12183,28
-GPT-5.5 Extra High,58.4,2.85,17534,32
-Opus 4.8 High,58.0,3.15,33548,33
-GPT-5.6 Luna Extra High,57.7,0.23,22480,48
-Sonnet 5 High,56.9,2.13,39483,57
-GPT-5.6 Luna High,56.8,0.16,15141,40
-Opus 4.8 Medium,56.1,2.81,28384,32
-Composer 2.5,56.1,0.44,14286,33
-GLM 5.2 Max,55.0,1.76,35946,58
-GPT-5.6 Terra High,54.2,0.71,9468,23
-GPT-5.5 Medium,53.8,1.51,8522,25
-Gemini 3.7 Flash Low,53.8,0.74,20594,68
-Gemini 3.6 Flash High,53.5,1.56,30436,64
-Opus 4.8 Low,53.1,2.02,19624,27
-GPT-5.6 Sol Low,52.6,1.01,5104,19
-Sonnet 5 Medium,52.4,1.44,26200,46
-GLM 5.2 High,51.5,1.19,21829,49
-Gemini 3.6 Flash Medium,51.2,1.48,28511,62
-Kimi K3 Low,50.5,0.99,13007,33
-GPT-5.6 Terra Medium,50.3,0.49,6222,20
-Kimi K2.7 Code,49.7,1.43,31247,58
-GPT-5.6 Luna Medium,47.7,0.08,7095,28
-Sonnet 5 Low,47.7,0.87,16269,33
-Gemini 3.6 Flash Low,47.4,1.13,20529,50
-GPT-5.6 Terra Low,46.9,0.42,5312,19
-GPT-5.5 Low,46.6,0.98,5168,20
-GPT-5.6 Luna Low,37.6,0.03,3209,17
+model,score_pct,cost,tokens,steps,cursor_cloud
+Grok 4.6 Extra High,70.8,2.81,41136,46,-
+Fable 5 Max,70.5,17.32,103525,72,-
+Opus 5 Max,70.0,8.23,61838,78,-
+Grok 4.6 High,69.9,2.34,32449,39,yes
+Opus 5 Extra High,69.3,7.35,54239,72,-
+Fable 5 Extra High,68.4,11.73,64971,56,yes
+GPT-5.6 Sol Max,67.2,5.69,28320,48,-
+Grok 4.6 Medium,67.1,1.28,17942,29,-
+Opus 5 High,66.7,3.91,27932,48,yes
+Grok 4.5 High,66.7,1.51,19521,33,yes
+Fable 5 High,66.5,8.77,43747,48,yes
+Grok 4.5 Medium,65.4,1.54,18914,34,-
+Fable 5 Medium,65.2,6.80,30366,41,-
+GPT-5.6 Terra Max,64.9,2.31,32969,47,-
+GPT-5.6 Sol Extra High,64.5,3.88,19699,38,yes
+Opus 5 Medium,64.3,3.29,23612,44,-
+GPT-5.6 Sol High,63.5,2.79,13867,32,yes
+Grok 4.5 Low,63.5,1.22,15841,31,-
+Opus 5 Low,62.8,2.55,18529,37,-
+Opus 4.8 Max,62.3,5.77,71411,44,-
+Fable 5 Low,62.1,4.46,18182,31,-
+Gemini 3.7 Flash High,61.6,1.20,38448,99,yes
+Sonnet 5 Max,61.5,4.30,92882,86,-
+GPT-5.6 Luna Max,61.1,0.39,87973,61,-
+Grok 4.6 Low,61.0,0.70,10658,23,-
+Kimi K3 Max,60.8,2.70,38428,57,-
+GPT-5.6 Sol Medium,60.0,1.95,9747,27,-
+Kimi K3 High,59.7,1.89,26846,47,-
+Opus 4.8 Extra High,59.4,4.50,51121,40,-
+GPT-5.6 Terra Extra High,59.2,1.15,16089,29,-
+Gemini 3.7 Flash Medium,59.0,0.95,30953,82,-
+Sonnet 5 Extra High,58.7,2.77,52871,67,yes
+GPT-5.5 High,58.4,2.05,12183,28,-
+GPT-5.5 Extra High,58.4,2.85,17534,32,-
+Opus 4.8 High,58.0,3.15,33548,33,-
+GPT-5.6 Luna Extra High,57.7,0.23,22480,48,-
+Sonnet 5 High,56.9,2.13,39483,57,yes
+GPT-5.6 Luna High,56.8,0.16,15141,40,yes
+Opus 4.8 Medium,56.1,2.81,28384,32,-
+Composer 2.5,56.1,0.44,14286,33,yes
+GLM 5.2 Max,55.0,1.76,35946,58,-
+GPT-5.6 Terra High,54.2,0.71,9468,23,-
+GPT-5.5 Medium,53.8,1.51,8522,25,-
+Gemini 3.7 Flash Low,53.8,0.74,20594,68,-
+Gemini 3.6 Flash High,53.5,1.56,30436,64,-
+Opus 4.8 Low,53.1,2.02,19624,27,-
+GPT-5.6 Sol Low,52.6,1.01,5104,19,-
+Sonnet 5 Medium,52.4,1.44,26200,46,-
+GLM 5.2 High,51.5,1.19,21829,49,-
+Gemini 3.6 Flash Medium,51.2,1.48,28511,62,-
+Kimi K3 Low,50.5,0.99,13007,33,-
+GPT-5.6 Terra Medium,50.3,0.49,6222,20,-
+Kimi K2.7 Code,49.7,1.43,31247,58,-
+GPT-5.6 Luna Medium,47.7,0.08,7095,28,-
+Sonnet 5 Low,47.7,0.87,16269,33,-
+Gemini 3.6 Flash Low,47.4,1.13,20529,50,-
+GPT-5.6 Terra Low,46.9,0.42,5312,19,-
+GPT-5.5 Low,46.6,0.98,5168,20,-
+GPT-5.6 Luna Low,37.6,0.03,3209,17,-

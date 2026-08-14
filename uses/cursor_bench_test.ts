@@ -1,4 +1,5 @@
 import {
+  CURSOR_BENCH_CSV_PATH,
   cursorBenchColorsForFamilies,
   cursorBenchCostToX,
   cursorBenchScoreToY,
@@ -46,10 +47,10 @@ function plotFillColorForModel(svg: string, model: string): string {
 }
 
 Deno.test("family colors ignore CSV row order", () => {
-  const csv = `model,score_pct,cost,tokens,steps
-Zeta High,60.0,1.00,80,8
-Alpha Extra High,70.5,2.50,100,10
-Alpha High,60.0,1.00,80,8
+  const csv = `model,score_pct,cost,tokens,steps,cursor_cloud
+Zeta High,60.0,1.00,80,8,-
+Alpha Extra High,70.5,2.50,100,10,-
+Alpha High,60.0,1.00,80,8,-
 `;
   const rows = parseCursorBenchCsv(csv);
   const svgForward = renderCursorBenchSvg(rows);
@@ -72,9 +73,9 @@ Deno.test("family sorts use UTF-16 order not locale collation", () => {
   if (probeOrder.join(",") !== "B,a") {
     throw new Error(`expected UTF-16 order B,a; got ${probeOrder.join(",")}`);
   }
-  const csv = `model,score_pct,cost,tokens,steps
-a High,50.0,1.00,10,5
-B High,50.0,2.00,10,5
+  const csv = `model,score_pct,cost,tokens,steps,cursor_cloud
+a High,50.0,1.00,10,5,-
+B High,50.0,2.00,10,5,-
 `;
   const svg = renderCursorBenchSvg(parseCursorBenchCsv(csv));
   const legendA = svg.indexOf(">a</text>");
@@ -128,10 +129,10 @@ Deno.test("linear probe throws when the palette is exhausted", () => {
 });
 
 Deno.test("family polyline connects Low then Medium then High", () => {
-  const csv = `model,score_pct,cost,tokens,steps
-Family High,70.0,1.50,80,8
-Family Low,50.0,1.00,80,8
-Family Medium,60.0,3.00,80,8
+  const csv = `model,score_pct,cost,tokens,steps,cursor_cloud
+Family High,70.0,1.50,80,8,-
+Family Low,50.0,1.00,80,8,-
+Family Medium,60.0,3.00,80,8,-
 `;
   const svg = renderCursorBenchSvg(parseCursorBenchCsv(csv));
   const match = svg.match(/<polyline [^>]*points="([^"]+)"/);
@@ -153,10 +154,10 @@ Family Medium,60.0,3.00,80,8
 });
 
 Deno.test("parseCursorBenchCsv and SVG cover every row without a family color map", () => {
-  const csv = `model,score_pct,cost,tokens,steps
-Alpha Extra High,70.5,2.50,100,10
-Alpha High,60.0,1.00,80,8
-Brand-New Bench Family Max,55.0,0.40,50,5
+  const csv = `model,score_pct,cost,tokens,steps,cursor_cloud
+Alpha Extra High,70.5,2.50,100,10,-
+Alpha High,60.0,1.00,80,8,-
+Brand-New Bench Family Max,55.0,0.40,50,5,-
 `;
   const rows = parseCursorBenchCsv(csv);
   if (rows.length !== 3) {
@@ -177,5 +178,116 @@ Brand-New Bench Family Max,55.0,0.40,50,5
     throw new Error(
       `expected ${rows.length} plot circles, got ${plotCircles.length}`,
     );
+  }
+});
+
+Deno.test("parseCursorBenchCsv requires cursor_cloud flags from CSV", () => {
+  const missing = `model,score_pct,cost,tokens,steps
+Fable 5 High,66.5,8.77,1,1
+`;
+  try {
+    parseCursorBenchCsv(missing);
+    throw new Error("expected missing cursor_cloud to throw");
+  } catch (error) {
+    if (
+      !(error instanceof Error) ||
+      !error.message.includes("missing cursor_cloud")
+    ) {
+      throw error;
+    }
+  }
+  for (const invalid of ["maybe", "true", "false", "no"]) {
+    try {
+      parseCursorBenchCsv(`model,score_pct,cost,tokens,steps,cursor_cloud
+Fable 5 High,66.5,8.77,1,1,${invalid}
+`);
+      throw new Error(`expected invalid cursor_cloud ${invalid} to throw`);
+    } catch (error) {
+      if (
+        !(error instanceof Error) ||
+        !error.message.includes("invalid cursor_cloud")
+      ) {
+        throw error;
+      }
+    }
+  }
+  const rows = parseCursorBenchCsv(
+    `model,score_pct,cost,tokens,steps,cursor_cloud
+Fable 5 High,66.5,8.77,1,1,yes
+Fable 5 Max,70.5,17.32,1,1,-
+`,
+  );
+  if (!rows[0].cursorCloud || rows[1].cursorCloud) {
+    throw new Error("unexpected cursorCloud flags from CSV");
+  }
+});
+
+Deno.test("committed CursorBench CSV marks twelve Cursor Cloud effort presets", () => {
+  const rows = parseCursorBenchCsv(
+    Deno.readTextFileSync(CURSOR_BENCH_CSV_PATH),
+  );
+  const cloudModels = rows.filter((row) => row.cursorCloud).map((row) =>
+    row.model
+  );
+  const expected = [
+    "Composer 2.5",
+    "Fable 5 Extra High",
+    "Fable 5 High",
+    "Gemini 3.7 Flash High",
+    "GPT-5.6 Luna High",
+    "GPT-5.6 Sol Extra High",
+    "GPT-5.6 Sol High",
+    "Grok 4.5 High",
+    "Grok 4.6 High",
+    "Opus 5 High",
+    "Sonnet 5 Extra High",
+    "Sonnet 5 High",
+  ];
+  if (cloudModels.length !== expected.length) {
+    throw new Error(
+      `expected ${expected.length} Cursor Cloud rows, got ${cloudModels.length}`,
+    );
+  }
+  for (const model of expected) {
+    if (!cloudModels.includes(model)) {
+      throw new Error(`expected CSV Cursor Cloud flag for ${model}`);
+    }
+  }
+});
+
+Deno.test("renderCursorBenchSvg marks Cursor Cloud models with outer rings and legend", () => {
+  const csv = `model,score_pct,cost,tokens,steps,cursor_cloud
+Fable 5 High,66.5,8.77,43747,48,yes
+Fable 5 Max,70.5,17.32,103525,72,-
+`;
+  const rows = parseCursorBenchCsv(csv);
+  if (!rows[0].cursorCloud || rows[1].cursorCloud) {
+    throw new Error("unexpected cursorCloud row flags");
+  }
+  const svg = renderCursorBenchSvg(rows);
+  if (!svg.includes('pointer-events="none"')) {
+    throw new Error("SVG missing cloud ring pointer-events");
+  }
+  if (!svg.includes("Fable 5 High: 66.5% · $8.77/task · Cursor Cloud")) {
+    throw new Error("SVG missing Cursor Cloud tooltip label for cloud model");
+  }
+  if (svg.includes("Fable 5 Max: 70.5% · $17.32/task · Cursor Cloud")) {
+    throw new Error("SVG unexpectedly tagged non-cloud model as Cursor Cloud");
+  }
+  if (!svg.includes(">Cursor Cloud</text>")) {
+    throw new Error("SVG missing Cursor Cloud legend entry");
+  }
+});
+
+Deno.test("renderCursorBenchSvg omits Cursor Cloud legend when no cloud rows", () => {
+  const csv = `model,score_pct,cost,tokens,steps,cursor_cloud
+Alpha High,60.0,1.00,80,8,-
+`;
+  const svg = renderCursorBenchSvg(parseCursorBenchCsv(csv));
+  if (svg.includes(">Cursor Cloud</text>")) {
+    throw new Error("SVG unexpectedly included Cursor Cloud legend");
+  }
+  if (svg.includes('pointer-events="none"')) {
+    throw new Error("SVG unexpectedly included a cloud ring");
   }
 });
