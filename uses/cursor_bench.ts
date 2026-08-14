@@ -324,7 +324,7 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="${WIDTH}" height="${HEIGHT}" role="img" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#333">
   <title>CursorBench 3.2 score versus average cost per task</title>
-  <desc>Scatter plot of CursorBench 3.2 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Low, Medium, High, Extra High, then Max. An outer ring marks a leaderboard effort preset offered on Cursor Cloud Agent, not every effort of a Cloud-listed model. Hover a point for the model name and effort.</desc>
+  <desc>Scatter plot of CursorBench 3.2 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Low, Medium, High, Extra High, then Max. An outer ring marks the Cloud Agent picker default effort preset for that family, not every configurable option in the picker. Hover a point for the model name and effort.</desc>
   ${grid}
   <line x1="${PLOT_LEFT}" y1="${PLOT_BOTTOM}" x2="${PLOT_RIGHT}" y2="${PLOT_BOTTOM}" stroke="#333"/>
   <line x1="${PLOT_LEFT}" y1="${PLOT_TOP}" x2="${PLOT_LEFT}" y2="${PLOT_BOTTOM}" stroke="#333"/>

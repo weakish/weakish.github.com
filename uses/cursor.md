@@ -3,14 +3,14 @@
 Cursor [models and pricing](https://cursor.com/docs/models-and-pricing#model-pricing).
 Prices are per million tokens. Speed, cost, and intelligence tiers come from the Cursor docs model metadata.
 Release year and knowledge cutoff year come from provider documentation when Cursor does not publish them.
-Cursor Cloud indicates availability on Cursor Cloud Agent.
+Cursor Cloud indicates availability in the Cloud Agent model picker on [cursor.com/agents](https://cursor.com/agents) (snapshot 14 Aug 2026).
 
 ## CursorBench
 
 [CursorBench](https://cursor.com/cursorbench) 3.2 plots correctness against average cost per task.
 Cost decreases toward the right, so the upper-right is higher score at lower cost.
 Points from the same model family are connected Low → Medium → High → Extra High → Max, skipping missing levels.
-An outer ring marks a leaderboard effort preset offered on Cursor Cloud Agent (not every effort of a Cloud-listed model in the table).
+An outer ring marks the Cloud Agent picker default effort preset for that family (not every configurable option in the picker).
 Hover a point for the model name and effort.
 Numbers are from the public leaderboard (pricing snapshot 11 Aug 2026),
 plus Grok 4.5 Low/Medium/High from an earlier 3.2 snapshot (dropped after Grok 4.6).
@@ -33,7 +33,7 @@ Grok 4.5 has an advantage on CursorBench: an earlier snapshot of the Cursor code
 | [claude-opus-4-8](https://cursor.com/docs/models/claude-opus-4-8) | 300k | 1M | Anthropic | Agent, Thinking, Images | - | medium | high | frontier | 2026 | 2026 | $5 | $6.25 | $0.5 | $25 |
 | [claude-opus-4-8-fast](https://cursor.com/docs/models/claude-opus-4-8) | 300k | 1M | Anthropic | Agent, Thinking, Images | - | fast | high | frontier | 2026 | 2026 | $10 | $12.5 | $1 | $50 |
 | [claude-opus-5](https://cursor.com/docs/models/claude-opus-5) | 300k | 1M | Anthropic | Agent, Thinking, Images | yes | medium | high | frontier | 2026 | 2026 | $5 | $6.25 | $0.5 | $25 |
-| [claude-opus-5-fast](https://cursor.com/docs/models/claude-opus-5) | 300k | 1M | Anthropic | Agent, Thinking, Images | yes | fast | high | frontier | 2026 | 2026 | $10 | $12.5 | $1 | $50 |
+| [claude-opus-5-fast](https://cursor.com/docs/models/claude-opus-5) | 300k | 1M | Anthropic | Agent, Thinking, Images | - | fast | high | frontier | 2026 | 2026 | $10 | $12.5 | $1 | $50 |
 | [claude-sonnet-5](https://cursor.com/docs/models/claude-sonnet-5) | 200k | 1M | Anthropic | Agent, Thinking, Images | yes | medium | medium | frontier | 2026 | 2026 | $2 | $2.5 | $0.2 | $10 |
 | [composer-1](https://cursor.com/docs/models/cursor-composer-1) | 200k | - | Cursor | Agent, Images | - | medium | medium | high | 2025 | - | $1.25 | - | $0.125 | $10 |
 | [composer-2.5](https://cursor.com/docs/models/cursor-composer-2-5) | 200k | - | Cursor | Agent, Thinking, Images | yes | fast | low | frontier | 2026 | - | $0.5 | - | $0.2 | $2.5 |
@@ -63,11 +63,11 @@ Grok 4.5 has an advantage on CursorBench: an earlier snapshot of the Cursor code
 | [gpt-5.4-nano](https://cursor.com/docs/models/gpt-5-4-nano) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | low | moderate | 2026 | 2025 | $0.2 | - | $0.02 | $1.25 |
 | [gpt-5.5](https://cursor.com/docs/models/gpt-5-5) | 272k | 1M | OpenAI | Agent, Thinking, Images | - | medium | medium | frontier | 2026 | 2025 | $5 | - | $0.5 | $30 |
 | [gpt-5.5-fast](https://cursor.com/docs/models/gpt-5-5) | 272k | 1M | OpenAI | Agent, Thinking, Images | - | fast | high | frontier | 2026 | 2025 | $12.5 | - | $1.25 | $75 |
-| [gpt-5.6-luna](https://cursor.com/docs/models/gpt-5-6-luna) | 272k | - | OpenAI | Agent, Thinking, Images | yes | fast | low | moderate | 2026 | 2026 | $0.2 | $0.25 | $0.02 | $1.2 |
+| [gpt-5.6-luna](https://cursor.com/docs/models/gpt-5-6-luna) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | low | moderate | 2026 | 2026 | $0.2 | $0.25 | $0.02 | $1.2 |
 | [gpt-5.6-luna-fast](https://cursor.com/docs/models/gpt-5-6-luna) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | low | moderate | 2026 | 2026 | $0.4 | $0.5 | $0.04 | $2.4 |
 | [gpt-5.6-sol](https://cursor.com/docs/models/gpt-5-6-sol) | 272k | 1M | OpenAI | Agent, Thinking, Images | yes | medium | medium | frontier | 2026 | 2026 | $5 | $6.25 | $0.5 | $30 |
-| [gpt-5.6-sol-fast](https://cursor.com/docs/models/gpt-5-6-sol) | 272k | 1M | OpenAI | Agent, Thinking, Images | yes | fast | high | frontier | 2026 | 2026 | $10 | $12.5 | $1 | $60 |
-| [gpt-5.6-terra](https://cursor.com/docs/models/gpt-5-6-terra) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | medium | high | 2026 | 2026 | $2 | $2.5 | $0.2 | $12 |
+| [gpt-5.6-sol-fast](https://cursor.com/docs/models/gpt-5-6-sol) | 272k | 1M | OpenAI | Agent, Thinking, Images | - | fast | high | frontier | 2026 | 2026 | $10 | $12.5 | $1 | $60 |
+| [gpt-5.6-terra](https://cursor.com/docs/models/gpt-5-6-terra) | 272k | - | OpenAI | Agent, Thinking, Images | yes | fast | medium | high | 2026 | 2026 | $2 | $2.5 | $0.2 | $12 |
 | [gpt-5.6-terra-fast](https://cursor.com/docs/models/gpt-5-6-terra) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | high | high | 2026 | 2026 | $4 | $5 | $0.4 | $24 |
 | [grok-4.5](https://cursor.com/docs/models/grok-4-5) | 256k | - | Cursor | Agent, Thinking | yes | medium | medium | frontier | 2026 | 2026 | $2 | - | $0.5 | $6 |
 | [grok-4.5-fast](https://cursor.com/docs/models/grok-4-5) | 256k | - | Cursor | Agent, Thinking | yes | fast | high | frontier | 2026 | 2026 | $4 | - | $1 | $12 |
