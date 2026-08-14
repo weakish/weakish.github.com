@@ -1,7 +1,9 @@
 import {
+  CURSOR_CLOUD_BENCH_MODELS,
   cursorBenchColorsForFamilies,
   cursorBenchCostToX,
   cursorBenchScoreToY,
+  isCursorCloudModel,
   parseCursorBenchCsv,
   renderCursorBenchSvg,
   splitCursorBenchModelName,
@@ -177,5 +179,71 @@ Brand-New Bench Family Max,55.0,0.40,50,5
     throw new Error(
       `expected ${rows.length} plot circles, got ${plotCircles.length}`,
     );
+  }
+});
+
+Deno.test("isCursorCloudModel recognizes models available on Cursor Cloud", () => {
+  const expectedCloudModels = [
+    "Composer 2.5",
+    "Fable 5 Extra High",
+    "Fable 5 High",
+    "Gemini 3.7 Flash High",
+    "GPT-5.6 Luna High",
+    "GPT-5.6 Sol Extra High",
+    "GPT-5.6 Sol High",
+    "Grok 4.5 High",
+    "Grok 4.6 High",
+    "Opus 5 High",
+    "Sonnet 5 Extra High",
+    "Sonnet 5 High",
+  ];
+  for (const model of expectedCloudModels) {
+    if (!isCursorCloudModel(model)) {
+      throw new Error(
+        `expected ${model} to be recognized as Cursor Cloud model`,
+      );
+    }
+  }
+  const nonCloudModels = [
+    "Fable 5 Max",
+    "Opus 5 Max",
+    "Grok 4.6 Extra High",
+    "GPT-5.6 Terra Max",
+    "GLM 5.2 Max",
+    "Kimi K3 Max",
+  ];
+  for (const model of nonCloudModels) {
+    if (isCursorCloudModel(model)) {
+      throw new Error(`expected ${model} to not be a Cursor Cloud model`);
+    }
+  }
+  if (CURSOR_CLOUD_BENCH_MODELS.size !== 12) {
+    throw new Error(
+      `expected 12 Cursor Cloud bench models, got ${CURSOR_CLOUD_BENCH_MODELS.size}`,
+    );
+  }
+});
+
+Deno.test("renderCursorBenchSvg marks Cursor Cloud models with outer rings and legend", () => {
+  const csv = `model,score_pct,cost,tokens,steps
+Fable 5 High,66.5,8.77,43747,48
+Fable 5 Max,70.5,17.32,103525,72
+`;
+  const rows = parseCursorBenchCsv(csv);
+  if (!rows[0].cursorCloud || rows[1].cursorCloud) {
+    throw new Error("unexpected cursorCloud row flags");
+  }
+  const svg = renderCursorBenchSvg(rows);
+  if (!svg.includes('pointer-events="none"')) {
+    throw new Error("SVG missing cloud ring pointer-events");
+  }
+  if (!svg.includes("Fable 5 High: 66.5% · $8.77/task · Cursor Cloud")) {
+    throw new Error("SVG missing Cursor Cloud tooltip label for cloud model");
+  }
+  if (svg.includes("Fable 5 Max: 70.5% · $17.32/task · Cursor Cloud")) {
+    throw new Error("SVG unexpectedly tagged non-cloud model as Cursor Cloud");
+  }
+  if (!svg.includes(">Cursor Cloud</text>")) {
+    throw new Error("SVG missing Cursor Cloud legend entry");
   }
 });

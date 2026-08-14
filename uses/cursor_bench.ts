@@ -8,6 +8,26 @@ export interface CursorBenchRow {
   cost: number;
   tokens: number;
   steps: number;
+  cursorCloud: boolean;
+}
+
+export const CURSOR_CLOUD_BENCH_MODELS = new Set<string>([
+  "Composer 2.5",
+  "Fable 5 Extra High",
+  "Fable 5 High",
+  "Gemini 3.7 Flash High",
+  "GPT-5.6 Luna High",
+  "GPT-5.6 Sol Extra High",
+  "GPT-5.6 Sol High",
+  "Grok 4.5 High",
+  "Grok 4.6 High",
+  "Opus 5 High",
+  "Sonnet 5 Extra High",
+  "Sonnet 5 High",
+]);
+
+export function isCursorCloudModel(model: string): boolean {
+  return CURSOR_CLOUD_BENCH_MODELS.has(model);
 }
 
 const EFFORTS = ["Extra High", "Medium", "High", "Low", "Max"] as const;
@@ -69,6 +89,10 @@ export function parseCursorBenchCsv(csv: string): CursorBenchRow[] {
   return records.map((record) => {
     const model = requiredCsvField(record, "model");
     const { family, effort } = splitCursorBenchModelName(model);
+    const cursorCloud = record.cursor_cloud !== undefined &&
+        record.cursor_cloud !== ""
+      ? record.cursor_cloud === "yes" || record.cursor_cloud === "true"
+      : isCursorCloudModel(model);
     return {
       model,
       family,
@@ -77,6 +101,7 @@ export function parseCursorBenchCsv(csv: string): CursorBenchRow[] {
       cost: requiredCsvNumber(record, "cost"),
       tokens: requiredCsvNumber(record, "tokens"),
       steps: requiredCsvNumber(record, "steps"),
+      cursorCloud,
     };
   });
 }
@@ -268,19 +293,27 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
         polylineForFamily(familyRows)
       }"/>`
       : "";
-    const dots = familyRows.map((row) =>
-      `<circle cx="${cursorBenchCostToX(row.cost).toFixed(1)}" cy="${
-        cursorBenchScoreToY(row.scorePct).toFixed(1)
-      }" r="3.5" fill="${color}" stroke="#fff" stroke-width="0.8"><title>${
-        escapeXml(
-          `${row.model}: ${row.scorePct}% · $${row.cost.toFixed(2)}/task`,
-        )
-      }</title></circle>`
-    ).join("");
+    const dots = familyRows.map((row) => {
+      const cx = cursorBenchCostToX(row.cost).toFixed(1);
+      const cy = cursorBenchScoreToY(row.scorePct).toFixed(1);
+      const tooltip = row.cursorCloud
+        ? `${row.model}: ${row.scorePct}% · $${
+          row.cost.toFixed(2)
+        }/task · Cursor Cloud`
+        : `${row.model}: ${row.scorePct}% · $${row.cost.toFixed(2)}/task`;
+      const baseDot =
+        `<circle cx="${cx}" cy="${cy}" r="3.5" fill="${color}" stroke="#fff" stroke-width="0.8"><title>${
+          escapeXml(tooltip)
+        }</title></circle>`;
+      const cloudRing = row.cursorCloud
+        ? `<circle cx="${cx}" cy="${cy}" r="6.5" fill="none" stroke="${color}" stroke-width="1.2" pointer-events="none"/>`
+        : "";
+      return `${baseDot}${cloudRing}`;
+    }).join("");
     return `${line}${dots}`;
   }).join("");
 
-  const legend = families.map((family, index) => {
+  const legendEntries = families.map((family, index) => {
     const color = colorForFamily(familyColors, family);
     const y = PLOT_TOP + 12 + index * 18;
     return `<circle cx="${
@@ -290,10 +323,21 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
     }">${escapeXml(family)}</text>`;
   }).join("");
 
+  const cloudLegendY = PLOT_TOP + 12 + families.length * 18 + 8;
+  const cloudLegend = `<circle cx="${
+    PLOT_RIGHT + 14
+  }" cy="${cloudLegendY}" r="3.5" fill="#555" stroke="#fff" stroke-width="0.8"/><circle cx="${
+    PLOT_RIGHT + 14
+  }" cy="${cloudLegendY}" r="6.5" fill="none" stroke="#555" stroke-width="1.2"/><text x="${
+    PLOT_RIGHT + 24
+  }" y="${cloudLegendY + 4}">Cursor Cloud</text>`;
+
+  const legend = `${legendEntries}${cloudLegend}`;
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="${WIDTH}" height="${HEIGHT}" role="img" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#333">
   <title>CursorBench 3.2 score versus average cost per task</title>
-  <desc>Scatter plot of CursorBench 3.2 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Low, Medium, High, Extra High, then Max. Hover a point for the model name.</desc>
+  <desc>Scatter plot of CursorBench 3.2 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Low, Medium, High, Extra High, then Max. Points with an outer ring are available in Cursor Cloud. Hover a point for the model name.</desc>
   ${grid}
   <line x1="${PLOT_LEFT}" y1="${PLOT_BOTTOM}" x2="${PLOT_RIGHT}" y2="${PLOT_BOTTOM}" stroke="#333"/>
   <line x1="${PLOT_LEFT}" y1="${PLOT_TOP}" x2="${PLOT_LEFT}" y2="${PLOT_BOTTOM}" stroke="#333"/>
