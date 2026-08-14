@@ -222,7 +222,7 @@ Fable 5 Max,70.5,17.32,1,1,-
   }
 });
 
-Deno.test("committed CursorBench CSV marks twelve Cursor Cloud effort presets", () => {
+Deno.test("committed CursorBench CSV marks nine Cloud Agent picker defaults", () => {
   const rows = parseCursorBenchCsv(
     Deno.readTextFileSync(CURSOR_BENCH_CSV_PATH),
   );
@@ -231,16 +231,13 @@ Deno.test("committed CursorBench CSV marks twelve Cursor Cloud effort presets", 
   );
   const expected = [
     "Composer 2.5",
-    "Fable 5 Extra High",
     "Fable 5 High",
     "Gemini 3.7 Flash High",
-    "GPT-5.6 Luna High",
-    "GPT-5.6 Sol Extra High",
-    "GPT-5.6 Sol High",
+    "GPT-5.6 Sol Medium",
+    "GPT-5.6 Terra Max",
     "Grok 4.5 High",
     "Grok 4.6 High",
     "Opus 5 High",
-    "Sonnet 5 Extra High",
     "Sonnet 5 High",
   ];
   if (cloudModels.length !== expected.length) {
