@@ -3,8 +3,8 @@
 import { parse } from "@std/csv";
 
 export interface HistoryRow {
-  Title: string;
-  Date: string;
+  title: string;
+  mdyDate: string;
 }
 
 export interface Work {
@@ -43,15 +43,38 @@ export const RENAME: Record<string, string> = {
   "The Empress of Ayodhaya: The Empress Of Ayodhaya": "The Empress of Ayodhaya",
 };
 
+export function plainDateFromYmdOrRangeError(
+  year: number,
+  month: number,
+  day: number,
+): Temporal.PlainDate | RangeError {
+  try {
+    return Temporal.PlainDate.from(
+      { year, month, day },
+      { overflow: "reject" },
+    );
+  } catch (err) {
+    if (err instanceof RangeError) return err;
+    throw err;
+  }
+}
+
 /** Parse Netflix streaming export `M/D/YY` to ISO `YYYY-MM-DD` (`YY` → 20YY).
  * Netflix started their streaming business in 2007 and the exported watch
  * history only includes titles streamed. DVD rentals are not included. */
 export function parseDate(d: string): string {
+  if (!/^\d{1,2}\/\d{1,2}\/\d{2}$/.test(d)) {
+    throw new Error(`history date must be M/D/YY, got ${JSON.stringify(d)}`);
+  }
   const [month, day, year] = d.split("/").map((s) => Number.parseInt(s, 10));
-  const fullYear = 2000 + year;
-  return `${fullYear}-${String(month).padStart(2, "0")}-${
-    String(day).padStart(2, "0")
-  }`;
+  const dateOrError = plainDateFromYmdOrRangeError(2000 + year, month, day);
+  if (dateOrError instanceof RangeError) {
+    throw new Error(
+      `history date is not a valid calendar day, got ${JSON.stringify(d)}`,
+      { cause: dateOrError },
+    );
+  }
+  return dateOrError.toString();
 }
 
 export function stripEpisode(t: string): string {
@@ -74,16 +97,12 @@ export function stripEpisode(t: string): string {
 export function collapseSharedPrefixes(
   titles: Iterable<string>,
 ): Map<string, string> {
-  const candidates = new Map<string, string[]>();
-  for (const title of titles) {
-    if (KEEP_FULL.has(title)) continue;
-    const idx = title.indexOf(": ");
-    if (idx === -1) continue;
-    const prefix = title.slice(0, idx);
-    const prefixedTitles = candidates.get(prefix) ?? [];
-    prefixedTitles.push(title);
-    candidates.set(prefix, prefixedTitles);
-  }
+  const candidates = Map.groupBy(
+    [...titles].filter((title) =>
+      !KEEP_FULL.has(title) && title.includes(": ")
+    ),
+    (title) => title.slice(0, title.indexOf(": ")),
+  );
 
   const collapsed = new Map<string, string>();
   for (const [prefix, prefixedTitles] of candidates) {
@@ -101,20 +120,13 @@ export interface WatchBounds {
 
 /** Group history rows by collapsed work title (shared by collapse and validation). */
 export function groupByWork(rows: HistoryRow[]): Map<string, HistoryRow[]> {
-  const groups = new Map<string, HistoryRow[]>();
-  for (const r of rows) {
-    const key = stripEpisode(r.Title);
-    const list = groups.get(key) ?? [];
-    list.push(r);
-    groups.set(key, list);
-  }
-
+  const groups = Map.groupBy(rows, (r) => stripEpisode(r.title));
   const collapsed = collapseSharedPrefixes(groups.keys());
 
   const final = new Map<string, HistoryRow[]>();
   for (const [t, rs] of groups) {
-    let key = collapsed.get(t) ?? t;
-    key = RENAME[key] ?? key;
+    const collapsedOrOriginal = collapsed.get(t) ?? t;
+    const key = RENAME[collapsedOrOriginal] ?? collapsedOrOriginal;
     const list = final.get(key) ?? [];
     list.push(...rs);
     final.set(key, list);
@@ -123,22 +135,68 @@ export function groupByWork(rows: HistoryRow[]): Map<string, HistoryRow[]> {
   return final;
 }
 
+function isoDateBounds(dates: string[]): WatchBounds {
+  const first = dates[0];
+  if (first === undefined) {
+    throw new Error("isoDateBounds requires at least one date");
+  }
+  let min = first;
+  let max = first;
+  for (const d of dates) {
+    if (d < min) min = d;
+    if (d > max) max = d;
+  }
+  return { min, max };
+}
+
 export function watchBounds(rows: HistoryRow[]): Map<string, WatchBounds> {
   const bounds = new Map<string, WatchBounds>();
   for (const [title, rs] of groupByWork(rows)) {
-    const dates = rs.map((r) => parseDate(r.Date)).sort();
-    bounds.set(title, { min: dates[0]!, max: dates.at(-1)! });
+    bounds.set(
+      title,
+      isoDateBounds(rs.map((r) => parseDate(r.mdyDate))),
+    );
   }
   return bounds;
 }
 
 export function collapse(rows: HistoryRow[]): Work[] {
-  const works: Work[] = [];
-  for (const [title, { min }] of watchBounds(rows)) {
-    works.push({ title, date: min });
+  return [...watchBounds(rows)]
+    .map(([title, { min }]) => ({ title, date: min }))
+    .toSorted((a, b) => b.date.localeCompare(a.date));
+}
+
+/** Map Netflix export CSV (`Title,Date`) into trimmed domain rows. */
+export function historyRowsFromCsv(text: string): HistoryRow[] {
+  const table = parse(text);
+  const header = table[0];
+  const missingColumns = "history CSV requires Title and Date columns";
+  if (header === undefined) {
+    throw new Error(missingColumns);
   }
-  works.sort((a, b) => b.date.localeCompare(a.date));
-  return works;
+  const keys = header.map((h) => h.trim());
+  const titleIdx = keys.indexOf("Title");
+  const dateIdx = keys.indexOf("Date");
+  if (titleIdx === -1 || dateIdx === -1) {
+    throw new Error(missingColumns);
+  }
+  return table.slice(1).map((cells) => {
+    if (cells.length !== keys.length) {
+      throw new Error("history CSV row cell count does not match header");
+    }
+    const title = cells[titleIdx];
+    const date = cells[dateIdx];
+    const trimmedTitle = title.trim();
+    const trimmedDate = date.trim();
+    if (trimmedTitle === "" || trimmedDate === "") {
+      throw new Error("history CSV row has blank Title or Date");
+    }
+    return { title: trimmedTitle, mdyDate: trimmedDate };
+  });
+}
+
+export async function loadHistoryRows(path: string): Promise<HistoryRow[]> {
+  return historyRowsFromCsv(await Deno.readTextFile(path));
 }
 
 function usage(): void {
@@ -176,11 +234,7 @@ function parseCli(args: string[]) {
 
 async function main(args: string[]): Promise<number> {
   const { history, output, titlesOnly } = parseCli(args);
-  const text = await Deno.readTextFile(history);
-  const rows = parse(text, {
-    skipFirstRow: true,
-    strip: true,
-  }) as unknown as HistoryRow[];
+  const rows = await loadHistoryRows(history);
   const works = collapse(rows);
 
   const body = titlesOnly

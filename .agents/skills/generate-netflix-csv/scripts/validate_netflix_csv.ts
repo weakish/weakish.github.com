@@ -1,7 +1,13 @@
 /** Validate movies/netflix.csv against NetflixViewingHistory.csv and schema rules. */
 
 import { parse } from "@std/csv";
-import { type HistoryRow, watchBounds } from "./collapse_history.ts";
+import {
+  type HistoryRow,
+  loadHistoryRows,
+  plainDateFromYmdOrRangeError,
+  type WatchBounds,
+  watchBounds,
+} from "./collapse_history.ts";
 
 const COLUMNS = ["id", "title", "year", "date", "wikidata", "netflix"] as const;
 
@@ -22,27 +28,50 @@ export interface NetflixRow {
   netflix: string;
 }
 
-async function loadCsv(path: string): Promise<Record<string, string>[]> {
-  const text = await Deno.readTextFile(path);
-  return parse(text, { skipFirstRow: true, strip: true }) as Record<
-    string,
-    string
-  >[];
+export interface NetflixCsvData {
+  /** Header names in file order (may include "" for unnamed columns). */
+  headers: string[];
+  records: Record<string, string>[];
 }
 
-type WatchBounds = ReturnType<typeof watchBounds>;
+const RAGGED_NETFLIX_CSV_ROW =
+  "netflix.csv row cell count does not match header";
 
-function columnMismatchErrors(firstRow: NetflixRow): string[] {
-  const fields = Object.keys(firstRow);
-  if (fields.join(",") !== COLUMNS.join(",")) {
-    return [`columns want ${[...COLUMNS]}, got ${fields}`];
+/** Parse netflix.csv text; trim header names so spaced columns still map. */
+export function netflixCsvFromText(text: string): NetflixCsvData {
+  const table = parse(text);
+  const header = table[0];
+  if (header === undefined) return { headers: [], records: [] };
+  const headers = header.map((h) => h.trim());
+  const records = table.slice(1).map((cells) => {
+    if (cells.length !== headers.length) {
+      throw new Error(RAGGED_NETFLIX_CSV_ROW);
+    }
+    const row: Record<string, string> = {};
+    for (const [i, key] of headers.entries()) {
+      // Unnamed headers are kept in `headers` for the column check; skip here
+      // so they do not collapse to a single "" field on the record.
+      if (key === "") continue;
+      row[key] = cells[i];
+    }
+    return row;
+  });
+  return { headers, records };
+}
+
+async function loadNetflixCsv(path: string): Promise<NetflixCsvData> {
+  return netflixCsvFromText(await Deno.readTextFile(path));
+}
+
+function columnMismatchErrors(headers: string[]): string[] {
+  if (headers.join(",") !== COLUMNS.join(",")) {
+    return [`columns want ${[...COLUMNS]}, got ${headers}`];
   }
   return [];
 }
 
 // Skip "" so blanks do not look like duplicates; rowFieldErrors reports blank
-// title / missing netflix id. No branded NonEmptyString: TS brands are a cast-
-// bypassable workaround (no first-class opaque types), heavier than this needs.
+// title / missing netflix id.
 function duplicateNonEmptyValueErrors(
   values: string[],
   message: string,
@@ -64,14 +93,6 @@ function duplicateNetflixIdErrors(netflixRows: NetflixRow[]): string[] {
     netflixRows.map((r) => r.netflix),
     "duplicate Netflix title ids in netflix.csv",
   );
-}
-
-function sortedTitlesIn(titles: Set<string>) {
-  return {
-    notIn(excluding: Set<string>): string[] {
-      return [...titles].filter((t) => !excluding.has(t)).sort();
-    },
-  };
 }
 
 function quoteValueInError(value: string): string {
@@ -96,11 +117,11 @@ function titleCoverageErrors(
   return [
     ...titleCoverageListError(
       "missing",
-      sortedTitlesIn(wantTitles).notIn(gotTitles),
+      [...wantTitles.difference(gotTitles)].toSorted(),
     ),
     ...titleCoverageListError(
       "extra",
-      sortedTitlesIn(gotTitles).notIn(wantTitles),
+      [...gotTitles.difference(wantTitles)].toSorted(),
     ),
   ];
 }
@@ -118,7 +139,8 @@ function trimmedCsvField(value: string | undefined): string {
   return (value ?? "").trim();
 }
 
-function trimNetflixRow(row: NetflixRow): NetflixRow {
+/** Trim CSV fields into a domain NetflixRow (after column check). */
+function netflixRowFromRecord(row: Record<string, string>): NetflixRow {
   return {
     id: trimmedCsvField(row.id),
     title: trimmedCsvField(row.title),
@@ -129,17 +151,18 @@ function trimNetflixRow(row: NetflixRow): NetflixRow {
   };
 }
 
-function trimHistoryRow(row: HistoryRow): HistoryRow {
-  return {
-    Title: trimmedCsvField(row.Title),
-    Date: trimmedCsvField(row.Date),
-  };
+function isValidNetflixPlainDate(date: string): boolean {
+  const [yearPart, month, day] = date.split("-").map((p) =>
+    Number.parseInt(p, 10)
+  );
+  const dateOrError = plainDateFromYmdOrRangeError(yearPart, month, day);
+  return !(dateOrError instanceof RangeError);
 }
 
 function fieldErrorsForNetflixRow(
   line: number,
   row: NetflixRow,
-  bounds: WatchBounds,
+  bounds: Map<string, WatchBounds>,
 ): string[] {
   const errors: string[] = [];
   const title = row.title;
@@ -165,6 +188,12 @@ function fieldErrorsForNetflixRow(
     errors.push(`L${line} ${qTitle}: blank date`);
   } else if (!DATE_RE.test(date)) {
     errors.push(`L${line} ${qTitle}: invalid date ${quoteValueInError(date)}`);
+  } else if (!isValidNetflixPlainDate(date)) {
+    errors.push(
+      `L${line} ${qTitle}: date is not a valid calendar day ${
+        quoteValueInError(date)
+      }`,
+    );
   } else {
     const range = bounds.get(title);
     if (range && date > range.max) {
@@ -192,7 +221,7 @@ function fieldErrorsForNetflixRow(
 
 function rowFieldErrors(
   netflixRows: NetflixRow[],
-  bounds: WatchBounds,
+  bounds: Map<string, WatchBounds>,
 ): string[] {
   return netflixRows.flatMap((row, i) =>
     // CSV line 1 is the header; netflixRows[i] is file line i + 2.
@@ -201,19 +230,28 @@ function rowFieldErrors(
 }
 
 export function validate(
-  netflixRows: NetflixRow[],
+  netflix: NetflixCsvData,
   historyRows: HistoryRow[],
 ): string[] {
-  if (netflixRows.length === 0) return ["netflix.csv is empty"];
+  const { headers, records: netflixRecords } = netflix;
+  if (headers.length === 0 && netflixRecords.length === 0) {
+    return ["netflix.csv is empty"];
+  }
 
-  // Trim once so field, duplicate, coverage, sort, and bounds share values.
-  const rows = netflixRows.map(trimNetflixRow);
-  const bounds = watchBounds(historyRows.map(trimHistoryRow));
+  // Column keys from the raw CSV header. On mismatch, stop before field checks
+  // turn missing headers into blank-field noise. Header-only files still run
+  // this check so extra/unnamed columns are not reported as "empty".
+  const columnErrors = columnMismatchErrors(headers);
+  if (columnErrors.length > 0) return columnErrors;
+
+  if (netflixRecords.length === 0) return ["netflix.csv is empty"];
+
+  const rows = netflixRecords.map(netflixRowFromRecord);
+  const bounds = watchBounds(historyRows);
   const wantTitles = new Set(bounds.keys());
   const gotTitles = new Set(rows.map((r) => r.title));
 
   return [
-    ...columnMismatchErrors(rows[0]),
     ...duplicateTitleErrors(rows),
     ...duplicateNetflixIdErrors(rows),
     ...titleCoverageErrors(wantTitles, gotTitles),
@@ -255,20 +293,21 @@ function parseCli(args: string[]) {
 
 async function main(args: string[]): Promise<number> {
   const { netflix, history } = parseCli(args);
-  const netflixRows = await loadCsv(netflix) as unknown as NetflixRow[];
-  const historyRows = await loadCsv(history) as unknown as HistoryRow[];
+  const netflixCsv = await loadNetflixCsv(netflix);
+  const historyRows = await loadHistoryRows(history);
 
-  const errors = validate(netflixRows, historyRows);
+  const errors = validate(netflixCsv, historyRows);
   if (errors.length) {
     console.error(`FAIL (${errors.length} issues)`);
     for (const e of errors) console.error(e);
     return 1;
   }
 
-  const blankWikidataCount = netflixRows.filter((r) => !r.wikidata).length;
+  const blankWikidataCount =
+    netflixCsv.records.filter((r) => !trimmedCsvField(r.wikidata)).length;
   const msg = blankWikidataCount
-    ? `OK ${netflixRows.length} rows (${blankWikidataCount} blank wikidata)`
-    : `OK ${netflixRows.length} rows`;
+    ? `OK ${netflixCsv.records.length} rows (${blankWikidataCount} blank wikidata)`
+    : `OK ${netflixCsv.records.length} rows`;
   console.log(msg);
   return 0;
 }

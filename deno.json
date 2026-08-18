@@ -16,6 +16,7 @@
     ]
   },
   "imports": {
+    "@std/assert": "jsr:@std/assert@1.0.13",
     "@std/csv": "jsr:@std/csv@1.0.6",
     "lume/": "https://deno.land/x/lume@v3.0.4/",
     "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.10/jsx-runtime.ts"
