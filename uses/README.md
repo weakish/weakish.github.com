@@ -40,14 +40,12 @@ If not, you can figure it out via the source code of this site.
 
 ## Editor
 
-I mostly use [Cursor][], more and more as a browser than an editor since AI agents are getting smarter and smarter.
+I use Zed, mostly as a browser rather than an editor since [[vibe/too-faithful-port|AI agents]] are getting smarter and smarter.
 
-I previously used [OpenCode] because it is open source and model agnostic.
-Currently I mostly use the Cursor agent.
+Currently I use the [[cursor|cursor agent]] under [herdr][].
 I may try [Devin][], [Jules][] and [Junie][] in future.
 
-[Cursor]: cursor.md "Cursor models overview"
-[OpenCode]: https://opencode.ai
+[herdr]: https://herdr.dev/
 [Devin]: https://devin.ai
 [Junie]: https://www.jetbrains.com/junie/
 [Jules]: https://jules.google.com/
