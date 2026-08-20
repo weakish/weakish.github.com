@@ -11,7 +11,7 @@ Cursor Cloud indicates availability in the Cloud Agent model picker on [cursor.c
 Cost decreases toward the right, so the upper-right is higher score at lower cost.
 Points from the same model family are connected Low → Medium → High → Extra High → Max, skipping missing levels.
 An outer ring marks the Cloud Agent picker default effort preset for that family (not every configurable option in the picker).
-Hover a point for the model name and effort.
+Hover or tap a point for the model name and effort.
 Numbers are from the public leaderboard (pricing snapshot 11 Aug 2026),
 plus Grok 4.5 Low/Medium/High from an earlier 3.2 snapshot (dropped after Grok 4.6).
 Grok 4.5 has an advantage on CursorBench: an earlier snapshot of the Cursor codebase was unintentionally included in training. The exact score impact is unclear.

@@ -202,6 +202,24 @@ function escapeXml(text: string): string {
     .replaceAll('"', "&quot;");
 }
 
+function cursorBenchPointGroupMarkup(options: {
+  pointId: string;
+  cx: string;
+  cy: string;
+  color: string;
+  escapedTooltip: string;
+  cloudRing: string;
+}): string {
+  const { pointId, cx, cy, color, escapedTooltip, cloudRing } = options;
+  return [
+    `<g class="cursor-bench-point" id="${pointId}" role="img" tabindex="-1" aria-label="${escapedTooltip}">`,
+    `<circle class="cursor-bench-dot" cx="${cx}" cy="${cy}" r="3.5" fill="${color}" stroke="#fff" stroke-width="0.8"/>`,
+    cloudRing,
+    `<circle class="cursor-bench-hit" cx="${cx}" cy="${cy}" r="12" fill="none" pointer-events="all"/>`,
+    `</g>`,
+  ].join("");
+}
+
 function uniqueFamiliesInScoreOrder(rows: CursorBenchRow[]): string[] {
   const best = new Map<string, number>();
   for (const row of rows) {
@@ -231,6 +249,29 @@ function polylineForFamily(rows: CursorBenchRow[]): string {
       }`
     )
     .join(" ");
+}
+
+function groupCursorBenchRowsByFamily(
+  rows: CursorBenchRow[],
+): Map<string, CursorBenchRow[]> {
+  const byFamily = new Map<string, CursorBenchRow[]>();
+  for (const row of rows) {
+    const familyRows = byFamily.get(row.family);
+    if (familyRows) familyRows.push(row);
+    else byFamily.set(row.family, [row]);
+  }
+  return byFamily;
+}
+
+function rowsForFamily(
+  rowsByFamily: Map<string, CursorBenchRow[]>,
+  family: string,
+): CursorBenchRow[] {
+  const familyRows = rowsByFamily.get(family);
+  if (!familyRows) {
+    throw new Error(`missing CursorBench rows for family: ${family}`);
+  }
+  return familyRows;
 }
 
 export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
@@ -268,34 +309,79 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
     }" text-anchor="middle">$${cost}</text>`;
   }).join("");
 
-  const series = families.map((family) => {
+  const rowsByFamily = groupCursorBenchRowsByFamily(rows);
+  const polylines = families.map((family) => {
     const color = colorForFamily(familyColors, family);
-    const familyRows = rows.filter((row) => row.family === family)
+    const familyRows = rowsForFamily(rowsByFamily, family);
+    if (familyRows.length < 2) return "";
+    return `<polyline fill="none" stroke="${color}" stroke-width="1.5" points="${
+      polylineForFamily(familyRows)
+    }"/>`;
+  }).join("");
+
+  // Dots first, then tips, so labels paint above every family. CSS :has()
+  // ties hover/active/focus on a dot to its tip (tips are not descendants).
+  // tabindex=-1 is not in page Tab order; tap/click can still focus so the
+  // tip stays after release.
+  const pointGroupsByFamily: string[][] = [];
+  const tipLabels: string[] = [];
+  const tipRules: string[] = [];
+  let pointIndex = 0;
+  for (const family of families) {
+    const color = colorForFamily(familyColors, family);
+    const familyRows = [...rowsForFamily(rowsByFamily, family)]
       .sort(compareFamilyRowsByEffort);
-    const line = familyRows.length > 1
-      ? `<polyline fill="none" stroke="${color}" stroke-width="1.5" points="${
-        polylineForFamily(familyRows)
-      }"/>`
-      : "";
-    const dots = familyRows.map((row) => {
-      const cx = cursorBenchCostToX(row.cost).toFixed(1);
-      const cy = cursorBenchScoreToY(row.scorePct).toFixed(1);
+    const familyGroups: string[] = [];
+    for (const row of familyRows) {
+      const pointId = `cursor-bench-p${pointIndex}`;
+      const tipId = `cursor-bench-t${pointIndex}`;
+      pointIndex += 1;
+      const cxNum = cursorBenchCostToX(row.cost);
+      const cyNum = cursorBenchScoreToY(row.scorePct);
+      const cx = cxNum.toFixed(1);
+      const cy = cyNum.toFixed(1);
       const tooltip = row.cursorCloud
         ? `${row.model}: ${row.scorePct}% · $${
           row.cost.toFixed(2)
         }/task · Cursor Cloud`
         : `${row.model}: ${row.scorePct}% · $${row.cost.toFixed(2)}/task`;
-      const baseDot =
-        `<circle cx="${cx}" cy="${cy}" r="3.5" fill="${color}" stroke="#fff" stroke-width="0.8"><title>${
-          escapeXml(tooltip)
-        }</title></circle>`;
+      const escapedTooltip = escapeXml(tooltip);
+      // Prefer tips toward the plot center so they stay clear of axes/legend.
+      const tipOnLeft = cxNum > (PLOT_LEFT + PLOT_RIGHT) / 2;
       const cloudRing = row.cursorCloud
-        ? `<circle cx="${cx}" cy="${cy}" r="6.5" fill="none" stroke="${color}" stroke-width="1.2" pointer-events="none"/>`
+        ? `<circle class="cursor-bench-cloud-ring" cx="${cx}" cy="${cy}" r="6.5" fill="none" stroke="${color}" stroke-width="1.2"/>`
         : "";
-      return `${baseDot}${cloudRing}`;
-    }).join("");
-    return `${line}${dots}`;
-  }).join("");
+      familyGroups.push(
+        cursorBenchPointGroupMarkup({
+          pointId,
+          cx,
+          cy,
+          color,
+          escapedTooltip,
+          cloudRing,
+        }),
+      );
+      tipLabels.push(
+        `<text class="cursor-bench-tip" id="${tipId}" aria-hidden="true" x="${
+          (tipOnLeft ? cxNum - 8 : cxNum + 8).toFixed(1)
+        }" y="${(cyNum - 10).toFixed(1)}" text-anchor="${
+          tipOnLeft ? "end" : "start"
+        }" paint-order="stroke" stroke="#fff" stroke-width="4">${escapedTooltip}</text>`,
+      );
+      tipRules.push(
+        `.cursor-bench-chart:has(#${pointId}:is(:hover,:active,:focus-within)) #${tipId} { opacity: 1; }`,
+      );
+    }
+    pointGroupsByFamily.push(familyGroups);
+  }
+  // SVG z-index is ignored in Firefox/Safari, so paint later = win hits.
+  // Reverse score order: higher-score families last. Low→Max within a
+  // family still paints later efforts on top.
+  const points = `<g class="cursor-bench-points">${
+    pointGroupsByFamily.toReversed().map((groups) => groups.join("")).join("")
+  }</g>`;
+  const tips = tipLabels.join("");
+  const tipCss = tipRules.join("\n    ");
 
   const legendEntries = families.map((family, index) => {
     const color = colorForFamily(familyColors, family);
@@ -322,9 +408,21 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
   const legend = `${legendEntries}${cloudLegend}`;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="${WIDTH}" height="${HEIGHT}" role="img" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#333">
-  <title>CursorBench 3.2 score versus average cost per task</title>
-  <desc>Scatter plot of CursorBench 3.2 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Low, Medium, High, Extra High, then Max. An outer ring marks the Cloud Agent picker default effort preset for that family, not every configurable option in the picker. Hover a point for the model name and effort.</desc>
+<svg class="cursor-bench-chart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="${WIDTH}" height="${HEIGHT}" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#333" role="group" aria-labelledby="cursor-bench-title" aria-describedby="cursor-bench-desc">
+  <title id="cursor-bench-title">CursorBench 3.2 score versus average cost per task</title>
+  <desc id="cursor-bench-desc">Scatter plot of CursorBench 3.2 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Low, Medium, High, Extra High, then Max. An outer ring marks the Cloud Agent picker default effort preset for that family, not every configurable option in the picker. Hover or tap a point for the model name and effort.</desc>
+  <style><![CDATA[
+    .cursor-bench-chart .cursor-bench-point { cursor: pointer; }
+    .cursor-bench-chart .cursor-bench-point:focus { outline: none; }
+    .cursor-bench-chart .cursor-bench-point:focus-visible .cursor-bench-dot,
+    .cursor-bench-chart .cursor-bench-point:focus-visible .cursor-bench-cloud-ring {
+      stroke: #fff;
+      stroke-width: 2.5;
+      filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px #333);
+    }
+    .cursor-bench-chart .cursor-bench-tip { opacity: 0; pointer-events: none; }
+    ${tipCss}
+  ]]></style>
   ${grid}
   <line x1="${PLOT_LEFT}" y1="${PLOT_BOTTOM}" x2="${PLOT_RIGHT}" y2="${PLOT_BOTTOM}" stroke="#333"/>
   <line x1="${PLOT_LEFT}" y1="${PLOT_TOP}" x2="${PLOT_LEFT}" y2="${PLOT_BOTTOM}" stroke="#333"/>
@@ -338,10 +436,116 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
   }" text-anchor="middle" transform="rotate(-90 16 ${
     (PLOT_TOP + PLOT_BOTTOM) / 2
   })">CursorBench 3.2 score</text>
-  ${series}
+  ${polylines}
   ${legend}
+  ${points}
+  ${tips}
 </svg>
 `;
+}
+
+export interface CursorBenchHtmlPage {
+  text: string;
+  data: { url?: unknown; children?: unknown };
+  src?: { path?: unknown; ext?: unknown };
+}
+
+const CURSOR_BENCH_EMBED_RE =
+  /<img\b[^>]*\bsrc=["'][^"']*\/uses\/cursor-bench\.svg["'][^>]*\/?>/i;
+
+export function isCursorBenchPageUrl(url: unknown): boolean {
+  if (typeof url !== "string") return false;
+  return url === "/uses/cursor/" || url === "/uses/cursor" ||
+    url === "/uses/cursor.html" || url === "/uses/cursor/index.html";
+}
+
+function isCursorBenchSourcePath(path: string): boolean {
+  const normalized = path.replaceAll("\\", "/").replace(/^\.\//, "");
+  return normalized === "uses/cursor" ||
+    normalized === "uses/cursor.md" ||
+    normalized.endsWith("/uses/cursor") ||
+    normalized.endsWith("/uses/cursor.md");
+}
+
+export function isCursorBenchPageSrc(src: unknown): boolean {
+  if (typeof src !== "object" || src === null) return false;
+  if (!("path" in src) || typeof src.path !== "string") return false;
+  return isCursorBenchSourcePath(src.path);
+}
+
+export function isCursorBenchPage(page: CursorBenchHtmlPage): boolean {
+  return isCursorBenchPageUrl(page.data.url) || isCursorBenchPageSrc(page.src);
+}
+
+export function htmlEmbedsCursorBenchSvg(html: string): boolean {
+  return CURSOR_BENCH_EMBED_RE.test(html);
+}
+
+export function prepareCursorBenchSvgForHtml(svg: string): string {
+  const withoutXml = svg.replace(/^<\?xml[^>]*\?>\s*/, "").trim();
+  if (!withoutXml.startsWith("<svg")) {
+    throw new Error("CursorBench SVG missing <svg> root");
+  }
+  return withoutXml.replace(
+    /^<svg\b/,
+    '<svg style="width:100%;height:auto;max-width:960px"',
+  );
+}
+
+export function replaceCursorBenchEmbedInHtml(
+  html: string,
+  inlineSvg: string,
+): string {
+  if (!htmlEmbedsCursorBenchSvg(html)) {
+    throw new Error("HTML does not embed CursorBench SVG");
+  }
+  if (!inlineSvg.includes('class="cursor-bench-point"')) {
+    throw new Error("inline CursorBench SVG missing plot points");
+  }
+  const next = html.replace(CURSOR_BENCH_EMBED_RE, () => inlineSvg);
+  if (next === html || htmlEmbedsCursorBenchSvg(next)) {
+    throw new Error("failed to inline CursorBench SVG");
+  }
+  return next;
+}
+
+function cursorBenchPageLabel(page: CursorBenchHtmlPage): string {
+  const parts: string[] = [];
+  if (typeof page.data.url === "string") {
+    parts.push(page.data.url);
+  }
+  if (
+    typeof page.src === "object" && page.src !== null &&
+    "path" in page.src && typeof page.src.path === "string"
+  ) {
+    parts.push(`src:${page.src.path}`);
+  }
+  return parts.length > 0 ? parts.join(" ") : "unknown page";
+}
+
+export function inlineCursorBenchChartInPages(
+  pages: Iterable<CursorBenchHtmlPage>,
+  svgSource: string,
+): void {
+  const inlineSvg = prepareCursorBenchSvgForHtml(svgSource);
+  let sawCursorPage = false;
+  for (const page of pages) {
+    if (isCursorBenchPage(page)) {
+      sawCursorPage = true;
+      page.text = replaceCursorBenchEmbedInHtml(page.text, inlineSvg);
+      continue;
+    }
+    if (htmlEmbedsCursorBenchSvg(page.text)) {
+      throw new Error(
+        `CursorBench SVG embed on non-Cursor page (${
+          cursorBenchPageLabel(page)
+        })`,
+      );
+    }
+  }
+  if (!sawCursorPage) {
+    throw new Error("CursorBench page missing from HTML output");
+  }
 }
 
 export function writeCursorBenchSvg(

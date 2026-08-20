@@ -20,6 +20,10 @@ import transformImages from "lume/plugins/transform_images.ts";
 import textLoader from "lume/core/loaders/text.ts";
 import GeminiEngine from "./gemini.ts";
 import { customWikiLinks } from "./plugins/wiki-links/mod.ts";
+import {
+  CURSOR_BENCH_SVG_PATH,
+  inlineCursorBenchChartInPages,
+} from "./uses/cursor_bench.ts";
 import readme from "https://deno.land/x/lume_readme@0.0.0/mod.ts";
 const site = lume({
   location: new URL(Deno.env.get("MIRROR_LOCATION") ?? "https://mmap.page"),
@@ -127,6 +131,16 @@ site.copy("fun/heart");
 site.copy("thoughts/typescrit-slogan");
 site.copy("StutteringTalkaholic/hardening");
 site.copy("StutteringTalkaholic/ruby");
+
+// Markdown keeps a normal image so GitHub still previews the chart. Inline at
+// build time so point hover/focus tips work (SVG-as-<img> never exposes them).
+site.process([".html"], (pages) => {
+  inlineCursorBenchChartInPages(
+    pages,
+    Deno.readTextFileSync(CURSOR_BENCH_SVG_PATH),
+  );
+});
+
 site.use(sitemap({
   items: {
     lastmod: "=lastmod",
