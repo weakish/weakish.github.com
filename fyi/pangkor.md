@@ -13,7 +13,7 @@ List of historical places and sites on Pangkor Island, Perak, Malaysia associate
    - Location: [OpenStreetMap (Teluk Gedung vicinity)](https://www.openstreetmap.org/?mlat=4.2000&mlon=100.5758#map=18/4.2000/100.5758) (4.2000°N, 100.5758°E) | [Google Maps](https://www.google.com/maps?q=Kampung+Teluk+Gedung,+32300+Pulau+Pangkor,+Perak)
 
 3. **Batu Bersurat Belanda (Tiger Rock / Sacred Rock)** (1743)
-   - Large granite boulder roughly 100 meters east of Kota Belanda, carved by Dutch soldiers with the VOC emblem, the coat of arms of the United Provinces (Dutch lion), the year 1743, and soldiers' initials. Sheltered by a protective pavilion.
+   - Large granite boulder roughly 140 meters south of Kota Belanda, carved by Dutch soldiers with the VOC emblem, the coat of arms of the United Provinces (Dutch lion), the year 1743, and soldiers' initials. Sheltered by a protective pavilion.
    - Location: [OpenStreetMap](https://www.openstreetmap.org/way/559410703) (4.1993°N, 100.5761°E) | [Google Maps](https://www.google.com/maps?q=Batu+Bersurat+Belanda,+Kampung+Teluk+Gedung,+32300+Pulau+Pangkor,+Perak)
 
 4. **HMS Pluto Treaty Anchorage (Waters off Pangkor)** (20 January 1874)
@@ -37,8 +37,8 @@ List of historical places and sites on Pangkor Island, Perak, Malaysia associate
    - Location: [OpenStreetMap](https://www.openstreetmap.org/?mlat=4.2050&mlon=100.5650#map=15/4.2050/100.5650) (4.2050°N, 100.5650°E) | [Google Maps](https://www.google.com/maps?q=Hutan+Simpan+Pangkor+Selatan,+32300+Pulau+Pangkor,+Perak)
 
 9. **Cross-Island Road (Jalan Pasir Bogak)** (1920s–1930s)
-   - Trans-island road cut by British Public Works through the island's lowest natural saddle, linking eastern Pangkor Village to western Pasir Bogak beach (approx. 2 km). In the colonial era, this road terminated at Pasir Bogak; the continuation northward along the west coast toward Teluk Nipah and Teluk Dalam was a late-20th-century development creating the island ring road (State Route A205). Built by the Dindings Rural Board / PWD to access the breezy western shore for colonial health convalescence and sea-bathing (sanatorium/rest house), improve police patrols against maritime smuggling and piracy on open waters, and provide overland transit without hazardous sea journeys around the southern cape during monsoon swells.
-   - Location: [OpenStreetMap](https://www.openstreetmap.org/way/41411779) (4.2140°N, 100.5650°E) | [Google Maps](https://www.google.com/maps?q=Pantai+Pasir+Bogak,+32300+Pulau+Pangkor,+Perak)
+   - Trans-island road cut by British Public Works through the island's lowest natural saddle, linking eastern Pangkor Village to western Pasir Bogak beach (approx. 2 km). In the colonial era, this road terminated at Pasir Bogak; the continuation northward along the west coast toward Teluk Nipah and Teluk Dalam was a late-20th-century development (Jalan Pasir Bogak, State Route A207). Built by the Dindings Rural Board / PWD to access the breezy western shore for colonial health convalescence and sea-bathing (sanatorium/rest house), improve police patrols against maritime smuggling and piracy on open waters, and provide overland transit without hazardous sea journeys around the southern cape during monsoon swells.
+   - Location: [OpenStreetMap](https://www.openstreetmap.org/way/41411779) (4.2140°N, 100.5650°E) | [Google Maps](https://www.google.com/maps?q=Jalan+Pasir+Bogak,+32300+Pulau+Pangkor,+Perak)
 
 10. **Pangkor Village Public Latrine & Sanitation Site** (1927)
     - Public latrine, culverts, and sanitary drainage built by the Dindings Rural Board / PWD to combat malaria and cholera. Located behind the central public market and bazaar near the landing shore; now the modern MPM municipal public toilet and bazaar civic area.
