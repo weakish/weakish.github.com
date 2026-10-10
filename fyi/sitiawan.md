@@ -6,7 +6,7 @@ List of historical places and sites in Sitiawan, Perak, Malaysia associated with
 
 1. **Kampong Sitiawan River Jetty & Old Settlement (Pengkalan Kampung Sitiawan / "Mena Jetty" Site / Jeti Nelayan Kampung Sitiawan)** (1892)
    - Constructed in early 1892 at the Sitiawan port settlement on Sungai Sitiawan (tributary entering the Dindings estuary). Known historically as "Mena Jetty" (Pengkalan Kampung Sitiawan), it served as an important commercial shipping and local administrative center connecting the Dindings territory with Penang and Singapore. After Lumut and Sitiawan retroceded from the Straits Settlements back to Perak in 1934–1935 (losing free-trade port status), heavy river siltation and declining maritime traffic from Penang caused the jetty to gradually lose its shipping function. Located at Kampung Sitiawan / modern Jeti Nelayan Kampung Sitiawan off Lebuhraya Ipoh–Lumut.
-   - Location: [OpenStreetMap](https://www.openstreetmap.org/way/547107075) (4.2426°N, 100.6944°E) | [Google Maps](https://www.google.com/maps?q=Jeti+Nelayan+Kampung+Sitiawan,+32000+Sitiawan,+Perak)
+   - Location: [OpenStreetMap](https://www.openstreetmap.org/way/547107075) (4.2426°N, 100.6944°E) | [Google Maps](https://www.google.com/maps?q=4.2426,100.6944)
 
 2. **Pioneer Foochow Settlement Wells & Landing Site (Kampung Koh Pioneer Well)** (September 1903)
    - Historic hand-dug communal well sunk by the pioneer group of 363 Foochow Christian immigrants who arrived under the sponsorship of the British colonial government and Methodist missionaries (Dr. H. L. E. Luering and Reverend Ling Ching Mi). Located in the Pioneer Methodist Church / Memorial Hall complex in Kampung Koh.
