@@ -1,6 +1,6 @@
 import { Engine } from "lume/core/renderer.ts";
 import { buffer } from "https://esm.sh/dioscuri@1.3.0";
-import rehypeStarryNight from "https://esm.sh/rehype-starry-night@2.2.0?target=es2022";
+import rehypeStarryNight from "https://esm.sh/rehype-starry-night@2.2.0?target=es2022&deps=@wooorm/starry-night@3.10.0";
 import { all } from "https://esm.sh/@wooorm/starry-night@3.10.0?target=es2022";
 import { unified } from "https://esm.sh/unified@11.0.5?target=es2022";
 import rehypeParse from "https://esm.sh/rehype-parse@9.0.1?target=es2022";
