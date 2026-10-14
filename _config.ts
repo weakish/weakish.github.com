@@ -6,7 +6,7 @@ import jsx from "lume/plugins/jsx.ts";
 import pagefind from "lume/plugins/pagefind.ts";
 import remark from "lume/plugins/remark.ts";
 import resolve_urls from "lume/plugins/resolve_urls.ts";
-import rehypeStarryNight from "https://esm.sh/rehype-starry-night@2.2.0?target=es2022";
+import rehypeStarryNight from "https://esm.sh/rehype-starry-night@2.2.0?target=es2022&deps=@wooorm/starry-night@3.10.0";
 import { all } from "https://esm.sh/@wooorm/starry-night@3.10.0?target=es2022";
 import rehypeExtractExcerpt from "https://esm.sh/rehype-extract-excerpt@0.3.1";
 import rehypePicture from "https://esm.sh/rehype-picture@5.0.0";

@@ -11,14 +11,22 @@ export interface CursorBenchRow {
   cursorCloud: boolean;
 }
 
-const EFFORTS = ["Extra High", "Medium", "High", "Low", "Max"] as const;
+const EFFORTS = [
+  "Extra High",
+  "Medium",
+  "High",
+  "Minimal",
+  "Low",
+  "Max",
+] as const;
 
 const EFFORT_LINE_ORDER: Record<string, number> = {
-  Low: 0,
-  Medium: 1,
-  High: 2,
-  "Extra High": 3,
-  Max: 4,
+  Minimal: 0,
+  Low: 1,
+  Medium: 2,
+  High: 3,
+  "Extra High": 4,
+  Max: 5,
 };
 
 export const CURSOR_BENCH_CSV_PATH = new URL(
@@ -105,8 +113,8 @@ const PLOT_TOP = MARGIN.top;
 const PLOT_BOTTOM = HEIGHT - MARGIN.bottom;
 const COST_MIN = 0;
 const COST_MAX = 18;
-const SCORE_MIN = 35;
-const SCORE_MAX = 75;
+const SCORE_MIN = 15;
+const SCORE_MAX = 60;
 
 // Okabe-Ito / Tol muted base, plus Tol bright/vibrant extensions (color-blind safe).
 const FAMILY_PALETTE = [
@@ -277,7 +285,7 @@ function rowsForFamily(
 export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
   const families = uniqueFamiliesInScoreOrder(rows);
   const familyColors = cursorBenchColorsForFamilies(families);
-  const yTicks = [75, 70, 65, 60, 55, 50, 45, 40, 35];
+  const yTicks = [60, 55, 50, 45, 40, 35, 30, 25, 20, 15];
   const xTicks = [18, 15, 12, 9, 6, 3, 0];
 
   const grid = [
@@ -375,7 +383,7 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
     pointGroupsByFamily.push(familyGroups);
   }
   // SVG z-index is ignored in Firefox/Safari, so paint later = win hits.
-  // Reverse score order: higher-score families last. Low→Max within a
+  // Reverse score order: higher-score families last. Minimal→Max within a
   // family still paints later efforts on top.
   const points = `<g class="cursor-bench-points">${
     pointGroupsByFamily.toReversed().map((groups) => groups.join("")).join("")
@@ -409,8 +417,8 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg class="cursor-bench-chart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="${WIDTH}" height="${HEIGHT}" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#333" role="group" aria-labelledby="cursor-bench-title" aria-describedby="cursor-bench-desc">
-  <title id="cursor-bench-title">CursorBench 3.2 score versus average cost per task</title>
-  <desc id="cursor-bench-desc">Scatter plot of CursorBench 3.2 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Low, Medium, High, Extra High, then Max. An outer ring marks the Cloud Agent picker default effort preset for that family, not every configurable option in the picker. Hover or tap a point for the model name and effort.</desc>
+  <title id="cursor-bench-title">CursorBench 4.0 score versus average cost per task</title>
+  <desc id="cursor-bench-desc">Scatter plot of CursorBench 4.0 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Minimal, Low, Medium, High, Extra High, then Max. An outer ring marks a model and effort available in the Cloud Agent picker. Hover or tap a point for the model name and effort.</desc>
   <style><![CDATA[
     .cursor-bench-chart .cursor-bench-point { cursor: pointer; }
     .cursor-bench-chart .cursor-bench-point:focus { outline: none; }
@@ -435,7 +443,7 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
     (PLOT_TOP + PLOT_BOTTOM) / 2
   }" text-anchor="middle" transform="rotate(-90 16 ${
     (PLOT_TOP + PLOT_BOTTOM) / 2
-  })">CursorBench 3.2 score</text>
+  })">CursorBench 4.0 score</text>
   ${polylines}
   ${legend}
   ${points}

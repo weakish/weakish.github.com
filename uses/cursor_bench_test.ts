@@ -29,6 +29,10 @@ Deno.test("splitCursorBenchModelName prefers Extra High over High", () => {
   if (solo.family !== "Solo Model" || solo.effort !== "") {
     throw new Error(`unexpected solo split: ${JSON.stringify(solo)}`);
   }
+  const minimal = splitCursorBenchModelName("Muse Spark 1.3 Minimal");
+  if (minimal.family !== "Muse Spark 1.3" || minimal.effort !== "Minimal") {
+    throw new Error(`unexpected Minimal split: ${JSON.stringify(minimal)}`);
+  }
 });
 
 Deno.test("cost axis puts higher cost further left", () => {
@@ -38,8 +42,8 @@ Deno.test("cost axis puts higher cost further left", () => {
 });
 
 Deno.test("score axis puts higher score further up", () => {
-  if (!(cursorBenchScoreToY(75) < cursorBenchScoreToY(35))) {
-    throw new Error("expected 75% above 35% (smaller y)");
+  if (!(cursorBenchScoreToY(60) < cursorBenchScoreToY(15))) {
+    throw new Error("expected 60% above 15% (smaller y)");
   }
 });
 
@@ -216,11 +220,12 @@ Deno.test("linear probe throws when the palette is exhausted", () => {
   throw new Error("expected palette exhaustion");
 });
 
-Deno.test("family polyline connects Low then Medium then High", () => {
+Deno.test("family polyline connects Minimal then Low then Medium then High", () => {
   const csv = `model,score_pct,cost,tokens,steps,cursor_cloud
-Family High,70.0,1.50,80,8,-
+Family High,55.0,1.50,80,8,-
 Family Low,50.0,1.00,80,8,-
-Family Medium,60.0,3.00,80,8,-
+Family Medium,45.0,3.00,80,8,-
+Family Minimal,40.0,0.50,80,8,-
 `;
   const svg = renderCursorBenchSvg(parseCursorBenchCsv(csv));
   const match = svg.match(/<polyline [^>]*points="([^"]+)"/);
@@ -228,10 +233,13 @@ Family Medium,60.0,3.00,80,8,-
     throw new Error("missing family polyline");
   }
   const expected = [
+    `${cursorBenchCostToX(0.5).toFixed(1)},${
+      cursorBenchScoreToY(40).toFixed(1)
+    }`,
     `${cursorBenchCostToX(1).toFixed(1)},${cursorBenchScoreToY(50).toFixed(1)}`,
-    `${cursorBenchCostToX(3).toFixed(1)},${cursorBenchScoreToY(60).toFixed(1)}`,
+    `${cursorBenchCostToX(3).toFixed(1)},${cursorBenchScoreToY(45).toFixed(1)}`,
     `${cursorBenchCostToX(1.5).toFixed(1)},${
-      cursorBenchScoreToY(70).toFixed(1)
+      cursorBenchScoreToY(55).toFixed(1)
     }`,
   ].join(" ");
   if (match[1] !== expected) {
@@ -447,33 +455,55 @@ Deno.test("committed CursorBench SVG matches render from CSV", () => {
   }
 });
 
-Deno.test("committed CursorBench CSV marks nine Cloud Agent picker defaults", () => {
+Deno.test("committed CursorBench CSV marks Cloud Agent picker families at all efforts", () => {
   const rows = parseCursorBenchCsv(
     Deno.readTextFileSync(CURSOR_BENCH_CSV_PATH),
   );
   const cloudModels = rows.filter((row) => row.cursorCloud).map((row) =>
     row.model
-  );
+  ).sort();
   const expected = [
-    "Composer 2.5",
-    "Fable 5 High",
-    "Gemini 3.7 Flash High",
+    "Fable 5.1 Extra High",
+    "Fable 5.1 High",
+    "Fable 5.1 Low",
+    "Fable 5.1 Max",
+    "Fable 5.1 Medium",
+    "GPT-5.6 Sol Extra High",
+    "GPT-5.6 Sol High",
+    "GPT-5.6 Sol Low",
+    "GPT-5.6 Sol Max",
     "GPT-5.6 Sol Medium",
-    "GPT-5.6 Terra Max",
-    "Grok 4.5 High",
+    "Gemini 3.8 Flash High",
+    "Gemini 3.8 Flash Medium",
+    "Grok 4.6 Extra High",
     "Grok 4.6 High",
-    "Opus 5 High",
-    "Sonnet 5 High",
+    "Grok 4.6 Low",
+    "Grok 4.6 Medium",
+    "Grok 4.7 Extra High",
+    "Grok 4.7 High",
+    "Grok 4.7 Low",
+    "Grok 4.7 Medium",
+    "Muse Spark 1.3 Extra High",
+    "Muse Spark 1.3 High",
+    "Muse Spark 1.3 Low",
+    "Muse Spark 1.3 Max",
+    "Muse Spark 1.3 Medium",
+    "Muse Spark 1.3 Minimal",
+    "Opus 5.5 Extra High",
+    "Opus 5.5 High",
+    "Opus 5.5 Low",
+    "Opus 5.5 Max",
+    "Opus 5.5 Medium",
+    "Sonnet 5.5 Extra High",
+    "Sonnet 5.5 High",
+    "Sonnet 5.5 Low",
+    "Sonnet 5.5 Max",
+    "Sonnet 5.5 Medium",
   ];
-  if (cloudModels.length !== expected.length) {
+  if (cloudModels.join("\n") !== expected.join("\n")) {
     throw new Error(
-      `expected ${expected.length} Cursor Cloud rows, got ${cloudModels.length}`,
+      `unexpected Cursor Cloud rows:\n${cloudModels.join("\n")}`,
     );
-  }
-  for (const model of expected) {
-    if (!cloudModels.includes(model)) {
-      throw new Error(`expected CSV Cursor Cloud flag for ${model}`);
-    }
   }
 });
 
@@ -616,7 +646,7 @@ Deno.test("prepareCursorBenchSvgForHtml strips xml decl and sets layout style", 
 
 Deno.test("replaceCursorBenchEmbedInHtml keeps dollar amounts in the SVG", () => {
   const html =
-    `<p><img src="/uses/cursor-bench.svg" alt="CursorBench 3.2 score versus average cost per task"></p>`;
+    `<p><img src="/uses/cursor-bench.svg" alt="CursorBench 4.0 score versus average cost per task"></p>`;
   const inlineSvg = `<svg class="cursor-bench-point"><text>$18</text></svg>`;
   const next = replaceCursorBenchEmbedInHtml(html, inlineSvg);
   if (!next.includes("$18")) {
@@ -725,7 +755,7 @@ Deno.test("inlineCursorBenchChartInPages inlines the Cursor page", () => {
 
 Deno.test("inlineCursorBenchChartInPages leaves feed children on the img embed", () => {
   const children =
-    `<p><img src="/uses/cursor-bench.svg" alt="CursorBench 3.2 score versus average cost per task"></p>`;
+    `<p><img src="/uses/cursor-bench.svg" alt="CursorBench 4.0 score versus average cost per task"></p>`;
   const pages = [{
     text: `<article>${children}</article>`,
     data: { url: "/uses/cursor/", children },
