@@ -3,7 +3,7 @@
 Cursor [models and pricing](https://cursor.com/docs/models-and-pricing#model-pricing).
 Prices are per million tokens. Speed, cost, and intelligence tiers come from the Cursor docs model metadata.
 Release year and knowledge cutoff year come from provider documentation when Cursor does not publish them.
-Cursor Cloud indicates availability in the Cloud Agent model picker on [cursor.com/agents](https://cursor.com/agents) (snapshot 11 Oct 2026).
+Cursor Cloud indicates availability in the Cloud Agent model picker on [cursor.com/agents](https://cursor.com/agents).
 
 ## CursorBench
 
@@ -12,11 +12,12 @@ Cost decreases toward the right, so the upper-right is higher score at lower cos
 Points from the same model family are connected Minimal → Low → Medium → High → Extra High → Max, skipping missing levels.
 An outer ring marks a model/effort available in the Cloud Agent picker.
 Hover or tap a point for the model name and effort.
-Numbers are from the public leaderboard (pricing snapshot 10 Oct 2026).
-Rings on this plot are Grok 4.6/4.7, Opus 5.5, GPT-5.6 Sol, Fable 5.1, Gemini 3.8 Flash, Muse Spark 1.3, and Sonnet 5.5 at all listed efforts.
-The table Cloud column is the 11 Oct 2026 picker (also Gemini 3.7 Flash, which is not on CursorBench 4.0).
+Numbers are from the public leaderboard (snapshot 4 Nov 2026).
+Rings on this plot are Grok 4.6/4.7, Opus 5.5, GPT-5.6 Sol, Fable 5.1, Gemini 4 Argon, Muse Wonder, Composer 2.5, and Sonnet 5.5 at all listed efforts.
+Gemini 3.8 Flash, Muse Spark 1.3, and DeepSeek V4.1 Flash 1017 have no rings.
+New arrivals: Gemini 4 Argon High 52.9% and Medium 52.8% slot between Sonnet 5.5 Extra High and Opus 5.5 Medium; Muse Wonder scales Minimal 34.2% → Max 50.4%; DeepSeek V4.1 Flash 1017 Max 47.7% at $0.98 undercuts Haiku 5.5 Max (48.4% at $1.12), and its Medium (46.3%) beats its High (45.6%).
 Sonnet 5.5 and Haiku 5.5 scale hard with effort: Sonnet 5.5 Low 35.8% → Max 55.5% (2nd overall); Haiku 5.5 Low 30.9% → Max 48.4%.
-GPT-5.6 does not: Sol Max 41.7% and Terra Max 41.3% sit with Haiku High (42.3%), next to Grok 4.6 Extra High and Muse Spark 1.3 Max; Luna Low is last at 16.0%.
+GPT-5.6 does not: Sol Max 41.7% (tied with Muse Wonder Low) and Terra Max 41.3% sit with Haiku High (42.3%), next to Grok 4.6 Extra High and Muse Spark 1.3 Max; Luna Low is last at 16.0%.
 
 ![CursorBench 4.0 score versus average cost per task](/uses/cursor-bench.svg)
 
@@ -38,10 +39,12 @@ GPT-5.6 does not: Sol Max 41.7% and Terra Max 41.3% sit with Haiku High (42.3%),
 | [claude-opus-5](https://cursor.com/docs/models/claude-opus-5) | 300k | 1M | Anthropic | Agent, Thinking, Images | - | medium | high | frontier | 2026 | 2026 | $5 | $6.25 | $0.5 | $25 |
 | [claude-opus-5-fast](https://cursor.com/docs/models/claude-opus-5) | 300k | 1M | Anthropic | Agent, Thinking, Images | - | fast | high | frontier | 2026 | 2026 | $10 | $12.5 | $1 | $50 |
 | [claude-opus-5.5](https://cursor.com/docs/models/claude-opus-5-5) | 300k | 1M | Anthropic | Agent, Thinking, Images | yes | medium | high | frontier | 2026 | 2026 | $4 | $5 | $0.2 | $20 |
+| [claude-opus-5-5-fast](https://cursor.com/docs/models/claude-opus-5-5) | 300k | 1M | Anthropic | Agent, Thinking, Images | - | fast | high | frontier | 2026 | 2026 | $8 | $10 | $0.4 | $40 |
 | [claude-sonnet-5](https://cursor.com/docs/models/claude-sonnet-5) | 200k | 1M | Anthropic | Agent, Thinking, Images | - | medium | medium | frontier | 2026 | 2026 | $2 | $2.5 | $0.2 | $10 |
 | [claude-sonnet-5.5](https://cursor.com/docs/models/claude-sonnet-5-5) | 200k | 1M | Anthropic | Agent, Thinking, Images | yes | medium | medium | frontier | 2026 | 2026 | $2 | $2.5 | $0.1 | $10 |
+| [claude-haiku-5-5](https://cursor.com/docs/models/claude-haiku-5-5) | 300k | 1M | Anthropic | Agent, Thinking, Images | - | fast | low | high | 2026 | 2026 | $0.1 | $0.125 | $0.01 | $0.5 |
 | [composer-1](https://cursor.com/docs/models/cursor-composer-1) | 200k | - | Cursor | Agent, Images | - | medium | medium | high | 2025 | - | $1.25 | - | $0.125 | $10 |
-| [composer-2.5](https://cursor.com/docs/models/cursor-composer-2-5) | 200k | - | Cursor | Agent, Thinking, Images | - | fast | low | frontier | 2026 | - | $0.5 | - | $0.2 | $2.5 |
+| [composer-2.5](https://cursor.com/docs/models/cursor-composer-2-5) | 200k | - | Cursor | Agent, Thinking, Images | yes | fast | low | frontier | 2026 | - | $0.5 | - | $0.2 | $2.5 |
 | [composer-2.5-fast](https://cursor.com/docs/models/cursor-composer-2-5) | 200k | - | Cursor | Agent, Thinking, Images | - | fast | high | frontier | 2026 | - | $3 | - | $0.5 | $15 |
 | [gemini-2.5-flash](https://cursor.com/docs/models/gemini-2-5-flash) | 200k | 1M | Google | Agent, Thinking, Images | - | fast | low | moderate | 2025 | 2025 | $0.3 | - | $0.03 | $2.5 |
 | [gemini-3-flash](https://cursor.com/docs/models/gemini-3-flash) | 200k | 1M | Google | Agent, Thinking, Images | - | fast | low | moderate | 2025 | 2025 | $0.5 | - | $0.05 | $3 |
@@ -50,9 +53,12 @@ GPT-5.6 does not: Sol Max 41.7% and Terra Max 41.3% sit with Haiku High (42.3%),
 | [gemini-3.1-pro](https://cursor.com/docs/models/gemini-3-1-pro) | 200k | 1M | Google | Agent, Thinking, Images | - | medium | medium | frontier | 2026 | 2025 | $2 | - | $0.2 | $12 |
 | [gemini-3.5-flash](https://cursor.com/docs/models/gemini-3-5-flash) | 200k | 1M | Google | Agent, Thinking, Images | - | fast | low | high | 2026 | 2025 | $1.5 | - | $0.15 | $9 |
 | [gemini-3.6-flash](https://cursor.com/docs/models/gemini-3-6-flash) | 200k | 1M | Google | Agent, Thinking, Images | - | fast | low | high | 2026 | 2026 | $1.5 | - | $0.15 | $7.5 |
-| [gemini-3.7-flash](https://cursor.com/docs/models/gemini-3-7-flash) | 200k | 1M | Google | Agent, Thinking, Images | yes | fast | low | high | 2026 | 2026 | $0.75 | - | $0.075 | $3.5 |
-| [gemini-3.8-flash](https://cursor.com/docs/models/gemini-3-8-flash) | 200k | 1M | Google | Agent, Thinking, Images | yes | fast | low | high | 2026 | 2026 | $0.75 | - | $0.075 | $3.5 |
+| [gemini-3.7-flash](https://cursor.com/docs/models/gemini-3-7-flash) | 200k | 1M | Google | Agent, Thinking, Images | - | fast | low | high | 2026 | 2026 | $0.75 | - | $0.075 | $3.75 |
+| [gemini-3.8-flash](https://cursor.com/docs/models/gemini-3-8-flash) | 200k | 1M | Google | Agent, Thinking, Images | - | fast | low | high | 2026 | 2026 | $0.75 | - | $0.075 | $3.75 |
+| [gemini-4-argon](https://cursor.com/docs/models/gemini-4-argon) | 200k | 1M | Google | Agent, Thinking, Images | yes | medium | medium | frontier | 2026 | 2026 | $2 | - | $0.1 | $10 |
 | [glm-5.2](https://cursor.com/docs/models/glm-5-2) | 200k | - | Z.ai | Agent, Thinking | - | medium | low | high | 2026 | - | $1.4 | - | $0.26 | $4.4 |
+| [glm-5.3](https://cursor.com/docs/models/glm-5-3) | 1M | - | Z.ai | Agent, Thinking | - | medium | low | high | 2026 | - | $1.4 | - | $0.26 | $4.4 |
+| [glm-5.3-flash](https://cursor.com/docs/models/glm-5-3-flash) | 1M | - | Z.ai | Agent, Thinking, Images | - | fast | low | moderate | 2026 | - | $0.15 | - | $0.029 | $0.5 |
 | [gpt-5.1](https://cursor.com/docs/models/gpt-5) | 272k | - | OpenAI | Agent, Thinking, Images | - | medium | medium | high | 2025 | 2024 | $1.25 | - | $0.125 | $10 |
 | [gpt-5-fast](https://cursor.com/docs/models/gpt-5-fast) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | high | high | 2025 | 2024 | $2.5 | - | $0.25 | $20 |
 | [gpt-5-mini](https://cursor.com/docs/models/gpt-5-mini) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | low | moderate | 2025 | 2024 | $0.25 | - | $0.025 | $2 |
@@ -69,18 +75,22 @@ GPT-5.6 does not: Sol Max 41.7% and Terra Max 41.3% sit with Haiku High (42.3%),
 | [gpt-5.4-nano](https://cursor.com/docs/models/gpt-5-4-nano) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | low | moderate | 2026 | 2025 | $0.2 | - | $0.02 | $1.25 |
 | [gpt-5.5](https://cursor.com/docs/models/gpt-5-5) | 272k | 1M | OpenAI | Agent, Thinking, Images | - | medium | medium | frontier | 2026 | 2025 | $5 | - | $0.5 | $30 |
 | [gpt-5.5-fast](https://cursor.com/docs/models/gpt-5-5) | 272k | 1M | OpenAI | Agent, Thinking, Images | - | fast | high | frontier | 2026 | 2025 | $12.5 | - | $1.25 | $75 |
-| [gpt-5.6-luna](https://cursor.com/docs/models/gpt-5-6-luna) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | low | moderate | 2026 | 2026 | $0.2 | $0.25 | $0.02 | $1.2 |
-| [gpt-5.6-luna-fast](https://cursor.com/docs/models/gpt-5-6-luna) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | low | moderate | 2026 | 2026 | $0.4 | $0.5 | $0.04 | $2.4 |
-| [gpt-5.6-sol](https://cursor.com/docs/models/gpt-5-6-sol) | 272k | 1M | OpenAI | Agent, Thinking, Images | yes | medium | medium | frontier | 2026 | 2026 | $5 | $6.25 | $0.5 | $30 |
-| [gpt-5.6-sol-fast](https://cursor.com/docs/models/gpt-5-6-sol) | 272k | 1M | OpenAI | Agent, Thinking, Images | yes | fast | high | frontier | 2026 | 2026 | $10 | $12.5 | $1 | $60 |
-| [gpt-5.6-terra](https://cursor.com/docs/models/gpt-5-6-terra) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | medium | high | 2026 | 2026 | $2 | $2.5 | $0.2 | $12 |
-| [gpt-5.6-terra-fast](https://cursor.com/docs/models/gpt-5-6-terra) | 272k | - | OpenAI | Agent, Thinking, Images | - | fast | high | high | 2026 | 2026 | $4 | $5 | $0.4 | $24 |
+| [gpt-5.6-luna](https://cursor.com/docs/models/gpt-5-6-luna) | 272k | 1M | OpenAI | Agent, Thinking, Images | - | fast | low | moderate | 2026 | 2026 | $0.2 | $0.25 | $0.02 | $1.2 |
+| [gpt-5.6-luna-fast](https://cursor.com/docs/models/gpt-5-6-luna) | 272k | 1M | OpenAI | Agent, Thinking, Images | - | fast | low | moderate | 2026 | 2026 | $0.4 | $0.5 | $0.04 | $2.4 |
+| [gpt-5.6-sol](https://cursor.com/docs/models/gpt-5-6-sol) | 272k | 1M | OpenAI | Agent, Thinking, Images | yes | medium | medium | frontier | 2026 | 2026 | $4 | $5 | $0.4 | $20 |
+| [gpt-5.6-sol-fast](https://cursor.com/docs/models/gpt-5-6-sol) | 272k | 1M | OpenAI | Agent, Thinking, Images | yes | fast | high | frontier | 2026 | 2026 | $8 | $10 | $0.8 | $40 |
+| [gpt-5.6-terra](https://cursor.com/docs/models/gpt-5-6-terra) | 272k | 1M | OpenAI | Agent, Thinking, Images | - | fast | medium | high | 2026 | 2026 | $2 | $2.5 | $0.2 | $12 |
+| [gpt-5.6-terra-fast](https://cursor.com/docs/models/gpt-5-6-terra) | 272k | 1M | OpenAI | Agent, Thinking, Images | - | fast | high | high | 2026 | 2026 | $4 | $5 | $0.4 | $24 |
 | [grok-4.5](https://cursor.com/docs/models/grok-4-5) | 256k | - | Cursor | Agent, Thinking | - | medium | medium | frontier | 2026 | 2026 | $2 | - | $0.5 | $6 |
-| [grok-4.5-fast](https://cursor.com/docs/models/grok-4-5) | 256k | - | Cursor | Agent, Thinking | - | fast | high | frontier | 2026 | 2026 | $4 | - | $1 | $12 |
+| [grok-4.5-fast](https://cursor.com/docs/models/grok-4-5) | 256k | - | Cursor | Agent, Thinking | - | fast | high | frontier | 2026 | 2026 | $4 | - | $1 | $18 |
 | [grok-4.6](https://cursor.com/docs/models/grok-4-6) | 256k | - | Cursor | Agent, Thinking | yes | medium | medium | frontier | 2026 | 2026 | $2 | - | $0.5 | $6 |
 | [grok-4.6-fast](https://cursor.com/docs/models/grok-4-6) | 256k | - | Cursor | Agent, Thinking | yes | fast | high | frontier | 2026 | 2026 | $4 | - | $1 | $12 |
 | [grok-4.7](https://cursor.com/docs/models/grok-4-7) | 256k | 500k | Cursor | Agent, Thinking | yes | medium | medium | frontier | 2026 | 2026 | $2 | - | $0.5 | $6 |
 | [grok-4.7-fast](https://cursor.com/docs/models/grok-4-7) | 256k | 500k | Cursor | Agent, Thinking | yes | fast | high | frontier | 2026 | 2026 | $4 | - | $1 | $12 |
-| [muse-spark-1.3](https://cursor.com/docs/models/muse-spark-1-3) | 300k | 1M | Meta | Agent, Thinking, Images | yes | medium | low | frontier | 2026 | - | $1.25 | - | $0.15 | $4.25 |
+| [muse-spark-1.3](https://cursor.com/docs/models/muse-spark-1-3) | 300k | 1M | Meta | Agent, Thinking, Images | - | medium | low | frontier | 2026 | - | $1.25 | - | $0.15 | $4.25 |
+| [muse-wonder-1.0](https://cursor.com/docs/models/muse-wonder) | 300k | 1M | Meta | Agent, Thinking, Images | yes | medium | high | frontier | 2026 | - | $4 | - | $0.2 | $20 |
 | [kimi-k2.7-code](https://cursor.com/docs/models/kimi-k2-7-code) | 262k | - | Moonshot | Agent, Thinking, Images | - | medium | low | high | 2026 | - | $0.95 | - | $0.19 | $4 |
 | [kimi-k3](https://cursor.com/docs/models/kimi-k3) | 200k | 1M | Moonshot | Agent, Thinking, Images | - | medium | medium | high | 2026 | - | $3 | - | $0.3 | $15 |
+| [deepseek-v4.1-flash-1017](https://cursor.com/docs/models/deepseek-v4-1-flash-1017) | 1M | - | DeepSeek | Agent, Thinking | - | fast | medium | high | 2026 | - | $0.3 | - | $0.006 | $1.2 |
+
+Haiku 5.5 prices in the table are the rates for requests up to 100k input tokens. Above 100k, Cursor bills 5x ($0.5 input, $0.625 cache write, $0.05 cache read, $2.5 output), which applies inside the 300k default window and at the 1M max.
