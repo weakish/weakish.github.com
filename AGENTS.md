@@ -27,12 +27,10 @@ Keep this file short: many agents inject it into the system prompt. Details that
 
 ## Skills
 
-Under `.agents/skills/<name>/SKILL.md`. When a task matches a skill description, read and follow that `SKILL.md`. **Before any commit**, read [`.agents/skills/git-commits/SKILL.md`](.agents/skills/git-commits/SKILL.md) even if the user did not mention commits.
+Under `.agents/skills/<name>/SKILL.md`. When a task matches a skill description, read and follow that `SKILL.md`.
 
 | Skill | Path |
 |-------|------|
-| Git commits and trailers | `.agents/skills/git-commits/SKILL.md` |
-| Review one commit | `.agents/skills/review/SKILL.md` |
 | Generate `movies/netflix.csv` | `.agents/skills/generate-netflix-csv/SKILL.md` |
 
 ## Git (multi-agent cwd)
@@ -45,6 +43,6 @@ Other agents may be editing different files here. Never touch their unstaged/sta
 - Never: `git reset --hard`, `git checkout .`, `git clean -fd`, `git stash`, `git add -A`, `git add .`, `git commit --no-verify`
 - Rebase conflicts: resolve only your files; otherwise abort and ask
 - Issues/PRs: only when explicitly asked; PRs must be drafts
-- Optional `Acked-by` / `Reviewed-by` record which commits a human reviewed (see git-commits skill)
-- Bug fixes for user-reported issues: `Reported-by` on the fix commit (see git-commits skill)
-- Changes shaped by a human’s idea or approach: `Suggested-by` on that commit (see git-commits skill)
+- Optional `Acked-by` / `Reviewed-by` record which commits a human reviewed
+- Bug fixes for user-reported issues: `Reported-by` on the fix commit
+- Changes shaped by a human’s idea or approach: `Suggested-by` on that commit
