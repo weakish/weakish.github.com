@@ -42,10 +42,13 @@ If not, you can figure it out via the source code of this site.
 
 I use Zed, mostly as a browser rather than an editor since [[vibe/too-faithful-port|AI agents]] are getting smarter and smarter.
 
-Currently I use the [[cursor|cursor agent]] under [herdr][].
+Currently I use [[cursor]], [grok][], [agy][], [pi][] under [herdr][].
 I may try [Devin][], [Jules][] and [Junie][] in future.
 
 [herdr]: https://herdr.dev/
+[grok]: https://x.ai/cli
+[agy]: https://antigravity.google
+[pi]: https://pi.dev
 [Devin]: https://devin.ai
 [Junie]: https://www.jetbrains.com/junie/
 [Jules]: https://jules.google.com/
