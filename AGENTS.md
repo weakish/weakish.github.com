@@ -38,11 +38,8 @@ Under `.agents/skills/<name>/SKILL.md`. When a task matches a skill description,
 Other agents may be editing different files here. Never touch their unstaged/staged/untracked files.
 
 - Stage/commit only files **you** changed in **this** session; verify with `git status` first
-- Commit your changes before finishing your turn
+- Commit your changes before finishing your turn; follow the `git-commits` skill
 - Never push, force-push, or push/merge to `master` (even if asked)
 - Never: `git reset --hard`, `git checkout .`, `git clean -fd`, `git stash`, `git add -A`, `git add .`, `git commit --no-verify`
 - Rebase conflicts: resolve only your files; otherwise abort and ask
 - Issues/PRs: only when explicitly asked; PRs must be drafts
-- Optional `Acked-by` / `Reviewed-by` record which commits a human reviewed
-- Bug fixes for user-reported issues: `Reported-by` on the fix commit
-- Changes shaped by a human’s idea or approach: `Suggested-by` on that commit
