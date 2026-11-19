@@ -8,7 +8,6 @@ export interface CursorBenchRow {
   cost: number;
   tokens: number;
   steps: number;
-  cursorCloud: boolean;
 }
 
 const EFFORTS = [
@@ -73,13 +72,6 @@ function requiredCsvNumber(
   return value;
 }
 
-function requiredCsvCursorCloud(record: Record<string, string>): boolean {
-  const value = requiredCsvField(record, "cursor_cloud");
-  if (value === "yes") return true;
-  if (value === "-") return false;
-  throw new Error(`CursorBench CSV row has invalid cursor_cloud: ${value}`);
-}
-
 export function parseCursorBenchCsv(csv: string): CursorBenchRow[] {
   const records = parse(csv, { skipFirstRow: true, strip: true });
   return records.map((record) => {
@@ -93,7 +85,6 @@ export function parseCursorBenchCsv(csv: string): CursorBenchRow[] {
       cost: requiredCsvNumber(record, "cost"),
       tokens: requiredCsvNumber(record, "tokens"),
       steps: requiredCsvNumber(record, "steps"),
-      cursorCloud: requiredCsvCursorCloud(record),
     };
   });
 }
@@ -112,7 +103,7 @@ const PLOT_RIGHT = WIDTH - MARGIN.right;
 const PLOT_TOP = MARGIN.top;
 const PLOT_BOTTOM = HEIGHT - MARGIN.bottom;
 const COST_MIN = 0;
-const COST_MAX = 18;
+const COST_MAX = 8;
 const SCORE_MIN = 15;
 const SCORE_MAX = 60;
 
@@ -216,13 +207,11 @@ function cursorBenchPointGroupMarkup(options: {
   cy: string;
   color: string;
   escapedTooltip: string;
-  cloudRing: string;
 }): string {
-  const { pointId, cx, cy, color, escapedTooltip, cloudRing } = options;
+  const { pointId, cx, cy, color, escapedTooltip } = options;
   return [
     `<g class="cursor-bench-point" id="${pointId}" role="img" tabindex="-1" aria-label="${escapedTooltip}">`,
     `<circle class="cursor-bench-dot" cx="${cx}" cy="${cy}" r="3.5" fill="${color}" stroke="#fff" stroke-width="0.8"/>`,
-    cloudRing,
     `<circle class="cursor-bench-hit" cx="${cx}" cy="${cy}" r="12" fill="none" pointer-events="all"/>`,
     `</g>`,
   ].join("");
@@ -286,7 +275,7 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
   const families = uniqueFamiliesInScoreOrder(rows);
   const familyColors = cursorBenchColorsForFamilies(families);
   const yTicks = [60, 55, 50, 45, 40, 35, 30, 25, 20, 15];
-  const xTicks = [18, 15, 12, 9, 6, 3, 0];
+  const xTicks = [8, 6, 4, 2, 0];
 
   const grid = [
     ...yTicks.map((score) => {
@@ -348,17 +337,12 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
       const cyNum = cursorBenchScoreToY(row.scorePct);
       const cx = cxNum.toFixed(1);
       const cy = cyNum.toFixed(1);
-      const tooltip = row.cursorCloud
-        ? `${row.model}: ${row.scorePct}% · $${
-          row.cost.toFixed(2)
-        }/task · Cursor Cloud`
-        : `${row.model}: ${row.scorePct}% · $${row.cost.toFixed(2)}/task`;
+      const tooltip = `${row.model}: ${row.scorePct}% · $${
+        row.cost.toFixed(2)
+      }/task`;
       const escapedTooltip = escapeXml(tooltip);
       // Prefer tips toward the plot center so they stay clear of axes/legend.
       const tipOnLeft = cxNum > (PLOT_LEFT + PLOT_RIGHT) / 2;
-      const cloudRing = row.cursorCloud
-        ? `<circle class="cursor-bench-cloud-ring" cx="${cx}" cy="${cy}" r="6.5" fill="none" stroke="${color}" stroke-width="1.2"/>`
-        : "";
       familyGroups.push(
         cursorBenchPointGroupMarkup({
           pointId,
@@ -366,7 +350,6 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
           cy,
           color,
           escapedTooltip,
-          cloudRing,
         }),
       );
       tipLabels.push(
@@ -391,7 +374,7 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
   const tips = tipLabels.join("");
   const tipCss = tipRules.join("\n    ");
 
-  const legendEntries = families.map((family, index) => {
+  const legend = families.map((family, index) => {
     const color = colorForFamily(familyColors, family);
     const y = PLOT_TOP + 12 + index * 18;
     return `<circle cx="${
@@ -401,29 +384,14 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
     }">${escapeXml(family)}</text>`;
   }).join("");
 
-  const hasCursorCloud = rows.some((row) => row.cursorCloud);
-  const cloudLegendY = PLOT_TOP + 12 + families.length * 18 + 8;
-  const cloudLegend = hasCursorCloud
-    ? `<circle cx="${
-      PLOT_RIGHT + 14
-    }" cy="${cloudLegendY}" r="3.5" fill="#555" stroke="#fff" stroke-width="0.8"/><circle cx="${
-      PLOT_RIGHT + 14
-    }" cy="${cloudLegendY}" r="6.5" fill="none" stroke="#555" stroke-width="1.2"/><text x="${
-      PLOT_RIGHT + 24
-    }" y="${cloudLegendY + 4}">Cursor Cloud</text>`
-    : "";
-
-  const legend = `${legendEntries}${cloudLegend}`;
-
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg class="cursor-bench-chart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="${WIDTH}" height="${HEIGHT}" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#333" role="group" aria-labelledby="cursor-bench-title" aria-describedby="cursor-bench-desc">
   <title id="cursor-bench-title">CursorBench 4.0 score versus average cost per task</title>
-  <desc id="cursor-bench-desc">Scatter plot of CursorBench 4.0 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Minimal, Low, Medium, High, Extra High, then Max. An outer ring marks a model and effort available in the Cloud Agent picker. Hover or tap a point for the model name and effort.</desc>
+  <desc id="cursor-bench-desc">Scatter plot of CursorBench 4.0 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Minimal, Low, Medium, High, Extra High, then Max. Hover or tap a point for the model name and effort.</desc>
   <style><![CDATA[
     .cursor-bench-chart .cursor-bench-point { cursor: pointer; }
     .cursor-bench-chart .cursor-bench-point:focus { outline: none; }
-    .cursor-bench-chart .cursor-bench-point:focus-visible .cursor-bench-dot,
-    .cursor-bench-chart .cursor-bench-point:focus-visible .cursor-bench-cloud-ring {
+    .cursor-bench-chart .cursor-bench-point:focus-visible .cursor-bench-dot {
       stroke: #fff;
       stroke-width: 2.5;
       filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px #333);
