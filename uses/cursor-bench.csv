@@ -1,5 +1,7 @@
 model,score_pct,cost,tokens,steps
+Gemini 4 Neon High,63.7,6.54,88596,56
 Gemini 4 Hydrogen Extra High,57.8,5.86,164610,88
+Gemini 4 Neon Medium,57.7,3.07,47059,41
 Opus 5.5 Extra High,56.0,6.98,101083,109
 Opus 5.5 High,56.0,3.97,53078,68
 Sonnet 5.5 Max,55.5,7.05,271920,170
@@ -15,6 +17,7 @@ Gemini 4 Hydrogen Medium,46.7,1.76,36781,38
 Grok 4.7 Extra High,46.3,6.01,70141,88
 DeepSeek V4.1 Flash 1017 Medium,46.3,0.80,398255,189
 DeepSeek V4.1 Flash 1017 High,45.6,0.77,385196,186
+Gemini 4 Neon Low,45.5,1.26,19580,28
 DeepSeek V4.1 Flash 1017 Low,44.9,0.60,290651,161
 Grok 4.7 High,43.9,4.69,56382,71
 Opus 5.5 Low,43.7,1.17,15811,28

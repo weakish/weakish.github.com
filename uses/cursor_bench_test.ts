@@ -422,6 +422,7 @@ Deno.test("committed CursorBench CSV keeps only requested model families", () =>
     "Gemini 3.8 Flash",
     "Gemini 4 Argon",
     "Gemini 4 Hydrogen",
+    "Gemini 4 Neon",
     "Grok 4.6",
     "Grok 4.7",
     "Muse Spark 1.3",
@@ -543,7 +544,7 @@ Deno.test("prepareCursorBenchSvgForHtml strips xml decl and sets layout style", 
 
 Deno.test("replaceCursorBenchEmbedInHtml keeps dollar amounts in the SVG", () => {
   const html =
-    `<p><img src="/uses/cursor-bench.svg" alt="CursorBench 4.0 score versus average cost per task"></p>`;
+    `<p><img src="/uses/cursor-bench.svg" alt="CursorBench 4.1 score versus average cost per task"></p>`;
   const inlineSvg = `<svg class="cursor-bench-point"><text>$18</text></svg>`;
   const next = replaceCursorBenchEmbedInHtml(html, inlineSvg);
   if (!next.includes("$18")) {
@@ -652,7 +653,7 @@ Deno.test("inlineCursorBenchChartInPages inlines the Cursor page", () => {
 
 Deno.test("inlineCursorBenchChartInPages leaves feed children on the img embed", () => {
   const children =
-    `<p><img src="/uses/cursor-bench.svg" alt="CursorBench 4.0 score versus average cost per task"></p>`;
+    `<p><img src="/uses/cursor-bench.svg" alt="CursorBench 4.1 score versus average cost per task"></p>`;
   const pages = [{
     text: `<article>${children}</article>`,
     data: { url: "/uses/cursor/", children },

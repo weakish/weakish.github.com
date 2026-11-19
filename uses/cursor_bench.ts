@@ -105,7 +105,7 @@ const PLOT_BOTTOM = HEIGHT - MARGIN.bottom;
 const COST_MIN = 0;
 const COST_MAX = 8;
 const SCORE_MIN = 15;
-const SCORE_MAX = 60;
+const SCORE_MAX = 65;
 
 // Okabe-Ito / Tol muted base, plus Tol bright/vibrant extensions (color-blind safe).
 const FAMILY_PALETTE = [
@@ -274,7 +274,7 @@ function rowsForFamily(
 export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
   const families = uniqueFamiliesInScoreOrder(rows);
   const familyColors = cursorBenchColorsForFamilies(families);
-  const yTicks = [60, 55, 50, 45, 40, 35, 30, 25, 20, 15];
+  const yTicks = [65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15];
   const xTicks = [8, 6, 4, 2, 0];
 
   const grid = [
@@ -386,8 +386,8 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg class="cursor-bench-chart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="${WIDTH}" height="${HEIGHT}" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#333" role="group" aria-labelledby="cursor-bench-title" aria-describedby="cursor-bench-desc">
-  <title id="cursor-bench-title">CursorBench 4.0 score versus average cost per task</title>
-  <desc id="cursor-bench-desc">Scatter plot of CursorBench 4.0 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Minimal, Low, Medium, High, Extra High, then Max. Hover or tap a point for the model name and effort.</desc>
+  <title id="cursor-bench-title">CursorBench 4.1 score versus average cost per task</title>
+  <desc id="cursor-bench-desc">Scatter plot of CursorBench 4.1 correctness against average USD cost per task. Cost decreases toward the right so the upper-right is higher score at lower cost. Points from the same model family are connected Minimal, Low, Medium, High, Extra High, then Max. Hover or tap a point for the model name and effort.</desc>
   <style><![CDATA[
     .cursor-bench-chart .cursor-bench-point { cursor: pointer; }
     .cursor-bench-chart .cursor-bench-point:focus { outline: none; }
@@ -411,7 +411,7 @@ export function renderCursorBenchSvg(rows: CursorBenchRow[]): string {
     (PLOT_TOP + PLOT_BOTTOM) / 2
   }" text-anchor="middle" transform="rotate(-90 16 ${
     (PLOT_TOP + PLOT_BOTTOM) / 2
-  })">CursorBench 4.0 score</text>
+  })">CursorBench 4.1 score</text>
   ${polylines}
   ${legend}
   ${points}
