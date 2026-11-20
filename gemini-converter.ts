@@ -1,5 +1,5 @@
-import { unified } from "https://esm.sh/unified@11.0.5?target=es2022";
-import rehypeParse from "https://esm.sh/rehype-parse@9.0.1?target=es2022";
+import { unified } from "npm:unified@11.0.5";
+import rehypeParse from "npm:rehype-parse@9.0.1";
 
 interface HastNode {
   type: string;

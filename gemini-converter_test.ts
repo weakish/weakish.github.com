@@ -1,5 +1,5 @@
 import { htmlToGemtext } from "./gemini-converter.ts";
-import { marked } from "https://esm.sh/marked@15.0.2?target=es2022";
+import { marked } from "npm:marked@15.0.2";
 
 Deno.test("Markdown link converts to Gemtext link line", () => {
   const markdown = "See [this page](/foo) for details";

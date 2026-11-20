@@ -1,10 +1,10 @@
 import { Engine } from "lume/core/renderer.ts";
-import { buffer } from "https://esm.sh/dioscuri@1.3.0";
-import rehypeStarryNight from "https://esm.sh/rehype-starry-night@2.2.0?target=es2022&deps=@wooorm/starry-night@3.10.0";
-import { all } from "https://esm.sh/@wooorm/starry-night@3.10.0?target=es2022";
-import { unified } from "https://esm.sh/unified@11.0.5?target=es2022";
-import rehypeParse from "https://esm.sh/rehype-parse@9.0.1?target=es2022";
-import rehypeStringify from "https://esm.sh/rehype-stringify@10.0.1?target=es2022";
+import { buffer } from "npm:dioscuri@1.3.0";
+import rehypeStarryNight from "npm:rehype-starry-night@2.2.0";
+import { all } from "npm:@wooorm/starry-night@3.10.0";
+import { unified } from "npm:unified@11.0.5";
+import rehypeParse from "npm:rehype-parse@9.0.1";
+import rehypeStringify from "npm:rehype-stringify@10.0.1";
 
 export default class GeminiEngine implements Engine {
   render(content: string, data?: Record<string, unknown>, filename?: string) {
